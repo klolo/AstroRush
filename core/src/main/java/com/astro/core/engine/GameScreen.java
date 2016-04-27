@@ -7,15 +7,12 @@ import com.astro.core.overlapAdapter.OverlapSceneReader;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 
 import java.util.ArrayList;
 
-import box2dLight.Light;
-import box2dLight.PointLight;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 public class GameScreen implements Screen {
 
     @GameProperty("renderer.debug")
-    private boolean DEBUG_DRAW;
+    private boolean DEBUG_DRAW = false;
 
     @GameProperty("renderer.scale")
     private float SCALE = 2.0f;
@@ -39,54 +36,38 @@ public class GameScreen implements Screen {
 
     private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
 
-    private ArrayList<Light> lights = new ArrayList<Light>(1);
-
     @Setter
     @Getter
     private ArrayList<IGameObject> mapElements = new ArrayList<>();
 
-    private PointLight pointLight;
+    private float width;
 
+    private float height;
     /**
      *
      */
     public GameScreen() {
         new PropertyInjector(this);
-
-        float width = Gdx.graphics.getWidth();
-        float height = Gdx.graphics.getHeight();
-
-        // Constructs a new OrthographicCamera, using the given viewport width and height
-        // Height is multiplied by aspect ratio.
-        camera = new OrthographicCamera();
-        camera.setToOrtho(false, width / SCALE, height / SCALE);
-
-        createLight();
+        width = Gdx.graphics.getWidth();
+        height = Gdx.graphics.getHeight();
+        initCamera();
 
         OverlapSceneReader sceneReader = new OverlapSceneReader("scenes/MainScene.dt")
                 .loadScene();
 
-        mapElements = (ArrayList<IGameObject>) sceneReader.registerComponents();
-
+        mapElements = (ArrayList<IGameObject>) sceneReader.readAndRegisterComponents();
+        sceneReader.registerLights();
 
         log.info("end");
     }
 
-    private void createLight() {
-        float width = Gdx.graphics.getWidth();
-        float height = Gdx.graphics.getHeight();
-
-        PhysicsWorld.instance.getRayHandler().setCombinedMatrix(camera);
-        pointLight = new PointLight(
-                PhysicsWorld.instance.getRayHandler(),
-                5000,
-                new Color(.2f, .2f, .8f, 1f),
-                2000,
-                (width / SCALE) - 100,
-                (height / SCALE) - 100
-        );
-        pointLight.setSoftnessLength(30);
-        pointLight.setSoft(true);
+    /**
+     * Constructs a new OrthographicCamera, using the given viewport width and height
+     * Height is multiplied by aspect ratio.
+     */
+    private void initCamera() {
+        camera = new OrthographicCamera();
+        camera.setToOrtho(false, width / SCALE, height / SCALE);
     }
 
 
@@ -95,25 +76,26 @@ public class GameScreen implements Screen {
 
     }
 
+    /**
+     * Update and render game.
+     * @param delta
+     */
     @Override
     public void render(float delta) {
-//        sceneLoader.getEngine().update(delta);
-        PhysicsWorld.instance.getRayHandler().render();
-
         mapElements.forEach(e -> e.render(camera));
         player.render(camera);
-
         if (DEBUG_DRAW) {
             renderer.render(
                     PhysicsWorld.instance.getWorld(),
                     camera.combined.scl(PhysicsWorld.instance.getPIXEL_PER_METER())
             );
         }
+
+        PhysicsWorld.instance.getRayHandler().updateAndRender();
     }
 
 
     public void update() {
-        PhysicsWorld.instance.getRayHandler().update();
         updateCemera();
     }
 
@@ -124,6 +106,7 @@ public class GameScreen implements Screen {
         position.y = player.getPositionY() * PhysicsWorld.instance.getPIXEL_PER_METER();
         camera.position.set(position);
         camera.update();
+        PhysicsWorld.instance.getRayHandler().setCombinedMatrix(camera);
     }
 
 
@@ -151,6 +134,5 @@ public class GameScreen implements Screen {
     public void dispose() {
         PhysicsWorld.instance.getRayHandler().dispose();
         player.dispose();
-        pointLight.dispose();
     }
 }

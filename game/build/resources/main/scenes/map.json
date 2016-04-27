@@ -3,63 +3,26 @@
   "composite": {
     "sImages": [
       {
-        "uniqueId": 3,
+        "uniqueId": 2,
         "tags": [],
-        "x": -3.4125001,
-        "y": 3.375,
+        "x": -5.7999997,
+        "y": -2.5125,
         "originX": 0.4,
         "originY": 0.4,
-        "layerName": "Default",
-        "imageName": "tileBlue04"
-      },
-      {
-        "uniqueId": 5,
-        "tags": [],
-        "x": -2.6375003,
-        "y": 3.3750002,
-        "originX": 0.4,
-        "originY": 0.4,
-        "zIndex": 2,
-        "layerName": "Default",
-        "imageName": "tileBlue05"
-      },
-      {
-        "uniqueId": 6,
-        "tags": [],
-        "x": -1.8499999,
-        "y": 3.375,
-        "originX": 0.4,
-        "originY": 0.4,
-        "zIndex": 3,
-        "layerName": "Default",
-        "imageName": "tileBlue05"
-      },
-      {
-        "uniqueId": 7,
-        "tags": [],
-        "y": 3.375,
-        "scaleX": 3.612131,
-        "originX": 0.4,
-        "originY": 0.4,
-        "zIndex": 4,
         "layerName": "Default",
         "shape": {
           "polygons": [
             [
-              {
-                "y": 0.8
-              },
-              {
-                "x": -1.3671815E-4,
-                "y": 0.3875
-              },
               {},
               {
-                "x": 0.8
+                "y": 0.8
               },
               {
                 "x": 0.8,
                 "y": 0.8
+              },
+              {
+                "x": 0.8
               }
             ]
           ]
@@ -72,105 +35,503 @@
           "friction": 1,
           "restitution": 1
         },
-        "imageName": "tileBlue05",
+        "imageName": "lockGreenLeft",
         "isRepeat": true
       },
       {
-        "uniqueId": 8,
-        "itemIdentifier": "player",
+        "uniqueId": 3,
         "tags": [],
-        "x": -3.375,
-        "y": 5.4750004,
-        "originX": 0.2,
-        "originY": 0.275,
+        "x": -0.32500002,
+        "y": -2.525,
+        "scaleX": 12.912284,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 1,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "lockGreenMid",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 4,
+        "tags": [],
+        "x": 5.15,
+        "y": -2.5125,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 2,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "lockGreenRight",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 5,
+        "tags": [],
+        "x": 5.025,
+        "y": -1.7875,
+        "originX": 0.18125,
+        "originY": 0.3125,
+        "zIndex": 3,
+        "layerName": "Default",
+        "imageName": "plantGreen4"
+      },
+      {
+        "uniqueId": 6,
+        "tags": [],
+        "x": 4.6375,
+        "y": -1.8000001,
+        "originX": 0.25625,
+        "originY": 0.29375,
+        "zIndex": 4,
+        "layerName": "Default",
+        "imageName": "plantGreen5"
+      },
+      {
+        "uniqueId": 7,
+        "tags": [],
+        "x": -2.75,
+        "y": 4.6875,
+        "originX": 0.2625,
+        "originY": 0.225,
         "zIndex": 5,
+        "layerName": "Default",
+        "imageName": "plantGreen6"
+      },
+      {
+        "uniqueId": 8,
+        "tags": [],
+        "x": 3.5375001,
+        "y": -1.8125,
+        "originX": 0.275,
+        "originY": 0.2,
+        "zIndex": 6,
+        "layerName": "Default",
+        "imageName": "plantGreen2"
+      },
+      {
+        "uniqueId": 9,
+        "tags": [],
+        "x": 0.76250005,
+        "y": -1.8125,
+        "originX": 0.275,
+        "originY": 0.2,
+        "zIndex": 7,
+        "layerName": "Default",
+        "imageName": "plantGreen2"
+      },
+      {
+        "uniqueId": 10,
+        "tags": [],
+        "x": 0.375,
+        "y": -1.7875,
+        "originX": 0.275,
+        "originY": 0.2,
+        "zIndex": 8,
+        "layerName": "Default",
+        "imageName": "plantGreen2"
+      },
+      {
+        "uniqueId": 11,
+        "tags": [],
+        "x": 2.225,
+        "y": 4.75,
+        "originX": 0.2625,
+        "originY": 0.225,
+        "zIndex": 9,
+        "layerName": "Default",
+        "imageName": "plantGreen6"
+      },
+      {
+        "uniqueId": 12,
+        "tags": [],
+        "x": -4.8125,
+        "y": -1.9000001,
+        "originX": 0.3875,
+        "originY": 0.3375,
+        "zIndex": 10,
+        "layerName": "Default",
+        "imageName": "plantTopblue"
+      },
+      {
+        "uniqueId": 13,
+        "itemIdentifier": "zFizyka",
+        "tags": [],
+        "x": -0.42,
+        "y": 4.2,
+        "scaleX": 6.779953,
+        "scaleY": 0.39338207,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 11,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "lockGreenMid",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 14,
+        "tags": [],
+        "x": -4.1125,
+        "y": -1.9000001,
+        "originX": 0.18125,
+        "originY": 0.3125,
+        "zIndex": 12,
+        "layerName": "Default",
+        "imageName": "plantGreen4"
+      },
+      {
+        "uniqueId": 15,
+        "tags": [],
+        "x": -5.2625,
+        "y": -1.875,
+        "originX": 0.25625,
+        "originY": 0.29375,
+        "zIndex": 13,
+        "layerName": "Default",
+        "imageName": "plantGreen5"
+      },
+      {
+        "uniqueId": 16,
+        "tags": [],
+        "x": -0.16250001,
+        "y": 5.3624997,
+        "originX": 0.1375,
+        "originY": 0.1375,
+        "zIndex": 14,
+        "layerName": "Default",
+        "imageName": "blueGem"
+      },
+      {
+        "uniqueId": 19,
+        "itemIdentifier": "bezFizyki",
+        "tags": [],
+        "x": 6.01,
+        "y": 2.23,
+        "scaleX": 6.591809,
+        "scaleY": 0.36213136,
+        "originX": 0.4,
+        "originY": 0.4,
+        "rotation": 20,
+        "zIndex": 19,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "lockGreenMid",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 21,
+        "tags": [],
+        "x": -4.1125,
+        "y": 0.7375001,
+        "scaleX": 2.797539,
+        "scaleY": 2.797539,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 20,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "lockGreenMid",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 23,
+        "tags": [],
+        "x": -5.775,
+        "y": 0.024999976,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 21,
+        "layerName": "Default",
+        "imageName": "lockGreenMid"
+      },
+      {
+        "uniqueId": 24,
+        "tags": [],
+        "x": -4.85,
+        "y": -0.90000004,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 22,
+        "layerName": "Default",
+        "imageName": "lockGreenMid"
+      },
+      {
+        "uniqueId": 26,
+        "tags": [],
+        "x": -2.4750001,
+        "y": 1.45,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 23,
+        "layerName": "Default",
+        "imageName": "lockGreenMid"
+      },
+      {
+        "uniqueId": 27,
+        "tags": [],
+        "x": -3.3,
+        "y": 2.5375001,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 24,
+        "layerName": "Default",
+        "imageName": "lockGreenMid"
+      },
+      {
+        "uniqueId": 28,
+        "tags": [],
+        "x": 8.137501,
+        "y": 4.7125,
+        "scaleX": 2.5260303,
+        "scaleY": 2.5260303,
+        "originX": 0.1375,
+        "originY": 0.1375,
+        "zIndex": 25,
         "layerName": "Default",
         "shape": {
           "polygons": [
             [
               {
-                "x": 0.41875002
+                "y": 0.275
               },
               {
-                "x": 0.4312499,
-                "y": 0.56875
+                "x": -0.060912848,
+                "y": 0.15095833
+              },
+              {},
+              {
+                "x": 0.12712312,
+                "y": -0.05561623
               },
               {
-                "x": -0.0062500006,
-                "y": 0.5625
+                "x": 0.275
               },
               {
-                "x": -0.0062499996,
-                "y": -0.012500001
+                "x": 0.31780687,
+                "y": 0.11917762
+              },
+              {
+                "x": 0.275,
+                "y": 0.275
+              },
+              {
+                "x": 0.124474585,
+                "y": 0.331049
               }
             ]
           ]
         },
         "physics": {
-          "mass": 1,
+          "bodyType": 2,
+          "mass": 0.1,
           "allowSleep": true,
           "awake": true,
           "density": 1,
           "friction": 1,
           "restitution": 1
         },
-        "imageName": "enemyWalking1",
+        "imageName": "blueGem",
         "isRepeat": true
       }
     ],
     "sLights": [
       {
-        "uniqueId": 4,
+        "uniqueId": 17,
         "tags": [],
-        "x": -0.03,
-        "y": 8.01,
+        "x": -0.0375,
+        "y": 5.525,
         "originX": 0,
         "originY": 0,
-        "zIndex": 1,
+        "zIndex": 15,
         "layerName": "Default",
         "tint": [
-          0.9098039,
-          0.88235295,
-          0.11764706,
+          0.17254902,
+          0.57254905,
+          0.9490196,
+          1
+        ],
+        "type": "POINT",
+        "distance": 3,
+        "softnessLength": 0.015000001
+      },
+      {
+        "uniqueId": 18,
+        "tags": [],
+        "x": -14.93,
+        "y": 13.8,
+        "originX": 0,
+        "originY": 0,
+        "zIndex": 16,
+        "layerName": "Default",
+        "tint": [
+          0.92941177,
+          0.08235294,
+          0.08235294,
           1
         ],
         "type": "CONE",
-        "rays": 25,
-        "distance": 19,
-        "coneDegree": 180,
+        "rays": 9,
+        "distance": 50,
+        "coneDegree": 340,
         "softnessLength": 0.015000001
       },
       {
-        "uniqueId": 9,
+        "uniqueId": 20,
         "tags": [],
-        "x": -8.53,
-        "y": 4.36,
+        "x": 12.09,
+        "y": 12.3,
         "originX": 0,
         "originY": 0,
-        "zIndex": 6,
+        "zIndex": 17,
         "layerName": "Default",
         "tint": [
-          0.83137256,
           0.09019608,
-          0.09019608,
+          0.9098039,
+          0.7176471,
           1
         ],
         "type": "POINT",
-        "rays": 40,
-        "distance": 12,
+        "distance": 60,
         "softnessLength": 0.015000001
       },
       {
-        "uniqueId": 10,
+        "uniqueId": 22,
         "tags": [],
-        "x": 7.2875,
-        "y": 8.975,
+        "x": -0.65,
+        "y": -7.81,
         "originX": 0,
         "originY": 0,
-        "zIndex": 7,
+        "zIndex": 18,
         "layerName": "Default",
+        "tint": [
+          0.92156863,
+          0.03529412,
+          0.8745098,
+          1
+        ],
         "type": "POINT",
-        "distance": 3,
+        "distance": 30,
         "softnessLength": 0.015000001
       }
     ],

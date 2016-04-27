@@ -50,8 +50,8 @@ public abstract class PhysicsObject extends GameObject implements  IGameObject {
         bodyDef.type = BodyDef.BodyType.DynamicBody;
 
         bodyDef.position.set(
-                posX / PhysicsWorld.instance.getPIXEL_PER_METER(),
-                posY / PhysicsWorld.instance.getPIXEL_PER_METER());
+                getSprite().getX() / PhysicsWorld.instance.getPIXEL_PER_METER(),
+                getSprite().getY() / PhysicsWorld.instance.getPIXEL_PER_METER());
         return bodyDef;
     }
 
@@ -59,10 +59,10 @@ public abstract class PhysicsObject extends GameObject implements  IGameObject {
     public void render() {
         float PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
         batch.draw(texture,
-                body.getPosition().x * PPM - (width / 2),
-                body.getPosition().y * PPM - (height / 2),
-                width,
-                height
+                body.getPosition().x * PPM - ( getSprite().getWidth() / 2),
+                body.getPosition().y * PPM - ( getSprite().getHeight() / 2),
+                getSprite().getWidth(),
+                getSprite().getHeight()
         );
     }
 }

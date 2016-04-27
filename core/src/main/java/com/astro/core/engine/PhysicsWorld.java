@@ -111,12 +111,13 @@ public enum PhysicsWorld {
         TIME_STEP = 1f / TIME_STEP;
         gravityVec = new Vector2(0, GRAVITY);
         world = new World(gravityVec, true);
-        createGround();
+     //   createGround();
 
         rayHandler = new RayHandler(world);
         rayHandler.setShadows(false);
-        rayHandler.setAmbientLight(5f);
+        rayHandler.setAmbientLight(.2f);
         rayHandler.setCulling(true);
+        rayHandler.setBlur(true);
     }
 
     /**

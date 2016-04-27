@@ -16,4 +16,6 @@ public interface IPlayer extends IScript{
 
     void render(OrthographicCamera cam);
 
+    void update(float diff);
+
 }

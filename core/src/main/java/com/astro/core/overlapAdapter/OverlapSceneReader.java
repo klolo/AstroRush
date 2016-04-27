@@ -3,11 +3,9 @@ package com.astro.core.overlapAdapter;
 import com.astro.core.objects.IGameObject;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Json;
 import com.uwsoft.editor.renderer.data.CompositeVO;
 import com.uwsoft.editor.renderer.data.SceneVO;
-import com.uwsoft.editor.renderer.resources.ResourceManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,15 +27,15 @@ public class OverlapSceneReader {
     private CompositeVO composite;
 
     /**
-     *
-     * @param scenePath
+     * Requires pass path to the map file.
+     * @param scenePath path to file contains map
      */
     public OverlapSceneReader(final String scenePath) {
         this.scenePath = scenePath;
     }
 
     /**
-     *
+     * Opens and read json map file.
      */
     public OverlapSceneReader loadScene() {
         FileHandle file = Gdx.files.internal(scenePath);
@@ -48,12 +46,23 @@ public class OverlapSceneReader {
     /**
      * Registration object in Box2D world and return list for rendering suppose.
      */
-    public List<IGameObject> registerComponents() {
+    public List<IGameObject> readAndRegisterComponents() {
         List<IGameObject> result = new ArrayList<>();
-        RegisterComponent registerComponent = new RegisterComponent();
+        ComponentLoader registerComponent = new ComponentLoader();
+
         result.addAll(composite.sImages.stream()
                 .map(registerComponent::register)
                 .collect(Collectors.toList()));
         return result;
     }
+
+    /**
+     *
+     * @return this.
+     */
+    public void registerLights() {
+        LightsLoader lightsLoader = new LightsLoader();
+        composite.sLights.forEach( e->lightsLoader.register(e) );
+    }
+
 }

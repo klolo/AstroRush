@@ -1,12 +1,15 @@
 package com.astro.core.objects;
 
 import com.astro.core.adnotation.Dispose;
+import com.astro.core.adnotation.GameProperty;
 import com.astro.core.engine.PhysicsWorld;
+import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.PolygonRegion;
 import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
@@ -21,32 +24,12 @@ import lombok.extern.slf4j.Slf4j;
 public class GameObject implements IGameObject {
 
     /**
-     * Width of the object on the screen.
+     * TODO.
      */
     @Getter
     @Setter
-    protected float width;
+    protected boolean scaled = false;
 
-    /**
-     * Height of the object on the screen.
-     */
-    @Getter
-    @Setter
-    protected float height;
-
-    /**
-     * Position X of the object.
-     */
-    @Getter
-    @Setter
-    protected float posX = 100;
-
-    /**
-     * Positions Y of the object.
-     */
-    @Getter
-    @Setter
-    protected float posY = 100;
 
     /**
      * Rendering texture.
@@ -68,7 +51,15 @@ public class GameObject implements IGameObject {
     @Setter
     protected Batch batch;
 
+    @GameProperty("renderer.pixel.per.meter")
+    @Getter
+    private int PIXEL_PER_METER = 0;
+
+
     protected PolygonRegion polygonRegion;
+
+    @Getter
+    private Sprite sprite;
 
     /**
      * Default constructor.
@@ -77,6 +68,8 @@ public class GameObject implements IGameObject {
         batch = new SpriteBatch();
         this.texture = texture;
         batch = new SpriteBatch();
+        new PropertyInjector(this);
+        sprite = new Sprite(texture);
     }
 
     /**
@@ -84,18 +77,10 @@ public class GameObject implements IGameObject {
      */
     public GameObject(TextureRegion textureRegion) {
         batch = new SpriteBatch();
+        batch.enableBlending();
         this.textureRegion = textureRegion;
         batch = new SpriteBatch();
-    }
-
-
-    /**
-     * Default constructor.
-     */
-    public GameObject(PolygonRegion polygonRegion) {
-        batch = new SpriteBatch();
-        this.polygonRegion = polygonRegion;
-        batch = new PolygonSpriteBatch();
+        sprite = new Sprite(textureRegion);
     }
 
     public void dispose() {
@@ -111,8 +96,8 @@ public class GameObject implements IGameObject {
 
     public void render() {
         float PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
-        float x = posX * PPM - (width / 2);
-        float y = posY * PPM - (height / 2);
+        float x = sprite.getX() - (sprite.getWidth() / PPM / 2);
+        float y = sprite.getY() - (sprite.getHeight() / PPM / 2);
 
         if (polygonRegion != null) {
             ((PolygonSpriteBatch) batch).draw(polygonRegion, x, y);
@@ -121,17 +106,49 @@ public class GameObject implements IGameObject {
             batch.draw(texture,
                     x,
                     y,
-                    width,
-                    height
+                    sprite.getWidth(),
+                    sprite.getHeight()
             );
         }
         else {
-            batch.draw(textureRegion,
-                    (posX * PPM) + (textureRegion.getRegionWidth()/PPM),
-                    (posY * PPM) + (textureRegion.getRegionHeight()/PPM),
-                    width,
-                    height
-            );
+
+
+            if (sprite.getRotation() != 0.0f) {
+//                sprite.setPosition(
+//                        sprite.getX() * PPM - ((sprite.getWidth() * sprite.getScaleX() * (float) Math.cos(sprite.getRotation())) / 2),
+//                        sprite.getY() * PPM - ((sprite.getHeight() * sprite.getScaleY()) * (float) Math.sin(sprite.getRotation())) / 2);
+
+                float oldX = sprite.getX();
+                float oldY = sprite.getY();
+
+                sprite.setPosition(
+                        oldX + ((sprite.getWidth()*sprite.getScaleX())),
+                        oldY + (sprite.getHeight()*sprite.getScaleY()));
+                sprite.draw(batch);
+                sprite.setPosition(oldX, oldY);
+
+//                batch.draw(textureRegion,
+//                        posX * PPM - ((width) * (float) Math.cos(rotation) * scaleX  ),
+//                        posY * PPM - ((width) * (float) Math.sin(rotation)) /2 ,
+//                        textureRegion.getRegionX(),
+//                        textureRegion.getRegionY(),
+//                        width,
+//                        height,
+//                        scaleX,
+//                        scaleY,
+//                        rotation
+//                );
+            }
+            else {
+                batch.draw(textureRegion,
+                        sprite.getX() * PPM - (sprite.getWidth() * sprite.getScaleX() / 2),
+                        sprite.getY() * PPM - (sprite.getHeight() * sprite.getScaleY() / 2),
+                        sprite.getWidth() * sprite.getScaleX(),
+                        sprite.getHeight() * sprite.getScaleY()
+                );
+            }
+
+
         }
     }
 }

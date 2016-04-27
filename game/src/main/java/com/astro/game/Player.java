@@ -24,8 +24,7 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
 
     public Player() {
         super(new Texture("assets/ico.png"));
-        this.width = 30f;
-        this.height = 30f;
+        this.getSprite().setSize(50.0f, 50.0f);
         super.init();
 
         KeyObserve.instance.register(this);
@@ -41,8 +40,8 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
 
 
         shape.setAsBox(
-                width / 2 / PhysicsWorld.instance.getPIXEL_PER_METER(),
-                height / 2 / PhysicsWorld.instance.getPIXEL_PER_METER()
+                this.getSprite().getWidth() / 2 / PhysicsWorld.instance.getPIXEL_PER_METER(),
+                this.getSprite().getHeight() / 2 / PhysicsWorld.instance.getPIXEL_PER_METER()
         );
 
         // Create a fixture definition to apply our shape to
@@ -112,6 +111,11 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
 
     @Override
     public void keyReleaseEvent(int keyCode) {
+
+    }
+
+    @Override
+    public void update(float diff) {
 
     }
 }
