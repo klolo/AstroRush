@@ -1,0 +1,405 @@
+
+textures.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+gfx/alien_plant
+  rotate: false
+  xy: 1134, 646
+  size: 54, 28
+  orig: 54, 28
+  offset: 0, 0
+  index: -1
+gfx/b
+  rotate: false
+  xy: 2, 468
+  size: 800, 480
+  orig: 800, 480
+  offset: 0, 0
+  index: -1
+gfx/b (kopia)
+  rotate: false
+  xy: 2, 468
+  size: 800, 480
+  orig: 800, 480
+  offset: 0, 0
+  index: -1
+gfx/background
+  rotate: false
+  xy: 2, 950
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+gfx/block
+  rotate: false
+  xy: 1974, 1960
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/blockerMad
+  rotate: false
+  xy: 1134, 832
+  size: 51, 51
+  orig: 51, 51
+  offset: 0, 0
+  index: -1
+gfx/bonus
+  rotate: false
+  xy: 1062, 813
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/bonus_used
+  rotate: false
+  xy: 2, 266
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/bridge
+  rotate: false
+  xy: 1766, 924
+  size: 71, 24
+  orig: 71, 24
+  offset: 0, 0
+  index: -1
+gfx/bush
+  rotate: false
+  xy: 708, 440
+  size: 70, 26
+  orig: 70, 26
+  offset: 0, 0
+  index: -1
+gfx/cloud_1
+  rotate: false
+  xy: 2, 403
+  size: 129, 63
+  orig: 129, 63
+  offset: 0, 0
+  index: -1
+gfx/cloud_2
+  rotate: false
+  xy: 1062, 885
+  size: 128, 63
+  orig: 128, 63
+  offset: 0, 0
+  index: -1
+gfx/cloud_3
+  rotate: false
+  xy: 2, 338
+  size: 128, 63
+  orig: 128, 63
+  offset: 0, 0
+  index: -1
+gfx/coin_bronze
+  rotate: false
+  xy: 1924, 1701
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+gfx/coin_gold
+  rotate: false
+  xy: 74, 213
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+gfx/coin_silver
+  rotate: false
+  xy: 1134, 579
+  size: 35, 35
+  orig: 35, 35
+  offset: 0, 0
+  index: -1
+gfx/crate
+  rotate: false
+  xy: 1974, 1888
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/fence
+  rotate: false
+  xy: 133, 405
+  size: 70, 61
+  orig: 70, 61
+  offset: 0, 0
+  index: -1
+gfx/fence_broken
+  rotate: false
+  xy: 1192, 887
+  size: 70, 61
+  orig: 70, 61
+  offset: 0, 0
+  index: -1
+gfx/fly_dead
+  rotate: false
+  xy: 1480, 916
+  size: 69, 32
+  orig: 69, 32
+  offset: 0, 0
+  index: -1
+gfx/fly_fly
+  rotate: false
+  xy: 1551, 917
+  size: 69, 31
+  orig: 69, 31
+  offset: 0, 0
+  index: -1
+gfx/fly_normal
+  rotate: false
+  xy: 493, 434
+  size: 69, 32
+  orig: 69, 32
+  offset: 0, 0
+  index: -1
+gfx/grass
+  rotate: false
+  xy: 1924, 1738
+  size: 35, 40
+  orig: 35, 40
+  offset: 0, 0
+  index: -1
+gfx/ground
+  rotate: false
+  xy: 1062, 741
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/ground_cave
+  rotate: false
+  xy: 2, 194
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/ground_dirt
+  rotate: false
+  xy: 1974, 1816
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/ground_rock
+  rotate: false
+  xy: 1062, 669
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/ground_sand
+  rotate: false
+  xy: 2, 122
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/hill_long
+  rotate: false
+  xy: 1924, 1884
+  size: 48, 146
+  orig: 48, 146
+  offset: 0, 0
+  index: -1
+gfx/hill_short
+  rotate: false
+  xy: 1924, 1780
+  size: 48, 102
+  orig: 48, 102
+  offset: 0, 0
+  index: -1
+gfx/ico
+  rotate: false
+  xy: 74, 286
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+gfx/key_blue
+  rotate: false
+  xy: 1134, 793
+  size: 60, 37
+  orig: 60, 37
+  offset: 0, 0
+  index: -1
+gfx/key_green
+  rotate: false
+  xy: 1134, 754
+  size: 60, 37
+  orig: 60, 37
+  offset: 0, 0
+  index: -1
+gfx/key_red
+  rotate: false
+  xy: 1134, 715
+  size: 60, 37
+  orig: 60, 37
+  offset: 0, 0
+  index: -1
+gfx/key_yellow
+  rotate: false
+  xy: 1134, 676
+  size: 60, 37
+  orig: 60, 37
+  offset: 0, 0
+  index: -1
+gfx/lava
+  rotate: false
+  xy: 1336, 903
+  size: 70, 45
+  orig: 70, 45
+  offset: 0, 0
+  index: -1
+gfx/lock_blue
+  rotate: false
+  xy: 1062, 597
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/lock_green
+  rotate: false
+  xy: 2, 50
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/lock_red
+  rotate: false
+  xy: 1062, 525
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/lock_yellow
+  rotate: false
+  xy: 1062, 453
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+gfx/planes
+  rotate: false
+  xy: 804, 436
+  size: 256, 512
+  orig: 256, 512
+  offset: 0, 0
+  index: -1
+gfx/plank
+  rotate: false
+  xy: 1974, 1793
+  size: 72, 21
+  orig: 72, 21
+  offset: 0, 0
+  index: -1
+gfx/rock
+  rotate: false
+  xy: 1408, 907
+  size: 70, 41
+  orig: 70, 41
+  offset: 0, 0
+  index: -1
+gfx/shroom
+  rotate: false
+  xy: 74, 250
+  size: 39, 34
+  orig: 39, 34
+  offset: 0, 0
+  index: -1
+gfx/slime_dead
+  rotate: false
+  xy: 1062, 443
+  size: 54, 8
+  orig: 54, 8
+  offset: 0, 0
+  index: -1
+gfx/slime_normal
+  rotate: false
+  xy: 1134, 616
+  size: 43, 28
+  orig: 43, 28
+  offset: 0, 0
+  index: -1
+gfx/slime_walk
+  rotate: false
+  xy: 1839, 922
+  size: 43, 26
+  orig: 43, 26
+  offset: 0, 0
+  index: -1
+gfx/spikes
+  rotate: false
+  xy: 421, 431
+  size: 70, 35
+  orig: 70, 35
+  offset: 0, 0
+  index: -1
+gfx/switch_blue_off
+  rotate: false
+  xy: 2, 2
+  size: 70, 46
+  orig: 70, 46
+  offset: 0, 0
+  index: -1
+gfx/switch_blue_on
+  rotate: false
+  xy: 564, 439
+  size: 70, 27
+  orig: 70, 27
+  offset: 0, 0
+  index: -1
+gfx/switch_green_off
+  rotate: false
+  xy: 205, 420
+  size: 70, 46
+  orig: 70, 46
+  offset: 0, 0
+  index: -1
+gfx/switch_green_on
+  rotate: false
+  xy: 1622, 921
+  size: 70, 27
+  orig: 70, 27
+  offset: 0, 0
+  index: -1
+gfx/switch_red_off
+  rotate: false
+  xy: 1264, 902
+  size: 70, 46
+  orig: 70, 46
+  offset: 0, 0
+  index: -1
+gfx/switch_red_on
+  rotate: false
+  xy: 636, 439
+  size: 70, 27
+  orig: 70, 27
+  offset: 0, 0
+  index: -1
+gfx/switch_yellow_off
+  rotate: false
+  xy: 277, 420
+  size: 70, 46
+  orig: 70, 46
+  offset: 0, 0
+  index: -1
+gfx/switch_yellow_on
+  rotate: false
+  xy: 1694, 921
+  size: 70, 27
+  orig: 70, 27
+  offset: 0, 0
+  index: -1
+gfx/water
+  rotate: false
+  xy: 349, 421
+  size: 70, 45
+  orig: 70, 45
+  offset: 0, 0
+  index: -1

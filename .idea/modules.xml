@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AstroRush2.0.iml" filepath="$PROJECT_DIR$/.idea/modules/AstroRush2.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_main.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core_test.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/game/game.iml" filepath="$PROJECT_DIR$/.idea/modules/game/game.iml" group="game" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/game/game_main.iml" filepath="$PROJECT_DIR$/.idea/modules/game/game_main.iml" group="game" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/game/game_test.iml" filepath="$PROJECT_DIR$/.idea/modules/game/game_test.iml" group="game" />
+    </modules>
+  </component>
+</project>

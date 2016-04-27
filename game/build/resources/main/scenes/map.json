@@ -1,0 +1,195 @@
+{
+  "sceneName": "MainScene",
+  "composite": {
+    "sImages": [
+      {
+        "uniqueId": 3,
+        "tags": [],
+        "x": -3.4125001,
+        "y": 3.375,
+        "originX": 0.4,
+        "originY": 0.4,
+        "layerName": "Default",
+        "imageName": "tileBlue04"
+      },
+      {
+        "uniqueId": 5,
+        "tags": [],
+        "x": -2.6375003,
+        "y": 3.3750002,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 2,
+        "layerName": "Default",
+        "imageName": "tileBlue05"
+      },
+      {
+        "uniqueId": 6,
+        "tags": [],
+        "x": -1.8499999,
+        "y": 3.375,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 3,
+        "layerName": "Default",
+        "imageName": "tileBlue05"
+      },
+      {
+        "uniqueId": 7,
+        "tags": [],
+        "y": 3.375,
+        "scaleX": 3.612131,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 4,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {
+                "y": 0.8
+              },
+              {
+                "x": -1.3671815E-4,
+                "y": 0.3875
+              },
+              {},
+              {
+                "x": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 8,
+        "itemIdentifier": "player",
+        "tags": [],
+        "x": -3.375,
+        "y": 5.4750004,
+        "originX": 0.2,
+        "originY": 0.275,
+        "zIndex": 5,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {
+                "x": 0.41875002
+              },
+              {
+                "x": 0.4312499,
+                "y": 0.56875
+              },
+              {
+                "x": -0.0062500006,
+                "y": 0.5625
+              },
+              {
+                "x": -0.0062499996,
+                "y": -0.012500001
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "enemyWalking1",
+        "isRepeat": true
+      }
+    ],
+    "sLights": [
+      {
+        "uniqueId": 4,
+        "tags": [],
+        "x": -0.03,
+        "y": 8.01,
+        "originX": 0,
+        "originY": 0,
+        "zIndex": 1,
+        "layerName": "Default",
+        "tint": [
+          0.9098039,
+          0.88235295,
+          0.11764706,
+          1
+        ],
+        "type": "CONE",
+        "rays": 25,
+        "distance": 19,
+        "coneDegree": 180,
+        "softnessLength": 0.015000001
+      },
+      {
+        "uniqueId": 9,
+        "tags": [],
+        "x": -8.53,
+        "y": 4.36,
+        "originX": 0,
+        "originY": 0,
+        "zIndex": 6,
+        "layerName": "Default",
+        "tint": [
+          0.83137256,
+          0.09019608,
+          0.09019608,
+          1
+        ],
+        "type": "POINT",
+        "rays": 40,
+        "distance": 12,
+        "softnessLength": 0.015000001
+      },
+      {
+        "uniqueId": 10,
+        "tags": [],
+        "x": 7.2875,
+        "y": 8.975,
+        "originX": 0,
+        "originY": 0,
+        "zIndex": 7,
+        "layerName": "Default",
+        "type": "POINT",
+        "distance": 3,
+        "softnessLength": 0.015000001
+      }
+    ],
+    "layers": [
+      {
+        "layerName": "Default",
+        "isVisible": true
+      }
+    ]
+  },
+  "lightSystemEnabled": true,
+  "ambientColor": [
+    0.11372549,
+    0.21960784,
+    0.19215687,
+    1
+  ],
+  "physicsPropertiesVO": {
+    "gravityY": -10,
+    "enabled": true
+  }
+}

@@ -1,0 +1,34 @@
+
+enemyWalking_Pack.png
+size: 128,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+enemyWalking
+  rotate: false
+  xy: 2, 81
+  size: 49, 38
+  orig: 49, 38
+  offset: 0, 0
+  index: 3
+enemyWalking
+  rotate: false
+  xy: 2, 38
+  size: 35, 41
+  orig: 35, 41
+  offset: 0, 0
+  index: 4
+enemyWalking
+  rotate: false
+  xy: 53, 75
+  size: 32, 44
+  orig: 32, 44
+  offset: 0, 0
+  index: 1
+enemyWalking
+  rotate: false
+  xy: 87, 77
+  size: 32, 42
+  orig: 32, 42
+  offset: 0, 0
+  index: 2
