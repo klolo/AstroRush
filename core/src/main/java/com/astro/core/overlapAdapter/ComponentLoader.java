@@ -1,19 +1,21 @@
 package com.astro.core.overlapAdapter;
 
-import com.astro.core.adnotation.GameProperty;
 import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.IGameObject;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.objects.PhysicsObject;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.uwsoft.editor.renderer.data.SimpleImageVO;
 import com.uwsoft.editor.renderer.resources.ResourceManager;
 
-import lombok.Getter;
+import java.util.Arrays;
+import java.util.LinkedList;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -21,6 +23,10 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class ComponentLoader {
+
+
+    int PPM;
+
     /**
      *
      */
@@ -31,6 +37,7 @@ public class ComponentLoader {
      */
     public ComponentLoader() {
         resourceManager.initAllResources();
+        PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
     }
 
     /**
@@ -42,6 +49,7 @@ public class ComponentLoader {
         BodyDef bodyDef = new BodyDef();
         bodyDef.position.set(imageVO.x, imageVO.y);
         bodyDef.angle = (float) Math.toRadians(imageVO.rotation);
+
         int bodyType = imageVO.physics.bodyType;
 
         if (bodyType == 0) {
@@ -57,20 +65,26 @@ public class ComponentLoader {
         return bodyDef;
     }
 
-    /**
-     *
-     * @param vertices
-     * @return
-     */
     private PolygonShape getPolygonShape(Vector2[] vertices, float scaleX, float scaleY, float w, float h) {
         PolygonShape shape = new PolygonShape();
         for (Vector2 it : vertices) {
-            it.x = (it.x - (w / PhysicsWorld.instance.getPIXEL_PER_METER() / 2)) * scaleX;
-            it.y = (it.y - (w / PhysicsWorld.instance.getPIXEL_PER_METER() / 2)) * scaleY;
+            it.x = (it.x - (w / PPM / 2)) * scaleX;
+            it.y = (it.y - (w / PPM / 2)) * scaleY;
         }
 
         shape.set(vertices);
         return shape;
+    }
+
+    protected FixtureDef getFixtureDefinition(PolygonShape shape,SimpleImageVO imageVO ) {
+        // Create a fixture definition to apply our shape to
+        FixtureDef fixtureDef = new FixtureDef();
+        fixtureDef.shape = shape;
+        fixtureDef.density = imageVO.physics.density;
+        fixtureDef.friction = imageVO.physics.friction;
+       // fixtureDef.restitution = imageVO.physics.restitution; // Make it bounce a little bit
+
+        return fixtureDef;
     }
 
     /**
@@ -83,28 +97,42 @@ public class ComponentLoader {
 
         float w = textureRegion.getRegionWidth();
         float h = textureRegion.getRegionHeight();
+        IGameObject result = null;
 
         if (imageVO.physics != null) {
             log.info("create physics");
+            result = new PhysicsObject(textureRegion);
+
+            LinkedList<PolygonShape> polygons = new LinkedList<>();
+
+            Arrays.stream(imageVO.shape.polygons)
+                    .forEach(
+                            vec ->
+                                    polygons.add(
+                                            getPolygonShape(vec, imageVO.scaleX, imageVO.scaleY, w, h)
+                    ));
 
             Body body = PhysicsWorld.instance.createBody(getBodyDef(imageVO), imageVO.itemIdentifier);
-            PolygonShape shape = getPolygonShape(
-                    imageVO.shape.polygons[0],
-                    imageVO.scaleX,
-                    imageVO.scaleY,
-                    w,
-                    h
-            );
-
-            body.createFixture(shape, imageVO.physics.density);
+            polygons.forEach(e -> body.createFixture(getFixtureDefinition(e,imageVO)));
+            ((PhysicsObject)result).setBody(body);
+        }
+        else {
+            result = new GameObject(textureRegion);
         }
 
         log.info("create body");
 
-        GameObject result = new GameObject(textureRegion);
-        result.getSprite().setSize(
+
+        result.getSprite().setBounds(
+                imageVO.x,
+                imageVO.y,
                 textureRegion.getRegionWidth(),
                 textureRegion.getRegionHeight()
+        );
+
+        result.getSprite().setOrigin(
+                imageVO.x,
+                imageVO.y
         );
 
         result.getSprite().setScale(
@@ -112,12 +140,7 @@ public class ComponentLoader {
                 imageVO.scaleY
         );
 
-        result.getSprite().setRotation(imageVO.rotation);
-        result.getSprite().setPosition(
-                imageVO.x,
-                imageVO.y
-        );
-
+        result.getSprite().rotate(imageVO.rotation);
         return result;
     }
 

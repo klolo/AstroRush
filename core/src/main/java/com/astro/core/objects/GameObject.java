@@ -12,6 +12,10 @@ import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.math.Affine2;
+
+import java.awt.geom.AffineTransform;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -50,13 +54,6 @@ public class GameObject implements IGameObject {
     @Getter
     @Setter
     protected Batch batch;
-
-    @GameProperty("renderer.pixel.per.meter")
-    @Getter
-    private int PIXEL_PER_METER = 0;
-
-
-    protected PolygonRegion polygonRegion;
 
     @Getter
     private Sprite sprite;
@@ -99,56 +96,30 @@ public class GameObject implements IGameObject {
         float x = sprite.getX() - (sprite.getWidth() / PPM / 2);
         float y = sprite.getY() - (sprite.getHeight() / PPM / 2);
 
-        if (polygonRegion != null) {
-            ((PolygonSpriteBatch) batch).draw(polygonRegion, x, y);
-        }
-        else if (textureRegion == null) {
-            batch.draw(texture,
-                    x,
-                    y,
-                    sprite.getWidth(),
-                    sprite.getHeight()
+            if (sprite.getRotation() != 0.0f) {
+                sprite.setOriginCenter();
+                sprite.draw(batch);
+            }
+            else {
+                draw(sprite.getX(), sprite.getY());
+            }
+    }
+
+    public void draw(float x, float y) {
+        float PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
+        if (textureRegion != null) {
+            batch.draw(textureRegion,
+                    x * PPM - (sprite.getWidth() * sprite.getScaleX() / 2),
+                    y * PPM - (sprite.getHeight() * sprite.getScaleY() / 2),
+                    sprite.getWidth() * sprite.getScaleX(),
+                    sprite.getHeight() * sprite.getScaleY()
             );
         }
         else {
-
-
-            if (sprite.getRotation() != 0.0f) {
-//                sprite.setPosition(
-//                        sprite.getX() * PPM - ((sprite.getWidth() * sprite.getScaleX() * (float) Math.cos(sprite.getRotation())) / 2),
-//                        sprite.getY() * PPM - ((sprite.getHeight() * sprite.getScaleY()) * (float) Math.sin(sprite.getRotation())) / 2);
-
-                float oldX = sprite.getX();
-                float oldY = sprite.getY();
-
-                sprite.setPosition(
-                        oldX + ((sprite.getWidth()*sprite.getScaleX())),
-                        oldY + (sprite.getHeight()*sprite.getScaleY()));
-                sprite.draw(batch);
-                sprite.setPosition(oldX, oldY);
-
-//                batch.draw(textureRegion,
-//                        posX * PPM - ((width) * (float) Math.cos(rotation) * scaleX  ),
-//                        posY * PPM - ((width) * (float) Math.sin(rotation)) /2 ,
-//                        textureRegion.getRegionX(),
-//                        textureRegion.getRegionY(),
-//                        width,
-//                        height,
-//                        scaleX,
-//                        scaleY,
-//                        rotation
-//                );
-            }
-            else {
-                batch.draw(textureRegion,
-                        sprite.getX() * PPM - (sprite.getWidth() * sprite.getScaleX() / 2),
-                        sprite.getY() * PPM - (sprite.getHeight() * sprite.getScaleY() / 2),
-                        sprite.getWidth() * sprite.getScaleX(),
-                        sprite.getHeight() * sprite.getScaleY()
-                );
-            }
-
-
+            batch.draw(texture,
+                    x * PPM - (sprite.getWidth() * sprite.getScaleX() / 2),
+                    y * PPM - (sprite.getHeight() * sprite.getScaleY() / 2),
+                    sprite.getWidth(), sprite.getHeight());
         }
     }
 }

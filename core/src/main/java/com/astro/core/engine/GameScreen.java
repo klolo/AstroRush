@@ -103,7 +103,7 @@ public class GameScreen implements Screen {
     private void updateCemera() {
         Vector3 position = camera.position;
         position.x = player.getPositionX() * PhysicsWorld.instance.getPIXEL_PER_METER();
-        position.y = player.getPositionY() * PhysicsWorld.instance.getPIXEL_PER_METER();
+        position.y = player.getPositionY() * PhysicsWorld.instance.getPIXEL_PER_METER()/2;
         camera.position.set(position);
         camera.update();
         PhysicsWorld.instance.getRayHandler().setCombinedMatrix(camera);

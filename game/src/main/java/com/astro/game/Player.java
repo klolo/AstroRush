@@ -47,9 +47,9 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
         // Create a fixture definition to apply our shape to
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;
-        fixtureDef.density = 0.9f;
+        fixtureDef.density = 1f;
         fixtureDef.friction = 0.4f;
-        fixtureDef.restitution = 0.6f; // Make it bounce a little bit
+        fixtureDef.restitution = 0.4f; // Make it bounce a little bit
 
         return fixtureDef;
     }
@@ -103,7 +103,7 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
             horizontalForce += 1;
         }
         else if (Input.Keys.UP == keyCode) {
-            body.applyForceToCenter(0, 5, false);
+            body.applyForceToCenter(0, 10, false);
         }
 
         body.setLinearVelocity(horizontalForce * 5, body.getLinearVelocity().y);
@@ -118,4 +118,5 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
     public void update(float diff) {
 
     }
+
 }

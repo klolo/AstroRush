@@ -2,6 +2,7 @@ package com.astro.core.objects;
 
 import com.astro.core.engine.PhysicsWorld;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Fixture;
@@ -13,7 +14,7 @@ import lombok.Setter;
 /**
  * Created by kamil on 26.04.16.
  */
-public abstract class PhysicsObject extends GameObject implements  IGameObject {
+public class PhysicsObject extends GameObject implements IGameObject {
 
     @Getter
     @Setter
@@ -21,11 +22,18 @@ public abstract class PhysicsObject extends GameObject implements  IGameObject {
 
     protected Fixture fixture;
 
-    abstract protected FixtureDef getFixtureDefinition();
+    protected FixtureDef getFixtureDefinition() {
+        return null;
+    }
 
+    @Setter
     protected Body body;
 
     public PhysicsObject(Texture texture) {
+        super(texture);
+    }
+
+    public PhysicsObject(TextureRegion texture) {
         super(texture);
     }
 
@@ -39,7 +47,9 @@ public abstract class PhysicsObject extends GameObject implements  IGameObject {
         fixtureDef.shape.dispose();
     }
 
-    protected abstract BodyDef getBodyDefinition();
+    protected BodyDef getBodyDefinition() {
+        return null;
+    }
 
     /**
      *
@@ -55,14 +65,17 @@ public abstract class PhysicsObject extends GameObject implements  IGameObject {
         return bodyDef;
     }
 
-    @Override
     public void render() {
-        float PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
-        batch.draw(texture,
-                body.getPosition().x * PPM - ( getSprite().getWidth() / 2),
-                body.getPosition().y * PPM - ( getSprite().getHeight() / 2),
-                getSprite().getWidth(),
-                getSprite().getHeight()
-        );
+        if(body.getType()== BodyDef.BodyType.DynamicBody) {
+            renderDynamic();
+        }
+        else {
+            super.render();
+        }
     }
+
+    public void renderDynamic() {
+        super.draw(body.getPosition().x,body.getPosition().y);
+    }
+
 }
