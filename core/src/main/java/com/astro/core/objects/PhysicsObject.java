@@ -1,6 +1,7 @@
 package com.astro.core.objects;
 
 import com.astro.core.engine.PhysicsWorld;
+import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -69,10 +70,10 @@ public class PhysicsObject extends GameObject implements IGameObject {
     /**
      * Rendering Box2d object with texture.
      */
-    public void render(OrthographicCamera cam) {
+    public void render(OrthographicCamera cam, float delta) {
         getSprite().setPosition(body.getPosition().x, body.getPosition().y);
         getSprite().setRotation((float) Math.toDegrees(body.getAngle()));
-        super.render(cam);
+        super.render(cam, delta);
     }
 
 

@@ -1,8 +1,8 @@
 package com.astro.core.engine;
 
 import com.astro.core.adnotation.GameProperty;
-import com.astro.core.objects.IGameObject;
-import com.astro.core.objects.IPlayer;
+import com.astro.core.objects.interfaces.IGameObject;
+import com.astro.core.objects.interfaces.IPlayer;
 import com.astro.core.overlapAdapter.OverlapSceneReader;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.Gdx;
@@ -55,8 +55,7 @@ public class GameScreen implements Screen {
         OverlapSceneReader sceneReader = new OverlapSceneReader("scenes/MainScene.dt")
                 .loadScene();
 
-        mapElements = (ArrayList<IGameObject>) sceneReader.readAndRegisterComponents();
-        sceneReader.registerLights();
+        mapElements = (ArrayList<IGameObject>) sceneReader.getComponents();
 
         log.info("end");
     }
@@ -82,8 +81,10 @@ public class GameScreen implements Screen {
      */
     @Override
     public void render(float delta) {
-        mapElements.forEach(e -> e.render(camera));
-        player.render(camera);
+        mapElements.forEach(e -> e.render(camera,delta));
+
+        player.render(camera,delta);
+
         if (DEBUG_DRAW) {
             renderer.render(
                     PhysicsWorld.instance.getWorld(),
@@ -99,11 +100,12 @@ public class GameScreen implements Screen {
         updateCemera();
     }
 
+    private static final float PLAYER_X_POSITION = 0.3f;
 
     private void updateCemera() {
         Vector3 position = camera.position;
         position.x = player.getPositionX() * PhysicsWorld.instance.getPIXEL_PER_METER();
-        position.y = player.getPositionY() * PhysicsWorld.instance.getPIXEL_PER_METER()/2;
+        position.y = player.getPositionY() * PhysicsWorld.instance.getPIXEL_PER_METER()*PLAYER_X_POSITION;
         camera.position.set(position);
         camera.update();
         PhysicsWorld.instance.getRayHandler().setCombinedMatrix(camera);

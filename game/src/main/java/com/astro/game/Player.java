@@ -1,15 +1,13 @@
 package com.astro.game;
 
 import com.astro.core.engine.PhysicsWorld;
-import com.astro.core.objects.GameObject;
-import com.astro.core.objects.IPlayer;
+import com.astro.core.objects.interfaces.IPlayer;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.observe.IKeyObserver;
 import com.astro.core.observe.KeyObserve;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
@@ -77,15 +75,6 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
         return body.getPosition().y;
     }
 
-    @Override
-    public void init(Entity entity) {
-
-    }
-
-    @Override
-    public void act(float delta) {
-
-    }
 
     @Override
     public void dispose() {
@@ -111,11 +100,6 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
 
     @Override
     public void keyReleaseEvent(int keyCode) {
-
-    }
-
-    @Override
-    public void update(float diff) {
 
     }
 

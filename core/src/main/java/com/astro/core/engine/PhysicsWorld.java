@@ -111,13 +111,23 @@ public enum PhysicsWorld {
         TIME_STEP = 1f / TIME_STEP;
         gravityVec = new Vector2(0, GRAVITY);
         world = new World(gravityVec, true);
-     //   createGround();
+
+        createGround();
+
+        RayHandler.setGammaCorrection(true);
+        RayHandler.useDiffuseLight(true);
 
         rayHandler = new RayHandler(world);
         rayHandler.setShadows(false);
-        rayHandler.setAmbientLight(.2f);
+        rayHandler.setAmbientLight(0.38431373f, 0.5529412f, 0.6f, 1f);
         rayHandler.setCulling(true);
         rayHandler.setBlur(true);
+
+        rayHandler.setAmbientLight(1f, 1f, 1f, 1f);
+        rayHandler.setCulling(true);
+        rayHandler.setBlur(true);
+        rayHandler.setBlurNum(3);
+        rayHandler.setShadows(true);
     }
 
     /**
@@ -140,7 +150,7 @@ public enum PhysicsWorld {
     /**
      * Create Box2D body in world.
      *
-     * @param bd definition of body.
+     * @param bd   definition of body.
      * @param name for logging target only.
      * @return created body
      */
@@ -148,6 +158,7 @@ public enum PhysicsWorld {
         log.info("Create body:" + name);
         return createBody(bd);
     }
+
     /**
      * Creating ground body definition.BodyDef
      */

@@ -2,6 +2,7 @@ package com.astro.core.objects;
 
 import com.astro.core.adnotation.Dispose;
 import com.astro.core.engine.PhysicsWorld;
+import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -10,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Vector3;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -74,6 +76,16 @@ public class GameObject implements IGameObject {
     /**
      * Default constructor.
      */
+    public GameObject() {
+        batch = new SpriteBatch();
+        batch = new SpriteBatch();
+        new PropertyInjector(this);
+        sprite = new Sprite();
+    }
+
+    /**
+     * Default constructor.
+     */
     public GameObject(TextureRegion textureRegion) {
         batch = new SpriteBatch();
         batch.enableBlending();
@@ -89,11 +101,12 @@ public class GameObject implements IGameObject {
     /**
      * Called in main loop
      */
-    public void render(OrthographicCamera cam) {
+    public void render(OrthographicCamera cam, float delta) {
         batch.setProjectionMatrix(cam.combined);
         batch.begin();
+        batch.enableBlending();
 
-        draw(sprite.getX(), sprite.getY(), sprite.getRotation());
+        draw(sprite.getX(), sprite.getY(), sprite.getRotation(), cam);
 
         batch.end();
     }
@@ -101,7 +114,7 @@ public class GameObject implements IGameObject {
     /**
      * Render method for texture and physic object.
      */
-    private void draw(float x, float y, float rotate) {
+    private void draw(float x, float y, float rotate, OrthographicCamera cam) {
         float PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
         float pX = x * PPM - (sprite.getWidth() * sprite.getScaleX() / 2);
         float pY = y * PPM - (sprite.getHeight() * sprite.getScaleY() / 2);

@@ -1,111 +1,83 @@
 
 pack.png
-size: 1024,1024
+size: 1024,512
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-back
+fire
   rotate: false
-  xy: 2, 289
-  size: 1000, 563
-  orig: 1000, 563
+  xy: 303, 239
+  size: 265, 252
+  orig: 265, 252
   offset: 0, 0
   index: -1
-blueGem
+lamp1
   rotate: false
-  xy: 134, 171
-  size: 22, 22
-  orig: 22, 22
+  xy: 250, 84
+  size: 38, 119
+  orig: 38, 119
   offset: 0, 0
   index: -1
-enemyWalking1
+miniPond
   rotate: false
-  xy: 198, 243
-  size: 32, 44
-  orig: 32, 44
+  xy: 303, 208
+  size: 74, 29
+  orig: 74, 29
   offset: 0, 0
   index: -1
-lockGreenLeft
+ninja
   rotate: false
-  xy: 68, 223
-  size: 64, 64
-  orig: 64, 64
+  xy: 864, 371
+  size: 122, 120
+  orig: 122, 120
   offset: 0, 0
   index: -1
-lockGreenMid
+sheep
   rotate: false
-  xy: 2, 91
-  size: 64, 64
-  orig: 64, 64
+  xy: 723, 279
+  size: 80, 70
+  orig: 80, 70
   offset: 0, 0
   index: -1
-lockGreenRight
+tree3
   rotate: false
-  xy: 2, 223
-  size: 64, 64
-  orig: 64, 64
+  xy: 2, 205
+  size: 299, 286
+  orig: 299, 286
   offset: 0, 0
   index: -1
-plantDark5
+ufocrash
   rotate: false
-  xy: 99, 123
-  size: 28, 32
-  orig: 28, 32
+  xy: 2, 99
+  size: 246, 104
+  orig: 246, 104
   offset: 0, 0
   index: -1
-plantDark6
+windMain
+  rotate: false
+  xy: 988, 408
+  size: 24, 83
+  orig: 24, 83
+  offset: 0, 0
+  index: -1
+windRotor
   rotate: false
   xy: 2, 2
-  size: 27, 38
-  orig: 27, 38
+  size: 99, 95
+  orig: 99, 95
   offset: 0, 0
   index: -1
-plantGreen2
+windmillMain
   rotate: false
-  xy: 232, 255
-  size: 44, 32
-  orig: 44, 32
+  xy: 570, 256
+  size: 151, 235
+  orig: 151, 235
   offset: 0, 0
   index: -1
-plantGreen4
+windmillRotating
   rotate: false
-  xy: 68, 105
-  size: 29, 50
-  orig: 29, 50
-  offset: 0, 0
-  index: -1
-plantGreen5
-  rotate: false
-  xy: 2, 42
-  size: 41, 47
-  orig: 41, 47
-  offset: 0, 0
-  index: -1
-plantGreen6
-  rotate: false
-  xy: 134, 195
-  size: 42, 36
-  orig: 42, 36
-  offset: 0, 0
-  index: -1
-plantTopblue
-  rotate: false
-  xy: 134, 233
-  size: 62, 54
-  orig: 62, 54
-  offset: 0, 0
-  index: -1
-tileBlue04
-  rotate: false
-  xy: 2, 157
-  size: 64, 64
-  orig: 64, 64
-  offset: 0, 0
-  index: -1
-tileBlue05
-  rotate: false
-  xy: 68, 157
-  size: 64, 64
-  orig: 64, 64
+  xy: 723, 351
+  size: 139, 140
+  orig: 139, 140
   offset: 0, 0
   index: -1
