@@ -1,13 +1,13 @@
-<h1>AstroRush 2.0</h1>
+#AstroRush 2.0
 Platformowa gra przygodowa z elementami logiki.
 
 
 
-Instrukcja uruchomienia
+##Instrukcja uruchomienia
 
 
 
-Budowa aplikacji
+##Budowa aplikacji
 Wersja Javy: 1.8
 Wersja biblioteki libgdx:
 
@@ -18,7 +18,7 @@ http://overlap2d.com/data-api-creating-custom-runtime/
 
 
 
-<h2>Używane biblioteki</h2>
+##Używane biblioteki
 Lombok (https://projectlombok.org/) - pozwala dzieki adnotatacjom w latwy sposob generowac gettery, settery, dodawac loggery itp.
 Box2d () - biblioteka do symulacji fizyki 2D.
 
