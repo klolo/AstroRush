@@ -2,152 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ec722d8-dd8c-4052-95d3-6be1ae989e58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/cache.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/cache.properties.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileHashes.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileSnapshots.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/outputFileStates.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/taskArtifacts.bin" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/AstroRush2.0-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/alien_plant.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/b (kopia).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/block.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/blockerMad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/bonus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/bonus_used.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/bridge.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/bush.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/cloud_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/cloud_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/cloud_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/coin_bronze.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/coin_gold.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/coin_silver.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/crate.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/fence.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/fence_broken.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/fly_dead.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/fly_fly.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/fly_normal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/grass.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/ground.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/ground_cave.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/ground_dirt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/ground_rock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/ground_sand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/hill_long.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/hill_short.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/ico.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/key_blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/key_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/key_red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/key_yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/lava.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/lock_blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/lock_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/lock_red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/lock_yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/planes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/planes.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/plank.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/rock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/sheet.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/shroom.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/slime_dead.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/slime_normal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/slime_walk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/spikes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/switch_blue_off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/switch_blue_on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/switch_green_off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/switch_green_on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/switch_red_off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/switch_red_on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/switch_yellow_off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/switch_yellow_on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/gfx/water.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/assets/ico.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/game.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/alien_plant.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/b (kopia).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/block.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/blockerMad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/bonus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/bonus_used.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/bridge.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/bush.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/cloud_1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/cloud_2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/cloud_3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/coin_bronze.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/coin_gold.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/coin_silver.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/crate.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/fence.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/fence_broken.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/fly_dead.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/fly_fly.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/fly_normal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/grass.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/ground.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/ground_cave.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/ground_dirt.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/ground_rock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/ground_sand.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/hill_long.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/hill_short.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/ico.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/key_blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/key_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/key_red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/key_yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/lava.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/lock_blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/lock_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/lock_red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/lock_yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/planes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/planes.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/plank.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/rock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/sheet.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/shroom.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/slime_dead.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/slime_normal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/slime_walk.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/spikes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/switch_blue_off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/switch_blue_on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/switch_green_off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/switch_green_on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/switch_red_off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/switch_red_on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/switch_yellow_off.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/switch_yellow_on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/gfx/water.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/scene/h.scene" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/scene/lvl1.scene" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/textures.atlas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/assets/textures.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/modules/.metadata/assetsUIMetadata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/modules/.metadata/sceneMetadata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/modules/.sceneBackup/scene/h.scene.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/modules/.sceneBackup/scene/h.scene.firstSaveBak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/modules/.sceneBackup/scene/lvl1.scene.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/modules/.sceneBackup/scene/lvl1.scene.firstSaveBak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/modules/.textureCache/cache.atlas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/modules/.textureCache/cache.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/modules/version.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vis/project.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/adnotation/Dispose.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/adnotation/GameProperty.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/engine/GameEngine.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/engine/GameScreen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/engine/IGameLogic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/engine/PhysicsWorld.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/objects/GameObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/objects/PhysicsObject.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/observe/IKeyObserver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/observe/KeyObserve.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/overlapAdapter/OverlapSceneReader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/storage/PropertiesReader.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/classes/main/com/astro/core/storage/PropertyInjector.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/libs/core-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/resources/main/core.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/build/tmp/jar/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/classes/main/com/astro/game/GameLogic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/classes/main/com/astro/game/Launcher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/classes/main/com/astro/game/Player.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/libs/game-1.0-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/assets/ico.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/game.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/orig/pack.atlas" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/orig/pack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/orig/sprite_animations/enemyWalking_Pack/enemyWalking_Pack.atlas" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/orig/sprite_animations/enemyWalking_Pack/enemyWalking_Pack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/orig/sprite_animations/tileBlue_Pack/tileBlue_Pack.atlas" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/orig/sprite_animations/tileBlue_Pack/tileBlue_Pack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/project.dt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/scenes/MainScene.dt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/resources/main/scenes/map.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build/tmp/jar/MANIFEST.MF" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="AstroRush2.0.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -377,7 +265,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
               <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1900#1901#0" expanded="false" />
+                <element signature="e#1943#1944#0" expanded="false" />
+                <element signature="e#2016#2017#0" expanded="false" />
+                <element signature="e#2059#2060#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -387,7 +281,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -397,45 +293,28 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
               <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="42" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParticleObject.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ParticleObject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/ParticleObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+            <state relative-caret-position="378">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#419#420#0" expanded="true" />
-                <element signature="e#460#461#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="18">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -446,7 +325,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1296">
               <caret line="87" column="25" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#2429#2430#0" expanded="false" />
+                <element signature="e#2459#2460#0" expanded="false" />
+                <element signature="e#2999#3000#0" expanded="false" />
+                <element signature="e#3070#3071#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -457,9 +342,8 @@
             <state relative-caret-position="1314">
               <caret line="88" column="20" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="20" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2239#2240#0" expanded="true" />
-                <element signature="e#2311#2312#0" expanded="true" />
+                <element signature="e#1720#1721#0" expanded="false" />
+                <element signature="e#1751#1752#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -470,13 +354,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
               <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#331#332#0" expanded="true" />
-                <element signature="e#360#361#0" expanded="true" />
-                <element signature="e#477#478#0" expanded="true" />
-                <element signature="e#505#506#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -486,7 +364,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="738">
               <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#765#766#0" expanded="false" />
+                <element signature="e#792#793#0" expanded="false" />
+                <element signature="e#875#876#0" expanded="false" />
+                <element signature="e#905#906#0" expanded="false" />
+                <element signature="e#956#957#0" expanded="false" />
+                <element signature="e#986#987#0" expanded="false" />
+                <element signature="e#1630#1631#0" expanded="false" />
+                <element signature="e#1657#1658#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1145,8 +1033,8 @@
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/PhysicsObject.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/LabelObject.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/ParticleObject.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1210,6 +1098,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1789,7 +1705,7 @@
       <workItem from="1461778546025" duration="16483000" />
       <workItem from="1461859527515" duration="15688000" />
       <workItem from="1462001082576" duration="44894000" />
-      <workItem from="1462053841543" duration="61000" />
+      <workItem from="1462053841543" duration="752000" />
     </task>
     <task id="LOCAL-00001" summary="reading light from map">
       <created>1461794784915</created>
@@ -1826,11 +1742,53 @@
       <option name="project" value="LOCAL" />
       <updated>1462053748773</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="clean project">
+      <created>1462053917306</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1462053917306</updated>
+    </task>
+    <task id="LOCAL-00007" summary="git ignore">
+      <created>1462054044310</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1462054044310</updated>
+    </task>
+    <task id="LOCAL-00008" summary="readme">
+      <created>1462054460084</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1462054460084</updated>
+    </task>
+    <task id="LOCAL-00009" summary="readme">
+      <created>1462054483183</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1462054483183</updated>
+    </task>
+    <task id="LOCAL-00010" summary="readme">
+      <created>1462054517381</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1462054517381</updated>
+    </task>
+    <task id="LOCAL-00011" summary="readme">
+      <created>1462054545086</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1462054545086</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146369000" />
+    <option name="totallyTimeSpent" value="147060000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1852,24 +1810,24 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19535783" sideWeight="0.5042598" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19444445" sideWeight="0.49574015" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18796591" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12886049" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1373802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19246031" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19246031" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19245648" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19444445" sideWeight="0.49574015" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2521739" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1889,7 +1847,10 @@
     <MESSAGE value="render rotated object" />
     <MESSAGE value="loading particles" />
     <MESSAGE value="loading labels" />
-    <option name="LAST_COMMIT_MESSAGE" value="loading labels" />
+    <MESSAGE value="clean project" />
+    <MESSAGE value="git ignore" />
+    <MESSAGE value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2214,7 +2175,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2222,7 +2185,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1296">
           <caret line="87" column="25" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2429#2430#0" expanded="false" />
+            <element signature="e#2459#2460#0" expanded="false" />
+            <element signature="e#2999#3000#0" expanded="false" />
+            <element signature="e#3070#3071#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2230,7 +2199,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1900#1901#0" expanded="false" />
+            <element signature="e#1943#1944#0" expanded="false" />
+            <element signature="e#2016#2017#0" expanded="false" />
+            <element signature="e#2059#2060#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2239,9 +2214,8 @@
         <state relative-caret-position="1314">
           <caret line="88" column="20" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2239#2240#0" expanded="true" />
-            <element signature="e#2311#2312#0" expanded="true" />
+            <element signature="e#1720#1721#0" expanded="false" />
+            <element signature="e#1751#1752#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2250,9 +2224,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="42" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2260,7 +2232,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="58" column="43" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#765#766#0" expanded="false" />
+            <element signature="e#792#793#0" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#905#906#0" expanded="false" />
+            <element signature="e#956#957#0" expanded="false" />
+            <element signature="e#986#987#0" expanded="false" />
+            <element signature="e#1630#1631#0" expanded="false" />
+            <element signature="e#1657#1658#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2268,33 +2250,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-            <element signature="e#477#478#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/ParticleObject.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <first_editor relative-caret-position="450">
+            <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
@@ -2307,11 +2279,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/ParticleObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="378">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

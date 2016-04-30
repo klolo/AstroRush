@@ -21,8 +21,8 @@ runtime: http://overlap2d.com/data-api-creating-custom-runtime/
 
 
 ##TODO
--[ ] ..
--[ ] ..
+- [ ] ..
+- [ ] ..
 
 
 CREDITS:
