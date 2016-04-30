@@ -1,5 +1,5 @@
-#AstroRush 2.0
 ![ikona](https://github.com/klolo/AstroRush/blob/master/game%2Fsrc%2Fmain%2Fresources%2Fassets%2Fico.png "")
+#AstroRush 2.0
 
 Platformowa gra przygodowa z elementami logiki napisana w Javie 8.
 
