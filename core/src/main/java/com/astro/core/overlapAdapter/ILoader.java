@@ -5,8 +5,17 @@ package com.astro.core.overlapAdapter;
  */
 
 import com.astro.core.objects.interfaces.IGameObject;
+import com.uwsoft.editor.renderer.resources.ResourceManager;
 
 public interface ILoader<T> {
 
+    /**
+     * It will load effects by name.
+     */
+    ResourceManager resourceManager = new ResourceManager();
+
+    /**
+     * Register method for implementation.
+     */
     IGameObject register(T t);
 }

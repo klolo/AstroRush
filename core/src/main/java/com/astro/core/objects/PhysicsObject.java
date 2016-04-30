@@ -49,6 +49,17 @@ public class PhysicsObject extends GameObject implements IGameObject {
         fixtureDef.shape.dispose();
     }
 
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected void render(OrthographicCamera cam, float delta) {
+        getSprite().setPosition(body.getPosition().x, body.getPosition().y);
+        getSprite().setRotation((float) Math.toDegrees(body.getAngle()));
+        super.draw();
+    }
+
     protected BodyDef getBodyDefinition() {
         return null;
     }
@@ -66,15 +77,5 @@ public class PhysicsObject extends GameObject implements IGameObject {
                 getSprite().getY() / PhysicsWorld.instance.getPIXEL_PER_METER());
         return bodyDef;
     }
-
-    /**
-     * Rendering Box2d object with texture.
-     */
-    public void render(OrthographicCamera cam, float delta) {
-        getSprite().setPosition(body.getPosition().x, body.getPosition().y);
-        getSprite().setRotation((float) Math.toDegrees(body.getAngle()));
-        super.render(cam, delta);
-    }
-
 
 }

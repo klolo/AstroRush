@@ -81,9 +81,9 @@ public class GameScreen implements Screen {
      */
     @Override
     public void render(float delta) {
-        mapElements.forEach(e -> e.render(camera,delta));
-
-        player.render(camera,delta);
+        PhysicsWorld.instance.getRayHandler().updateAndRender();
+        mapElements.forEach(e -> e.show(camera,delta));
+        player.show(camera,delta);
 
         if (DEBUG_DRAW) {
             renderer.render(
@@ -91,8 +91,6 @@ public class GameScreen implements Screen {
                     camera.combined.scl(PhysicsWorld.instance.getPIXEL_PER_METER())
             );
         }
-
-        PhysicsWorld.instance.getRayHandler().updateAndRender();
     }
 
 

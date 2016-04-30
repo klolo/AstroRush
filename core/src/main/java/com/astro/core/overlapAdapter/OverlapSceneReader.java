@@ -48,7 +48,7 @@ public class OverlapSceneReader {
     }
 
     /**
-     * Generic method for reading diffrent kind of elements.
+     * Generic method for reading different kind of elements.
      */
     <T> IGameObject register(ILoader<T> loader, T element) {
         return loader.register(element);
@@ -61,6 +61,7 @@ public class OverlapSceneReader {
         return registerImages(rootComposite.sImages, parentX, parentY, rotation)
                 .registerLights(rootComposite)
                 .registerEffects(rootComposite)
+                .registerLabels(rootComposite)
                 .loadOtherComposites(rootComposite);
     }
 
@@ -84,10 +85,7 @@ public class OverlapSceneReader {
      */
     public OverlapSceneReader registerEffects(CompositeVO rootComposite) {
         rootComposite.sParticleEffects.stream()
-                .forEach(
-                        e ->
-                                components.add(register(new ParticleEffectsLoader(), e))
-                );
+                .forEach(e -> components.add(register(new ParticleEffectsLoader(), e)));
 
         return this;
     }
@@ -97,9 +95,20 @@ public class OverlapSceneReader {
      * Register lights.
      */
     public OverlapSceneReader registerLights(CompositeVO rootComposite) {
-        rootComposite.sLights.forEach(e -> register(new LightsLoader(), e));
+        rootComposite.sLights.stream()
+                .forEach(e -> register(new LightsLoader(), e));
         return this;
     }
+
+
+    /**
+     * Register lights.
+     */
+    public OverlapSceneReader registerLabels(CompositeVO rootComposite) {
+        rootComposite.sLabels.forEach(e -> components.add(register(new LabelsLoader(), e)));
+        return this;
+    }
+
 
     /**
      * Loading composistes.

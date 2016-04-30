@@ -7,6 +7,7 @@ import com.astro.core.observe.IKeyObserver;
 import com.astro.core.observe.KeyObserve;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
@@ -79,7 +80,7 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
     @Override
     public void dispose() {
         super.dispose();
-        texture.dispose();
+      //  texture.dispose();
     }
 
     @Override

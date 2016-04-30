@@ -4,10 +4,7 @@ import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.objects.ParticleObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
-import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.math.collision.BoundingBox;
 import com.uwsoft.editor.renderer.data.ParticleEffectVO;
-import com.uwsoft.editor.renderer.resources.ResourceManager;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,10 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
 
-    /**
-     * It will load effects by name.
-     */
-    private ResourceManager resourceManager = new ResourceManager();
 
     public ParticleEffectsLoader() {
         resourceManager.initAllResources();
@@ -56,6 +49,7 @@ public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
         float pY = particleEffectVO.y * PPM - (particleEffectVO.particleHeight * particleEffectVO.scaleY / 2);
 
         effect.setPosition(pX, pY);
+        result.getSprite().setColor(particleEffectVO.tint[0], particleEffectVO.tint[1], particleEffectVO.tint[2], particleEffectVO.tint[3]);
         result.setEffect(effect);
         return result;
     }

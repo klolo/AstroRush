@@ -14,6 +14,6 @@ public interface IPlayer {
 
     void dispose();
 
-    void render(OrthographicCamera cam, float diff);
+    void show(OrthographicCamera cam, float diff);
 
 }

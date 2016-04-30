@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
  */
 public interface IGameObject {
 
-    void render(OrthographicCamera cam, float delta);
+    void show(OrthographicCamera cam, float delta);
 
     Sprite getSprite();
 

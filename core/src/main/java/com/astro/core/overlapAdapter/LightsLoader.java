@@ -10,8 +10,10 @@ import com.uwsoft.editor.renderer.data.LightVO;
 
 import java.util.ArrayList;
 
+import box2dLight.ConeLight;
 import box2dLight.Light;
 import box2dLight.PointLight;
+import box2dLight.RayHandler;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -52,21 +54,43 @@ public class LightsLoader implements ILoader<LightVO> {
      */
     public IGameObject register(LightVO light) {
         log.info("[register light] name: {}", light.itemName);
-        PointLight pointLight = new PointLight(
-                PhysicsWorld.instance.getRayHandler(),
-                light.rays,
-                new Color(
-                        light.tint[0],
-                        light.tint[1],
-                        light.tint[2],
-                        light.tint[3]),
-                light.distance * PIXEL_PER_METER / 2,
-                light.x * PIXEL_PER_METER - (light.scaleX / 2),
-                light.y * PIXEL_PER_METER - (light.scaleY / 2)
-        );
-        pointLight.setSoftnessLength(light.softnessLength * 10);
-        pointLight.setSoft(true);
-        lights.add(pointLight);
-        return null;
+        Light resultLight;
+
+        if (light.type == LightVO.LightType.POINT) {
+            resultLight = new PointLight(
+                    PhysicsWorld.instance.getRayHandler(),
+                    light.rays * 10,
+                    new Color(
+                            light.tint[0],
+                            light.tint[1],
+                            light.tint[2],
+                            .5f),
+                    light.distance * PIXEL_PER_METER,
+                    light.x * PIXEL_PER_METER - (light.scaleX / 2),
+                    light.y * PIXEL_PER_METER - (light.scaleY / 2)
+            );
+        }
+        else{
+            resultLight = new ConeLight(
+                    PhysicsWorld.instance.getRayHandler(),
+                    light.rays * 10,
+                    new Color(
+                            light.tint[0],
+                            light.tint[1],
+                            light.tint[2],
+                            .5f),
+                    light.distance * PIXEL_PER_METER,
+                    light.x * PIXEL_PER_METER - (light.scaleX / 2),
+                    light.y * PIXEL_PER_METER - (light.scaleY / 2),
+                    light.directionDegree,
+                    light.coneDegree
+            );
+        }
+
+        resultLight.setSoftnessLength(light.softnessLength);
+        resultLight.setXray(light.isXRay);
+        resultLight.setStaticLight(light.isStatic);
+        lights.add(resultLight);
+        return  null;
     }
 }

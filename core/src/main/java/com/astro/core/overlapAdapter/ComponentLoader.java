@@ -2,8 +2,10 @@ package com.astro.core.overlapAdapter;
 
 import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.objects.GameObject;
+import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.PhysicsObject;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -23,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
  * Class read and convert sImages array from json file.
  */
 @Slf4j
-public class ComponentLoader implements  ILoader<SimpleImageVO> {
+public class ComponentLoader implements ILoader<SimpleImageVO> {
 
     /**
      * Pixel per meter.
@@ -47,12 +49,6 @@ public class ComponentLoader implements  ILoader<SimpleImageVO> {
      */
     @Setter
     private float parentRotate = 0.0f;
-
-
-    /**
-     * It will load textures from atlas file by name.
-     */
-    private ResourceManager resourceManager = new ResourceManager();
 
     /**
      *
@@ -91,7 +87,7 @@ public class ComponentLoader implements  ILoader<SimpleImageVO> {
             ((PhysicsObject) result).setBody(body);
         }
         else {
-            result = new GameObject(textureRegion);
+            result = new TextureObject(textureRegion);
         }
 
         result.setName(imageVO.imageName);
@@ -110,7 +106,8 @@ public class ComponentLoader implements  ILoader<SimpleImageVO> {
                 imageVO.scaleY
         );
 
-        result.getSprite().rotate(imageVO.rotation + parentRotate);
+        result.getSprite().setColor(imageVO.tint[0], imageVO.tint[1], imageVO.tint[2], imageVO.tint[3]);
+        result.getSprite().setRotation(imageVO.rotation + parentRotate);
         return result;
     }
 
