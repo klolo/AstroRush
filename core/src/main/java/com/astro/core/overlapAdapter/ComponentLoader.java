@@ -97,7 +97,7 @@ public class ComponentLoader {
 
         float w = textureRegion.getRegionWidth();
         float h = textureRegion.getRegionHeight();
-        IGameObject result = null;
+        IGameObject result;
 
         if (imageVO.physics != null) {
             log.info("create physics");
@@ -121,7 +121,7 @@ public class ComponentLoader {
         }
 
         log.info("create body");
-
+        result.setName( imageVO.imageName );
 
         result.getSprite().setBounds(
                 imageVO.x,

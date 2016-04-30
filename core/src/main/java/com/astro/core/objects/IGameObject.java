@@ -11,4 +11,6 @@ public interface IGameObject {
     void render(OrthographicCamera cam);
 
     Sprite getSprite();
+
+    void setName(String name);
 }

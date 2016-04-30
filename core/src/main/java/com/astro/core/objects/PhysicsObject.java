@@ -1,6 +1,7 @@
 package com.astro.core.objects;
 
 import com.astro.core.engine.PhysicsWorld;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -65,17 +66,14 @@ public class PhysicsObject extends GameObject implements IGameObject {
         return bodyDef;
     }
 
-    public void render() {
-        if(body.getType()== BodyDef.BodyType.DynamicBody) {
-            renderDynamic();
-        }
-        else {
-            super.render();
-        }
+    /**
+     * Rendering Box2d object with texture.
+     */
+    public void render(OrthographicCamera cam) {
+        getSprite().setPosition(body.getPosition().x, body.getPosition().y);
+        getSprite().setRotation((float) Math.toDegrees(body.getAngle()));
+        super.render(cam);
     }
 
-    public void renderDynamic() {
-        super.draw(body.getPosition().x,body.getPosition().y);
-    }
 
 }
