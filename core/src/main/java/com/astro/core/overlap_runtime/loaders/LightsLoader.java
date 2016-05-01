@@ -1,6 +1,7 @@
-package com.astro.core.overlapAdapter;
+package com.astro.core.overlap_runtime.loaders;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.engine.LayerManager;
 import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.storage.PropertyInjector;
@@ -13,7 +14,6 @@ import java.util.ArrayList;
 import box2dLight.ConeLight;
 import box2dLight.Light;
 import box2dLight.PointLight;
-import box2dLight.RayHandler;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -91,6 +91,7 @@ public class LightsLoader implements ILoader<LightVO> {
         resultLight.setXray(light.isXRay);
         resultLight.setStaticLight(light.isStatic);
         lights.add(resultLight);
+        LayerManager.instance.addLayer(light.layerName);
         return  null;
     }
 }

@@ -1,11 +1,11 @@
-package com.astro.core.overlapAdapter;
+package com.astro.core.overlap_runtime.loaders;
 
+import com.astro.core.engine.LayerManager;
 import com.astro.core.engine.PhysicsWorld;
-import com.astro.core.objects.GameObject;
+import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
-import com.astro.core.objects.PhysicsObject;
-import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.astro.core.overlap_runtime.converters.SimpleImageVOToIGameObjectConverter;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -13,7 +13,6 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.uwsoft.editor.renderer.data.SimpleImageVO;
-import com.uwsoft.editor.renderer.resources.ResourceManager;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -63,8 +62,8 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
      * @param imageVO
      */
     public IGameObject register(SimpleImageVO imageVO) {
-        log.info("[register component]. ImageName: {}, Identifier: {}, Position: {} {}, Origin: {} {}",
-                imageVO.imageName, imageVO.itemIdentifier, imageVO.x, imageVO.y, imageVO.originX, imageVO.originY);
+        log.info("[register component]. ImageName: {}, Identifier: {}, Position: {} {}, Origin: {} {}, Layer: {}",
+                imageVO.imageName, imageVO.itemIdentifier, imageVO.x, imageVO.y, imageVO.originX, imageVO.originY, imageVO.layerName);
         TextureRegion textureRegion = resourceManager.getTextureRegion(imageVO.imageName);
 
         float w = textureRegion.getRegionWidth();
@@ -90,27 +89,18 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
             result = new TextureObject(textureRegion);
         }
 
-        result.setName(imageVO.imageName);
+        result = new SimpleImageVOToIGameObjectConverter().convert(imageVO, result);
         result.getSprite().setBounds(
                 imageVO.x + parentX,
                 imageVO.y + parentY,
                 textureRegion.getRegionWidth(),
                 textureRegion.getRegionHeight()
         );
-        result.getSprite().setOrigin(
-                imageVO.originX,
-                imageVO.originY
-        );
-        result.getSprite().setScale(
-                imageVO.scaleX,
-                imageVO.scaleY
-        );
 
-        result.getSprite().setColor(imageVO.tint[0], imageVO.tint[1], imageVO.tint[2], imageVO.tint[3]);
         result.getSprite().setRotation(imageVO.rotation + parentRotate);
+        LayerManager.instance.addLayer(imageVO.layerName);
         return result;
     }
-
 
     /**
      *
@@ -141,8 +131,8 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
     private PolygonShape getPolygonShape(Vector2[] vertices, SimpleImageVO image, float w, float h) {
         PolygonShape shape = new PolygonShape();
         for (Vector2 it : vertices) {
-            it.x = (it.x + parentX - (w / PPM / 2)) * image.scaleX;
-            it.y = (it.y + parentY - (h / PPM / 2)) * image.scaleY;
+            it.x = (it.x  - (w / PPM / 2)) * image.scaleX;
+            it.y = (it.y  - (h / PPM / 2)) * image.scaleY;
         }
 
         shape.set(vertices);
@@ -162,6 +152,4 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
 
         return fixtureDef;
     }
-
-
 }

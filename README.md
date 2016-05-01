@@ -4,14 +4,15 @@
 Platformowa gra przygodowa z elementami logiki napisana w Javie 8.
 
 ##Instrukcja uruchomienia
-
+1. Projekt importujemu do IntelliJ
+2. Podczas importu zostanie wykryty projekt Gradle, należy włączyć tą naturę.
+3. Zbudowanie i uruchomienie aplikacji odbywa się za pomocą tasku w oknie gradle: game->other->run
 
 
 ##Budowa aplikacji
 Gra korzysta z map wygenerowanych za pomocą edytora Overlap2D,
 oraz własnego runtime dla tych map. Dokumentacja dotycząca tworzenia takiego
 runtime: http://overlap2d.com/data-api-creating-custom-runtime/
-
 
 
 ##Używane biblioteki
@@ -21,9 +22,13 @@ runtime: http://overlap2d.com/data-api-creating-custom-runtime/
 
 
 ##TODO
-- [ ] ..
-- [ ] ..
+- [ ] Skonfigurować checkstyle i formatter..
+- [ ] Zrobić diagram klas
+- [ ] Odkładanie logów do pliku
+- [ ] Draft fabuły
+- [ ] Dokończenie runtime dla Overlap2D
+- [ ] Przygotowac task gradle do zbudwania standalone jar.
 
 
-CREDITS:
+## CREDITS:
 Graphics: www.kenney.nl

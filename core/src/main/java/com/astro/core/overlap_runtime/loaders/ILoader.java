@@ -1,4 +1,4 @@
-package com.astro.core.overlapAdapter;
+package com.astro.core.overlap_runtime.loaders;
 
 /**
  * Represent a loader from json map.

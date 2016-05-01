@@ -180,7 +180,7 @@
             {
               "uniqueId": 21,
               "tags": [],
-              "x": 0.08749986,
+              "x": -0.3,
               "y": 1.5625,
               "originX": 0.86875,
               "originY": 0.875,
@@ -239,7 +239,7 @@
         "originX": 0.775,
         "originY": 0.6,
         "zIndex": 2,
-        "layerName": "Default",
+        "layerName": "layer1",
         "animationName": "sheep",
         "currentAnimation": "full",
         "frameRangeMap": [

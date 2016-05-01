@@ -34,13 +34,15 @@ public class LabelObject extends GameObject {
 
     @Override
     public void render(OrthographicCamera cam, float delta) {
+        batch.setProjectionMatrix(cam.projection);
         batch.setShader(fontShader);
-        float width = Gdx.graphics.getWidth();
-        float height = Gdx.graphics.getHeight();
+
         font.draw(batch, text,
-                sprite.getX() * PhysicsWorld.instance.getPIXEL_PER_METER() + width/2,
-                sprite.getY() * PhysicsWorld.instance.getPIXEL_PER_METER() + height/2);
+                sprite.getX()*PhysicsWorld.instance.getPIXEL_PER_METER(),
+                sprite.getY()*PhysicsWorld.instance.getPIXEL_PER_METER());
+
         batch.setShader(null);
+        batch.setProjectionMatrix(cam.combined);
     }
 
 }

@@ -1,6 +1,7 @@
-package com.astro.core.overlapAdapter;
+package com.astro.core.overlap_runtime;
 
 import com.astro.core.objects.interfaces.IGameObject;
+import com.astro.core.overlap_runtime.loaders.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.Json;
@@ -50,7 +51,7 @@ public class OverlapSceneReader {
     /**
      * Generic method for reading different kind of elements.
      */
-    <T> IGameObject register(ILoader<T> loader, T element) {
+    private <T> IGameObject register(ILoader<T> loader, T element) {
         return loader.register(element);
     }
 
@@ -62,13 +63,19 @@ public class OverlapSceneReader {
                 .registerLights(rootComposite)
                 .registerEffects(rootComposite)
                 .registerLabels(rootComposite)
+                .registerAnimations(rootComposite)
+                .registerImage9patchs(rootComposite)
+                .registerTextBoxVO(rootComposite)
+                .registerSelectBoxVO(rootComposite)
+                .registerSpineVO(rootComposite)
+                .registerSpriterVO(rootComposite)
                 .loadOtherComposites(rootComposite);
     }
 
     /**
      * Registration object in Box2D world and return list for rendering suppose.
      */
-    public OverlapSceneReader registerImages(ArrayList<SimpleImageVO> sImages, float offsetX, float offsetY, float rotation) {
+    private OverlapSceneReader registerImages(ArrayList<SimpleImageVO> sImages, float offsetX, float offsetY, float rotation) {
         ComponentLoader registerComponent = new ComponentLoader();
         registerComponent.setParentX(offsetX);
         registerComponent.setParentY(offsetY);
@@ -83,7 +90,7 @@ public class OverlapSceneReader {
     /**
      * Register effects.
      */
-    public OverlapSceneReader registerEffects(CompositeVO rootComposite) {
+    private OverlapSceneReader registerEffects(CompositeVO rootComposite) {
         rootComposite.sParticleEffects.stream()
                 .forEach(e -> components.add(register(new ParticleEffectsLoader(), e)));
 
@@ -94,7 +101,7 @@ public class OverlapSceneReader {
     /**
      * Register lights.
      */
-    public OverlapSceneReader registerLights(CompositeVO rootComposite) {
+    private OverlapSceneReader registerLights(CompositeVO rootComposite) {
         rootComposite.sLights.stream()
                 .forEach(e -> register(new LightsLoader(), e));
         return this;
@@ -104,11 +111,69 @@ public class OverlapSceneReader {
     /**
      * Register lights.
      */
-    public OverlapSceneReader registerLabels(CompositeVO rootComposite) {
+    private OverlapSceneReader registerLabels(CompositeVO rootComposite) {
         rootComposite.sLabels.forEach(e -> components.add(register(new LabelsLoader(), e)));
         return this;
     }
 
+
+    /**
+     * Register animations.
+     */
+    private OverlapSceneReader registerAnimations(CompositeVO rootComposite) {
+        rootComposite.sSpriteAnimations.forEach(e -> components.add(register(new SpriteAnimationsLoader(), e)));
+        return this;
+    }
+
+    /**
+     * Register Image9patchs.
+     */
+    private OverlapSceneReader registerImage9patchs(CompositeVO rootComposite) {
+        if( rootComposite.sImage9patchs.size()>0) {
+            log.error("Nie obslugiwany komponent");
+        }
+        return this;
+    }
+
+    /**
+     * Register TextBoxVO.
+     */
+    private OverlapSceneReader registerTextBoxVO(CompositeVO rootComposite) {
+        if( rootComposite.sTextBox.size()>0) {
+            log.error("Nie obslugiwany komponent");
+        }
+        return this;
+    }
+
+    /**
+     * Register SelectBoxVO.
+     */
+    private OverlapSceneReader registerSelectBoxVO(CompositeVO rootComposite) {
+        if( rootComposite.sSelectBoxes.size()>0) {
+            log.error("Nie obslugiwany komponent");
+        }
+        return this;
+    }
+
+    /**
+     * Register SpineVO.
+     */
+    private OverlapSceneReader registerSpineVO(CompositeVO rootComposite) {
+        if( rootComposite.sSpineAnimations.size()>0) {
+            log.error("Nie obslugiwany komponent");
+        }
+        return this;
+    }
+
+    /**
+     * Register SpriterVO.
+     */
+    private OverlapSceneReader registerSpriterVO(CompositeVO rootComposite) {
+        if( rootComposite.sSpriterAnimations.size()>0) {
+            log.error("Nie obslugiwany komponent");
+        }
+        return this;
+    }
 
     /**
      * Loading composistes.

@@ -44,6 +44,10 @@ abstract public class GameObject implements IGameObject {
     @Getter
     protected Sprite sprite;
 
+    @Getter
+    @Setter
+    protected String layerID = "Default";
+
     /**
      * Default constructor.
      */
@@ -89,7 +93,7 @@ abstract public class GameObject implements IGameObject {
     public void show(OrthographicCamera cam, float delta) {
         batch.setProjectionMatrix(cam.combined);
         batch.begin();
-;
+
         batch.setColor(sprite.getColor());
 
         render(cam, delta); // implemented in concreted class.
@@ -110,8 +114,8 @@ abstract public class GameObject implements IGameObject {
      */
     private void draw(float x, float y, float rotate) {
         float PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
-        float pX = x * PPM - (sprite.getWidth() * sprite.getScaleX() / 2);
-        float pY = y * PPM - (sprite.getHeight() * sprite.getScaleY() / 2);
+        float pX = (x) * PPM - (sprite.getWidth() * sprite.getScaleX() / 2);
+        float pY = (y) * PPM - (sprite.getHeight() * sprite.getScaleY() / 2);
 
         if (rotate == 0) {
             batch.draw(textureRegion,
@@ -120,8 +124,7 @@ abstract public class GameObject implements IGameObject {
                     sprite.getWidth() * sprite.getScaleX(),
                     sprite.getHeight() * sprite.getScaleY()
             );
-        }
-        else {
+        } else {
             /**
              * Podczas rotacji obiekty box2d nie pokrywaja sie z tekxturami,
              * poniewaz box2d wykonuje obrot dookola srodka ciezkosci a libgdx dookola

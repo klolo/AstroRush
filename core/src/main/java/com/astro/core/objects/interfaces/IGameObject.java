@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
 /**
- * Created by kamil on 26.04.16.
+ * Represents a game object interface.
  */
 public interface IGameObject {
 
@@ -13,4 +13,8 @@ public interface IGameObject {
     Sprite getSprite();
 
     void setName(String name);
+
+    void setLayerID(String layerName);
+
+    String getLayerID();
 }

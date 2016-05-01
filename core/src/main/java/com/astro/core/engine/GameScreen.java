@@ -3,7 +3,7 @@ package com.astro.core.engine;
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.IPlayer;
-import com.astro.core.overlapAdapter.OverlapSceneReader;
+import com.astro.core.overlap_runtime.OverlapSceneReader;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -43,8 +43,9 @@ public class GameScreen implements Screen {
     private float width;
 
     private float height;
+
     /**
-     *
+     * TODO: show splash screen.
      */
     public GameScreen() {
         new PropertyInjector(this);
@@ -56,13 +57,13 @@ public class GameScreen implements Screen {
                 .loadScene();
 
         mapElements = (ArrayList<IGameObject>) sceneReader.getComponents();
+        mapElements = LayerManager.instance.sortObjectsByLayer(mapElements);
 
-        log.info("end");
+        log.info("end loading game");
     }
 
     /**
-     * Constructs a new OrthographicCamera, using the given viewport width and height
-     * Height is multiplied by aspect ratio.
+     * Constructs a new OrthographicCamera, using the given viewport width and height Height is multiplied by aspect ratio.
      */
     private void initCamera() {
         camera = new OrthographicCamera();
@@ -77,13 +78,12 @@ public class GameScreen implements Screen {
 
     /**
      * Update and render game.
-     * @param delta
      */
     @Override
     public void render(float delta) {
         PhysicsWorld.instance.getRayHandler().updateAndRender();
-        mapElements.forEach(e -> e.show(camera,delta));
-        player.show(camera,delta);
+        mapElements.forEach(e -> e.show(camera, delta));
+        player.show(camera, delta);
 
         if (DEBUG_DRAW) {
             renderer.render(
@@ -103,7 +103,7 @@ public class GameScreen implements Screen {
     private void updateCemera() {
         Vector3 position = camera.position;
         position.x = player.getPositionX() * PhysicsWorld.instance.getPIXEL_PER_METER();
-        position.y = player.getPositionY() * PhysicsWorld.instance.getPIXEL_PER_METER()*PLAYER_X_POSITION;
+        position.y = player.getPositionY() * PhysicsWorld.instance.getPIXEL_PER_METER() * PLAYER_X_POSITION;
         camera.position.set(position);
         camera.update();
         PhysicsWorld.instance.getRayHandler().setCombinedMatrix(camera);
