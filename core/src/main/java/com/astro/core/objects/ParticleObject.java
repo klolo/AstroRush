@@ -11,13 +11,13 @@ import lombok.extern.slf4j.Slf4j;
  * Created by kamil on 30.04.16.
  */
 @Slf4j
-public class ParticleObject extends GameObject {
+public class ParticleObject extends TextureObject {
 
     @Setter
     protected ParticleEffect effect;
 
     @Override
-    public void render(OrthographicCamera cam, float delta) {
+    protected void render(OrthographicCamera cam, float delta) {
         effect.setPosition(
                 sprite.getX() * PhysicsWorld.instance.getPIXEL_PER_METER(),
                 sprite.getY() * PhysicsWorld.instance.getPIXEL_PER_METER()

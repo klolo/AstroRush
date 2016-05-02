@@ -5,6 +5,8 @@ import com.astro.core.objects.interfaces.IGameObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +31,11 @@ public enum LayerManager {
         }
     }
 
-
+    /**
+     *
+     * @param gameObjects
+     * @return
+     */
     public ArrayList<IGameObject> sortObjectsByLayer(ArrayList<IGameObject> gameObjects) {
         HashMap<String, LinkedList<IGameObject>> sortedObjectMap = new HashMap<>();
         layers.forEach(layer -> sortedObjectMap.put(layer, new LinkedList<>()));
@@ -42,5 +48,14 @@ public enum LayerManager {
         return sortedObjects;
     }
 
+    /**
+     *
+     * @param gameObjects
+     * @return
+     */
+    public ArrayList<IGameObject> getObjectsWithLogic(ArrayList<IGameObject> gameObjects) {
+        List<IGameObject> result = gameObjects.stream().filter(e->e.hasLogic()).collect(Collectors.toList());
+        return new ArrayList<>(result);
+    }
 
 }

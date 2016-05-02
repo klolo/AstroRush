@@ -14,7 +14,14 @@ import lombok.extern.slf4j.Slf4j;
  * Created by kamil on 30.04.16.
  */
 @Slf4j
-public class LabelObject extends GameObject {
+public class LabelObject extends TextureObject {
+
+    /**
+     * Text is relative to screen or world?
+     */
+    @Setter
+    private boolean screenPositionRelative = false;
+
 
     @Getter
     private BitmapFont font;
@@ -33,8 +40,13 @@ public class LabelObject extends GameObject {
     }
 
     @Override
-    public void render(OrthographicCamera cam, float delta) {
-        batch.setProjectionMatrix(cam.projection);
+    protected void render(OrthographicCamera cam, float delta) {
+        if(screenPositionRelative) {
+            batch.setProjectionMatrix(cam.projection);
+        }
+        else {
+            batch.setProjectionMatrix(cam.combined);
+        }
         batch.setShader(fontShader);
 
         font.draw(batch, text,

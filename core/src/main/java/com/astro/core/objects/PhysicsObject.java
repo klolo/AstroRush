@@ -16,7 +16,7 @@ import lombok.Setter;
 /**
  * Created by kamil on 26.04.16.
  */
-public class PhysicsObject extends GameObject implements IGameObject {
+public class PhysicsObject extends TextureObject implements IGameObject {
 
     @Getter
     @Setter

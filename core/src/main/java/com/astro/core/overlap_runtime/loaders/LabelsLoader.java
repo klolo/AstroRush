@@ -31,6 +31,6 @@ public class LabelsLoader implements ILoader<LabelVO> {
         result.setText(labelVO.text);
         LayerManager.instance.addLayer(labelVO.layerName);
 
-        return new LabelVOToIGameObjectConverter().convert(labelVO,result);
+        return new LabelVOToIGameObjectConverter().convert(labelVO, result);
     }
 }

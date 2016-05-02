@@ -10,7 +10,7 @@ package com.astro.core.objects;
 /**
  * Created by kamil on 01.05.16.
  */
-public class AnimationObject extends GameObject {
+public class AnimationObject extends TextureObject {
 
     @Getter
     @Setter

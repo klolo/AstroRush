@@ -17,4 +17,6 @@ public interface IGameObject {
     void setLayerID(String layerName);
 
     String getLayerID();
+
+    boolean hasLogic();
 }
