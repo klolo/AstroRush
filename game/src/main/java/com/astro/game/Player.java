@@ -24,9 +24,11 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
     public Player() {
         super(new Texture("assets/ico.png"));
         this.getSprite().setSize(50.0f, 50.0f);
+        this.getSprite().setOrigin(0.0f,0.0f);
         super.init();
 
         KeyObserve.instance.register(this);
+
     }
 
     /**
@@ -56,7 +58,7 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
     @Override
     protected BodyDef getBodyDefinition() {
         BodyDef def = super.getDefaultBodyDefinition();
-        def.fixedRotation = true;
+        def.fixedRotation = true;def.position.y =10;
         return def;
     }
 

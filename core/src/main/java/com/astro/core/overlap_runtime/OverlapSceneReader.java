@@ -44,7 +44,7 @@ public class OverlapSceneReader {
         FileHandle file = Gdx.files.internal(scenePath);
 
         CompositeVO rootComposite = new Json().fromJson(SceneVO.class, file.readString()).composite;
-        loadComposite(rootComposite, 0.0f, 0.0f, 0.0f);
+        loadComposite(rootComposite);
         return this;
     }
 
@@ -58,8 +58,8 @@ public class OverlapSceneReader {
     /**
      * Converting all elements in json map file.
      */
-    private OverlapSceneReader loadComposite(CompositeVO rootComposite, float parentX, float parentY, float rotation) {
-        return registerImages(rootComposite.sImages, parentX, parentY, rotation)
+    private OverlapSceneReader loadComposite(CompositeVO rootComposite) {
+        return registerImages(rootComposite.sImages)
                 .registerLights(rootComposite)
                 .registerEffects(rootComposite)
                 .registerLabels(rootComposite)
@@ -73,13 +73,25 @@ public class OverlapSceneReader {
     }
 
     /**
+     * Converting all elements in json map file.
+     */
+    private OverlapSceneReader loadComposite(CompositeVO rootComposite, float originX, float originY, float parentX, float parentY, float rotate) {
+        rootComposite.sImages.forEach(e -> {
+            e.x += parentX;
+            e.y += parentY;
+            e.originX += originX;
+            e.originY += originY;
+            e.rotation += rotate;
+        });
+
+        return loadComposite(rootComposite);
+    }
+
+    /**
      * Registration object in Box2D world and return list for rendering suppose.
      */
-    private OverlapSceneReader registerImages(ArrayList<SimpleImageVO> sImages, float offsetX, float offsetY, float rotation) {
+    private OverlapSceneReader registerImages(ArrayList<SimpleImageVO> sImages) {
         ComponentLoader registerComponent = new ComponentLoader();
-        registerComponent.setParentX(offsetX);
-        registerComponent.setParentY(offsetY);
-        registerComponent.setParentRotate(rotation);
 
         components.addAll(sImages.stream()
                 .map(registerComponent::register)
@@ -129,7 +141,7 @@ public class OverlapSceneReader {
      * Register Image9patchs.
      */
     private OverlapSceneReader registerImage9patchs(CompositeVO rootComposite) {
-        if( rootComposite.sImage9patchs.size()>0) {
+        if (rootComposite.sImage9patchs.size() > 0) {
             log.error("Nie obslugiwany komponent");
         }
         return this;
@@ -139,7 +151,7 @@ public class OverlapSceneReader {
      * Register TextBoxVO.
      */
     private OverlapSceneReader registerTextBoxVO(CompositeVO rootComposite) {
-        if( rootComposite.sTextBox.size()>0) {
+        if (rootComposite.sTextBox.size() > 0) {
             log.error("Nie obslugiwany komponent");
         }
         return this;
@@ -149,7 +161,7 @@ public class OverlapSceneReader {
      * Register SelectBoxVO.
      */
     private OverlapSceneReader registerSelectBoxVO(CompositeVO rootComposite) {
-        if( rootComposite.sSelectBoxes.size()>0) {
+        if (rootComposite.sSelectBoxes.size() > 0) {
             log.error("Nie obslugiwany komponent");
         }
         return this;
@@ -159,7 +171,7 @@ public class OverlapSceneReader {
      * Register SpineVO.
      */
     private OverlapSceneReader registerSpineVO(CompositeVO rootComposite) {
-        if( rootComposite.sSpineAnimations.size()>0) {
+        if (rootComposite.sSpineAnimations.size() > 0) {
             log.error("Nie obslugiwany komponent");
         }
         return this;
@@ -169,7 +181,7 @@ public class OverlapSceneReader {
      * Register SpriterVO.
      */
     private OverlapSceneReader registerSpriterVO(CompositeVO rootComposite) {
-        if( rootComposite.sSpriterAnimations.size()>0) {
+        if (rootComposite.sSpriterAnimations.size() > 0) {
             log.error("Nie obslugiwany komponent");
         }
         return this;
@@ -179,7 +191,7 @@ public class OverlapSceneReader {
      * Loading composistes.
      */
     private OverlapSceneReader loadOtherComposites(CompositeVO rootComposite) {
-        rootComposite.sComposites.forEach(e -> this.loadComposite(e.composite, e.x, e.y, e.rotation));
+        rootComposite.sComposites.forEach(e -> this.loadComposite(e.composite, e.originX, e.originY, e.x, e.y, e.rotation));
         return this;
     }
 

@@ -118,11 +118,16 @@ public enum PhysicsWorld {
         RayHandler.useDiffuseLight(true);
 
         rayHandler = new RayHandler(world);
-        rayHandler.setAmbientLight(0, 0, 0f, 1f);
+        rayHandler.setAmbientLight(
+                0.38431373f,
+                0.5529412f,
+                0.6f,
+                1
+        );
         rayHandler.setCulling(true);
-        rayHandler.setBlur(true);
-        rayHandler.setBlurNum(0);
+        rayHandler.setBlur(false);
         rayHandler.setShadows(false);
+
     }
 
     /**

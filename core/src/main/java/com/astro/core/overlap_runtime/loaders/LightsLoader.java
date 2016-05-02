@@ -49,7 +49,6 @@ public class LightsLoader implements ILoader<LightVO> {
     }
 
     /**
-     *
      * @param light
      */
     public IGameObject register(LightVO light) {
@@ -59,39 +58,39 @@ public class LightsLoader implements ILoader<LightVO> {
         if (light.type == LightVO.LightType.POINT) {
             resultLight = new PointLight(
                     PhysicsWorld.instance.getRayHandler(),
-                    light.rays * 10,
+                    light.rays,
                     new Color(
                             light.tint[0],
                             light.tint[1],
                             light.tint[2],
-                            .5f),
+                            .1f),
                     light.distance * PIXEL_PER_METER,
-                    light.x * PIXEL_PER_METER - (light.scaleX / 2),
-                    light.y * PIXEL_PER_METER - (light.scaleY / 2)
+                    light.x * PIXEL_PER_METER,
+                    light.y * PIXEL_PER_METER
             );
-        }
-        else{
+        } else {
             resultLight = new ConeLight(
                     PhysicsWorld.instance.getRayHandler(),
-                    light.rays * 10,
+                    light.rays,
                     new Color(
                             light.tint[0],
                             light.tint[1],
                             light.tint[2],
-                            .5f),
+                            light.tint[3]),
                     light.distance * PIXEL_PER_METER,
-                    light.x * PIXEL_PER_METER - (light.scaleX / 2),
-                    light.y * PIXEL_PER_METER - (light.scaleY / 2),
+                    light.x * PIXEL_PER_METER,
+                    light.y * PIXEL_PER_METER,
                     light.directionDegree,
                     light.coneDegree
             );
         }
 
+        resultLight.setSoft(true);
         resultLight.setSoftnessLength(light.softnessLength);
         resultLight.setXray(light.isXRay);
         resultLight.setStaticLight(light.isStatic);
         lights.add(resultLight);
         LayerManager.instance.addLayer(light.layerName);
-        return  null;
+        return null;
     }
 }

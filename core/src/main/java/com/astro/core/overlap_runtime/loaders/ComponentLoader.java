@@ -13,12 +13,10 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.uwsoft.editor.renderer.data.SimpleImageVO;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
 import java.util.LinkedList;
-
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Class read and convert sImages array from json file.
@@ -29,25 +27,7 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
     /**
      * Pixel per meter.
      */
-    private int PPM;
-
-    /**
-     * Offset in composites.
-     */
-    @Setter
-    private float parentX = 0.0f;
-
-    /**
-     * Offset in composites.
-     */
-    @Setter
-    private float parentY = 0.0f;
-
-    /**
-     * parent rotate composites.
-     */
-    @Setter
-    private float parentRotate = 0.0f;
+    private int PPM = 0;
 
     /**
      *
@@ -58,7 +38,6 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
     }
 
     /**
-     *
      * @param imageVO
      */
     public IGameObject register(SimpleImageVO imageVO) {
@@ -84,20 +63,19 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
             Body body = PhysicsWorld.instance.createBody(getBodyDef(imageVO), imageVO.imageName);
             polygons.forEach(e -> body.createFixture(getFixtureDefinition(e, imageVO)));
             ((PhysicsObject) result).setBody(body);
-        }
-        else {
+        } else {
             result = new TextureObject(textureRegion);
         }
 
         result = new SimpleImageVOToIGameObjectConverter().convert(imageVO, result);
         result.getSprite().setBounds(
-                imageVO.x + parentX,
-                imageVO.y + parentY,
+                imageVO.x,
+                imageVO.y,
                 textureRegion.getRegionWidth(),
                 textureRegion.getRegionHeight()
         );
 
-        result.getSprite().setRotation(imageVO.rotation + parentRotate);
+        result.getSprite().setRotation(imageVO.rotation);
         LayerManager.instance.addLayer(imageVO.layerName);
         return result;
     }
@@ -107,18 +85,16 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
      */
     private BodyDef getBodyDef(SimpleImageVO imageVO) {
         BodyDef bodyDef = new BodyDef();
-        bodyDef.position.set(imageVO.x + parentX, imageVO.y + parentY);
-        bodyDef.angle = (float) Math.toRadians(imageVO.rotation + parentRotate);
+        bodyDef.position.set(imageVO.x, imageVO.y);
+        bodyDef.angle = (float) Math.toRadians(imageVO.rotation);
 
         int bodyType = imageVO.physics.bodyType;
 
         if (bodyType == 0) {
             bodyDef.type = BodyDef.BodyType.StaticBody;
-        }
-        else if (bodyType == 1) {
+        } else if (bodyType == 1) {
             bodyDef.type = BodyDef.BodyType.KinematicBody;
-        }
-        else {
+        } else {
             bodyDef.type = BodyDef.BodyType.DynamicBody;
         }
 
@@ -131,8 +107,8 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
     private PolygonShape getPolygonShape(Vector2[] vertices, SimpleImageVO image, float w, float h) {
         PolygonShape shape = new PolygonShape();
         for (Vector2 it : vertices) {
-            it.x = (it.x  - (w / PPM / 2)) * image.scaleX;
-            it.y = (it.y  - (h / PPM / 2)) * image.scaleY;
+            it.x = ((it.x+image.originX) - (w / PPM / 2)) * image.scaleX;
+            it.y = ((it.y+image.originY) - (h / PPM / 2)) * image.scaleY;
         }
 
         shape.set(vertices);

@@ -4,6 +4,8 @@ import com.astro.core.adnotation.Dispose;
 import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.storage.PropertyInjector;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -93,10 +95,14 @@ abstract public class GameObject implements IGameObject {
     public void show(OrthographicCamera cam, float delta) {
         batch.setProjectionMatrix(cam.combined);
         batch.begin();
+        Gdx.gl.glEnable(GL20.GL_BLEND);
+
 
         batch.setColor(sprite.getColor());
-
         render(cam, delta); // implemented in concreted class.
+
+
+        Gdx.gl.glDisable(GL20.GL_BLEND);
 
         batch.end();
     }
@@ -114,8 +120,8 @@ abstract public class GameObject implements IGameObject {
      */
     private void draw(float x, float y, float rotate) {
         float PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
-        float pX = (x) * PPM - (sprite.getWidth() * sprite.getScaleX() / 2);
-        float pY = (y) * PPM - (sprite.getHeight() * sprite.getScaleY() / 2);
+        float pX = (x+sprite.getOriginX()) * PPM - (sprite.getWidth() * sprite.getScaleX() / 2);
+        float pY = (y+sprite.getOriginY()) * PPM - (sprite.getHeight() * sprite.getScaleY() / 2);
 
         if (rotate == 0) {
             batch.draw(textureRegion,
@@ -137,8 +143,8 @@ abstract public class GameObject implements IGameObject {
              * </a>
              *
              */
-            float a = x * PPM;
-            float b = y * PPM;
+            float a = (x+sprite.getOriginX()) * PPM;
+            float b = (y+sprite.getOriginY()) * PPM;
 
             float angle = (float) Math.toRadians(rotate);
 

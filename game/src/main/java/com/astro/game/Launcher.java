@@ -56,7 +56,6 @@ public class Launcher {
         config.vSyncEnabled = false;
         config.addIcon("assets/ico.png", Files.FileType.Classpath);
         config.title = PropertiesReader.instance.getProperty("game.title");
-
         return config;
     }
 

@@ -1,5 +1,6 @@
 package com.astro.core.objects;
 
+import com.astro.core.engine.PhysicsWorld;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 
@@ -17,6 +18,10 @@ public class ParticleObject extends GameObject {
 
     @Override
     public void render(OrthographicCamera cam, float delta) {
+        effect.setPosition(
+                sprite.getX() * PhysicsWorld.instance.getPIXEL_PER_METER(),
+                sprite.getY() * PhysicsWorld.instance.getPIXEL_PER_METER()
+        );
         effect.draw(batch, delta);
     }
 

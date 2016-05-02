@@ -28,6 +28,7 @@ runtime: http://overlap2d.com/data-api-creating-custom-runtime/
 - [ ] Draft fabuły
 - [ ] Dokończenie runtime dla Overlap2D
 - [ ] Przygotowac task gradle do zbudwania standalone jar.
+- [ ] Zrobić testy jednostkowe
 
 
 ## CREDITS:
