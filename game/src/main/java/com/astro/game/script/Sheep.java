@@ -5,30 +5,30 @@ import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 
 /**
- * Created by kamil on 03.05.16.
+ * Test logic for sheep.
  */
 public class Sheep implements ILogic {
 
-    AnimationObject gameObject;
+    private AnimationObject gameObject;
 
     float speed = 1f;
 
     public void setGameObject(IGameObject gameObject) {
-        this.gameObject = (AnimationObject)gameObject;
+        this.gameObject = (AnimationObject) gameObject;
     }
 
     @Override
     public void update(float diff) {
         float posX = gameObject.getSprite().getX();
-        if(posX>2) {
+        if (posX > 2) {
             speed = -1f;
             gameObject.setFlipX(true);
         }
-        else if(posX<-2) {
+        else if (posX < -2) {
             speed = 1;
             gameObject.setFlipX(false);
         }
-        gameObject.getSprite().setX( posX + diff * speed);
+        gameObject.getSprite().setX(posX + diff * speed);
     }
 
 }

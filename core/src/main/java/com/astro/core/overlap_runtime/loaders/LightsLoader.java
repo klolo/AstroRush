@@ -1,7 +1,7 @@
 package com.astro.core.overlap_runtime.loaders;
 
 import com.astro.core.adnotation.GameProperty;
-import com.astro.core.engine.LayerManager;
+import com.astro.core.engine.ScreenManager;
 import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.storage.PropertyInjector;
@@ -91,7 +91,7 @@ public class LightsLoader implements ILoader<LightVO> {
         resultLight.setXray(light.isXRay);
         resultLight.setStaticLight(light.isStatic);
         lights.add(resultLight);
-        LayerManager.instance.addLayer(light.layerName);
+        ScreenManager.instance.addLayer(light.layerName);
         return null;
     }
 }

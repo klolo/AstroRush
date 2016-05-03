@@ -36,6 +36,10 @@ public class GameScreen implements Screen {
 
     private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
 
+    private Background background;
+
+    private ParalaxBackground paralaxBackground;
+
     @Setter
     @Getter
     private ArrayList<IGameObject> mapElements = new ArrayList<>();
@@ -62,9 +66,11 @@ public class GameScreen implements Screen {
 
         mapElements = (ArrayList<IGameObject>) sceneReader.getComponents();
 
-        mapElements = LayerManager.instance.sortObjectsByLayer(mapElements);
-        mapElementsWithLogic =  LayerManager.instance.getObjectsWithLogic(mapElements);
+        mapElements = ScreenManager.instance.sortObjectsByLayer(mapElements);
+        mapElementsWithLogic =  ScreenManager.instance.getObjectsWithLogic(mapElements);
 
+        background = new Background();
+        paralaxBackground = new ParalaxBackground();
         log.info("end loading game");
     }
 
@@ -87,7 +93,9 @@ public class GameScreen implements Screen {
      */
     @Override
     public void render(float delta) {
-        PhysicsWorld.instance.getRayHandler().updateAndRender();
+     //   background.show(camera,delta);
+        paralaxBackground.show(camera,delta);
+
         mapElements.forEach(e -> e.show(camera, delta));
         player.show(camera, delta);
 
@@ -97,6 +105,7 @@ public class GameScreen implements Screen {
                     camera.combined.scl(PhysicsWorld.instance.getPIXEL_PER_METER())
             );
         }
+        PhysicsWorld.instance.getRayHandler().updateAndRender();
     }
 
     /**
@@ -105,6 +114,9 @@ public class GameScreen implements Screen {
     public void update(float diff) {
         updateCemera();
         mapElementsWithLogic.forEach(e -> e.update(diff));
+
+        background.update(camera,diff);
+        paralaxBackground.update(camera,diff);
     }
 
     private static final float PLAYER_X_POSITION = 0.3f;

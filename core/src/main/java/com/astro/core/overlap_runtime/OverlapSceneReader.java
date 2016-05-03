@@ -1,6 +1,6 @@
 package com.astro.core.overlap_runtime;
 
-import com.astro.core.engine.LayerManager;
+import com.astro.core.engine.ScreenManager;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.loaders.*;
 import com.badlogic.gdx.Gdx;
@@ -61,7 +61,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader loadComposite(CompositeVO rootComposite) {
         if (rootComposite.layers != null) {
-            rootComposite.layers.stream().forEach(layer -> LayerManager.instance.addLayer(layer.layerName));
+            rootComposite.layers.stream().forEach(layer -> ScreenManager.instance.addLayer(layer.layerName));
         }
         return registerImages(rootComposite.sImages)
                 .registerLights(rootComposite)

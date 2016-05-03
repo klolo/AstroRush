@@ -3,6 +3,7 @@ package com.astro.core.objects;
 import com.astro.core.engine.PhysicsWorld;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 
@@ -47,13 +48,14 @@ public class LabelObject extends TextureObject {
         else {
             batch.setProjectionMatrix(cam.combined);
         }
-        batch.setShader(fontShader);
+      //  batch.setShader(fontShader);
 
+        font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         font.draw(batch, text,
                 sprite.getX()*PhysicsWorld.instance.getPIXEL_PER_METER(),
                 sprite.getY()*PhysicsWorld.instance.getPIXEL_PER_METER());
 
-        batch.setShader(null);
+      //  batch.setShader(null);
         batch.setProjectionMatrix(cam.combined);
     }
 

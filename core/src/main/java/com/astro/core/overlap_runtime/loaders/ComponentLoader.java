@@ -1,6 +1,5 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.engine.LayerManager;
 import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.TextureObject;
@@ -64,7 +63,9 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
             Body body = PhysicsWorld.instance.createBody(getBodyDef(imageVO), imageVO.imageName);
             polygons.forEach(e -> body.createFixture(getFixtureDefinition(e, imageVO)));
             ((PhysicsObject) result).setBody(body);
-        } else {
+            body.setUserData(result);
+        }
+        else {
             result = new TextureObject(textureRegion);
         }
 
@@ -91,9 +92,11 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
 
         if (bodyType == 0) {
             bodyDef.type = BodyDef.BodyType.StaticBody;
-        } else if (bodyType == 1) {
+        }
+        else if (bodyType == 1) {
             bodyDef.type = BodyDef.BodyType.KinematicBody;
-        } else {
+        }
+        else {
             bodyDef.type = BodyDef.BodyType.DynamicBody;
         }
 
@@ -106,8 +109,8 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
     private PolygonShape getPolygonShape(Vector2[] vertices, SimpleImageVO image, float w, float h) {
         PolygonShape shape = new PolygonShape();
         for (Vector2 it : vertices) {
-            it.x = ((it.x+image.originX) - (w / PPM / 2)) * image.scaleX;
-            it.y = ((it.y+image.originY) - (h / PPM / 2)) * image.scaleY;
+            it.x = ((it.x + image.originX) - (w / PPM / 2)) * image.scaleX;
+            it.y = ((it.y + image.originY) - (h / PPM / 2)) * image.scaleY;
         }
 
         shape.set(vertices);
@@ -123,7 +126,7 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
         fixtureDef.shape = shape;
         fixtureDef.density = imageVO.physics.density;
         fixtureDef.friction = imageVO.physics.friction;
-        // fixtureDef.restitution = imageVO.physics.restitution; // Make it bounce a little bit
+        fixtureDef.restitution = imageVO.physics.restitution; // Make it bounce a little bit
 
         return fixtureDef;
     }

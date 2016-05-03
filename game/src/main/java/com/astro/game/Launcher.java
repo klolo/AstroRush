@@ -20,7 +20,7 @@ public class Launcher {
     /**
      * Game logic implemented for this title.
      */
-    IGameLogic gameLogic = null;
+    private IGameLogic gameLogic = null;
 
     /**
      *  Main method of the application.
@@ -66,7 +66,7 @@ public class Launcher {
             config.height = Integer.valueOf(PropertiesReader.instance.getProperty("window.height"));
         }
 
-        config.vSyncEnabled = false;
+        config.vSyncEnabled = true;
         config.addIcon("assets/ico.png", Files.FileType.Classpath);
         config.title = PropertiesReader.instance.getProperty("game.title");
         return config;

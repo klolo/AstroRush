@@ -1,6 +1,5 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.engine.LayerManager;
 import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.objects.ParticleObject;
 import com.astro.core.objects.interfaces.IGameObject;

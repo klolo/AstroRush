@@ -15,19 +15,19 @@ import lombok.extern.slf4j.Slf4j;
  * Util class for sorting, filter object on the Map.
  */
 @Slf4j
-public enum LayerManager {
+public enum ScreenManager {
     instance;
 
     /**
      * Registered layers.
      */
     @Getter
-    ArrayList<String> layers = new ArrayList<>();
+    private ArrayList<String> layers = new ArrayList<>();
 
     /**
      * If doesnt exists, add layer to list.
      */
-    public void addLayer(String layer) {
+    public void addLayer(final String layer) {
         if (!layers.contains(layer)) {
             log.info("[register layer] name: {}", layer);
             layers.add(layer);
@@ -37,7 +37,7 @@ public enum LayerManager {
     /**
      * Sort object by layer.
      */
-    public ArrayList<IGameObject> sortObjectsByLayer(ArrayList<IGameObject> gameObjects) {
+    public ArrayList<IGameObject> sortObjectsByLayer(final ArrayList<IGameObject> gameObjects) {
         HashMap<String, LinkedList<IGameObject>> sortedObjectMap = new HashMap<>();
         layers.forEach(layer -> sortedObjectMap.put(layer, new LinkedList<>()));
 
@@ -45,15 +45,15 @@ public enum LayerManager {
                 sortedObjectMap.get(gObj.getLayerID()).add(gObj));
 
         ArrayList<IGameObject> sortedObjects = new ArrayList<>(gameObjects.size());
-        layers.forEach(layer -> sortedObjects.addAll((LinkedList)sortedObjectMap.get(layer)));
+        layers.forEach(layer -> sortedObjects.addAll((LinkedList) sortedObjectMap.get(layer)));
         return sortedObjects;
     }
 
     /**
      * Return objects with have logic.
      */
-    public ArrayList<IGameObject> getObjectsWithLogic(ArrayList<IGameObject> gameObjects) {
-        List<IGameObject> result = gameObjects.stream().filter(e->e.hasLogic()).collect(Collectors.toList());
+    public ArrayList<IGameObject> getObjectsWithLogic(final ArrayList<IGameObject> gameObjects) {
+        List<IGameObject> result = gameObjects.stream().filter(e -> e.hasLogic()).collect(Collectors.toList());
         return new ArrayList<>(result);
     }
 
