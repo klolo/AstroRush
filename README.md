@@ -10,10 +10,16 @@ Platformowa gra przygodowa z elementami logiki napisana w Javie 8.
 
 
 ##Budowa aplikacji
+###Mapy
 Gra korzysta z map wygenerowanych za pomocą edytora Overlap2D,
 oraz własnego runtime dla tych map. Dokumentacja dotycząca tworzenia takiego
 runtime: http://overlap2d.com/data-api-creating-custom-runtime/
 
+###Moduły
+Aplikacja składa się z dwóch modułów:
+- core- jest to silnik gry, niezależny od konkretnej gry. Nie zawiera żadnych
+zasobów, wywołuje logike dostarczoną poprzez IGameLogic interfejs.
+- game- implementacja gry AstroRush.
 
 ##Używane biblioteki
 - Lombok (https://projectlombok.org/) - pozwala dzieki adnotatacjom w latwy sposob generowac gettery, settery, dodawac loggery itp.

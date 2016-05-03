@@ -4,30 +4,34 @@ import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * TODO
- *
- * @author klolo
+ * Main loop of the game.
  */
 @Slf4j
 public class GameEngine extends Game {
 
-    private OrthographicCamera camera;
-
+    /**
+     * Implemented game logic.
+     */
     private IGameLogic gameLogic;
 
+    /**
+     * Box2d world.
+     */
     private PhysicsWorld world;
 
+    /**
+     * Used to make fixed time loop.
+     */
     private float accumulator = 0;
 
+    /**
+     * Requires game logic object, which will be updated and rendered.
+     */
     public GameEngine(IGameLogic gameLogic) {
-        log.info("Engine init");
         this.gameLogic = gameLogic;
-        camera = new OrthographicCamera();
     }
 
     /**
@@ -35,8 +39,10 @@ public class GameEngine extends Game {
      */
     @Override
     public void create() {
+        log.info("create");
         gameLogic.init();
         setScreen(gameLogic.getGameScreen());
+        world = PhysicsWorld.instance;
     }
 
     /**
@@ -57,20 +63,18 @@ public class GameEngine extends Game {
     }
 
     /**
-     *
-     * @param deltaTime
+     * Fixed step update game logic.
      */
     private void update(float deltaTime) {
         gameLogic.update(deltaTime);
 
         float frameTime = Math.min(deltaTime, 0.25f);
         accumulator += frameTime;
-        float step = PhysicsWorld.instance.getTIME_STEP();
+        float step = world.getTIME_STEP();
 
         while (accumulator >= step) {
             PhysicsWorld.instance.step();
             accumulator -= step;
         }
     }
-
 }

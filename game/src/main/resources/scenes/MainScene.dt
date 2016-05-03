@@ -3,6 +3,7 @@
   "composite": {
     "sImages": [
       {
+        "customVars": "param1:val1;param2:val2",
         "uniqueId": 4,
         "tags": [],
         "x": -3.6875,
@@ -233,12 +234,13 @@
         "tags": [
           "sheep"
         ],
+        "customVars": "logic:Sheep",
         "x": -1.0875001,
         "y": -0.012499988,
         "originX": 0.775,
         "originY": 0.6,
         "zIndex": 2,
-        "layerName": "Default",
+        "layerName": "layer1",
         "animationName": "sheep",
         "currentAnimation": "full",
         "frameRangeMap": [

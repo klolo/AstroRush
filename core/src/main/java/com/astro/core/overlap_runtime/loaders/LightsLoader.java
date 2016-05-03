@@ -43,6 +43,7 @@ public class LightsLoader implements ILoader<LightVO> {
     private int PIXEL_PER_METER = 0;
 
     public LightsLoader() {
+        log.info("..:: LightsLoader ::..");
         new PropertyInjector(this);
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();

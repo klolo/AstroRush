@@ -28,7 +28,6 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
         super.init();
 
         KeyObserve.instance.register(this);
-
     }
 
     /**
@@ -38,7 +37,6 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
     protected FixtureDef getFixtureDefinition() {
         // Create a circle shape and set its radius to 6
         PolygonShape shape = new PolygonShape();
-
 
         shape.setAsBox(
                 this.getSprite().getWidth() / 2 / PhysicsWorld.instance.getPIXEL_PER_METER(),

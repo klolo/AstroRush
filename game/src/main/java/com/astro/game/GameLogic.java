@@ -18,12 +18,11 @@ public class GameLogic implements IGameLogic {
     @Getter
     private GameScreen gameScreen;
 
-
     private Player player;
 
     public void init() {
         log.info("AstroGame init");
-        gameScreen = new GameScreen();
+        gameScreen = new GameScreen("scenes/MainScene.dt");
         KeyObserve.instance.register(this);
         this.player = new Player();
         gameScreen.setPlayer(player);
@@ -36,7 +35,7 @@ public class GameLogic implements IGameLogic {
     }
 
     public void update(float time) {
-        gameScreen.update();
+        gameScreen.update(time);
     }
 
     /**

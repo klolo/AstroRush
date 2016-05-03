@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
 
     public ParticleEffectsLoader() {
+        log.info("..:: LightsLoader ::..");
         resourceManager.initAllResources();
     }
 
@@ -24,9 +25,7 @@ public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
     public IGameObject register(ParticleEffectVO particleEffectVO) {
         log.info("[register particle] name: {}, particleName: {} ", particleEffectVO.itemName, particleEffectVO.particleName);
         ParticleObject result = new ParticleObject();
-        result.setName(particleEffectVO.particleName);
 
-        result.getSprite().rotate(particleEffectVO.rotation);
         ParticleEffect effect = resourceManager.getParticleEffect(particleEffectVO.particleName);
         float PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
 
@@ -34,11 +33,8 @@ public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
         float pY = particleEffectVO.y * PPM - (particleEffectVO.particleHeight * particleEffectVO.scaleY / 2);
 
         effect.setPosition(pX, pY);
-        result.getSprite().setColor(particleEffectVO.tint[0], particleEffectVO.tint[1], particleEffectVO.tint[2], particleEffectVO.tint[3]);
         result.setEffect(effect);
 
-        result.setLayerID(particleEffectVO.layerName);
-        LayerManager.instance.addLayer(particleEffectVO.layerName);
         return new ParticleEffectVOToIGameObjectConverter().convert(particleEffectVO,result);
     }
 

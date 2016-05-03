@@ -40,6 +40,10 @@ public class GameScreen implements Screen {
     @Getter
     private ArrayList<IGameObject> mapElements = new ArrayList<>();
 
+    @Setter
+    @Getter
+    private ArrayList<IGameObject> mapElementsWithLogic = new ArrayList<>();
+
     private float width;
 
     private float height;
@@ -47,17 +51,19 @@ public class GameScreen implements Screen {
     /**
      * TODO: show splash screen.
      */
-    public GameScreen() {
+    public GameScreen(String sceneName) {
         new PropertyInjector(this);
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();
         initCamera();
 
-        OverlapSceneReader sceneReader = new OverlapSceneReader("scenes/MainScene.dt")
+        OverlapSceneReader sceneReader = new OverlapSceneReader(sceneName)
                 .loadScene();
 
         mapElements = (ArrayList<IGameObject>) sceneReader.getComponents();
+
         mapElements = LayerManager.instance.sortObjectsByLayer(mapElements);
+        mapElementsWithLogic =  LayerManager.instance.getObjectsWithLogic(mapElements);
 
         log.info("end loading game");
     }
@@ -93,9 +99,12 @@ public class GameScreen implements Screen {
         }
     }
 
-
-    public void update() {
+    /**
+     *
+     */
+    public void update(float diff) {
         updateCemera();
+        mapElementsWithLogic.forEach(e -> e.update(diff));
     }
 
     private static final float PLAYER_X_POSITION = 0.3f;

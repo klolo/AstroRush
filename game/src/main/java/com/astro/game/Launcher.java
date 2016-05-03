@@ -1,6 +1,7 @@
 package com.astro.game;
 
 import com.astro.core.engine.GameEngine;
+import com.astro.core.engine.IGameLogic;
 import com.astro.core.storage.PropertiesReader;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
@@ -16,9 +17,21 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Launcher {
 
+    /**
+     * Game logic implemented for this title.
+     */
+    IGameLogic gameLogic = null;
+
+    /**
+     *  Main method of the application.
+     */
     public static void main(String... args) {
+        Launcher launcher = new Launcher();
+        launcher.run();
+    }
+
+    public void run() {
         log.info("Game start");
-        GameLogic gameLogic = null;
 
         try {
             Launcher launcher = new Launcher();
@@ -31,7 +44,7 @@ public class Launcher {
             System.exit(-1);
         }
         finally {
-            Optional.of(gameLogic).ifPresent(GameLogic::onExit);
+            Optional.of(gameLogic).ifPresent(e -> gameLogic.onExit());
         }
     }
 

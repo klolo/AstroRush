@@ -33,6 +33,7 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
      *
      */
     public ComponentLoader() {
+        log.info("..:: ComponentLoader ::..");
         resourceManager.initAllResources();
         PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
     }
@@ -75,8 +76,6 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
                 textureRegion.getRegionHeight()
         );
 
-        result.getSprite().setRotation(imageVO.rotation);
-        LayerManager.instance.addLayer(imageVO.layerName);
         return result;
     }
 

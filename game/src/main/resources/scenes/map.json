@@ -3,6 +3,7 @@
   "composite": {
     "sImages": [
       {
+        "customVars": "param1:val1;param2:val2",
         "uniqueId": 4,
         "tags": [],
         "x": -3.6875,

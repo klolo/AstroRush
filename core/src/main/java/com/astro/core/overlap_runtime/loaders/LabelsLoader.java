@@ -18,6 +18,7 @@ public class LabelsLoader implements ILoader<LabelVO> {
      *
      */
     public LabelsLoader() {
+        log.info("..:: LabelsLoader ::..");
         resourceManager.initAllResources();
     }
 
@@ -27,9 +28,7 @@ public class LabelsLoader implements ILoader<LabelVO> {
 
         LabelObject result = new LabelObject(resourceManager.getBitmapFont(labelVO.style, labelVO.size));
         result.getFont().setColor(labelVO.tint[0], labelVO.tint[1], labelVO.tint[2], labelVO.tint[3]);
-
         result.setText(labelVO.text);
-        LayerManager.instance.addLayer(labelVO.layerName);
 
         return new LabelVOToIGameObjectConverter().convert(labelVO, result);
     }

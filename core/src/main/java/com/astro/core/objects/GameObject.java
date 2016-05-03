@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.HashMap;
+
 /**
  * Represents a rendereable.
  */
@@ -17,7 +19,6 @@ abstract public class GameObject implements IGameObject {
     /**
      * Logic of the object.
      */
-    @Setter
     @Getter
     private ILogic logic;
 
@@ -34,6 +35,11 @@ abstract public class GameObject implements IGameObject {
     @Getter
     @Setter
     protected String layerID = "Default";
+
+    /**
+     * Custom settings from editor.
+     */
+    protected HashMap<String, String> customVariables = new HashMap<>();
 
     /**
      * Default constructor.
@@ -59,5 +65,16 @@ abstract public class GameObject implements IGameObject {
     public void update(float delta) {
         if (logic != null)
             logic.update(delta);
+    }
+
+    /**
+     * Set custom variable from Overlap editor.
+     */
+    public void setCustomVar(String key, String val) {
+        customVariables.put(key, val);
+    }
+
+    public void setLogic(ILogic logic) {
+        this.logic = logic;
     }
 }

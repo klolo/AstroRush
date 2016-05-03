@@ -12,12 +12,15 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Created by kamil on 01.05.16.
+ * Util class for sorting, filter object on the Map.
  */
 @Slf4j
 public enum LayerManager {
     instance;
 
+    /**
+     * Registered layers.
+     */
     @Getter
     ArrayList<String> layers = new ArrayList<>();
 
@@ -32,9 +35,7 @@ public enum LayerManager {
     }
 
     /**
-     *
-     * @param gameObjects
-     * @return
+     * Sort object by layer.
      */
     public ArrayList<IGameObject> sortObjectsByLayer(ArrayList<IGameObject> gameObjects) {
         HashMap<String, LinkedList<IGameObject>> sortedObjectMap = new HashMap<>();
@@ -49,9 +50,7 @@ public enum LayerManager {
     }
 
     /**
-     *
-     * @param gameObjects
-     * @return
+     * Return objects with have logic.
      */
     public ArrayList<IGameObject> getObjectsWithLogic(ArrayList<IGameObject> gameObjects) {
         List<IGameObject> result = gameObjects.stream().filter(e->e.hasLogic()).collect(Collectors.toList());

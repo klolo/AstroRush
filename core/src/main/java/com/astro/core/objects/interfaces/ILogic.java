@@ -7,4 +7,5 @@ public interface ILogic {
 
     void update(float diff);
 
+    void setGameObject(IGameObject gameObject);
 }

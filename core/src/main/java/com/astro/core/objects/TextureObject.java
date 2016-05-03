@@ -13,10 +13,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Created by kamil on 30.04.16.
  */
+@Slf4j
 public class TextureObject extends GameObject {
 
     @Getter
@@ -31,6 +33,11 @@ public class TextureObject extends GameObject {
     @Setter
     protected Batch batch;
 
+    @Setter
+    protected boolean flipX = false;
+
+    @Setter
+    protected boolean flipY = false;
 
     private void init() {
         new PropertyInjector(this);
@@ -101,13 +108,9 @@ public class TextureObject extends GameObject {
         float pY = (y + sprite.getOriginY()) * PPM - (sprite.getHeight() * sprite.getScaleY() / 2);
 
         if (rotate == 0) {
-            batch.draw(textureRegion,
-                    pX,
-                    pY,
-                    sprite.getWidth() * sprite.getScaleX(),
-                    sprite.getHeight() * sprite.getScaleY()
-            );
-        } else {
+            drawTextureRegion(pX, pY);
+        }
+        else {
             /**
              * Podczas rotacji obiekty box2d nie pokrywaja sie z tekxturami,
              * poniewaz box2d wykonuje obrot dookola srodka ciezkosci a libgdx dookola
@@ -130,19 +133,37 @@ public class TextureObject extends GameObject {
 
             float x1 = a + (pX - a) * cos - (pY - b) * sin;
             float y1 = b + (pX - a) * sin + (pY - b) * cos;
-
-            batch.draw(textureRegion,
-                    x1, y1, 0, 0,
-                    sprite.getWidth(),
-                    sprite.getHeight(),
-                    sprite.getScaleX(),
-                    sprite.getScaleY(),
-                    rotate
-            );
+            drawTextureRegion(x1, y1, rotate, sprite.getWidth(), sprite.getHeight(), sprite.getScaleX(), sprite.getScaleY());
         }
-
     }
 
+    private void drawTextureRegion(float pX, float pY) {
+        batch.draw(textureRegion,
+                pX,
+                pY,
+                sprite.getWidth() * sprite.getScaleX(),
+                sprite.getHeight() * sprite.getScaleY()
+        );
+    }
+
+    private void drawTextureRegion(float pX, float pY, float rotate) {
+        drawTextureRegion(pX, pY, rotate, sprite.getWidth(), sprite.getHeight());
+    }
+
+    private void drawTextureRegion(float pX, float pY, float rotate, float width, float height) {
+        drawTextureRegion(pX, pY, rotate, sprite.getScaleX(), sprite.getScaleY());
+    }
+
+    private void drawTextureRegion(float pX, float pY, float rotate, float width, float height, float scaleX, float scaleY) {
+        batch.draw(textureRegion,
+                pX, pY, 0, 0,
+                width,
+                height,
+                scaleX,
+                scaleY,
+                rotate
+        );
+    }
 
     public void dispose() {
         batch.dispose();

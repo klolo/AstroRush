@@ -8,6 +8,11 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
  */
 public interface IGameObject {
 
+    /**
+     * Name field in json file, which point to logic implementation class for current object.
+     */
+    String LOGIC_VARS = "logic";
+
     void show(OrthographicCamera cam, float delta);
 
     Sprite getSprite();
@@ -19,4 +24,10 @@ public interface IGameObject {
     String getLayerID();
 
     boolean hasLogic();
+
+    void setCustomVar(String key, String val);
+
+    void setLogic(ILogic logic);
+
+    void update(float delta);
 }
