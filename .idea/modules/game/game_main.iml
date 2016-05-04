@@ -3,8 +3,10 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/../../../game/build/classes/main" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../game/src/main">
+    <content url="file://$MODULE_DIR$/../../../game/src/main/java">
       <sourceFolder url="file://$MODULE_DIR$/../../../game/src/main/java" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../game/src/main/resources">
       <sourceFolder url="file://$MODULE_DIR$/../../../game/src/main/resources" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />

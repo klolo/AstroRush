@@ -68,6 +68,7 @@ public class GameScreen implements Screen {
         mapElementsWithLogic = ScreenManager.instance.getObjectsWithLogic(mapElements);
 
         paralaxBackground = new ParalaxBackground();
+        paralaxBackground.init();
         log.info("end loading game");
     }
 

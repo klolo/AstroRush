@@ -26,27 +26,34 @@ public class ParalaxBackground {
     private LinkedList<TextureObject> textures = new LinkedList<>();
 
     @GameProperty("background.amount")
-    private int BACKGROUND_AMOUNT = 3;
+    @Getter
+    private int BACKGROUND_AMOUNT = 0;
 
     @GameProperty("background.speed")
-    private float BACKGROUND_SPEED = 4.0f;
+    @Getter
+    private float BACKGROUND_SPEED = 0f;
 
     @GameProperty("background.margin")
-    private float TEXTURE_MARGIN_DRAW = 0.2f;
+    @Getter
+    private float TEXTURE_MARGIN_DRAW = 0f;
 
     @GameProperty("background.scale")
+    @Getter
     private float TEXTURE_SCALE = 0f;
 
     @GameProperty("background.texture")
+    @Getter
     private String TEXTURE_FILE = "";
 
     @GameProperty("background.simple")
     @Setter
     private boolean SIMPLE_MODE;
 
-
     public ParalaxBackground() {
         PropertyInjector.instance.inject(this);
+    }
+
+    public void init() {
         Texture background = new Texture(Gdx.files.internal("assets/" + TEXTURE_FILE));
 
         if (SIMPLE_MODE) {
