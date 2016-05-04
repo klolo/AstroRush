@@ -1,6 +1,5 @@
 jdk:
  - jdk8
-script:
-gradle run
+script: gradle run
 after_success:
 after_failure:
