@@ -1,5 +1,5 @@
-jdk:
- - jdk8
+language: java
+jdk: oraclejdk8
 script: gradle run
 after_success:
 after_failure:
