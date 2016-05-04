@@ -38,8 +38,8 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
         PolygonShape shape = new PolygonShape();
 
         shape.setAsBox(
-                this.getSprite().getWidth() / 2 / PhysicsWorld.instance.getPIXEL_PER_METER(),
-                this.getSprite().getHeight() / 2 / PhysicsWorld.instance.getPIXEL_PER_METER()
+                this.getSprite().getWidth() / 2 / PhysicsWorld.instance.PIXEL_PER_METER,
+                this.getSprite().getHeight() / 2 / PhysicsWorld.instance.PIXEL_PER_METER
         );
 
         // Create a fixture definition to apply our shape to

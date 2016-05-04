@@ -36,8 +36,6 @@ public class GameScreen implements Screen {
 
     private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
 
-    private Background background;
-
     private ParalaxBackground paralaxBackground;
 
     @Setter
@@ -56,7 +54,7 @@ public class GameScreen implements Screen {
      * TODO: show splash screen.
      */
     public GameScreen(String sceneName) {
-        new PropertyInjector(this);
+        PropertyInjector.instance.inject(this);
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();
         initCamera();
@@ -67,9 +65,8 @@ public class GameScreen implements Screen {
         mapElements = (ArrayList<IGameObject>) sceneReader.getComponents();
 
         mapElements = ScreenManager.instance.sortObjectsByLayer(mapElements);
-        mapElementsWithLogic =  ScreenManager.instance.getObjectsWithLogic(mapElements);
+        mapElementsWithLogic = ScreenManager.instance.getObjectsWithLogic(mapElements);
 
-        background = new Background();
         paralaxBackground = new ParalaxBackground();
         log.info("end loading game");
     }
@@ -93,8 +90,8 @@ public class GameScreen implements Screen {
      */
     @Override
     public void render(float delta) {
-     //   background.show(camera,delta);
-        paralaxBackground.show(camera,delta);
+        //   background.show(camera,delta);
+        paralaxBackground.show(camera, delta);
 
         mapElements.forEach(e -> e.show(camera, delta));
         player.show(camera, delta);
@@ -102,7 +99,7 @@ public class GameScreen implements Screen {
         if (DEBUG_DRAW) {
             renderer.render(
                     PhysicsWorld.instance.getWorld(),
-                    camera.combined.scl(PhysicsWorld.instance.getPIXEL_PER_METER())
+                    camera.combined.scl(PhysicsWorld.instance.PIXEL_PER_METER)
             );
         }
         PhysicsWorld.instance.getRayHandler().updateAndRender();
@@ -114,17 +111,15 @@ public class GameScreen implements Screen {
     public void update(float diff) {
         updateCemera();
         mapElementsWithLogic.forEach(e -> e.update(diff));
-
-        background.update(camera,diff);
-        paralaxBackground.update(camera,diff);
+        paralaxBackground.update(camera, diff);
     }
 
     private static final float PLAYER_X_POSITION = 0.3f;
 
     private void updateCemera() {
         Vector3 position = camera.position;
-        position.x = player.getPositionX() * PhysicsWorld.instance.getPIXEL_PER_METER();
-        position.y = player.getPositionY() * PhysicsWorld.instance.getPIXEL_PER_METER() * PLAYER_X_POSITION;
+        position.x = player.getPositionX() * PhysicsWorld.instance.PIXEL_PER_METER;
+        position.y = player.getPositionY() * PhysicsWorld.instance.PIXEL_PER_METER * PLAYER_X_POSITION;
         camera.position.set(position);
         camera.update();
         PhysicsWorld.instance.getRayHandler().setCombinedMatrix(camera);

@@ -42,20 +42,20 @@ public class LabelObject extends TextureObject {
 
     @Override
     protected void render(OrthographicCamera cam, float delta) {
-        if(screenPositionRelative) {
+        if (screenPositionRelative) {
             batch.setProjectionMatrix(cam.projection);
         }
         else {
             batch.setProjectionMatrix(cam.combined);
         }
-      //  batch.setShader(fontShader);
+        //  batch.setShader(fontShader);
 
         font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         font.draw(batch, text,
-                sprite.getX()*PhysicsWorld.instance.getPIXEL_PER_METER(),
-                sprite.getY()*PhysicsWorld.instance.getPIXEL_PER_METER());
+                sprite.getX() * PhysicsWorld.instance.PIXEL_PER_METER,
+                sprite.getY() * PhysicsWorld.instance.PIXEL_PER_METER);
 
-      //  batch.setShader(null);
+        //  batch.setShader(null);
         batch.setProjectionMatrix(cam.combined);
     }
 

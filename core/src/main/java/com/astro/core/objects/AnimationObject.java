@@ -31,8 +31,8 @@ public class AnimationObject extends TextureObject {
         float width = textureRegion.getRegionWidth();
         float height = textureRegion.getRegionHeight();
 
-        float x = sprite.getX() * PhysicsWorld.instance.getPIXEL_PER_METER();
-        float y = sprite.getY() * PhysicsWorld.instance.getPIXEL_PER_METER();
+        float x = sprite.getX() * PhysicsWorld.instance.PIXEL_PER_METER;
+        float y = sprite.getY() * PhysicsWorld.instance.PIXEL_PER_METER;
 
         if (flipX) {
             width = width * -1;

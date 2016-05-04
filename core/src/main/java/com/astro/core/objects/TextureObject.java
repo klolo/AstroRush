@@ -40,7 +40,7 @@ public class TextureObject extends GameObject {
     protected boolean flipY = false;
 
     private void init() {
-        new PropertyInjector(this);
+        PropertyInjector.instance.inject(this);
 
         batch = new SpriteBatch();
         batch.enableBlending();
@@ -103,7 +103,7 @@ public class TextureObject extends GameObject {
      * Render method for texture and physic object.
      */
     private void draw(float x, float y, float rotate) {
-        float PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
+        float PPM = PhysicsWorld.instance.PIXEL_PER_METER;
         float pX = (x + sprite.getOriginX()) * PPM - (sprite.getWidth() * sprite.getScaleX() / 2);
         float pY = (y + sprite.getOriginY()) * PPM - (sprite.getHeight() * sprite.getScaleY() / 2);
 

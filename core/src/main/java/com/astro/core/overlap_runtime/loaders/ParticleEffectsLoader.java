@@ -26,7 +26,7 @@ public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
         ParticleObject result = new ParticleObject();
 
         ParticleEffect effect = resourceManager.getParticleEffect(particleEffectVO.particleName);
-        float PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
+        float PPM = PhysicsWorld.instance.PIXEL_PER_METER;
 
         float pX = particleEffectVO.x * PPM - (particleEffectVO.particleWidth * particleEffectVO.scaleX / 2);
         float pY = particleEffectVO.y * PPM - (particleEffectVO.particleHeight * particleEffectVO.scaleY / 2);

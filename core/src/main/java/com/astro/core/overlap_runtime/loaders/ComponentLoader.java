@@ -34,7 +34,7 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
     public ComponentLoader() {
         log.info("..:: ComponentLoader ::..");
         resourceManager.initAllResources();
-        PPM = PhysicsWorld.instance.getPIXEL_PER_METER();
+        PPM = PhysicsWorld.instance.PIXEL_PER_METER;
     }
 
     /**

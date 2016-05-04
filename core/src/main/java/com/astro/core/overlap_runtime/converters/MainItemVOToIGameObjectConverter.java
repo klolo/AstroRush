@@ -21,7 +21,7 @@ public class MainItemVOToIGameObjectConverter {
     private String SCRIPT_PACKAGE = "";
 
     public MainItemVOToIGameObjectConverter() {
-        new PropertyInjector(this);
+        PropertyInjector.instance.inject(this);
     }
 
     public IGameObject convert(MainItemVO input, IGameObject result) {

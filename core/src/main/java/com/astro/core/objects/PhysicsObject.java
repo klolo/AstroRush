@@ -65,7 +65,6 @@ public class PhysicsObject extends TextureObject implements IGameObject {
     }
 
     /**
-     *
      * @return
      */
     protected BodyDef getDefaultBodyDefinition() {
@@ -73,8 +72,8 @@ public class PhysicsObject extends TextureObject implements IGameObject {
         bodyDef.type = BodyDef.BodyType.DynamicBody;
 
         bodyDef.position.set(
-                getSprite().getX() / PhysicsWorld.instance.getPIXEL_PER_METER(),
-                getSprite().getY() / PhysicsWorld.instance.getPIXEL_PER_METER());
+                getSprite().getX() / PhysicsWorld.instance.PIXEL_PER_METER,
+                getSprite().getY() / PhysicsWorld.instance.PIXEL_PER_METER);
         return bodyDef;
     }
 

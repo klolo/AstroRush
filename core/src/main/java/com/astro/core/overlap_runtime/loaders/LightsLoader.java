@@ -44,7 +44,7 @@ public class LightsLoader implements ILoader<LightVO> {
 
     public LightsLoader() {
         log.info("..:: LightsLoader ::..");
-        new PropertyInjector(this);
+        PropertyInjector.instance.inject(this);
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();
     }

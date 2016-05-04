@@ -82,8 +82,7 @@ public enum PhysicsWorld {
      * Density of the ground box.
      */
     @GameProperty("renderer.pixel.per.meter")
-    @Getter
-    private int PIXEL_PER_METER = 0;
+    public int PIXEL_PER_METER = 0;
 
     /**
      * Configuration of the world gravity.
@@ -107,7 +106,7 @@ public enum PhysicsWorld {
      *
      */
     PhysicsWorld() {
-        new PropertyInjector(this);
+        PropertyInjector.instance.inject(this);
         TIME_STEP = 1f / TIME_STEP;
         gravityVec = new Vector2(0, GRAVITY);
         world = new World(gravityVec, true);
