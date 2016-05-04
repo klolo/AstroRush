@@ -39,7 +39,7 @@ public class LabelObject extends TextureObject {
             Gdx.app.error("fontShader", "compilation failed:\n" + fontShader.getLog());
         }
     }
-fixme
+
     @Override
     protected void render(OrthographicCamera cam, float delta) {
         if (screenPositionRelative) {
