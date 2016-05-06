@@ -4,10 +4,5 @@ jdk:
   - oraclejdk8
 
 script:
-  - gradle run
-  - gradle test
+ - ./gradlew build coveralls
 
-after_success:
-  - ./gradlew cobertura coveralls
-
-after_failure:
