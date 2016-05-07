@@ -1,4 +1,4 @@
 rootProject.name = 'AstroRush2.0'
 include 'core'
-include 'game'
+include 'desktop'
 

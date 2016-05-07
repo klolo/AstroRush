@@ -1,0 +1,18 @@
+{
+  "stages": [
+    {
+      "stageName":"MainMenu",
+      "sceneFile": "scenes/Menu.dt",
+      "hasPlayer": false,
+      "followByPlayer": false,
+      "background" : ""
+    },
+    {
+      "stageName":"Level1",
+      "sceneFile": "scenes/Lvl1.dt",
+      "hasPlayer": true,
+      "followByPlayer": true,
+      "background" : true
+    }
+  ]
+}

@@ -50,20 +50,26 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
         IGameObject result;
 
         if (imageVO.physics != null) {
-            result = new PhysicsObject(textureRegion);
-            LinkedList<PolygonShape> polygons = new LinkedList<>();
+            try {
+                result = new PhysicsObject(textureRegion);
+                LinkedList<PolygonShape> polygons = new LinkedList<>();
 
-            Arrays.stream(imageVO.shape.polygons)
-                    .forEach(
-                            vec ->
-                                    polygons.add(
-                                            getPolygonShape(vec, imageVO, w, h)
-                                    ));
+                Arrays.stream(imageVO.shape.polygons)
+                        .forEach(
+                                vec ->
+                                        polygons.add(
+                                                getPolygonShape(vec, imageVO, w, h)
+                                        ));
 
-            Body body = PhysicsWorld.instance.createBody(getBodyDef(imageVO), imageVO.imageName);
-            polygons.forEach(e -> body.createFixture(getFixtureDefinition(e, imageVO)));
-            ((PhysicsObject) result).setBody(body);
-            body.setUserData(result);
+                Body body = PhysicsWorld.instance.createBody(getBodyDef(imageVO), imageVO.imageName);
+                polygons.forEach(e -> body.createFixture(getFixtureDefinition(e, imageVO)));
+                ((PhysicsObject) result).setBody(body);
+                body.setUserData(result);
+            }
+            catch(final Exception e) {
+                log.error("Incorrect physics settings");
+                result = new TextureObject(textureRegion);
+            }
         }
         else {
             result = new TextureObject(textureRegion);
@@ -126,7 +132,7 @@ public class ComponentLoader implements ILoader<SimpleImageVO> {
         fixtureDef.shape = shape;
         fixtureDef.density = imageVO.physics.density;
         fixtureDef.friction = imageVO.physics.friction;
-        fixtureDef.restitution = imageVO.physics.restitution; // Make it bounce a little bit
+        fixtureDef.restitution = 0.3f;//imageVO.physics.restitution; // Make it bounce a little bit
 
         return fixtureDef;
     }

@@ -6,8 +6,8 @@
     <content url="file://$MODULE_DIR$/../../../game/src/main/resources/**">
       <sourceFolder url="file://$MODULE_DIR$/../../../game/src/main/resources/**" type="java-test-resource" />
     </content>
-    <content url="file://$MODULE_DIR$/../../../game/src/test">
-      <sourceFolder url="file://$MODULE_DIR$/../../../game/src/test/java" isTestSource="true" />
+    <content url="file://$MODULE_DIR$/../../../desktop/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../../desktop/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../game/src/test/resources" type="java-test-resource" />
     </content>
     <orderEntry type="inheritedJdk" />

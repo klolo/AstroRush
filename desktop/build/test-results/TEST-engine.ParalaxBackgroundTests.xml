@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="engine.ParalaxBackgroundTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-05-07T08:22:13" hostname="debian" time="0.009">
+  <properties/>
+  <testcase name="initSimpleMOde" classname="engine.ParalaxBackgroundTests" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO com.astro.core.storage.PropertyInjector - Injecting value: private int com.astro.core.engine.ParalaxBackground.BACKGROUND_AMOUNT=4, in class: class com.astro.core.engine.ParalaxBackground, by key: background.amount
+[Test worker] INFO com.astro.core.storage.PropertyInjector - Injecting value: private float com.astro.core.engine.ParalaxBackground.BACKGROUND_SPEED=1.0f, in class: class com.astro.core.engine.ParalaxBackground, by key: background.speed
+[Test worker] INFO com.astro.core.storage.PropertyInjector - Injecting value: private float com.astro.core.engine.ParalaxBackground.TEXTURE_MARGIN_DRAW=0.2f, in class: class com.astro.core.engine.ParalaxBackground, by key: background.margin
+[Test worker] INFO com.astro.core.storage.PropertyInjector - Injecting value: private float com.astro.core.engine.ParalaxBackground.TEXTURE_SCALE=1.1, in class: class com.astro.core.engine.ParalaxBackground, by key: background.scale
+[Test worker] INFO com.astro.core.storage.PropertyInjector - Injecting value: private java.lang.String com.astro.core.engine.ParalaxBackground.TEXTURE_FILE=background.jpg, in class: class com.astro.core.engine.ParalaxBackground, by key: background.texture
+[Test worker] INFO com.astro.core.storage.PropertyInjector - Injecting value: private boolean com.astro.core.engine.ParalaxBackground.SIMPLE_MODE=true, in class: class com.astro.core.engine.ParalaxBackground, by key: background.simple
+]]></system-err>
+</testsuite>

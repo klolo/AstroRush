@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -27,9 +28,10 @@ public enum PropertiesReader {
     /**
      * Read properties file.
      */
+    @Getter
     private static Properties gameProperties = null;
 
-    private void init() {
+    public void init() {
         gameProperties = new Properties();
         readPropertiesFile(CORE_PROPERTIES_NAME);
         readPropertiesFile(GAME_PROPERTIES_NAME);

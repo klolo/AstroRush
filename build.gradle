@@ -37,17 +37,9 @@ allprojects {
 
 
 // Game module
-project(":game") {
+project(":desktop") {
     apply plugin: "java"
     apply plugin: "com.github.kt3k.coveralls"
-
-    sourceSets {
-        test {
-            resources {
-                srcDir './src/main/resources/**'
-            }
-        }
-    }
 
     dependencies {
         compile project(":core")

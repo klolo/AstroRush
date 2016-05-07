@@ -3,6 +3,7 @@ package com.astro.core.engine;
 import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import lombok.extern.slf4j.Slf4j;
 
@@ -27,6 +28,8 @@ public class GameEngine extends Game {
      */
     private float accumulator = 0;
 
+    private Screen screen;
+
     /**
      * Requires game logic object, which will be updated and rendered.
      */
@@ -41,7 +44,8 @@ public class GameEngine extends Game {
     public void create() {
         log.info("create");
         gameLogic.init();
-        setScreen(gameLogic.getGameScreen());
+        screen = gameLogic.getGameScreen();
+        setScreen(screen);
         world = PhysicsWorld.instance;
     }
 
@@ -52,6 +56,10 @@ public class GameEngine extends Game {
      */
     @Override
     public void render() {
+        if(gameLogic.getGameScreen()!=screen) {
+            setScreen(gameLogic.getGameScreen());
+        }
+
         KeyObserve.instance.handleInput();
 
         float deltaTime = Gdx.graphics.getDeltaTime();
@@ -59,6 +67,7 @@ public class GameEngine extends Game {
 
         Gdx.gl.glClearColor(0f, 0f, 0f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         gameLogic.render(deltaTime);
     }
 

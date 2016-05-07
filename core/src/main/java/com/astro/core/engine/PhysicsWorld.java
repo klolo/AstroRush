@@ -107,10 +107,13 @@ public enum PhysicsWorld {
      */
     PhysicsWorld() {
         PropertyInjector.instance.inject(this);
-        TIME_STEP = 1f / TIME_STEP;
         gravityVec = new Vector2(0, GRAVITY);
-        world = new World(gravityVec, true);
+        initWorld();
+    }
 
+    public void initWorld() {
+        TIME_STEP = 1f / TIME_STEP;
+        world = new World(gravityVec, true);
         createGround();
 
         RayHandler.setGammaCorrection(true);
@@ -118,15 +121,15 @@ public enum PhysicsWorld {
 
         rayHandler = new RayHandler(world);
         rayHandler.setAmbientLight(
-                0.38431373f,
-                0.5529412f,
+                0.58431373f,
+                0.3529412f,
                 0.6f,
-                1
+                .9f
         );
+
         rayHandler.setCulling(true);
         rayHandler.setBlur(false);
-        rayHandler.setShadows(false);
-
+        rayHandler.setShadows(true);
     }
 
     /**
@@ -143,6 +146,7 @@ public enum PhysicsWorld {
      * @return created body
      */
     public Body createBody(BodyDef bd) {
+        log.info("Create body");
         return world.createBody(bd);
     }
 

@@ -23,11 +23,11 @@ public class LabelsLoader implements ILoader<LabelVO> {
     @Override
     public IGameObject register(LabelVO labelVO) {
         log.info("[register label] text: {}", labelVO.text);
-
         LabelObject result = new LabelObject(resourceManager.getBitmapFont(labelVO.style, labelVO.size));
 
         result.getFont().setColor(labelVO.tint[0], labelVO.tint[1], labelVO.tint[2], labelVO.tint[3]);
         result.setText(labelVO.text);
+
         return new LabelVOToIGameObjectConverter().convert(labelVO, result);
     }
 }

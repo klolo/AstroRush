@@ -19,6 +19,9 @@ Gra korzysta z map wygenerowanych za pomocą edytora Overlap2D,
 oraz własnego runtime dla tych map. Dokumentacja dotycząca tworzenia takiego
 runtime: http://overlap2d.com/data-api-creating-custom-runtime/
 
+Wymagana wersja edytora: 0.1.3 (developerska)
+Informacje jak używać edytora: http://overlap2d.com/getting-started/
+
 ###Moduły
 Aplikacja składa się z dwóch modułów:
 - core- jest to silnik gry, niezależny od konkretnej gry. Nie zawiera żadnych

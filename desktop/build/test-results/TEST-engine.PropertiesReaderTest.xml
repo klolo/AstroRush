@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="engine.PropertiesReaderTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-05-07T08:22:13" hostname="debian" time="0.013">
+  <properties/>
+  <testcase name="testReadedProperties" classname="engine.PropertiesReaderTest" time="0.011"/>
+  <testcase name="testReader" classname="engine.PropertiesReaderTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO com.astro.core.storage.PropertiesReader - Reading properties file: core.properties
+[Test worker] INFO com.astro.core.storage.PropertiesReader - Read content: {world.gravity=-9.8f, background.simple=true, window.fullscreen=false, renderer.scale=1f, world.ground.y=-1000.0, world.ground.x=0.0, world.ground.height=1f, window.width=1600, background.speed=1.0f, background.amount=4, window.height=900, background.texture=background.jpg, renderer.pixel.per.meter=80, world.time.step=60.0f, world.ground.width=4050f, world.ground.density=0f, background.scale=1.1, world.iteration.velocity=6, background.margin=0.2f, world.iteration.position=2, renderer.debug=true}
+[Test worker] INFO com.astro.core.storage.PropertiesReader - Reading properties file: game.properties
+[Test worker] INFO com.astro.core.storage.PropertiesReader - Read content: {game.script.package=com.astro.game.script, game.title=AstroRush 2.0}
+[Test worker] INFO com.astro.core.storage.PropertiesReader - Reading properties file: core.properties
+[Test worker] INFO com.astro.core.storage.PropertiesReader - Read content: {world.gravity=-9.8f, background.simple=true, window.fullscreen=false, renderer.scale=1f, world.ground.y=-1000.0, world.ground.x=0.0, world.ground.height=1f, window.width=1600, background.speed=1.0f, background.amount=4, window.height=900, background.texture=background.jpg, renderer.pixel.per.meter=80, world.time.step=60.0f, world.ground.width=4050f, world.ground.density=0f, background.scale=1.1, world.iteration.velocity=6, background.margin=0.2f, world.iteration.position=2, renderer.debug=true}
+[Test worker] INFO com.astro.core.storage.PropertiesReader - Reading properties file: game.properties
+[Test worker] INFO com.astro.core.storage.PropertiesReader - Read content: {game.script.package=com.astro.game.script, game.title=AstroRush 2.0}
+]]></system-err>
+</testsuite>

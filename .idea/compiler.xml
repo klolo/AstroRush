@@ -23,6 +23,8 @@
       <module name="AstroRush2.0_test" target="1.8" />
       <module name="core_main" target="1.8" />
       <module name="core_test" target="1.8" />
+      <module name="desktop_main" target="1.8" />
+      <module name="desktop_test" target="1.8" />
       <module name="game_main" target="1.8" />
       <module name="game_test" target="1.8" />
     </bytecodeTargetLevel>

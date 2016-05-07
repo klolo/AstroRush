@@ -24,6 +24,8 @@ public class LabelObject extends TextureObject {
     private boolean screenPositionRelative = false;
 
 
+    private boolean useShader = false;
+
     @Getter
     private BitmapFont font;
 
@@ -34,9 +36,12 @@ public class LabelObject extends TextureObject {
 
     public LabelObject(BitmapFont font) {
         this.font = font;
-        fontShader = new ShaderProgram(Gdx.files.internal("font.vert"), Gdx.files.internal("font.frag"));
-        if (!fontShader.isCompiled()) {
-            Gdx.app.error("fontShader", "compilation failed:\n" + fontShader.getLog());
+
+        if(useShader) {
+            fontShader = new ShaderProgram(Gdx.files.internal("font.vert"), Gdx.files.internal("font.frag"));
+            if (!fontShader.isCompiled()) {
+                Gdx.app.error("fontShader", "compilation failed:\n" + fontShader.getLog());
+            }
         }
     }
 
@@ -48,14 +53,20 @@ public class LabelObject extends TextureObject {
         else {
             batch.setProjectionMatrix(cam.combined);
         }
-        //  batch.setShader(fontShader);
+
+        if(useShader) {
+            batch.setShader(fontShader);
+        }
 
         font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         font.draw(batch, text,
                 sprite.getX() * PhysicsWorld.instance.PIXEL_PER_METER,
                 sprite.getY() * PhysicsWorld.instance.PIXEL_PER_METER);
 
-        //  batch.setShader(null);
+        if(useShader) {
+            batch.setShader(null);
+        }
+
         batch.setProjectionMatrix(cam.combined);
     }
 
