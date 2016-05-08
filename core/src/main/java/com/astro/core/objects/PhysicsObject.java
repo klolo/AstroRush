@@ -28,9 +28,6 @@ public class PhysicsObject extends TextureObject implements IGameObject {
         return null;
     }
 
-    @Getter
-    @Setter
-    protected Body body;
 
     public PhysicsObject(Texture texture) {
         super(texture);

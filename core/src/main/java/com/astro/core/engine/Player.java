@@ -1,6 +1,8 @@
 package com.astro.core.engine;
 
 import com.astro.core.objects.PhysicsObject;
+import com.astro.core.objects.interfaces.IGameObject;
+import com.astro.core.objects.interfaces.ILogic;
 import com.astro.core.objects.interfaces.IPlayer;
 import com.astro.core.observe.IKeyObserver;
 import com.astro.core.observe.KeyObserve;
@@ -15,7 +17,9 @@ import lombok.extern.slf4j.Slf4j;
  * Created by kamil on 23.04.16.
  */
 @Slf4j
-public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
+public class Player extends PhysicsObject implements IKeyObserver, IPlayer, ILogic {
+
+    IGameObject gameObject;
 
     public Player() {
         super(new Texture("assets/ico.png"));
@@ -23,7 +27,7 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
         this.getSprite().setOrigin(0.0f, 0.0f);
         super.init();
 
-        KeyObserve.instance.register(this);
+       // KeyObserve.instance.register(this);
     }
 
     /**
@@ -87,7 +91,7 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
             horizontalForce += 1;
         }
         else if (Input.Keys.UP == keyCode) {
-            body.applyForceToCenter(0, 10, false);
+            body.applyForceToCenter(0, 6, false);
         }
 
         body.setLinearVelocity(horizontalForce * 5, body.getLinearVelocity().y);
@@ -98,4 +102,8 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer {
 
     }
 
+    @Override
+    public void setGameObject(IGameObject gameObject) {
+
+    }
 }

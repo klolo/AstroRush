@@ -121,10 +121,10 @@ public enum PhysicsWorld {
 
         rayHandler = new RayHandler(world);
         rayHandler.setAmbientLight(
-                0.58431373f,
-                0.3529412f,
-                0.6f,
-                .9f
+                .8f,
+                .8f,
+                .8f,
+                1f
         );
 
         rayHandler.setCulling(true);

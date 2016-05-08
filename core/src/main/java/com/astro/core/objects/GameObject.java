@@ -4,6 +4,7 @@ import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.physics.box2d.Body;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,10 @@ import java.util.HashMap;
  */
 @Slf4j
 abstract public class GameObject implements IGameObject {
+
+    @Getter
+    @Setter
+    protected Body body;
 
     /**
      * Logic of the object.

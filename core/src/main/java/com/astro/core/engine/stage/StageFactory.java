@@ -1,6 +1,5 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.engine.Player;
 import com.astro.core.engine.ScreenManager;
 import com.astro.core.objects.interfaces.IGameObject;

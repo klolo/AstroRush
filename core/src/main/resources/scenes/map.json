@@ -1,281 +1,918 @@
 {
-  "sceneName": "MainScene",
+  "sceneName": "Lvl1",
   "composite": {
     "sImages": [
       {
-        "customVars": "param1:val1;param2:val2",
-        "uniqueId": 4,
+        "uniqueId": 3,
         "tags": [],
-        "x": -3.6875,
-        "y": 0.012500048,
-        "originX": 1.86875,
-        "originY": 1.7875,
+        "x": -4.1125,
+        "y": -1.6625001,
+        "originX": 0.4,
+        "originY": 0.4,
         "layerName": "Default",
         "shape": {
           "polygons": [
             [
+              {},
               {
-                "x": 0.71249986,
-                "y": 2.9
+                "y": 0.8
               },
               {
-                "x": 0.05,
-                "y": 1.6875
+                "x": 0.8,
+                "y": 0.8
               },
               {
-                "x": 1.5875,
-                "y": 1.4
-              },
-              {
-                "x": 2.0625,
-                "y": 1.3875002
-              },
-              {
-                "x": 3.7375,
-                "y": 1.9875
-              },
-              {
-                "x": 2.9625,
-                "y": 3.275
-              },
-              {
-                "x": 1.8625,
-                "y": 3.575
-              }
-            ],
-            [
-              {
-                "x": 2.4125,
-                "y": 0.1
-              },
-              {
-                "x": 2.0625,
-                "y": 1.3875002
-              },
-              {
-                "x": 1.5875,
-                "y": 1.4
-              },
-              {
-                "x": 0.8875,
-                "y": 0.1
+                "x": 0.8
               }
             ]
           ]
         },
         "physics": {
-          "mass": 2,
+          "mass": 1,
           "allowSleep": true,
           "awake": true,
           "density": 1,
           "friction": 1,
           "restitution": 1
         },
-        "imageName": "tree3",
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 4,
+        "tags": [],
+        "x": -4.9,
+        "y": -1.6375,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 1,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue15",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 5,
+        "tags": [],
+        "x": -3.325,
+        "y": -1.6500001,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 2,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 6,
+        "tags": [],
+        "x": -2.5375001,
+        "y": -1.65,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 3,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
         "isRepeat": true
       },
       {
         "uniqueId": 7,
-        "tags": [
-          "sheep"
-        ],
-        "customVars": "ninja:true",
-        "x": 0.037499975,
-        "y": 1.6125001,
-        "scaleX": 0.7,
-        "scaleY": 0.7,
-        "originX": 0.7625,
-        "originY": 0.75,
-        "rotation": 89.96229,
-        "zIndex": 1,
+        "tags": [],
+        "x": -1.7625,
+        "y": -1.6500001,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 4,
         "layerName": "Default",
-        "tint": [
-          0.5411765,
-          0.21960784,
-          0.21960784,
-          1
-        ],
-        "imageName": "ninja"
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
       },
       {
-        "uniqueId": 23,
+        "uniqueId": 8,
         "tags": [],
-        "x": 4.1,
-        "y": -0.037499994,
-        "originX": 0.5,
-        "originY": 0.4375,
-        "zIndex": 3,
+        "x": -0.9749999,
+        "y": -1.65,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 5,
         "layerName": "Default",
-        "imageName": "sheep"
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
       },
       {
-        "uniqueId": 22,
+        "uniqueId": 9,
         "tags": [],
-        "x": 3.6,
-        "y": -0.037499994,
-        "originX": 0.5,
-        "originY": 0.4375,
+        "x": -0.19999981,
+        "y": -1.65,
+        "originX": 0.4,
+        "originY": 0.4,
         "zIndex": 6,
         "layerName": "Default",
-        "imageName": "sheep"
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 11,
+        "tags": [],
+        "x": 0.5875001,
+        "y": -1.65,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 7,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 12,
+        "tags": [],
+        "x": 1.3625,
+        "y": -1.6500001,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 8,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 13,
+        "tags": [],
+        "x": 2.1374998,
+        "y": -1.6375,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 9,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 14,
+        "tags": [],
+        "x": 2.9250002,
+        "y": -1.65,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 10,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 17,
+        "tags": [],
+        "x": 3.2875001,
+        "y": -0.875,
+        "originX": 0.18125,
+        "originY": 0.34375,
+        "zIndex": 11,
+        "layerName": "Default",
+        "imageName": "plantBlue4"
       },
       {
         "uniqueId": 18,
         "tags": [],
-        "x": 0.46249998,
-        "y": -0.07499999,
-        "originX": 1.5375,
-        "originY": 0.65,
-        "zIndex": 8,
-        "layerName": "layer1",
-        "imageName": "ufocrash"
-      }
-    ],
-    "sLabels": [
-      {
-        "uniqueId": 2,
-        "tags": [],
-        "x": -0.44,
-        "y": 4.34,
-        "originX": 0.75,
-        "originY": 0.3125,
-        "zIndex": 7,
+        "x": 3.0625,
+        "y": -0.875,
+        "originX": 0.1625,
+        "originY": 0.3,
+        "zIndex": 12,
         "layerName": "Default",
-        "tint": [
-          1,
-          0,
-          0,
-          1
-        ],
-        "text": "La Li Lu Le Lo",
-        "style": "Calibri",
-        "size": 30,
-        "align": 1,
-        "width": 2.93,
-        "height": 0.84
-      }
-    ],
-    "sComposites": [
+        "imageName": "plantBlue1"
+      },
       {
         "uniqueId": 19,
-        "itemName": "windmill",
         "tags": [],
-        "x": 2.5500002,
-        "y": 0.025000095,
-        "originX": 0,
-        "originY": 0,
-        "rotation": 11.319733,
-        "zIndex": 9,
-        "layerName": "layer2",
-        "composite": {
-          "sImages": [
-            {
-              "uniqueId": 20,
-              "tags": [],
-              "x": 0.08749986,
-              "originX": 0.94375,
-              "originY": 1.46875,
-              "layerName": "Default",
-              "imageName": "windmillMain"
-            },
-            {
-              "uniqueId": 21,
-              "tags": [],
-              "y": 1.5625,
-              "originX": 0.86875,
-              "originY": 0.875,
-              "zIndex": 1,
-              "layerName": "Default",
-              "imageName": "windmillRotating"
-            }
-          ],
-          "layers": [
-            {
-              "layerName": "Default",
-              "isVisible": true
-            }
+        "x": 2.1000001,
+        "y": -0.875,
+        "originX": 0.275,
+        "originY": 0.2125,
+        "zIndex": 13,
+        "layerName": "Default",
+        "imageName": "plantBlue2"
+      },
+      {
+        "uniqueId": 20,
+        "tags": [],
+        "x": -4.525,
+        "y": -0.9125,
+        "originX": 0.2125,
+        "originY": 0.24375,
+        "zIndex": 14,
+        "layerName": "Default",
+        "imageName": "plantBlue6"
+      },
+      {
+        "uniqueId": 21,
+        "tags": [],
+        "x": -4.1625,
+        "y": -0.875,
+        "originX": 0.225,
+        "originY": 0.19375,
+        "zIndex": 15,
+        "layerName": "Default",
+        "imageName": "plantDark2"
+      },
+      {
+        "uniqueId": 22,
+        "tags": [],
+        "x": 0.95,
+        "y": 1.7,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 16,
+        "layerName": "Default",
+        "imageName": "tileBlue15"
+      },
+      {
+        "uniqueId": 23,
+        "tags": [],
+        "x": 2.525,
+        "y": 1.7,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 17,
+        "layerName": "Default",
+        "imageName": "tileBlue16"
+      },
+      {
+        "uniqueId": 24,
+        "tags": [],
+        "x": 1.7375001,
+        "y": 1.7,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 18,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {
+                "x": 1.5234375,
+                "y": 0.25390625
+              },
+              {
+                "x": 1.6210938,
+                "y": 0.60546875
+              },
+              {
+                "x": 1.5039062,
+                "y": 0.7910157
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": -0.7324225,
+                "y": 0.7902343
+              }
+            ],
+            [
+              {
+                "x": -0.7324225,
+                "y": 0.7902343
+              },
+              {
+                "x": -0.7910157,
+                "y": 0.36132812
+              },
+              {
+                "x": -0.48828065,
+                "y": 0.039062496
+              },
+              {
+                "x": -0.058593754,
+                "y": -0.029296877
+              },
+              {
+                "x": 1.0832031
+              },
+              {
+                "x": 1.5234375,
+                "y": 0.25390625
+              }
+            ]
           ]
         },
-        "width": 1.9749999,
-        "height": 3.3125
-      }
-    ],
-    "sParticleEffects": [
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
       {
         "uniqueId": 25,
         "tags": [],
-        "x": 1.7375,
-        "y": 0.15,
-        "originX": 0,
-        "originY": 0,
-        "zIndex": 5,
+        "x": 3.7125,
+        "y": -1.6500001,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 19,
         "layerName": "Default",
-        "particleName": "bigFire"
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 26,
+        "tags": [],
+        "x": 2.5375,
+        "y": 2.475,
+        "originX": 0.29375,
+        "originY": 0.29375,
+        "zIndex": 20,
+        "layerName": "Default",
+        "imageName": "switchGreenleft"
+      },
+      {
+        "uniqueId": 28,
+        "tags": [],
+        "x": 0.9875,
+        "y": 2.4750001,
+        "originX": 0.3,
+        "originY": 0.34375,
+        "zIndex": 21,
+        "layerName": "Default",
+        "imageName": "signArrowright"
+      },
+      {
+        "uniqueId": 30,
+        "tags": [],
+        "x": 4.5,
+        "y": -1.65,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 22,
+        "layerName": "Default",
+        "imageName": "tileBlue20"
+      },
+      {
+        "uniqueId": 32,
+        "tags": [],
+        "x": 4.4875,
+        "y": -0.8625,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 23,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {
+                "x": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.38085935,
+                "y": 0.39960948
+              },
+              {}
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue11",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 33,
+        "tags": [],
+        "x": 5.275,
+        "y": -0.86249995,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 24,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 34,
+        "tags": [],
+        "x": 6.0625,
+        "y": -0.8625,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 25,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue05",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 35,
+        "tags": [],
+        "x": 5.2125,
+        "y": -1.65,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 26,
+        "layerName": "Default",
+        "imageName": "tileBlue17"
+      },
+      {
+        "uniqueId": 36,
+        "tags": [],
+        "x": 6.8375,
+        "y": -0.8625,
+        "originX": 0.4,
+        "originY": 0.4,
+        "zIndex": 27,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8
+              },
+              {
+                "x": 0.8,
+                "y": 0.8
+              },
+              {
+                "x": 0.8
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "tileBlue25",
+        "isRepeat": true
       }
     ],
     "sLights": [
       {
         "uniqueId": 15,
         "tags": [],
-        "x": 1.2750001,
-        "y": 2.9375,
+        "x": 0.89,
+        "y": 5.79,
+        "scaleX": 11,
         "originX": 0,
         "originY": 0,
-        "zIndex": 4,
+        "zIndex": 30,
         "layerName": "Default",
+        "tint": [
+          0.31764707,
+          0.8784314,
+          0.25490198,
+          1
+        ],
         "type": "POINT",
-        "distance": 4,
+        "distance": 30,
+        "softnessLength": 0.015000001
+      },
+      {
+        "uniqueId": 16,
+        "tags": [],
+        "x": -7.63,
+        "y": -4.26,
+        "originX": 0,
+        "originY": 0,
+        "zIndex": 31,
+        "layerName": "Default",
+        "tint": [
+          0.92941177,
+          0,
+          0,
+          1
+        ],
+        "type": "POINT",
+        "distance": 10,
         "softnessLength": 0.015000001
       }
     ],
     "sSpriteAnimations": [
       {
-        "uniqueId": 14,
-        "tags": [
-          "sheep"
-        ],
-        "x": -1.0875001,
-        "y": -0.012499988,
+        "uniqueId": 2,
+        "tags": [],
+        "customVars": "logic:Sheep",
+        "x": -2.9875,
+        "y": -0.96250004,
         "originX": 0.775,
         "originY": 0.6,
-        "zIndex": 2,
+        "zIndex": 28,
         "layerName": "Default",
         "animationName": "sheep",
-        "currentAnimation": "full",
+        "currentAnimation": "Default",
         "frameRangeMap": [
           {
             "name": "Default",
             "endFrame": 6
-          },
-          {
-            "name": "full",
-            "endFrame": 6
           }
         ],
-        "playMode": 4
+        "playMode": 2
+      },
+      {
+        "uniqueId": 10,
+        "tags": [],
+        "customVars": "logic:Player",
+        "x": 5.85,
+        "y": -0.13750005,
+        "originX": 0.4375,
+        "originY": 0.8625,
+        "zIndex": 29,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 1.725
+              },
+              {
+                "x": 0.875,
+                "y": 1.725
+              },
+              {
+                "x": 0.875
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "bodyType": 2,
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "animationName": "astroastroPack",
+        "fps": 15,
+        "currentAnimation": "Default",
+        "frameRangeMap": [
+          {
+            "name": "Default",
+            "endFrame": 10
+          }
+        ],
+        "playMode": 2
       }
     ],
     "layers": [
       {
         "layerName": "Default",
         "isVisible": true
-      },
-      {
-        "layerName": "layer1",
-        "isVisible": true
-      },
-      {
-        "layerName": "layer2",
-        "isVisible": true
       }
     ]
   },
   "lightSystemEnabled": true,
   "ambientColor": [
-    0.38431373,
-    0.5529412,
-    0.6,
+    0.043137256,
+    0.05882353,
+    0.14901961,
     1
   ],
-  "physicsPropertiesVO": {}
+  "physicsPropertiesVO": {},
+  "verticalGuides": [
+    2.9298751
+  ]
 }

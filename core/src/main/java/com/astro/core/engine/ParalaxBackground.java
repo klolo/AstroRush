@@ -49,10 +49,6 @@ public class ParalaxBackground {
     @Setter
     private boolean SIMPLE_MODE;
 
-    public ParalaxBackground() {
-        PropertyInjector.instance.inject(this);
-    }
-
     public void init() {
         Texture background = new Texture(Gdx.files.internal("assets/" + TEXTURE_FILE));
 
@@ -76,6 +72,10 @@ public class ParalaxBackground {
                         (Gdx.graphics.getHeight() * TEXTURE_SCALE));
             }
         }
+    }
+
+    public ParalaxBackground() {
+        PropertyInjector.instance.inject(this);
     }
 
     /**

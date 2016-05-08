@@ -49,11 +49,12 @@ public class MainItemVOToIGameObjectConverter {
     private void setArgs(final String arg, final IGameObject result) {
         String[] data = arg.split(":");
         if (data.length == 2) {
+            log.info("[Custom vars] {}={}", data[0], data[1]);
+
             if (IGameObject.LOGIC_VARS.equals(data[0])) {
                 String className = SCRIPT_PACKAGE + "." + data[1];
                 setGameLogic(className, result);
             }
-            log.info("[Custom vars] {}={}", data[0], data[1]);
             result.setCustomVar(data[0], data[1]);
         }
     }
@@ -63,6 +64,7 @@ public class MainItemVOToIGameObjectConverter {
      */
     private void setGameLogic(final String className, final IGameObject result) {
         try {
+            log.info("Setting logic: {}", className);
             Class clazz = Class.forName(className);
             ILogic logic = (ILogic) clazz.newInstance();
             logic.setGameObject(result);

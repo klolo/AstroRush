@@ -2,495 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ec722d8-dd8c-4052-95d3-6be1ae989e58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/freetypefonts/Neon.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/freetypefonts/StayPuft.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/freetypefonts/StayPuft.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/Goldprogress.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockBrown.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockBrownbroken.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockGreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockGreenkey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockGreenlock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockGreenpuzzle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockGrey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockGreybroken.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockRed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockRedkey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockRedlock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blockRedpuzzle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blueCrystal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blueGem.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/blueJewel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/buttonFloor.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/buttonFloorpressed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/buttonGreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/buttonGreenpressed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/buttonRed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/buttonRedpressed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/discGreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/discRed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/doorGreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/doorGreenlock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/doorGreentop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/doorOpen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/doorOpentop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/doorRed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/doorRedlock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/doorRedtop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFloating1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFloating2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFloating3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFloating4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFlying1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFlying2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFlying3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFlying4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFlyingAlt1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFlyingAlt2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFlyingAlt3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyFlyingAlt4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemySpikey1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemySpikey2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemySpikey3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemySpikey4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemySwimming1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemySwimming2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemySwimming3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemySwimming4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyWalking1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyWalking2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyWalking3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/enemyWalking4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fence.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fenceBroken.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fenceLeft.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fenceMid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fenceOpen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fenceRight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/flagGreendown.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/flagGreenup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/flagReddown.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/flagRedup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fluidBlue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fluidBluetop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fluidBrown.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fluidBrowntop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fluidGreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fluidGreentop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fluidRed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fluidRedtop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/greenCrystal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/greenGem.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/greenJewel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/item1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/keyGreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/keyRed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ladderNarrowmid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ladderNarrowtop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ladderWidemid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ladderWidetop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockGreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockGreenBottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockGreenLeft.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockGreenLock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockGreenMid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockGreenRight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockGreenTop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockRed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockRedBottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockRedLeft.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockRedLock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockRedMid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockRedRight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/lockRedTop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/outlineCrystal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/outlineDisc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/outlineDiscalt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/outlineGem.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/outlineJewel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/outlineKey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/outlinePuzzle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/paltform1.9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/paltform2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantBlue1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantBlue2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantBlue3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantBlue4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantBlue5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantBlue6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantBottom1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantBottom2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantDark1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantDark2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantDark3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantDark4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantDark5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantDark6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantGreen1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantGreen2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantGreen3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantGreen4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantGreen5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantGreen6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantLeaves1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantLeaves3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantRed1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantRed2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantRed3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantRed4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantRed5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantRed6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantStemTleft.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantStemTright.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantStemcornerLeft.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantStemcornerRight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantStemcross.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantStemhorizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantStemvertical.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantThornshorizontal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantThornsvertical.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantTopblue.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantTopleaves.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantTopred.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/plantTopyellow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreendead.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenduck.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenfall.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenhit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenroll.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenstand.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenswim1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenswim2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenswitch1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenswitch2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenup1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenup2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenup3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenwalk1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenwalk2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenwalk3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenwalk4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/playerGreenwalk5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/puzzleGreen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/puzzleRed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/redCrystal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/redGem.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/redJewel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0001.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0001@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0002.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0002@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0003.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0003@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0004.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0004@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0005.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0005@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0006.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0006@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0007.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0007@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0008.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0008@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0009.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0009@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0010.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0010@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0011.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0011@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0012.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0012@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0013.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/ringblast0013@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set1background.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set1hills.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set1tiles.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set2background.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set2hills.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set2tiles.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set3background.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set3hills.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set3tiles.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set4background.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set4hills.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/set4tiles.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/sheep.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signArrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signArrowBL.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signArrowBR.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signArrowTL.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signArrowTR.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signArrowdown.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signArrowleft.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signArrowright.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signArrowup.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signLarge.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signSmall.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/signpost.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/spikesHigh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/spikesLow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/switchGreenleft.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/switchGreenmid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/switchGreenoff.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/switchGreenon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/switchGreenright.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/switchRedleft.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/switchRedmid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/switchRedoff.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/switchRedon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/switchRedright.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue04.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue05.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue06.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue07.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue08.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue09.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue14.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue15.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue17.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue18.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue19.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue20.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue21.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue22.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue23.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue24.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue25.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue26.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/tileBlue27.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/vine.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/vinebottom.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/vinebottomAlt.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/yellowCrystal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/yellowGem.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/yellowJewel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/sprite-animations/sheep/sheep.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/freetypefonts/StayPuft.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/sprite_animations/sheep/sheep.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/desktop/desktop.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/desktop/desktop_main.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules/desktop/desktop_test.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameLogic.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/Player.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/GameStage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageConfigReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Sheep.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack.atlas" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/project.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/scenes/Lvl1.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/scenes/MainScene.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/scenes/Menu.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/stages.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/java/engine/ParalaxBackgroundTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/java/engine/PropertiesReaderTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/java/engine/PropertyInjectorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/desktop/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/desktop/build/test-results/TEST-engine.ParalaxBackgroundTests.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/desktop/build/test-results/TEST-engine.PropertiesReaderTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/desktop/build/test-results/TEST-engine.PropertyInjectorTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/desktop/src/main/java/com/astro/game/Launcher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack.atlas" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/sprite-animations/sheep/sheep.atlas" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack.atlas" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/sprite_animations/sheep/sheep.atlas" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/project.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/Lvl1.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/MainScene.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/Menu.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/project.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/project.pit" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/Lvl1.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/MainScene.dt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/Menu.dt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules/game/game.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules/game/game_main.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/game/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/game/src/main/java/com/astro/game/GameLogic.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/game/src/main/java/com/astro/game/Launcher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/game/src/main/java/com/astro/game/Player.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/game/src/main/java/com/astro/game/script/Sheep.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/game/src/main/resources/orig/pack.atlas" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/game/src/main/resources/project.dt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/game/src/main/resources/scenes/MainScene.dt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/game/src/test/java/engine/ParalaxBackgroundTests.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/background.jpg" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/background.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/alien_plant.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/alien_plant.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/b (kopia).png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/b (kopia).png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/b.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/b.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/background.jpg" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/background.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/block.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/block.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/blockerMad.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/blockerMad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/bonus.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/bonus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/bonus_used.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/bonus_used.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/bridge.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/bridge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/bush.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/bush.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/cloud_1.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/cloud_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/cloud_2.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/cloud_2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/cloud_3.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/cloud_3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/coin_bronze.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/coin_bronze.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/coin_gold.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/coin_gold.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/coin_silver.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/coin_silver.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/crate.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/crate.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/fence.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/fence.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/fence_broken.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/fence_broken.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/fly_dead.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/fly_dead.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/fly_fly.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/fly_fly.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/fly_normal.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/fly_normal.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/grass.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/grass.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/ground.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/ground.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/ground_cave.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/ground_cave.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/ground_dirt.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/ground_dirt.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/ground_rock.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/ground_rock.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/ground_sand.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/ground_sand.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/hill_long.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/hill_long.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/hill_short.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/hill_short.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/ico.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/ico.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/key_blue.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/key_blue.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/key_green.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/key_green.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/key_red.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/key_red.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/key_yellow.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/key_yellow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/lava.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/lava.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/lock_blue.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/lock_blue.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/lock_green.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/lock_green.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/lock_red.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/lock_red.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/lock_yellow.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/lock_yellow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/planes.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/planes.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/planes.xml" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/planes.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/plank.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/plank.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/rock.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/rock.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/sheet.xml" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/sheet.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/shroom.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/shroom.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/slime_dead.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/slime_dead.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/slime_normal.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/slime_normal.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/slime_walk.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/slime_walk.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/spikes.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/spikes.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/switch_blue_off.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/switch_blue_off.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/switch_blue_on.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/switch_blue_on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/switch_green_off.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/switch_green_off.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/switch_green_on.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/switch_green_on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/switch_red_off.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/switch_red_off.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/switch_red_on.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/switch_red_on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/switch_yellow_off.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/switch_yellow_off.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/switch_yellow_on.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/switch_yellow_on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/gfx/water.png" afterPath="$PROJECT_DIR$/core/src/main/resources/gfx/water.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/assets/ico.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/ico.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/font.frag" afterPath="$PROJECT_DIR$/core/src/main/resources/font.frag" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/font.vert" afterPath="$PROJECT_DIR$/core/src/main/resources/font.vert" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/freetypefonts/Calibri.ttf" afterPath="$PROJECT_DIR$/core/src/main/resources/freetypefonts/Calibri.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/game.properties" afterPath="$PROJECT_DIR$/core/src/main/resources/game.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/alien_plant.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/alien_plant.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/b (kopia).png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/b (kopia).png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/b.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/b.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/background.jpg" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/background.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/block.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/block.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/blockerMad.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/blockerMad.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/bonus.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/bonus.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/bonus_used.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/bonus_used.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/bridge.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/bridge.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/bush.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/bush.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/cloud_1.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/cloud_1.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/cloud_2.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/cloud_2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/cloud_3.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/cloud_3.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/coin_bronze.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/coin_bronze.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/coin_gold.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/coin_gold.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/coin_silver.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/coin_silver.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/crate.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/crate.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/fence.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/fence.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/fence_broken.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/fence_broken.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/fly_dead.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/fly_dead.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/fly_fly.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/fly_fly.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/fly_normal.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/fly_normal.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/grass.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/grass.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/ground.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/ground.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/ground_cave.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/ground_cave.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/ground_dirt.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/ground_dirt.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/ground_rock.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/ground_rock.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/ground_sand.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/ground_sand.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/hill_long.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/hill_long.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/hill_short.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/hill_short.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/ico.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/ico.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/key_blue.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/key_blue.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/key_green.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/key_green.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/key_red.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/key_red.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/key_yellow.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/key_yellow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/lava.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/lava.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/lock_blue.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/lock_blue.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/lock_green.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/lock_green.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/lock_red.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/lock_red.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/lock_yellow.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/lock_yellow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/planes.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/planes.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/planes.xml" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/planes.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/plank.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/plank.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/rock.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/rock.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/sheet.xml" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/sheet.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/shroom.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/shroom.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/slime_dead.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/slime_dead.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/slime_normal.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/slime_normal.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/slime_walk.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/slime_walk.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/spikes.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/spikes.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/switch_blue_off.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/switch_blue_off.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/switch_blue_on.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/switch_blue_on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/switch_green_off.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/switch_green_off.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/switch_green_on.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/switch_green_on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/switch_red_off.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/switch_red_off.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/switch_red_on.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/switch_red_on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/switch_yellow_off.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/switch_yellow_off.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/switch_yellow_on.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/switch_yellow_on.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/gfx/water.png" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/gfx/water.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/orig/pack.png" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/pack.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/orig/sprite_animations/enemyWalking_Pack/enemyWalking_Pack.atlas" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/sprite_animations/enemyWalking_Pack/enemyWalking_Pack.atlas" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/orig/sprite_animations/enemyWalking_Pack/enemyWalking_Pack.png" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/sprite_animations/enemyWalking_Pack/enemyWalking_Pack.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/orig/sprite_animations/sheep/sheep.atlas" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/sprite_animations/sheep/sheep.atlas" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/orig/sprite_animations/sheep/sheep.png" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/sprite_animations/sheep/sheep.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/orig/sprite_animations/tileBlue_Pack/tileBlue_Pack.atlas" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/sprite_animations/tileBlue_Pack/tileBlue_Pack.atlas" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/orig/sprite_animations/tileBlue_Pack/tileBlue_Pack.png" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/sprite_animations/tileBlue_Pack/tileBlue_Pack.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/particles/bigFire" afterPath="$PROJECT_DIR$/core/src/main/resources/particles/bigFire" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/main/resources/scenes/map.json" afterPath="$PROJECT_DIR$/core/src/main/resources/scenes/map.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/game/src/test/java/engine/InitLibgdx.java" afterPath="$PROJECT_DIR$/core/src/test/java/engine/InitLibgdx.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/game/game_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/game/game_test.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/freetypefonts/Open Sans.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/sprite_animations/astroastroPack/astroastroPack.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/freetypefonts/Open Sans.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/sprite-animations/astroastroPack/astroastroPack.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/freetypefonts/Open Sans.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/sprite_animations/astroastroPack/astroastroPack.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/BaseLoader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/sprite_animations/astroastroPack/astroastroPack.atlas" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/sprite-animations/astroastroPack/astroastroPack.atlas" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/sprite_animations/astroastroPack/astroastroPack.atlas" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desktop/build/test-results/TEST-engine.ParalaxBackgroundTests.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desktop/build/test-results/TEST-engine.PropertiesReaderTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/desktop/build/test-results/TEST-engine.PropertyInjectorTest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/overlap2d/astro2.0/assets/orig/images/fluidGreen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/overlap2d/astro2.0/assets/orig/pack/pack.atlas" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/overlap2d/astro2.0/assets/orig/pack/pack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/overlap2d/astro2.0/export/orig/pack.atlas" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/overlap2d/astro2.0/export/orig/pack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/overlap2d/astro2.0/export/project.dt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/overlap2d/astro2.0/export/scenes/MainScene.dt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/overlap2d/astro2.0/project.dt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/overlap2d/astro2.0/project.pit" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/overlap2d/astro2.0/scenes/MainScene.dt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/orig/pack.png" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/orig/pack2.png" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack.png" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack2.png" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack.png" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack2.png" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack2.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build.gradle" afterPath="$PROJECT_DIR$/core/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameEngine.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/ParalaxBackground.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/ParalaxBackground.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/PhysicsWorld.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/PhysicsWorld.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/LabelObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/LabelObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/Player.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageFactory.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/GameObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/GameObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/PhysicsObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/PhysicsObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/interfaces/IPlayer.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/interfaces/IPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/observe/KeyObserve.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/observe/KeyObserve.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ComponentLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ComponentLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/LabelsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/LabelsLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/storage/PropertiesReader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/storage/PropertiesReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/core.properties" afterPath="$PROJECT_DIR$/core/src/main/resources/core.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/SpriteAnimationsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/SpriteAnimationsLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/game.properties" afterPath="$PROJECT_DIR$/core/src/main/resources/game.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/orig/pack.atlas" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack.atlas" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/scenes/Lvl1.dt" afterPath="$PROJECT_DIR$/core/src/main/resources/scenes/Lvl1.dt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/scenes/Menu.dt" afterPath="$PROJECT_DIR$/core/src/main/resources/scenes/Menu.dt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/scenes/map.json" afterPath="$PROJECT_DIR$/core/src/main/resources/scenes/map.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/java/engine/ParalaxBackgroundTests.java" afterPath="$PROJECT_DIR$/core/src/test/java/engine/ParalaxBackgroundTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack.atlas" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack.atlas" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack.atlas" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack.atlas" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/Lvl1.dt" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/Lvl1.dt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/Menu.dt" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/Menu.dt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/project.pit" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/project.pit" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/Lvl1.dt" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/Lvl1.dt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/Menu.dt" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/Menu.dt" />
     </list>
     <ignored path="AstroRush2.0.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -514,6 +79,42 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="684">
+                    <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+                    <folding>
+                      <element signature="imports" expanded="true" />
+                      <element signature="e#601#602#0" expanded="true" />
+                      <element signature="e#651#652#0" expanded="true" />
+                      <element signature="e#953#954#0" expanded="true" />
+                      <element signature="e#1047#1048#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="AnimationObject.java" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/AnimationObject.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="522">
+                    <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExternalProjectsData">
@@ -623,6 +224,100 @@
                 <option name="myItemId" value="AstroRush2.0" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
               </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value=":desktop" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="build" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="AstroRush2.0" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value=":core" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Run Configurations" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.RunConfigurationsNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="AstroRush2.0" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value=":core" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="verification" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="AstroRush2.0" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value=":core" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="AstroRush2.0" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value=":core" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="AstroRush2.0" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
             </PATH>
           </tree_state>
         </projects_view>
@@ -634,51 +329,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameStage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/GameStage.java">
+      <file leaf-file-name="PhysicsWorld.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/PhysicsWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="186" column="5" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+            <state relative-caret-position="594">
+              <caret line="125" column="18" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project.dt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/resources/project.dt">
+      <file leaf-file-name="PhysicsObject.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/PhysicsObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="486">
+              <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.dt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/resources/scenes/Menu.dt">
+      <file leaf-file-name="StageFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="169" selection-start-line="0" selection-start-column="167" selection-end-line="0" selection-end-column="169" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IPlayer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/interfaces/IPlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+            <state relative-caret-position="360">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -686,21 +361,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhysicsObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/PhysicsObject.java">
+      <file leaf-file-name="StageConfigReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageConfigReader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComponentLoader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ComponentLoader.java">
+      <file leaf-file-name="GameStage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/GameStage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+            <state relative-caret-position="432">
+              <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -711,38 +386,50 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="558">
               <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding>
-                <element signature="e#719#720#0" expanded="true" />
-                <element signature="e#761#762#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PhysicsWorld.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/PhysicsWorld.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameLogic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameLogic.java">
+      <file leaf-file-name="MainItemVOToIGameObjectConverter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1554">
-              <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+            <state relative-caret-position="558">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextureObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8">
+              <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1388#1389#0" expanded="true" />
-                <element signature="e#1424#1425#0" expanded="true" />
-                <element signature="e#2092#2093#0" expanded="true" />
-                <element signature="e#2139#2140#0" expanded="true" />
-                <element signature="e#2177#2178#0" expanded="true" />
-                <element signature="e#2219#2220#0" expanded="true" />
+                <element signature="e#1718#1719#0" expanded="true" />
+                <element signature="e#1740#1741#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sheep.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Sheep.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1228,139 +915,6 @@
             </list>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/game">
-          <value>
-            <list>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by project ':game'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="components" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="buildDependents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of project ':game'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="projects" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles main classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="classes" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="dist" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="run" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles test classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="testClasses" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Generates Javadoc API documentation for the main source code." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="javadoc" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles a jar archive containing the main classes." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="jar" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of project ':game'. [incubating]" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="model" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Processes main resources." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="processResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from project ':game'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="tasks" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs the unit tests." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="test" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Compiles main Java source." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="compileJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in project ':game'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="dependencyInsight" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Runs all checks." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="check" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles the outputs of this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="assemble" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Deletes the build directory." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="clean" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Compiles test Java source." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="compileTestJava" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="coveralls" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in project ':game'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="dependencies" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Processes test resources." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="processTestResources" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays a help message." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="help" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="build" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Assembles and tests this project and all projects it depends on." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="buildNeeded" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of project ':game'." />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/game" />
-                <option name="name" value="properties" />
-              </ExternalTaskPojo>
-            </list>
-          </value>
-        </entry>
       </map>
     </option>
     <option name="modificationStamps">
@@ -1707,16 +1261,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/LayerManager.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/OverlapSceneReader.java" />
-        <option value="$PROJECT_DIR$/game/src/main/java/com/astro/game/script/Sheep.java" />
-        <option value="$PROJECT_DIR$/game/src/main/resources/scenes/MainScene.dt" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/LabelsLoader.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/ScreenManager.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/Background.java" />
-        <option value="$PROJECT_DIR$/game/src/main/java/com/astro/game/Launcher.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/LightsLoader.java" />
         <option value="/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar!/sun/misc/FloatingDecimal.class" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/storage/PropertyInjector.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java" />
@@ -1731,9 +1275,6 @@
         <option value="$PROJECT_DIR$/game/src/main/resources/game.properties" />
         <option value="$PROJECT_DIR$/core/src/main/resources/core.properties" />
         <option value="$PROJECT_DIR$/game/src/test/java/engine/GdxTestRunner.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/engine/ParalaxBackgroundTests.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameScreen.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/ParalaxBackground.java" />
         <option value="$PROJECT_DIR$/.coveralls.yml" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -1748,16 +1289,29 @@
         <option value="$PROJECT_DIR$/core/build.gradle" />
         <option value="$PROJECT_DIR$/desktop/build.gradle" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/observe/KeyObserve.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ComponentLoader.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageFactory.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameEngine.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/PhysicsWorld.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/PhysicsObject.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/interfaces/IPlayer.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/Player.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameLogic.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/GameStage.java" />
         <option value="$PROJECT_DIR$/core/src/main/resources/scenes/Menu.dt" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/scenes/Lvl1.dt" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageConfig.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameScreen.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/ParalaxBackground.java" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/hs_err_pid9770.log" />
+        <option value="$PROJECT_DIR$/core/src/test/java/engine/ParalaxBackgroundTests.java" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/game.properties" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageFactory.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/PhysicsWorld.java" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/scenes/map.json" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/GameObject.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/BaseLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ComponentLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/PhysicsObject.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/SpriteAnimationsLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/Player.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java" />
       </list>
     </option>
   </component>
@@ -1774,10 +1328,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
     <option name="y" value="24" />
-    <option name="width" value="1922" />
-    <option name="height" value="1153" />
+    <option name="width" value="1920" />
+    <option name="height" value="1152" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1829,6 +1382,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1857,7 +1411,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="desktop" />
+              <option name="myItemId" value="overlap2d_map" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroMap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1871,7 +1429,99 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="desktop" />
+              <option name="myItemId" value="overlap2d_map" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroMap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scenes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overlap2d_map" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroMap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="orig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1880,14 +1530,384 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scenes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="storage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overlap_runtime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overlap_runtime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="loaders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overlap_runtime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="converters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1895,14 +1915,13 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="public" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tools/overlap2d" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1910,8 +1929,17 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/game/src/main/resources" />
+      <recent name="$PROJECT_DIR$/game/src/main/resources/assets" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.astro.core.engine" />
+      <recent name="com.astro.core.overlap_runtime.converters" />
+      <recent name="com.astro.core.adnotation" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/core/src/main/resources" />
@@ -1920,70 +1948,8 @@
       <recent name="$PROJECT_DIR$/game/src/test" />
       <recent name="$PROJECT_DIR$/core/src/test" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.astro.core.overlap_runtime.converters" />
-      <recent name="com.astro.core.adnotation" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/game/src/main/resources" />
-      <recent name="$PROJECT_DIR$/game/src/main/resources/assets" />
-    </key>
   </component>
   <component name="RunManager" selected="Gradle.AstroRush:desktop [run]">
-    <configuration default="false" name="AstroRush [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="AstroRush [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="AstroRush:core [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/core" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
     <configuration default="false" name="AstroRush:desktop [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -2006,6 +1972,60 @@
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/desktop" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="AstroRush:desktop [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/desktop" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="AstroRush:desktop [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/desktop" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="AstroRush:core [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/core" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -2444,19 +2464,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Gradle.AstroRush [run]" />
-      <item index="1" class="java.lang.String" itemvalue="Gradle.AstroRush [test]" />
-      <item index="2" class="java.lang.String" itemvalue="Gradle.AstroRush:core [run]" />
-      <item index="3" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [run]" />
-      <item index="4" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [test]" />
+      <item index="0" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [run]" />
+      <item index="1" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [test]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [build]" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [clean]" />
+      <item index="4" class="java.lang.String" itemvalue="Gradle.AstroRush:core [test]" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [run]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [test]" />
-        <item index="2" class="java.lang.String" itemvalue="Gradle.AstroRush:core [run]" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.AstroRush [run]" />
-        <item index="4" class="java.lang.String" itemvalue="Gradle.AstroRush [test]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.AstroRush:core [test]" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [clean]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [build]" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.AstroRush:desktop [test]" />
       </list>
     </recent_temporary>
   </component>
@@ -2497,7 +2517,9 @@
       <workItem from="1462264411877" duration="13068000" />
       <workItem from="1462295399495" duration="8340000" />
       <workItem from="1462377763913" duration="14977000" />
-      <workItem from="1462608302119" duration="5375000" />
+      <workItem from="1462608302119" duration="7256000" />
+      <workItem from="1462643988120" duration="2421000" />
+      <workItem from="1462740382978" duration="3278000" />
     </task>
     <task id="LOCAL-00001" summary="reading light from map">
       <created>1461794784915</created>
@@ -2723,28 +2745,17 @@
       <option name="project" value="LOCAL" />
       <updated>1462393230750</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Multiple screens support">
+      <created>1462613696121</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1462613696121</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AstroRush_[test] - 2016.05.07 at 10h 09m 47s.xml">
-      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AstroRush_[test] - 2016.05.07 at 10h 10m 29s.xml">
-      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AstroRush_[test] - 2016.05.07 at 10h 10m 44s.xml">
-      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AstroRush_[test] - 2016.05.07 at 10h 10m 55s.xml">
-      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AstroRush_[test] - 2016.05.07 at 10h 11m 02s.xml">
-      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AstroRush_[test] - 2016.05.07 at 10h 11m 07s.xml">
-      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
-    </history-entry>
     <history-entry file="AstroRush_[test] - 2016.05.07 at 10h 12m 20s.xml">
       <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
@@ -2754,12 +2765,30 @@
     <history-entry file="AstroRush_[test] - 2016.05.07 at 10h 13m 16s.xml">
       <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
+    <history-entry file="AstroRush_core_[test] - 2016.05.07 at 20h 51m 59s.xml">
+      <configuration name="AstroRush:core [test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="AstroRush_core_[test] - 2016.05.07 at 20h 53m 19s.xml">
+      <configuration name="AstroRush:core [test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
     <history-entry file="AstroRush_desktop_[test] - 2016.05.07 at 10h 22m 13s.xml">
+      <configuration name="AstroRush:desktop [test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="AstroRush_desktop_[test] - 2016.05.07 at 20h 49m 47s.xml">
+      <configuration name="AstroRush:desktop [test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="AstroRush_desktop_[test] - 2016.05.07 at 20h 51m 31s.xml">
+      <configuration name="AstroRush:desktop [test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="AstroRush_desktop_[test] - 2016.05.07 at 20h 51m 40s.xml">
+      <configuration name="AstroRush:desktop [test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="AstroRush_desktop_[test] - 2016.05.07 at 20h 51m 47s.xml">
       <configuration name="AstroRush:desktop [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208256000" />
+    <option name="totallyTimeSpent" value="215836000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2771,7 +2800,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1922" height="1153" extended-state="6" />
+    <frame x="0" y="24" width="1920" height="1152" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2781,13 +2810,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1945789" sideWeight="0.50852877" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16731142" sideWeight="0.4914712" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17311412" sideWeight="0.4914712" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2640232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20926517" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20607029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2514507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15495208" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2800,6 +2828,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19245648" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2514507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2834,7 +2863,8 @@
     <MESSAGE value="broken build test" />
     <MESSAGE value="broken build test (fix)" />
     <MESSAGE value="travis" />
-    <option name="LAST_COMMIT_MESSAGE" value="travis" />
+    <MESSAGE value="Multiple screens support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Multiple screens support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2863,22 +2893,10 @@
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/ParalaxBackground.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/PhysicsWorld.java</url>
           <line>149</line>
           <properties />
           <option name="timeStamp" value="164" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java</url>
-          <line>75</line>
-          <properties />
-          <option name="timeStamp" value="165" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -2893,204 +2911,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/storage/PropertyInjector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.2/b6c7422c6740f86a9a84fdcbc4c62a1f46db317d/gdx-1.9.2-sources.jar!/com/badlogic/gdx/graphics/Texture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="90" column="11" selection-start-line="90" selection-start-column="11" selection-end-line="90" selection-end-column="11" />
-          <folding>
-            <element signature="e#2399#2428#0" expanded="false" />
-            <element signature="e#3411#3412#0" expanded="false" />
-            <element signature="e#3441#3442#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/Assert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/LabelObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.coveralls.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="360">
-            <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/storage/PropertiesReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desktop/src/test/java/engine/PropertyInjectorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desktop/src/test/java/engine/PropertiesReaderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desktop/src/test/java/engine/ParalaxBackgroundTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desktop/src/test/java/engine/InitLibgdx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.underwaterapps.overlap2druntime/overlap2d-runtime-libgdx/0.1.1/763974ea8bdc8ebec56fc38ab52a8154d23347d6/overlap2d-runtime-libgdx-0.1.1-sources.jar!/com/brashmonkey/spriter/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/engine/PropertyInjectorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/engine/ParalaxBackgroundTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/engine/InitLibgdx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/engine/PropertiesReaderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desktop/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl/1.9.2/888ddbf116b94ab6dbe07178e035091031425b67/gdx-backend-lwjgl-1.9.2-sources.jar!/com/badlogic/gdx/backends/lwjgl/LwjglApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/concurrent/CopyOnWriteArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1188">
           <caret line="118" column="11" selection-start-line="118" selection-start-column="11" selection-end-line="118" selection-end-column="11" />
-          <folding>
-            <element signature="e#3605#3606#0" expanded="true" />
-            <element signature="e#3644#3645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3098,17 +2922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="112" column="17" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/ParalaxBackground.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3116,7 +2929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3140,26 +2952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/OverlapSceneReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-          <folding>
-            <element signature="e#933#934#0" expanded="true" />
-            <element signature="e#975#976#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3167,15 +2959,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageConfigReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3194,7 +2977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3202,33 +2984,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3236,41 +2991,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="911" column="16" selection-start-line="911" selection-start-column="16" selection-end-line="911" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/PhysicsWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="e#719#720#0" expanded="true" />
-            <element signature="e#761#762#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ComponentLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/PhysicsObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -3283,19 +3003,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1554">
+        <state relative-caret-position="1278">
           <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -3309,6 +3019,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/scenes/Menu.dt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="169" selection-start-line="0" selection-start-column="169" selection-end-line="0" selection-end-column="169" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/interfaces/IGameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+          <folding>
+            <element signature="e#3655#3656#0" expanded="true" />
+            <element signature="e#3726#3727#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/engine/InitLibgdx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/hs_err_pid9770.log" />
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/engine/ParalaxBackgroundTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/font.vert">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/resources/project.dt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3317,18 +3086,257 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/scenes/Menu.dt">
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/game.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.underwaterapps.overlap2druntime/overlap2d-runtime-libgdx/0.1.1/763974ea8bdc8ebec56fc38ab52a8154d23347d6/overlap2d-runtime-libgdx-0.1.1-sources.jar!/com/uwsoft/editor/renderer/data/LayerItemVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.underwaterapps.overlap2druntime/overlap2d-runtime-libgdx/0.1.1/763974ea8bdc8ebec56fc38ab52a8154d23347d6/overlap2d-runtime-libgdx-0.1.1-sources.jar!/com/uwsoft/editor/renderer/data/CompositeVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/ParalaxBackground.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="60" column="60" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/OverlapSceneReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="76" column="5" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+          <folding>
+            <element signature="e#933#934#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/scenes/Lvl1.dt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="169" selection-start-line="0" selection-start-column="167" selection-end-line="0" selection-end-column="169" />
+          <caret line="0" column="7499" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="8513" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/scenes/map.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="878" column="16" selection-start-line="878" selection-start-column="9" selection-end-line="878" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ILoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.underwaterapps.overlap2druntime/overlap2d-runtime-libgdx/0.1.1/763974ea8bdc8ebec56fc38ab52a8154d23347d6/overlap2d-runtime-libgdx-0.1.1-sources.jar!/com/uwsoft/editor/renderer/data/PhysicsBodyDataVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.underwaterapps.overlap2druntime/overlap2d-runtime-libgdx/0.1.1/763974ea8bdc8ebec56fc38ab52a8154d23347d6/overlap2d-runtime-libgdx-0.1.1-sources.jar!/com/uwsoft/editor/renderer/data/SimpleImageVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.underwaterapps.overlap2druntime/overlap2d-runtime-libgdx/0.1.1/763974ea8bdc8ebec56fc38ab52a8154d23347d6/overlap2d-runtime-libgdx-0.1.1-sources.jar!/com/uwsoft/editor/renderer/data/MainItemVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/BaseLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="93" column="52" selection-start-line="93" selection-start-column="52" selection-end-line="93" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#788#789#0" expanded="true" />
+            <element signature="e#847#848#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ComponentLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.underwaterapps.overlap2druntime/overlap2d-runtime-libgdx/0.1.1/763974ea8bdc8ebec56fc38ab52a8154d23347d6/overlap2d-runtime-libgdx-0.1.1-sources.jar!/com/uwsoft/editor/renderer/data/SpriteAnimationVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.underwaterapps.overlap2druntime/overlap2d-runtime-libgdx/0.1.1/763974ea8bdc8ebec56fc38ab52a8154d23347d6/overlap2d-runtime-libgdx-0.1.1-sources.jar!/com/uwsoft/editor/renderer/resources/ResourceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="395" column="24" selection-start-line="395" selection-start-column="24" selection-end-line="395" selection-end-column="24" />
+          <folding>
+            <element signature="e#14637#14638#0" expanded="false" />
+            <element signature="e#14686#14687#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/SpriteAnimationsLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/AnimationObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageConfigReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/GameStage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="186" column="5" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+        <state relative-caret-position="432">
+          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/GameEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+          <folding>
+            <element signature="e#1718#1719#0" expanded="true" />
+            <element signature="e#1740#1741#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Sheep.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/PhysicsWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="125" column="18" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="50" column="9" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/PhysicsObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
           <folding />
         </state>
       </provider>

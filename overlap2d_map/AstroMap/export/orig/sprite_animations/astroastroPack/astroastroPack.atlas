@@ -1,0 +1,83 @@
+
+astroastroPack.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+astroastro1
+  rotate: false
+  xy: 2, 280
+  size: 70, 138
+  orig: 70, 138
+  offset: 0, 0
+  index: -1
+astroastro10
+  rotate: false
+  xy: 74, 281
+  size: 70, 137
+  orig: 70, 137
+  offset: 0, 0
+  index: -1
+astroastro11
+  rotate: false
+  xy: 146, 281
+  size: 70, 137
+  orig: 70, 137
+  offset: 0, 0
+  index: -1
+astroastro2
+  rotate: false
+  xy: 218, 281
+  size: 70, 137
+  orig: 70, 137
+  offset: 0, 0
+  index: -1
+astroastro3
+  rotate: false
+  xy: 218, 142
+  size: 70, 137
+  orig: 70, 137
+  offset: 0, 0
+  index: -1
+astroastro4
+  rotate: false
+  xy: 146, 3
+  size: 70, 137
+  orig: 70, 137
+  offset: 0, 0
+  index: -1
+astroastro5
+  rotate: false
+  xy: 2, 2
+  size: 70, 137
+  orig: 70, 137
+  offset: 0, 0
+  index: -1
+astroastro6
+  rotate: false
+  xy: 74, 142
+  size: 70, 137
+  orig: 70, 137
+  offset: 0, 0
+  index: -1
+astroastro7
+  rotate: false
+  xy: 74, 3
+  size: 70, 137
+  orig: 70, 137
+  offset: 0, 0
+  index: -1
+astroastro8
+  rotate: false
+  xy: 146, 142
+  size: 70, 137
+  orig: 70, 137
+  offset: 0, 0
+  index: -1
+astroastro9
+  rotate: false
+  xy: 2, 141
+  size: 70, 137
+  orig: 70, 137
+  offset: 0, 0
+  index: -1
