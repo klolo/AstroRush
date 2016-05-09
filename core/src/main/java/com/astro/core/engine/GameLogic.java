@@ -20,11 +20,17 @@ import java.util.stream.Collectors;
 @Slf4j
 public class GameLogic implements IGameLogic {
 
+    /**
+     * TODO: do osobnego pliku
+     */
     enum Stages {
         MAIN_MENU,
         LEVEL1
     }
 
+    /**
+     * TODO: do osobnego pliku
+     */
     private Stages mapJsonNameToEnumVal(String stageName) {
         switch (stageName) {
             case "MainMenu": {
@@ -40,16 +46,34 @@ public class GameLogic implements IGameLogic {
         }
     }
 
+    /**
+     * TODO: doc
+     */
     private Stages currentStage = Stages.MAIN_MENU; // from json file stages file
 
+    /**
+     * TODO: doc
+     */
     private HashMap<Stages, StageConfig> screenConfigs = new HashMap<>();
 
+    /**
+     * TODO: doc
+     */
     private GameStage currentScreen;
 
+    /**
+     * TODO: doc
+     */
     private StageConfigReader configReader = new StageConfigReader();
 
+    /**
+     * TODO: doc
+     */
     private Game game;
 
+    /**
+     * TODO: doc
+     */
     public GameStage getGameScreen() {
         return currentScreen;
     }
@@ -90,6 +114,7 @@ public class GameLogic implements IGameLogic {
     public void onExit() {
         log.info("cleaning resources before end");
     }
+
 
     @Override
     public void keyPressEvent(int keyCode) {

@@ -28,6 +28,9 @@ public class GameEngine extends Game {
      */
     private float accumulator = 0;
 
+    /**
+     * Current GameStage.
+     */
     private Screen screen;
 
     /**

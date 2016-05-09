@@ -36,6 +36,9 @@ public class GameStage implements Screen {
 
     private IPlayer player;
 
+    /**
+     * TODO: przeniesc do PhysicWorld
+     */
     private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
 
     private ParalaxBackground paralaxBackground;
@@ -48,8 +51,14 @@ public class GameStage implements Screen {
     @Getter
     private ArrayList<IGameObject> mapElementsWithLogic = new ArrayList<>();
 
+    /**
+     * Screen width.
+     */
     private float width = 0.0f;
 
+    /**
+     * Screen height.
+     */
     private float height = 0.0f;
 
     @Getter
@@ -60,7 +69,6 @@ public class GameStage implements Screen {
      */
     GameStage(final ArrayList<IGameObject> elements, final String name) {
         stageName = name;
-        PropertyInjector.instance.inject(this);
         this.mapElements = elements;
 
         mapElements = ScreenManager.instance.sortObjectsByLayer(mapElements);
@@ -117,6 +125,7 @@ public class GameStage implements Screen {
                     camera.combined.scl(PhysicsWorld.instance.PIXEL_PER_METER)
             );
         }
+
         PhysicsWorld.instance.getRayHandler().updateAndRender();
     }
 
@@ -132,14 +141,12 @@ public class GameStage implements Screen {
         }
     }
 
-    private static final float PLAYER_X_POSITION = 0.3f;
-
     private void updateCemera() {
         Vector3 position = camera.position;
 
         if (player != null) {
             position.x = player.getPositionX() * PhysicsWorld.instance.PIXEL_PER_METER;
-            position.y = player.getPositionY() * PhysicsWorld.instance.PIXEL_PER_METER * PLAYER_X_POSITION;
+            position.y = player.getPositionY() * PhysicsWorld.instance.PIXEL_PER_METER;
         }
         else {
             position.x = 0f;
@@ -178,19 +185,20 @@ public class GameStage implements Screen {
         player.dispose();
     }
 
+    /**
+     * Called when stage is switching.
+     */
+    public void unregister() {
+        mapElements.forEach(e -> destroyPhysicsBody(e));
+        if (player != null) {
+            PhysicsWorld.instance.getWorld().destroyBody(player.getBody());
+        }
+    }
 
     private void destroyPhysicsBody(IGameObject gameObject) {
         if (gameObject instanceof PhysicsObject) {
             log.info("Destroy body: {}", ((PhysicsObject) gameObject).getBodyName());
             PhysicsWorld.instance.getWorld().destroyBody(((PhysicsObject) gameObject).getBody());
-        }
-    }
-
-
-    public void unregister() {
-        mapElements.forEach(e -> destroyPhysicsBody(e));
-        if (player != null) {
-            PhysicsWorld.instance.getWorld().destroyBody(player.getBody());
         }
     }
 }

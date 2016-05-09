@@ -3,7 +3,7 @@
 
 
 #AstroRush 2.0
-![ikona](https://github.com/klolo/AstroRush/blob/master/game%2Fsrc%2Fmain%2Fresources%2Fassets%2Fico.png "")
+![ikona](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/ico.png "")
 
 Platformowa gra przygodowa z elementami logiki napisana w Javie 8.
 

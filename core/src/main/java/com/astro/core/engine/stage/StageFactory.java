@@ -4,6 +4,7 @@ import com.astro.core.engine.Player;
 import com.astro.core.engine.ScreenManager;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
+import com.astro.core.storage.PropertyInjector;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -18,12 +19,9 @@ public enum StageFactory {
     public GameStage create(StageConfig config) {
         log.info("Loading stage: {}", config.stageName);
 
-        OverlapSceneReader sceneReader = new OverlapSceneReader(config.sceneFile)
-                .loadScene();
+        GameStage result = new GameStage(getMapElements(config), config.stageName);
 
-        ArrayList<IGameObject> mapElements = (ArrayList<IGameObject>) sceneReader.getComponents();
-        GameStage result = new GameStage(ScreenManager.instance.sortObjectsByLayer(mapElements), config.stageName);
-
+        PropertyInjector.instance.inject(result);
         result.init();
 
         if (!"".equals(config.background)) {
@@ -36,6 +34,16 @@ public enum StageFactory {
         }
 
         return result;
+    }
+
+    /**
+     * Reading from json all entities on the screen.
+     */
+    private ArrayList<IGameObject> getMapElements(StageConfig config) {
+        ArrayList<IGameObject> result;
+        OverlapSceneReader sceneReader = new OverlapSceneReader(config.sceneFile).loadScene();
+        result = (ArrayList<IGameObject>) sceneReader.getComponents();
+        return ScreenManager.instance.sortObjectsByLayer(result);
     }
 
 }
