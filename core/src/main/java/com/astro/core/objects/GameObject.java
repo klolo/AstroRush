@@ -17,6 +17,9 @@ import java.util.HashMap;
 @Slf4j
 abstract public class GameObject implements IGameObject {
 
+    /**
+     * Physics body of the Player.
+     */
     @Getter
     @Setter
     protected Body body;
@@ -34,6 +37,9 @@ abstract public class GameObject implements IGameObject {
     @Setter
     protected String name = "";
 
+    /**
+     *
+     */
     @Getter
     protected Sprite sprite;
 
@@ -52,8 +58,6 @@ abstract public class GameObject implements IGameObject {
     public GameObject() {
         sprite = new Sprite();
     }
-
-    protected abstract void dispose();
 
     protected abstract void render(OrthographicCamera cam, float delta);
 

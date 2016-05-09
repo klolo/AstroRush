@@ -25,4 +25,8 @@ public class ParticleObject extends TextureObject {
         effect.draw(batch, delta);
     }
 
+    @Override
+    public void dispose() {
+        effect.dispose();
+    }
 }

@@ -32,6 +32,9 @@ public class LabelObject extends TextureObject {
     @Setter
     private String text = "";
 
+    /**
+     * TODO:
+     */
     private ShaderProgram fontShader;
 
     public LabelObject(BitmapFont font) {
@@ -68,6 +71,13 @@ public class LabelObject extends TextureObject {
         }
 
         batch.setProjectionMatrix(cam.combined);
+    }
+
+    @Override
+    public void dispose() {
+        batch.dispose();
+        font.dispose();
+        fontShader.dispose();
     }
 
 }

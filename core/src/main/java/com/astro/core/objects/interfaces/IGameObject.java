@@ -30,4 +30,6 @@ public interface IGameObject {
     void setLogic(ILogic logic);
 
     void update(float delta);
+
+    void dispose();
 }

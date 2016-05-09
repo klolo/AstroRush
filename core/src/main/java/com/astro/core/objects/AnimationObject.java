@@ -45,4 +45,9 @@ public class AnimationObject extends TextureObject {
 
         batch.draw(textureRegion, x, y, width, height);
     }
+
+    @Override
+    public void dispose() {
+
+    }
 }

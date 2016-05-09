@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.uwsoft.editor.renderer.Overlap2D;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -168,6 +169,7 @@ public class TextureObject extends GameObject {
         );
     }
 
+    @Override
     public void dispose() {
         batch.dispose();
     }

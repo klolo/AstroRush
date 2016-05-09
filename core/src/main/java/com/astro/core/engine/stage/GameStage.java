@@ -37,6 +37,11 @@ public class GameStage implements Screen {
     private IPlayer player;
 
     /**
+     * Game heads-ups.
+     */
+    private IGameHud hud;
+
+    /**
      * TODO: przeniesc do PhysicWorld
      */
     private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
@@ -181,6 +186,7 @@ public class GameStage implements Screen {
 
     @Override
     public void dispose() {
+        mapElements.forEach(e -> dispose());
         PhysicsWorld.instance.getRayHandler().dispose();
         player.dispose();
     }

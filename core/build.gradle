@@ -4,6 +4,7 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'pmd'
 apply plugin: "jacoco"
+apply plugin: "cobertura"
 
 sourceCompatibility = 1.8
 
