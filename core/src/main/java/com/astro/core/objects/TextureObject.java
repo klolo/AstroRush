@@ -104,8 +104,11 @@ public class TextureObject extends GameObject {
      */
     private void draw(float x, float y, float rotate) {
         float PPM = PhysicsWorld.instance.PIXEL_PER_METER;
-        float pX = (x + sprite.getOriginX()) * PPM - (sprite.getWidth() * sprite.getScaleX() / 2);
-        float pY = (y + sprite.getOriginY()) * PPM - (sprite.getHeight() * sprite.getScaleY() / 2);
+        x += sprite.getOriginX();
+        y += sprite.getOriginY();
+
+        float pX = x * PPM - sprite.getWidth() * sprite.getScaleX() / 2;
+        float pY = y * PPM - sprite.getHeight() * sprite.getScaleY() / 2;
 
         if (rotate == 0) {
             drawTextureRegion(pX, pY);

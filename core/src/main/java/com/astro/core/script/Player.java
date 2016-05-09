@@ -1,6 +1,5 @@
 package com.astro.core.script;
 
-import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
@@ -11,14 +10,17 @@ import com.badlogic.gdx.physics.box2d.Body;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Created by kamil on 23.04.16.
+ * TODO:
+ * - dodac texture kiedy gracz stoi w miejscu i ja wyswietlac zamiast animacji
+ * - dodac obsluge kolizji z innymi obiektami
+ * - usunac obiekt player z engine i dodac sledzenie kamery na tym obiekcie
  */
 @Slf4j
 public class Player implements ILogic, IKeyObserver {
 
     private AnimationObject gameObject;
 
-    Body body;
+    private Body body;
 
     public Player() {
         KeyObserve.instance.register(this);

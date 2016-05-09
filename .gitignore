@@ -1,3 +1,5 @@
+/gradle
+/desktop/build
 /.gradle
 /game/build
 /core/build

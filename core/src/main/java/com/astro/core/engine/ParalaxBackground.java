@@ -58,8 +58,8 @@ public class ParalaxBackground {
             textures.get(0).getSprite().setBounds(
                     0,
                     0,
-                    (Gdx.graphics.getWidth() * TEXTURE_SCALE),
-                    (Gdx.graphics.getHeight() * TEXTURE_SCALE));
+                    Gdx.graphics.getWidth() * TEXTURE_SCALE,
+                    Gdx.graphics.getHeight() * TEXTURE_SCALE);
         }
         else {
             for (int i = 0; i < BACKGROUND_AMOUNT; ++i) {
@@ -68,8 +68,8 @@ public class ParalaxBackground {
                 textures.get(i).getSprite().setBounds(
                         (i - BACKGROUND_AMOUNT / 2) * (Gdx.graphics.getWidth() * TEXTURE_SCALE / PhysicsWorld.instance.PIXEL_PER_METER),
                         0,
-                        (Gdx.graphics.getWidth() * TEXTURE_SCALE),
-                        (Gdx.graphics.getHeight() * TEXTURE_SCALE));
+                        Gdx.graphics.getWidth() * TEXTURE_SCALE,
+                        Gdx.graphics.getHeight() * TEXTURE_SCALE);
             }
         }
     }
@@ -126,7 +126,7 @@ public class ParalaxBackground {
 
     private boolean isOnTheLeftOfScreen(float posX, final OrthographicCamera cam) {
         float posCamX = cam.position.x / PhysicsWorld.instance.PIXEL_PER_METER;
-        float worldOnScreenWidth = (Gdx.graphics.getWidth() / PhysicsWorld.instance.PIXEL_PER_METER);
+        float worldOnScreenWidth = Gdx.graphics.getWidth() / PhysicsWorld.instance.PIXEL_PER_METER;
 
         if (posX < posCamX - (worldOnScreenWidth * TEXTURE_SCALE)) {
             return true;

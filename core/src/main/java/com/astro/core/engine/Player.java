@@ -76,12 +76,6 @@ public class Player extends PhysicsObject implements IKeyObserver, IPlayer, ILog
 
 
     @Override
-    public void dispose() {
-        super.dispose();
-        //  texture.dispose();
-    }
-
-    @Override
     public void keyPressEvent(int keyCode) {
         int horizontalForce = 0;
         if (Input.Keys.LEFT == keyCode) {
