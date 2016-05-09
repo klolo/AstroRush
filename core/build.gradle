@@ -3,5 +3,12 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'pmd'
+apply plugin: "jacoco"
 
 sourceCompatibility = 1.8
+
+
+jacoco {
+    toolVersion = "0.7.6.201602180812"
+    reportsDir = file("$buildDir/reports/jacoco/test/")
+}
