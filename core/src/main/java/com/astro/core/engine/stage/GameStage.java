@@ -1,17 +1,14 @@
 package com.astro.core.engine.stage;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.engine.CameraManager;
 import com.astro.core.engine.ParalaxBackground;
 import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.engine.ScreenManager;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.interfaces.IGameObject;
-import com.astro.core.objects.interfaces.IPlayer;
-import com.astro.core.overlap_runtime.OverlapSceneReader;
 import com.astro.core.storage.PropertyInjector;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import lombok.Getter;
@@ -32,10 +29,6 @@ public class GameStage implements Screen {
     @GameProperty("renderer.scale")
     private float SCALE = 2.0f;
 
-    private OrthographicCamera camera;
-
-    private IPlayer player;
-
     private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
 
     private ParalaxBackground paralaxBackground;
@@ -47,10 +40,6 @@ public class GameStage implements Screen {
     @Setter
     @Getter
     private ArrayList<IGameObject> mapElementsWithLogic = new ArrayList<>();
-
-    private float width = 0.0f;
-
-    private float height = 0.0f;
 
     @Getter
     private final String stageName;
@@ -74,20 +63,12 @@ public class GameStage implements Screen {
         paralaxBackground.init();
     }
 
-    public void setPlayer(IPlayer player) {
-        this.player = player;
-    }
-
     /**
      * Constructs a new OrthographicCamera, using the given viewport width and height Height is multiplied by aspect ratio.
      */
     public void init() {
-        camera = new OrthographicCamera();
-        camera.setToOrtho(false, width / SCALE, height / SCALE);
-        camera.position.set(0f, 0f, 0f);
-
-        width = Gdx.graphics.getWidth();
-        height = Gdx.graphics.getHeight();
+        CameraManager.instance.getCamera().setToOrtho(false, 0f, 0f);
+        CameraManager.instance.getCamera().position.set(0f, 0f, 0f);
     }
 
 
@@ -102,19 +83,15 @@ public class GameStage implements Screen {
     @Override
     public void render(float delta) {
         if (paralaxBackground != null) {
-            paralaxBackground.show(camera, delta);
+            paralaxBackground.show(CameraManager.instance.getCamera(), delta);
         }
 
-        mapElements.forEach(e -> e.show(camera, delta));
-
-        if (player != null) {
-            player.show(camera, delta);
-        }
+        mapElements.forEach(e -> e.show(CameraManager.instance.getCamera(), delta));
 
         if (DEBUG_DRAW) {
             renderer.render(
                     PhysicsWorld.instance.getWorld(),
-                    camera.combined.scl(PhysicsWorld.instance.PIXEL_PER_METER)
+                    CameraManager.instance.getCamera().combined.scl(PhysicsWorld.instance.PIXEL_PER_METER)
             );
         }
         PhysicsWorld.instance.getRayHandler().updateAndRender();
@@ -124,37 +101,29 @@ public class GameStage implements Screen {
      *
      */
     public void update(float diff) {
-        updateCemera();
+        updateCamera();
         mapElementsWithLogic.forEach(e -> e.update(diff));
 
         if (paralaxBackground != null) {
-            paralaxBackground.update(camera, diff);
+            paralaxBackground.update(CameraManager.instance.getCamera(), diff);
         }
     }
 
-    private static final float PLAYER_X_POSITION = 0.3f;
+    private void updateCamera() {
+        Vector3 position = CameraManager.instance.getCamera().position;
 
-    private void updateCemera() {
-        Vector3 position = camera.position;
+        position.x = 0f;
+        position.y = 0f;
 
-        if (player != null) {
-            position.x = player.getPositionX() * PhysicsWorld.instance.PIXEL_PER_METER;
-            position.y = player.getPositionY() * PhysicsWorld.instance.PIXEL_PER_METER * PLAYER_X_POSITION;
-        }
-        else {
-            position.x = 0f;
-            position.y = 0f;
-        }
-
-        camera.position.set(position);
-        camera.update();
-        PhysicsWorld.instance.getRayHandler().setCombinedMatrix(camera);
+        CameraManager.instance.getCamera().position.set(position);
+        CameraManager.instance.getCamera().update();
+        PhysicsWorld.instance.getRayHandler().setCombinedMatrix(CameraManager.instance.getCamera());
     }
 
 
     @Override
     public void resize(int width, int height) {
-        camera.setToOrtho(false, width / SCALE, height / SCALE);
+        CameraManager.instance.getCamera().setToOrtho(false, width / SCALE, height / SCALE);
     }
 
     @Override
@@ -175,7 +144,6 @@ public class GameStage implements Screen {
     @Override
     public void dispose() {
         PhysicsWorld.instance.getRayHandler().dispose();
-        player.dispose();
     }
 
 
@@ -189,8 +157,5 @@ public class GameStage implements Screen {
 
     public void unregister() {
         mapElements.forEach(e -> destroyPhysicsBody(e));
-        if (player != null) {
-            PhysicsWorld.instance.getWorld().destroyBody(player.getBody());
-        }
     }
 }

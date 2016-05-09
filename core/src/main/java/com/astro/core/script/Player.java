@@ -1,5 +1,8 @@
 package com.astro.core.script;
 
+import com.astro.core.engine.CameraManager;
+import com.astro.core.engine.IPlayerObserver;
+import com.astro.core.engine.PlayerMove;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
@@ -8,6 +11,10 @@ import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.physics.box2d.Body;
 import lombok.extern.slf4j.Slf4j;
+
+import java.lang.ref.WeakReference;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * TODO:
@@ -22,8 +29,15 @@ public class Player implements ILogic, IKeyObserver {
 
     private Body body;
 
+    private List<IPlayerObserver> playerObservers = new LinkedList<>();
+
     public Player() {
         KeyObserve.instance.register(this);
+        playerObservers.add(CameraManager.instance);
+    }
+
+    public void addPlayerObserver(final IPlayerObserver playerObserver) {
+        playerObservers.add(playerObserver);
     }
 
     public void setGameObject(IGameObject gameObject) {
@@ -35,6 +49,9 @@ public class Player implements ILogic, IKeyObserver {
     @Override
     public void update(float diff) {
         gameObject.getSprite().setPosition(body.getPosition().x, body.getPosition().y);
+        PlayerMove move = new PlayerMove(body.getPosition().x, body.getPosition().y);
+        WeakReference<PlayerMove> playerMoveWeakReference = new WeakReference<>(move);
+        playerObservers.forEach(e -> e.updatePosition(playerMoveWeakReference.get()));
     }
 
     @Override
