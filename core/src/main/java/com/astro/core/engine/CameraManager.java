@@ -16,15 +16,8 @@ import lombok.Setter;
 public enum CameraManager {
     instance;
 
-    @GameProperty("renderer.scale")
-    private float SCALE = 2.0f;
-
     @Getter
     private OrthographicCamera camera;
-
-    private float width = 0.0f;
-
-    private float height = 0.0f;
 
     private static final float PLAYER_X_POSITION = 0.8f;
 
@@ -35,12 +28,14 @@ public enum CameraManager {
      * Constructor.
      */
     CameraManager() {
-        PropertyInjector.instance.inject(this);
         this.camera = new OrthographicCamera();
-        camera.setToOrtho(false, width / SCALE, height / SCALE);
+        camera.setToOrtho(false, 0, 0);
         camera.position.set(0f, 0f, 0f);
     }
 
+    /**
+     * Set new player position from the observedObject or set on center.
+     */
     public void update() {
         Vector3 position = camera.position;
 

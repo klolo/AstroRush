@@ -86,4 +86,15 @@ abstract public class GameObject implements IGameObject {
     public void setLogic(ILogic logic) {
         this.logic = logic;
     }
+
+    /**
+     * Does have object physics body?
+     */
+    public boolean isPhysicObject() {
+        if (body != null) {
+            return true;
+        }
+
+        return false;
+    }
 }

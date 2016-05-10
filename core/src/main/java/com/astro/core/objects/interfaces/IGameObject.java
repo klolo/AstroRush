@@ -2,6 +2,7 @@ package com.astro.core.objects.interfaces;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.physics.box2d.Body;
 
 /**
  * Represents a game object interface.
@@ -32,4 +33,10 @@ public interface IGameObject {
     void update(float delta);
 
     void dispose();
+
+    boolean isPhysicObject();
+
+    String getName();
+
+    Body getBody();
 }

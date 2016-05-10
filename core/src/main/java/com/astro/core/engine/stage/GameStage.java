@@ -5,11 +5,9 @@ import com.astro.core.engine.CameraManager;
 import com.astro.core.engine.ParalaxBackground;
 import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.engine.ScreenManager;
-import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,6 +26,9 @@ public class GameStage implements Screen {
 
     @GameProperty("renderer.scale")
     private float SCALE = 2.0f;
+
+    @Setter
+    private IGameHud hud;
 
     private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
 
@@ -94,6 +95,7 @@ public class GameStage implements Screen {
                     CameraManager.instance.getCamera().combined.scl(PhysicsWorld.instance.PIXEL_PER_METER)
             );
         }
+
         PhysicsWorld.instance.getRayHandler().updateAndRender();
     }
 
@@ -137,19 +139,28 @@ public class GameStage implements Screen {
 
     @Override
     public void dispose() {
+        log.info("dispose");
+        mapElements.forEach(e -> e.dispose());
         PhysicsWorld.instance.getRayHandler().dispose();
     }
 
+    /**
+     * Remove object when stage is changing.
+     */
+    public void unregister() {
+        log.info("unregister stage");
+        mapElements.forEach(e -> destroyPhysicsBody(e));
+        CameraManager.instance.setObservedObject(null);
+    }
 
+    /**
+     * Remove Box2D objects.
+     */
     private void destroyPhysicsBody(IGameObject gameObject) {
-        if (gameObject instanceof PhysicsObject) {
-            log.info("Destroy body: {}", ((PhysicsObject) gameObject).getBodyName());
-            PhysicsWorld.instance.getWorld().destroyBody(((PhysicsObject) gameObject).getBody());
+        if (gameObject.isPhysicObject()) {
+            log.info("Destroy body: {}", gameObject.getName());
+            PhysicsWorld.instance.getWorld().destroyBody(gameObject.getBody());
         }
     }
 
-
-    public void unregister() {
-        mapElements.forEach(e -> destroyPhysicsBody(e));
-    }
 }
