@@ -16,8 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 public enum PhysicsWorld {
     instance;
 
-
-
     /**
      * Configuration of the world gravity.
      */
@@ -37,11 +35,8 @@ public enum PhysicsWorld {
     private RayHandler rayHandler;
 
     /**
-     * Debug render for physics objects.
+     * Settings loaded from properties file.
      */
-    private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
-
-
     private PhysicsSettings settings = new PhysicsSettings();
 
     /**

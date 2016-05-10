@@ -1,9 +1,9 @@
-package com.astro.core;
+package com.astro.core.engine;
 
 import com.uwsoft.editor.renderer.resources.ResourceManager;
 
 /**
- * Created by kamil on 11.05.16.
+ * Singleton which protects from multiple time loading resources.
  */
 public enum GameResources {
     instance;

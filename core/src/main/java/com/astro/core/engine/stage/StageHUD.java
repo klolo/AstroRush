@@ -1,6 +1,6 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.GameResources;
+import com.astro.core.engine.GameResources;
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.objects.LabelObject;
 import com.astro.core.storage.PropertyInjector;

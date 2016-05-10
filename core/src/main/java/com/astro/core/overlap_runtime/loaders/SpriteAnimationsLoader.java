@@ -1,9 +1,7 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.GameResources;
+import com.astro.core.engine.GameResources;
 import com.astro.core.objects.AnimationObject;
-import com.astro.core.objects.PhysicsObject;
-import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.converters.MainItemVOToIGameObjectConverter;
 import com.badlogic.gdx.graphics.g2d.Animation;
