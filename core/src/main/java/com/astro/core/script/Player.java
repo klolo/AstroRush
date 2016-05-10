@@ -1,5 +1,8 @@
 package com.astro.core.script;
 
+import com.astro.core.engine.CameraManager;
+import com.astro.core.engine.IObservedByCamera;
+import com.astro.core.engine.PlayerMove;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
@@ -9,6 +12,8 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.physics.box2d.Body;
 import lombok.extern.slf4j.Slf4j;
 
+import java.lang.ref.WeakReference;
+
 /**
  * TODO:
  * - dodac texture kiedy gracz stoi w miejscu i ja wyswietlac zamiast animacji
@@ -16,14 +21,21 @@ import lombok.extern.slf4j.Slf4j;
  * - usunac obiekt player z engine i dodac sledzenie kamery na tym obiekcie
  */
 @Slf4j
-public class Player implements ILogic, IKeyObserver {
+public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
+    /**
+     * Animation of the player.
+     */
     private AnimationObject gameObject;
 
+    /**
+     * Physics body.
+     */
     private Body body;
 
     public Player() {
         KeyObserve.instance.register(this);
+        CameraManager.instance.setObservedObject(this);
     }
 
     public void setGameObject(IGameObject gameObject) {
@@ -58,5 +70,15 @@ public class Player implements ILogic, IKeyObserver {
     @Override
     public void keyReleaseEvent(int keyCode) {
 
+    }
+
+    @Override
+    public float getPositionX() {
+        return body.getPosition().x;
+    }
+
+    @Override
+    public float getPositionY() {
+        return body.getPosition().y;
     }
 }

@@ -1,6 +1,5 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.engine.Player;
 import com.astro.core.engine.ScreenManager;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
@@ -26,11 +25,6 @@ public enum StageFactory {
 
         if (!"".equals(config.background)) {
             result.initBackground();
-        }
-
-        if (config.hasPlayer) {
-            Player player = new Player();
-            result.setPlayer(player);
         }
 
         return result;
