@@ -3,8 +3,8 @@ package com.astro.core.engine.stage;
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.engine.CameraManager;
 import com.astro.core.engine.ParalaxBackground;
-import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.engine.ScreenManager;
+import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.Screen;
@@ -21,16 +21,17 @@ import java.util.ArrayList;
 @Slf4j
 public class GameStage implements Screen {
 
-    @GameProperty("renderer.debug")
-    private boolean DEBUG_DRAW = false;
-
     @GameProperty("renderer.scale")
     private float SCALE = 2.0f;
 
+    @GameProperty("renderer.debug")
+    private boolean DEBUG_DRAW = false;
+
+    @GameProperty("renderer.pixel.per.meter")
+    protected int PIXEL_PER_METER = 0;
+
     @Setter
     private IGameHud hud;
-
-    private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
 
     private ParalaxBackground paralaxBackground;
 
@@ -45,12 +46,15 @@ public class GameStage implements Screen {
     @Getter
     private final String stageName;
 
+    private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
+
     /**
      * Creating only by factory. Access package.
      */
     GameStage(final ArrayList<IGameObject> elements, final String name) {
-        stageName = name;
         PropertyInjector.instance.inject(this);
+
+        stageName = name;
         this.mapElements = elements;
 
         mapElements = ScreenManager.instance.sortObjectsByLayer(mapElements);
@@ -79,7 +83,7 @@ public class GameStage implements Screen {
     }
 
     /**
-     * Update and render game.
+     * Update and render game. Order is important.
      */
     @Override
     public void render(float delta) {
@@ -89,14 +93,22 @@ public class GameStage implements Screen {
 
         mapElements.forEach(e -> e.show(CameraManager.instance.getCamera(), delta));
 
+        PhysicsWorld.instance.getRayHandler().updateAndRender();
+
+        if (hud != null) {
+            hud.show(CameraManager.instance.getCamera(), delta);
+        }
+
+        debugDraw();
+    }
+
+    private void debugDraw() {
         if (DEBUG_DRAW) {
             renderer.render(
                     PhysicsWorld.instance.getWorld(),
-                    CameraManager.instance.getCamera().combined.scl(PhysicsWorld.instance.PIXEL_PER_METER)
+                    CameraManager.instance.getCamera().combined.scl(PIXEL_PER_METER)
             );
         }
-
-        PhysicsWorld.instance.getRayHandler().updateAndRender();
     }
 
     /**

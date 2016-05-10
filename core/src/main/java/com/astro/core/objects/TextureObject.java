@@ -1,17 +1,14 @@
 package com.astro.core.objects;
 
 import com.astro.core.adnotation.Dispose;
-import com.astro.core.engine.PhysicsWorld;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.uwsoft.editor.renderer.Overlap2D;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -104,12 +101,11 @@ public class TextureObject extends GameObject {
      * Render method for texture and physic object.
      */
     private void draw(float x, float y, float rotate) {
-        float PPM = PhysicsWorld.instance.PIXEL_PER_METER;
         x += sprite.getOriginX();
         y += sprite.getOriginY();
 
-        float pX = x * PPM - sprite.getWidth() * sprite.getScaleX() / 2;
-        float pY = y * PPM - sprite.getHeight() * sprite.getScaleY() / 2;
+        float pX = x * PIXEL_PER_METER - sprite.getWidth() * sprite.getScaleX() / 2;
+        float pY = y * PIXEL_PER_METER - sprite.getHeight() * sprite.getScaleY() / 2;
 
         if (rotate == 0) {
             drawTextureRegion(pX, pY);
@@ -127,8 +123,8 @@ public class TextureObject extends GameObject {
              * </a>
              *
              */
-            float a = (x + sprite.getOriginX()) * PPM;
-            float b = (y + sprite.getOriginY()) * PPM;
+            float a = (x + sprite.getOriginX()) * PIXEL_PER_METER;
+            float b = (y + sprite.getOriginY()) * PIXEL_PER_METER;
 
             float angle = (float) Math.toRadians(rotate);
 

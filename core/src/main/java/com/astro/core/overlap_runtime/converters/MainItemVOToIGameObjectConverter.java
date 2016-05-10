@@ -16,7 +16,6 @@ import java.util.Optional;
 @Slf4j
 public class MainItemVOToIGameObjectConverter {
 
-
     @GameProperty("game.script.package")
     private String SCRIPT_PACKAGE = "";
 

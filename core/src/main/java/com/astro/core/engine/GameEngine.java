@@ -1,6 +1,9 @@
 package com.astro.core.engine;
 
+import com.astro.core.adnotation.GameProperty;
+import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.observe.KeyObserve;
+import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -12,6 +15,9 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class GameEngine extends Game {
+
+    @GameProperty("world.time.step")
+    private float TIME_STEP = 0;
 
     /**
      * Implemented game logic.
@@ -38,6 +44,7 @@ public class GameEngine extends Game {
      */
     public GameEngine(IGameLogic gameLogic) {
         this.gameLogic = gameLogic;
+        PropertyInjector.instance.inject(this);
     }
 
     /**
@@ -82,10 +89,10 @@ public class GameEngine extends Game {
 
         float frameTime = Math.min(deltaTime, 0.25f);
         accumulator += frameTime;
-        float step = world.getTIME_STEP();
+        float step = 1/TIME_STEP;
 
         while (accumulator >= step) {
-            PhysicsWorld.instance.step();
+            PhysicsWorld.instance.process();
             accumulator -= step;
         }
     }

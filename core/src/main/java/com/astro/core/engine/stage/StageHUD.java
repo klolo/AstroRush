@@ -1,19 +1,47 @@
 package com.astro.core.engine.stage;
 
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import lombok.Getter;
+import com.astro.core.GameResources;
+import com.astro.core.adnotation.GameProperty;
+import com.astro.core.objects.LabelObject;
+import com.astro.core.storage.PropertyInjector;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * heads-up display fo GameStage.
  */
+@Slf4j
 public class StageHUD implements IGameHud {
 
-    @Getter
-    private BitmapFont font;
+    /**
+     * Amount of the pixel per meter.
+     */
+    @GameProperty("renderer.pixel.per.meter")
+    protected int PIXEL_PER_METER = 0;
 
-    @Override
-    public void draw() {
+    private LabelObject labelObject;
 
+    public StageHUD() {
+        PropertyInjector.instance.inject(this);
+
+        log.info("Creating default font");
+
+        labelObject = new LabelObject(
+                GameResources.instance.getResourceManager().getBitmapFont(LabelObject.getDEFAULT_FONT(),
+                        LabelObject.getDEFAULT_SIZE()));
+
+        labelObject.setText("Level 1");
+        labelObject.getSprite().setPosition(
+                -1 * (Gdx.graphics.getWidth() / (2 * PIXEL_PER_METER)) + 1.0f, //fixme
+                -1 * (Gdx.graphics.getHeight() / (2 * PIXEL_PER_METER)) + 10.0f //fixme
+        );
+        labelObject.setScreenPositionRelative(true);
+    }
+
+
+    public void show(final OrthographicCamera cam, float delta) {
+        labelObject.show(cam, delta);
     }
 
 }

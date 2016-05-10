@@ -2,7 +2,7 @@ package com.astro.core.overlap_runtime.loaders;
 
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.engine.ScreenManager;
-import com.astro.core.engine.PhysicsWorld;
+import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.Gdx;

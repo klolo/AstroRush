@@ -3,7 +3,9 @@ package com.astro.core.storage;
 import com.astro.core.adnotation.GameProperty;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,7 +25,7 @@ public enum PropertyInjector {
      */
     public void inject(Object obj) {
         log.debug("start");
-        Arrays.stream(obj.getClass().getDeclaredFields()).forEach(
+        getInheritedPrivateFields(obj.getClass()).forEach(
                 field -> Arrays.stream(field.getAnnotations()).forEach(
                         annotation -> {
                             if (annotation instanceof GameProperty) {
@@ -33,7 +35,7 @@ public enum PropertyInjector {
                                     field.setAccessible(true);
 
                                     String propValue = PropertiesReader.instance.getProperty(objProperty.value());
-                                    log.info("Injecting value: {}={}, in class: {}, by key: {}",
+                                    log.debug("Injecting value: {}={}, in class: {}, by key: {}",
                                             field, propValue, obj.getClass(), objProperty.value());
 
                                     setFieldValue(obj, field, propValue);
@@ -47,6 +49,32 @@ public enum PropertyInjector {
         );
     }
 
+    /**
+     * Collect all inherit fields.
+     */
+    private List<Field> getInheritedPrivateFields(Class<?> type) {
+        List<Field> result = new ArrayList<Field>();
+
+        Class<?> i = type;
+        while (i != null && i != Object.class) {
+            for (Field field : i.getDeclaredFields()) {
+                if (!field.isSynthetic()) {
+                    result.add(field);
+                }
+            }
+            i = i.getSuperclass();
+        }
+
+        return result;
+    }
+
+    /**
+     * Setting value in field.
+     * @param obj - object in which will be set value.
+     * @param field - field for setting
+     * @param propValue - value of the field.
+     * @throws IllegalAccessException
+     */
     public void setFieldValue(Object obj, Field field, String propValue) throws IllegalAccessException {
         if (field.getType().isPrimitive()) {
             if (field.getType() == Integer.TYPE) {

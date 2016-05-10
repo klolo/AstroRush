@@ -49,6 +49,16 @@ public class ParalaxBackground {
     @Setter
     private boolean SIMPLE_MODE;
 
+    /**
+     * Density of the ground box.
+     */
+    @GameProperty("renderer.pixel.per.meter")
+    protected int PIXEL_PER_METER = 0;
+
+    public ParalaxBackground() {
+        PropertyInjector.instance.inject(this);
+    }
+
     public void init() {
         Texture background = new Texture(Gdx.files.internal("assets/" + TEXTURE_FILE));
 
@@ -66,16 +76,12 @@ public class ParalaxBackground {
                 textures.add(new TextureObject(new TextureRegion(background)));
                 textures.get(i).getSprite().setOrigin(0f, 0f);
                 textures.get(i).getSprite().setBounds(
-                        (i - BACKGROUND_AMOUNT / 2) * (Gdx.graphics.getWidth() * TEXTURE_SCALE / PhysicsWorld.instance.PIXEL_PER_METER),
+                        (i - BACKGROUND_AMOUNT / 2) * (Gdx.graphics.getWidth() * TEXTURE_SCALE / PIXEL_PER_METER),
                         0,
                         Gdx.graphics.getWidth() * TEXTURE_SCALE,
                         Gdx.graphics.getHeight() * TEXTURE_SCALE);
             }
         }
-    }
-
-    public ParalaxBackground() {
-        PropertyInjector.instance.inject(this);
     }
 
     /**
@@ -106,7 +112,7 @@ public class ParalaxBackground {
                 log.info("Switch texture {} to end", textures.get(findFirstOnLeftIndex));
                 float lastPosX = textures.get(findLastOnLeft()).getSprite().getX();
                 textures.get(findFirstOnLeftIndex).getSprite().setX(
-                        lastPosX + (Gdx.graphics.getWidth() * TEXTURE_SCALE / PhysicsWorld.instance.PIXEL_PER_METER)
+                        lastPosX + (Gdx.graphics.getWidth() * TEXTURE_SCALE / PIXEL_PER_METER)
                 );
             }
         }
@@ -125,8 +131,8 @@ public class ParalaxBackground {
     }
 
     private boolean isOnTheLeftOfScreen(float posX, final OrthographicCamera cam) {
-        float posCamX = cam.position.x / PhysicsWorld.instance.PIXEL_PER_METER;
-        float worldOnScreenWidth = Gdx.graphics.getWidth() / PhysicsWorld.instance.PIXEL_PER_METER;
+        float posCamX = cam.position.x / PIXEL_PER_METER;
+        float worldOnScreenWidth = Gdx.graphics.getWidth() / PIXEL_PER_METER;
 
         if (posX < posCamX - (worldOnScreenWidth * TEXTURE_SCALE)) {
             return true;
@@ -172,7 +178,7 @@ public class ParalaxBackground {
 
     private float getNewPositionY(OrthographicCamera cam, float diff, final TextureObject textureObject) {
         float newY;
-        float worldCameraY = cam.position.y / PhysicsWorld.instance.PIXEL_PER_METER;
+        float worldCameraY = cam.position.y / PIXEL_PER_METER;
         float minPosY = worldCameraY - (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
         float maxPosY = worldCameraY + (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
 
@@ -200,7 +206,7 @@ public class ParalaxBackground {
      */
     private float getNewPositionX(OrthographicCamera cam, float diff) {
         float newX;
-        float worldCameraX = cam.position.x / PhysicsWorld.instance.PIXEL_PER_METER;
+        float worldCameraX = cam.position.x / PIXEL_PER_METER;
         float minPosX = worldCameraX - (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);
         float maxPosX = worldCameraX + (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);
 

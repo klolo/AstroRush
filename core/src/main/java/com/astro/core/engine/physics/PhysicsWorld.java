@@ -1,12 +1,8 @@
-package com.astro.core.engine;
+package com.astro.core.engine.physics;
 
-import com.astro.core.adnotation.GameProperty;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.PolygonShape;
-import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.*;
 
 import box2dLight.RayHandler;
 import lombok.Getter;
@@ -20,69 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 public enum PhysicsWorld {
     instance;
 
-    /**
-     * Strength of gravity.
-     */
-    @GameProperty("world.gravity")
-    private float GRAVITY = 0.0f;
 
-    /**
-     * Localization of the ground box.
-     */
-    @GameProperty("world.ground.x")
-    private float GROUND_X = 0.0f;
-
-    /**
-     * Localization of the ground box.
-     */
-    @GameProperty("world.ground.y")
-    private float GROUND_Y = 0.0f;
-
-    /**
-     * Size of the ground box.
-     */
-    @GameProperty("world.ground.width")
-    private float GROUND_WIDTH = 0.0f;
-
-    /**
-     * Size of the ground box.
-     */
-    @GameProperty("world.ground.height")
-    private float GROUND_HEIGHT = 0.0f;
-
-    /**
-     * Density of the ground box.
-     */
-    @GameProperty("world.ground.density")
-    private float GROUND_DENSITY = 0.0f;
-
-    /**
-     * Density of the ground box.
-     */
-    @GameProperty("world.iteration.velocity")
-    private int VELOCITY_ITERATIONS = 0;
-
-
-    /**
-     * Density of the ground box.
-     */
-    @GameProperty("world.iteration.position")
-    private int POSITION_ITERATIONS = 0;
-
-
-    /**
-     * Density of the ground box.
-     */
-    @GameProperty("world.time.step")
-    @Getter
-    private float TIME_STEP = 0;
-
-
-    /**
-     * Density of the ground box.
-     */
-    @GameProperty("renderer.pixel.per.meter")
-    public int PIXEL_PER_METER = 0;
 
     /**
      * Configuration of the world gravity.
@@ -103,16 +37,24 @@ public enum PhysicsWorld {
     private RayHandler rayHandler;
 
     /**
+     * Debug render for physics objects.
+     */
+    private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
+
+
+    private PhysicsSettings settings = new PhysicsSettings();
+
+    /**
      *
      */
     PhysicsWorld() {
         PropertyInjector.instance.inject(this);
-        gravityVec = new Vector2(0, GRAVITY);
+        gravityVec = new Vector2(0, settings.GRAVITY);
         initWorld();
     }
 
     public void initWorld() {
-        TIME_STEP = 1f / TIME_STEP;
+        settings.TIME_STEP = 1f / settings.TIME_STEP;
         world = new World(gravityVec, true);
         createGround();
 
@@ -135,8 +77,9 @@ public enum PhysicsWorld {
     /**
      * Update Box2D simulation
      */
-    public void step() {
-        world.step(TIME_STEP, VELOCITY_ITERATIONS, POSITION_ITERATIONS);
+    public void process() {
+        world.step(settings.TIME_STEP, settings.VELOCITY_ITERATIONS, settings.POSITION_ITERATIONS);
+
     }
 
     /**
@@ -167,11 +110,11 @@ public enum PhysicsWorld {
      */
     private Body createGround() {
         BodyDef bodyDef = new BodyDef();
-        bodyDef.position.set(new Vector2(GROUND_X / PIXEL_PER_METER, GROUND_Y / PIXEL_PER_METER));
+        bodyDef.position.set(new Vector2(settings.GROUND_X / settings.PIXEL_PER_METER, settings.GROUND_Y / settings.PIXEL_PER_METER));
         Body body = world.createBody(bodyDef);
         PolygonShape shape = new PolygonShape();
-        shape.setAsBox(GROUND_WIDTH / 2 / PIXEL_PER_METER, GROUND_HEIGHT / 2 / PIXEL_PER_METER);
-        body.createFixture(shape, GROUND_DENSITY);
+        shape.setAsBox(settings.GROUND_WIDTH / 2 / settings.PIXEL_PER_METER, settings.GROUND_HEIGHT / 2 / settings.PIXEL_PER_METER);
+        body.createFixture(shape, settings.GROUND_DENSITY);
         shape.dispose();
         return body;
     }

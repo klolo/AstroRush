@@ -1,6 +1,7 @@
 package com.astro.core.engine;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector3;
@@ -25,9 +26,16 @@ public enum CameraManager {
     private IObservedByCamera observedObject;
 
     /**
+     * Density of the ground box.
+     */
+    @GameProperty("renderer.pixel.per.meter")
+    protected int PIXEL_PER_METER = 0;
+
+    /**
      * Constructor.
      */
     CameraManager() {
+        PropertyInjector.instance.inject(this);
         this.camera = new OrthographicCamera();
         camera.setToOrtho(false, 0, 0);
         camera.position.set(0f, 0f, 0f);
@@ -40,8 +48,8 @@ public enum CameraManager {
         Vector3 position = camera.position;
 
         if (observedObject != null) {
-            position.x = observedObject.getPositionX() * PhysicsWorld.instance.PIXEL_PER_METER;
-            position.y = observedObject.getPositionY() * PhysicsWorld.instance.PIXEL_PER_METER * PLAYER_X_POSITION;
+            position.x = observedObject.getPositionX() * PIXEL_PER_METER;
+            position.y = observedObject.getPositionY() * PIXEL_PER_METER * PLAYER_X_POSITION;
         }
         else {
             position.x = 0.0f;

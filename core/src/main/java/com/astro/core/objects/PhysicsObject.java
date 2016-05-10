@@ -1,11 +1,10 @@
 package com.astro.core.objects;
 
-import com.astro.core.engine.PhysicsWorld;
+import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
@@ -70,8 +69,8 @@ public class PhysicsObject extends TextureObject implements IGameObject {
         bodyDef.type = BodyDef.BodyType.DynamicBody;
 
         bodyDef.position.set(
-                getSprite().getX() / PhysicsWorld.instance.PIXEL_PER_METER,
-                getSprite().getY() / PhysicsWorld.instance.PIXEL_PER_METER);
+                getSprite().getX() / PIXEL_PER_METER,
+                getSprite().getY() / PIXEL_PER_METER);
         return bodyDef;
     }
 

@@ -27,6 +27,10 @@ public enum StageFactory {
             result.initBackground();
         }
 
+        if (config.hasPlayer) {
+            result.setHud(new StageHUD());
+        }
+
         return result;
     }
 

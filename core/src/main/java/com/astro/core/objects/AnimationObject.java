@@ -1,6 +1,5 @@
 package com.astro.core.objects;
 
-import com.astro.core.engine.PhysicsWorld;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -31,8 +30,8 @@ public class AnimationObject extends TextureObject {
         float width = textureRegion.getRegionWidth();
         float height = textureRegion.getRegionHeight();
 
-        float x = sprite.getX() * PhysicsWorld.instance.PIXEL_PER_METER;
-        float y = sprite.getY() * PhysicsWorld.instance.PIXEL_PER_METER;
+        float x = sprite.getX() * PIXEL_PER_METER;
+        float y = sprite.getY() * PIXEL_PER_METER;
 
         if (flipX) {
             width = width * -1;

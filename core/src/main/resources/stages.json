@@ -5,14 +5,16 @@
       "sceneFile": "scenes/Menu.dt",
       "hasPlayer": false,
       "followByPlayer": false,
-      "background" : ""
+      "background" : "",
+      "hasHUD": false
     },
     {
       "stageName":"Level1",
       "sceneFile": "scenes/Lvl1.dt",
       "hasPlayer": true,
       "followByPlayer": true,
-      "background" : true
+      "background" : true,
+      "hasHUD": true
     }
   ]
 }

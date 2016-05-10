@@ -1,9 +1,6 @@
 package com.astro.core.engine;
 
-import com.astro.core.engine.stage.GameStage;
-import com.astro.core.engine.stage.StageConfig;
-import com.astro.core.engine.stage.StageConfigReader;
-import com.astro.core.engine.stage.StageFactory;
+import com.astro.core.engine.stage.*;
 import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -20,31 +17,6 @@ import java.util.stream.Collectors;
 @Slf4j
 public class GameLogic implements IGameLogic {
 
-    /**
-     * TODO: do osobnego pliku
-     */
-    enum Stages {
-        MAIN_MENU,
-        LEVEL1
-    }
-
-    /**
-     * TODO: do osobnego pliku
-     */
-    private Stages mapJsonNameToEnumVal(String stageName) {
-        switch (stageName) {
-            case "MainMenu": {
-                return Stages.MAIN_MENU;
-            }
-            case "Level1": {
-                return Stages.LEVEL1;
-            }
-            default: {
-                log.error("Stage not found");
-                return Stages.MAIN_MENU;
-            }
-        }
-    }
 
     /**
      * TODO: doc
@@ -85,7 +57,7 @@ public class GameLogic implements IGameLogic {
         Arrays.asList(configReader.getConfigs())
                 .stream()
                 .collect(Collectors.toList())
-                .forEach(s -> screenConfigs.put(mapJsonNameToEnumVal(s.stageName), s));
+                .forEach(s -> screenConfigs.put(currentStage.mapJsonNameToEnumVal(s.stageName), s));
 
         loadStage();
     }

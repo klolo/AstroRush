@@ -1,6 +1,7 @@
 package com.astro.core.engine;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
 import com.astro.core.storage.PropertyInjector;
@@ -26,6 +27,12 @@ public class GameScreen implements Screen {
     @GameProperty("renderer.scale")
     private float SCALE = 2.0f;
 
+    /**
+     * Density of the ground box.
+     */
+    @GameProperty("renderer.pixel.per.meter")
+    protected int PIXEL_PER_METER = 0;
+
     private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
 
     private ParalaxBackground paralaxBackground;
@@ -47,8 +54,10 @@ public class GameScreen implements Screen {
      */
     public GameScreen(String sceneName) {
         PropertyInjector.instance.inject(this);
+
         width = Gdx.graphics.getWidth();
         height = Gdx.graphics.getHeight();
+
         initCamera();
 
         OverlapSceneReader sceneReader = new OverlapSceneReader(sceneName)
@@ -90,7 +99,7 @@ public class GameScreen implements Screen {
         if (DEBUG_DRAW) {
             renderer.render(
                     PhysicsWorld.instance.getWorld(),
-                    CameraManager.instance.getCamera().combined.scl(PhysicsWorld.instance.PIXEL_PER_METER)
+                    CameraManager.instance.getCamera().combined.scl(PIXEL_PER_METER)
             );
         }
         PhysicsWorld.instance.getRayHandler().updateAndRender();

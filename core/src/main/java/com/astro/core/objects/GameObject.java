@@ -1,7 +1,9 @@
 package com.astro.core.objects;
 
+import com.astro.core.adnotation.GameProperty;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
+import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -48,6 +50,12 @@ abstract public class GameObject implements IGameObject {
     protected String layerID = "Default";
 
     /**
+     * Amount of the pixel per meter.
+     */
+    @GameProperty("renderer.pixel.per.meter")
+    protected int PIXEL_PER_METER = 0;
+
+    /**
      * Custom settings from editor.
      */
     protected HashMap<String, String> customVariables = new HashMap<>();
@@ -56,6 +64,7 @@ abstract public class GameObject implements IGameObject {
      * Default constructor.
      */
     public GameObject() {
+        PropertyInjector.instance.inject(this);
         sprite = new Sprite();
     }
 

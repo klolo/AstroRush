@@ -1,16 +1,14 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.engine.PhysicsWorld;
-import com.astro.core.objects.PhysicsObject;
+import com.astro.core.adnotation.GameProperty;
+import com.astro.core.engine.physics.PhysicsWorld;
+import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.uwsoft.editor.renderer.data.MainItemVO;
-import com.uwsoft.editor.renderer.data.PhysicsBodyDataVO;
-import com.uwsoft.editor.renderer.data.ShapeVO;
-import com.uwsoft.editor.renderer.data.SimpleImageVO;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -21,12 +19,14 @@ import java.util.LinkedList;
 public class BaseLoader {
 
     /**
-     * Pixel per meter.
+     * Density of the ground box.
      */
-    protected int PPM = 0;
+    @GameProperty("renderer.pixel.per.meter")
+    protected int PIXEL_PER_METER = 0;
+
 
     BaseLoader() {
-        PPM = PhysicsWorld.instance.PIXEL_PER_METER;
+        PropertyInjector.instance.inject(this);
     }
 
 
@@ -75,8 +75,8 @@ public class BaseLoader {
     private PolygonShape getPolygonShape(final Vector2[] vertices, final MainItemVO data, float w, float h) {
         PolygonShape shape = new PolygonShape();
         for (Vector2 it : vertices) {
-            it.x = it.x + data.originX - (w / PPM / 2) * data.scaleX;
-            it.y = it.y + data.originY - (h / PPM / 2) * data.scaleY;
+            it.x = it.x + data.originX - (w / PIXEL_PER_METER / 2) * data.scaleX;
+            it.y = it.y + data.originY - (h / PIXEL_PER_METER / 2) * data.scaleY;
         }
 
         shape.set(vertices);

@@ -1,5 +1,6 @@
 package com.astro.core.overlap_runtime.loaders;
 
+import com.astro.core.GameResources;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.TextureObject;
@@ -17,14 +18,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SpriteAnimationsLoader extends BaseLoader implements ILoader<SpriteAnimationVO> {
 
-    public SpriteAnimationsLoader() {
-        log.info("..:: SpriteAnimationsLoader ::..");
-        resourceManager.initAllResources();
-    }
-
     @Override
     public IGameObject register(SpriteAnimationVO spriteAnimationVO) {
-        TextureAtlas atlas = resourceManager.getSpriteAnimation(spriteAnimationVO.animationName);
+        TextureAtlas atlas = GameResources.instance.getResourceManager().getSpriteAnimation(spriteAnimationVO.animationName);
         AnimationObject result = new AnimationObject(
                 spriteAnimationVO.fps,
                 atlas
