@@ -45,28 +45,29 @@ public enum PhysicsWorld {
     PhysicsWorld() {
         PropertyInjector.instance.inject(this);
         gravityVec = new Vector2(0, settings.GRAVITY);
-        initWorld();
-    }
 
-    public void initWorld() {
         settings.TIME_STEP = 1f / settings.TIME_STEP;
         world = new World(gravityVec, true);
         createGround();
 
+
+        initLight(1.0f, 1.0f, 1.0f);
+    }
+
+    public void initLight(float r, float g, float b) {
         RayHandler.setGammaCorrection(true);
         RayHandler.useDiffuseLight(true);
 
         rayHandler = new RayHandler(world);
-        rayHandler.setAmbientLight(
-                .8f,
-                .8f,
-                .8f,
-                1f
-        );
+        rayHandler.setAmbientLight(r, g, b, 1.0f);
 
         rayHandler.setCulling(true);
         rayHandler.setBlur(false);
         rayHandler.setShadows(true);
+    }
+
+    public void setAmbientLight(float r, float g, float b) {
+        initLight(r, g, b);
     }
 
     /**

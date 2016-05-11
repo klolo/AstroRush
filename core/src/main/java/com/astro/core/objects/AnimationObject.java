@@ -30,19 +30,22 @@ public class AnimationObject extends TextureObject {
         float width = textureRegion.getRegionWidth();
         float height = textureRegion.getRegionHeight();
 
-        float x = sprite.getX() * PIXEL_PER_METER;
-        float y = sprite.getY() * PIXEL_PER_METER;
+        float x = sprite.getX() + sprite.getOriginX();
+        float y = sprite.getY() + sprite.getOriginY();
 
-        if (flipX) {
-            width = width * -1;
-            x += textureRegion.getRegionWidth();
+        float pX = x * PIXEL_PER_METER - width * sprite.getScaleX() / 2;
+        float pY = y * PIXEL_PER_METER - height * sprite.getScaleY() / 2;
+
+        if(flipX) {
+            width *= -1;
+            pX -= width * sprite.getScaleX();
         }
 
         if (flipY) {
             height = height * -1;
         }
 
-        batch.draw(textureRegion, x, y, width, height);
+        batch.draw(textureRegion, pX, pY, width * sprite.getScaleX(), height * sprite.getScaleY());
     }
 
     @Override

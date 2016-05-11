@@ -95,7 +95,6 @@ public class GameLogic implements IGameLogic {
         }
 
         if (Gdx.input.isKeyPressed(Input.Keys.ENTER)) {
-
             if (currentStage == Stages.MAIN_MENU) {
                 currentStage = Stages.LEVEL1;
             }

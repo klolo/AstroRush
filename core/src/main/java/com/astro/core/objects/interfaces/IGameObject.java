@@ -39,4 +39,6 @@ public interface IGameObject {
     String getName();
 
     Body getBody();
+
+    void setBody(Body body);
 }

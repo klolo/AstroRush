@@ -1,6 +1,7 @@
 package com.astro.core.engine.stage;
 
 import com.astro.core.engine.ScreenManager;
+import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
 import com.astro.core.storage.PropertyInjector;
@@ -17,6 +18,7 @@ public enum StageFactory {
 
     public GameStage create(StageConfig config) {
         log.info("Loading stage: {}", config.stageName);
+        prepareGameForStage(config);
 
         GameStage result = new GameStage(getMapElements(config), config.stageName);
 
@@ -32,6 +34,14 @@ public enum StageFactory {
         }
 
         return result;
+    }
+
+    /**
+     * Set ambient color of the light. When you want convert hex value to opengl float
+     * use: http://tools.ix.cx/tools/hex_to_opengl_color_1.html
+     */
+    private void prepareGameForStage(final StageConfig config) {
+        PhysicsWorld.instance.setAmbientLight(config.ambientLightRed, config.ambientLightGreen, config.ambientLightBlue);
     }
 
     /**

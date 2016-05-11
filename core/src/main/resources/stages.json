@@ -6,7 +6,11 @@
       "hasPlayer": false,
       "followByPlayer": false,
       "background" : "",
-      "hasHUD": false
+      "hasHUD": false,
+      "ambientLightRed":1.0,
+      "ambientLightGreen":1.0,
+      "ambientLightBlue":1.0
+
     },
     {
       "stageName":"Level1",
@@ -14,7 +18,13 @@
       "hasPlayer": true,
       "followByPlayer": true,
       "background" : true,
-      "hasHUD": true
+      "hasHUD": true,
+      "ambientLightRed": 0.04,
+      "ambientLightGreen": 0.06,
+      "ambientLightBlue": 0.15
     }
   ]
 }
+
+
+

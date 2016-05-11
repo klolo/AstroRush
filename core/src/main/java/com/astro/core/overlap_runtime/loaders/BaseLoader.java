@@ -75,8 +75,14 @@ public class BaseLoader {
     private PolygonShape getPolygonShape(final Vector2[] vertices, final MainItemVO data, float w, float h) {
         PolygonShape shape = new PolygonShape();
         for (Vector2 it : vertices) {
-            it.x = it.x + data.originX - (w / PIXEL_PER_METER / 2) * data.scaleX;
-            it.y = it.y + data.originY - (h / PIXEL_PER_METER / 2) * data.scaleY;
+            it.x *= data.scaleX;
+            it.y *= data.scaleY;
+
+            it.x += data.originX;
+            it.y += data.originY;
+
+            it.x -= (w / PIXEL_PER_METER / 2) * data.scaleX;
+            it.y -= (h / PIXEL_PER_METER / 2) * data.scaleY;
         }
 
         shape.set(vertices);

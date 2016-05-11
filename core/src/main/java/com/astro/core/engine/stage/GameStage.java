@@ -163,6 +163,8 @@ public class GameStage implements Screen {
         log.info("unregister stage");
         mapElements.forEach(e -> destroyPhysicsBody(e));
         CameraManager.instance.setObservedObject(null);
+        mapElements = null;
+        mapElementsWithLogic = null;
     }
 
     /**
@@ -172,6 +174,7 @@ public class GameStage implements Screen {
         if (gameObject.isPhysicObject()) {
             log.info("Destroy body: {}", gameObject.getName());
             PhysicsWorld.instance.getWorld().destroyBody(gameObject.getBody());
+            gameObject.setBody(null);
         }
     }
 

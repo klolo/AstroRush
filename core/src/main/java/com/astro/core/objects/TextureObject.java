@@ -107,47 +107,7 @@ public class TextureObject extends GameObject {
         float pX = x * PIXEL_PER_METER - sprite.getWidth() * sprite.getScaleX() / 2;
         float pY = y * PIXEL_PER_METER - sprite.getHeight() * sprite.getScaleY() / 2;
 
-        if (rotate == 0) {
-            drawTextureRegion(pX, pY);
-        }
-        else {
-            /**
-             * Podczas rotacji obiekty box2d nie pokrywaja sie z tekxturami,
-             * poniewaz box2d wykonuje obrot dookola srodka ciezkosci a libgdx dookola
-             * lewego dolnego wierzcholka. Dlatego lewy dolny wierzcholek nalezy najpierw obrocic wzgledem
-             * srodka ciezkosci o podany kat, a nastepnie w wyliczonym punkcie ustawiamy figure i wykonujemy
-             * obrot.
-             *
-             * <a href="http://www.megamatma.pl/uczniowie/wzory/geometria-analityczna/przeksztalcenia-na-plaszczyznie">
-             *  Obrót o dany kąt dowolnego punktu
-             * </a>
-             *
-             */
-            float a = (x + sprite.getOriginX()) * PIXEL_PER_METER;
-            float b = (y + sprite.getOriginY()) * PIXEL_PER_METER;
-
-            float angle = (float) Math.toRadians(rotate);
-
-            float sin = (float) Math.sin(angle);
-            float cos = (float) Math.cos(angle);
-
-            float x1 = a + (pX - a) * cos - (pY - b) * sin;
-            float y1 = b + (pX - a) * sin + (pY - b) * cos;
-            drawTextureRegion(x1, y1, rotate, sprite.getWidth(), sprite.getHeight(), sprite.getScaleX(), sprite.getScaleY());
-        }
-    }
-
-    private void drawTextureRegion(float pX, float pY) {
-        batch.draw(textureRegion,
-                pX,
-                pY,
-                sprite.getWidth() * sprite.getScaleX(),
-                sprite.getHeight() * sprite.getScaleY()
-        );
-    }
-
-    private void drawTextureRegion(float pX, float pY, float rotate) {
-        drawTextureRegion(pX, pY, rotate, sprite.getWidth(), sprite.getHeight());
+        drawTextureRegion(pX, pY, rotate, sprite.getWidth(), sprite.getHeight(), sprite.getScaleX(), sprite.getScaleY());
     }
 
     private void drawTextureRegion(float pX, float pY, float rotate, float width, float height) {
