@@ -1,6 +1,7 @@
 package com.astro.core.objects;
 
 import com.astro.core.objects.interfaces.IGameObject;
+import com.badlogic.gdx.physics.box2d.Body;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,16 +14,28 @@ public enum ObjectsRegister {
 
     private HashMap<String, IGameObject> gameObjectsWithID = new HashMap<>();
 
+    private HashMap<Body, IGameObject> gameObjectsWithPhysics = new HashMap<>();
+
     public void clearRegister() {
         gameObjectsWithID = new HashMap<>();
+        gameObjectsWithPhysics = new HashMap<>();
     }
 
     public void registerObject(List<IGameObject> objectWithID) {
         objectWithID.forEach(o -> gameObjectsWithID.put(o.getItemIdentifier(), o));
     }
 
+    public void registerPhysicsObject(List<IGameObject> objectWithID) {
+        objectWithID.forEach(o -> gameObjectsWithPhysics.put(o.getBody(), o));
+    }
+
+
     public IGameObject getObjectByID(final String id) {
         return gameObjectsWithID.get(id);
+    }
+
+    public IGameObject getObjectByBody(final Body body) {
+        return gameObjectsWithPhysics.get(body);
     }
 
 }

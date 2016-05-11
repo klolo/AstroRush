@@ -57,6 +57,12 @@ abstract public class GameObject implements IGameObject {
     protected String layerID = "Default";
 
     /**
+     * Should be object removed?
+     */
+    @Getter
+    boolean isDestroyed;
+
+    /**
      * Amount of the pixel per meter.
      */
     @GameProperty("renderer.pixel.per.meter")
@@ -113,4 +119,9 @@ abstract public class GameObject implements IGameObject {
 
         return false;
     }
+
+    public void setIsDestroyed(boolean flag) {
+        isDestroyed = flag;
+    }
+
 }

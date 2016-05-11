@@ -34,9 +34,9 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
     private Body body;
 
     //TODO: move to properties or other class
-    private float MAX_Y_VELOCITY = 20f;
+    private float MAX_Y_VELOCITY = 15f;
 
-    private float MAX_Y_POSITION = 25f;
+    private float MAX_Y_POSITION = 15f;
 
     public Player() {
         KeyObserve.instance.register(this);
@@ -79,6 +79,11 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         if (body.getLinearVelocity().y < MAX_Y_VELOCITY) {
             body.applyForceToCenter(0, MAX_Y_VELOCITY, false);
         }
+    }
+
+    @Override
+    public void collision(IGameObject collidatedObject, boolean collisionStart) {
+
     }
 
     @Override

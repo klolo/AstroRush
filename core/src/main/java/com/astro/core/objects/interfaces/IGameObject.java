@@ -26,6 +26,8 @@ public interface IGameObject {
 
     boolean hasLogic();
 
+    ILogic getLogic();
+
     void setCustomVar(String key, String val);
 
     void setLogic(ILogic logic);
@@ -45,4 +47,8 @@ public interface IGameObject {
     void setItemIdentifier(final String id);
 
     String getItemIdentifier();
+
+    boolean isDestroyed();
+
+    void setIsDestroyed(boolean flag);
 }

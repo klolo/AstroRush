@@ -69,7 +69,8 @@ public class LightsLoader implements ILoader<LightVO> {
                     light.x * PIXEL_PER_METER,
                     light.y * PIXEL_PER_METER
             );
-        } else {
+        }
+        else {
             resultLight = new ConeLight(
                     PhysicsWorld.instance.getRayHandler(),
                     light.rays,

@@ -48,9 +48,10 @@ public enum PhysicsWorld {
 
         settings.TIME_STEP = 1f / settings.TIME_STEP;
         world = new World(gravityVec, true);
+
+        world.setContactListener(new CollisionListener());
+
         createGround();
-
-
         initLight(1.0f, 1.0f, 1.0f);
     }
 

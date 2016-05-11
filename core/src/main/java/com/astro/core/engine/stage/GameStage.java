@@ -5,6 +5,7 @@ import com.astro.core.engine.CameraManager;
 import com.astro.core.engine.ParalaxBackground;
 import com.astro.core.engine.ScreenManager;
 import com.astro.core.engine.physics.PhysicsWorld;
+import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.Screen;
@@ -58,7 +59,9 @@ public class GameStage implements Screen {
         this.mapElements = elements;
 
         mapElements = ScreenManager.instance.sortObjectsByLayer(mapElements);
+
         mapElementsWithLogic = ScreenManager.instance.getObjectsWithLogic(mapElements);
+        ObjectsRegister.instance.registerPhysicsObject(mapElementsWithLogic);
 
         log.info("end loading game");
     }
@@ -116,10 +119,21 @@ public class GameStage implements Screen {
      */
     public void update(float diff) {
         updateCamera();
-        mapElementsWithLogic.forEach(e -> e.update(diff));
+
+        ArrayList<IGameObject> currentMapElementsWithLogic = (ArrayList<IGameObject>) mapElementsWithLogic.clone();
+        currentMapElementsWithLogic.forEach(e -> processGameObjects(e, diff));
 
         if (paralaxBackground != null) {
             paralaxBackground.update(CameraManager.instance.getCamera(), diff);
+        }
+    }
+
+    private void processGameObjects(IGameObject gameObject, float diff) {
+        gameObject.update(diff);
+        if (gameObject.isDestroyed()) {
+            mapElementsWithLogic.remove(gameObject);
+            mapElements.remove(gameObject);
+            PhysicsWorld.instance.getWorld().destroyBody(gameObject.getBody());
         }
     }
 
