@@ -2,12 +2,14 @@ package com.astro.core.engine.stage;
 
 import com.astro.core.engine.ScreenManager;
 import com.astro.core.engine.physics.PhysicsWorld;
+import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
 import com.astro.core.storage.PropertyInjector;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Creating GameStage based on json configuration loaded to StageConfig object.
@@ -51,7 +53,20 @@ public enum StageFactory {
         ArrayList<IGameObject> result;
         OverlapSceneReader sceneReader = new OverlapSceneReader(config.sceneFile).loadScene();
         result = (ArrayList<IGameObject>) sceneReader.getComponents();
+
+        addToObjectRegister(result);
         return ScreenManager.instance.sortObjectsByLayer(result);
     }
 
+    /**
+     * Register all object with set ID.
+     */
+    private void addToObjectRegister(ArrayList<IGameObject> objects) {
+        ObjectsRegister.instance.clearRegister();
+        ObjectsRegister.instance.registerObject(
+                objects.stream()
+                        .filter(e -> e.getItemIdentifier() != null && !"".equals(e.getItemIdentifier()))
+                        .collect(Collectors.toList())
+        );
+    }
 }

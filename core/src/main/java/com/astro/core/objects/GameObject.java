@@ -40,6 +40,13 @@ abstract public class GameObject implements IGameObject {
     protected String name = "";
 
     /**
+     * Object identifier using for communication beetwen objects.
+     */
+    @Getter
+    @Setter
+    protected String itemIdentifier = "";
+
+    /**
      *
      */
     @Getter

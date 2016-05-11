@@ -41,4 +41,8 @@ public interface IGameObject {
     Body getBody();
 
     void setBody(Body body);
+
+    void setItemIdentifier(final String id);
+
+    String getItemIdentifier();
 }

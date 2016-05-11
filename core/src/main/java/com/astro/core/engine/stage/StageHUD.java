@@ -2,7 +2,9 @@ package com.astro.core.engine.stage;
 
 import com.astro.core.engine.GameResources;
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.objects.GameObject;
 import com.astro.core.objects.LabelObject;
+import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.storage.PropertyInjector;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -31,7 +33,7 @@ public class StageHUD implements IGameHud {
                 GameResources.instance.getResourceManager().getBitmapFont(LabelObject.getDEFAULT_FONT(),
                         LabelObject.getDEFAULT_SIZE()));
 
-        labelObject.setText("Level 1");
+
         labelObject.getSprite().setPosition(
                 -1 * (Gdx.graphics.getWidth() / (2 * PIXEL_PER_METER)) + 1.0f, //fixme
                 -1 * (Gdx.graphics.getHeight() / (2 * PIXEL_PER_METER)) + 10.0f //fixme
@@ -41,6 +43,8 @@ public class StageHUD implements IGameHud {
 
 
     public void show(final OrthographicCamera cam, float delta) {
+        GameObject playerObject = (GameObject) ObjectsRegister.instance.getObjectByID("player");// fixme: not call in loop
+        labelObject.setText("Pos X:" + playerObject.getSprite().getX());
         labelObject.show(cam, delta);
     }
 

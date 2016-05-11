@@ -24,9 +24,12 @@ public class MainItemVOToIGameObjectConverter {
     }
 
     public IGameObject convert(MainItemVO input, IGameObject result) {
+        log.info("Convert: ID: {}, itemName: {}", input.itemIdentifier, input.itemName);
         result.getSprite().setOrigin(input.originX, input.originY);
         result.getSprite().setScale(input.scaleX, input.scaleY);
         result.getSprite().setPosition(input.x, input.y);
+
+        result.setItemIdentifier(input.itemIdentifier);
 
         /**
          * Parsing custom vars from editor. Example from json:

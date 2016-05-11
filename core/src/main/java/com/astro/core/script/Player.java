@@ -33,6 +33,11 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
      */
     private Body body;
 
+    //TODO: move to properties or other class
+    private float MAX_Y_VELOCITY = 20f;
+
+    private float MAX_Y_POSITION = 25f;
+
     public Player() {
         KeyObserve.instance.register(this);
         CameraManager.instance.setObservedObject(this);
@@ -40,12 +45,15 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
     public void setGameObject(IGameObject gameObject) {
         this.gameObject = (AnimationObject) gameObject;
-        ((AnimationObject) gameObject).getBody().setFixedRotation(true);
-        body =  ((AnimationObject) gameObject).getBody();
+        body = gameObject.getBody();
+        body.setFixedRotation(true);
     }
 
     @Override
     public void update(float diff) {
+        if (body.getPosition().y > MAX_Y_POSITION) {
+            body.setTransform(body.getPosition().x, MAX_Y_POSITION, 0);
+        }
         gameObject.getSprite().setPosition(body.getPosition().x, body.getPosition().y);
     }
 
@@ -61,10 +69,16 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
             gameObject.setFlipX(false);
         }
         else if (Input.Keys.UP == keyCode) {
-            body.applyForceToCenter(0, 40, false);
+            jump();
         }
 
         body.setLinearVelocity(horizontalForce * 5, body.getLinearVelocity().y);
+    }
+
+    private void jump() {
+        if (body.getLinearVelocity().y < MAX_Y_VELOCITY) {
+            body.applyForceToCenter(0, MAX_Y_VELOCITY, false);
+        }
     }
 
     @Override
