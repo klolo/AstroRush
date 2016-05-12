@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by kamil on 12.05.16.
+ * Called method dispose on field which have annotation Dispose.
  */
 @Slf4j
 public class DisposeCaller {

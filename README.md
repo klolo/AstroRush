@@ -7,7 +7,16 @@
 
 Platformowa gra przygodowa z elementami logiki napisana w Javie 8.
 
-##Instrukcja uruchomienia
+
+1. [Uruchomienie](#run)
+2. [Budowa aplikacji](#paragraph1)
+    1. [Silnik](#subparagraph1)
+    2. [Fizyka](#subparagraph1)
+    3. [Properties](#subparagraph1)
+3. [Integracja z Overlap](#paragraph2)
+4. [Fabuła](#paragraph2)
+
+##Instrukcja uruchomienia <a name="run">
 1. Projekt importujemu do IntelliJ
 2. Podczas importu zostanie wykryty projekt Gradle, należy włączyć tą naturę.
 3. Zbudowanie i uruchomienie aplikacji odbywa się za pomocą tasku w oknie gradle: game->other->run

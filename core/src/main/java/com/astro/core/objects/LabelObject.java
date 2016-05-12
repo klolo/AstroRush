@@ -1,6 +1,7 @@
 package com.astro.core.objects;
 
 import com.astro.core.adnotation.Dispose;
+import com.astro.core.storage.PropertiesReader;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -57,6 +58,16 @@ public class LabelObject extends TextureObject {
             fontShader = new ShaderProgram(Gdx.files.internal("font.vert"), Gdx.files.internal("font.frag"));
             if (!fontShader.isCompiled()) {
                 Gdx.app.error("fontShader", "compilation failed:\n" + fontShader.getLog());
+            }
+        }
+    }
+
+    public void setNationalizedMsg() {
+        String msgVars = customVariables.get("msg");
+        if (msgVars != null && !"".equals(msgVars)) {
+            String newText = PropertiesReader.instance.getMsg(msgVars);
+            if(newText!=null && !"".equals(newText) ) {
+                text = newText;
             }
         }
     }

@@ -33,7 +33,7 @@ public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO
                 result = new PhysicsObject(textureRegion);
                 Body physicsBody = createBoody(imageVO, w, h, imageVO.imageName);
                 physicsBody.setUserData(result);
-                ((PhysicsObject) result).setBody(physicsBody);
+                result.setBody(physicsBody);
             }
             catch (final Exception e) {
                 log.error("Incorrect physics settings");

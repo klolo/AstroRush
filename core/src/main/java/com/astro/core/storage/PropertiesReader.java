@@ -16,6 +16,11 @@ public enum PropertiesReader {
     instance;
 
     /**
+     * Holds all international messages.
+     */
+    private MessagesManager messages = new MessagesManager();
+
+    /**
      * Name of properties file.
      */
     private final static String CORE_PROPERTIES_NAME = "core.properties";
@@ -26,6 +31,11 @@ public enum PropertiesReader {
     private final static String GAME_PROPERTIES_NAME = "game.properties";
 
     /**
+     * Name of properties file in game implementation.
+     */
+    private final static String LANGUAGES_FILE_PREFIX = "msg_";
+
+    /**
      * Read properties file.
      */
     @Getter
@@ -33,8 +43,15 @@ public enum PropertiesReader {
 
     public void init() {
         gameProperties = new Properties();
-        readPropertiesFile(CORE_PROPERTIES_NAME);
-        readPropertiesFile(GAME_PROPERTIES_NAME);
+        gameProperties.putAll(readPropertiesFile(CORE_PROPERTIES_NAME));
+        gameProperties.putAll(readPropertiesFile(GAME_PROPERTIES_NAME));
+
+        messages.setSelectedLanguages(gameProperties.getProperty("game.lang.default"));
+        final String languages[] = gameProperties.getProperty("game.lang.available").trim().split(",");
+
+        for (String lng : languages) {
+            messages.addLanguages(lng, readPropertiesFile(LANGUAGES_FILE_PREFIX + lng + ".properties"));
+        }
     }
 
     /**
@@ -42,7 +59,7 @@ public enum PropertiesReader {
      *
      * @param fileName - name of the properties file.
      */
-    private void readPropertiesFile(String fileName) {
+    public Properties readPropertiesFile(final String fileName) {
         log.info("Reading properties file: {}", fileName);
 
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
@@ -56,13 +73,14 @@ public enum PropertiesReader {
             Properties properties = new Properties();
             properties.load(stream);
             stream.close();
-
-            gameProperties.putAll(properties);
             log.info("Read content: {}", properties);
+            return properties;
         }
         catch (IOException e) {
             log.error("Error while reading game properties", e);
         }
+
+        return null;
     }
 
     /**
@@ -77,4 +95,13 @@ public enum PropertiesReader {
         }
         return gameProperties.getProperty(key);
     }
+
+    public String getMsg(String key) {
+        if (messages == null) {
+            init();
+            return messages.getMsg(key);
+        }
+        return messages.getMsg(key);
+    }
+
 }

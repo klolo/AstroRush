@@ -1,5 +1,6 @@
 package com.astro.core.engine.stage;
 
+import com.astro.core.adnotation.Msg;
 import com.astro.core.engine.base.GameResources;
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.objects.GameObject;
@@ -24,6 +25,10 @@ public class StageHUD implements IGameHud {
 
     private LabelObject labelObject;
 
+    @Msg("menu.start")
+    private String msg = "";
+
+
     public StageHUD() {
         PropertyInjector.instance.inject(this);
 
@@ -44,7 +49,7 @@ public class StageHUD implements IGameHud {
 
     public void show(final OrthographicCamera cam, float delta) {
         GameObject playerObject = (GameObject) ObjectsRegister.instance.getObjectByID("player");// fixme: not call in loop
-        labelObject.setText("Pos X:" + playerObject.getSprite().getX());
+        labelObject.setText(msg + playerObject.getSprite().getX());
         labelObject.show(cam, delta);
     }
 

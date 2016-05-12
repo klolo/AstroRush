@@ -1,6 +1,7 @@
 package com.astro.core.adnotation.processor;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.adnotation.Msg;
 import com.astro.core.storage.PropertiesReader;
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,9 +27,19 @@ public enum PropertyInjector {
     public void inject(Object obj) {
         ReflectionHelper.getInheritedPrivateFields(obj.getClass())
                 .forEach(field -> Arrays.stream(field.getAnnotations())
-                        .filter(annotation -> annotation instanceof GameProperty)
+                        .filter(annotation -> isCorrectAnnotation(annotation))
                         .forEach(annotation -> processField(annotation, field, obj))
                 );
+    }
+
+    /**
+     * Check if field is annotated by correct annotation.
+     */
+    boolean isCorrectAnnotation(Annotation annotation) {
+        if (annotation instanceof GameProperty || annotation instanceof Msg) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -36,13 +47,24 @@ public enum PropertyInjector {
      */
     private void processField(final Annotation annotation, final Field field, final Object obj) {
         try {
-            GameProperty objProperty = (GameProperty) annotation;
             field.setAccessible(true);
+            String propValue;
+            String fieldVal;
 
-            String propValue = PropertiesReader.instance.getProperty(objProperty.value());
+            if (annotation instanceof GameProperty) {
+                GameProperty objProperty = (GameProperty) annotation;
+                fieldVal = objProperty.value();
+                propValue = PropertiesReader.instance.getProperty(fieldVal);
+
+            }
+            else {
+                Msg objProperty = (Msg) annotation;
+                fieldVal = objProperty.value();
+                propValue = PropertiesReader.instance.getMsg(fieldVal);
+            }
+
             log.debug("Injecting value: {}={}, in class: {}, by key: {}",
-                    field, propValue, obj.getClass(), objProperty.value());
-
+                    field, propValue, obj.getClass(), fieldVal);
             setFieldValue(obj, field, propValue);
         }
         catch (final Exception e) {

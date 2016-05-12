@@ -3,7 +3,6 @@ package com.astro.core.engine.base;
 import com.astro.core.engine.interfaces.IGameLogic;
 import com.astro.core.engine.stage.*;
 import com.astro.core.observe.KeyObserve;
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +17,6 @@ import java.util.stream.Collectors;
 @Slf4j
 public class GameLogic implements IGameLogic {
 
-
     /**
      * TODO: doc
      */
@@ -30,7 +28,7 @@ public class GameLogic implements IGameLogic {
     private HashMap<Stages, StageConfig> screenConfigs = new HashMap<>();
 
     /**
-     * TODO: doc
+     * Current game stage loaded from json.
      */
     private GameStage currentScreen;
 
@@ -38,11 +36,6 @@ public class GameLogic implements IGameLogic {
      * TODO: doc
      */
     private StageConfigReader configReader = new StageConfigReader();
-
-    /**
-     * TODO: doc
-     */
-    private Game game;
 
     /**
      * TODO: doc
@@ -91,11 +84,11 @@ public class GameLogic implements IGameLogic {
 
     @Override
     public void keyPressEvent(int keyCode) {
-        if (Gdx.input.isKeyPressed(Input.Keys.ESCAPE)) {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit();
         }
 
-        if (Gdx.input.isKeyPressed(Input.Keys.ENTER)) {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
             if (currentStage == Stages.MAIN_MENU) {
                 currentStage = Stages.LEVEL1;
             }
