@@ -1,9 +1,10 @@
-package com.astro.core.engine;
+package com.astro.core.engine.base;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.engine.interfaces.IGameLogic;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.observe.KeyObserve;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;

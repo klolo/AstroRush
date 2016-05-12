@@ -1,13 +1,13 @@
 package com.astro.core.engine.stage;
 
 import com.astro.core.adnotation.GameProperty;
-import com.astro.core.engine.CameraManager;
-import com.astro.core.engine.ParalaxBackground;
-import com.astro.core.engine.ScreenManager;
+import com.astro.core.adnotation.processor.DisposeCaller;
+import com.astro.core.engine.base.CameraManager;
+import com.astro.core.engine.base.ParalaxBackground;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import lombok.Getter;
@@ -58,9 +58,9 @@ public class GameStage implements Screen {
         stageName = name;
         this.mapElements = elements;
 
-        mapElements = ScreenManager.instance.sortObjectsByLayer(mapElements);
+        mapElements = StageManager.instance.sortObjectsByLayer(mapElements);
 
-        mapElementsWithLogic = ScreenManager.instance.getObjectsWithLogic(mapElements);
+        mapElementsWithLogic = StageManager.instance.getObjectsWithLogic(mapElements);
         ObjectsRegister.instance.registerPhysicsObject(mapElementsWithLogic);
 
         log.info("end loading game");
@@ -166,7 +166,8 @@ public class GameStage implements Screen {
     @Override
     public void dispose() {
         log.info("dispose");
-        mapElements.forEach(e -> e.dispose());
+        DisposeCaller disposer = new DisposeCaller();
+        mapElements.forEach(e -> disposer.callDispose(e));
         PhysicsWorld.instance.getRayHandler().dispose();
     }
 

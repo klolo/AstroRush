@@ -1,4 +1,4 @@
-package com.astro.core.engine;
+package com.astro.core.engine.base;
 
 import com.uwsoft.editor.renderer.resources.ResourceManager;
 
@@ -18,6 +18,4 @@ public enum GameResources {
 
         return resourceManager;
     }
-
-
 }

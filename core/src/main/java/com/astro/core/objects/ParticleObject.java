@@ -1,5 +1,6 @@
 package com.astro.core.objects;
 
+import com.astro.core.adnotation.Dispose;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ParticleObject extends TextureObject {
 
     @Setter
+    @Dispose
     protected ParticleEffect effect;
 
     @Override
@@ -23,8 +25,4 @@ public class ParticleObject extends TextureObject {
         effect.draw(batch, delta);
     }
 
-    @Override
-    public void dispose() {
-        effect.dispose();
-    }
 }

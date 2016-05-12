@@ -1,6 +1,6 @@
 package com.astro.core.engine.physics;
 
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 

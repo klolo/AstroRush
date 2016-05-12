@@ -1,5 +1,6 @@
 package com.astro.core.objects;
 
+import com.astro.core.adnotation.Dispose;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -25,6 +26,7 @@ public class LabelObject extends TextureObject {
     private boolean useShader = false;
 
     @Getter
+    @Dispose
     private BitmapFont font;
 
     @Setter
@@ -45,6 +47,7 @@ public class LabelObject extends TextureObject {
     /**
      * TODO: doc
      */
+    @Dispose
     private ShaderProgram fontShader;
 
     public LabelObject(BitmapFont font) {
@@ -82,12 +85,4 @@ public class LabelObject extends TextureObject {
 
         batch.setProjectionMatrix(cam.combined);
     }
-
-    @Override
-    public void dispose() {
-        batch.dispose();
-        font.dispose();
-        fontShader.dispose();
-    }
-
 }

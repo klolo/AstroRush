@@ -1,6 +1,6 @@
 package com.astro.core.overlap_runtime;
 
-import com.astro.core.engine.ScreenManager;
+import com.astro.core.engine.stage.StageManager;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.loaders.*;
 import com.badlogic.gdx.Gdx;
@@ -61,7 +61,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader loadComposite(CompositeVO rootComposite) {
         if (rootComposite.layers != null) {
-            rootComposite.layers.stream().forEach(layer -> ScreenManager.instance.addLayer(layer.layerName));
+            rootComposite.layers.stream().forEach(layer -> StageManager.instance.addLayer(layer.layerName));
         }
         return registerImages(rootComposite.sImages)
                 .registerLights(rootComposite)
@@ -146,7 +146,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerImage9patchs(CompositeVO rootComposite) {
         if (rootComposite.sImage9patchs.size() > 0) {
-            log.error("Nie obslugiwany komponent");
+            log.error("Unknown component");
         }
         return this;
     }
@@ -156,7 +156,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerTextBoxVO(CompositeVO rootComposite) {
         if (rootComposite.sTextBox.size() > 0) {
-            log.error("Nie obslugiwany komponent");
+            log.error("Unknown component");
         }
         return this;
     }
@@ -166,7 +166,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerSelectBoxVO(CompositeVO rootComposite) {
         if (rootComposite.sSelectBoxes.size() > 0) {
-            log.error("Nie obslugiwany komponent");
+            log.error("Unknown component");
         }
         return this;
     }
@@ -176,7 +176,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerSpineVO(CompositeVO rootComposite) {
         if (rootComposite.sSpineAnimations.size() > 0) {
-            log.error("Nie obslugiwany komponent");
+            log.error("Unknown component");
         }
         return this;
     }
@@ -186,7 +186,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerSpriterVO(CompositeVO rootComposite) {
         if (rootComposite.sSpriterAnimations.size() > 0) {
-            log.error("Nie obslugiwany komponent");
+            log.error("Unknown component");
         }
         return this;
     }

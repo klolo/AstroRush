@@ -1,8 +1,7 @@
 package com.astro.core.script;
 
-import com.astro.core.engine.CameraManager;
-import com.astro.core.engine.IObservedByCamera;
-import com.astro.core.engine.PlayerMove;
+import com.astro.core.engine.base.CameraManager;
+import com.astro.core.engine.interfaces.IObservedByCamera;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
@@ -11,8 +10,6 @@ import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.physics.box2d.Body;
 import lombok.extern.slf4j.Slf4j;
-
-import java.lang.ref.WeakReference;
 
 /**
  * TODO:

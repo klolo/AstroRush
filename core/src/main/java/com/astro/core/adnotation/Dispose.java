@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by kamil on 23.04.16.
+ * Mark field which will be disposing.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

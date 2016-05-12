@@ -1,11 +1,10 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.engine.ScreenManager;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -55,7 +54,7 @@ public enum StageFactory {
         result = (ArrayList<IGameObject>) sceneReader.getComponents();
 
         addToObjectRegister(result);
-        return ScreenManager.instance.sortObjectsByLayer(result);
+        return StageManager.instance.sortObjectsByLayer(result);
     }
 
     /**

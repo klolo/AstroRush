@@ -1,8 +1,9 @@
-package com.astro.core.engine;
+package com.astro.core.engine.base;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.engine.interfaces.IObservedByCamera;
 import com.astro.core.engine.physics.PhysicsWorld;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector3;
 import lombok.Getter;

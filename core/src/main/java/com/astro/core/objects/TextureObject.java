@@ -1,7 +1,7 @@
 package com.astro.core.objects;
 
 import com.astro.core.adnotation.Dispose;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
@@ -21,6 +21,7 @@ public class TextureObject extends GameObject {
 
     @Getter
     @Setter
+    @Dispose
     protected TextureRegion textureRegion;
 
     /**
@@ -124,10 +125,4 @@ public class TextureObject extends GameObject {
                 rotate
         );
     }
-
-    @Override
-    public void dispose() {
-        batch.dispose();
-    }
-
 }

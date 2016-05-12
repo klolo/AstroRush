@@ -1,19 +1,19 @@
 package com.astro.core.engine.physics;
 
 import com.astro.core.adnotation.GameProperty;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import lombok.Data;
 
 /**
- * Created by kamil on 10.05.16.
+ * Aggregate all settings for PhysicsWorld.
  */
 @Data
-public class PhysicsSettings {
+class PhysicsSettings {
 
     /**
      * Injecting settings.
      */
-    public PhysicsSettings() {
+    PhysicsSettings() {
         PropertyInjector.instance.inject(this);
     }
 

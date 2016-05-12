@@ -48,8 +48,4 @@ public class AnimationObject extends TextureObject {
         batch.draw(textureRegion, pX, pY, width * sprite.getScaleX(), height * sprite.getScaleY());
     }
 
-    @Override
-    public void dispose() {
-
-    }
 }

@@ -6,10 +6,10 @@ import com.badlogic.gdx.physics.box2d.*;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Created by kamil on 11.05.16.
+ * Detect collision and send event to object logic class.
  */
 @Slf4j
-public class CollisionListener implements ContactListener {
+class CollisionListener implements ContactListener {
 
     @Override
     public void beginContact(Contact contact) {
@@ -19,14 +19,16 @@ public class CollisionListener implements ContactListener {
         IGameObject objectA = ObjectsRegister.instance.getObjectByBody(fixtureA.getBody());
         IGameObject objectB = ObjectsRegister.instance.getObjectByBody(fixtureB.getBody());
 
-        if (objectA != null && objectA.hasLogic()) {
-            log.debug("Send collision event {}", objectA.getName());
-            objectA.getLogic().collision(objectB, true);
-        }
+        if (objectA != null && objectB != null) {
+            if (objectA.hasLogic()) {
+                log.debug("Send collision event {}", objectA.getName());
+                objectA.getLogic().collision(objectB, true);
+            }
 
-        if (objectB != null && objectB.hasLogic()) {
-            log.debug("Send collision event {}", objectB.getName());
-            objectB.getLogic().collision(objectA, true);
+            if (objectB.hasLogic()) {
+                log.debug("Send collision event {}", objectB.getName());
+                objectB.getLogic().collision(objectA, true);
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 package engine;
 
-import com.astro.core.engine.ParalaxBackground;
+import com.astro.core.engine.base.ParalaxBackground;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

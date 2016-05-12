@@ -1,4 +1,4 @@
-package com.astro.core.engine;
+package com.astro.core.engine.interfaces;
 
 import com.astro.core.observe.IKeyObserver;
 import com.badlogic.gdx.Screen;

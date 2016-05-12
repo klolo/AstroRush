@@ -1,8 +1,8 @@
 package com.astro.game;
 
-import com.astro.core.engine.GameEngine;
-import com.astro.core.engine.GameLogic;
-import com.astro.core.engine.IGameLogic;
+import com.astro.core.engine.base.GameEngine;
+import com.astro.core.engine.base.GameLogic;
+import com.astro.core.engine.interfaces.IGameLogic;
 import com.astro.core.storage.PropertiesReader;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;

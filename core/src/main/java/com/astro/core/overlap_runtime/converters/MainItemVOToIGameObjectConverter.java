@@ -3,7 +3,7 @@ package com.astro.core.overlap_runtime.converters;
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.uwsoft.editor.renderer.data.MainItemVO;
 import lombok.extern.slf4j.Slf4j;
 

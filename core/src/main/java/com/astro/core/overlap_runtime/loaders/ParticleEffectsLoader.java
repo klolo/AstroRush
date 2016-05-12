@@ -1,11 +1,11 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.engine.GameResources;
+import com.astro.core.engine.base.GameResources;
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.objects.ParticleObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.converters.ParticleEffectVOToIGameObjectConverter;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.uwsoft.editor.renderer.data.ParticleEffectVO;
 

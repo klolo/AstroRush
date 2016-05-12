@@ -1,11 +1,11 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.engine.GameResources;
+import com.astro.core.engine.base.GameResources;
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.LabelObject;
 import com.astro.core.objects.ObjectsRegister;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import lombok.extern.slf4j.Slf4j;

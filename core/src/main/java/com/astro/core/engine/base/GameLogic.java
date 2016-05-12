@@ -1,5 +1,6 @@
-package com.astro.core.engine;
+package com.astro.core.engine.base;
 
+import com.astro.core.engine.interfaces.IGameLogic;
 import com.astro.core.engine.stage.*;
 import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Game;

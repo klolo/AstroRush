@@ -1,4 +1,4 @@
-package com.astro.core.engine;
+package com.astro.core.engine.stage;
 
 import com.astro.core.objects.interfaces.IGameObject;
 
@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
  * Util class for sorting, filter object on the Map.
  */
 @Slf4j
-public enum ScreenManager {
+public enum StageManager {
     instance;
 
     /**

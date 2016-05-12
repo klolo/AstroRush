@@ -34,8 +34,6 @@ public interface IGameObject {
 
     void update(float delta);
 
-    void dispose();
-
     boolean isPhysicObject();
 
     String getName();

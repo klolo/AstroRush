@@ -2,7 +2,7 @@ package com.astro.core.overlap_runtime.loaders;
 
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.engine.physics.PhysicsWorld;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;

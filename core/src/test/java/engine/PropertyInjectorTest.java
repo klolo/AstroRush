@@ -1,7 +1,7 @@
 package engine;
 
 import com.astro.core.adnotation.GameProperty;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import org.junit.Assert;
 import org.junit.Test;
 

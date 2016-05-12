@@ -1,8 +1,8 @@
-package com.astro.core.engine;
+package com.astro.core.engine.base;
 
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.objects.TextureObject;
-import com.astro.core.storage.PropertyInjector;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
