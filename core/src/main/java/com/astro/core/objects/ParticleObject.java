@@ -19,8 +19,8 @@ public class ParticleObject extends TextureObject {
     @Override
     protected void render(OrthographicCamera cam, float delta) {
         effect.setPosition(
-                sprite.getX() * PIXEL_PER_METER,
-                sprite.getY() * PIXEL_PER_METER
+                data.sprite.getX() * PIXEL_PER_METER,
+                data.sprite.getY() * PIXEL_PER_METER
         );
         effect.draw(batch, delta);
     }

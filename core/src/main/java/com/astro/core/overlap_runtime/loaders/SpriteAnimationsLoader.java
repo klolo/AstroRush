@@ -30,7 +30,7 @@ public class SpriteAnimationsLoader extends BaseLoader implements ILoader<Sprite
                 float h = atlas.getRegions().get(0).getRegionHeight();
                 Body physicsBody = createBoody(spriteAnimationVO, w, h, spriteAnimationVO.animationName);
                 physicsBody.setUserData(result);
-                result.setBody(physicsBody);
+                result.getData().setBody(physicsBody);
             }
             catch (final Exception e) {
                 log.error("Incorrect physics settings");

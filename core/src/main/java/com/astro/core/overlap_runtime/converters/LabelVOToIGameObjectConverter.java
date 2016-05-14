@@ -15,7 +15,7 @@ public class LabelVOToIGameObjectConverter extends MainItemVOToIGameObjectConver
         super.convert(labelVO, result);
         ((LabelObject) result).setNationalizedMsg();
 
-        result.getSprite().setBounds(
+        result.getData().getSprite().setBounds(
                 labelVO.x,
                 labelVO.y,
                 labelVO.width,

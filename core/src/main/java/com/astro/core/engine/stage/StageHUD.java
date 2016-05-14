@@ -39,7 +39,7 @@ public class StageHUD implements IGameHud {
                         LabelObject.getDEFAULT_SIZE()));
 
 
-        labelObject.getSprite().setPosition(
+        labelObject.getData().getSprite().setPosition(
                 -1 * (Gdx.graphics.getWidth() / (2 * PIXEL_PER_METER)) + 1.0f, //fixme
                 -1 * (Gdx.graphics.getHeight() / (2 * PIXEL_PER_METER)) + 10.0f //fixme
         );
@@ -49,7 +49,7 @@ public class StageHUD implements IGameHud {
 
     public void show(final OrthographicCamera cam, float delta) {
         GameObject playerObject = (GameObject) ObjectsRegister.instance.getObjectByID("player");// fixme: not call in loop
-        labelObject.setText(msg + playerObject.getSprite().getX());
+        labelObject.setText(msg + playerObject.getData().getSprite().getX());
         labelObject.show(cam, delta);
     }
 

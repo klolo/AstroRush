@@ -19,7 +19,7 @@ public class Sheep implements ILogic {
 
     @Override
     public void update(float diff) {
-        float posX = gameObject.getSprite().getX();
+        float posX = gameObject.getData().getSprite().getX();
         if (posX > 2) {
             speed = -1f;
             gameObject.setFlipX(true);
@@ -28,7 +28,7 @@ public class Sheep implements ILogic {
             speed = 1;
             gameObject.setFlipX(false);
         }
-        gameObject.getSprite().setX(posX + diff * speed);
+        gameObject.getData().getSprite().setX(posX + diff * speed);
     }
 
     @Override

@@ -64,8 +64,8 @@ public class ParalaxBackground {
 
         if (SIMPLE_MODE) {
             textures.add(new TextureObject(new TextureRegion(background)));
-            textures.get(0).getSprite().setOrigin(0f, 0f);
-            textures.get(0).getSprite().setBounds(
+            textures.get(0).getData().getSprite().setOrigin(0f, 0f);
+            textures.get(0).getData().getSprite().setBounds(
                     0,
                     0,
                     Gdx.graphics.getWidth() * TEXTURE_SCALE,
@@ -74,8 +74,8 @@ public class ParalaxBackground {
         else {
             for (int i = 0; i < BACKGROUND_AMOUNT; ++i) {
                 textures.add(new TextureObject(new TextureRegion(background)));
-                textures.get(i).getSprite().setOrigin(0f, 0f);
-                textures.get(i).getSprite().setBounds(
+                textures.get(i).getData().getSprite().setOrigin(0f, 0f);
+                textures.get(i).getData().getSprite().setBounds(
                         (i - BACKGROUND_AMOUNT / 2) * (Gdx.graphics.getWidth() * TEXTURE_SCALE / PIXEL_PER_METER),
                         0,
                         Gdx.graphics.getWidth() * TEXTURE_SCALE,
@@ -102,16 +102,16 @@ public class ParalaxBackground {
             simpleUpdate(cam, diff);
         }
         else {
-            textures.forEach(t -> t.getSprite().setY(getNewPositionY(cam, diff, t)));
-            textures.forEach(t -> t.getSprite().setX(t.getSprite().getX() - (diff * BACKGROUND_SPEED)));
+            textures.forEach(t -> t.getData().getSprite().setY(getNewPositionY(cam, diff, t)));
+            textures.forEach(t -> t.getData().getSprite().setX(t.getData().getSprite().getX() - (diff * BACKGROUND_SPEED)));
 
             int findFirstOnLeftIndex = findFirstOnLeft();
-            float firstPosX = textures.get(findFirstOnLeftIndex).getSprite().getX();
+            float firstPosX = textures.get(findFirstOnLeftIndex).getData().getSprite().getX();
 
             if (isOnTheLeftOfScreen(firstPosX, cam)) {
                 log.info("Switch texture {} to end", textures.get(findFirstOnLeftIndex));
-                float lastPosX = textures.get(findLastOnLeft()).getSprite().getX();
-                textures.get(findFirstOnLeftIndex).getSprite().setX(
+                float lastPosX = textures.get(findLastOnLeft()).getData().getSprite().getX();
+                textures.get(findFirstOnLeftIndex).getData().getSprite().setX(
                         lastPosX + (Gdx.graphics.getWidth() * TEXTURE_SCALE / PIXEL_PER_METER)
                 );
             }
@@ -123,7 +123,7 @@ public class ParalaxBackground {
      * Update for only one texture.
      */
     private void simpleUpdate(final OrthographicCamera cam, float diff) {
-        textures.get(0).getSprite().setBounds(
+        textures.get(0).getData().getSprite().setBounds(
                 getNewPositionX(cam, diff),
                 getNewPositionY(cam, diff, textures.get(0)),
                 Gdx.graphics.getWidth() * TEXTURE_SCALE,
@@ -149,9 +149,9 @@ public class ParalaxBackground {
      */
     private int findFirstOnLeft() {
         int index = 0;
-        float minX = textures.get(0).getSprite().getX();
+        float minX = textures.get(0).getData().getSprite().getX();
         for (int i = 0; i < textures.size(); ++i) {
-            if (textures.get(i).getSprite().getX() < minX) {
+            if (textures.get(i).getData().getSprite().getX() < minX) {
                 index = i;
             }
         }
@@ -166,9 +166,9 @@ public class ParalaxBackground {
      */
     private int findLastOnLeft() {
         int index = 0;
-        float maxX = textures.get(0).getSprite().getX();
+        float maxX = textures.get(0).getData().getSprite().getX();
         for (int i = 0; i < textures.size(); ++i) {
-            if (textures.get(i).getSprite().getX() > maxX) {
+            if (textures.get(i).getData().getSprite().getX() > maxX) {
                 index = i;
             }
         }
@@ -182,14 +182,14 @@ public class ParalaxBackground {
         float minPosY = worldCameraY - (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
         float maxPosY = worldCameraY + (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
 
-        if (textureObject.getSprite().getY() < minPosY) {
-            newY = textureObject.getSprite().getX() + (diff * BACKGROUND_SPEED);
+        if (textureObject.getData().getSprite().getY() < minPosY) {
+            newY = textureObject.getData().getSprite().getX() + (diff * BACKGROUND_SPEED);
             if (newY < minPosY) {
                 newY = minPosY;
             }
         }
-        else if (textureObject.getSprite().getY() > maxPosY) {
-            newY = textureObject.getSprite().getY() - (diff * BACKGROUND_SPEED);
+        else if (textureObject.getData().getSprite().getY() > maxPosY) {
+            newY = textureObject.getData().getSprite().getY() - (diff * BACKGROUND_SPEED);
             if (newY < maxPosY) {
                 newY = maxPosY;
             }
@@ -210,14 +210,14 @@ public class ParalaxBackground {
         float minPosX = worldCameraX - (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);
         float maxPosX = worldCameraX + (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);
 
-        if (textures.get(0).getSprite().getX() < minPosX) {
-            newX = textures.get(0).getSprite().getX() + (diff * BACKGROUND_SPEED);
+        if (textures.get(0).getData().getSprite().getX() < minPosX) {
+            newX = textures.get(0).getData().getSprite().getX() + (diff * BACKGROUND_SPEED);
             if (newX < minPosX) {
                 newX = minPosX;
             }
         }
-        else if (textures.get(0).getSprite().getX() > maxPosX) {
-            newX = textures.get(0).getSprite().getX() - (diff * BACKGROUND_SPEED);
+        else if (textures.get(0).getData().getSprite().getX() > maxPosX) {
+            newX = textures.get(0).getData().getSprite().getX() - (diff * BACKGROUND_SPEED);
             if (newX < maxPosX) {
                 newX = maxPosX;
             }

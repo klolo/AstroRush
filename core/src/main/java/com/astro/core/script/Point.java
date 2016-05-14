@@ -22,8 +22,8 @@ public class Point implements ILogic {
 
     @Override
     public void collision(IGameObject collidatedObject, boolean collisionStart) {
-        if ("player".equals(collidatedObject.getItemIdentifier())) {
-            gameObject.setIsDestroyed(true);
+        if ("player".equals(collidatedObject.getData().getItemIdentifier())) {
+            gameObject.getData().setDestroyed(true);
         }
     }
 }

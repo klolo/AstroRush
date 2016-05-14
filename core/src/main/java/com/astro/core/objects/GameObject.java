@@ -7,11 +7,13 @@ import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.Contact;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
+import java.util.function.Consumer;
 
 /**
  * Represents a rendereable.
@@ -19,48 +21,9 @@ import java.util.HashMap;
 @Slf4j
 abstract public class GameObject implements IGameObject {
 
-    /**
-     * Physics body of the Player.
-     */
     @Getter
     @Setter
-    protected Body body;
-
-    /**
-     * Logic of the object.
-     */
-    @Getter
-    private ILogic logic;
-
-    /**
-     * Name of the object.
-     */
-    @Getter
-    @Setter
-    protected String name = "";
-
-    /**
-     * Object identifier using for communication beetwen objects.
-     */
-    @Getter
-    @Setter
-    protected String itemIdentifier = "";
-
-    /**
-     *
-     */
-    @Getter
-    protected Sprite sprite;
-
-    @Getter
-    @Setter
-    protected String layerID = "Default";
-
-    /**
-     * Should be object removed?
-     */
-    @Getter
-    boolean isDestroyed;
+    protected ObjectData data = new ObjectData();
 
     /**
      * Amount of the pixel per meter.
@@ -68,60 +31,49 @@ abstract public class GameObject implements IGameObject {
     @GameProperty("renderer.pixel.per.meter")
     protected int PIXEL_PER_METER = 0;
 
-    /**
-     * Custom settings from editor.
-     */
-    protected HashMap<String, String> customVariables = new HashMap<>();
 
     /**
      * Default constructor.
      */
     public GameObject() {
         PropertyInjector.instance.inject(this);
-        sprite = new Sprite();
+        data.setSprite(new Sprite());
     }
-
-    protected abstract void render(OrthographicCamera cam, float delta);
 
     /**
      *
      */
     public boolean hasLogic() {
-        if (logic != null) {
+        if (data.getLogic() != null) {
             return true;
         }
         return false;
     }
 
     public void update(float delta) {
-        if (logic != null)
-            logic.update(delta);
+        if (data.getLogic() != null)
+            data.getLogic().update(delta);
     }
 
     /**
      * Set custom variable from Overlap editor.
      */
     public void setCustomVar(String key, String val) {
-        customVariables.put(key, val);
-    }
-
-    public void setLogic(ILogic logic) {
-        this.logic = logic;
+        data.getCustomVariables().put(key, val);
     }
 
     /**
      * Does have object physics body?
      */
     public boolean isPhysicObject() {
-        if (body != null) {
+        if (data.getBody() != null) {
             return true;
         }
-
         return false;
     }
 
-    public void setIsDestroyed(boolean flag) {
-        isDestroyed = flag;
-    }
-
+    /**
+     * Called by GameEngine.
+     */
+    protected abstract void render(OrthographicCamera cam, float delta);
 }

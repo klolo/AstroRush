@@ -42,7 +42,7 @@ public enum StageManager {
         layers.forEach(layer -> sortedObjectMap.put(layer, new LinkedList<>()));
 
         gameObjects.forEach(gObj ->
-                sortedObjectMap.get(gObj.getLayerID()).add(gObj));
+                sortedObjectMap.get(gObj.getData().getLayerID()).add(gObj));
 
         ArrayList<IGameObject> sortedObjects = new ArrayList<>(gameObjects.size());
         layers.forEach(layer -> sortedObjects.addAll((LinkedList) sortedObjectMap.get(layer)));

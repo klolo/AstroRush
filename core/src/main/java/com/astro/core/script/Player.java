@@ -42,7 +42,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
     public void setGameObject(IGameObject gameObject) {
         this.gameObject = (AnimationObject) gameObject;
-        body = gameObject.getBody();
+        body = gameObject.getData().getBody();
         body.setFixedRotation(true);
     }
 
@@ -51,7 +51,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         if (body.getPosition().y > MAX_Y_POSITION) {
             body.setTransform(body.getPosition().x, MAX_Y_POSITION, 0);
         }
-        gameObject.getSprite().setPosition(body.getPosition().x, body.getPosition().y);
+        gameObject.getData().getSprite().setPosition(body.getPosition().x, body.getPosition().y);
     }
 
     @Override

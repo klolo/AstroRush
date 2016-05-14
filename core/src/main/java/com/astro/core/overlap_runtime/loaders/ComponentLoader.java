@@ -33,7 +33,7 @@ public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO
                 result = new PhysicsObject(textureRegion);
                 Body physicsBody = createBoody(imageVO, w, h, imageVO.imageName);
                 physicsBody.setUserData(result);
-                result.setBody(physicsBody);
+                result.getData().setBody(physicsBody);
             }
             catch (final Exception e) {
                 log.error("Incorrect physics settings");
@@ -45,7 +45,7 @@ public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO
         }
 
         result = new SimpleImageVOToIGameObjectConverter().convert(imageVO, result);
-        result.getSprite().setBounds(
+        result.getData().getSprite().setBounds(
                 imageVO.x,
                 imageVO.y,
                 textureRegion.getRegionWidth(),

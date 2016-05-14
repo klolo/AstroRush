@@ -12,7 +12,7 @@ public class SimpleImageVOToIGameObjectConverter extends  MainItemVOToIGameObjec
     public IGameObject convert(SimpleImageVO imageVO, IGameObject result) {
         super.convert(imageVO,result);
 
-        result.setName(imageVO.imageName);
+        result.getData().setName(imageVO.imageName);
 
         return result;
     }

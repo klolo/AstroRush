@@ -64,7 +64,7 @@ public enum StageFactory {
         ObjectsRegister.instance.clearRegister();
         ObjectsRegister.instance.registerObject(
                 objects.stream()
-                        .filter(e -> e.getItemIdentifier() != null && !"".equals(e.getItemIdentifier()))
+                        .filter(e -> e.getData().getItemIdentifier() != null && !"".equals(e.getData().getItemIdentifier()))
                         .collect(Collectors.toList())
         );
     }

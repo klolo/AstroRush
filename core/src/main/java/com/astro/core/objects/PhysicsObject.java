@@ -37,23 +37,22 @@ public class PhysicsObject extends TextureObject implements IGameObject {
     }
 
     public void init() {
-        body = PhysicsWorld.instance.createBody(getBodyDefinition());
+        data.body = PhysicsWorld.instance.createBody(getBodyDefinition());
 
         // Create our fixture and attach it to the body
         FixtureDef fixtureDef = getFixtureDefinition();
-        fixture = body.createFixture(fixtureDef);
+        fixture = data.body.createFixture(fixtureDef);
 
         fixtureDef.shape.dispose();
     }
-
 
     /**
      * {@inheritDoc}
      */
     @Override
     protected void render(OrthographicCamera cam, float delta) {
-        getSprite().setPosition(body.getPosition().x, body.getPosition().y);
-        getSprite().setRotation((float) Math.toDegrees(body.getAngle()));
+        data.sprite.setPosition(data.body.getPosition().x, data.body.getPosition().y);
+        data.sprite.setRotation((float) Math.toDegrees(data.body.getAngle()));
         super.draw();
     }
 
@@ -69,8 +68,8 @@ public class PhysicsObject extends TextureObject implements IGameObject {
         bodyDef.type = BodyDef.BodyType.DynamicBody;
 
         bodyDef.position.set(
-                getSprite().getX() / PIXEL_PER_METER,
-                getSprite().getY() / PIXEL_PER_METER);
+                data.sprite.getX() / PIXEL_PER_METER,
+                data.sprite.getY() / PIXEL_PER_METER);
         return bodyDef;
     }
 

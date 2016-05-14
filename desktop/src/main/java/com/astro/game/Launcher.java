@@ -24,14 +24,14 @@ public class Launcher {
     private IGameLogic gameLogic = null;
 
     /**
-     *  Main method of the application.
+     * Main method of the application.
      */
     public static void main(String... args) {
         Launcher launcher = new Launcher();
         launcher.run();
     }
 
-    public void run() {
+    private void run() {
         log.info("Game start");
 
         try {

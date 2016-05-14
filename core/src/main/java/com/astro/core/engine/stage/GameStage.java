@@ -130,10 +130,10 @@ public class GameStage implements Screen {
 
     private void processGameObjects(IGameObject gameObject, float diff) {
         gameObject.update(diff);
-        if (gameObject.isDestroyed()) {
+        if (gameObject.getData().isDestroyed()) {
             mapElementsWithLogic.remove(gameObject);
             mapElements.remove(gameObject);
-            PhysicsWorld.instance.getWorld().destroyBody(gameObject.getBody());
+            PhysicsWorld.instance.getWorld().destroyBody(gameObject.getData().getBody());
         }
     }
 
@@ -187,9 +187,9 @@ public class GameStage implements Screen {
      */
     private void destroyPhysicsBody(IGameObject gameObject) {
         if (gameObject.isPhysicObject()) {
-            log.info("Destroy body: {}", gameObject.getName());
-            PhysicsWorld.instance.getWorld().destroyBody(gameObject.getBody());
-            gameObject.setBody(null);
+            log.info("Destroy body: {}", gameObject.getData().getName());
+            PhysicsWorld.instance.getWorld().destroyBody(gameObject.getData().getBody());
+            gameObject.getData().setBody(null);
         }
     }
 

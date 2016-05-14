@@ -12,7 +12,7 @@ public class ParticleEffectVOToIGameObjectConverter extends MainItemVOToIGameObj
     public IGameObject convert(ParticleEffectVO particleEffectVO, IGameObject result) {
         super.convert(particleEffectVO,result);
 
-        result.getSprite().setBounds(
+        result.getData().getSprite().setBounds(
                 particleEffectVO.x,
                 particleEffectVO.y,
                 particleEffectVO.particleWidth,

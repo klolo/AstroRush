@@ -63,7 +63,7 @@ public class LabelObject extends TextureObject {
     }
 
     public void setNationalizedMsg() {
-        String msgVars = customVariables.get("msg");
+        String msgVars = data.customVariables.get("msg");
         if (msgVars != null && !"".equals(msgVars)) {
             String newText = PropertiesReader.instance.getMsg(msgVars);
             if(newText!=null && !"".equals(newText) ) {
@@ -87,8 +87,8 @@ public class LabelObject extends TextureObject {
 
         font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         font.draw(batch, text,
-                sprite.getX() * PIXEL_PER_METER,
-                sprite.getY() * PIXEL_PER_METER);
+                data.sprite.getX() * PIXEL_PER_METER,
+                data.sprite.getY() * PIXEL_PER_METER);
 
         if (useShader) {
             batch.setShader(null);

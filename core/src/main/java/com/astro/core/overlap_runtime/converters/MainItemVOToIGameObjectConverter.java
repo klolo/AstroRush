@@ -25,11 +25,11 @@ public class MainItemVOToIGameObjectConverter {
 
     public IGameObject convert(MainItemVO input, IGameObject result) {
         log.info("Convert: ID: {}, itemName: {}", input.itemIdentifier, input.itemName);
-        result.getSprite().setOrigin(input.originX, input.originY);
-        result.getSprite().setScale(input.scaleX, input.scaleY);
-        result.getSprite().setPosition(input.x, input.y);
+        result.getData().getSprite().setOrigin(input.originX, input.originY);
+        result.getData().getSprite().setScale(input.scaleX, input.scaleY);
+        result.getData().getSprite().setPosition(input.x, input.y);
 
-        result.setItemIdentifier(input.itemIdentifier);
+        result.getData().setItemIdentifier(input.itemIdentifier);
 
         /**
          * Parsing custom vars from editor. Example from json:
@@ -39,9 +39,9 @@ public class MainItemVOToIGameObjectConverter {
                 .ifPresent(e -> Arrays.asList(e.split(";"))
                         .forEach(a -> setArgs(a, result)));
 
-        result.getSprite().setRotation(input.rotation);
-        result.getSprite().setColor(input.tint[0], input.tint[1], input.tint[2], input.tint[3]);
-        result.setLayerID(input.layerName);
+        result.getData().getSprite().setRotation(input.rotation);
+        result.getData().getSprite().setColor(input.tint[0], input.tint[1], input.tint[2], input.tint[3]);
+        result.getData().setLayerID(input.layerName);
         return result;
     }
 
@@ -57,7 +57,7 @@ public class MainItemVOToIGameObjectConverter {
                 String className = SCRIPT_PACKAGE + "." + data[1];
                 setGameLogic(className, result);
             }
-            result.setCustomVar(data[0], data[1]);
+            result.getData().getCustomVariables().put(data[0], data[1]);
         }
     }
 
@@ -71,7 +71,7 @@ public class MainItemVOToIGameObjectConverter {
             ILogic logic = (ILogic) clazz.newInstance();
             logic.setGameObject(result);
             PropertyInjector.instance.inject(logic);
-            result.setLogic(logic);
+            result.getData().setLogic(logic);
         }
         catch (final Exception exception) {
             log.error("Error in initializing logic:" + className, exception);

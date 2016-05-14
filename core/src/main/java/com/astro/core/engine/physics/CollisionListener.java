@@ -21,13 +21,13 @@ class CollisionListener implements ContactListener {
 
         if (objectA != null && objectB != null) {
             if (objectA.hasLogic()) {
-                log.debug("Send collision event {}", objectA.getName());
-                objectA.getLogic().collision(objectB, true);
+                log.debug("Send collision event {}", objectA.getData().getName());
+                objectA.getData().getLogic().collision(objectB, true);
             }
 
             if (objectB.hasLogic()) {
-                log.debug("Send collision event {}", objectB.getName());
-                objectB.getLogic().collision(objectA, true);
+                log.debug("Send collision event {}", objectB.getData().getName());
+                objectB.getData().getLogic().collision(objectA, true);
             }
         }
     }
