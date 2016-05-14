@@ -2,11 +2,15 @@ package com.astro.core.script;
 
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
+import com.astro.core.script.Player;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 
 /**
  * Created by kamil on 11.05.16.
  */
 public class Point implements ILogic {
+
+    public static final String IDENTIFIER = "point";
 
     private IGameObject gameObject;
 
@@ -22,8 +26,13 @@ public class Point implements ILogic {
     }
 
     public void collisionEvent(IGameObject collidatedObject) {
-        if ("player".equals(collidatedObject.getData().getItemIdentifier())) {
+        if (Player.IDENTIFIER.equals(collidatedObject.getData().getItemIdentifier())) {
             gameObject.getData().setDestroyed(true);
         }
+    }
+
+    @Override
+    public void additionalRender(OrthographicCamera cam, float delta) {
+
     }
 }

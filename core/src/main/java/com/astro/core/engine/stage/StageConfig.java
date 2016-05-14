@@ -8,9 +8,9 @@ import lombok.Data;
 @Data
 public class StageConfig {
 
-    public String stageName = "";
-
     public String sceneFile = "";
+
+    public String stageName = "";
 
     public boolean hasPlayer;
 

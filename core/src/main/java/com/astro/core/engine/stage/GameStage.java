@@ -44,20 +44,15 @@ public class GameStage implements Screen {
     @Getter
     private ArrayList<IGameObject> mapElementsWithLogic = new ArrayList<>();
 
-    @Getter
-    private final String stageName;
-
     private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
 
     /**
      * Creating only by factory. Access package.
      */
-    GameStage(final ArrayList<IGameObject> elements, final String name) {
+    GameStage(final ArrayList<IGameObject> elements) {
         PropertyInjector.instance.inject(this);
 
-        stageName = name;
         this.mapElements = elements;
-
         mapElements = StageManager.instance.sortObjectsByLayer(mapElements);
 
         mapElementsWithLogic = StageManager.instance.getObjectsWithLogic(mapElements);
@@ -95,6 +90,7 @@ public class GameStage implements Screen {
         }
 
         mapElements.forEach(e -> e.show(CameraManager.instance.getCamera(), delta));
+        mapElementsWithLogic.forEach(e -> e.getData().getLogic().additionalRender(CameraManager.instance.getCamera(), delta));
 
         PhysicsWorld.instance.getRayHandler().updateAndRender();
 
@@ -130,6 +126,7 @@ public class GameStage implements Screen {
 
     private void processGameObjects(IGameObject gameObject, float diff) {
         gameObject.update(diff);
+
         if (gameObject.getData().isDestroyed()) {
             mapElementsWithLogic.remove(gameObject);
             mapElements.remove(gameObject);

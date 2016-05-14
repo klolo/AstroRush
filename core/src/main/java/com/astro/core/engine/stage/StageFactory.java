@@ -5,6 +5,7 @@ import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
 import com.astro.core.adnotation.processor.PropertyInjector;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -17,11 +18,16 @@ import java.util.stream.Collectors;
 public enum StageFactory {
     instance;
 
+    @Getter
+    private String currentStageName;
+
     public GameStage create(StageConfig config) {
         log.info("Loading stage: {}", config.stageName);
+        this.currentStageName = config.stageName;
+
         prepareGameForStage(config);
 
-        GameStage result = new GameStage(getMapElements(config), config.stageName);
+        GameStage result = new GameStage(getMapElements(config));
 
         PropertyInjector.instance.inject(result);
         result.init();

@@ -66,7 +66,7 @@ public class LabelObject extends TextureObject {
         String msgVars = data.customVariables.get("msg");
         if (msgVars != null && !"".equals(msgVars)) {
             String newText = PropertiesReader.instance.getMsg(msgVars);
-            if(newText!=null && !"".equals(newText) ) {
+            if (newText != null && !"".equals(newText)) {
                 text = newText;
             }
         }
@@ -86,6 +86,7 @@ public class LabelObject extends TextureObject {
         }
 
         font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        font.setColor(data.getSprite().getColor());
         font.draw(batch, text,
                 data.sprite.getX() * PIXEL_PER_METER,
                 data.sprite.getY() * PIXEL_PER_METER);

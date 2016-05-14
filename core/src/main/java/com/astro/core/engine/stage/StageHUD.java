@@ -46,7 +46,6 @@ public class StageHUD implements IGameHud {
         labelObject.setScreenPositionRelative(true);
     }
 
-
     public void show(final OrthographicCamera cam, float delta) {
         GameObject playerObject = (GameObject) ObjectsRegister.instance.getObjectByID("player");// fixme: not call in loop
         labelObject.setText(msg + playerObject.getData().getSprite().getX());

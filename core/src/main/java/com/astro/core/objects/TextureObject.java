@@ -19,7 +19,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TextureObject extends GameObject {
 
-    @Dispose
     @Getter
     @Setter
     protected TextureRegion textureRegion;
@@ -40,15 +39,6 @@ public class TextureObject extends GameObject {
 
     public TextureObject() {
         init();
-    }
-
-    /**
-     * Default constructor.
-     */
-    public TextureObject(Texture texture) {
-        init();
-        this.textureRegion = new TextureRegion(texture);
-        data.sprite = new Sprite(texture);
     }
 
     /**

@@ -15,6 +15,9 @@ import java.util.Optional;
 enum CollisionListener implements ContactListener {
     instance;
 
+    /**
+     * Called od collision. Method send event to both collidated objets.
+     */
     @Override
     public void beginContact(Contact contact) {
         Fixture fixtureA = contact.getFixtureA();
@@ -28,6 +31,7 @@ enum CollisionListener implements ContactListener {
         }
 
         sendEvent(objectA, objectB);
+        sendEvent(objectB, objectA);
     }
 
     /**
