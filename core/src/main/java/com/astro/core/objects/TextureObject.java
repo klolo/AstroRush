@@ -19,9 +19,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TextureObject extends GameObject {
 
+    @Dispose
     @Getter
     @Setter
-    @Dispose
     protected TextureRegion textureRegion;
 
     /**

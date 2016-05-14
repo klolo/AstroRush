@@ -1,5 +1,6 @@
 package com.astro.core.objects;
 
+import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -11,6 +12,7 @@ import java.util.function.Consumer;
 
 /**
  * Hold all GameObject data.
+ * This class should have only getters and setters, all logic should be in GameObject.
  */
 @Data
 public class ObjectData {
@@ -57,7 +59,8 @@ public class ObjectData {
 
     /**
      * Callback method for collision. If present event will be send.
+     * See: CollisionListener.
      */
-    protected Consumer<Contact> collisionConsumer;
+    protected Consumer<IGameObject> collisionConsumer;
 
 }

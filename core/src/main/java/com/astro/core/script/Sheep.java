@@ -31,9 +31,4 @@ public class Sheep implements ILogic {
         gameObject.getData().getSprite().setX(posX + diff * speed);
     }
 
-    @Override
-    public void collision(IGameObject collidatedObject, boolean collisionStart) {
-
-    }
-
 }

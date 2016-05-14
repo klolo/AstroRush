@@ -42,6 +42,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
     public void setGameObject(IGameObject gameObject) {
         this.gameObject = (AnimationObject) gameObject;
+        gameObject.getData().setCollisionConsumer(this::collisionEvent);
         body = gameObject.getData().getBody();
         body.setFixedRotation(true);
     }
@@ -78,9 +79,8 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         }
     }
 
-    @Override
-    public void collision(IGameObject collidatedObject, boolean collisionStart) {
-
+    public void collisionEvent(IGameObject collidatedObject) {
+        log.info("player collision");
     }
 
     @Override

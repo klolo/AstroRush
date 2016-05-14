@@ -27,11 +27,6 @@ public class PhysicsObject extends TextureObject implements IGameObject {
         return null;
     }
 
-
-    public PhysicsObject(Texture texture) {
-        super(texture);
-    }
-
     public PhysicsObject(TextureRegion texture) {
         super(texture);
     }
@@ -60,17 +55,5 @@ public class PhysicsObject extends TextureObject implements IGameObject {
         return null;
     }
 
-    /**
-     * @return
-     */
-    protected BodyDef getDefaultBodyDefinition() {
-        BodyDef bodyDef = new BodyDef();
-        bodyDef.type = BodyDef.BodyType.DynamicBody;
-
-        bodyDef.position.set(
-                data.sprite.getX() / PIXEL_PER_METER,
-                data.sprite.getY() / PIXEL_PER_METER);
-        return bodyDef;
-    }
 
 }
