@@ -4,6 +4,7 @@ import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.physics.box2d.Body;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -12,12 +13,24 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Sheep implements ILogic {
 
+    public static final String IDENTIFIER = "sheep";
+
     private AnimationObject gameObject;
 
     float speed = 1f;
 
+    /**
+     * Physics body.
+     */
+    private Body body;
+
     public void setRunAnimation(IGameObject runAnimation) {
         this.gameObject = (AnimationObject) runAnimation;
+        this.gameObject.getData().setCollisionConsumer(this::collisionEvent);
+        body = runAnimation.getData().getBody();
+    }
+
+    private void collisionEvent(IGameObject gameObject) {
     }
 
     @Override
@@ -31,7 +44,10 @@ public class Sheep implements ILogic {
             speed = 1;
             gameObject.setFlipX(false);
         }
+
         gameObject.getData().getSprite().setX(posX + diff * speed);
+        body.setTransform(posX, gameObject.getData().getSprite().getY(), 0);
+
     }
 
     @Override

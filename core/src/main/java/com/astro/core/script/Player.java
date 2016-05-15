@@ -125,6 +125,9 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
             Point point = (Point) collidatedObject.getData().getLogic();
             playerPopupMsg.addMessagesToQueue(point.getPlayerMsg());
         }
+        else if(Sheep.IDENTIFIER.equals(collidatedObject.getData().getItemIdentifier())) {
+            playerPopupMsg.addMessagesToQueue("ouh!");
+        }
     }
 
     @Override

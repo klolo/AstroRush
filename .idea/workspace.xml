@@ -2,50 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ec722d8-dd8c-4052-95d3-6be1ae989e58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/assets/splash.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/fly.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/planet sprite- purple- by alpharats(1).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/images/stand.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerGraphics.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/resources/hs_err_pid30911.log" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/base/GameResources.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/storage/GameResources.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/logic/PlayerPopupMsg.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PopupMsg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/orig/pack.png" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/orig/pack2.png" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/orig/pack3.png" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack.png" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack2.png" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack.png" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack2.png" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack3.png" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack3.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageHUD.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageHUD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/AnimationObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/AnimationObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/interfaces/ILogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/interfaces/ILogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ComponentLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ComponentLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/LabelsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/LabelsLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ParticleEffectsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ParticleEffectsLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/SpriteAnimationsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/SpriteAnimationsLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Gate.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Gate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Key.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Key.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/MovingPlatform.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/MovingPlatform.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Point.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Point.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Sheep.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Sheep.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/orig/pack.atlas" afterPath="$PROJECT_DIR$/core/src/main/resources/orig/pack.atlas" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/scenes/Lvl1.dt" afterPath="$PROJECT_DIR$/core/src/main/resources/scenes/Lvl1.dt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/scenes/Menu.dt" afterPath="$PROJECT_DIR$/core/src/main/resources/scenes/Menu.dt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack.atlas" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/assets/orig/pack/pack.atlas" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack.atlas" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/orig/pack.atlas" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/Lvl1.dt" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/Lvl1.dt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/Menu.dt" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/export/scenes/Menu.dt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/project.pit" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/project.pit" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/Lvl1.dt" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/Lvl1.dt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/Menu.dt" afterPath="$PROJECT_DIR$/overlap2d_map/AstroMap/scenes/Menu.dt" />
     </list>
     <ignored path="AstroRush2.0.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -197,8 +160,8 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="156" column="84" selection-start-line="156" selection-start-column="84" selection-end-line="156" selection-end-column="84" />
+            <state relative-caret-position="415">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="84" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -218,25 +181,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnimationObject.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/AnimationObject.java">
+      <file leaf-file-name="PopupMsg.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PopupMsg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextureRegion.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.2/b6c7422c6740f86a9a84fdcbc4c62a1f46db317d/gdx-1.9.2-sources.jar!/com/badlogic/gdx/graphics/g2d/TextureRegion.java">
+      <file leaf-file-name="AnimationObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/AnimationObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="223" selection-end-column="0" />
-              <folding>
-                <element signature="e#6725#6726#0" expanded="true" />
-                <element signature="e#6745#6746#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="486">
+              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -244,12 +204,19 @@
       <file leaf-file-name="Sheep.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Sheep.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="38" />
-              <folding>
-                <element signature="e#472#473#0" expanded="true" />
-                <element signature="e#536#537#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="594">
+              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -303,25 +270,6 @@
             <state relative-caret-position="235">
               <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sprite.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.2/b6c7422c6740f86a9a84fdcbc4c62a1f46db317d/gdx-1.9.2-sources.jar!/com/badlogic/gdx/graphics/g2d/Sprite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="159" column="16" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
-              <folding>
-                <element signature="e#12007#12008#0" expanded="true" />
-                <element signature="e#12029#12030#0" expanded="true" />
-                <element signature="e#17488#17489#0" expanded="true" />
-                <element signature="e#17545#17546#0" expanded="true" />
-                <element signature="e#17741#17742#0" expanded="true" />
-                <element signature="e#17756#17757#0" expanded="true" />
-                <element signature="e#17781#17782#0" expanded="true" />
-                <element signature="e#17796#17797#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1261,13 +1209,13 @@
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/interfaces/IGameObject.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/GameObject.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/logic/PlayerPopupMsg.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PopupMsg.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerGraphics.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerState.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Sheep.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/AnimationObject.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Sheep.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PopupMsg.java" />
       </list>
     </option>
   </component>
@@ -2467,14 +2415,7 @@
       <workItem from="1462989448239" duration="12361000" />
       <workItem from="1463075344994" duration="12695000" />
       <workItem from="1463235804416" duration="15644000" />
-      <workItem from="1463321089864" duration="16298000" />
-    </task>
-    <task id="LOCAL-00003" summary="loading particles">
-      <created>1462045501122</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1462045501122</updated>
+      <workItem from="1463321089864" duration="17126000" />
     </task>
     <task id="LOCAL-00004" summary="loading labels">
       <created>1462053548148</created>
@@ -2812,7 +2753,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463256053814</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Additional player state">
+      <created>1463340943491</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1463340943492</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2848,7 +2796,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298258000" />
+    <option name="totallyTimeSpent" value="299086000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2869,14 +2817,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23307544" sideWeight="0.41267306" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1876209" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18743962" sideWeight="0.58732694" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18780252" sideWeight="0.58732694" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2640232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2249467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25024155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15458423" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15458423" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2903,7 +2851,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test begins" />
     <MESSAGE value="travis config" />
     <MESSAGE value="coveralls config" />
     <MESSAGE value="travis img" />
@@ -2928,7 +2875,8 @@
     <MESSAGE value="split data from logic in GameObject" />
     <MESSAGE value="change collision event from interface method to consumer" />
     <MESSAGE value="Showing messages above the player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Showing messages above the player" />
+    <MESSAGE value="Additional player state" />
+    <option name="LAST_COMMIT_MESSAGE" value="Additional player state" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2988,6 +2936,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3063,6 +3012,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3288,14 +3238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PopupMsg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.2/6e1c72c4a48cbde19f9584bfb8d2d09572067af4/gdx-box2d-1.9.2-sources.jar!/com/badlogic/gdx/physics/box2d/Box2DDebugRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -3309,19 +3251,6 @@
         <state relative-caret-position="778">
           <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#1084#1085#0" expanded="true" />
-            <element signature="e#1168#1169#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1282#1283#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3404,17 +3333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Sheep.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="38" />
-          <folding>
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#536#537#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.2/b6c7422c6740f86a9a84fdcbc4c62a1f46db317d/gdx-1.9.2-sources.jar!/com/badlogic/gdx/graphics/g2d/Batch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -3451,16 +3369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="156" column="84" selection-start-line="156" selection-start-column="84" selection-end-line="156" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -3482,8 +3390,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/AnimationObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+        <state relative-caret-position="486">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="84" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Sheep.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PopupMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding />
         </state>
       </provider>
