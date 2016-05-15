@@ -25,7 +25,7 @@ public class AnimationObject extends TextureObject {
     @Override
     protected void render(OrthographicCamera cam, float delta) {
         elapsedTime += delta;
-        TextureRegion textureRegion = animation.getKeyFrame(elapsedTime, true);
+        textureRegion = animation.getKeyFrame(elapsedTime, true);
 
         float width = textureRegion.getRegionWidth();
         float height = textureRegion.getRegionHeight();
@@ -33,10 +33,10 @@ public class AnimationObject extends TextureObject {
         float x = data.sprite.getX() + data.sprite.getOriginX();
         float y = data.sprite.getY() + data.sprite.getOriginY();
 
-        float pX = x * PIXEL_PER_METER - width * data.sprite.getScaleX() / 2;
-        float pY = y * PIXEL_PER_METER - height * data.sprite.getScaleY() / 2;
+        float pX = getPx(x, width);
+        float pY = getPy(y, height);
 
-        if(flipX) {
+        if (flipX) {
             width *= -1;
             pX -= width * data.sprite.getScaleX();
         }

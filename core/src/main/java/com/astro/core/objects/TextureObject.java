@@ -21,7 +21,26 @@ public class TextureObject extends GameObject {
 
     @Getter
     @Setter
+    protected boolean renderingInScript = false;
+
+    @Getter
+    @Setter
     protected TextureRegion textureRegion;
+
+    /**
+     * Flip image via x-coordinates.
+     * Dont use sprite.setFlip!
+     */
+    @Getter
+    @Setter
+    protected boolean flipX;
+    /**
+     * Flip image via y-coordinates.
+     * Dont use sprite.setFlip!
+     */
+    @Getter
+    @Setter
+    protected boolean flipY;
 
     /**
      * Batch using for rendering object.
@@ -30,12 +49,6 @@ public class TextureObject extends GameObject {
     @Getter
     @Setter
     protected Batch batch;
-
-    @Setter
-    protected boolean flipX = false;
-
-    @Setter
-    protected boolean flipY = false;
 
     public TextureObject() {
         init();
@@ -72,6 +85,10 @@ public class TextureObject extends GameObject {
      * Every object should be rendered by this method.
      */
     public void show(OrthographicCamera cam, float delta) {
+        if (renderingInScript) {
+            return;
+        }
+
         batch.setProjectionMatrix(cam.combined);
         batch.begin();
         batch.setColor(data.sprite.getColor());
@@ -87,30 +104,54 @@ public class TextureObject extends GameObject {
      * Called in main loop
      */
     protected void draw() {
-        draw(data.sprite.getX(), data.sprite.getY(), data.sprite.getRotation());
+        draw(data.sprite.getX(), data.sprite.getY());
     }
 
     /**
      * Render method for texture and physic object.
      */
-    private void draw(float x, float y, float rotate) {
+    protected void draw(float x, float y) {
         x += data.sprite.getOriginX();
         y += data.sprite.getOriginY();
 
-        float pX = x * PIXEL_PER_METER - data.sprite.getWidth() * data.sprite.getScaleX() / 2;
-        float pY = y * PIXEL_PER_METER - data.sprite.getHeight() * data.sprite.getScaleY() / 2;
+        float pX = getPx(x, data.sprite.getWidth());
+        float pY = getPy(y, data.sprite.getHeight());
 
-        drawTextureRegion(pX, pY, rotate);
+        drawTextureRegion(pX, pY);
     }
 
-    private void drawTextureRegion(float pX, float pY, float rotate) {
-        batch.draw(textureRegion,
-                pX, pY, 0, 0,
+    /**
+     * Get X position of the bottom left corner of object.
+     */
+    protected float getPx(float x, float width) {
+        return x * PIXEL_PER_METER - width * data.sprite.getScaleX() / 2;
+    }
+
+    /**
+     * Get Y position of the bottom left corner of object.
+     */
+    protected float getPy(float y, float height) {
+        return y * PIXEL_PER_METER - height * data.sprite.getScaleY() / 2;
+    }
+
+    protected void drawTextureRegion(float pX, float pY) {
+        batch.draw(
+                textureRegion.getTexture(),
+                pX,
+                pY,
+                data.sprite.getOriginX(),
+                data.sprite.getOriginY(),
                 data.sprite.getWidth(),
                 data.sprite.getHeight(),
                 data.sprite.getScaleX(),
                 data.sprite.getScaleY(),
-                rotate
+                data.sprite.getRotation(),
+                textureRegion.getRegionX(),
+                textureRegion.getRegionY(),
+                textureRegion.getRegionWidth(),
+                textureRegion.getRegionHeight(),
+                flipX,
+                flipY
         );
     }
 }

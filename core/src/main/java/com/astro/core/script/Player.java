@@ -4,34 +4,36 @@ import com.astro.core.adnotation.GameProperty;
 import com.astro.core.engine.base.CameraManager;
 import com.astro.core.engine.interfaces.IObservedByCamera;
 import com.astro.core.objects.AnimationObject;
+import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 import com.astro.core.observe.IKeyObserver;
 import com.astro.core.observe.KeyObserve;
-import com.astro.core.script.logic.PlayerPopupMsg;
+import com.astro.core.script.player.PlayerGraphics;
+import com.astro.core.script.player.PlayerState;
+import com.astro.core.script.player.PopupMsg;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.physics.box2d.Body;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * TODO:
- * - dodac texture kiedy gracz stoi w miejscu i ja wyswietlac zamiast animacji
- * - dodac obsluge kolizji z innymi obiektami
- * - usunac obiekt player z engine i dodac sledzenie kamery na tym obiekcie
+ * Logic of the Player.
  */
 @Slf4j
 public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
     public static final String IDENTIFIER = "player";
 
+    private PopupMsg playerPopupMsg = new PopupMsg();
 
-    private PlayerPopupMsg playerPopupMsg = new PlayerPopupMsg();
+    private PlayerState state = PlayerState.STAND;
 
     /**
-     * Animation of the player.
+     * Hold default Player graphic (animation of run) and additional
+     * graphics like fly and stand.
      */
-    private AnimationObject gameObject;
+    private PlayerGraphics graphics;
 
     /**
      * Physics body.
@@ -56,13 +58,14 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         CameraManager.instance.setObservedObject(this);
     }
 
-    public void setGameObject(IGameObject gameObject) {
-        this.gameObject = (AnimationObject) gameObject;
-        gameObject.getData().setCollisionConsumer(this::collisionEvent);
-        body = gameObject.getData().getBody();
+    public void setRunAnimation(IGameObject runAnimation) {
+        runAnimation.getData().setCollisionConsumer(this::collisionEvent);
+        playerHeight = ((AnimationObject) runAnimation).getAnimation().getKeyFrames()[0].getRegionHeight() / PIXEL_PER_METER;
+
+        body = runAnimation.getData().getBody();
         body.setFixedRotation(true);
 
-        playerHeight = this.gameObject.getAnimation().getKeyFrames()[0].getRegionHeight() / PIXEL_PER_METER;
+        graphics = new PlayerGraphics((AnimationObject) runAnimation);
     }
 
     @Override
@@ -71,13 +74,24 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         playerPopupMsg.update(diff);
     }
 
-
+    /**
+     *
+     */
     private void updatePosition() {
+        float lastX = graphics.getRunAnimation().getData().getSprite().getX();
+        float lastY = graphics.getRunAnimation().getData().getSprite().getY();
+
+        float newX = body.getPosition().x;
+        float newY = body.getPosition().y;
+
+        state = state.getState(lastX, lastY, newX, newY);
+        graphics.getRunAnimation().setRenderingInScript(!state.isRun());
+
         if (body.getPosition().y > MAX_Y_POSITION) {
-            body.setTransform(body.getPosition().x, MAX_Y_POSITION, 0);
+            body.setTransform(newX, MAX_Y_POSITION, 0);
         }
-        gameObject.getData().getSprite().setPosition(body.getPosition().x, body.getPosition().y);
-        playerPopupMsg.setPos(body.getPosition().x, body.getPosition().y + 2*playerHeight);
+        graphics.getRunAnimation().getData().getSprite().setPosition(newX, newY);
+        playerPopupMsg.setPos(newX, newY + 2 * playerHeight);
     }
 
     @Override
@@ -85,11 +99,11 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         int horizontalForce = 0;
         if (Input.Keys.LEFT == keyCode) {
             horizontalForce -= 1;
-            gameObject.setFlipX(true);
+            graphics.getRunAnimation().setFlipX(true);
         }
         else if (Input.Keys.RIGHT == keyCode) {
             horizontalForce += 1;
-            gameObject.setFlipX(false);
+            graphics.getRunAnimation().setFlipX(false);
         }
         else if (Input.Keys.UP == keyCode) {
             jump();
@@ -108,9 +122,9 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         log.debug("player collision");
 
         if (Point.IDENTIFIER.equals(collidatedObject.getData().getItemIdentifier())) {
-            playerPopupMsg.addMessagesToQueue("+10");
+            Point point = (Point) collidatedObject.getData().getLogic();
+            playerPopupMsg.addMessagesToQueue(point.getPlayerMsg());
         }
-
     }
 
     @Override
@@ -129,7 +143,22 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
     }
 
     @Override
-    public void additionalRender(OrthographicCamera cam, float delta) {
+    public void additionalRender(final OrthographicCamera cam, float delta) {
         playerPopupMsg.show(cam, delta);
+
+        if (graphics.getRunAnimation().isRenderingInScript()) {
+            float posX = graphics.getRunAnimation().getData().getSprite().getX();
+            float posY = graphics.getRunAnimation().getData().getSprite().getY();
+
+            IGameObject gfxObject = graphics.getTextureBasedOnState(state);
+            gfxObject.getData().getSprite().setPosition(posX, posY);
+
+            if (state.isFly()) {
+                ((TextureObject) gfxObject).setFlipX(state == PlayerState.FLY_LEFT);
+            }
+
+            gfxObject.show(cam, delta);
+        }
+
     }
 }

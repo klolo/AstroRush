@@ -14,6 +14,6 @@ public interface ILogic {
      */
     void additionalRender(final OrthographicCamera cam, float delta);
 
-    void setGameObject(final IGameObject gameObject);
+    void setRunAnimation(final IGameObject runAnimation);
 
 }

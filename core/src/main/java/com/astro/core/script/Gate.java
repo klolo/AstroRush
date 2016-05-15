@@ -13,8 +13,7 @@ public class Gate implements ILogic {
 
     }
 
-    @Override
-    public void setGameObject(IGameObject gameObject) {
+    public void setRunAnimation(IGameObject runAnimation) {
 
     }
 

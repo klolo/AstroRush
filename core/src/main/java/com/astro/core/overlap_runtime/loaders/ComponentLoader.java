@@ -1,6 +1,6 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.engine.base.GameResources;
+import com.astro.core.storage.GameResources;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;

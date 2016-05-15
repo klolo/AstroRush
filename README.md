@@ -3,7 +3,7 @@
 
 
 #AstroRush 2.0
-![ikona](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/ico.png "")
+![ikona](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/splash.png "")
 
 Platformowa gra przygodowa z elementami logiki napisana w Javie 8.
 
@@ -15,8 +15,10 @@ Platformowa gra przygodowa z elementami logiki napisana w Javie 8.
     3. [Properties](#subparagraph1)
 3. [Integracja z Overlap](#paragraph2)
 4. [Fabuła](#paragraph2)
+5. [Dodatkowe informacje](#addinfo)
+    1. [PMD](#pmd)
 
-##Instrukcja uruchomienia <a name="run">
+##Uruchomienie <a name="run">
 1. Projekt importujemu do IntelliJ
 2. Podczas importu zostanie wykryty projekt Gradle, należy włączyć tą naturę.
 3. Zbudowanie i uruchomienie aplikacji odbywa się za pomocą tasku w oknie gradle: game->other->run
@@ -32,15 +34,27 @@ Wymagana wersja edytora: 0.1.3 (developerska)
 Informacje jak używać edytora: http://overlap2d.com/getting-started/
 
 ###Moduły
-Aplikacja składa się z dwóch modułów:
-- core- jest to silnik gry, niezależny od konkretnej gry. Nie zawiera żadnych
-zasobów, wywołuje logike dostarczoną poprzez IGameLogic interfejs.
-- game- implementacja gry AstroRush.
+
+####Core
+Moduł zawiera implementacje gry, nie zawiera natomiast elementów zależnych od systemu na którym ma zostać uruchomiona gra.
+Najwazniejsze pakiety jakie wchodzą w klad modułu:
+
+- overlap_runtime - Moduł zawiera integracje z mapami wygenrowanymi za pomocą Overlap2d. Jest to wczytywanie np. obiektów graficznych
+i fizyki dla nich.
+
+- script - Klasy javy jakie są podpinane do obiketów w edytorze za pomocą custom var (pole logic, zawierające nazwę klasy bez pakietu)
+
+- engine
+
+####Desktop
+- desktop- implementacja gry AstroRush.
+
+
 
 ##Używane biblioteki
 - Lombok (https://projectlombok.org/) - pozwala dzieki adnotatacjom w latwy sposob generowac gettery, settery, dodawac loggery itp.
-- Box2d () - biblioteka do symulacji fizyki 2D.
-- libgdx
+- Box2d (http://box2d.org/) - biblioteka do symulacji fizyki 2D.
+- libgdx (https://libgdx.badlogicgames.com/)
 
 
 ##TODO
@@ -48,10 +62,18 @@ zasobów, wywołuje logike dostarczoną poprzez IGameLogic interfejs.
 - [ ] Zrobić diagram klas
 - [ ] Odkładanie logów do pliku
 - [ ] Draft fabuły
-- [ ] Dokończenie runtime dla Overlap2D
-- [ ] Przygotowac task gradle do zbudwania standalone jar.
-- [ ] Zrobić testy jednostkowe
-
+- [X] Dokończenie runtime dla Overlap2D
+- [X] Przygotowac task gradle do zbudwania standalone jar.
+    - [ ] Dodac reguly pmd
+- [X] Zrobić testy jednostkowe
+    - [ ] Udroznic coberture
+    - [ ] Docelowe minimalne pokrycie testami 60%
+- [ ] Przygotować wersję pod przeglądarkę
+- [ ] Przygotować wersję pod Androida
+- [ ] Menu gry skladajace sie z kilku ekranow
+- [ ] Savy gry
+- [ ] Wybrać czcionke do gry
+- [ ]
 
 ## CREDITS:
 Graphics: www.kenney.nl

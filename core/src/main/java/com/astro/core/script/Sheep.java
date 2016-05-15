@@ -4,18 +4,20 @@ import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Test logic for sheep.
  */
+@Slf4j
 public class Sheep implements ILogic {
 
     private AnimationObject gameObject;
 
     float speed = 1f;
 
-    public void setGameObject(IGameObject gameObject) {
-        this.gameObject = (AnimationObject) gameObject;
+    public void setRunAnimation(IGameObject runAnimation) {
+        this.gameObject = (AnimationObject) runAnimation;
     }
 
     @Override
@@ -31,7 +33,6 @@ public class Sheep implements ILogic {
         }
         gameObject.getData().getSprite().setX(posX + diff * speed);
     }
-
 
     @Override
     public void additionalRender(OrthographicCamera cam, float delta) {
