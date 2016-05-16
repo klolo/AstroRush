@@ -13,7 +13,7 @@ public class Key  implements ILogic {
 
     }
 
-    public void setRunAnimation(IGameObject runAnimation) {
+    public void setGameObject(IGameObject runAnimation) {
 
     }
 

@@ -13,7 +13,7 @@ public class Gate implements ILogic {
 
     }
 
-    public void setRunAnimation(IGameObject runAnimation) {
+    public void setGameObject(IGameObject runAnimation) {
 
     }
 

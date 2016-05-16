@@ -1,6 +1,5 @@
 package com.astro.core.script;
 
-import com.astro.core.adnotation.GameProperty;
 import com.astro.core.engine.base.CameraManager;
 import com.astro.core.engine.interfaces.IObservedByCamera;
 import com.astro.core.objects.AnimationObject;
@@ -9,12 +8,12 @@ import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 import com.astro.core.observe.IKeyObserver;
 import com.astro.core.observe.KeyObserve;
-import com.astro.core.script.player.PlayerGraphics;
-import com.astro.core.script.player.PlayerState;
-import com.astro.core.script.player.PopupMsg;
+import com.astro.core.script.player.*;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.physics.box2d.Body;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -25,9 +24,22 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
     public static final String IDENTIFIER = "player";
 
+    @Getter
     private PopupMsg playerPopupMsg = new PopupMsg();
 
+    @Getter
     private PlayerState state = PlayerState.STAND;
+
+
+    private PlayerCollisionProcesor collisionProcesor;
+
+    private PlayerSettings settings;
+
+    @Setter
+    private IInteractWithPlayer interactObject;
+
+    @Setter
+    private float interactiObjectTime = 0.0f;
 
     /**
      * Hold default Player graphic (animation of run) and additional
@@ -38,29 +50,20 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
     /**
      * Physics body.
      */
+    @Getter
     private Body body;
 
-    //TODO: move to properties or other class
-    private float MAX_Y_VELOCITY = 15f;
-
-    private float MAX_Y_POSITION = 15f;
-
-    private float playerHeight = 0.0f;
-
-    /**
-     * Amount of the pixel per meter.
-     */
-    @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER = 0;
-
     public Player() {
+        settings = new PlayerSettings();
         KeyObserve.instance.register(this);
         CameraManager.instance.setObservedObject(this);
+        collisionProcesor = new PlayerCollisionProcesor(this);
     }
 
-    public void setRunAnimation(IGameObject runAnimation) {
+    public void setGameObject(IGameObject runAnimation) {
         runAnimation.getData().setCollisionConsumer(this::collisionEvent);
-        playerHeight = ((AnimationObject) runAnimation).getAnimation().getKeyFrames()[0].getRegionHeight() / PIXEL_PER_METER;
+        settings.playerHeight =
+                ((AnimationObject) runAnimation).getAnimation().getKeyFrames()[0].getRegionHeight() / settings.PIXEL_PER_METER;
 
         body = runAnimation.getData().getBody();
         body.setFixedRotation(true);
@@ -72,6 +75,14 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
     public void update(float diff) {
         updatePosition();
         playerPopupMsg.update(diff);
+
+        if(interactObject!=null) {
+            interactiObjectTime += diff;
+
+            if(interactiObjectTime > 3) {
+                interactObject = null;
+            }
+        }
     }
 
     /**
@@ -87,11 +98,11 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         state = state.getState(lastX, lastY, newX, newY);
         graphics.getRunAnimation().setRenderingInScript(!state.isRun());
 
-        if (body.getPosition().y > MAX_Y_POSITION) {
-            body.setTransform(newX, MAX_Y_POSITION, 0);
+        if (body.getPosition().y > settings.MAX_Y_POSITION) {
+            body.setTransform(newX, settings.MAX_Y_POSITION, 0);
         }
         graphics.getRunAnimation().getData().getSprite().setPosition(newX, newY);
-        playerPopupMsg.setPos(newX, newY + 2 * playerHeight);
+        playerPopupMsg.setPos(newX, newY + 2 * settings.playerHeight);
     }
 
     @Override
@@ -108,26 +119,28 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         else if (Input.Keys.UP == keyCode) {
             jump();
         }
+        else if (Input.Keys.SHIFT_LEFT == keyCode) {
+            processInterAct();
+        }
 
         body.setLinearVelocity(horizontalForce * 5, body.getLinearVelocity().y);
     }
 
+    private void processInterAct() {
+        if(interactObject!=null) {
+            interactObject.interact();
+        }
+    }
+
     private void jump() {
-        if (body.getLinearVelocity().y < MAX_Y_VELOCITY) {
-            body.applyForceToCenter(0, MAX_Y_VELOCITY, false);
+        if (body.getLinearVelocity().y < settings.MAX_Y_VELOCITY) {
+            body.applyForceToCenter(0, settings.MAX_Y_VELOCITY, false);
         }
     }
 
     public void collisionEvent(IGameObject collidatedObject) {
         log.debug("player collision");
-
-        if (Point.IDENTIFIER.equals(collidatedObject.getData().getItemIdentifier())) {
-            Point point = (Point) collidatedObject.getData().getLogic();
-            playerPopupMsg.addMessagesToQueue(point.getPlayerMsg());
-        }
-        else if(Sheep.IDENTIFIER.equals(collidatedObject.getData().getItemIdentifier())) {
-            playerPopupMsg.addMessagesToQueue("ouh!");
-        }
+        collisionProcesor.processCollision(collidatedObject);
     }
 
     @Override

@@ -14,7 +14,7 @@ public class MovingPlatform  implements ILogic {
 
     }
 
-    public void setRunAnimation(IGameObject runAnimation) {
+    public void setGameObject(IGameObject runAnimation) {
 
     }
 

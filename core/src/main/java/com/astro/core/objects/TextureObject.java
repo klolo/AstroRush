@@ -124,7 +124,14 @@ public class TextureObject extends GameObject {
      * Get X position of the bottom left corner of object.
      */
     protected float getPx(float x, float width) {
-        return x * PIXEL_PER_METER - width * data.sprite.getScaleX() / 2;
+        float result = x * PIXEL_PER_METER;
+        float halfWith = width * data.sprite.getScaleX() / 2;
+        //FIXME:
+//        if (flipX) {
+//            return result ;
+//        }
+
+        return result - halfWith;
     }
 
     /**

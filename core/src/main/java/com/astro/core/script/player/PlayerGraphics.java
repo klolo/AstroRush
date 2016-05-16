@@ -8,17 +8,17 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import lombok.Getter;
 
 /**
- * Created by kamil on 15.05.16.
+ * Hold all player graphics.
  */
 public class PlayerGraphics {
 
     /**
-     *
+     * Image of the standing player.
      */
     private TextureObject standImage;
 
     /**
-     *
+     * Image of the flying player.
      */
     private TextureObject flyImage;
 
@@ -29,8 +29,17 @@ public class PlayerGraphics {
     private AnimationObject runAnimation;
 
     /**
-     * TODO:
-     *
+     * Animation is the base graphics of the runing Astro.
+     */
+    public PlayerGraphics(final AnimationObject animation) {
+        runAnimation = animation;
+
+        standImage = createImageBasedOnBaseAnimation("stand");
+        flyImage = createImageBasedOnBaseAnimation("fly");
+    }
+
+    /**
+     * Return graphic object for each state.
      */
     public IGameObject getTextureBasedOnState(final PlayerState state) {
         switch (state) {
@@ -49,15 +58,10 @@ public class PlayerGraphics {
         }
     }
 
-
-    public PlayerGraphics(AnimationObject animation) {
-        runAnimation = animation;
-
-        standImage = createImageBasedOnBaseAnimation("stand");
-        flyImage = createImageBasedOnBaseAnimation("fly");
-    }
-
-    private TextureObject createImageBasedOnBaseAnimation( final String name ) {
+    /**
+     * Loads images from resources, based on name.
+     */
+    private TextureObject createImageBasedOnBaseAnimation(final String name) {
         TextureObject result = new TextureObject(GameResources.instance.getResourceManager().getTextureRegion(name));
 
         Sprite animSprite = runAnimation.getData().getSprite();

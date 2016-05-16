@@ -63,10 +63,10 @@ public class PopupMsg {
             opacity = 1.0f;
         }
 
-        if (messagesQueue.size() >= MAX_MSG_ELEMENTS) {
-            messagesQueue.poll();
+        if (messagesQueue.size() > 0 && messagesQueue.element().equals(msg)) {
+            return;
         }
-        currentMsgTime *= 2;
+
         messagesQueue.add(msg);
     }
 
@@ -97,7 +97,7 @@ public class PopupMsg {
 
         if (currentMsgTime > SHOW_TIME || opacity < 0.3f) {
             currentMsg = messagesQueue.poll();
-            currentMsgTime -= 1.0f;
+            currentMsgTime = 0.0f;
             opacity = 1.0f;
         }
 

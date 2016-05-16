@@ -70,7 +70,7 @@ public class MainItemVOToIGameObjectConverter {
             Class clazz = Class.forName(className);
             ILogic logic = (ILogic) clazz.newInstance();
             PropertyInjector.instance.inject(logic);
-            logic.setRunAnimation(result);
+            logic.setGameObject(result);
             result.getData().setLogic(logic);
         }
         catch (final Exception exception) {

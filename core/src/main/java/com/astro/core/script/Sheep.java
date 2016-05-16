@@ -24,7 +24,7 @@ public class Sheep implements ILogic {
      */
     private Body body;
 
-    public void setRunAnimation(IGameObject runAnimation) {
+    public void setGameObject(IGameObject runAnimation) {
         this.gameObject = (AnimationObject) runAnimation;
         this.gameObject.getData().setCollisionConsumer(this::collisionEvent);
         body = runAnimation.getData().getBody();

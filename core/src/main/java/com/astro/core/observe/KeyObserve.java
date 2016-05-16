@@ -23,7 +23,8 @@ public enum KeyObserve {
             Input.Keys.RIGHT,
             Input.Keys.LEFT,
             Input.Keys.ESCAPE,
-            Input.Keys.ENTER
+            Input.Keys.ENTER,
+            Input.Keys.SHIFT_LEFT
     };
 
     /**
