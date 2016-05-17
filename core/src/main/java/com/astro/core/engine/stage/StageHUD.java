@@ -34,6 +34,8 @@ public class StageHUD implements IGameHud {
 
     private GameObject playerObject;
 
+    private Player player;
+
     public StageHUD() {
         PropertyInjector.instance.inject(this);
 
@@ -48,6 +50,7 @@ public class StageHUD implements IGameHud {
 
         labelObject.setScreenPositionRelative(true);
         playerObject = (GameObject) ObjectsRegister.instance.getObjectByID(Player.IDENTIFIER);
+        player = (Player) playerObject.getData().getLogic();
     }
 
     public void show(final OrthographicCamera cam, float delta) {
@@ -56,7 +59,7 @@ public class StageHUD implements IGameHud {
                 cam.viewportHeight / 2 / 80 - MARGIN
         );
 
-        labelObject.setText(msg + playerObject.getData().getSprite().getX());
+        labelObject.setText(String.valueOf(player.getPoints()));
         labelObject.show(cam, delta);
     }
 

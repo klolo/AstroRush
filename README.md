@@ -52,9 +52,36 @@ i fizyki dla nich.
 
 
 ##Używane biblioteki
+- libgdx (https://libgdx.badlogicgames.com/)
 - Lombok (https://projectlombok.org/) - pozwala dzieki adnotatacjom w latwy sposob generowac gettery, settery, dodawac loggery itp.
 - Box2d (http://box2d.org/) - biblioteka do symulacji fizyki 2D.
-- libgdx (https://libgdx.badlogicgames.com/)
+
+
+##DevGuide
+
+1. Dodawanie logiki do obiektu
+    Z poziomu edytora Overlap2D należy ustawić customsVars o nazwie logic,
+    gdzie wartością jest nazwa klasy która zostanie podpięta pod dany obiekt. Wszystkie
+    klasy z logiką obiektów znajdują się w pakiecie zdefiniowanym w properties
+    (plik: game.properties, pole: game.script.package). Podpięcie nastepuje podczas
+    ładowanie mapy. Każda klasa zawierająca logikę powinna implementować interfejs ILogic
+    i opcjonalnie rejestrować się w zarządcy kolizji (CollisionManager), poprzez ustawienie consumera:
+    ```java
+    runAnimation.getData().setCollisionConsumer(collisionProcesor::processCollision);
+    ```
+    Każdy skrypt logiki wymaga zaimplementowania metody:
+
+    ```java
+    void setGameObject(IGameObject gameObject)
+    ```
+
+    gdzie gameObject to obiekt do którego podpięty jest skrypt. Może on zostać zrcutowany w zależności
+    od rodzaju elementu na np. TextureObject bądz tez AnimationObject.
+
+2. Komunikacja między obiektami
+    Każdy obiekt który w edytorze będzie miał ustawiony identyfikator bądź fizykę zostanie podczas ładowania mapy
+    zarejestrowany w singletonie  ObjectsRegister, z którego inne obiekty mogą odwoływac się do innych obiektów, wyszukując
+    je metodami: getObjectByID, getObjectByBody
 
 
 ##TODO
@@ -72,7 +99,8 @@ i fizyki dla nich.
 - [ ] Przygotować wersję pod Androida
 - [ ] Menu gry skladajace sie z kilku ekranow
 - [ ] Savy gry
-- [ ] Wybrać czcionke do gry
+- [X] Wybrać czcionke do gry
+        Atarian System (http://www.1001fonts.com/sf-atarian-system-font.html)
 - [ ]
 
 ## CREDITS:

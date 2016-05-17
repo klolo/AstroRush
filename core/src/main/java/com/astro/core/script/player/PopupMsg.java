@@ -8,6 +8,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -18,7 +19,7 @@ public class PopupMsg {
 
     private String currentMsg = "Lets start!";
 
-    private Queue<String> messagesQueue = new LinkedList<>();
+    private LinkedList<String> messagesQueue = new LinkedList<>();
 
     private float currentMsgTime = 0.0f;
 
@@ -63,7 +64,15 @@ public class PopupMsg {
             opacity = 1.0f;
         }
 
+        if (Collections.frequency(messagesQueue, msg) > MAX_MSG_ELEMENTS) {
+            return;
+        }
+
         if (messagesQueue.size() > 0 && messagesQueue.element().equals(msg)) {
+            return;
+        }
+
+        if (messagesQueue.size() == 0 && msg.equals(currentMsg)) {
             return;
         }
 

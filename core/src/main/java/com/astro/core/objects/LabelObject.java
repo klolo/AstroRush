@@ -39,7 +39,7 @@ public class LabelObject extends TextureObject {
      * if there are this size.
      */
     @Getter
-    private static String DEFAULT_FONT = "StayPuft";
+    private static String DEFAULT_FONT = "SF Atarian System";
 
     //TODO: move to properties
     @Getter

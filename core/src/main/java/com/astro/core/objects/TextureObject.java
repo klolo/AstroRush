@@ -126,11 +126,6 @@ public class TextureObject extends GameObject {
     protected float getPx(float x, float width) {
         float result = x * PIXEL_PER_METER;
         float halfWith = width * data.sprite.getScaleX() / 2;
-        //FIXME:
-//        if (flipX) {
-//            return result ;
-//        }
-
         return result - halfWith;
     }
 

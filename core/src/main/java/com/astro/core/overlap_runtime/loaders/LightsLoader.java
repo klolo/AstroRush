@@ -42,6 +42,9 @@ public class LightsLoader implements ILoader<LightVO> {
     @Getter
     private int PIXEL_PER_METER = 0;
 
+    @GameProperty("renderer.light.distance")
+    private int LIGHT_DISTANCE = 0;
+
     public LightsLoader() {
         log.info("..:: LightsLoader ::..");
         PropertyInjector.instance.inject(this);
@@ -65,7 +68,7 @@ public class LightsLoader implements ILoader<LightVO> {
                             light.tint[1],
                             light.tint[2],
                             .1f),
-                    light.distance * PIXEL_PER_METER,
+                    light.distance * PIXEL_PER_METER * LIGHT_DISTANCE,
                     light.x * PIXEL_PER_METER,
                     light.y * PIXEL_PER_METER
             );
@@ -79,7 +82,7 @@ public class LightsLoader implements ILoader<LightVO> {
                             light.tint[1],
                             light.tint[2],
                             light.tint[3]),
-                    light.distance * PIXEL_PER_METER,
+                    light.distance * PIXEL_PER_METER * LIGHT_DISTANCE,
                     light.x * PIXEL_PER_METER,
                     light.y * PIXEL_PER_METER,
                     light.directionDegree,

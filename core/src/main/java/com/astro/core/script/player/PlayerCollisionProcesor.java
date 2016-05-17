@@ -37,7 +37,7 @@ public class PlayerCollisionProcesor {
             m.invoke(this, collidatedObject.getData().getLogic());
         }
         catch (final Exception e) {
-            log.error("Cannot find method", e);
+            log.warn("Cannot find method");
         }
     }
 
@@ -46,6 +46,7 @@ public class PlayerCollisionProcesor {
      */
     public void collision(final Point point) {
         player.getPlayerPopupMsg().addMessagesToQueue(point.getPlayerMsg());
+        player.addPoints(Integer.valueOf(point.getPlayerMsg()));
     }
 
     /**

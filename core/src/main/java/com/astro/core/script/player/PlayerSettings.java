@@ -4,7 +4,7 @@ import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.processor.PropertyInjector;
 
 /**
- * Hold all player settings.
+ * Hold all costants player settings.
  */
 public class PlayerSettings {
 

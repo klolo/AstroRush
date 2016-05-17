@@ -20,8 +20,11 @@ import lombok.extern.slf4j.Slf4j;
  * Logic of the Player.
  */
 @Slf4j
-public class Player implements ILogic, IKeyObserver, IObservedByCamera {
+public class Player extends PlayerData implements ILogic, IKeyObserver, IObservedByCamera {
 
+    /**
+     * ID of the player.
+     */
     public static final String IDENTIFIER = "player";
 
     @Getter
@@ -40,6 +43,9 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
     @Setter
     private float interactiObjectTime = 0.0f;
+
+
+    private float inactiveTime = 0.0f;
 
     /**
      * Hold default Player graphic (animation of run) and additional
@@ -61,7 +67,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
     }
 
     public void setGameObject(IGameObject runAnimation) {
-        runAnimation.getData().setCollisionConsumer(this::collisionEvent);
+        runAnimation.getData().setCollisionConsumer(collisionProcesor::processCollision);
         settings.playerHeight =
                 ((AnimationObject) runAnimation).getAnimation().getKeyFrames()[0].getRegionHeight() / settings.PIXEL_PER_METER;
 
@@ -76,12 +82,19 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         updatePosition();
         playerPopupMsg.update(diff);
 
-        if(interactObject!=null) {
+        if (interactObject != null) {
             interactiObjectTime += diff;
 
-            if(interactiObjectTime > 3) {
+            if (interactiObjectTime > 3) {
                 interactObject = null;
             }
+        }
+
+        inactiveTime += diff;
+
+        if (inactiveTime > 10) {
+            inactiveTime = 0.0f;
+            playerPopupMsg.addMessagesToQueue("Are you there?");
         }
     }
 
@@ -123,11 +136,12 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
             processInterAct();
         }
 
+        inactiveTime = 0.0f;
         body.setLinearVelocity(horizontalForce * 5, body.getLinearVelocity().y);
     }
 
     private void processInterAct() {
-        if(interactObject!=null) {
+        if (interactObject != null) {
             interactObject.interact();
         }
     }
@@ -136,11 +150,6 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         if (body.getLinearVelocity().y < settings.MAX_Y_VELOCITY) {
             body.applyForceToCenter(0, settings.MAX_Y_VELOCITY, false);
         }
-    }
-
-    public void collisionEvent(IGameObject collidatedObject) {
-        log.debug("player collision");
-        collisionProcesor.processCollision(collidatedObject);
     }
 
     @Override
@@ -175,6 +184,13 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
             gfxObject.show(cam, delta);
         }
+    }
 
+    public void addPoints(int amount) {
+        points += amount;
+    }
+
+    public int getPoints() {
+        return points;
     }
 }
