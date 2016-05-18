@@ -8,7 +8,7 @@ import com.astro.core.adnotation.processor.PropertyInjector;
  */
 public class PlayerSettings {
 
-    public float MAX_Y_VELOCITY = 15f;
+    public float MAX_Y_VELOCITY = 10f;
 
     public float MAX_Y_POSITION = 15f;
 

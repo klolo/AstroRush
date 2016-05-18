@@ -101,7 +101,10 @@ i fizyki dla nich.
 - [ ] Savy gry
 - [X] Wybrać czcionke do gry
         Atarian System (http://www.1001fonts.com/sf-atarian-system-font.html)
-- [ ]
+- [ ] Gracz jak stanie na platofmir to nie przesuwa sie razem z nia
+- [ ] Po przejsciu na fullscren tlo sie nie rozciaga
+- [ ] Przewijalne tlo czasami nie nadarza
+- [ ] Sterowanie graczem jest jescze nie dopracowane
 
 ## CREDITS:
 Graphics: www.kenney.nl

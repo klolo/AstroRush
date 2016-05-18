@@ -36,11 +36,11 @@ public class Switch implements ILogic, IInteractWithPlayer {
 
     @Override
     public void interact() {
-        if(gameObject.isFlipX()) {
-            gameObject.setFlipX(false);
+        if(gameObject.getData().isFlipX()) {
+            gameObject.getData().setFlipX(false);
         }
         else {
-            gameObject.setFlipX(true);
+            gameObject.getData().setFlipX(true);
         }
 
     }

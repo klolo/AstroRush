@@ -34,11 +34,7 @@ public class BaseLoader {
         LinkedList<PolygonShape> polygons = new LinkedList<>();
 
         Arrays.stream(data.shape.polygons)
-                .forEach(
-                        vec ->
-                                polygons.add(
-                                        getPolygonShape(vec, data, w, h)
-                                ));
+                .forEach(vec -> polygons.add(getPolygonShape(vec, data, w, h)));
 
         Body body = PhysicsWorld.instance.createBody(getBodyDef(data), name);
         polygons.forEach(e -> body.createFixture(getFixtureDefinition(e, data)));
@@ -98,7 +94,7 @@ public class BaseLoader {
         fixtureDef.shape = shape;
         fixtureDef.density = data.physics.density;
         fixtureDef.friction = data.physics.friction;
-        fixtureDef.restitution = 0.3f;//imageVO.physics.restitution; // Make it bounce a little bit
+        fixtureDef.restitution = 0.3f;// FIXME: imageVO.physics.restitution; // Make it bounce a little bit
 
         return fixtureDef;
     }

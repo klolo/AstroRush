@@ -36,12 +36,12 @@ public class AnimationObject extends TextureObject {
         float pX = getPx(x, width);
         float pY = getPy(y, height);
 
-        if (flipX) {
+        if (data.flipX) {
             width *= -1;
             pX -= width * data.sprite.getScaleX();
         }
 
-        if (flipY) {
+        if (data.flipY) {
             height = height * -1;
         }
 

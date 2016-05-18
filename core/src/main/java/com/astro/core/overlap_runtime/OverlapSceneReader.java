@@ -52,14 +52,14 @@ public class OverlapSceneReader {
     /**
      * Generic method for reading different kind of elements.
      */
-    private <T> IGameObject register(ILoader<T> loader, T element) {
+    private <T> IGameObject register(final ILoader<T> loader, T element) {
         return loader.register(element);
     }
 
     /**
      * Converting all elements in json map file.
      */
-    private OverlapSceneReader loadComposite(CompositeVO rootComposite) {
+    private OverlapSceneReader loadComposite(final CompositeVO rootComposite) {
         if (rootComposite.layers != null) {
             rootComposite.layers.stream().forEach(layer -> StageManager.instance.addLayer(layer.layerName));
         }
@@ -79,7 +79,8 @@ public class OverlapSceneReader {
     /**
      * Converting all elements in json map file.
      */
-    private OverlapSceneReader loadComposite(CompositeVO rootComposite, float originX, float originY, float parentX, float parentY, float rotate) {
+    private OverlapSceneReader loadComposite(final CompositeVO rootComposite,
+                                             float originX, float originY, float parentX, float parentY, float rotate) {
         rootComposite.sImages.forEach(e -> {
             e.x += parentX;
             e.y += parentY;
@@ -94,7 +95,7 @@ public class OverlapSceneReader {
     /**
      * Registration object in Box2D world and return list for rendering suppose.
      */
-    private OverlapSceneReader registerImages(ArrayList<SimpleImageVO> sImages) {
+    private OverlapSceneReader registerImages(final ArrayList<SimpleImageVO> sImages) {
         ComponentLoader registerComponent = new ComponentLoader();
 
         components.addAll(sImages.stream()
@@ -106,7 +107,7 @@ public class OverlapSceneReader {
     /**
      * Register effects.
      */
-    private OverlapSceneReader registerEffects(CompositeVO rootComposite) {
+    private OverlapSceneReader registerEffects(final CompositeVO rootComposite) {
         rootComposite.sParticleEffects.stream()
                 .forEach(e -> components.add(register(new ParticleEffectsLoader(), e)));
 
@@ -117,7 +118,7 @@ public class OverlapSceneReader {
     /**
      * Register lights.
      */
-    private OverlapSceneReader registerLights(CompositeVO rootComposite) {
+    private OverlapSceneReader registerLights(final CompositeVO rootComposite) {
         rootComposite.sLights.stream()
                 .forEach(e -> register(new LightsLoader(), e));
         return this;
@@ -127,7 +128,7 @@ public class OverlapSceneReader {
     /**
      * Register lights.
      */
-    private OverlapSceneReader registerLabels(CompositeVO rootComposite) {
+    private OverlapSceneReader registerLabels(final CompositeVO rootComposite) {
         rootComposite.sLabels.forEach(e -> components.add(register(new LabelsLoader(), e)));
         return this;
     }
@@ -136,7 +137,7 @@ public class OverlapSceneReader {
     /**
      * Register animations.
      */
-    private OverlapSceneReader registerAnimations(CompositeVO rootComposite) {
+    private OverlapSceneReader registerAnimations(final CompositeVO rootComposite) {
         rootComposite.sSpriteAnimations.forEach(e -> components.add(register(new SpriteAnimationsLoader(), e)));
         return this;
     }
@@ -144,7 +145,7 @@ public class OverlapSceneReader {
     /**
      * Register Image9patchs.
      */
-    private OverlapSceneReader registerImage9patchs(CompositeVO rootComposite) {
+    private OverlapSceneReader registerImage9patchs(final CompositeVO rootComposite) {
         if (rootComposite.sImage9patchs.size() > 0) {
             log.error("Unknown component");
         }
@@ -154,7 +155,7 @@ public class OverlapSceneReader {
     /**
      * Register TextBoxVO.
      */
-    private OverlapSceneReader registerTextBoxVO(CompositeVO rootComposite) {
+    private OverlapSceneReader registerTextBoxVO(final CompositeVO rootComposite) {
         if (rootComposite.sTextBox.size() > 0) {
             log.error("Unknown component");
         }
@@ -164,7 +165,7 @@ public class OverlapSceneReader {
     /**
      * Register SelectBoxVO.
      */
-    private OverlapSceneReader registerSelectBoxVO(CompositeVO rootComposite) {
+    private OverlapSceneReader registerSelectBoxVO(final CompositeVO rootComposite) {
         if (rootComposite.sSelectBoxes.size() > 0) {
             log.error("Unknown component");
         }
@@ -174,7 +175,7 @@ public class OverlapSceneReader {
     /**
      * Register SpineVO.
      */
-    private OverlapSceneReader registerSpineVO(CompositeVO rootComposite) {
+    private OverlapSceneReader registerSpineVO(final CompositeVO rootComposite) {
         if (rootComposite.sSpineAnimations.size() > 0) {
             log.error("Unknown component");
         }
@@ -184,7 +185,7 @@ public class OverlapSceneReader {
     /**
      * Register SpriterVO.
      */
-    private OverlapSceneReader registerSpriterVO(CompositeVO rootComposite) {
+    private OverlapSceneReader registerSpriterVO(final CompositeVO rootComposite) {
         if (rootComposite.sSpriterAnimations.size() > 0) {
             log.error("Unknown component");
         }
@@ -194,7 +195,7 @@ public class OverlapSceneReader {
     /**
      * Loading composistes.
      */
-    private OverlapSceneReader loadOtherComposites(CompositeVO rootComposite) {
+    private OverlapSceneReader loadOtherComposites(final CompositeVO rootComposite) {
         rootComposite.sComposites.forEach(e -> this.loadComposite(e.composite, e.originX, e.originY, e.x, e.y, e.rotation));
         return this;
     }

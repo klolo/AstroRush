@@ -25,9 +25,9 @@ public class Point implements ILogic {
 
     }
 
-    public void setGameObject(IGameObject runAnimation) {
-        this.gameObject = runAnimation;
-        runAnimation.getData().setCollisionConsumer(this::collisionEvent);
+    public void setGameObject(IGameObject gameObject) {
+        this.gameObject = gameObject;
+        gameObject.getData().setCollisionConsumer(this::collisionEvent);
     }
 
     public void collisionEvent(IGameObject collidatedObject) {

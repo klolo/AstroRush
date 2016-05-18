@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashMap;
 import java.util.function.Consumer;
@@ -16,6 +18,22 @@ import java.util.function.Consumer;
  */
 @Data
 public class ObjectData {
+
+    /**
+     * Flip image via x-coordinates.
+     * Dont use sprite.setFlip!
+     */
+    @Getter
+    @Setter
+    protected boolean flipX;
+
+    /**
+     * Flip image via y-coordinates.
+     * Dont use sprite.setFlip!
+     */
+    @Getter
+    @Setter
+    protected boolean flipY;
 
     /**
      * Physics body of the Player.

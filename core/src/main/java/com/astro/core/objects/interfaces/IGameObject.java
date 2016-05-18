@@ -19,7 +19,7 @@ public interface IGameObject {
 
     void update(float delta);
 
-    boolean isPhysicObject();
-
     ObjectData getData();
+
+    boolean isPhysicObject();
 }

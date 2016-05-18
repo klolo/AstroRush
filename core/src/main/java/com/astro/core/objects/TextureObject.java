@@ -3,8 +3,8 @@ package com.astro.core.objects;
 import com.astro.core.adnotation.Dispose;
 import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -26,21 +26,6 @@ public class TextureObject extends GameObject {
     @Getter
     @Setter
     protected TextureRegion textureRegion;
-
-    /**
-     * Flip image via x-coordinates.
-     * Dont use sprite.setFlip!
-     */
-    @Getter
-    @Setter
-    protected boolean flipX;
-    /**
-     * Flip image via y-coordinates.
-     * Dont use sprite.setFlip!
-     */
-    @Getter
-    @Setter
-    protected boolean flipY;
 
     /**
      * Batch using for rendering object.
@@ -93,8 +78,8 @@ public class TextureObject extends GameObject {
         batch.begin();
         batch.setColor(data.sprite.getColor());
 
-        Gdx.gl.glEnable(Gdx.gl.GL_BLEND);
-        Gdx.gl.glBlendFunc(Gdx.gl.GL_SRC_ALPHA, Gdx.gl.GL_ONE_MINUS_SRC_ALPHA);
+        Gdx.gl.glEnable(GL20.GL_BLEND);
+        Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
 
         render(cam, delta); // implemented in concreted class.
         batch.end();
@@ -103,14 +88,14 @@ public class TextureObject extends GameObject {
     /**
      * Called in main loop
      */
-    protected void draw() {
+    void draw() {
         draw(data.sprite.getX(), data.sprite.getY());
     }
 
     /**
      * Render method for texture and physic object.
      */
-    protected void draw(float x, float y) {
+    private void draw(float x, float y) {
         x += data.sprite.getOriginX();
         y += data.sprite.getOriginY();
 
@@ -123,7 +108,7 @@ public class TextureObject extends GameObject {
     /**
      * Get X position of the bottom left corner of object.
      */
-    protected float getPx(float x, float width) {
+    float getPx(float x, float width) {
         float result = x * PIXEL_PER_METER;
         float halfWith = width * data.sprite.getScaleX() / 2;
         return result - halfWith;
@@ -132,11 +117,11 @@ public class TextureObject extends GameObject {
     /**
      * Get Y position of the bottom left corner of object.
      */
-    protected float getPy(float y, float height) {
+    float getPy(float y, float height) {
         return y * PIXEL_PER_METER - height * data.sprite.getScaleY() / 2;
     }
 
-    protected void drawTextureRegion(float pX, float pY) {
+    private void drawTextureRegion(float pX, float pY) {
         batch.draw(
                 textureRegion.getTexture(),
                 pX,
@@ -152,8 +137,8 @@ public class TextureObject extends GameObject {
                 textureRegion.getRegionY(),
                 textureRegion.getRegionWidth(),
                 textureRegion.getRegionHeight(),
-                flipX,
-                flipY
+                data.flipX,
+                data.flipY
         );
     }
 }

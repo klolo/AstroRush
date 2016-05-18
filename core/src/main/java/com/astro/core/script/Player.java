@@ -97,11 +97,11 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
         int horizontalForce = 0;
         if (Input.Keys.LEFT == keyCode) {
             horizontalForce -= 1;
-            graphics.getRunAnimation().setFlipX(true);
+            graphics.getRunAnimation().getData().setFlipX(true);
         }
         else if (Input.Keys.RIGHT == keyCode) {
             horizontalForce += 1;
-            graphics.getRunAnimation().setFlipX(false);
+            graphics.getRunAnimation().getData().setFlipX(false);
         }
         else if (Input.Keys.UP == keyCode) {
             jump();
@@ -143,7 +143,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
             gfxObject.getData().getSprite().setPosition(posX, posY);
 
             if (state.isFly()) {
-                ((TextureObject) gfxObject).setFlipX(state == PlayerState.FLY_LEFT);
+                ((TextureObject) gfxObject).getData().setFlipX(state == PlayerState.FLY_LEFT);
             }
 
             gfxObject.show(cam, delta);
