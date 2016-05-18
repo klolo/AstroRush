@@ -1,6 +1,7 @@
 package com.astro.core.script.player;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.adnotation.Msg;
 import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.storage.GameResources;
 import com.astro.core.objects.LabelObject;
@@ -17,14 +18,25 @@ import java.util.Queue;
  */
 public class PopupMsg {
 
-    private String currentMsg = "Lets start!";
+    /**
+     * Player starting popup.
+     */
+    @Msg("player.dialog.start")
+    private String currentMsg;
 
+    /**
+     * Time of the showing popup.
+     */
+    @GameProperty("player.popup.time")
+    private float SHOW_TIME = 0.0f;
+
+    /**
+     * Queue of the messages.
+     */
     private LinkedList<String> messagesQueue = new LinkedList<>();
 
-    private float currentMsgTime = 0.0f;
 
-    //TODO: move to properties
-    private float SHOW_TIME = 3.0f;
+    private float currentMsgTime = 0.0f;
 
     private float opacity = 1.0f;
 
@@ -104,7 +116,7 @@ public class PopupMsg {
         currentMsgTime += diff;
         opacity = 1 - currentMsgTime / SHOW_TIME;
 
-        if (currentMsgTime > SHOW_TIME || opacity < 0.3f) {
+        if (currentMsgTime > SHOW_TIME || opacity < 0.1f) {
             currentMsg = messagesQueue.poll();
             currentMsgTime = 0.0f;
             opacity = 1.0f;

@@ -1,10 +1,46 @@
 package com.astro.core.script.player;
 
+import com.astro.core.script.util.LogicTimer;
+import com.badlogic.gdx.physics.box2d.Body;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.HashMap;
+
 /**
- * Created by kamil on 17.05.16.
+ * All player non final field.
  */
 public class PlayerData {
 
+    protected PopupMsg playerPopupMsg = new PopupMsg();
+
     protected int points = 0;
 
+    protected PlayerSettings settings = new PlayerSettings();
+
+    protected PlayerState state = PlayerState.STAND;
+
+    protected PlayerCollisionProcesor collisionProcesor;
+
+    protected HashMap<WatchersID, LogicTimer> watchers = new HashMap<>();
+
+    @Setter
+    protected IInteractWithPlayer interactObject;
+
+    /**
+     * Physics body.
+     */
+    @Getter
+    protected Body body;
+
+
+    /**
+     * Hold default Player graphic (animation of run) and additional
+     * graphics like fly and stand.
+     */
+    protected PlayerGraphics graphics;
+
+    public PopupMsg getPlayerPopupMsg(){
+        return playerPopupMsg;
+    }
 }

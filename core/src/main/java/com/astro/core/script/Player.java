@@ -9,11 +9,9 @@ import com.astro.core.objects.interfaces.ILogic;
 import com.astro.core.observe.IKeyObserver;
 import com.astro.core.observe.KeyObserve;
 import com.astro.core.script.player.*;
+import com.astro.core.script.util.LogicTimer;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.physics.box2d.Body;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -27,43 +25,33 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      */
     public static final String IDENTIFIER = "player";
 
-    @Getter
-    private PopupMsg playerPopupMsg = new PopupMsg();
-
-    @Getter
-    private PlayerState state = PlayerState.STAND;
-
-
-    private PlayerCollisionProcesor collisionProcesor;
-
-    private PlayerSettings settings;
-
-    @Setter
-    private IInteractWithPlayer interactObject;
-
-    @Setter
-    private float interactiObjectTime = 0.0f;
-
-
-    private float inactiveTime = 0.0f;
-
-    /**
-     * Hold default Player graphic (animation of run) and additional
-     * graphics like fly and stand.
-     */
-    private PlayerGraphics graphics;
-
-    /**
-     * Physics body.
-     */
-    @Getter
-    private Body body;
-
     public Player() {
-        settings = new PlayerSettings();
         KeyObserve.instance.register(this);
         CameraManager.instance.setObservedObject(this);
         collisionProcesor = new PlayerCollisionProcesor(this);
+
+        initWatchers();
+    }
+
+    /**
+     * Create all watchers.
+     */
+    private void initWatchers() {
+        LogicTimer inactiveMsgWatcher =
+                new LogicTimer<>(
+                        settings.inactivePLayerMessage,
+                        playerPopupMsg::addMessagesToQueue,
+                        settings.inactiveMsgTime
+                );
+        watchers.put(WatchersID.INACTIVE_PLAYER, inactiveMsgWatcher);
+
+        LogicTimer interactionWatcher =
+                new LogicTimer<>(
+                        null,
+                        this::setInteractObject,
+                        settings.interactWithObjectTime
+                );
+        watchers.put(WatchersID.INTERACT_WITH_OTHER_OBJECT, interactionWatcher);
     }
 
     public void setGameObject(IGameObject runAnimation) {
@@ -81,25 +69,11 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     public void update(float diff) {
         updatePosition();
         playerPopupMsg.update(diff);
-
-        if (interactObject != null) {
-            interactiObjectTime += diff;
-
-            if (interactiObjectTime > 3) {
-                interactObject = null;
-            }
-        }
-
-        inactiveTime += diff;
-
-        if (inactiveTime > 10) {
-            inactiveTime = 0.0f;
-            playerPopupMsg.addMessagesToQueue("Are you there?");
-        }
+        watchers.values().forEach(w -> w.update(diff));
     }
 
     /**
-     *
+     * Update player position.
      */
     private void updatePosition() {
         float lastX = graphics.getRunAnimation().getData().getSprite().getX();
@@ -136,7 +110,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
             processInterAct();
         }
 
-        inactiveTime = 0.0f;
+        watchers.get(WatchersID.INACTIVE_PLAYER).reset();
         body.setLinearVelocity(horizontalForce * 5, body.getLinearVelocity().y);
     }
 
@@ -158,16 +132,6 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     }
 
     @Override
-    public float getPositionX() {
-        return body.getPosition().x;
-    }
-
-    @Override
-    public float getPositionY() {
-        return body.getPosition().y;
-    }
-
-    @Override
     public void additionalRender(final OrthographicCamera cam, float delta) {
         playerPopupMsg.show(cam, delta);
 
@@ -186,11 +150,33 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
         }
     }
 
+    /**
+     * Adding point to player
+     */
     public void addPoints(int amount) {
         points += amount;
     }
 
+    /**
+     * Return all player points.
+     */
     public int getPoints() {
         return points;
+    }
+
+    /**
+     * Return player X position.
+     */
+    @Override
+    public float getPositionX() {
+        return body.getPosition().x;
+    }
+
+    /**
+     * Return player Y position.
+     */
+    @Override
+    public float getPositionY() {
+        return body.getPosition().y;
     }
 }

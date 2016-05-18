@@ -14,6 +14,14 @@ public class PlayerSettings {
 
     public float playerHeight = 0.0f;
 
+    //TODO: move to properties
+    public String inactivePLayerMessage = "Are you there?";
+
+    public float inactiveMsgTime = 20.0f;
+
+    public float interactWithObjectTime = 3.0f;
+
+
     /**
      * Amount of the pixel per meter.
      */

@@ -9,15 +9,12 @@ public enum PlayerState {
      * Player stands on the ground and does not move.
      */
     STAND,
-
     FLY_LEFT,
-
     FLY_RIGHT,
-
     RUN_LEFT,
-
     RUN_RIGHT;
 
+    //TODO: move to properties
     private float MINIMAL_PLAYER_MOVE = 0.007f;
 
     /**
@@ -31,20 +28,10 @@ public enum PlayerState {
             return STAND;
         }
         else if (Math.abs(moveY) < MINIMAL_PLAYER_MOVE) {
-            if (currentX > lastX) {
-                return RUN_RIGHT;
-            }
-            else {
-                return RUN_LEFT;
-            }
+            return currentX > lastX ? RUN_RIGHT : RUN_LEFT;
         }
         else {
-            if (currentX > lastX) {
-                return FLY_RIGHT;
-            }
-            else {
-                return FLY_LEFT;
-            }
+            return currentX > lastX ? FLY_RIGHT : FLY_LEFT;
         }
     }
 

@@ -19,6 +19,7 @@ public enum KeyObserve {
      */
     private int[] availKeys = {
             Input.Keys.UP,
+            Input.Keys.SPACE,
             Input.Keys.DOWN,
             Input.Keys.RIGHT,
             Input.Keys.LEFT,
