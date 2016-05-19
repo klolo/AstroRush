@@ -143,6 +143,9 @@ public class GameStage implements Screen {
     @Override
     public void resize(int width, int height) {
         CameraManager.instance.getCamera().setToOrtho(false, width / SCALE, height / SCALE);
+        if (paralaxBackground != null) {
+            paralaxBackground.resize(width, height);
+        }
     }
 
     @Override

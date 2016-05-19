@@ -6,6 +6,7 @@ import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import lombok.Getter;
 import lombok.Setter;
@@ -55,6 +56,10 @@ public class ParalaxBackground {
     @GameProperty("renderer.pixel.per.meter")
     protected int PIXEL_PER_METER = 0;
 
+    private float lastWidth = 0;
+
+    private float lastHeight = 0;
+
     public ParalaxBackground() {
         PropertyInjector.instance.inject(this);
     }
@@ -65,23 +70,15 @@ public class ParalaxBackground {
         if (SIMPLE_MODE) {
             textures.add(new TextureObject(new TextureRegion(background)));
             textures.get(0).getData().getSprite().setOrigin(0f, 0f);
-            textures.get(0).getData().getSprite().setBounds(
-                    0,
-                    0,
-                    Gdx.graphics.getWidth() * TEXTURE_SCALE,
-                    Gdx.graphics.getHeight() * TEXTURE_SCALE);
         }
         else {
             for (int i = 0; i < BACKGROUND_AMOUNT; ++i) {
                 textures.add(new TextureObject(new TextureRegion(background)));
                 textures.get(i).getData().getSprite().setOrigin(0f, 0f);
-                textures.get(i).getData().getSprite().setBounds(
-                        (i - BACKGROUND_AMOUNT / 2) * (Gdx.graphics.getWidth() * TEXTURE_SCALE / PIXEL_PER_METER),
-                        0,
-                        Gdx.graphics.getWidth() * TEXTURE_SCALE,
-                        Gdx.graphics.getHeight() * TEXTURE_SCALE);
             }
         }
+
+        resizeImages();
     }
 
     /**
@@ -116,7 +113,40 @@ public class ParalaxBackground {
                 );
             }
         }
+    }
 
+    /**
+     * Reseizeing background.
+     */
+    public void resize(int w, int h) {
+        if (w != lastWidth || h != lastHeight) {
+            resizeImages();
+            lastWidth = w;
+            lastHeight = h;
+        }
+    }
+
+    /**
+     * Changing size of the TextureRegion.
+     */
+
+    private void resizeImages() {
+        if (SIMPLE_MODE) {
+            textures.get(0).getData().getSprite().setBounds(
+                    0,
+                    0,
+                    Gdx.graphics.getWidth() * TEXTURE_SCALE,
+                    Gdx.graphics.getHeight() * TEXTURE_SCALE);
+        }
+        else {
+            for (int i = 0; i < BACKGROUND_AMOUNT; ++i) {
+                textures.get(i).getData().getSprite().setBounds(
+                        (i - BACKGROUND_AMOUNT / 2) * (Gdx.graphics.getWidth() * TEXTURE_SCALE / PIXEL_PER_METER),
+                        0,
+                        Gdx.graphics.getWidth() * TEXTURE_SCALE,
+                        Gdx.graphics.getHeight() * TEXTURE_SCALE);
+            }
+        }
     }
 
     /**
