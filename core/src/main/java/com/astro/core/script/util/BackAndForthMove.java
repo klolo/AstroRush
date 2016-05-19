@@ -1,6 +1,7 @@
 package com.astro.core.script.util;
 
 import com.astro.core.objects.interfaces.IGameObject;
+import com.badlogic.gdx.physics.box2d.BodyDef;
 
 /**
  * Created by kamil on 18.05.16.
@@ -29,7 +30,13 @@ public class BackAndForthMove<T extends IGameObject> {
         float posX = gameObject.getData().getSprite().getX();
         posX += diff * currentSpeed;
         gameObject.getData().getSprite().setX(posX);
-        gameObject.getData().getBody().setTransform(posX, gameObject.getData().getSprite().getY(), 0);
+
+        if (gameObject.getData().getBody().getType() == BodyDef.BodyType.KinematicBody) {
+            gameObject.getData().getBody().setLinearVelocity(currentSpeed, 0);
+        }
+        else {
+            gameObject.getData().getBody().setTransform(posX, gameObject.getData().getSprite().getY(), 0);
+        }
 
         if (posX > maxPosY) {
             currentSpeed = -1;

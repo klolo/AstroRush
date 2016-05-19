@@ -16,16 +16,24 @@ public class PlayerData {
 
     protected int points = 0;
 
+    @Getter
     protected PlayerSettings settings = new PlayerSettings();
 
     protected PlayerState state = PlayerState.STAND;
 
     protected PlayerCollisionProcesor collisionProcesor;
 
-    protected HashMap<WatchersID, LogicTimer> watchers = new HashMap<>();
+    protected HashMap<WatchersID, LogicTimer> watchers;
 
     @Setter
     protected IInteractWithPlayer interactObject;
+
+    @Setter
+    protected boolean standOnThePlatform = false;
+
+    protected float posX = 0.0f;
+
+    protected float posY = 0.0f;
 
     /**
      * Physics body.

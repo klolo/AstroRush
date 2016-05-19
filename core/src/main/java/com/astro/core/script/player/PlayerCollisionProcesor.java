@@ -1,10 +1,7 @@
 package com.astro.core.script.player;
 
 import com.astro.core.objects.interfaces.IGameObject;
-import com.astro.core.script.Player;
-import com.astro.core.script.Point;
-import com.astro.core.script.Sheep;
-import com.astro.core.script.Switch;
+import com.astro.core.script.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Method;
@@ -62,6 +59,13 @@ public class PlayerCollisionProcesor {
     public void collision(final Switch s) {
         player.getPlayerPopupMsg().addMessagesToQueue("Press shift to interact");
         player.setInteractObject(s);
+    }
+
+    /**
+     * Interact with platform
+     */
+    public void collision(final MovingPlatform s) {
+        player.setStandOnThePlatform(true);
     }
 
 

@@ -3,15 +3,14 @@ package com.astro.core.script.player;
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.Msg;
 import com.astro.core.adnotation.processor.PropertyInjector;
-import com.astro.core.storage.GameResources;
 import com.astro.core.objects.LabelObject;
+import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
 import java.util.Collections;
 import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * Showing small messages above the player.
@@ -92,7 +91,7 @@ public class PopupMsg {
     }
 
     public void setPos(float x, float y) {
-        labelObject.getData().getSprite().setPosition(x, y);
+        labelObject.getData().getSprite().setPosition(x, y); //fixme: should be centered above the player
     }
 
     public void show(final OrthographicCamera cam, float delta) {

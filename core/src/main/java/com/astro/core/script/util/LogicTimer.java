@@ -27,6 +27,9 @@ public class LogicTimer<T> {
     @Setter
     private boolean isStopped = false;
 
+    @Setter
+    private boolean looped = true;
+
     /**
      * @param timeoutData
      * @param timeoutConsumer
@@ -47,6 +50,9 @@ public class LogicTimer<T> {
         currentTime += delta;
 
         if (currentTime > maxTime) {
+            if (!looped) {
+                isStopped = true;
+            }
             currentTime = 0.0f;
 
             log.debug("Timeout");
