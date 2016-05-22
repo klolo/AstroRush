@@ -49,7 +49,7 @@ public class PopupMsg {
 
     private LabelObject labelObject;
 
-    public PopupMsg() {
+    PopupMsg() {
         PropertyInjector.instance.inject(this);
 
         labelObject = new LabelObject(
@@ -68,7 +68,7 @@ public class PopupMsg {
      *
      * @param msg - new message
      */
-    public void addMessagesToQueue(final String msg) {
+    void addMessagesToQueue(final String msg) {
         if (currentMsg == null) {
             currentMsg = msg;
             currentMsgTime = 0.0f;
@@ -120,6 +120,5 @@ public class PopupMsg {
             currentMsgTime = 0.0f;
             opacity = 1.0f;
         }
-
     }
 }

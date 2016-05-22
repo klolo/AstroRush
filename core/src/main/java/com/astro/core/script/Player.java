@@ -30,6 +30,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      * -create all watcher
      */
     public Player() {
+        log.info("Creating player");
         KeyObserve.instance.register(this);
         CameraManager.instance.setObservedObject(this);
         collisionProcesor = new PlayerCollisionProcesor(this);
@@ -39,7 +40,8 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     /**
      * Set data loaded from json, which contains physics information and base animation.
      */
-    public void setGameObject(IGameObject gameObject) {
+    public void setGameObject(final IGameObject gameObject) {
+        log.info("Set game object");
         gameObject.getData().setCollisionConsumer(collisionProcesor::processCollision);
         settings.playerHeight =
                 ((AnimationObject) gameObject).getAnimation().getKeyFrames()[0].getRegionHeight() / settings.PIXEL_PER_METER;

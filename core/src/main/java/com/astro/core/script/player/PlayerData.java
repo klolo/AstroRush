@@ -27,8 +27,10 @@ public class PlayerData {
 
     protected PlayerState state = PlayerState.STAND;
 
+    @Getter
     protected PlayerCollisionProcesor collisionProcesor;
 
+    @Getter
     protected HashMap<WatchersID, LogicTimer> watchers;
 
     @Setter
