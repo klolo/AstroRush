@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+
 [Test coverage](https://codecov.io/gh/klolo/AstroRush/)
 
 #AstroRush 2.0
