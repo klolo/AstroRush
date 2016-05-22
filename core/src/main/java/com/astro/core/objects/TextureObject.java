@@ -19,6 +19,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TextureObject extends GameObject {
 
+    /**
+     * Text is relative to screen or world?
+     */
+    @Setter
+    protected boolean screenPositionRelative = false;
+
     @Getter
     @Setter
     protected boolean renderingInScript = false;
@@ -74,7 +80,7 @@ public class TextureObject extends GameObject {
             return;
         }
 
-        batch.setProjectionMatrix(cam.combined);
+        batch.setProjectionMatrix(screenPositionRelative ? cam.projection : cam.combined);
         batch.begin();
         batch.setColor(data.sprite.getColor());
 

@@ -17,12 +17,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class LabelObject extends TextureObject {
 
-    /**
-     * Text is relative to screen or world?
-     */
-    @Setter
-    private boolean screenPositionRelative = false;
-
 
     private boolean useShader = false;
 
@@ -55,7 +49,7 @@ public class LabelObject extends TextureObject {
         this.font = font;
 
         if (useShader) {
-            fontShader = new ShaderProgram(Gdx.files.internal("font.vert"), Gdx.files.internal("font.frag"));
+            fontShader = new ShaderProgram(Gdx.files.internal("shaders/font.vert"), Gdx.files.internal("shaders/font.frag"));
             if (!fontShader.isCompiled()) {
                 Gdx.app.error("fontShader", "compilation failed:\n" + fontShader.getLog());
             }
@@ -94,7 +88,5 @@ public class LabelObject extends TextureObject {
         if (useShader) {
             batch.setShader(null);
         }
-
-        batch.setProjectionMatrix(cam.combined);
     }
 }

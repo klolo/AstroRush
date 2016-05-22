@@ -46,6 +46,16 @@ public class WatchersCreator {
         stopPLayerWatcher.setLooped(false);
         stopPLayerWatcher.setStopped(true);
         watchers.put(WatchersID.STOP_PLAYER_ON_PLATFORM, stopPLayerWatcher);
+
+
+        LogicTimer decreaseLiveWatcher =
+                new LogicTimer<>(
+                        1,
+                        player::decreaseLive,
+                        1f
+                );
+        watchers.put(WatchersID.DECREASE_LIVE, decreaseLiveWatcher);
+
         return this;
     }
 

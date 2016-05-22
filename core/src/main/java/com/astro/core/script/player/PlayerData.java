@@ -17,6 +17,12 @@ public class PlayerData {
     protected int points = 0;
 
     @Getter
+    protected int liveAmount = 100;
+
+    @Getter
+    protected int startLiveAmount = 100;
+
+    @Getter
     protected PlayerSettings settings = new PlayerSettings();
 
     protected PlayerState state = PlayerState.STAND;

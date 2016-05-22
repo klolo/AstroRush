@@ -7,34 +7,49 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.function.Consumer;
 
 /**
- * Created by kamil on 17.05.16.
+ * Performing scheduled task.
  */
 @Slf4j
 public class LogicTimer<T> {
 
+    /**
+     * data dor scheduled method invoke.
+     */
     @Setter
-    T timeoutData;
+    private T timeoutData;
 
+    /**
+     * Increasing time of working
+     */
     @Setter
+    @Getter
     private float currentTime = 0.0f;
 
+    /**
+     * Time limit of the task.
+     */
     @Getter
     private final float maxTime;
 
+    /**
+     * Method for invoke.
+     */
     @Setter
     private Consumer<T> timeoutConsumer;
 
+    /**
+     * Stoping the timer.
+     */
     @Setter
     private boolean isStopped = false;
 
+    /**
+     * Flag of the looping.
+     */
     @Setter
     private boolean looped = true;
 
-    /**
-     * @param timeoutData
-     * @param timeoutConsumer
-     * @param time
-     */
+
     public LogicTimer(final T timeoutData, final Consumer<T> timeoutConsumer, float time) {
         maxTime = time;
         this.timeoutData = timeoutData;
@@ -49,7 +64,7 @@ public class LogicTimer<T> {
 
         currentTime += delta;
 
-        if (currentTime > maxTime) {
+        if (currentTime >= maxTime) {
             if (!looped) {
                 isStopped = true;
             }

@@ -1,16 +1,21 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.adnotation.Msg;
-import com.astro.core.script.Player;
-import com.astro.core.storage.GameResources;
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.adnotation.Msg;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.LabelObject;
 import com.astro.core.objects.ObjectsRegister;
-import com.astro.core.adnotation.processor.PropertyInjector;
-import com.badlogic.gdx.Gdx;
+import com.astro.core.objects.TextureObject;
+import com.astro.core.script.Player;
+import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
  * heads-up display fo GameStage.
@@ -30,17 +35,27 @@ public class StageHUD implements IGameHud {
     private String msg = "";
 
 
-    private float MARGIN = 0.1f;
+    private float MARGIN = .8f;
 
     private GameObject playerObject;
 
     private Player player;
 
-    public StageHUD() {
+    private HashMap<HudElements, GameObject> hudElements = new LinkedHashMap<>();
+
+    private float lifeBarStartWidth = 0.0f;
+
+    enum HudElements {
+        POINTS_LABEL,
+        HELMET,
+        LIVE_BAR,
+        LIVE_BAR_BACKGROUND
+    }
+
+    StageHUD() {
         PropertyInjector.instance.inject(this);
 
         log.info("Creating default font");
-
         labelObject = new LabelObject(
                 GameResources.instance.getResourceManager().getBitmapFont(
                         LabelObject.getDEFAULT_FONT(),
@@ -49,18 +64,91 @@ public class StageHUD implements IGameHud {
         );
 
         labelObject.setScreenPositionRelative(true);
+        hudElements.put(HudElements.POINTS_LABEL, labelObject);
+
+        initPlayerData();
+
+        TextureObject liveBarBackground = createTextureObject("b");
+        hudElements.put(HudElements.LIVE_BAR_BACKGROUND, liveBarBackground);
+
+        TextureObject liveBar = createTextureObject("c");
+        hudElements.put(HudElements.LIVE_BAR, liveBar);
+        lifeBarStartWidth = GameResources.instance.getResourceManager().getTextureRegion("c").getRegionWidth();
+
+        TextureObject helmet = createTextureObject("a");
+        hudElements.put(HudElements.HELMET, helmet);
+    }
+
+
+    private TextureObject createTextureObject(final String name) {
+        TextureObject result = new TextureObject(GameResources.instance.getResourceManager().getTextureRegion(name));
+        TextureRegion region = result.getTextureRegion();
+
+        result.getData().getSprite().setBounds(0, 0, region.getRegionWidth(), region.getRegionHeight());
+        result.getData().getSprite().setScale(1.0f, 1.0f);
+        result.getData().getSprite().setOrigin(0f, 0f);
+        result.setScreenPositionRelative(true);
+
+        return result;
+    }
+
+
+    /**
+     * Getting player data for future usage.
+     */
+    private void initPlayerData() {
         playerObject = (GameObject) ObjectsRegister.instance.getObjectByID(Player.IDENTIFIER);
         player = (Player) playerObject.getData().getLogic();
     }
 
     public void show(final OrthographicCamera cam, float delta) {
-        labelObject.getData().getSprite().setPosition(
-                -1 * cam.viewportWidth / 2 / 80 + MARGIN,
-                cam.viewportHeight / 2 / 80 - MARGIN
-        );
+        setHelmetWidth(cam);
+
+        setObjectPositionOnScreen(hudElements.get(HudElements.HELMET), cam, -2.5f, .5f);
+        setObjectPositionOnScreen(hudElements.get(HudElements.POINTS_LABEL), cam, -1 * MARGIN, MARGIN);
+        setObjectPositionOnScreen(hudElements.get(HudElements.LIVE_BAR_BACKGROUND), cam, -1.35f, .5f);
 
         labelObject.setText(String.valueOf(player.getPoints()));
-        labelObject.show(cam, delta);
+        hudElements.values().forEach(e -> e.show(cam, delta));
     }
 
+    private void setHelmetWidth(final OrthographicCamera cam) {
+        TextureRegion region = GameResources.instance.getResourceManager().getTextureRegion("c");
+
+        float liveBarWidth = lifeBarStartWidth * (float) player.getLiveAmount() / (float) player.getStartLiveAmount();
+        region.setRegionWidth((int) liveBarWidth);
+
+        float x = getViewWith(cam) - 2.6f;
+        float y = getViewHeight(cam) - 0.51f;
+
+        x += liveBarWidth / PIXEL_PER_METER / 2;
+
+        Sprite s = new Sprite(region);
+
+        s.setScale(1.0f, 1.0f);
+        s.setOrigin(0, 0);
+        s.setBounds(x, y, liveBarWidth, region.getRegionHeight());
+
+        hudElements.get(HudElements.LIVE_BAR).getData().setSprite(s);
+    }
+
+    private void setObjectPositionOnScreen(final GameObject object, final OrthographicCamera cam, float offsetX, float offsetY) {
+        float x = getViewWith(cam) + offsetX;
+        float y = getViewHeight(cam) - offsetY;
+
+        object.getData().getSprite().setBounds(
+                x,
+                y,
+                object.getData().getSprite().getRegionWidth(),
+                object.getData().getSprite().getRegionHeight()
+        );
+    }
+
+    private float getViewWith(final OrthographicCamera cam) {
+        return cam.viewportWidth / 2 / PIXEL_PER_METER;
+    }
+
+    private float getViewHeight(final OrthographicCamera cam) {
+        return cam.viewportHeight / 2 / PIXEL_PER_METER;
+    }
 }

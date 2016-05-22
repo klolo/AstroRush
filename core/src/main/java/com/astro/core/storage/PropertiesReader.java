@@ -1,11 +1,11 @@
 package com.astro.core.storage;
 
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Reader properties file from core and from game implementation and keep it in memory. This is singleton and initialization is on the first
@@ -23,17 +23,17 @@ public enum PropertiesReader {
     /**
      * Name of properties file.
      */
-    private final static String CORE_PROPERTIES_NAME = "core.properties";
+    private final static String CORE_PROPERTIES_NAME = "properties/core.properties";
 
     /**
      * Name of properties file in game implementation.
      */
-    private final static String GAME_PROPERTIES_NAME = "game.properties";
+    private final static String GAME_PROPERTIES_NAME = "properties/game.properties";
 
     /**
      * Name of properties file in game implementation.
      */
-    private final static String LANGUAGES_FILE_PREFIX = "msg_";
+    private final static String LANGUAGES_FILE_PREFIX = "properties/msg_";
 
     /**
      * Read properties file.

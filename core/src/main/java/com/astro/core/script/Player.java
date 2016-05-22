@@ -67,7 +67,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
         float newX = body.getPosition().x;
         float newY = body.getPosition().y;
 
-        state = state.getState(posX, posY, newX, newY);
+        state = state.getState(posX, posY, newX, newY, state);
         if (standOnThePlatform) {
             state = PlayerState.STAND;
         }
@@ -109,6 +109,13 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     private void leftKeyEvent() {
         graphics.getRunAnimation().getData().setFlipX(true);
         standOnThePlatform = false;
+        if (state == PlayerState.FLY_RIGHT) {
+            state = PlayerState.FLY_LEFT;
+        }
+        else if (state == PlayerState.RUN_RIGHT) {
+            state = PlayerState.FLY_RIGHT;
+        }
+
         watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
     }
 
@@ -118,6 +125,14 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     private void rightKeyEvent() {
         graphics.getRunAnimation().getData().setFlipX(false);
         standOnThePlatform = false;
+        if (state == PlayerState.FLY_LEFT) {
+            state = PlayerState.FLY_RIGHT;
+        }
+        else if (state == PlayerState.RUN_RIGHT) {
+            state = PlayerState.RUN_LEFT;
+        }
+
+
         watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
     }
 
@@ -194,5 +209,18 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     @Override
     public float getPositionY() {
         return body.getPosition().y;
+    }
+
+    /**
+     * Decrease player life amount.
+     */
+    public void decreaseLive(final Integer amount) {
+        log.info("losing live amount:" + amount);
+        liveAmount -= amount;
+
+        if (liveAmount < 0) {
+            log.error("player is dead");
+            return;
+        }
     }
 }

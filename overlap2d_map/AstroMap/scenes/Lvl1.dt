@@ -1496,8 +1496,8 @@
       {
         "uniqueId": 39,
         "tags": [],
-        "x": -8.625001,
-        "y": 2.8125,
+        "x": -8.687501,
+        "y": 2.8375,
         "scaleX": 1.5772852,
         "scaleY": 2.7676048,
         "originX": 0.4,
@@ -1726,7 +1726,7 @@
         "tags": [],
         "customVars": "logic:Point",
         "x": 14.8625,
-        "y": 1.75,
+        "y": 1.7750001,
         "originX": 0.2,
         "originY": 0.1875,
         "zIndex": 55,
@@ -1749,9 +1749,9 @@
           ]
         },
         "physics": {
+          "bodyType": 1,
           "allowSleep": true,
           "awake": true,
-          "density": 1,
           "friction": 1,
           "restitution": 1
         },
@@ -1763,8 +1763,8 @@
         "itemIdentifier": "point",
         "tags": [],
         "customVars": "logic:Point",
-        "x": 16.525002,
-        "y": 1.8625001,
+        "x": 16.525,
+        "y": 1.8625,
         "originX": 0.2,
         "originY": 0.1875,
         "zIndex": 56,
@@ -1787,9 +1787,9 @@
           ]
         },
         "physics": {
+          "bodyType": 1,
           "allowSleep": true,
           "awake": true,
-          "density": 1,
           "friction": 1,
           "restitution": 1
         },
@@ -1802,7 +1802,7 @@
         "tags": [],
         "customVars": "logic:Point",
         "x": 18.025002,
-        "y": 1.8249999,
+        "y": 1.825,
         "originX": 0.2,
         "originY": 0.1875,
         "zIndex": 57,
@@ -1825,10 +1825,10 @@
           ]
         },
         "physics": {
+          "bodyType": 1,
           "mass": 1,
           "allowSleep": true,
           "awake": true,
-          "density": 1,
           "friction": 1,
           "restitution": 1
         },
@@ -1840,8 +1840,8 @@
         "itemIdentifier": "point",
         "tags": [],
         "customVars": "logic:Point",
-        "x": 19.48,
-        "y": 1.83,
+        "x": 19.4875,
+        "y": 1.8375001,
         "originX": 0.2,
         "originY": 0.1875,
         "zIndex": 58,
@@ -1864,9 +1864,9 @@
           ]
         },
         "physics": {
+          "bodyType": 1,
           "allowSleep": true,
           "awake": true,
-          "density": 1,
           "friction": 1,
           "restitution": 1
         },
@@ -1878,8 +1878,8 @@
         "itemIdentifier": "point",
         "tags": [],
         "customVars": "logic:Point",
-        "x": 20.79,
-        "y": 1.86,
+        "x": 20.775002,
+        "y": 1.8500001,
         "originX": 0.2,
         "originY": 0.1875,
         "zIndex": 59,
@@ -1902,9 +1902,9 @@
           ]
         },
         "physics": {
+          "bodyType": 1,
           "allowSleep": true,
           "awake": true,
-          "density": 1,
           "friction": 1,
           "restitution": 1
         },
@@ -2727,6 +2727,10 @@
     "layers": [
       {
         "layerName": "background",
+        "isVisible": true
+      },
+      {
+        "layerName": "midle",
         "isVisible": true
       },
       {
