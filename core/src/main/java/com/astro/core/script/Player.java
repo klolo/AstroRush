@@ -41,7 +41,8 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      * Set data loaded from json, which contains physics information and base animation.
      */
     public void setGameObject(final IGameObject gameObject) {
-        log.info("Set game object");
+        log.info("Set game object player");
+        playerPopupMsg.initLabel();
         gameObject.getData().setCollisionConsumer(collisionProcesor::processCollision);
         settings.playerHeight =
                 ((AnimationObject) gameObject).getAnimation().getKeyFrames()[0].getRegionHeight() / settings.PIXEL_PER_METER;

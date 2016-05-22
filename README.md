@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
-[![Coverage Status](https://coveralls.io/repos/github/klolo/AstroRush/badge.svg?branch=master)](https://coveralls.io/github/klolo/AstroRush?branch=master)
-
+[Test coverage](https://codecov.io/gh/klolo/AstroRush/)
 
 #AstroRush 2.0
 ![ikona](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/splash.png "")
@@ -83,6 +82,9 @@ i fizyki dla nich.
     zarejestrowany w singletonie  ObjectsRegister, z którego inne obiekty mogą odwoływac się do innych obiektów, wyszukując
     je metodami: getObjectByID, getObjectByBody
 
+3. Obsługa properties
+    3.1 Ustawienia
+    3.2 Komunikaty
 
 ##TODO
 - [ ] Skonfigurować checkstyle i formatter..

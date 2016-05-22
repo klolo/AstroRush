@@ -10,8 +10,6 @@ import lombok.Getter;
  */
 public class Point implements ILogic {
 
-    public static final String IDENTIFIER = "point";
-
     /**
      * Message which will show above the player after the collision.
      */

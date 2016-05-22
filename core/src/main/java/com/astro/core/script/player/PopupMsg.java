@@ -51,7 +51,9 @@ public class PopupMsg {
 
     PopupMsg() {
         PropertyInjector.instance.inject(this);
+    }
 
+    public void initLabel() {
         labelObject = new LabelObject(
                 GameResources.instance.getResourceManager().getBitmapFont(LabelObject.getDEFAULT_FONT(),
                         30));

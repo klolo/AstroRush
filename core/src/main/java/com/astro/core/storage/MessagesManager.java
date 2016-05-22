@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.Properties;
 
 /**
- *
+ * Manager of the all internationals text.
  */
-class MessagesManager {
+public class MessagesManager {
 
     @Setter
     @Getter

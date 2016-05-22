@@ -27,10 +27,27 @@
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.21" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:slf4j-simple:1.7.21" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-backend-headless:1.9.2" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: org.mockito:mockito-core:1.10.19" level="project" />
+    <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-backend-lwjgl:1.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-platform:natives-desktop:1.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-box2d-platform:natives-desktop:1.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.badlogicgames.gdx:gdx-freetype-platform:natives-desktop:1.9.2" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Gradle: org.objenesis:objenesis:2.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.lwjgl.lwjgl:lwjgl:2.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.lwjgl.lwjgl:lwjgl_util:2.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.badlogicgames.jlayer:jlayer:1.0.1-gdx" level="project" />
+    <orderEntry type="library" name="Gradle: org.jcraft:jorbis:0.0.17" level="project" />
+    <orderEntry type="library" name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:natives-windows:2.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:natives-linux:2.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.lwjgl.lwjgl:lwjgl-platform:natives-osx:2.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: net.java.jinput:jinput:2.0.5" level="project" />
+    <orderEntry type="library" name="Gradle: net.java.jutils:jutils:1.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: net.java.jinput:jinput-platform:natives-linux:2.0.5" level="project" />
+    <orderEntry type="library" name="Gradle: net.java.jinput:jinput-platform:natives-windows:2.0.5" level="project" />
+    <orderEntry type="library" name="Gradle: net.java.jinput:jinput-platform:natives-osx:2.0.5" level="project" />
     <orderEntry type="library" name="Gradle: com.underwaterapps.overlap2druntime:overlap2d-runtime-libgdx:0.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.badlogicgames.ashley:ashley:1.6.0" level="project" />
   </component>

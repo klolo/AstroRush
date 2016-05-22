@@ -49,7 +49,6 @@ public class PlayerData {
     @Getter
     protected Body body;
 
-
     /**
      * Hold default Player graphic (animation of run) and additional
      * graphics like fly and stand.
