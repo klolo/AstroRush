@@ -2,9 +2,7 @@ package com.astro.core.engine.base;
 
 import com.astro.core.engine.interfaces.IGameLogic;
 import com.astro.core.engine.stage.*;
-import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
@@ -18,7 +16,7 @@ import java.util.stream.Collectors;
 public class GameLogic implements IGameLogic {
 
     /**
-     * TODO: doc
+     * Stage which is now loaded.
      */
     private Stages currentStage = Stages.MAIN_MENU; // from json file stages file
 
@@ -46,7 +44,6 @@ public class GameLogic implements IGameLogic {
 
     public void init() {
         log.info("AstroGame init");
-        KeyObserve.instance.register(this);
 
         Arrays.asList(configReader.getConfigs())
                 .stream()
@@ -72,6 +69,25 @@ public class GameLogic implements IGameLogic {
 
     public void update(float time) {
         currentScreen.update(time);
+        processEvent();
+    }
+
+    private void processEvent() {
+        GameEvent event = currentScreen.getStageLogic().getEvent();
+        if (event == null) {
+            return;
+        }
+
+        switch (event) {
+            case GAME_EXIT: {
+                Gdx.app.exit();
+                break;
+            }
+            case SWITCH_STAGE: {
+                currentStage = currentScreen.getStageLogic().getStageToLoad();
+                loadStage();
+            }
+        }
     }
 
     /**
@@ -80,28 +96,4 @@ public class GameLogic implements IGameLogic {
     public void onExit() {
         log.info("cleaning resources before end");
     }
-
-
-    @Override
-    public void keyPressEvent(int keyCode) {
-        if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
-            Gdx.app.exit();
-        }
-
-        if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
-            if (currentStage == Stages.MAIN_MENU) {
-                currentStage = Stages.LEVEL1;
-            }
-            else {
-                currentStage = Stages.MAIN_MENU;
-            }
-            loadStage();
-        }
-    }
-
-    @Override
-    public void keyReleaseEvent(int keyCode) {
-
-    }
-
 }

@@ -9,8 +9,8 @@
       "hasHUD": false,
       "ambientLightRed":1.0,
       "ambientLightGreen":1.0,
-      "ambientLightBlue":1.0
-
+      "ambientLightBlue": 1.0,
+      "stageLogic": "MainMenu"
     },
     {
       "stageName":"Level1",
@@ -21,7 +21,8 @@
       "hasHUD": true,
       "ambientLightRed": 0.04,
       "ambientLightGreen": 0.06,
-      "ambientLightBlue": 0.15
+      "ambientLightBlue": 0.15,
+      "stageLogic": "LevelLogic"
     }
   ]
 }

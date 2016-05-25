@@ -20,10 +20,11 @@ public class StageConfig {
 
     public boolean hasHUD;
 
-    float ambientLightRed;
+    public float ambientLightRed;
 
-    float ambientLightGreen;
+    public float ambientLightGreen;
 
-    float ambientLightBlue;
+    public float ambientLightBlue;
 
+    public String stageLogic;
 }

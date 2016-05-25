@@ -1,12 +1,11 @@
 package com.astro.core.engine.interfaces;
 
-import com.astro.core.observe.IKeyObserver;
 import com.badlogic.gdx.Screen;
 
 /**
  * Represents game logic.
  */
-public interface IGameLogic extends IKeyObserver {
+public interface IGameLogic {
 
     void render(float deltaTime);
 

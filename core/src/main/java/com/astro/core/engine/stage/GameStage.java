@@ -8,6 +8,7 @@ import com.astro.core.engine.base.ParalaxBackground;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
+import com.astro.core.script.stage.IStageLogic;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import lombok.Getter;
@@ -44,7 +45,14 @@ public class GameStage implements Screen {
     @Getter
     private ArrayList<IGameObject> mapElementsWithLogic = new ArrayList<>();
 
+    /**
+     * Debug rendering physics.
+     */
     private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
+
+    @Setter
+    @Getter
+    private IStageLogic stageLogic;
 
     /**
      * Creating only by factory. Access package.
@@ -61,7 +69,7 @@ public class GameStage implements Screen {
         log.info("end loading game");
     }
 
-    public void initBackground() {
+    void initBackground() {
         paralaxBackground = new ParalaxBackground();
         paralaxBackground.init();
     }
@@ -73,7 +81,6 @@ public class GameStage implements Screen {
         CameraManager.instance.getCamera().setToOrtho(false, 0f, 0f);
         CameraManager.instance.getCamera().position.set(0f, 0f, 0f);
     }
-
 
     @Override
     public void show() {
@@ -167,7 +174,7 @@ public class GameStage implements Screen {
     public void dispose() {
         log.info("dispose");
         DisposeCaller disposer = new DisposeCaller();
-        mapElements.forEach(e -> disposer.callDispose(e));
+        mapElements.forEach(disposer::callDispose);
         PhysicsWorld.instance.getRayHandler().dispose();
     }
 
@@ -176,7 +183,7 @@ public class GameStage implements Screen {
      */
     public void unregister() {
         log.info("unregister stage");
-        mapElements.forEach(e -> destroyPhysicsBody(e));
+        mapElements.forEach(this::destroyPhysicsBody);
         CameraManager.instance.setObservedObject(null);
         mapElements = null;
         mapElementsWithLogic = null;
