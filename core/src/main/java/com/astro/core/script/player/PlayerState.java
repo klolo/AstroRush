@@ -1,7 +1,11 @@
 package com.astro.core.script.player;
 
+import com.astro.core.adnotation.GameProperty;
+import com.astro.core.adnotation.processor.PropertyInjector;
+import lombok.Getter;
+
 /**
- * Created by kamil on 15.05.16.
+ * Represent and determine player state.
  */
 public enum PlayerState {
 
@@ -9,13 +13,33 @@ public enum PlayerState {
      * Player stands on the ground and does not move.
      */
     STAND,
+    /**
+     * Player is above the ground and move to left.
+     */
     FLY_LEFT,
+    /**
+     * * Player is above the ground and move to right.
+     */
     FLY_RIGHT,
+    /**
+     * Player is on the ground and move to left.
+     */
     RUN_LEFT,
+    /**
+     * Player is on the ground and move to right.
+     */
     RUN_RIGHT;
 
-    //TODO: move to properties
-    private float MINIMAL_PLAYER_MOVE = 0.009f;
+    @Getter
+    @GameProperty("player.min.move")
+    private float MINIMAL_PLAYER_MOVE = 0.0f;
+
+    /**
+     * -Injecting game property
+     */
+    PlayerState() {
+        PropertyInjector.instance.inject(this);
+    }
 
     /**
      * Determinates player move kind.
@@ -27,22 +51,22 @@ public enum PlayerState {
         if (Math.abs(moveX) < MINIMAL_PLAYER_MOVE && Math.abs(moveY) < MINIMAL_PLAYER_MOVE) {
             return STAND;
         }
-        else if (Math.abs(moveY) < MINIMAL_PLAYER_MOVE) {
+        else if (!isMove(moveY)) {
             if (currentState == FLY_RIGHT || currentState == FLY_LEFT) {
                 return currentState;
             }
             return currentX > lastX ? RUN_RIGHT : RUN_LEFT;
-
         }
         else {
             return currentX > lastX ? FLY_RIGHT : FLY_LEFT;
         }
-
     }
 
-
+    /**
+     * Checking that player is moving.
+     */
     private boolean isMove(float move) {
-        return Math.abs(move) > MINIMAL_PLAYER_MOVE ? true : false;
+        return Math.abs(move) > MINIMAL_PLAYER_MOVE;
     }
 
     public boolean isRun() {

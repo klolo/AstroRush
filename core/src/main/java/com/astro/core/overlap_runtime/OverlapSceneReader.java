@@ -1,6 +1,6 @@
 package com.astro.core.overlap_runtime;
 
-import com.astro.core.engine.stage.StageManager;
+import com.astro.core.engine.stage.GameObjectUtil;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.loaders.*;
 import com.badlogic.gdx.Gdx;
@@ -9,13 +9,12 @@ import com.badlogic.gdx.utils.Json;
 import com.uwsoft.editor.renderer.data.CompositeVO;
 import com.uwsoft.editor.renderer.data.SceneVO;
 import com.uwsoft.editor.renderer.data.SimpleImageVO;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  *
@@ -61,7 +60,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader loadComposite(final CompositeVO rootComposite) {
         if (rootComposite.layers != null) {
-            rootComposite.layers.stream().forEach(layer -> StageManager.instance.addLayer(layer.layerName));
+            rootComposite.layers.stream().forEach(layer -> GameObjectUtil.instance.addLayer(layer.layerName));
         }
         return registerImages(rootComposite.sImages)
                 .registerLights(rootComposite)

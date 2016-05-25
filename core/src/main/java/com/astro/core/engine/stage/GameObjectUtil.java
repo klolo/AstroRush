@@ -1,6 +1,8 @@
 package com.astro.core.engine.stage;
 
 import com.astro.core.objects.interfaces.IGameObject;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,14 +10,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * Util class for sorting, filter object on the Map.
  */
 @Slf4j
-public enum StageManager {
+public enum GameObjectUtil {
     instance;
 
     /**

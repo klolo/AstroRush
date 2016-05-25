@@ -1,21 +1,20 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.adnotation.GameProperty;
-import com.astro.core.engine.stage.StageManager;
-import com.astro.core.engine.physics.PhysicsWorld;
-import com.astro.core.objects.interfaces.IGameObject;
-import com.astro.core.adnotation.processor.PropertyInjector;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
-import com.uwsoft.editor.renderer.data.LightVO;
-
-import java.util.ArrayList;
-
 import box2dLight.ConeLight;
 import box2dLight.Light;
 import box2dLight.PointLight;
+import com.astro.core.adnotation.GameProperty;
+import com.astro.core.adnotation.processor.PropertyInjector;
+import com.astro.core.engine.physics.PhysicsWorld;
+import com.astro.core.engine.stage.GameObjectUtil;
+import com.astro.core.objects.interfaces.IGameObject;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.uwsoft.editor.renderer.data.LightVO;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.ArrayList;
 
 /**
  * This class convert LightVO from json to box2d light and register in game.
@@ -95,7 +94,7 @@ public class LightsLoader implements ILoader<LightVO> {
         resultLight.setXray(light.isXRay);
         resultLight.setStaticLight(light.isStatic);
         lights.add(resultLight);
-        StageManager.instance.addLayer(light.layerName);
+        GameObjectUtil.instance.addLayer(light.layerName);
         return null;
     }
 }

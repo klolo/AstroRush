@@ -2,12 +2,12 @@ package com.astro.core.engine.stage;
 
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.processor.DisposeCaller;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.base.CameraManager;
 import com.astro.core.engine.base.ParalaxBackground;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import lombok.Getter;
@@ -53,9 +53,9 @@ public class GameStage implements Screen {
         PropertyInjector.instance.inject(this);
 
         this.mapElements = elements;
-        mapElements = StageManager.instance.sortObjectsByLayer(mapElements);
+        mapElements = GameObjectUtil.instance.sortObjectsByLayer(mapElements);
 
-        mapElementsWithLogic = StageManager.instance.getObjectsWithLogic(mapElements);
+        mapElementsWithLogic = GameObjectUtil.instance.getObjectsWithLogic(mapElements);
         ObjectsRegister.instance.registerPhysicsObject(mapElementsWithLogic);
 
         log.info("end loading game");

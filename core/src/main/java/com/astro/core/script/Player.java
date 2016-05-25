@@ -108,15 +108,20 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
 
     /**
      * Called on Left arrow pressed.
+     * fixme: move this logic to the PlayerState class
      */
     private void leftKeyEvent() {
         graphics.getRunAnimation().getData().setFlipX(true);
         standOnThePlatform = false;
+
         if (state == PlayerState.FLY_RIGHT) {
             state = PlayerState.FLY_LEFT;
         }
         else if (state == PlayerState.RUN_RIGHT) {
-            state = PlayerState.FLY_RIGHT;
+            state = PlayerState.RUN_LEFT;
+        }
+        else if (state == PlayerState.STAND) {
+            state = PlayerState.RUN_LEFT;
         }
 
         watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
@@ -124,6 +129,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
 
     /**
      * Called on Right arrow pressed.
+     * fixme: move this logic to the PlayerState class
      */
     private void rightKeyEvent() {
         graphics.getRunAnimation().getData().setFlipX(false);
@@ -131,10 +137,12 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
         if (state == PlayerState.FLY_LEFT) {
             state = PlayerState.FLY_RIGHT;
         }
-        else if (state == PlayerState.RUN_RIGHT) {
-            state = PlayerState.RUN_LEFT;
+        else if (state == PlayerState.RUN_LEFT) {
+            state = PlayerState.RUN_RIGHT;
         }
-
+        else if (state == PlayerState.STAND) {
+            state = PlayerState.RUN_RIGHT;
+        }
 
         watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
     }
@@ -223,7 +231,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
 
         if (liveAmount < 0) {
             log.error("player is dead");
-            return;
+            // todo: player dead event
         }
     }
 }

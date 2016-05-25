@@ -43,7 +43,7 @@ public class StageHUD implements IGameHud {
 
     private HashMap<HudElements, GameObject> hudElements = new LinkedHashMap<>();
 
-    private float lifeBarStartWidth = 0.0f;
+    private static float lifeBarStartWidth = 0.0f;
 
     enum HudElements {
         POINTS_LABEL,
@@ -73,7 +73,9 @@ public class StageHUD implements IGameHud {
 
         TextureObject liveBar = createTextureObject("c");
         hudElements.put(HudElements.LIVE_BAR, liveBar);
-        lifeBarStartWidth = GameResources.instance.getResourceManager().getTextureRegion("c").getRegionWidth();
+
+        if (lifeBarStartWidth == 0.0f)
+            lifeBarStartWidth = GameResources.instance.getResourceManager().getTextureRegion("c").getRegionWidth();
 
         TextureObject helmet = createTextureObject("a");
         hudElements.put(HudElements.HELMET, helmet);
