@@ -1,16 +1,19 @@
 package com.astro.core.engine.physics;
 
-import com.astro.core.adnotation.processor.PropertyInjector;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.*;
-
 import box2dLight.RayHandler;
+import com.astro.core.adnotation.processor.PropertyInjector;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.PolygonShape;
+import com.badlogic.gdx.physics.box2d.World;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Created by kamil on 23.04.16.
+ * Represents Box2D physics.
  */
 @Slf4j
 public enum PhysicsWorld {
@@ -45,10 +48,9 @@ public enum PhysicsWorld {
     PhysicsWorld() {
         PropertyInjector.instance.inject(this);
         gravityVec = new Vector2(0, settings.GRAVITY);
-
         settings.TIME_STEP = 1f / settings.TIME_STEP;
-        world = new World(gravityVec, true);
 
+        world = new World(gravityVec, true);
         world.setContactListener(CollisionListener.instance);
 
         createGround();
@@ -59,12 +61,18 @@ public enum PhysicsWorld {
         RayHandler.setGammaCorrection(true);
         RayHandler.useDiffuseLight(true);
 
-        rayHandler = new RayHandler(world);
-        rayHandler.setAmbientLight(r, g, b, 1.0f);
+        try {
+            rayHandler = new RayHandler(world);
+            rayHandler.setAmbientLight(r, g, b, 1.0f);
 
-        rayHandler.setCulling(true);
-        rayHandler.setBlur(false);
-        rayHandler.setShadows(true);
+            rayHandler.setCulling(true);
+            rayHandler.setBlur(false);
+            rayHandler.setShadows(true);
+        }
+        catch (final Exception e) {
+            // in this place logger is not available yet in test
+            System.out.println("Cannot init ray handler");
+        }
     }
 
     public void setAmbientLight(float r, float g, float b) {
@@ -114,6 +122,18 @@ public enum PhysicsWorld {
         body.createFixture(shape, settings.GROUND_DENSITY);
         shape.dispose();
         return body;
+    }
+
+    /**
+     * Setting camera in rayhadler.
+     */
+    public void setCamera(final OrthographicCamera cam) {
+        if (rayHandler != null) {
+            rayHandler.setCombinedMatrix(cam);
+        }
+        else {
+            log.error("Rayhandler is not init");
+        }
     }
 
 }

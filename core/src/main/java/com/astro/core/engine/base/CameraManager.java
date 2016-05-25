@@ -1,9 +1,9 @@
 package com.astro.core.engine.base;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.interfaces.IObservedByCamera;
 import com.astro.core.engine.physics.PhysicsWorld;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector3;
 import lombok.Getter;
@@ -57,10 +57,9 @@ public enum CameraManager {
             position.y = 0.0f;
         }
 
-
         camera.position.set(position);
         camera.update();
-        PhysicsWorld.instance.getRayHandler().setCombinedMatrix(camera);
+        PhysicsWorld.instance.setCamera(camera);
     }
 
 }
