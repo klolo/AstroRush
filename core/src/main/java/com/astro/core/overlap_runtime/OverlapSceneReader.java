@@ -113,7 +113,6 @@ public class OverlapSceneReader {
         return this;
     }
 
-
     /**
      * Register lights.
      */
@@ -123,7 +122,6 @@ public class OverlapSceneReader {
         return this;
     }
 
-
     /**
      * Register lights.
      */
@@ -131,7 +129,6 @@ public class OverlapSceneReader {
         rootComposite.sLabels.forEach(e -> components.add(register(new LabelsLoader(), e)));
         return this;
     }
-
 
     /**
      * Register animations.

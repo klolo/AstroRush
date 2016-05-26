@@ -29,7 +29,7 @@ abstract public class GameObject implements IGameObject {
     /**
      * Default constructor.
      */
-    GameObject() {
+    public GameObject() {
         PropertyInjector.instance.inject(this);
         data.setSprite(new Sprite());
     }
