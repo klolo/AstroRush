@@ -1,1 +1,187 @@
-{"sceneName":"Menu","composite":{"sImages":[{"uniqueId":2,"tags":[],"x":-10.725,"y":-6.5875,"scaleX":1.6462368,"scaleY":1.7315629,"originX":10.80625,"originY":6.15625,"layerName":"Default","imageName":"backMenu"},{"uniqueId":6,"tags":[],"x":-2.8125,"y":4.5875,"originX":0.3125,"originY":0.3125,"zIndex":1,"layerName":"Default","imageName":"ico"}],"sLabels":[{"uniqueId":9,"tags":[],"x":-2.05,"y":4.5875,"originX":0.75,"originY":0.3125,"zIndex":3,"layerName":"labels","text":"Astro Rush 2.0","style":"SF Atarian System","size":60,"align":8,"width":1.5,"height":0.625},{"uniqueId":5,"tags":[],"customVars":"msg:menu.start","x":-0.85,"y":1.55,"originX":0.75,"originY":0.3125,"zIndex":4,"layerName":"labels","text":"press enter","style":"SF Atarian System","size":30,"align":8,"width":1.5,"height":0.625},{"uniqueId":3,"tags":[],"x":-0.725,"y":-0.075,"originX":0.75,"originY":0.3125,"zIndex":5,"layerName":"labels","text":"press escape","style":"SF Atarian System","size":30,"align":8,"width":1.5,"height":0.625}],"sLights":[{"uniqueId":10,"tags":[],"x":-1.1500001,"y":1.5625002,"originX":0,"originY":0,"zIndex":2,"layerName":"labels","type":"CONE","distance":3,"coneDegree":45,"softnessLength":0.015000001}],"layers":[{"layerName":"Default","isVisible":true},{"layerName":"labels","isVisible":true}]},"ambientColor":[1,0,0,1],"physicsPropertiesVO":{},"verticalGuides":[0],"horizontalGuides":[0]}
+{
+  "sceneName": "Menu",
+  "composite": {
+    "sImages": [
+      {
+        "uniqueId": 2,
+        "tags": [],
+        "x": -16.362501,
+        "y": -8.262501,
+        "scaleX": 1.6462368,
+        "scaleY": 1.7315629,
+        "originX": 10.80625,
+        "originY": 6.15625,
+        "layerName": "Default",
+        "imageName": "backMenu"
+      },
+      {
+        "uniqueId": 6,
+        "tags": [],
+        "x": -2.55,
+        "y": 4.5375,
+        "originX": 0.3125,
+        "originY": 0.3125,
+        "zIndex": 1,
+        "layerName": "Default",
+        "imageName": "ico"
+      },
+      {
+        "uniqueId": 11,
+        "tags": [],
+        "x": 2.3125002,
+        "y": 4.5625,
+        "originX": 0.3125,
+        "originY": 0.3125,
+        "zIndex": 2,
+        "layerName": "Default",
+        "imageName": "ico"
+      }
+    ],
+    "sLabels": [
+      {
+        "uniqueId": 9,
+        "tags": [],
+        "x": -1.6500001,
+        "y": 4.5625,
+        "originX": 0.75,
+        "originY": 0.3125,
+        "zIndex": 4,
+        "layerName": "labels",
+        "text": "Astro Rush 2.0",
+        "style": "SF Atarian System",
+        "size": 60,
+        "align": 8,
+        "width": 1.5,
+        "height": 0.625
+      },
+      {
+        "uniqueId": 5,
+        "itemIdentifier": "mnBtn_LEVEL1",
+        "tags": [],
+        "customVars": "msg:menu.start",
+        "x": -1.26,
+        "y": 2.3,
+        "originX": 0.75,
+        "originY": 0.3125,
+        "zIndex": 5,
+        "layerName": "labels",
+        "text": "new game",
+        "style": "SF Atarian System",
+        "size": 30,
+        "align": 8,
+        "width": 1.5,
+        "height": 0.63
+      },
+      {
+        "uniqueId": 4,
+        "itemIdentifier": "mnBtn_RESUME",
+        "tags": [],
+        "customVars": "msg:menu.resume",
+        "x": -1.27,
+        "y": 3.01,
+        "originX": 0.75,
+        "originY": 0.3125,
+        "zIndex": 6,
+        "layerName": "labels",
+        "text": "resume",
+        "style": "SF Atarian System",
+        "size": 30,
+        "align": 8,
+        "width": 1.5,
+        "height": 0.63
+      },
+      {
+        "uniqueId": 7,
+        "itemIdentifier": "mnBtn_SETTINGS",
+        "tags": [],
+        "customVars": "msg:menu.settings",
+        "x": -1.28,
+        "y": 1.66,
+        "originX": 0.75,
+        "originY": 0.3125,
+        "zIndex": 7,
+        "layerName": "labels",
+        "text": "settings",
+        "style": "SF Atarian System",
+        "size": 30,
+        "align": 8,
+        "width": 1.5,
+        "height": 0.63
+      },
+      {
+        "uniqueId": 8,
+        "itemIdentifier": "mnBtn_HIGHSCORE",
+        "tags": [],
+        "customVars": "msg:menu.highscore",
+        "x": -1.29,
+        "y": 0.95,
+        "originX": 0.75,
+        "originY": 0.3125,
+        "zIndex": 8,
+        "layerName": "labels",
+        "text": "highscore",
+        "style": "SF Atarian System",
+        "size": 30,
+        "align": 8,
+        "width": 1.5,
+        "height": 0.63
+      },
+      {
+        "uniqueId": 3,
+        "itemIdentifier": "mnBtn_EXIT",
+        "tags": [],
+        "x": -1.28,
+        "y": 0.31,
+        "originX": 0.75,
+        "originY": 0.3125,
+        "zIndex": 9,
+        "layerName": "labels",
+        "text": "exit",
+        "style": "SF Atarian System",
+        "size": 30,
+        "align": 8,
+        "width": 1.5,
+        "height": 0.63
+      }
+    ],
+    "sLights": [
+      {
+        "uniqueId": 10,
+        "tags": [],
+        "x": -1.2750001,
+        "y": 1.5625002,
+        "originX": 0,
+        "originY": 0,
+        "zIndex": 3,
+        "layerName": "labels",
+        "type": "CONE",
+        "distance": 3,
+        "coneDegree": 45,
+        "softnessLength": 0.015000001
+      }
+    ],
+    "layers": [
+      {
+        "layerName": "Default",
+        "isVisible": true
+      },
+      {
+        "layerName": "labels",
+        "isVisible": true
+      }
+    ]
+  },
+  "ambientColor": [
+    1,
+    0,
+    0,
+    1
+  ],
+  "physicsPropertiesVO": {},
+  "verticalGuides": [
+    0
+  ],
+  "horizontalGuides": [
+    0
+  ]
+}

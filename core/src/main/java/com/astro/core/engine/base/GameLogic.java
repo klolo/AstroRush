@@ -18,12 +18,12 @@ public class GameLogic implements IGameLogic {
     /**
      * Stage which is now loaded.
      */
-    private Stages currentStage = Stages.MAIN_MENU; // from json file stages file
+    private Stage currentStage = Stage.MAIN_MENU; // from json file stages file
 
     /**
-     * TODO: doc
+     * Loaded from file: stages.json data about stage configuration.
      */
-    private HashMap<Stages, StageConfig> screenConfigs = new HashMap<>();
+    private HashMap<Stage, StageConfig> screenConfigs = new HashMap<>();
 
     /**
      * Current game stage loaded from json.
@@ -48,7 +48,7 @@ public class GameLogic implements IGameLogic {
         Arrays.asList(configReader.getConfigs())
                 .stream()
                 .collect(Collectors.toList())
-                .forEach(s -> screenConfigs.put(currentStage.mapJsonNameToEnumVal(s.stageName), s));
+                .forEach(s -> screenConfigs.put(Stage.valueOf(s.stageName), s));
 
         loadStage();
     }

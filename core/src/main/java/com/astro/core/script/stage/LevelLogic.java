@@ -1,7 +1,7 @@
 package com.astro.core.script.stage;
 
 import com.astro.core.engine.base.GameEvent;
-import com.astro.core.engine.stage.Stages;
+import com.astro.core.engine.stage.Stage;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import lombok.extern.slf4j.Slf4j;
@@ -14,9 +14,9 @@ public class LevelLogic extends StageLogic {
 
     @Override
     public void keyPressEvent(int keyCode) {
-        if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
             event = GameEvent.SWITCH_STAGE;
-            stageToLoad = Stages.MAIN_MENU;
+            stageToLoad = Stage.MAIN_MENU;
         }
     }
 

@@ -2,18 +2,18 @@ package com.astro.core.script.stage;
 
 import com.astro.core.engine.base.GameEvent;
 import com.astro.core.engine.stage.GameStage;
-import com.astro.core.engine.stage.Stages;
+import com.astro.core.engine.stage.Stage;
 import com.astro.core.observe.IKeyObserver;
 import com.astro.core.observe.KeyObserve;
 
 /**
- * Created by kamil on 25.05.16.
+ * Base class for all StageLogic scripts.
  */
 public abstract class StageLogic implements IStageLogic, IKeyObserver {
 
     protected GameStage stage;
 
-    protected Stages stageToLoad;
+    protected Stage stageToLoad;
 
     protected GameEvent event = null;
 
@@ -27,7 +27,7 @@ public abstract class StageLogic implements IStageLogic, IKeyObserver {
     }
 
     @Override
-    public Stages getStageToLoad() {
+    public Stage getStageToLoad() {
         return stageToLoad;
     }
 

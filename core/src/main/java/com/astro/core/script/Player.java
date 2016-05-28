@@ -225,13 +225,27 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     /**
      * Decrease player life amount.
      */
-    public void decreaseLive(final Integer amount) {
-        log.info("losing live amount:" + amount);
+    public void decreaseLive(int amount) {
+        log.info("Losing live amount:{}, current amount: {}", amount, liveAmount);
         liveAmount -= amount;
 
         if (liveAmount < 0) {
             log.error("player is dead");
             // todo: player dead event
+        }
+    }
+
+
+    /**
+     * Decrease player life amount.
+     */
+    public void addLive(int amount) {
+        log.info("Add live amount:{}, current amount: {}", amount, liveAmount);
+        if (liveAmount + amount < startLiveAmount) {
+            liveAmount += amount;
+        }
+        else {
+            liveAmount = startLiveAmount;
         }
     }
 }

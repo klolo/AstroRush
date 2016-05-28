@@ -2,7 +2,7 @@ package com.astro.core.script.stage;
 
 import com.astro.core.engine.base.GameEvent;
 import com.astro.core.engine.stage.GameStage;
-import com.astro.core.engine.stage.Stages;
+import com.astro.core.engine.stage.Stage;
 
 /**
  * Created by kamil on 25.05.16.
@@ -13,6 +13,6 @@ public interface IStageLogic {
 
     GameEvent getEvent();
 
-    Stages getStageToLoad();
+    Stage getStageToLoad();
 
 }

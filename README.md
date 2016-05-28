@@ -4,8 +4,16 @@
 
 #AstroRush 2.0
 ![ikona](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/splash.png "")
+Astronauta rozbity na obcej planecie musi zebrać części do swojego statku żeby powrócić do domu,
+w miedzyczasie musi zdobywać tlen żeby nie umrzeć na nieprzyjaznej planecie i stawiać czoła coraz silniejszym przeciwnikom,
+z ktorymi walczy za pomoca broni rozbudowywanej dzięki zebranym moneta. Potrzebne częćci do naprawienia statku są ukryte 
+tej obcej planecie i trzeba rozwiazać niejedną zagadnę żeby się do nich dostać i nie zginać przy tym.
 
-Platformowa gra przygodowa z elementami logiki napisana w Javie 8.
+Platformowa gra przygodowa z elementami logiki napisana w Javie 8, w całości darmowa i z otwartymi kodami. Docelowe
+platformy na jakie gra będzie udostepniona:
+-Windows
+-Android
+-Linux
 
 
 1. [Uruchomienie](#run)
@@ -86,28 +94,3 @@ i fizyki dla nich.
 3. Obsługa properties
     3.1 Ustawienia
     3.2 Komunikaty
-
-##TODO
-- [ ] Skonfigurować checkstyle i formatter..
-- [ ] Zrobić diagram klas
-- [ ] Odkładanie logów do pliku
-- [ ] Draft fabuły
-- [X] Dokończenie runtime dla Overlap2D
-- [X] Przygotowac task gradle do zbudwania standalone jar.
-    - [ ] Dodac reguly pmd
-- [X] Zrobić testy jednostkowe
-    - [ ] Udroznic coberture
-    - [ ] Docelowe minimalne pokrycie testami 60%
-- [ ] Przygotować wersję pod przeglądarkę
-- [ ] Przygotować wersję pod Androida
-- [ ] Menu gry skladajace sie z kilku ekranow
-- [ ] Savy gry
-- [X] Wybrać czcionke do gry
-        Atarian System (http://www.1001fonts.com/sf-atarian-system-font.html)
-- [ ] Gracz jak stanie na platofmir to nie przesuwa sie razem z nia
-- [ ] Po przejsciu na fullscren tlo sie nie rozciaga
-- [ ] Przewijalne tlo czasami nie nadarza
-- [ ] Sterowanie graczem jest jescze nie dopracowane
-
-## CREDITS:
-Graphics: www.kenney.nl

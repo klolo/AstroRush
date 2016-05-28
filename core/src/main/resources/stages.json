@@ -1,7 +1,7 @@
 {
   "stages": [
     {
-      "stageName":"MainMenu",
+      "stageName": "MAIN_MENU",
       "sceneFile": "scenes/Menu.dt",
       "hasPlayer": false,
       "followByPlayer": false,
@@ -13,7 +13,7 @@
       "stageLogic": "MainMenu"
     },
     {
-      "stageName":"Level1",
+      "stageName": "LEVEL1",
       "sceneFile": "scenes/Lvl1.dt",
       "hasPlayer": true,
       "followByPlayer": true,

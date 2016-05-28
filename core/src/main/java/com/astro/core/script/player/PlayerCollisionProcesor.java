@@ -44,6 +44,7 @@ public class PlayerCollisionProcesor {
     public void collision(final Point point) {
         player.getPlayerPopupMsg().addMessagesToQueue(point.getPlayerMsg());
         player.addPoints(Integer.valueOf(point.getPlayerMsg()));
+        player.addLive(10);
     }
 
     /**
