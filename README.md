@@ -2,12 +2,8 @@
 
 [Test coverage](https://codecov.io/gh/klolo/AstroRush/)
 
-#AstroRush 2.0
-![ikona](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/splash.png "")
-Astronauta rozbity na obcej planecie musi zebrać części do swojego statku żeby powrócić do domu,
-w miedzyczasie musi zdobywać tlen żeby nie umrzeć na nieprzyjaznej planecie i stawiać czoła coraz silniejszym przeciwnikom,
-z ktorymi walczy za pomoca broni rozbudowywanej dzięki zebranym moneta. Potrzebne częćci do naprawienia statku są ukryte 
-tej obcej planecie i trzeba rozwiazać niejedną zagadnę żeby się do nich dostać i nie zginać przy tym.
+# AstroRush 2.0
+![ikona](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/banner.png "")
 
 Platformowa gra przygodowa z elementami logiki napisana w Javie 8, w całości darmowa i z otwartymi kodami. Docelowe
 platformy na jakie gra będzie udostepniona:

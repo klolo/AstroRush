@@ -1,8 +1,8 @@
 package com.astro.core.overlap_runtime.loaders;
 
 import com.astro.core.adnotation.GameProperty;
-import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.adnotation.processor.PropertyInjector;
+import com.astro.core.engine.physics.PhysicsWorld;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -14,9 +14,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
- * Created by kamil on 08.05.16.
+ * Base class for all loaders.
  */
-public class BaseLoader {
+class BaseLoader {
 
     /**
      * Density of the ground box.
@@ -29,8 +29,7 @@ public class BaseLoader {
         PropertyInjector.instance.inject(this);
     }
 
-
-    protected Body createBoody(final MainItemVO data, float w, float h, final String name) {
+    Body createBody(final MainItemVO data, float w, float h, final String name) {
         LinkedList<PolygonShape> polygons = new LinkedList<>();
 
         Arrays.stream(data.shape.polygons)
@@ -86,10 +85,9 @@ public class BaseLoader {
     }
 
     /**
-     *
+     * Create a fixture definition to apply our shape to body.
      */
-    protected FixtureDef getFixtureDefinition(final PolygonShape shape, final MainItemVO data) {
-        // Create a fixture definition to apply our shape to
+    private FixtureDef getFixtureDefinition(final PolygonShape shape, final MainItemVO data) {
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;
         fixtureDef.density = data.physics.density;

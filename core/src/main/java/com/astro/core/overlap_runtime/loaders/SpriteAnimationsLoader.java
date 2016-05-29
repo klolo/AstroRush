@@ -1,9 +1,9 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.storage.GameResources;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.converters.MainItemVOToIGameObjectConverter;
+import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -28,7 +28,7 @@ public class SpriteAnimationsLoader extends BaseLoader implements ILoader<Sprite
             try {
                 float w = atlas.getRegions().get(0).getRegionWidth();
                 float h = atlas.getRegions().get(0).getRegionHeight();
-                Body physicsBody = createBoody(spriteAnimationVO, w, h, spriteAnimationVO.animationName);
+                Body physicsBody = createBody(spriteAnimationVO, w, h, spriteAnimationVO.animationName);
                 physicsBody.setUserData(result);
                 result.getData().setBody(physicsBody);
             }

@@ -1,10 +1,10 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.storage.GameResources;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.converters.SimpleImageVOToIGameObjectConverter;
+import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.uwsoft.editor.renderer.data.SimpleImageVO;
@@ -31,7 +31,7 @@ public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO
         if (imageVO.physics != null) {
             try {
                 result = new PhysicsObject(textureRegion);
-                Body physicsBody = createBoody(imageVO, w, h, imageVO.imageName);
+                Body physicsBody = createBody(imageVO, w, h, imageVO.imageName);
                 physicsBody.setUserData(result);
                 result.getData().setBody(physicsBody);
             }
