@@ -33,7 +33,7 @@ Silnik ten pozwala na ładowanie map stworzonych w edytorze Overlap2D. Z poziomu
 obiektów na mapie można podpiąć logikę napisaną w Javie. Uproszczoną budowę aplikacji przedstawia 
 poniższy schemat:
 
-![silnik gry](https://raw.githubusercontent.com/klolo/AstroRush/master/doc/gameStrusture.png "")
+![silnik gry](https://raw.githubusercontent.com/klolo/AstroRush/master/doc/gameStructure.png "")
 
 ### Fizyka <a name="physics">
 Biblioteką symulującą fizykę w grze jest biblioteka Box2D. To czy dany obiekt ma posiadać fizykę w grze,

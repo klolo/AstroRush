@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8ec722d8-dd8c-4052-95d3-6be1ae989e58" name="Default" comment="readme">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/gameStrusture.png" afterPath="$PROJECT_DIR$/doc/gameStrusture.png" />
+    <list default="true" id="8ec722d8-dd8c-4052-95d3-6be1ae989e58" name="Default" comment="readme and docs">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/doc/gameStrusture.png" afterPath="$PROJECT_DIR$/doc/gameStructure.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/physics/PhysicsWorld.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/physics/PhysicsWorld.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/IStageLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/IStageLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/gameStructure.mdj" afterPath="$PROJECT_DIR$/doc/gameStructure.mdj" />
     </list>
     <ignored path="AstroRush2.0.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -144,15 +141,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider editor-type-id="MarkdownFxPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="140">
-                <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
+              <first_editor relative-caret-position="630">
+                <caret line="35" column="84" selection-start-line="35" selection-start-column="84" selection-end-line="35" selection-end-column="84" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -193,13 +190,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IStageLogic.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IStageLogic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/IStageLogic.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
               <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameStructure.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doc/gameStructure.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -1138,9 +1142,9 @@
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/Stage.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/MainMenu.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/BaseLoader.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/physics/PhysicsWorld.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/IStageLogic.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1995,21 +1999,7 @@
       <workItem from="1464296545174" duration="1161000" />
       <workItem from="1464454258127" duration="7275000" />
       <workItem from="1464464271792" duration="2830000" />
-      <workItem from="1464546618269" duration="4590000" />
-    </task>
-    <task id="LOCAL-00028" summary="broken build test (fix)">
-      <created>1462392435527</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1462392435527</updated>
-    </task>
-    <task id="LOCAL-00029" summary="travis">
-      <created>1462392661558</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1462392661558</updated>
+      <workItem from="1464546618269" duration="4733000" />
     </task>
     <task id="LOCAL-00030" summary="travis">
       <created>1462392765429</created>
@@ -2340,7 +2330,21 @@
       <option name="project" value="LOCAL" />
       <updated>1464555788607</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="readme and docs">
+      <created>1464557162592</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1464557162592</updated>
+    </task>
+    <task id="LOCAL-00078" summary="game uml">
+      <created>1464557259903</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1464557259903</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2376,7 +2380,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376937000" />
+    <option name="totallyTimeSpent" value="377080000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2432,8 +2436,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="split data from logic in GameObject" />
-    <MESSAGE value="change collision event from interface method to consumer" />
     <MESSAGE value="Showing messages above the player" />
     <MESSAGE value="Additional player state" />
     <MESSAGE value="sheep = badass" />
@@ -2457,7 +2459,9 @@
     <MESSAGE value="Logic of the main menu" />
     <MESSAGE value="banner" />
     <MESSAGE value="readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme" />
+    <MESSAGE value="readme and docs" />
+    <MESSAGE value="game uml" />
+    <option name="LAST_COMMIT_MESSAGE" value="game uml" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -2575,11 +2579,6 @@
         <state relative-caret-position="180">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/gameStrusture.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/interfaces/IGameLogic.java">
@@ -2892,28 +2891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="788">
-            <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="140">
-            <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/core/observe/KeyObserve.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -2954,6 +2931,33 @@
         <state relative-caret-position="432">
           <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/gameStructure.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="788">
+            <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="630">
+            <caret line="35" column="84" selection-start-line="35" selection-start-column="84" selection-end-line="35" selection-end-column="84" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
