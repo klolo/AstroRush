@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
 
-# Free adventure Java game by Lolcio
+# Free adventure Java game by Kamil Lolo
 ![banner](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/banner.png "")
 
 1. [Uruchomienie](#run)
@@ -70,32 +70,30 @@ i fizyki dla nich.
 ## DevGuide <a name="devguide">
 
 #### Dodawanie logiki do obiektu <a name="addLogic">
-    Z poziomu edytora Overlap2D należy ustawić customsVars o nazwie logic,
-    gdzie wartością jest nazwa klasy która zostanie podpięta pod dany obiekt. Wszystkie
-    klasy z logiką obiektów znajdują się w pakiecie zdefiniowanym w properties
-    (plik: game.properties, pole: game.script.package). Podpięcie nastepuje podczas
-    ładowanie mapy. Każda klasa zawierająca logikę powinna implementować interfejs ILogic
-    i opcjonalnie rejestrować się w zarządcy kolizji (CollisionManager), poprzez ustawienie consumera:
+Z poziomu edytora Overlap2D należy ustawić customsVars o nazwie logic,
+gdzie wartością jest nazwa klasy która zostanie podpięta pod dany obiekt. Wszystkie
+klasy z logiką obiektów znajdują się w pakiecie zdefiniowanym w properties
+(plik: game.properties, pole: game.script.package). Podpięcie nastepuje podczas
+ładowanie mapy. Każda klasa zawierająca logikę powinna implementować interfejs ILogic
+i opcjonalnie rejestrować się w zarządcy kolizji (CollisionManager), poprzez ustawienie consumera:
     ```java
     runAnimation.getData().setCollisionConsumer(collisionProcesor::processCollision);
     ```
     Każdy skrypt logiki wymaga zaimplementowania metody:
-
     ```java
     void setGameObject(IGameObject gameObject)
     ```
-
-    gdzie gameObject to obiekt do którego podpięty jest skrypt. Może on zostać zrcutowany w zależności
-    od rodzaju elementu na np. TextureObject bądz tez AnimationObject.
+gdzie gameObject to obiekt do którego podpięty jest skrypt. Może on zostać zrcutowany w zależności
+od rodzaju elementu na np. TextureObject bądz tez AnimationObject.
 
 #### Komunikacja między obiektami <a name="communicationBeetwenObjects">
-    Każdy obiekt który w edytorze będzie miał ustawiony identyfikator bądź fizykę zostanie podczas ładowania mapy
-    zarejestrowany w singletonie  ObjectsRegister, z którego inne obiekty mogą odwoływac się do innych obiektów, wyszukując
-    je metodami: getObjectByID, getObjectByBody
+Każdy obiekt który w edytorze będzie miał ustawiony identyfikator bądź fizykę zostanie podczas ładowania mapy
+zarejestrowany w singletonie  ObjectsRegister, z którego inne obiekty mogą odwoływac się do innych obiektów, wyszukując
+je metodami: getObjectByID, getObjectByBody
     
 #### Obsługa properties <a name="properties">
-    3.1 Ustawienia
-    3.2 Komunikaty
+3.1 Ustawienia
+3.2 Komunikaty
     
 ### Testy <a name="test">
 Testy w aplikacji znajdują się w katalogu core/src/test, aktualny poziom pokrycia dostępny jest do sprawdzenia:
@@ -112,3 +110,4 @@ platformy na jakie gra będzie udostepniona:
 - Linux
 
 ## Donate me <a name="donate">
+If you like this projects buy me a coffee cup :)

@@ -43,7 +43,10 @@ public enum PhysicsWorld {
     private PhysicsSettings settings = new PhysicsSettings();
 
     /**
-     *
+     * It makes:
+     * -creating Box2D world
+     * -init lights
+     * -creates background
      */
     PhysicsWorld() {
         PropertyInjector.instance.inject(this);
@@ -57,6 +60,9 @@ public enum PhysicsWorld {
         initLight(1.0f, 1.0f, 1.0f);
     }
 
+    /**
+     * Inicjalization light.
+     */
     public void initLight(float r, float g, float b) {
         RayHandler.setGammaCorrection(true);
         RayHandler.useDiffuseLight(true);
@@ -75,6 +81,9 @@ public enum PhysicsWorld {
         }
     }
 
+    /**
+     * Set world light color.
+     */
     public void setAmbientLight(float r, float g, float b) {
         initLight(r, g, b);
     }
@@ -84,7 +93,6 @@ public enum PhysicsWorld {
      */
     public void process() {
         world.step(settings.TIME_STEP, settings.VELOCITY_ITERATIONS, settings.POSITION_ITERATIONS);
-
     }
 
     /**
