@@ -1,22 +1,13 @@
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
 
-[Test coverage](https://codecov.io/gh/klolo/AstroRush/)
-
-# AstroRush 2.0
-![ikona](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/banner.png "")
-
-Platformowa gra przygodowa z elementami logiki napisana w Javie 8, w całości darmowa i z otwartymi kodami. Docelowe
-platformy na jakie gra będzie udostepniona:
--Windows
--Android
--Linux
-
+# AstroRush 2.0 - Opensource Java game by Lolcio
+![banner](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/banner.png "")
 
 1. [Uruchomienie](#run)
-2. [Budowa aplikacji](#paragraph1)
-    1. [Silnik](#subparagraph1)
-    2. [Fizyka](#subparagraph1)
-    3. [Properties](#subparagraph1)
+2. [Budowa aplikacji](#build)
+    1. [Silnik](#engine) 
+    2. [Fizyka](#physics)
+    3. [Mapa](#map)
 3. [Integracja z Overlap](#paragraph2)
 4. [Fabuła](#paragraph2)
 5. [Dodatkowe informacje](#addinfo)
@@ -27,9 +18,15 @@ platformy na jakie gra będzie udostepniona:
 2. Podczas importu zostanie wykryty projekt Gradle, należy włączyć tą naturę.
 3. Zbudowanie i uruchomienie aplikacji odbywa się za pomocą tasku w oknie gradle: game->other->run
 
+## Budowa aplikacji   <a name="build">
 
-##Budowa aplikacji
-###Mapy
+### Silnik <a name="engine">
+Gra wykorzystuje autorskich silnik zbudowany w oparciu o bibliotekę Libgdx, Box2d oraz Overlap2d.
+Silnik ten pozwala na ładowanie map stworzonych w edytorze Overlap2D
+
+![silnik gry](https://raw.githubusercontent.com/klolo/AstroRush/master/doc/gameStrusture.png "")
+
+### Mapa  <a name="map">
 Gra korzysta z map wygenerowanych za pomocą edytora Overlap2D,
 oraz własnego runtime dla tych map. Dokumentacja dotycząca tworzenia takiego
 runtime: http://overlap2d.com/data-api-creating-custom-runtime/
@@ -37,7 +34,9 @@ runtime: http://overlap2d.com/data-api-creating-custom-runtime/
 Wymagana wersja edytora: 0.1.3 (developerska)
 Informacje jak używać edytora: http://overlap2d.com/getting-started/
 
-###Moduły
+### Fizyka <a name="physics">
+
+
 
 ####Core
 Moduł zawiera implementacje gry, nie zawiera natomiast elementów zależnych od systemu na którym ma zostać uruchomiona gra.
@@ -90,3 +89,14 @@ i fizyki dla nich.
 3. Obsługa properties
     3.1 Ustawienia
     3.2 Komunikaty
+    
+    
+4. Testy
+    [Test coverage](https://codecov.io/gh/klolo/AstroRush/)
+
+
+Platformowa gra przygodowa z elementami logiki napisana w Javie 8, w całości darmowa i z otwartymi kodami. Docelowe
+platformy na jakie gra będzie udostepniona:
+- Windows
+- Android
+- Linux
