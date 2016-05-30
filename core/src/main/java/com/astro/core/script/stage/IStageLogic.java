@@ -3,11 +3,12 @@ package com.astro.core.script.stage;
 import com.astro.core.engine.base.GameEvent;
 import com.astro.core.engine.stage.GameStage;
 import com.astro.core.engine.stage.Stage;
+import com.astro.core.observe.IKeyObserver;
 
 /**
  * Common interface for all stages logic class, used in GameScreen.
  */
-public interface IStageLogic {
+public interface IStageLogic extends IKeyObserver {
 
     /**
      * Set the instance of the GameStage, where this logic is attached.

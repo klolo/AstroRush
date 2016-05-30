@@ -1,4 +1,4 @@
-package engine;
+package com.astro.core.engine;
 
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.Msg;

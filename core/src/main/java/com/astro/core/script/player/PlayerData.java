@@ -43,6 +43,9 @@ public class PlayerData {
 
     protected float posY = 0.0f;
 
+    @Getter
+    protected boolean isDead = false;
+
     /**
      * Physics body.
      */
@@ -55,7 +58,7 @@ public class PlayerData {
      */
     protected PlayerGraphics graphics;
 
-    public PopupMsg getPlayerPopupMsg(){
+    public PopupMsg getPlayerPopupMsg() {
         return playerPopupMsg;
     }
 }

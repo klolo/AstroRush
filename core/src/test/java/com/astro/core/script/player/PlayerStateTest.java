@@ -1,6 +1,5 @@
-package script.player;
+package com.astro.core.script.player;
 
-import com.astro.core.script.player.PlayerState;
 import org.junit.Assert;
 import org.junit.Test;
 

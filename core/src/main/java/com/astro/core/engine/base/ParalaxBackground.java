@@ -1,12 +1,11 @@
 package com.astro.core.engine.base;
 
 import com.astro.core.adnotation.GameProperty;
-import com.astro.core.objects.TextureObject;
 import com.astro.core.adnotation.processor.PropertyInjector;
+import com.astro.core.objects.TextureObject;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.LinkedList;
 
 /**
- * Created by kamil on 03.05.16.
+ * Movable background.
  */
 @Slf4j
 public class ParalaxBackground {
@@ -28,7 +27,7 @@ public class ParalaxBackground {
 
     @GameProperty("background.amount")
     @Getter
-    private int BACKGROUND_AMOUNT = 0;
+    int BACKGROUND_AMOUNT = 0;
 
     @GameProperty("background.speed")
     @Getter
@@ -48,7 +47,7 @@ public class ParalaxBackground {
 
     @GameProperty("background.simple")
     @Setter
-    private boolean SIMPLE_MODE;
+    boolean SIMPLE_MODE;
 
     /**
      * Density of the ground box.
@@ -116,7 +115,7 @@ public class ParalaxBackground {
     }
 
     /**
-     * Reseizeing background.
+     * Resaizing background.
      */
     public void resize(int w, int h) {
         if (w != lastWidth || h != lastHeight) {
@@ -162,15 +161,9 @@ public class ParalaxBackground {
 
     private boolean isOnTheLeftOfScreen(float posX, final OrthographicCamera cam) {
         float posCamX = cam.position.x / PIXEL_PER_METER;
-        float worldOnScreenWidth = Gdx.graphics.getWidth() / PIXEL_PER_METER;
-
-        if (posX < posCamX - (worldOnScreenWidth * TEXTURE_SCALE)) {
-            return true;
-        }
-
-        return false;
+        float worldOnScreenWidth = (Gdx.graphics.getWidth() / PIXEL_PER_METER) * TEXTURE_SCALE;
+        return posX < posCamX - worldOnScreenWidth;
     }
-
 
     /**
      * Find which texture is leftmost.
@@ -206,7 +199,7 @@ public class ParalaxBackground {
         return index;
     }
 
-    private float getNewPositionY(OrthographicCamera cam, float diff, final TextureObject textureObject) {
+    private float getNewPositionY(final OrthographicCamera cam, float diff, final TextureObject textureObject) {
         float newY;
         float worldCameraY = cam.position.y / PIXEL_PER_METER;
         float minPosY = worldCameraY - (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
@@ -234,7 +227,7 @@ public class ParalaxBackground {
     /**
      * For simple mode only.
      */
-    private float getNewPositionX(OrthographicCamera cam, float diff) {
+    private float getNewPositionX(final OrthographicCamera cam, float diff) {
         float newX;
         float worldCameraX = cam.position.x / PIXEL_PER_METER;
         float minPosX = worldCameraX - (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);

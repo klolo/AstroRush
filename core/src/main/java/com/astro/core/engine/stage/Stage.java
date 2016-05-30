@@ -24,4 +24,9 @@ public enum Stage {
      */
     HIGHSCORE,
 
+    /**
+     * Garage where player can buy a gun or check progress.
+     */
+    GARAGE
+
 }

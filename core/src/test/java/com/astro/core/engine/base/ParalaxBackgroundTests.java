@@ -1,13 +1,15 @@
-package engine;
+package com.astro.core.engine.base;
 
-import com.astro.core.engine.base.ParalaxBackground;
+import common.GdxTestRunner;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 /**
- * Created by kamil on 04.05.16.
+ * Test of the movable paralax background.
  */
+@RunWith(GdxTestRunner.class)
 public class ParalaxBackgroundTests {
 
     private ParalaxBackground background;
@@ -24,5 +26,4 @@ public class ParalaxBackgroundTests {
         Assert.assertTrue("Margin should be different than 0", background.getTEXTURE_MARGIN_DRAW() != 0f);
         Assert.assertTrue("Scale should be different than 0", background.getTEXTURE_SCALE() != 0f);
     }
-
 }

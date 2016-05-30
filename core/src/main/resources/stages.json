@@ -13,6 +13,30 @@
       "stageLogic": "MainMenu"
     },
     {
+      "stageName": "SETTINGS",
+      "sceneFile": "scenes/settings.dt",
+      "hasPlayer": false,
+      "followByPlayer": false,
+      "background": "",
+      "hasHUD": false,
+      "ambientLightRed": 1.0,
+      "ambientLightGreen": 1.0,
+      "ambientLightBlue": 1.0,
+      "stageLogic": "SettingsLogic"
+    },
+    {
+      "stageName": "HIGHSCORE",
+      "sceneFile": "scenes/highscore.dt",
+      "hasPlayer": false,
+      "followByPlayer": false,
+      "background": "",
+      "hasHUD": false,
+      "ambientLightRed": 1.0,
+      "ambientLightGreen": 1.0,
+      "ambientLightBlue": 1.0,
+      "stageLogic": "HighscoreLogic"
+    },
+    {
       "stageName": "LEVEL1",
       "sceneFile": "scenes/Lvl1.dt",
       "hasPlayer": true,
@@ -23,6 +47,18 @@
       "ambientLightGreen": 0.06,
       "ambientLightBlue": 0.15,
       "stageLogic": "LevelLogic"
+    },
+    {
+      "stageName": "GARAGE",
+      "sceneFile": "scenes/Garage.dt",
+      "hasPlayer": false,
+      "followByPlayer": false,
+      "background": true,
+      "hasHUD": false,
+      "ambientLightRed": 0.04,
+      "ambientLightGreen": 0.06,
+      "ambientLightBlue": 0.15,
+      "stageLogic": "GarageLogic"
     }
   ]
 }

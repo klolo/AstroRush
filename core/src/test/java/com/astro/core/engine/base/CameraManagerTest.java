@@ -1,6 +1,5 @@
-package engine.base;
+package com.astro.core.engine.base;
 
-import com.astro.core.engine.base.CameraManager;
 import com.astro.core.engine.interfaces.IObservedByCamera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import common.GdxTestRunner;

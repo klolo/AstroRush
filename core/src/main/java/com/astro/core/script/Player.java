@@ -231,7 +231,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
 
         if (liveAmount < 0) {
             log.error("player is dead");
-            // todo: player dead event
+            isDead = true;
         }
     }
 

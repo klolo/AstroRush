@@ -1,6 +1,5 @@
-package script;
+package com.astro.core.script;
 
-import com.astro.core.script.Player;
 import common.GdxTestRunner;
 import org.junit.Assert;
 import org.junit.Before;
@@ -28,5 +27,14 @@ public class PlayerTests {
         player.addPoints(100);
 
         Assert.assertTrue("Points should sum", player.getPoints() == 100);
+    }
+
+    @Test
+    public void liveTest() {
+        player.decreaseLive(1000);
+        Assert.assertNotNull("Player should be dead", player.isDead());
+
+        player.addLive(player.getStartLiveAmount() + 100);
+        Assert.assertNotNull("Player should not have more point than max", player.getLiveAmount() == player.getStartLiveAmount());
     }
 }

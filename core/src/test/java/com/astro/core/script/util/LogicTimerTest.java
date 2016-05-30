@@ -1,6 +1,5 @@
-package script.util;
+package com.astro.core.script.util;
 
-import com.astro.core.script.util.LogicTimer;
 import org.junit.Assert;
 import org.junit.Test;
 

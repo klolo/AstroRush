@@ -1,0 +1,29 @@
+{
+  "sceneName": "Garage",
+  "composite": {
+    "sLabels": [
+      {
+        "uniqueId": 2,
+        "tags": [],
+        "x": -0.7625,
+        "y": -1.8625001,
+        "originX": 0.75,
+        "originY": 0.3125,
+        "layerName": "Default",
+        "text": "garage",
+        "style": "SF Atarian System",
+        "size": 20,
+        "align": 16,
+        "width": 1.5,
+        "height": 0.625
+      }
+    ],
+    "layers": [
+      {
+        "layerName": "Default",
+        "isVisible": true
+      }
+    ]
+  },
+  "physicsPropertiesVO": {}
+}

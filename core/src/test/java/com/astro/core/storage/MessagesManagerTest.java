@@ -1,6 +1,5 @@
-package storage;
+package com.astro.core.storage;
 
-import com.astro.core.storage.MessagesManager;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

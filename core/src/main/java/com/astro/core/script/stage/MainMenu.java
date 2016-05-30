@@ -3,6 +3,7 @@ package com.astro.core.script.stage;
 import com.astro.core.engine.base.GameEvent;
 import com.astro.core.engine.stage.Stage;
 import com.astro.core.objects.ObjectsRegister;
+import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
@@ -21,6 +22,8 @@ public class MainMenu extends StageLogic {
     private final String EXIT_BUTTON = "EXIT";
 
     private final String RESUME_BUTTON = "RESUME";
+
+    private boolean isResumeActive = false;
 
     private final String[] buttons = {
             RESUME_BUTTON,
@@ -52,24 +55,27 @@ public class MainMenu extends StageLogic {
         }
     }
 
-    private void processEnter() {
+    void processEnter() {
         if (buttons[currentActiveBtn].equals(EXIT_BUTTON)) {
             event = GameEvent.GAME_EXIT;
         }
         else {
             event = GameEvent.SWITCH_STAGE;
             stageToLoad = Stage.valueOf(buttons[currentActiveBtn]);
+            if (stageToLoad == Stage.LEVEL1) {
+                isResumeActive = true;
+            }
         }
     }
 
-    private void processArrowDown() {
+    void processArrowDown() {
         if (currentActiveBtn != buttons.length - 1) {
             setColorOnActiveButton(Color.WHITE, PREFIX + buttons[currentActiveBtn]);
             setColorOnActiveButton(Color.YELLOW, PREFIX + buttons[++currentActiveBtn]);
         }
     }
 
-    private void processArrowUp() {
+    void processArrowUp() {
         if (currentActiveBtn != 1 || isResumeActive()) {
             setColorOnActiveButton(Color.WHITE, PREFIX + buttons[currentActiveBtn]);
             setColorOnActiveButton(Color.YELLOW, PREFIX + buttons[--currentActiveBtn]);
@@ -80,7 +86,7 @@ public class MainMenu extends StageLogic {
      * TODO:
      */
     private boolean isResumeActive() {
-        return false;//
+        return isResumeActive;
     }
 
     /**
@@ -88,9 +94,12 @@ public class MainMenu extends StageLogic {
      * If label do not have id will be null pointer, you should set it in editor.
      */
     private void setColorOnActiveButton(final Color color, final String objectID) {
-        ObjectsRegister.instance.getObjectByID(objectID)
-                .getData()
-                .getSprite()
-                .setColor(color);
+        IGameObject objects = ObjectsRegister.instance.getObjectByID(objectID);
+        if (objects != null) {
+            objects.getData().getSprite().setColor(color);
+        }
+        else {
+            log.info("Not found object");
+        }
     }
 }

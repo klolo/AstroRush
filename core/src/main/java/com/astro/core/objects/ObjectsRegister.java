@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by kamil on 11.05.16.
+ * Register of the game objects.
  */
 public enum ObjectsRegister {
     instance;

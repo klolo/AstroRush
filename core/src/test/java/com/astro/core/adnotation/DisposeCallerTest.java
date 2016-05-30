@@ -1,6 +1,5 @@
-package adnotation;
+package com.astro.core.adnotation;
 
-import com.astro.core.adnotation.Dispose;
 import com.astro.core.adnotation.processor.DisposeCaller;
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,1 +1,34 @@
-{"pixelToWorld":80,"originalResolution":{"name":"orig","width":1920,"height":1200},"scenes":[{"sceneName":"MainScene","physicsPropertiesVO":{}},{"sceneName":"Menu","physicsPropertiesVO":{}},{"sceneName":"Lvl1","physicsPropertiesVO":{}}]}
+{
+  "pixelToWorld": 80,
+  "originalResolution": {
+    "name": "orig",
+    "width": 1920,
+    "height": 1200
+  },
+  "scenes": [
+    {
+      "sceneName": "MainScene",
+      "physicsPropertiesVO": {}
+    },
+    {
+      "sceneName": "Menu",
+      "physicsPropertiesVO": {}
+    },
+    {
+      "sceneName": "Lvl1",
+      "physicsPropertiesVO": {}
+    },
+    {
+      "sceneName": "settings",
+      "physicsPropertiesVO": {}
+    },
+    {
+      "sceneName": "highscore",
+      "physicsPropertiesVO": {}
+    },
+    {
+      "sceneName": "Garage",
+      "physicsPropertiesVO": {}
+    }
+  ]
+}

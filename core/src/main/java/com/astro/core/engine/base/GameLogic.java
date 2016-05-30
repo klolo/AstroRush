@@ -2,6 +2,7 @@ package com.astro.core.engine.base;
 
 import com.astro.core.engine.interfaces.IGameLogic;
 import com.astro.core.engine.stage.*;
+import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Gdx;
 import lombok.extern.slf4j.Slf4j;
 
@@ -84,6 +85,7 @@ public class GameLogic implements IGameLogic {
                 break;
             }
             case SWITCH_STAGE: {
+                KeyObserve.instance.unregister(currentScreen.getStageLogic());
                 currentStage = currentScreen.getStageLogic().getStageToLoad();
                 loadStage();
             }

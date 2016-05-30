@@ -1,4 +1,4 @@
-package engine;
+package com.astro.core.engine;
 
 import com.astro.core.storage.PropertiesReader;
 import org.junit.Assert;

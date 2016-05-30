@@ -1,0 +1,29 @@
+{
+  "sceneName": "highscore",
+  "composite": {
+    "sLabels": [
+      {
+        "uniqueId": 2,
+        "tags": [],
+        "x": -0.5625,
+        "y": -0.1375,
+        "originX": 0.75,
+        "originY": 0.3125,
+        "layerName": "Default",
+        "text": "highscore",
+        "style": "Roboto Light",
+        "size": 20,
+        "align": 16,
+        "width": 1.5,
+        "height": 0.625
+      }
+    ],
+    "layers": [
+      {
+        "layerName": "Default",
+        "isVisible": true
+      }
+    ]
+  },
+  "physicsPropertiesVO": {}
+}
