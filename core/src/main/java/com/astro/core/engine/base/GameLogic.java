@@ -22,6 +22,8 @@ public class GameLogic implements IGameLogic {
 
     private GameStage prevScreen;
 
+    private HashMap<Stage, GameStage> loadedStages = new HashMap<>();
+
     private HashMap<Stage, StageConfig> screenConfigs = new HashMap<>();
 
     private StageConfigReader configReader = new StageConfigReader();
@@ -92,9 +94,19 @@ public class GameLogic implements IGameLogic {
         prevScreen.unregisterPhysics();
         prevScreen = currentScreen;
 
+        destroyLevelStage();
+
         currentScreen = StageFactory.instance.create(screenConfigs.get(Stage.LEVEL1));
+        loadedStages.put(Stage.LEVEL1, currentScreen);
         currentScreen.register();
-        currentScreen.show();
+    }
+
+    private void destroyLevelStage() {
+        GameStage gameStage = loadedStages.get(Stage.LEVEL1);
+        if (gameStage != null) {
+            gameStage.unregister();
+            gameStage.unregisterPhysics();
+        }
     }
 
     private void prevStage() {
@@ -115,15 +127,24 @@ public class GameLogic implements IGameLogic {
 
     private void loadStage() {
         log.info("load stage");
+        Stage stageToLoad = Stage.MAIN_MENU;
 
         if (currentScreen != null) {
             prevScreen = currentScreen;
             unregisterScreen(currentScreen);
-            currentStage = currentScreen.getStageLogic().getStageToLoad();
+
+            stageToLoad = currentScreen.getStageLogic().getStageToLoad();
+            currentStage = stageToLoad;
         }
 
-        currentScreen = StageFactory.instance.create(screenConfigs.get(currentStage));
-        currentScreen.show();
+        if (stageToLoad != null && loadedStages.containsKey(stageToLoad)) {
+            currentScreen = loadedStages.get(stageToLoad);
+            currentScreen.register();
+        }
+        else {
+            currentScreen = StageFactory.instance.create(screenConfigs.get(currentStage));
+            loadedStages.put(stageToLoad, currentScreen);
+        }
     }
 
     private void unregisterScreen(final GameStage stage) {

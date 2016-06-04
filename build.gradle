@@ -102,6 +102,8 @@ project(":core") {
         compile "com.underwaterapps.overlap2druntime:overlap2d-runtime-libgdx:0.1.1"
         compile "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
 
+        compile group: 'com.google.guava', name: 'guava', version: '19.0'
+
         testCompile 'junit:junit:4.12'
         testCompile "org.mockito:mockito-core:1.+"
         testCompile "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
