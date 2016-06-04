@@ -20,4 +20,13 @@ public class GarageLogic extends StageLogic {
         }
     }
 
+    @Override
+    public void onPause() {
+
+    }
+
+    @Override
+    public void onResume() {
+
+    }
 }

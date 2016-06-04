@@ -2,6 +2,7 @@ package com.astro.core.objects;
 
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.physics.box2d.Body;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
 /**
  * Register of the game objects.
  */
+@Slf4j
 public enum ObjectsRegister {
     instance;
 
@@ -17,6 +19,7 @@ public enum ObjectsRegister {
     private HashMap<Body, IGameObject> gameObjectsWithPhysics = new HashMap<>();
 
     public void clearRegister() {
+        log.info("clear register");
         gameObjectsWithID = new HashMap<>();
         gameObjectsWithPhysics = new HashMap<>();
     }

@@ -2,6 +2,7 @@ package com.astro.core.engine.stage;
 
 import com.astro.core.objects.interfaces.IGameObject;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public enum GameObjectUtil {
      * Registered layers.
      */
     @Getter
+    @Setter
     private ArrayList<String> layers = new ArrayList<>();
 
     /**

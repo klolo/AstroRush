@@ -8,6 +8,7 @@ import com.astro.core.engine.base.ParalaxBackground;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
+import com.astro.core.observe.KeyObserve;
 import com.astro.core.script.stage.IStageLogic;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
@@ -117,9 +118,6 @@ public class GameStage implements Screen {
         }
     }
 
-    /**
-     *
-     */
     public void update(float diff) {
         updateCamera();
 
@@ -156,21 +154,6 @@ public class GameStage implements Screen {
     }
 
     @Override
-    public void pause() {
-
-    }
-
-    @Override
-    public void resume() {
-
-    }
-
-    @Override
-    public void hide() {
-
-    }
-
-    @Override
     public void dispose() {
         log.info("dispose");
         DisposeCaller disposer = new DisposeCaller();
@@ -183,10 +166,23 @@ public class GameStage implements Screen {
      */
     public void unregister() {
         log.info("unregister stage");
+        mapElementsWithLogic.forEach(obj -> obj.getData().getLogic().onPause());
+        stageLogic.onPause();
+        KeyObserve.instance.unregister(stageLogic);
+    }
+
+    /**
+     * Remove object when stage is changing.
+     */
+    public void register() {
+        log.info("register stage");
+        mapElementsWithLogic.forEach(obj -> obj.getData().getLogic().onResume());
+        stageLogic.onResume();
+        KeyObserve.instance.register(stageLogic);
+    }
+
+    public void unregisterPhysics() {
         mapElements.forEach(this::destroyPhysicsBody);
-        CameraManager.instance.setObservedObject(null);
-        mapElements = null;
-        mapElementsWithLogic = null;
     }
 
     /**
@@ -198,6 +194,22 @@ public class GameStage implements Screen {
             PhysicsWorld.instance.getWorld().destroyBody(gameObject.getData().getBody());
             gameObject.getData().setBody(null);
         }
+    }
+
+
+    @Override
+    public void pause() {
+
+    }
+
+    @Override
+    public void resume() {
+
+    }
+
+    @Override
+    public void hide() {
+
     }
 
 }

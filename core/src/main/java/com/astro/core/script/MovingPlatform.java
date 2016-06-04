@@ -32,6 +32,16 @@ public class MovingPlatform implements ILogic {
     }
 
     @Override
+    public void onPause() {
+
+    }
+
+    @Override
+    public void onResume() {
+
+    }
+
+    @Override
     public void additionalRender(OrthographicCamera cam, float delta) {
 
     }

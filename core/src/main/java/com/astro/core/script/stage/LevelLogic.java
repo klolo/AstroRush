@@ -1,7 +1,7 @@
 package com.astro.core.script.stage;
 
 import com.astro.core.engine.base.GameEvent;
-import com.astro.core.engine.stage.Stage;
+import com.astro.core.engine.physics.PhysicsWorld;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import lombok.extern.slf4j.Slf4j;
@@ -20,8 +20,16 @@ public class LevelLogic extends StageLogic {
     }
 
     void processEsc() {
-        event = GameEvent.SWITCH_STAGE;
-        stageToLoad = Stage.MAIN_MENU;
+        event = GameEvent.PREV_STAGE;
     }
 
+    @Override
+    public void onPause() {
+        PhysicsWorld.instance.setFroozePhysicsProcessing(true);
+    }
+
+    @Override
+    public void onResume() {
+        PhysicsWorld.instance.setFroozePhysicsProcessing(false);
+    }
 }

@@ -5,7 +5,6 @@ import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 import com.astro.core.script.util.BackAndForthMove;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.physics.box2d.Body;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -23,6 +22,16 @@ public class Sheep implements ILogic {
         this.gameObject.getData().setCollisionConsumer(this::collisionEvent);
 
         move = new BackAndForthMove<>((AnimationObject) gameObject, -2f, 2f, 1f);
+    }
+
+    @Override
+    public void onPause() {
+
+    }
+
+    @Override
+    public void onResume() {
+
     }
 
     private void collisionEvent(IGameObject gameObject) {

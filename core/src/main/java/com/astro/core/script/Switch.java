@@ -29,6 +29,16 @@ public class Switch implements ILogic, IInteractWithPlayer {
         gameObject.getData().setCollisionConsumer(this::collisionEvent);
     }
 
+    @Override
+    public void onPause() {
+
+    }
+
+    @Override
+    public void onResume() {
+
+    }
+
 
     public void collisionEvent(IGameObject collidatedObject) {
 

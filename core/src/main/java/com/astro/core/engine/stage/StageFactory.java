@@ -40,6 +40,7 @@ public enum StageFactory {
                 .initPlayer(config, result)
                 .initLogic(config, result);
 
+        log.info("Stage loaded");
         return result;
     }
 
@@ -107,7 +108,6 @@ public enum StageFactory {
      * Register all object with set ID.
      */
     private void addToObjectRegister(ArrayList<IGameObject> objects) {
-        ObjectsRegister.instance.clearRegister();
         ObjectsRegister.instance.registerObject(
                 objects.stream()
                         .filter(e -> e.getData().getItemIdentifier() != null && !"".equals(e.getData().getItemIdentifier()))

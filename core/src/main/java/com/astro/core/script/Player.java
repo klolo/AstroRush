@@ -54,6 +54,18 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     }
 
     @Override
+    public void onPause() {
+        CameraManager.instance.setObservedObject(null);
+        KeyObserve.instance.unregister(this);
+    }
+
+    @Override
+    public void onResume() {
+        CameraManager.instance.setObservedObject(this);
+        KeyObserve.instance.register(this);
+    }
+
+    @Override
     public void update(float diff) {
         updatePosition();
         playerPopupMsg.update(diff);

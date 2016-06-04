@@ -16,4 +16,8 @@ public interface ILogic {
 
     void setGameObject(final IGameObject gameObject);
 
+    void onPause();
+
+    void onResume();
+
 }

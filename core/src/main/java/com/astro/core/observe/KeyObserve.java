@@ -2,11 +2,11 @@ package com.astro.core.observe;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-
 import org.apache.commons.lang3.ArrayUtils;
 
-import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
 
 /**
  * Observer for key event, which send event to every registered listener.
@@ -44,7 +44,9 @@ public enum KeyObserve {
      * @param observe - implemetation of the observe interface.
      */
     public void register(IKeyObserver observe) {
-        registerObserve.add(observe);
+        if (!registerObserve.contains(observe)) {
+            registerObserve.add(observe);
+        }
     }
 
     /**
@@ -53,7 +55,9 @@ public enum KeyObserve {
      * @param observe - implemetation of the observe interface.
      */
     public void unregister(IKeyObserver observe) {
-        registerObserve.remove(observe);
+        if (observe != null) {
+            registerObserve.remove(observe);
+        }
     }
 
     /**
@@ -75,6 +79,7 @@ public enum KeyObserve {
      * when switching game, firstly i create copy of the array for protection in loop.
      */
     public void handleInput() {
+        @SuppressWarnings("unchecked")
         LinkedList<IKeyObserver> registerObserveCopy = (LinkedList<IKeyObserver>) registerObserve.clone();
         Arrays.stream(availKeys)
                 .filter(keyCode -> Gdx.input.isKeyPressed(keyCode))

@@ -1,7 +1,7 @@
 package com.astro.core.engine.base;
 
 /**
- * Created by kamil on 25.05.16.
+ * Game event sended from stage logic class.
  */
 public enum GameEvent {
 
@@ -9,6 +9,10 @@ public enum GameEvent {
 
     SWITCH_STAGE,
 
-    SWITCH_STAGE_WITHOUT_LOSING_DATA,
+    PREV_STAGE,
+
+    NEW_STAGE,
+
+    RESUME
 
 }

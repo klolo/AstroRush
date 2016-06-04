@@ -21,8 +21,16 @@ public interface IStageLogic extends IKeyObserver {
     GameEvent getEvent();
 
     /**
+     * Set event after use.
+     */
+    void setEvent(GameEvent event);
+
+    /**
      * If event is change stage, this should return stage to load.
      */
     Stage getStageToLoad();
 
+    void onPause();
+
+    void onResume();
 }

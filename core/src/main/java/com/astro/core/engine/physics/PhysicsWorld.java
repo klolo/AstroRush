@@ -31,11 +31,11 @@ public enum PhysicsWorld {
     @Setter
     private World world;
 
-    /**
-     *
-     */
     @Getter
     private RayHandler rayHandler;
+
+    @Setter
+    private boolean froozePhysicsProcessing;
 
     /**
      * Settings loaded from properties file.
@@ -92,7 +92,9 @@ public enum PhysicsWorld {
      * Update Box2D simulation
      */
     public void process() {
-        world.step(settings.TIME_STEP, settings.VELOCITY_ITERATIONS, settings.POSITION_ITERATIONS);
+        if (!froozePhysicsProcessing) {
+            world.step(settings.TIME_STEP, settings.VELOCITY_ITERATIONS, settings.POSITION_ITERATIONS);
+        }
     }
 
     /**

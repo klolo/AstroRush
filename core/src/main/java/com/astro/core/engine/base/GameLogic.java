@@ -2,49 +2,32 @@ package com.astro.core.engine.base;
 
 import com.astro.core.engine.interfaces.IGameLogic;
 import com.astro.core.engine.stage.*;
-import com.astro.core.observe.KeyObserve;
+import com.astro.core.script.stage.IStageLogic;
 import com.badlogic.gdx.Gdx;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
-/**
- * Represents implementation of the Astro Rush 2.0 game.
- */
 @Slf4j
 public class GameLogic implements IGameLogic {
 
-    /**
-     * Stage which is now loaded.
-     */
-    private Stage currentStage = Stage.MAIN_MENU; // from json file stages file
+    private Stage currentStage = Stage.MAIN_MENU;
 
-    /**
-     * Loaded from file: stages.json data about stage configuration.
-     */
-    private HashMap<Stage, StageConfig> screenConfigs = new HashMap<>();
-
-    /**
-     * Current game stage loaded from json.
-     */
+    @Getter
     private GameStage currentScreen;
 
-    /**
-     * TODO: doc
-     */
+    private GameStage prevScreen;
+
+    private HashMap<Stage, StageConfig> screenConfigs = new HashMap<>();
+
     private StageConfigReader configReader = new StageConfigReader();
 
-    /**
-     * TODO: doc
-     */
-    public GameStage getGameScreen() {
-        return currentScreen;
-    }
-
     public void init() {
-        log.info("AstroGame init");
+        log.info("start");
 
         Arrays.asList(configReader.getConfigs())
                 .stream()
@@ -54,14 +37,13 @@ public class GameLogic implements IGameLogic {
         loadStage();
     }
 
-    private void loadStage() {
-        if (currentScreen != null) {
-            currentScreen.unregister();
-            currentScreen.hide();
-            currentScreen = null;
-        }
+    public GameStage getGameScreen() {
+        return currentScreen;
+    }
 
-        currentScreen = StageFactory.instance.create(screenConfigs.get(currentStage));
+    public void onExit() {
+        log.info("cleaning resources before end");
+        unregisterScreen(currentScreen);
     }
 
     public void render(float deltaTime) {
@@ -74,28 +56,80 @@ public class GameLogic implements IGameLogic {
     }
 
     private void processEvent() {
-        GameEvent event = currentScreen.getStageLogic().getEvent();
-        if (event == null) {
+        Optional.of(currentScreen)
+                .map(GameStage::getStageLogic)
+                .map(IStageLogic::getEvent)
+                .ifPresent(event -> {
+                    currentScreen.getStageLogic().setEvent(null);
+
+                    switch (event) {
+                        case GAME_EXIT: {
+                            Gdx.app.exit();
+                            break;
+                        }
+                        case SWITCH_STAGE: {
+                            loadStage();
+                            break;
+                        }
+                        case PREV_STAGE: {
+                            prevStage();
+                            break;
+                        }
+                        case NEW_STAGE: {
+                            newStage();
+                            break;
+                        }
+                        case RESUME: {
+                            prevStage();
+                            break;
+                        }
+                    }
+                });
+    }
+
+    private void newStage() {
+        log.info("new stage");
+        prevScreen.unregisterPhysics();
+        prevScreen = currentScreen;
+
+        currentScreen = StageFactory.instance.create(screenConfigs.get(Stage.LEVEL1));
+        currentScreen.register();
+        currentScreen.show();
+    }
+
+    private void prevStage() {
+        log.info("prev stage");
+        if (prevScreen == null) {
+            log.warn("Prev stage does not exist");
             return;
         }
 
-        switch (event) {
-            case GAME_EXIT: {
-                Gdx.app.exit();
-                break;
-            }
-            case SWITCH_STAGE: {
-                KeyObserve.instance.unregister(currentScreen.getStageLogic());
-                currentStage = currentScreen.getStageLogic().getStageToLoad();
-                loadStage();
-            }
+        GameStage currentStageTmp = currentScreen;
+        currentScreen = prevScreen;
+
+        prevScreen = currentStageTmp;
+        unregisterScreen(prevScreen);
+
+        currentScreen.register();
+    }
+
+    private void loadStage() {
+        log.info("load stage");
+
+        if (currentScreen != null) {
+            prevScreen = currentScreen;
+            unregisterScreen(currentScreen);
+            currentStage = currentScreen.getStageLogic().getStageToLoad();
+        }
+
+        currentScreen = StageFactory.instance.create(screenConfigs.get(currentStage));
+        currentScreen.show();
+    }
+
+    private void unregisterScreen(final GameStage stage) {
+        if (stage != null) {
+            stage.unregister();
         }
     }
 
-    /**
-     * Called on the game end, used for cleaning resources etc.
-     */
-    public void onExit() {
-        log.info("cleaning resources before end");
-    }
 }

@@ -4,6 +4,7 @@ import com.astro.core.engine.base.GameEvent;
 import com.astro.core.engine.stage.Stage;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
+import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
@@ -59,27 +60,40 @@ public class MainMenu extends StageLogic {
         if (buttons[currentActiveBtn].equals(EXIT_BUTTON)) {
             event = GameEvent.GAME_EXIT;
         }
-        else {
-            event = GameEvent.SWITCH_STAGE;
-            stageToLoad = Stage.valueOf(buttons[currentActiveBtn]);
-            if (stageToLoad == Stage.LEVEL1) {
+        else if (buttons[currentActiveBtn].equals(Stage.LEVEL1.toString())) {
+            if (isResumeActive) {
+                event = GameEvent.NEW_STAGE;
+            }
+            else {
+                event = GameEvent.SWITCH_STAGE;
+                stageToLoad = Stage.valueOf(buttons[currentActiveBtn]);
                 isResumeActive = true;
             }
         }
+        else if (buttons[currentActiveBtn].equals(RESUME_BUTTON)) {
+            event = GameEvent.RESUME;
+        }
+        else {
+            event = GameEvent.SWITCH_STAGE;
+            stageToLoad = Stage.valueOf(buttons[currentActiveBtn]);
+        }
     }
 
-    void processArrowDown() {
+    private void processArrowDown() {
         if (currentActiveBtn != buttons.length - 1) {
             setColorOnActiveButton(Color.WHITE, PREFIX + buttons[currentActiveBtn]);
             setColorOnActiveButton(Color.YELLOW, PREFIX + buttons[++currentActiveBtn]);
         }
+        log.info("Active button: {}", buttons[currentActiveBtn]);
     }
 
-    void processArrowUp() {
-        if (currentActiveBtn != 1 || isResumeActive()) {
+    private void processArrowUp() {
+        if (currentActiveBtn == 1 && isResumeActive() || currentActiveBtn > 1) {
             setColorOnActiveButton(Color.WHITE, PREFIX + buttons[currentActiveBtn]);
             setColorOnActiveButton(Color.YELLOW, PREFIX + buttons[--currentActiveBtn]);
         }
+
+        log.info("Active button: {}", buttons[currentActiveBtn]);
     }
 
     /**
@@ -100,6 +114,28 @@ public class MainMenu extends StageLogic {
         }
         else {
             log.info("Not found object");
+        }
+    }
+
+    @Override
+    public void onPause() {
+
+    }
+
+    @Override
+    public void onResume() {
+        KeyObserve.instance.register(this);
+
+        selectectResumeButton();
+
+        isResumeActive = true;
+        setColorOnActiveButton(Color.YELLOW, PREFIX + buttons[currentActiveBtn]);
+        setColorOnActiveButton(Color.WHITE, PREFIX + buttons[currentActiveBtn + 1]);
+    }
+
+    private void selectectResumeButton() {
+        if (buttons[currentActiveBtn].equals(Stage.LEVEL1.toString())) {
+            currentActiveBtn = 0;
         }
     }
 }

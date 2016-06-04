@@ -28,6 +28,16 @@ public class Point implements ILogic {
         gameObject.getData().setCollisionConsumer(this::collisionEvent);
     }
 
+    @Override
+    public void onPause() {
+
+    }
+
+    @Override
+    public void onResume() {
+
+    }
+
     public void collisionEvent(IGameObject collidatedObject) {
         if (Player.IDENTIFIER.equals(collidatedObject.getData().getItemIdentifier())) {
             gameObject.getData().setDestroyed(true);
