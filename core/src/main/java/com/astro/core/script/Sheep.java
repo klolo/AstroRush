@@ -17,7 +17,7 @@ public class Sheep implements ILogic {
 
     private BackAndForthMove move;
 
-    public void setGameObject(IGameObject gameObject) {
+    public void setGameObject(final IGameObject gameObject) {
         this.gameObject = (AnimationObject) gameObject;
         this.gameObject.getData().setCollisionConsumer(this::collisionEvent);
 
@@ -34,17 +34,17 @@ public class Sheep implements ILogic {
 
     }
 
-    private void collisionEvent(IGameObject gameObject) {
+    void collisionEvent(final IGameObject gameObject) {
         log.debug("hit sheep");
     }
 
     @Override
-    public void update(float diff) {
+    public void update(final float diff) {
         move.update(diff);
     }
 
     @Override
-    public void additionalRender(OrthographicCamera cam, float delta) {
+    public void additionalRender(final OrthographicCamera cam, final float delta) {
 
     }
 }

@@ -45,8 +45,9 @@ abstract public class GameObject implements IGameObject {
      * Update game logic.
      */
     public void update(float delta) {
-        if (data.getLogic() != null)
+        if (data.getLogic() != null) {
             data.getLogic().update(delta);
+        }
     }
 
     /**

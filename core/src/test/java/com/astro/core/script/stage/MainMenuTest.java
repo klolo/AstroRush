@@ -16,8 +16,9 @@ public class MainMenuTest {
         menu.processEnter();
         Assert.assertTrue("By default enter should run game", menu.getEvent() == GameEvent.SWITCH_STAGE);
 
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 30; i++) {
             menu.processArrowDown();
+        }
         menu.processEnter();
 
         Assert.assertTrue("Last button should on last position - exit", menu.getEvent() == GameEvent.GAME_EXIT);

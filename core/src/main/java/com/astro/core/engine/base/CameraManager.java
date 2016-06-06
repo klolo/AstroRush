@@ -30,7 +30,7 @@ public enum CameraManager {
      * Density of the ground box.
      */
     @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER = 0;
+    protected int PIXEL_PER_METER;
 
     /**
      * Constructor.
@@ -46,7 +46,7 @@ public enum CameraManager {
      * Set new player position from the observedObject or set on center.
      */
     public void update() {
-        Vector3 position = camera.position;
+        final Vector3 position = camera.position;
 
         if (observedObject != null) {
             position.x = observedObject.getPositionX() * PIXEL_PER_METER;

@@ -1,10 +1,10 @@
 package com.astro.core.engine.base;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.interfaces.IGameLogic;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.observe.KeyObserve;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -24,11 +24,6 @@ public class GameEngine extends Game {
      * Implemented game logic.
      */
     private IGameLogic gameLogic;
-
-    /**
-     * Box2d world.
-     */
-    private PhysicsWorld world;
 
     /**
      * Used to make fixed time loop.
@@ -57,7 +52,6 @@ public class GameEngine extends Game {
         gameLogic.init();
         screen = gameLogic.getGameScreen();
         setScreen(screen);
-        world = PhysicsWorld.instance;
     }
 
     /**

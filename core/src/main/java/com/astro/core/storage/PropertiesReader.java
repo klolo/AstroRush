@@ -39,7 +39,7 @@ public enum PropertiesReader {
      * Read properties file.
      */
     @Getter
-    private static Properties gameProperties = null;
+    private static Properties gameProperties;
 
     public void init() {
         gameProperties = new Properties();
@@ -62,15 +62,15 @@ public enum PropertiesReader {
     public Properties readPropertiesFile(final String fileName) {
         log.info("Reading properties file: {}", fileName);
 
-        ClassLoader loader = Thread.currentThread().getContextClassLoader();
-        InputStream stream = loader.getResourceAsStream(fileName);
+        final ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        final InputStream stream = loader.getResourceAsStream(fileName);
 
         if (stream == null) {
             log.warn("File not found: {}", fileName);
         }
 
         try {
-            Properties properties = new Properties();
+            final Properties properties = new Properties();
             properties.load(stream);
             stream.close();
             log.info("Read content: {}", properties);
@@ -88,7 +88,7 @@ public enum PropertiesReader {
      *
      * @return property value or empty string.
      */
-    public String getProperty(String key) {
+    public String getProperty(final String key) {
         if (gameProperties == null) {
             init();
             return gameProperties.getProperty(key);
@@ -96,7 +96,7 @@ public enum PropertiesReader {
         return gameProperties.getProperty(key);
     }
 
-    public String getMsg(String key) {
+    public String getMsg(final String key) {
         if (messages == null) {
             init();
             return messages.getMsg(key);

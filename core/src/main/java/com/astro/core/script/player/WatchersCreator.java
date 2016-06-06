@@ -6,9 +6,7 @@ import lombok.Getter;
 
 import java.util.HashMap;
 
-/**
- * Created by kamil on 19.05.16.
- */
+
 public class WatchersCreator {
 
     private Player player;
@@ -21,7 +19,7 @@ public class WatchersCreator {
     }
 
     public WatchersCreator init() {
-        LogicTimer inactiveMsgWatcher =
+        final LogicTimer inactiveMsgWatcher =
                 new LogicTimer<>(
                         player.getSettings().inactivePLayerMessage,
                         player.getPlayerPopupMsg()::addMessagesToQueue,
@@ -29,7 +27,7 @@ public class WatchersCreator {
                 );
         watchers.put(WatchersID.INACTIVE_PLAYER, inactiveMsgWatcher);
 
-        LogicTimer interactionWatcher =
+        final LogicTimer interactionWatcher =
                 new LogicTimer<>(
                         null,
                         player::setInteractObject,
@@ -37,7 +35,7 @@ public class WatchersCreator {
                 );
         watchers.put(WatchersID.INTERACT_WITH_OTHER_OBJECT, interactionWatcher);
 
-        LogicTimer stopPLayerWatcher =
+        final LogicTimer stopPLayerWatcher =
                 new LogicTimer<>(
                         true,
                         player::setStandOnThePlatform,
@@ -48,14 +46,13 @@ public class WatchersCreator {
         watchers.put(WatchersID.STOP_PLAYER_ON_PLATFORM, stopPLayerWatcher);
 
 
-        LogicTimer decreaseLiveWatcher =
+        final LogicTimer decreaseLiveWatcher =
                 new LogicTimer<>(
                         1,
                         player::decreaseLive,
                         1f
                 );
         watchers.put(WatchersID.DECREASE_LIVE, decreaseLiveWatcher);
-
         return this;
     }
 

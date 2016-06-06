@@ -39,12 +39,12 @@ public class PlayerData {
     @Setter
     protected boolean standOnThePlatform = false;
 
-    protected float posX = 0.0f;
+    protected float posX;
 
-    protected float posY = 0.0f;
+    protected float posY;
 
     @Getter
-    protected boolean isDead = false;
+    protected boolean isDead;
 
     /**
      * Physics body.

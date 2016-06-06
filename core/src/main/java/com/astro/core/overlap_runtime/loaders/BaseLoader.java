@@ -35,7 +35,7 @@ class BaseLoader {
         Arrays.stream(data.shape.polygons)
                 .forEach(vec -> polygons.add(getPolygonShape(vec, data, w, h)));
 
-        Body body = PhysicsWorld.instance.createBody(getBodyDef(data), name);
+        final Body body = PhysicsWorld.instance.createBody(getBodyDef(data), name);
         polygons.forEach(e -> body.createFixture(getFixtureDefinition(e, data)));
 
         return body;

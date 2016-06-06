@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class SettingsLogic extends StageLogic {
 
     @Override
-    public void keyPressEvent(int keyCode) {
+    public void keyPressEvent(final int keyCode) {
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
             event = GameEvent.SWITCH_STAGE;
             stageToLoad = Stage.MAIN_MENU;

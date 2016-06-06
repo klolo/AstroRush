@@ -37,6 +37,8 @@ public class OverlapSceneReader {
         this.scenePath = scenePath;
     }
 
+    final static String UNKNOWN_COMPONENT_MSG = "Unknown component error";
+
     /**
      * Opens and read json map file.
      */
@@ -79,7 +81,8 @@ public class OverlapSceneReader {
      * Converting all elements in json map file.
      */
     private OverlapSceneReader loadComposite(final CompositeVO rootComposite,
-                                             float originX, float originY, float parentX, float parentY, float rotate) {
+                                             final float originX, final float originY,
+                                             final float parentX, final float parentY, final float rotate) {
         rootComposite.sImages.forEach(e -> {
             e.x += parentX;
             e.y += parentY;
@@ -143,7 +146,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerImage9patchs(final CompositeVO rootComposite) {
         if (rootComposite.sImage9patchs.size() > 0) {
-            log.error("Unknown component");
+            log.error(UNKNOWN_COMPONENT_MSG);
         }
         return this;
     }
@@ -153,7 +156,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerTextBoxVO(final CompositeVO rootComposite) {
         if (rootComposite.sTextBox.size() > 0) {
-            log.error("Unknown component");
+            log.error(UNKNOWN_COMPONENT_MSG);
         }
         return this;
     }
@@ -163,7 +166,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerSelectBoxVO(final CompositeVO rootComposite) {
         if (rootComposite.sSelectBoxes.size() > 0) {
-            log.error("Unknown component");
+            log.error(UNKNOWN_COMPONENT_MSG);
         }
         return this;
     }
@@ -173,7 +176,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerSpineVO(final CompositeVO rootComposite) {
         if (rootComposite.sSpineAnimations.size() > 0) {
-            log.error("Unknown component");
+            log.error(UNKNOWN_COMPONENT_MSG);
         }
         return this;
     }
@@ -183,7 +186,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerSpriterVO(final CompositeVO rootComposite) {
         if (rootComposite.sSpriterAnimations.size() > 0) {
-            log.error("Unknown component");
+            log.error(UNKNOWN_COMPONENT_MSG);
         }
         return this;
     }

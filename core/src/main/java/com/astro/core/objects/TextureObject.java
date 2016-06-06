@@ -23,11 +23,11 @@ public class TextureObject extends GameObject {
      * Text is relative to screen or world?
      */
     @Setter
-    protected boolean screenPositionRelative = false;
+    protected boolean screenPositionRelative;
 
     @Getter
     @Setter
-    protected boolean renderingInScript = false;
+    protected boolean renderingInScript;
 
     @Getter
     @Setter
@@ -48,7 +48,7 @@ public class TextureObject extends GameObject {
     /**
      * Default constructor.
      */
-    public TextureObject(TextureRegion textureRegion) {
+    public TextureObject(final TextureRegion textureRegion) {
         init();
         this.textureRegion = textureRegion;
         data.sprite = new Sprite(textureRegion);
@@ -68,14 +68,14 @@ public class TextureObject extends GameObject {
      * {@inheritDoc}
      */
     @Override
-    protected void render(OrthographicCamera cam, float delta) {
+    protected void render(final OrthographicCamera cam, final float delta) {
         draw();
     }
 
     /**
      * Every object should be rendered by this method.
      */
-    public void show(OrthographicCamera cam, float delta) {
+    public void show(final OrthographicCamera cam, final float delta) {
         if (renderingInScript) {
             return;
         }
@@ -86,6 +86,8 @@ public class TextureObject extends GameObject {
 
         Gdx.gl.glEnable(GL20.GL_BLEND);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+        http:
+//stackoverflow.com/questions/5547663/java-final-method-what-does-it-promise
 
         render(cam, delta); // implemented in concreted class.
         batch.end();
@@ -105,8 +107,8 @@ public class TextureObject extends GameObject {
         x += data.sprite.getOriginX();
         y += data.sprite.getOriginY();
 
-        float pX = getPx(x, data.sprite.getWidth());
-        float pY = getPy(y, data.sprite.getHeight());
+        final float pX = getPx(x, data.sprite.getWidth());
+        final float pY = getPy(y, data.sprite.getHeight());
 
         drawTextureRegion(pX, pY);
     }
@@ -114,7 +116,7 @@ public class TextureObject extends GameObject {
     /**
      * Get X position of the bottom left corner of object.
      */
-    float getPx(float x, float width) {
+    float getPx(final float x, final float width) {
         float result = x * PIXEL_PER_METER;
         float halfWith = width * data.sprite.getScaleX() / 2;
         return result - halfWith;
@@ -127,7 +129,7 @@ public class TextureObject extends GameObject {
         return y * PIXEL_PER_METER - height * data.sprite.getScaleY() / 2;
     }
 
-    private void drawTextureRegion(float pX, float pY) {
+    private void drawTextureRegion(final float pX, final float pY) {
         batch.draw(
                 textureRegion.getTexture(),
                 pX,

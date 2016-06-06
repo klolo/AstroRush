@@ -15,7 +15,7 @@ public class MessagesManager {
     @Getter
     private String selectedLanguages = "pl";
 
-    private HashMap<String, Properties> messages = new HashMap<>();
+    private final HashMap<String, Properties> messages = new HashMap<>();
 
     public void addLanguages(final String lng, final Properties msg) {
         messages.put(lng, msg);

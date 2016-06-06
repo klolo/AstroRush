@@ -1,19 +1,15 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.storage.GameResources;
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.objects.ParticleObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.converters.ParticleEffectVOToIGameObjectConverter;
-import com.astro.core.adnotation.processor.PropertyInjector;
+import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.uwsoft.editor.renderer.data.ParticleEffectVO;
-
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * Created by kamil on 30.04.16.
- */
 @Slf4j
 public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
 
@@ -29,7 +25,7 @@ public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
     }
 
     @Override
-    public IGameObject register(ParticleEffectVO particleEffectVO) {
+    public IGameObject register(final ParticleEffectVO particleEffectVO) {
         log.info("[register particle] name: {}, particleName: {} ", particleEffectVO.itemName, particleEffectVO.particleName);
         ParticleObject result = new ParticleObject();
 

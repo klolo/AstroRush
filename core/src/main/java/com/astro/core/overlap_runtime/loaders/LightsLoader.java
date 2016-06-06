@@ -8,7 +8,6 @@ import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.engine.stage.GameObjectUtil;
 import com.astro.core.objects.interfaces.IGameObject;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.uwsoft.editor.renderer.data.LightVO;
 import lombok.Getter;
@@ -27,15 +26,6 @@ public class LightsLoader implements ILoader<LightVO> {
      */
     private ArrayList<Light> lights = new ArrayList<>();
 
-    /**
-     * Size of the screen.
-     */
-    private float width = 0.0f;
-
-    /**
-     * Size of the screen.
-     */
-    private float height = 0.0f;
 
     @GameProperty("renderer.pixel.per.meter")
     @Getter
@@ -47,8 +37,6 @@ public class LightsLoader implements ILoader<LightVO> {
     public LightsLoader() {
         log.info("..:: LightsLoader ::..");
         PropertyInjector.instance.inject(this);
-        width = Gdx.graphics.getWidth();
-        height = Gdx.graphics.getHeight();
     }
 
     /**

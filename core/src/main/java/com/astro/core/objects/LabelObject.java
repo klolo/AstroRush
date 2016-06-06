@@ -33,11 +33,11 @@ public class LabelObject extends TextureObject {
      * if there are this size.
      */
     @Getter
-    private static String DEFAULT_FONT = "SF Atarian System";
+    static String DEFAULT_FONT = "SF Atarian System";
 
     //TODO: move to properties
     @Getter
-    private static int DEFAULT_SIZE = 30;
+    static int DEFAULT_SIZE = 30;
 
     /**
      * TODO: doc
@@ -59,7 +59,7 @@ public class LabelObject extends TextureObject {
     public void setNationalizedMsg() {
         String msgVars = data.customVariables.get("msg");
         if (msgVars != null && !"".equals(msgVars)) {
-            String newText = PropertiesReader.instance.getMsg(msgVars);
+            final String newText = PropertiesReader.instance.getMsg(msgVars);
             if (newText != null && !"".equals(newText)) {
                 text = newText;
             }

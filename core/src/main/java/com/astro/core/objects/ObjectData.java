@@ -4,7 +4,6 @@ import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.Contact;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -43,7 +42,7 @@ public class ObjectData {
     /**
      * Logic of the object.
      */
-    private ILogic logic;
+    protected ILogic logic;
 
     /**
      * Name of the object.

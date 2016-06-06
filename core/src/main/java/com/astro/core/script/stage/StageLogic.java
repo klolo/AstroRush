@@ -31,7 +31,7 @@ public abstract class StageLogic implements IStageLogic, IKeyObserver {
     }
 
     @Override
-    public void keyReleaseEvent(int keyCode) {
+    public void keyReleaseEvent(final int keyCode) {
 
     }
 

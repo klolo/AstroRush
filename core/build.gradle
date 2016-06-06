@@ -6,8 +6,26 @@ apply plugin: 'pmd'
 apply plugin: "jacoco"
 apply plugin: "cobertura"
 
-sourceCompatibility = 1.8
-
+pmd {
+    ruleSets = [
+            "java-basic",
+            "java-braces",
+            'java-unnecessary',
+            'java-unusedcode',
+            'java-empty',
+            'java-finalizers',
+            'java-imports',
+            'java-strictexception',
+            'java-strings',
+            'java-unnecessary',
+            'java-unusedcode',
+            //'java-optimizations'
+            // 'java-codesize',
+            // 'java-coupling'
+            // 'java-design'
+    ]
+    consoleOutput = true
+}
 
 jacoco {
     toolVersion = "0.7.6.201602180812"

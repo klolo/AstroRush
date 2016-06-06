@@ -19,26 +19,20 @@ public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO
     /**
      * @param imageVO
      */
-    public IGameObject register(SimpleImageVO imageVO) {
+    public IGameObject register(final SimpleImageVO imageVO) {
         log.info("[register component]. ImageName: {}, Identifier: {}, Position: {} {}, Origin: {} {}, Layer: {}",
                 imageVO.imageName, imageVO.itemIdentifier, imageVO.x, imageVO.y, imageVO.originX, imageVO.originY, imageVO.layerName);
         TextureRegion textureRegion = GameResources.instance.getResourceManager().getTextureRegion(imageVO.imageName);
-        float w = textureRegion.getRegionWidth();
-        float h = textureRegion.getRegionHeight();
+        final float w = textureRegion.getRegionWidth();
+        final float h = textureRegion.getRegionHeight();
 
         IGameObject result;
 
         if (imageVO.physics != null) {
-            try {
-                result = new PhysicsObject(textureRegion);
-                Body physicsBody = createBody(imageVO, w, h, imageVO.imageName);
-                physicsBody.setUserData(result);
-                result.getData().setBody(physicsBody);
-            }
-            catch (final Exception e) {
-                log.error("Incorrect physics settings");
-                result = new TextureObject(textureRegion);
-            }
+            result = new PhysicsObject(textureRegion);
+            Body physicsBody = createBody(imageVO, w, h, imageVO.imageName);
+            physicsBody.setUserData(result);
+            result.getData().setBody(physicsBody);
         }
         else {
             result = new TextureObject(textureRegion);

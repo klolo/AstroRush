@@ -46,7 +46,7 @@ public enum GameObjectUtil {
                 sortedObjectMap.get(gObj.getData().getLayerID()).add(gObj));
 
         ArrayList<IGameObject> sortedObjects = new ArrayList<>(gameObjects.size());
-        layers.forEach(layer -> sortedObjects.addAll((LinkedList) sortedObjectMap.get(layer)));
+        layers.forEach(layer -> sortedObjects.addAll(new LinkedList<>(sortedObjectMap.get(layer))));
         return sortedObjects;
     }
 
@@ -54,7 +54,11 @@ public enum GameObjectUtil {
      * Return objects with have logic.
      */
     public ArrayList<IGameObject> getObjectsWithLogic(final ArrayList<IGameObject> gameObjects) {
-        List<IGameObject> result = gameObjects.stream().filter(e -> e.hasLogic()).collect(Collectors.toList());
+        List<IGameObject> result =
+                gameObjects
+                        .stream()
+                        .filter(IGameObject::hasLogic)
+                        .collect(Collectors.toList());
         return new ArrayList<>(result);
     }
 

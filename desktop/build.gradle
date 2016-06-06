@@ -8,7 +8,7 @@ sourceCompatibility = 1.8
 project.ext.mainClassName = "com.astro.game.Launcher"
 project.ext.assetsDir = new File("../core/src/main/resources");
 
-task run(dependsOn: [':core:pmdMain','classes'], type: JavaExec) {
+task run(dependsOn: [':core:pmdMain', 'classes', ':core:test'], type: JavaExec) {
     main = project.mainClassName
     classpath = sourceSets.main.runtimeClasspath
     standardInput = System.in

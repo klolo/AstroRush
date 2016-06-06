@@ -7,10 +7,9 @@ import com.astro.core.storage.PropertiesReader;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Optional;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Main class of the AstroRush 2.0 game.
@@ -45,7 +44,7 @@ public class Launcher {
             System.exit(-1);
         }
         finally {
-            Optional.of(gameLogic).ifPresent(e -> gameLogic.onExit());
+            Optional.ofNullable(gameLogic).ifPresent(e -> gameLogic.onExit());
         }
     }
 

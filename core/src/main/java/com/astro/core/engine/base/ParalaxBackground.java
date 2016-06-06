@@ -35,11 +35,11 @@ public class ParalaxBackground {
 
     @GameProperty("background.margin")
     @Getter
-    private float TEXTURE_MARGIN_DRAW = 0f;
+    private float TEXTURE_MARGIN_DRAW;
 
     @GameProperty("background.scale")
     @Getter
-    private float TEXTURE_SCALE = 0f;
+    private float TEXTURE_SCALE;
 
     @GameProperty("background.texture")
     @Getter
@@ -53,11 +53,11 @@ public class ParalaxBackground {
      * Density of the ground box.
      */
     @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER = 0;
+    protected int PIXEL_PER_METER;
 
-    private float lastWidth = 0;
+    private float lastWidth;
 
-    private float lastHeight = 0;
+    private float lastHeight;
 
     public ParalaxBackground() {
         PropertyInjector.instance.inject(this);
@@ -151,7 +151,7 @@ public class ParalaxBackground {
     /**
      * Update for only one texture.
      */
-    private void simpleUpdate(final OrthographicCamera cam, float diff) {
+    private void simpleUpdate(final OrthographicCamera cam, final float diff) {
         textures.get(0).getData().getSprite().setBounds(
                 getNewPositionX(cam, diff),
                 getNewPositionY(cam, diff, textures.get(0)),
@@ -159,9 +159,9 @@ public class ParalaxBackground {
                 Gdx.graphics.getHeight() * TEXTURE_SCALE);
     }
 
-    private boolean isOnTheLeftOfScreen(float posX, final OrthographicCamera cam) {
-        float posCamX = cam.position.x / PIXEL_PER_METER;
-        float worldOnScreenWidth = (Gdx.graphics.getWidth() / PIXEL_PER_METER) * TEXTURE_SCALE;
+    private boolean isOnTheLeftOfScreen(final float posX, final OrthographicCamera cam) {
+        final float posCamX = cam.position.x / PIXEL_PER_METER;
+        final float worldOnScreenWidth = (Gdx.graphics.getWidth() / PIXEL_PER_METER) * TEXTURE_SCALE;
         return posX < posCamX - worldOnScreenWidth;
     }
 
@@ -172,7 +172,7 @@ public class ParalaxBackground {
      */
     private int findFirstOnLeft() {
         int index = 0;
-        float minX = textures.get(0).getData().getSprite().getX();
+        final float minX = textures.get(0).getData().getSprite().getX();
         for (int i = 0; i < textures.size(); ++i) {
             if (textures.get(i).getData().getSprite().getX() < minX) {
                 index = i;
@@ -189,7 +189,7 @@ public class ParalaxBackground {
      */
     private int findLastOnLeft() {
         int index = 0;
-        float maxX = textures.get(0).getData().getSprite().getX();
+        final float maxX = textures.get(0).getData().getSprite().getX();
         for (int i = 0; i < textures.size(); ++i) {
             if (textures.get(i).getData().getSprite().getX() > maxX) {
                 index = i;
@@ -201,9 +201,9 @@ public class ParalaxBackground {
 
     private float getNewPositionY(final OrthographicCamera cam, float diff, final TextureObject textureObject) {
         float newY;
-        float worldCameraY = cam.position.y / PIXEL_PER_METER;
-        float minPosY = worldCameraY - (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
-        float maxPosY = worldCameraY + (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
+        final float worldCameraY = cam.position.y / PIXEL_PER_METER;
+        final float minPosY = worldCameraY - (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
+        final float maxPosY = worldCameraY + (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
 
         if (textureObject.getData().getSprite().getY() < minPosY) {
             newY = textureObject.getData().getSprite().getX() + (diff * BACKGROUND_SPEED);
@@ -229,9 +229,9 @@ public class ParalaxBackground {
      */
     private float getNewPositionX(final OrthographicCamera cam, float diff) {
         float newX;
-        float worldCameraX = cam.position.x / PIXEL_PER_METER;
-        float minPosX = worldCameraX - (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);
-        float maxPosX = worldCameraX + (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);
+        final float worldCameraX = cam.position.x / PIXEL_PER_METER;
+        final float minPosX = worldCameraX - (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);
+        final float maxPosX = worldCameraX + (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);
 
         if (textures.get(0).getData().getSprite().getX() < minPosX) {
             newX = textures.get(0).getData().getSprite().getX() + (diff * BACKGROUND_SPEED);

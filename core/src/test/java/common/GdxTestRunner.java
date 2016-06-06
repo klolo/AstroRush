@@ -70,8 +70,9 @@ public class GdxTestRunner extends BlockJUnit4ClassRunner implements Application
             while (true) {
                 Thread.sleep(10);
                 synchronized (invokeInRender) {
-                    if (invokeInRender.isEmpty())
+                    if (invokeInRender.isEmpty()) {
                         break;
+                    }
                 }
             }
         }

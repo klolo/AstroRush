@@ -118,10 +118,10 @@ public class GameStage implements Screen {
         }
     }
 
-    public void update(float diff) {
+    public void update(final float diff) {
         updateCamera();
 
-        ArrayList<IGameObject> currentMapElementsWithLogic = (ArrayList<IGameObject>) mapElementsWithLogic.clone();
+        ArrayList<IGameObject> currentMapElementsWithLogic = new ArrayList<>(mapElementsWithLogic);
         currentMapElementsWithLogic.forEach(e -> processGameObjects(e, diff));
 
         if (paralaxBackground != null) {

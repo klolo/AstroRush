@@ -3,22 +3,20 @@ package com.astro.core.script.util;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 
-/**
- * Created by kamil on 18.05.16.
- */
+
 public class BackAndForthMove<T extends IGameObject> {
 
     private T gameObject;
 
-    private float minPosX = 0.0f;
+    private float minPosX;
 
-    private float maxPosY = 0.0f;
+    private float maxPosY;
 
     private final float speed;
 
     private float currentSpeed;
 
-    public BackAndForthMove(final T gameObject, float minX, float maxX, float speed) {
+    public BackAndForthMove(final T gameObject, final float minX, final float maxX, final float speed) {
         this.gameObject = gameObject;
         this.minPosX = minX;
         this.maxPosY = maxX;
@@ -26,7 +24,7 @@ public class BackAndForthMove<T extends IGameObject> {
         this.currentSpeed = this.speed;
     }
 
-    public void update(float diff) {
+    public void update(final float diff) {
         float posX = gameObject.getData().getSprite().getX();
         posX += diff * currentSpeed;
         gameObject.getData().getSprite().setX(posX);
@@ -45,15 +43,6 @@ public class BackAndForthMove<T extends IGameObject> {
         else if (posX < minPosX) {
             currentSpeed = 1;
             gameObject.getData().setFlipX(false);
-        }
-    }
-
-    private void flipSpeed() {
-        if (currentSpeed < 0) {
-            currentSpeed = speed;
-        }
-        else {
-            currentSpeed = -1 * speed;
         }
     }
 

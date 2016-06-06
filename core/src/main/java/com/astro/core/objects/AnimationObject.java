@@ -3,13 +3,10 @@ package com.astro.core.objects;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * Created by kamil on 01.05.16.
- */
+
 public class AnimationObject extends TextureObject {
 
     @Getter
@@ -18,23 +15,23 @@ public class AnimationObject extends TextureObject {
 
     private float elapsedTime = 0;
 
-    public AnimationObject(int fps, final TextureAtlas atlas) {
+    public AnimationObject(final int fps, final TextureAtlas atlas) {
         animation = new Animation(1 / fps, atlas.getRegions());
     }
 
     @Override
-    protected void render(OrthographicCamera cam, float delta) {
+    protected void render(final OrthographicCamera cam, final float delta) {
         elapsedTime += delta;
         textureRegion = animation.getKeyFrame(elapsedTime, true);
 
         float width = textureRegion.getRegionWidth();
         float height = textureRegion.getRegionHeight();
 
-        float x = data.sprite.getX() + data.sprite.getOriginX();
-        float y = data.sprite.getY() + data.sprite.getOriginY();
+        final float x = data.sprite.getX() + data.sprite.getOriginX();
+        final float y = data.sprite.getY() + data.sprite.getOriginY();
 
         float pX = getPx(x, width);
-        float pY = getPy(y, height);
+        final float pY = getPy(y, height);
 
         if (data.flipX) {
             width *= -1;

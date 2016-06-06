@@ -3,11 +3,10 @@ package com.astro.core.adnotation.processor;
 import com.astro.core.adnotation.Dispose;
 import lombok.extern.slf4j.Slf4j;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Called method dispose on field which have annotation Dispose.
@@ -32,15 +31,15 @@ public class DisposeCaller {
     private void callDispose(final Field field, final Object object) {
         log.info("dispose object: {}", object);
         try {
-            Method m = field.getType().getMethod("dispose");
+            final Method m = field.getType().getMethod("dispose");
             m.setAccessible(true);
 
-            Field innerField = object.getClass().getDeclaredField(field.getName());
+            final Field innerField = object.getClass().getDeclaredField(field.getName());
             innerField.setAccessible(true);
 
             m.invoke(innerField.get(object));
         }
-        catch (final Exception e) {
+        catch (final NoSuchFieldException | NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             log.error("Cannot call dispose", e);
         }
     }

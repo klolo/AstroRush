@@ -61,8 +61,10 @@ public enum PhysicsWorld {
     }
 
     /**
-     * Inicjalization light.
+     * Inicjalization light. Fo test purpose PMD is disables because
+     * methoda catch null pointer when box2d is not initializated in mock.
      */
+    @SuppressWarnings("PMD")
     public void initLight(float r, float g, float b) {
         RayHandler.setGammaCorrection(true);
         RayHandler.useDiffuseLight(true);
@@ -75,7 +77,7 @@ public enum PhysicsWorld {
             rayHandler.setBlur(false);
             rayHandler.setShadows(true);
         }
-        catch (final Exception e) {
+        catch (final NullPointerException e) {
             // in this place logger is not available yet in test
             System.out.println("Cannot init ray handler");
         }
@@ -103,7 +105,7 @@ public enum PhysicsWorld {
      * @param bd definition of body.
      * @return created body
      */
-    public Body createBody(BodyDef bd) {
+    public Body createBody(final BodyDef bd) {
         log.info("Create body");
         return world.createBody(bd);
     }
@@ -115,7 +117,7 @@ public enum PhysicsWorld {
      * @param name for logging target only.
      * @return created body
      */
-    public Body createBody(BodyDef bd, String name) {
+    public Body createBody(final BodyDef bd, final String name) {
         log.info("Create body:" + name);
         return createBody(bd);
     }
@@ -124,10 +126,10 @@ public enum PhysicsWorld {
      * Creating ground body definition.BodyDef
      */
     private Body createGround() {
-        BodyDef bodyDef = new BodyDef();
+        final BodyDef bodyDef = new BodyDef();
         bodyDef.position.set(new Vector2(settings.GROUND_X / settings.PIXEL_PER_METER, settings.GROUND_Y / settings.PIXEL_PER_METER));
-        Body body = world.createBody(bodyDef);
-        PolygonShape shape = new PolygonShape();
+        final Body body = world.createBody(bodyDef);
+        final PolygonShape shape = new PolygonShape();
         shape.setAsBox(settings.GROUND_WIDTH / 2 / settings.PIXEL_PER_METER, settings.GROUND_HEIGHT / 2 / settings.PIXEL_PER_METER);
         body.createFixture(shape, settings.GROUND_DENSITY);
         shape.dispose();

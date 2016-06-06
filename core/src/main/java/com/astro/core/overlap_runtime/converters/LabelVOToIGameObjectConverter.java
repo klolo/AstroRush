@@ -3,7 +3,6 @@ package com.astro.core.overlap_runtime.converters;
 import com.astro.core.objects.LabelObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.uwsoft.editor.renderer.data.LabelVO;
-import com.uwsoft.editor.renderer.data.SimpleImageVO;
 
 /**
  * Rewrite LabelVO data to IGameObject.

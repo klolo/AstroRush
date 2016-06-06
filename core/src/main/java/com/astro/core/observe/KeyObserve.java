@@ -43,7 +43,7 @@ public enum KeyObserve {
      *
      * @param observe - implemetation of the observe interface.
      */
-    public void register(IKeyObserver observe) {
+    public void register(final IKeyObserver observe) {
         if (!registerObserve.contains(observe)) {
             registerObserve.add(observe);
         }
@@ -54,7 +54,7 @@ public enum KeyObserve {
      *
      * @param observe - implemetation of the observe interface.
      */
-    public void unregister(IKeyObserver observe) {
+    public void unregister(final IKeyObserver observe) {
         if (observe != null) {
             registerObserve.remove(observe);
         }
@@ -65,7 +65,7 @@ public enum KeyObserve {
      *
      * @param keyCode - key kode from library.
      */
-    private int mapKey(int keyCode) {
+    private int mapKey(final int keyCode) {
         if (keyMapping == null) {
             return keyCode;
         }

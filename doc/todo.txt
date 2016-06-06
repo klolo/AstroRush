@@ -1,0 +1,10 @@
+[] z poziomu gry bedzie mozliwosc wejscia do garazu gdzie bedzie statek
+[] z garazu bedzie mozna wrocic do gry bez zmiany jej stanu
+[] gracz bedzie mogl strzelac
+[] w grze bedzie ekran z informacja o tym ze gra sie skonczyla i podsumowaniu wynikow
+[] podczas gry w tle bedzie leciala muzyka
+[] strzelanie i zabijanie wrogow bedzie mialo swoje dzwieki
+[] w stage ustawienia bedzie mozna zmienic jezyk aplikacji
+[] zostanie wygenerowana wersja gry na androida
+[] zostanie wygenerowana wersja gry na przegladarke
+[] gameobject bedzie zwracal optionale zamiast dotychczasowy obiektow ktore moga byc null

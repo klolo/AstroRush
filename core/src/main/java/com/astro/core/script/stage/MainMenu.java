@@ -79,7 +79,7 @@ public class MainMenu extends StageLogic {
         }
     }
 
-    private void processArrowDown() {
+    void processArrowDown() {
         if (currentActiveBtn != buttons.length - 1) {
             setColorOnActiveButton(Color.WHITE, PREFIX + buttons[currentActiveBtn]);
             setColorOnActiveButton(Color.YELLOW, PREFIX + buttons[++currentActiveBtn]);
@@ -108,7 +108,7 @@ public class MainMenu extends StageLogic {
      * If label do not have id will be null pointer, you should set it in editor.
      */
     private void setColorOnActiveButton(final Color color, final String objectID) {
-        IGameObject objects = ObjectsRegister.instance.getObjectByID(objectID);
+        final IGameObject objects = ObjectsRegister.instance.getObjectByID(objectID);
         if (objects != null) {
             objects.getData().getSprite().setColor(color);
         }

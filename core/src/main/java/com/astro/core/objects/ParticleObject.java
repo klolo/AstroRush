@@ -6,9 +6,7 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * Created by kamil on 30.04.16.
- */
+
 @Slf4j
 public class ParticleObject extends TextureObject {
 
@@ -17,7 +15,7 @@ public class ParticleObject extends TextureObject {
     protected ParticleEffect effect;
 
     @Override
-    protected void render(OrthographicCamera cam, float delta) {
+    protected void render(final OrthographicCamera cam, final float delta) {
         effect.setPosition(
                 data.sprite.getX() * PIXEL_PER_METER,
                 data.sprite.getY() * PIXEL_PER_METER

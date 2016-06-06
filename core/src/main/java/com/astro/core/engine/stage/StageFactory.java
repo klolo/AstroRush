@@ -59,7 +59,7 @@ public enum StageFactory {
             IStageLogic logic = (IStageLogic) clazz.newInstance();
             result.setStageLogic(logic);
         }
-        catch (final Exception e) {
+        catch (final ClassNotFoundException | InstantiationException | IllegalAccessException e) {
             log.error("Error while creating logic class", e);
         }
 
@@ -94,7 +94,7 @@ public enum StageFactory {
     /**
      * Reading from json all entities on the screen.
      */
-    private ArrayList<IGameObject> getMapElements(StageConfig config) {
+    private ArrayList<IGameObject> getMapElements(final StageConfig config) {
         log.info("Reading json");
         ArrayList<IGameObject> result;
         OverlapSceneReader sceneReader = new OverlapSceneReader(config.sceneFile).loadScene();
@@ -107,7 +107,7 @@ public enum StageFactory {
     /**
      * Register all object with set ID.
      */
-    private void addToObjectRegister(ArrayList<IGameObject> objects) {
+    private void addToObjectRegister(final ArrayList<IGameObject> objects) {
         ObjectsRegister.instance.registerObject(
                 objects.stream()
                         .filter(e -> e.getData().getItemIdentifier() != null && !"".equals(e.getData().getItemIdentifier()))

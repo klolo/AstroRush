@@ -1,7 +1,6 @@
 package com.astro.core.engine.stage;
 
 import com.astro.core.adnotation.GameProperty;
-import com.astro.core.adnotation.Msg;
 import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.LabelObject;
@@ -30,10 +29,6 @@ public class StageHUD implements IGameHud {
     protected int PIXEL_PER_METER = 0;
 
     private LabelObject labelObject;
-
-    @Msg("menu.start")
-    private String msg = "";
-
 
     private float MARGIN = .8f;
 
@@ -74,10 +69,11 @@ public class StageHUD implements IGameHud {
         TextureObject liveBar = createTextureObject("c");
         hudElements.put(HudElements.LIVE_BAR, liveBar);
 
-        if (lifeBarStartWidth == 0.0f)
+        if (lifeBarStartWidth == 0.0f) {
             lifeBarStartWidth = GameResources.instance.getResourceManager().getTextureRegion("c").getRegionWidth();
+        }
 
-        TextureObject helmet = createTextureObject("a");
+        final TextureObject helmet = createTextureObject("a");
         hudElements.put(HudElements.HELMET, helmet);
     }
 
@@ -117,7 +113,7 @@ public class StageHUD implements IGameHud {
     private void setHelmetWidth(final OrthographicCamera cam) {
         TextureRegion region = GameResources.instance.getResourceManager().getTextureRegion("c");
 
-        float liveBarWidth = lifeBarStartWidth * (float) player.getLiveAmount() / (float) player.getStartLiveAmount();
+        final float liveBarWidth = lifeBarStartWidth * (float) player.getLiveAmount() / (float) player.getStartLiveAmount();
         region.setRegionWidth((int) liveBarWidth);
 
         float x = getViewWith(cam) - 2.6f;
@@ -125,7 +121,7 @@ public class StageHUD implements IGameHud {
 
         x += liveBarWidth / PIXEL_PER_METER / 2;
 
-        Sprite s = new Sprite(region);
+        final Sprite s = new Sprite(region);
 
         s.setScale(1.0f, 1.0f);
         s.setOrigin(0, 0);

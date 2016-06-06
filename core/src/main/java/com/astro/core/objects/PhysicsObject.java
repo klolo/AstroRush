@@ -3,18 +3,14 @@ package com.astro.core.objects;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
-
 import lombok.Getter;
 import lombok.Setter;
 
-/**
- * Created by kamil on 26.04.16.
- */
+
 public class PhysicsObject extends TextureObject implements IGameObject {
 
     @Getter
@@ -27,7 +23,7 @@ public class PhysicsObject extends TextureObject implements IGameObject {
         return null;
     }
 
-    public PhysicsObject(TextureRegion texture) {
+    public PhysicsObject(final TextureRegion texture) {
         super(texture);
     }
 
@@ -45,7 +41,7 @@ public class PhysicsObject extends TextureObject implements IGameObject {
      * {@inheritDoc}
      */
     @Override
-    protected void render(OrthographicCamera cam, float delta) {
+    protected void render(final OrthographicCamera cam, final float delta) {
         data.sprite.setPosition(data.body.getPosition().x, data.body.getPosition().y);
         data.sprite.setRotation((float) Math.toDegrees(data.body.getAngle()));
         super.draw();

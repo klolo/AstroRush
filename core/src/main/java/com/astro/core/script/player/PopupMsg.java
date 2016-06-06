@@ -92,7 +92,7 @@ public class PopupMsg {
         messagesQueue.add(msg);
     }
 
-    public void setPos(float x, float y) {
+    public void setPos(final float x, final float y) {
         labelObject.getData().getSprite().setPosition(x, y); //fixme: should be centered above the player
     }
 
@@ -113,7 +113,7 @@ public class PopupMsg {
     /**
      *
      */
-    public void update(float diff) {
+    public void update(final float diff) {
         currentMsgTime += diff;
         opacity = 1 - currentMsgTime / SHOW_TIME;
 

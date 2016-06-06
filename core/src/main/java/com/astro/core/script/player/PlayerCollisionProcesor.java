@@ -4,6 +4,7 @@ import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.script.*;
 import lombok.extern.slf4j.Slf4j;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -33,7 +34,7 @@ public class PlayerCollisionProcesor {
             m.setAccessible(true);
             m.invoke(this, collidatedObject.getData().getLogic());
         }
-        catch (final Exception e) {
+        catch (final NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
             log.warn("Cannot find method");
         }
     }

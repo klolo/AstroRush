@@ -41,7 +41,7 @@ public class LogicTimer<T> {
      * Stoping the timer.
      */
     @Setter
-    private boolean isStopped = false;
+    private boolean isStopped;
 
     /**
      * Flag of the looping.
@@ -57,7 +57,7 @@ public class LogicTimer<T> {
 
     }
 
-    public void update(float delta) {
+    public void update(final float delta) {
         if (isStopped) {
             return;
         }

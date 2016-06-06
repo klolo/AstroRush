@@ -2,12 +2,13 @@ package com.astro.core.adnotation.processor;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
  * Util which helps in reflection process.
  */
-class ReflectionHelper {
+final class ReflectionHelper {
 
     /**
      * Util class with private constructor.
@@ -24,11 +25,13 @@ class ReflectionHelper {
 
         Class<?> i = type;
         while (i != null && i != Object.class) {
-            for (Field field : i.getDeclaredFields()) {
-                if (!field.isSynthetic()) {
-                    result.add(field);
-                }
-            }
+            Arrays.stream(i.getDeclaredFields()).forEach(
+                    field -> {
+                        if (!field.isSynthetic()) {
+                            result.add(field);
+                        }
+                    }
+            );
             i = i.getSuperclass();
         }
 

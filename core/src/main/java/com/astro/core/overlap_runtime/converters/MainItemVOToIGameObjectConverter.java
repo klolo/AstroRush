@@ -1,9 +1,9 @@
 package com.astro.core.overlap_runtime.converters;
 
 import com.astro.core.adnotation.GameProperty;
+import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.uwsoft.editor.renderer.data.MainItemVO;
 import lombok.extern.slf4j.Slf4j;
 
@@ -67,13 +67,13 @@ public class MainItemVOToIGameObjectConverter {
     private void setGameLogic(final String className, final IGameObject result) {
         try {
             log.info("Setting logic: {}", className);
-            Class clazz = Class.forName(className);
-            ILogic logic = (ILogic) clazz.newInstance();
+            final Class clazz = Class.forName(className);
+            final ILogic logic = (ILogic) clazz.newInstance();
             PropertyInjector.instance.inject(logic);
             logic.setGameObject(result);
             result.getData().setLogic(logic);
         }
-        catch (final Exception exception) {
+        catch (InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
             log.error("Error in initializing logic:" + className, exception);
         }
     }

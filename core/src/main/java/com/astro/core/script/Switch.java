@@ -6,15 +6,13 @@ import com.astro.core.objects.interfaces.ILogic;
 import com.astro.core.script.player.IInteractWithPlayer;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
-/**
- * Created by kamil on 16.05.16.
- */
+
 public class Switch implements ILogic, IInteractWithPlayer {
 
     private TextureObject gameObject;
 
     @Override
-    public void update(float diff) {
+    public void update(final float diff) {
 
     }
 

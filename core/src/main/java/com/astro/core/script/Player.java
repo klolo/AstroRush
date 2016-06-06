@@ -66,7 +66,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     }
 
     @Override
-    public void update(float diff) {
+    public void update(final float diff) {
         updatePosition();
         playerPopupMsg.update(diff);
         watchers.values().forEach(w -> w.update(diff));
@@ -96,7 +96,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     }
 
     @Override
-    public void keyPressEvent(int keyCode) {
+    public void keyPressEvent(final int keyCode) {
         int horizontalForce = 0;
 
         if (Input.Keys.LEFT == keyCode) {
@@ -184,7 +184,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      * Called on buttons release.
      */
     @Override
-    public void keyReleaseEvent(int keyCode) {
+    public void keyReleaseEvent(final int keyCode) {
 
     }
 
@@ -237,7 +237,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     /**
      * Decrease player life amount.
      */
-    public void decreaseLive(int amount) {
+    public void decreaseLive(final int amount) {
         log.info("Losing live amount:{}, current amount: {}", amount, liveAmount);
         liveAmount -= amount;
 
@@ -251,7 +251,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     /**
      * Decrease player life amount.
      */
-    public void addLive(int amount) {
+    public void addLive(final int amount) {
         log.info("Add live amount:{}, current amount: {}", amount, liveAmount);
         if (liveAmount + amount < startLiveAmount) {
             liveAmount += amount;

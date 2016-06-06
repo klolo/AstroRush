@@ -4,9 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.Json;
 
-/**
- * Created by kamil on 05.05.16.
- */
 public class StageConfigReader {
 
     /**
@@ -17,7 +14,7 @@ public class StageConfigReader {
     /**
      * Path to configuration file.
      */
-    private final String STAGES_CONFIG_FILE = "stages.json";
+    private final static String STAGES_CONFIG_FILE = "stages.json";
 
     /**
      * Reading configuration file.
@@ -29,7 +26,6 @@ public class StageConfigReader {
 
     /**
      * Return configuraion if exists or reading it.
-     * @return
      */
     public StageConfig[] getConfigs() {
         if (stages == null) {

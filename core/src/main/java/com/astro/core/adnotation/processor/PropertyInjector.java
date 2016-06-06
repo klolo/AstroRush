@@ -24,7 +24,7 @@ public enum PropertyInjector {
      *
      * @param obj - object where values will be injected.
      */
-    public void inject(Object obj) {
+    public void inject(final Object obj) {
         ReflectionHelper.getInheritedPrivateFields(obj.getClass())
                 .forEach(field -> Arrays.stream(field.getAnnotations())
                         .filter(annotation -> isCorrectAnnotation(annotation))
@@ -35,7 +35,7 @@ public enum PropertyInjector {
     /**
      * Check if field is annotated by correct annotation.
      */
-    boolean isCorrectAnnotation(Annotation annotation) {
+    boolean isCorrectAnnotation(final Annotation annotation) {
         if (annotation instanceof GameProperty || annotation instanceof Msg) {
             return true;
         }
@@ -67,7 +67,7 @@ public enum PropertyInjector {
                     field, propValue, obj.getClass(), fieldVal);
             setFieldValue(obj, field, propValue);
         }
-        catch (final Exception e) {
+        catch (final IllegalAccessException e) {
             log.error("Cannot set property", e);
         }
     }
@@ -80,7 +80,7 @@ public enum PropertyInjector {
      * @param propValue - value of the field.
      * @throws IllegalAccessException
      */
-    public void setFieldValue(Object obj, Field field, String propValue) throws IllegalAccessException {
+    public void setFieldValue(final Object obj, final Field field, final String propValue) throws IllegalAccessException {
         if (field.getType().isPrimitive()) {
             if (field.getType() == Integer.TYPE) {
                 field.set(obj, Integer.valueOf(propValue));
