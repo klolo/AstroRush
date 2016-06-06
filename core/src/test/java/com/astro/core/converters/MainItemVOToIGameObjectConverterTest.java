@@ -27,12 +27,10 @@ public class MainItemVOToIGameObjectConverterTest {
         result = new GameObject() {
             @Override
             protected void render(OrthographicCamera cam, float delta) {
-
             }
 
             @Override
             public void show(OrthographicCamera cam, float delta) {
-
             }
         };
 
@@ -50,12 +48,18 @@ public class MainItemVOToIGameObjectConverterTest {
     }
 
     @Test
-    public void testConverter() {
-        MainItemVOToIGameObjectConverter converter = new MainItemVOToIGameObjectConverter();
+    public void shouldCorrectConvert() {
+        //given
+        final MainItemVOToIGameObjectConverter converter = new MainItemVOToIGameObjectConverter();
+
+        //when
         converter.convert(input, result);
 
-        Sprite resultSprite = result.getData().getSprite();
+        //then
+        checkSprite(result.getData().getSprite());
+    }
 
+    private void checkSprite(final Sprite resultSprite) {
         Assert.assertTrue("Layer should be rewrite", result.getData().getLayerID().equals(input.layerName));
         Assert.assertTrue("ID should be rewrite", result.getData().getItemIdentifier().equals(input.itemIdentifier));
         Assert.assertTrue("Custom vars should be rewrite", result.getData().getCustomVariables().get("foo").equals("fuu"));

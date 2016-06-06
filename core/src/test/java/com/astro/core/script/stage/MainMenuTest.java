@@ -9,18 +9,30 @@ import org.junit.Test;
  */
 public class MainMenuTest {
 
-    MainMenu menu = new MainMenu();
+    @Test
+    public void shouldSwitchGame() {
+        //given
+        final MainMenu menu = new MainMenu();
+
+        //when
+        menu.processEnter();
+
+        //then
+        Assert.assertTrue("By default enter should run game", menu.getEvent() == GameEvent.SWITCH_STAGE);
+    }
 
     @Test
-    public void test() {
-        menu.processEnter();
-        Assert.assertTrue("By default enter should run game", menu.getEvent() == GameEvent.SWITCH_STAGE);
+    public void shouldGameExit() {
+        //given
+        final MainMenu menu = new MainMenu();
 
+        //when
         for (int i = 0; i < 30; i++) {
             menu.processArrowDown();
         }
         menu.processEnter();
 
+        //then
         Assert.assertTrue("Last button should on last position - exit", menu.getEvent() == GameEvent.GAME_EXIT);
     }
 

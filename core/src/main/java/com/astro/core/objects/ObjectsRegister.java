@@ -18,12 +18,6 @@ public enum ObjectsRegister {
 
     private HashMap<Body, IGameObject> gameObjectsWithPhysics = new HashMap<>();
 
-    public void clearRegister() {
-        log.info("clear register");
-        gameObjectsWithID = new HashMap<>();
-        gameObjectsWithPhysics = new HashMap<>();
-    }
-
     public void registerObject(List<IGameObject> objectWithID) {
         objectWithID.forEach(o -> gameObjectsWithID.put(o.getData().getItemIdentifier(), o));
     }
@@ -31,7 +25,6 @@ public enum ObjectsRegister {
     public void registerPhysicsObject(List<IGameObject> objectWithID) {
         objectWithID.forEach(o -> gameObjectsWithPhysics.put(o.getData().getBody(), o));
     }
-
 
     public IGameObject getObjectByID(final String id) {
         return gameObjectsWithID.get(id);

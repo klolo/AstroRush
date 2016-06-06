@@ -11,19 +11,23 @@ import org.junit.Test;
  */
 public class PropertyInjectorTest {
 
-    class ForInjectTestClass {
+    private class ForInjectTestClass {
         @GameProperty("window.width")
-        public int width = 0;
+        int width = 0;
 
         @Msg("player.dialog.start")
-        public String startMsg = "";
+        String startMsg = "";
     }
 
     @Test
     public void testInjector() {
+        //given
         ForInjectTestClass testObj = new ForInjectTestClass();
+
+        //when
         PropertyInjector.instance.inject(testObj);
 
+        //then
         Assert.assertTrue("Properties should not be 0", testObj.width != 0);
         Assert.assertTrue("Message should initialized", !"".equals(testObj.startMsg));
     }

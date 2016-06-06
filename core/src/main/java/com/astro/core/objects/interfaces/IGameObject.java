@@ -13,11 +13,11 @@ public interface IGameObject {
      */
     String LOGIC_VARS = "logic";
 
-    void show(OrthographicCamera cam, float delta);
+    void show(final OrthographicCamera cam, final float delta);
 
     boolean hasLogic();
 
-    void update(float delta);
+    void update(final float delta);
 
     ObjectData getData();
 

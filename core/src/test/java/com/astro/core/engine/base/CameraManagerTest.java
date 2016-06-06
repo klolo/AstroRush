@@ -19,9 +19,9 @@ public class CameraManagerTest {
 
     class Observable implements IObservedByCamera {
 
-        float posX = 0.0f;
+        float posX;
 
-        float posY = 0.0f;
+        float posY;
 
         @Override
         public float getPositionX() {
@@ -44,13 +44,17 @@ public class CameraManagerTest {
 
     @Test
     public void testCameraMangerFollowing() {
+        //given
         OrthographicCamera cam = manager.getCamera();
         manager.setObservedObject(observable);
 
         observable.posX = 10f;
         observable.posY = 10f;
+
+        //when
         manager.update();
 
+        //then
         Assert.assertTrue("Camera should fallow object", cam.position.x != 0f && cam.position.y != 0f);
     }
 }

@@ -4,29 +4,30 @@ import com.astro.core.adnotation.processor.DisposeCaller;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by kamil on 12.05.16.
- */
 public class DisposeCallerTest {
 
-    class DisposeTestClass {
-        public boolean disposeCalled;
+    private class DisposeTestClass {
+        boolean disposeCalled;
 
         public void dispose() {
             disposeCalled = true;
         }
     }
 
-    class Wrapper {
+    private class Wrapper {
         @Dispose
-        public DisposeTestClass testClass = new DisposeTestClass();
+        DisposeTestClass testClass = new DisposeTestClass();
     }
 
     @Test
-    public void disposeCallTest() {
-        Wrapper wrapper = new Wrapper();
+    public void shouldBeCalled() {
+        //given
+        final Wrapper wrapper = new Wrapper();
+
+        //when
         new DisposeCaller().callDispose(wrapper);
 
+        //then
         Assert.assertTrue("Dispose should be called", wrapper.testClass.disposeCalled);
     }
 

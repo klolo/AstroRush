@@ -1,15 +1,15 @@
 package com.astro.core.engine.sound;
 
-/**
- * Created by kamil on 09.05.16.
- */
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public enum SoundManager {
 
     instance;
 
 
-    public void playSound(AvailableSound sound) {
-
+    public void playSound(final AvailableSound sound) {
+        log.info("Play sound");
     }
 
 

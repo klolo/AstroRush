@@ -86,8 +86,6 @@ public class TextureObject extends GameObject {
 
         Gdx.gl.glEnable(GL20.GL_BLEND);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
-        http:
-//stackoverflow.com/questions/5547663/java-final-method-what-does-it-promise
 
         render(cam, delta); // implemented in concreted class.
         batch.end();
@@ -104,11 +102,11 @@ public class TextureObject extends GameObject {
      * Render method for texture and physic object.
      */
     private void draw(float x, float y) {
-        x += data.sprite.getOriginX();
-        y += data.sprite.getOriginY();
+        final float px = x + data.sprite.getOriginX();
+        final float py = y + data.sprite.getOriginY();
 
-        final float pX = getPx(x, data.sprite.getWidth());
-        final float pY = getPy(y, data.sprite.getHeight());
+        final float pX = getPx(px, data.sprite.getWidth());
+        final float pY = getPy(py, data.sprite.getHeight());
 
         drawTextureRegion(pX, pY);
     }

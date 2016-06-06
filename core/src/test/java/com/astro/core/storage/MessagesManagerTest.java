@@ -20,9 +20,13 @@ public class MessagesManagerTest {
 
     @Test
     public void testMessages() {
+        //given
         MessagesManager manager = new MessagesManager();
+
+        //when
         manager.addLanguages("pl", plMsg);
 
+        //then
         Assert.assertTrue("Default languages should be PL", "pl".equals(manager.getSelectedLanguages()));
         Assert.assertTrue("Messages should be return", !"".equals(manager.getMsg("testKey")));
     }

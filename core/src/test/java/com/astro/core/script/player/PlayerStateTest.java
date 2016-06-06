@@ -9,9 +9,11 @@ import org.junit.Test;
 public class PlayerStateTest {
 
     @Test
-    public void testPlayerStates() {
+    public void shouldReturnCorrectState() {
+        //given
         PlayerState state = PlayerState.FLY_LEFT;
 
+        //then
         Assert.assertTrue("Player should stand", state.getState(0f, 0f, 0f, 0f, state) == PlayerState.STAND);
         Assert.assertTrue("Player should run", PlayerState.RUN_LEFT.isRun());
         Assert.assertTrue("Player should run", PlayerState.RUN_RIGHT.isRun());

@@ -98,11 +98,12 @@ public class OverlapSceneReader {
      * Registration object in Box2D world and return list for rendering suppose.
      */
     private OverlapSceneReader registerImages(final ArrayList<SimpleImageVO> sImages) {
-        ComponentLoader registerComponent = new ComponentLoader();
+        final ComponentLoader registerComponent = new ComponentLoader();
 
         components.addAll(sImages.stream()
                 .map(registerComponent::register)
                 .collect(Collectors.toList()));
+
         return this;
     }
 
