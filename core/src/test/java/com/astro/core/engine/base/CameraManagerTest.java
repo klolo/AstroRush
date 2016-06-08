@@ -35,15 +35,20 @@ public class CameraManagerTest {
     }
 
     @Test
-    public void testDefaultCameraMangerBehavior() {
+    public void shouldBeCameraOnCenter() {
+        //given
         manager.setObservedObject(null);
+
+        //when
         manager.update();
+
+        //then
         OrthographicCamera cam = manager.getCamera();
         Assert.assertTrue("Camera default should be on center", cam.position.x == 0f && cam.position.y == 0f);
     }
 
     @Test
-    public void testCameraMangerFollowing() {
+    public void shouldCameraFollowPlayer() {
         //given
         OrthographicCamera cam = manager.getCamera();
         manager.setObservedObject(observable);

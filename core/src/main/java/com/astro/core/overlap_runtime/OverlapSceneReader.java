@@ -6,6 +6,7 @@ import com.astro.core.overlap_runtime.loaders.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.Json;
+import com.google.common.base.Preconditions;
 import com.uwsoft.editor.renderer.data.CompositeVO;
 import com.uwsoft.editor.renderer.data.SceneVO;
 import com.uwsoft.editor.renderer.data.SimpleImageVO;
@@ -26,7 +27,7 @@ public class OverlapSceneReader {
     private String scenePath = "";
 
     @Getter
-    List<IGameObject> components = new ArrayList<>();
+    private List<IGameObject> components = new ArrayList<>();
 
     /**
      * Requires pass path to the map file.
@@ -37,7 +38,7 @@ public class OverlapSceneReader {
         this.scenePath = scenePath;
     }
 
-    final static String UNKNOWN_COMPONENT_MSG = "Unknown component error";
+    private final static String UNKNOWN_COMPONENT_MSG = "Unknown component error";
 
     /**
      * Opens and read json map file.
@@ -64,6 +65,7 @@ public class OverlapSceneReader {
         if (rootComposite.layers != null) {
             rootComposite.layers.stream().forEach(layer -> GameObjectUtil.instance.addLayer(layer.layerName));
         }
+
         return registerImages(rootComposite.sImages)
                 .registerLights(rootComposite)
                 .registerEffects(rootComposite)
@@ -98,6 +100,7 @@ public class OverlapSceneReader {
      * Registration object in Box2D world and return list for rendering suppose.
      */
     private OverlapSceneReader registerImages(final ArrayList<SimpleImageVO> sImages) {
+        Preconditions.checkArgument(sImages != null, "Object sImages for register should not be null");
         final ComponentLoader registerComponent = new ComponentLoader();
 
         components.addAll(sImages.stream()
@@ -111,6 +114,7 @@ public class OverlapSceneReader {
      * Register effects.
      */
     private OverlapSceneReader registerEffects(final CompositeVO rootComposite) {
+        Preconditions.checkArgument(rootComposite != null, "Object rootComposite for register should not be null");
         rootComposite.sParticleEffects.stream()
                 .forEach(e -> components.add(register(new ParticleEffectsLoader(), e)));
 
@@ -121,6 +125,7 @@ public class OverlapSceneReader {
      * Register lights.
      */
     private OverlapSceneReader registerLights(final CompositeVO rootComposite) {
+        Preconditions.checkArgument(rootComposite != null, "Object rootComposite for register should not be null");
         rootComposite.sLights.stream()
                 .forEach(e -> register(new LightsLoader(), e));
         return this;
@@ -129,24 +134,27 @@ public class OverlapSceneReader {
     /**
      * Register lights.
      */
-    private OverlapSceneReader registerLabels(final CompositeVO rootComposite) {
-        rootComposite.sLabels.forEach(e -> components.add(register(new LabelsLoader(), e)));
+    private OverlapSceneReader registerLabels(final CompositeVO labels) {
+        Preconditions.checkArgument(labels != null, "Object labels for register should not be null");
+        labels.sLabels.forEach(e -> components.add(register(new LabelsLoader(), e)));
         return this;
     }
 
     /**
      * Register animations.
      */
-    private OverlapSceneReader registerAnimations(final CompositeVO rootComposite) {
-        rootComposite.sSpriteAnimations.forEach(e -> components.add(register(new SpriteAnimationsLoader(), e)));
+    private OverlapSceneReader registerAnimations(final CompositeVO animations) {
+        Preconditions.checkArgument(animations != null, "Object animations for register should not be null");
+        animations.sSpriteAnimations.forEach(e -> components.add(register(new SpriteAnimationsLoader(), e)));
         return this;
     }
 
     /**
      * Register Image9patchs.
      */
-    private OverlapSceneReader registerImage9patchs(final CompositeVO rootComposite) {
-        if (rootComposite.sImage9patchs.size() > 0) {
+    private OverlapSceneReader registerImage9patchs(final CompositeVO image9patchs) {
+        Preconditions.checkArgument(image9patchs != null, "Object image9patchs for register should not be null");
+        if (image9patchs.sImage9patchs.size() > 0) {
             log.error(UNKNOWN_COMPONENT_MSG);
         }
         return this;
@@ -155,8 +163,9 @@ public class OverlapSceneReader {
     /**
      * Register TextBoxVO.
      */
-    private OverlapSceneReader registerTextBoxVO(final CompositeVO rootComposite) {
-        if (rootComposite.sTextBox.size() > 0) {
+    private OverlapSceneReader registerTextBoxVO(final CompositeVO textBoxVO) {
+        Preconditions.checkArgument(textBoxVO != null, "Object textBoxVO for register should not be null");
+        if (textBoxVO.sTextBox.size() > 0) {
             log.error(UNKNOWN_COMPONENT_MSG);
         }
         return this;
@@ -165,8 +174,9 @@ public class OverlapSceneReader {
     /**
      * Register SelectBoxVO.
      */
-    private OverlapSceneReader registerSelectBoxVO(final CompositeVO rootComposite) {
-        if (rootComposite.sSelectBoxes.size() > 0) {
+    private OverlapSceneReader registerSelectBoxVO(final CompositeVO selectBoxVO) {
+        Preconditions.checkArgument(selectBoxVO != null, "Object selectBoxVO for register should not be null");
+        if (selectBoxVO.sSelectBoxes.size() > 0) {
             log.error(UNKNOWN_COMPONENT_MSG);
         }
         return this;
@@ -175,8 +185,9 @@ public class OverlapSceneReader {
     /**
      * Register SpineVO.
      */
-    private OverlapSceneReader registerSpineVO(final CompositeVO rootComposite) {
-        if (rootComposite.sSpineAnimations.size() > 0) {
+    private OverlapSceneReader registerSpineVO(final CompositeVO spineVO) {
+        Preconditions.checkArgument(spineVO != null, "Object spineVO for register should not be null");
+        if (spineVO.sSpineAnimations.size() > 0) {
             log.error(UNKNOWN_COMPONENT_MSG);
         }
         return this;
@@ -185,8 +196,9 @@ public class OverlapSceneReader {
     /**
      * Register SpriterVO.
      */
-    private OverlapSceneReader registerSpriterVO(final CompositeVO rootComposite) {
-        if (rootComposite.sSpriterAnimations.size() > 0) {
+    private OverlapSceneReader registerSpriterVO(final CompositeVO spriterVO) {
+        Preconditions.checkArgument(spriterVO != null, "Object spriterVO for register should not be null");
+        if (spriterVO.sSpriterAnimations.size() > 0) {
             log.error(UNKNOWN_COMPONENT_MSG);
         }
         return this;
@@ -195,8 +207,9 @@ public class OverlapSceneReader {
     /**
      * Loading composistes.
      */
-    private OverlapSceneReader loadOtherComposites(final CompositeVO rootComposite) {
-        rootComposite.sComposites.forEach(e -> this.loadComposite(e.composite, e.originX, e.originY, e.x, e.y, e.rotation));
+    private OverlapSceneReader loadOtherComposites(final CompositeVO otherComposites) {
+        Preconditions.checkArgument(otherComposites != null, "Object rootComposite for register should not be null");
+        otherComposites.sComposites.forEach(e -> this.loadComposite(e.composite, e.originX, e.originY, e.x, e.y, e.rotation));
         return this;
     }
 

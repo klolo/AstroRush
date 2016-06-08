@@ -3,6 +3,7 @@ package com.astro.core.adnotation.processor;
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.Msg;
 import com.astro.core.storage.PropertiesReader;
+import com.google.common.base.Preconditions;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.annotation.Annotation;
@@ -27,7 +28,7 @@ public enum PropertyInjector {
     public void inject(final Object obj) {
         ReflectionHelper.getInheritedPrivateFields(obj.getClass())
                 .forEach(field -> Arrays.stream(field.getAnnotations())
-                        .filter(annotation -> isCorrectAnnotation(annotation))
+                        .filter(this::isCorrectAnnotation)
                         .forEach(annotation -> processField(annotation, field, obj))
                 );
     }
@@ -35,17 +36,18 @@ public enum PropertyInjector {
     /**
      * Check if field is annotated by correct annotation.
      */
-    boolean isCorrectAnnotation(final Annotation annotation) {
-        if (annotation instanceof GameProperty || annotation instanceof Msg) {
-            return true;
-        }
-        return false;
+    private boolean isCorrectAnnotation(final Annotation annotation) {
+        return annotation instanceof GameProperty || annotation instanceof Msg;
     }
 
     /**
      * Setting value if field which have GameProperty annotation.
      */
     private void processField(final Annotation annotation, final Field field, final Object obj) {
+        Preconditions.checkArgument(annotation != null, "Annotation is null");
+        Preconditions.checkArgument(obj != null, "Object is null");
+        Preconditions.checkArgument(field != null, "Field is null");
+
         try {
             field.setAccessible(true);
             String propValue;
@@ -80,7 +82,7 @@ public enum PropertyInjector {
      * @param propValue - value of the field.
      * @throws IllegalAccessException
      */
-    public void setFieldValue(final Object obj, final Field field, final String propValue) throws IllegalAccessException {
+    private void setFieldValue(final Object obj, final Field field, final String propValue) throws IllegalAccessException {
         if (field.getType().isPrimitive()) {
             if (field.getType() == Integer.TYPE) {
                 field.set(obj, Integer.valueOf(propValue));

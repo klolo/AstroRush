@@ -32,10 +32,10 @@ public class PopupMsg {
     /**
      * Queue of the messages.
      */
-    private LinkedList<String> messagesQueue = new LinkedList<>();
+    LinkedList<String> messagesQueue = new LinkedList<>();
 
 
-    private float currentMsgTime = 0.0f;
+    float currentMsgTime = 0.0f;
 
     private float opacity = 1.0f;
 
@@ -47,7 +47,7 @@ public class PopupMsg {
     @GameProperty("renderer.pixel.per.meter")
     protected int PIXEL_PER_METER = 0;
 
-    private LabelObject labelObject;
+    LabelObject labelObject;
 
     PopupMsg() {
         PropertyInjector.instance.inject(this);

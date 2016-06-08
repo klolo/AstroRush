@@ -19,7 +19,7 @@ public class MessagesManagerTest {
     }
 
     @Test
-    public void testMessages() {
+    public void shouldHaveCorrectProperties() {
         //given
         MessagesManager manager = new MessagesManager();
 

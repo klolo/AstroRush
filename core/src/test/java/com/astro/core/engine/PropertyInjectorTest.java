@@ -20,7 +20,7 @@ public class PropertyInjectorTest {
     }
 
     @Test
-    public void testInjector() {
+    public void shouldInjectProperties() {
         //given
         ForInjectTestClass testObj = new ForInjectTestClass();
 

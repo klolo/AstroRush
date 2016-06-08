@@ -21,14 +21,13 @@ public class PlayerSettings {
 
     public float interactWithObjectTime = 3.0f;
 
-
     /**
      * Amount of the pixel per meter.
      */
     @GameProperty("renderer.pixel.per.meter")
     public int PIXEL_PER_METER = 0;
 
-    public PlayerSettings() {
+    PlayerSettings() {
         PropertyInjector.instance.inject(this);
     }
 
