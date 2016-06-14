@@ -21,7 +21,7 @@ public class PlayerTests {
 
     @Test
     public void initTest() {
-        Assert.assertNotNull("Collision processor should be created", player.getCollisionProcesor());
+        Assert.assertNotNull("Collision processor should be created", player.getCollisionProcessor());
         Assert.assertNotNull("Collision processor should be created", player.getWatchers());
         Assert.assertTrue("On start player should not have points", player.getPoints() == 0);
         player.addPoints(100);

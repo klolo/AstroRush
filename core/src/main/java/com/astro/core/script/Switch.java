@@ -37,7 +37,6 @@ public class Switch implements ILogic, IInteractWithPlayer {
 
     }
 
-
     public void collisionEvent(IGameObject collidatedObject) {
 
     }

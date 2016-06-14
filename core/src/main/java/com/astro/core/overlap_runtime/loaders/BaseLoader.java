@@ -30,7 +30,7 @@ class BaseLoader {
     }
 
     Body createBody(final MainItemVO data, float w, float h, final String name) {
-        LinkedList<PolygonShape> polygons = new LinkedList<>();
+        final LinkedList<PolygonShape> polygons = new LinkedList<>();
 
         Arrays.stream(data.shape.polygons)
                 .forEach(vec -> polygons.add(getPolygonShape(vec, data, w, h)));
@@ -45,7 +45,7 @@ class BaseLoader {
      *
      */
     private BodyDef getBodyDef(final MainItemVO data) {
-        BodyDef bodyDef = new BodyDef();
+        final BodyDef bodyDef = new BodyDef();
         bodyDef.position.set(data.x, data.y);
         bodyDef.angle = (float) Math.toRadians(data.rotation);
 
@@ -68,7 +68,7 @@ class BaseLoader {
      *
      */
     private PolygonShape getPolygonShape(final Vector2[] vertices, final MainItemVO data, float w, float h) {
-        PolygonShape shape = new PolygonShape();
+        final PolygonShape shape = new PolygonShape();
         for (Vector2 it : vertices) {
             it.x *= data.scaleX;
             it.y *= data.scaleY;
@@ -88,11 +88,11 @@ class BaseLoader {
      * Create a fixture definition to apply our shape to body.
      */
     private FixtureDef getFixtureDefinition(final PolygonShape shape, final MainItemVO data) {
-        FixtureDef fixtureDef = new FixtureDef();
+        final FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = shape;
         fixtureDef.density = data.physics.density;
         fixtureDef.friction = data.physics.friction;
-        fixtureDef.restitution = 0.3f;// FIXME: imageVO.physics.restitution; // Make it bounce a little bit
+        fixtureDef.restitution = 0.3f;// FIXME: imageVO.physics.restitution
 
         return fixtureDef;
     }

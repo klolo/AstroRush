@@ -1,6 +1,10 @@
 package com.astro.core.objects.interfaces;
 
+import com.astro.core.objects.GameObject;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Represents a logic of the game object.
@@ -20,4 +24,9 @@ public interface ILogic {
 
     void onResume();
 
+    List<GameObject> children = new LinkedList<>();
+
+    default List<GameObject> getChildren() {
+        return children;
+    }
 }

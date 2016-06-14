@@ -57,7 +57,7 @@ public class ObjectData {
     /**
      * Based libgdx information about object.
      */
-    protected Sprite sprite;
+    protected Sprite sprite = new Sprite();
 
     /**
      * Name of the layer where is the object.
@@ -68,6 +68,11 @@ public class ObjectData {
      * Should be object removed?
      */
     protected boolean isDestroyed;
+
+    /**
+     * have this object create new object?
+     */
+    protected boolean hasChild;
 
     /**
      * Custom settings from editor.

@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
  * Process Player collision with other object.
  */
 @Slf4j
-public class PlayerCollisionProcesor {
+public class CollisionProcessor {
 
     /**
      * Instance of the player.
@@ -21,7 +21,7 @@ public class PlayerCollisionProcesor {
     /**
      * Requeired player object.
      */
-    public PlayerCollisionProcesor(Player player) {
+    public CollisionProcessor(Player player) {
         this.player = player;
     }
 

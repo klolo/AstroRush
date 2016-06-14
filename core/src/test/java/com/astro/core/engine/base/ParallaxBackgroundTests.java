@@ -9,12 +9,12 @@ import org.junit.runner.RunWith;
  * Test of the movable paralax background.
  */
 @RunWith(GdxTestRunner.class)
-public class ParalaxBackgroundTests {
+public class ParallaxBackgroundTests {
 
     @Test
     public void injectPropertiesTest() {
         //given
-        final ParalaxBackground background = new ParalaxBackground();
+        final ParallaxBackground background = new ParallaxBackground();
 
         //then
         Assert.assertTrue("Texture file name should be loaded", !"".equals(background.getTEXTURE_FILE()));

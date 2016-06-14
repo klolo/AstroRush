@@ -4,8 +4,9 @@ import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.processor.DisposeCaller;
 import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.base.CameraManager;
-import com.astro.core.engine.base.ParalaxBackground;
+import com.astro.core.engine.base.ParallaxBackground;
 import com.astro.core.engine.physics.PhysicsWorld;
+import com.astro.core.objects.ObjectData;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.observe.KeyObserve;
@@ -36,7 +37,7 @@ public class GameStage implements Screen {
     @Setter
     private IGameHud hud;
 
-    private ParalaxBackground paralaxBackground;
+    private ParallaxBackground parallaxBackground;
 
     @Setter
     @Getter
@@ -71,8 +72,8 @@ public class GameStage implements Screen {
     }
 
     void initBackground() {
-        paralaxBackground = new ParalaxBackground();
-        paralaxBackground.init();
+        parallaxBackground = new ParallaxBackground();
+        parallaxBackground.init();
     }
 
     /**
@@ -83,18 +84,13 @@ public class GameStage implements Screen {
         CameraManager.instance.getCamera().position.set(0f, 0f, 0f);
     }
 
-    @Override
-    public void show() {
-
-    }
-
     /**
      * Update and render game. Order is important.
      */
     @Override
     public void render(float delta) {
-        if (paralaxBackground != null) {
-            paralaxBackground.show(CameraManager.instance.getCamera(), delta);
+        if (parallaxBackground != null) {
+            parallaxBackground.show(CameraManager.instance.getCamera(), delta);
         }
 
         mapElements.forEach(e -> e.show(CameraManager.instance.getCamera(), delta));
@@ -124,18 +120,24 @@ public class GameStage implements Screen {
         ArrayList<IGameObject> currentMapElementsWithLogic = new ArrayList<>(mapElementsWithLogic);
         currentMapElementsWithLogic.forEach(e -> processGameObjects(e, diff));
 
-        if (paralaxBackground != null) {
-            paralaxBackground.update(CameraManager.instance.getCamera(), diff);
+        if (parallaxBackground != null) {
+            parallaxBackground.update(CameraManager.instance.getCamera(), diff);
         }
     }
 
     private void processGameObjects(IGameObject gameObject, float diff) {
         gameObject.update(diff);
+        final ObjectData gameData = gameObject.getData();
 
-        if (gameObject.getData().isDestroyed()) {
+        if (gameData.isDestroyed()) {
             mapElementsWithLogic.remove(gameObject);
             mapElements.remove(gameObject);
-            PhysicsWorld.instance.getWorld().destroyBody(gameObject.getData().getBody());
+            PhysicsWorld.instance.getWorld().destroyBody(gameData.getBody());
+        }
+
+        if (gameData.isHasChild()) {
+            gameData.getLogic().getChildren().forEach(object -> mapElements.add(object));
+            gameData.setHasChild(false);
         }
     }
 
@@ -144,12 +146,11 @@ public class GameStage implements Screen {
         PhysicsWorld.instance.getRayHandler().setCombinedMatrix(CameraManager.instance.getCamera());
     }
 
-
     @Override
     public void resize(int width, int height) {
         CameraManager.instance.getCamera().setToOrtho(false, width / SCALE, height / SCALE);
-        if (paralaxBackground != null) {
-            paralaxBackground.resize(width, height);
+        if (parallaxBackground != null) {
+            parallaxBackground.resize(width, height);
         }
     }
 
@@ -196,7 +197,6 @@ public class GameStage implements Screen {
         }
     }
 
-
     @Override
     public void pause() {
 
@@ -209,6 +209,11 @@ public class GameStage implements Screen {
 
     @Override
     public void hide() {
+
+    }
+
+    @Override
+    public void show() {
 
     }
 

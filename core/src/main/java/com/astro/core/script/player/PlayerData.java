@@ -1,5 +1,8 @@
 package com.astro.core.script.player;
 
+import com.astro.core.objects.interfaces.IGameObject;
+import com.astro.core.script.player.fire.IFireBehavior;
+import com.astro.core.script.player.fire.SimpleShoot;
 import com.astro.core.script.util.LogicTimer;
 import com.badlogic.gdx.physics.box2d.Body;
 import lombok.Getter;
@@ -28,7 +31,7 @@ public class PlayerData {
     protected PlayerState state = PlayerState.STAND;
 
     @Getter
-    protected PlayerCollisionProcesor collisionProcesor;
+    protected CollisionProcessor collisionProcessor;
 
     @Getter
     protected HashMap<WatchersID, LogicTimer> watchers;
@@ -45,6 +48,10 @@ public class PlayerData {
 
     @Getter
     protected boolean isDead;
+
+    protected IFireBehavior fireBehavior = new SimpleShoot();
+
+    protected IGameObject gameObject;
 
     /**
      * Physics body.

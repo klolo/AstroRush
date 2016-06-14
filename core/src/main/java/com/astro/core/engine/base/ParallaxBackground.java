@@ -17,7 +17,7 @@ import java.util.LinkedList;
  * Movable background.
  */
 @Slf4j
-public class ParalaxBackground {
+public class ParallaxBackground {
 
     /**
      * List of the background textures.
@@ -59,7 +59,7 @@ public class ParalaxBackground {
 
     private float lastHeight;
 
-    public ParalaxBackground() {
+    public ParallaxBackground() {
         PropertyInjector.instance.inject(this);
     }
 

@@ -19,21 +19,19 @@ public class PhysicsObject extends TextureObject implements IGameObject {
 
     protected Fixture fixture;
 
-    protected FixtureDef getFixtureDefinition() {
-        return null;
-    }
+    @Setter
+    protected BodyDef bodyDef;
+
+    @Setter
+    protected FixtureDef fixtureDef;
 
     public PhysicsObject(final TextureRegion texture) {
         super(texture);
     }
 
     public void init() {
-        data.body = PhysicsWorld.instance.createBody(getBodyDefinition());
-
-        // Create our fixture and attach it to the body
-        FixtureDef fixtureDef = getFixtureDefinition();
+        data.body = PhysicsWorld.instance.createBody(bodyDef);
         fixture = data.body.createFixture(fixtureDef);
-
         fixtureDef.shape.dispose();
     }
 
@@ -45,10 +43,6 @@ public class PhysicsObject extends TextureObject implements IGameObject {
         data.sprite.setPosition(data.body.getPosition().x, data.body.getPosition().y);
         data.sprite.setRotation((float) Math.toDegrees(data.body.getAngle()));
         super.draw();
-    }
-
-    protected BodyDef getBodyDefinition() {
-        return null;
     }
 
 

@@ -33,7 +33,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
         log.info("Creating player");
         KeyObserve.instance.register(this);
         CameraManager.instance.setObservedObject(this);
-        collisionProcesor = new PlayerCollisionProcesor(this);
+        collisionProcessor = new CollisionProcessor(this);
         watchers = new WatchersCreator(this).init().getWatchers();
     }
 
@@ -43,7 +43,9 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     public void setGameObject(final IGameObject gameObject) {
         log.info("Set game object player");
         playerPopupMsg.initLabel();
-        gameObject.getData().setCollisionConsumer(collisionProcesor::processCollision);
+        this.gameObject = gameObject;
+
+        gameObject.getData().setCollisionConsumer(collisionProcessor::processCollision);
         settings.playerHeight =
                 ((AnimationObject) gameObject).getAnimation().getKeyFrames()[0].getRegionHeight() / settings.PIXEL_PER_METER;
 
@@ -113,9 +115,19 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
         else if (Input.Keys.SHIFT_LEFT == keyCode) {
             processInterAct();
         }
+        else if (Input.Keys.SPACE == keyCode) {
+            shoot();
+        }
 
         watchers.get(WatchersID.INACTIVE_PLAYER).reset();
         body.setLinearVelocity(horizontalForce * 5, body.getLinearVelocity().y);//fixme: magic number
+    }
+
+    private void shoot() {
+        log.info("shoot");
+
+        children.add(fireBehavior.onFire());
+        gameObject.getData().setHasChild(true);
     }
 
     /**
