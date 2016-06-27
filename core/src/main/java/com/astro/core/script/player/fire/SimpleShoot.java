@@ -73,15 +73,6 @@ public class SimpleShoot implements IFireBehavior {
     }
 
     public GameObject onFire() {
-        if (playerState == PlayerState.FLY_LEFT || playerState == PlayerState.RUN_LEFT) {
-            return createBullet(-1 * BULLET_SPEED);
-        }
-        else {
-            return createBullet(BULLET_SPEED);
-        }
-    }
-
-    private GameObject createBullet(final int speed) {
         final TextureRegion region = GameResources.instance.getResourceManager().getTextureRegion("keyRed");
         final PhysicsObject physicsObject = new PhysicsObject(region);
 
@@ -96,13 +87,20 @@ public class SimpleShoot implements IFireBehavior {
         physicsObject.init();
 
         final SimpleShootLogic simpleShootLogic = new SimpleShootLogic(physicsObject);
-        simpleShootLogic.speed = speed;
+
+        if (playerState == PlayerState.FLY_LEFT || playerState == PlayerState.RUN_LEFT) {
+            simpleShootLogic.speed = -1 * BULLET_SPEED;
+        }
+        else {
+            simpleShootLogic.speed = BULLET_SPEED;
+        }
 
         physicsObject.getData().setLogic(simpleShootLogic);
         physicsObject.setRenderingInScript(true);
 
         return physicsObject;
     }
+
 
     public Sprite getSprite(final TextureRegion region) {
         final Sprite sprite = new Sprite(region);
@@ -128,8 +126,15 @@ public class SimpleShoot implements IFireBehavior {
     public BodyDef getBodyDef(final float positionX, final float positionY) {
         final BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.KinematicBody;
-        bodyDef.position.x = positionX;
-        bodyDef.position.y = positionY;
+
+        if (playerState == PlayerState.FLY_LEFT || playerState == PlayerState.RUN_LEFT) {
+            bodyDef.position.x = positionX;
+        }
+        else {
+            bodyDef.position.x = positionX + 2;//fixme
+        }
+
+        bodyDef.position.y = positionY + 1;//fixme
         return bodyDef;
     }
 
