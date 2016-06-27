@@ -72,6 +72,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
         updatePosition();
         playerPopupMsg.update(diff);
         watchers.values().forEach(w -> w.update(diff));
+        fireBehavior.update(posX, posY);
     }
 
     /**
@@ -101,22 +102,29 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     public void keyPressEvent(final int keyCode) {
         int horizontalForce = 0;
 
-        if (Input.Keys.LEFT == keyCode) {
-            horizontalForce -= 1;
-            leftKeyEvent();
-        }
-        else if (Input.Keys.RIGHT == keyCode) {
-            horizontalForce += 1;
-            rightKeyEvent();
-        }
-        else if (Input.Keys.UP == keyCode) {
-            jump();
-        }
-        else if (Input.Keys.SHIFT_LEFT == keyCode) {
-            processInterAct();
-        }
-        else if (Input.Keys.SPACE == keyCode) {
-            shoot();
+        switch (keyCode) {
+            case Input.Keys.LEFT: {
+                horizontalForce -= 1;
+                leftKeyEvent();
+                break;
+            }
+            case Input.Keys.RIGHT: {
+                horizontalForce += 1;
+                rightKeyEvent();
+                break;
+            }
+            case Input.Keys.UP: {
+                jump();
+                break;
+            }
+            case Input.Keys.SHIFT_LEFT: {
+                processInterAct();
+                break;
+            }
+            case Input.Keys.SPACE: {
+                shoot();
+                break;
+            }
         }
 
         watchers.get(WatchersID.INACTIVE_PLAYER).reset();
@@ -126,7 +134,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
     private void shoot() {
         log.info("shoot");
 
-        children.add(fireBehavior.onFire(posX, posY));
+        children.add(fireBehavior.onFire());
         gameObject.getData().setHasChild(true);
     }
 
@@ -136,6 +144,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
 
         state = state.getPlayerStateAfterLeftKey();
         watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
+        fireBehavior.setPlayerState(state);
     }
 
     private void rightKeyEvent() {
@@ -144,6 +153,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
 
         state = state.getPlayerStateAfterRightKey();
         watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
+        fireBehavior.setPlayerState(state);
     }
 
     /**
@@ -165,14 +175,6 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
         }
 
         standOnThePlatform = false;
-    }
-
-    /**
-     * Called on buttons release.
-     */
-    @Override
-    public void keyReleaseEvent(final int keyCode) {
-
     }
 
     @Override
@@ -233,7 +235,6 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
             isDead = true;
         }
     }
-
 
     /**
      * Decrease player life amount.

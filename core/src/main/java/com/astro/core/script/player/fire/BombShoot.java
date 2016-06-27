@@ -1,30 +1,23 @@
 package com.astro.core.script.player.fire;
 
 import com.astro.core.objects.GameObject;
-import com.astro.core.objects.interfaces.IGameObject;
-import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.astro.core.script.player.PlayerState;
 
 
 public class BombShoot implements IFireBehavior {
 
     @Override
-    public GameObject onFire(final float positionX, final float positionY) {
+    public GameObject onFire() {
         return null;
     }
 
     @Override
-    public void update(final float diff) {
+    public void update(final float x, final float y) {
 
     }
 
     @Override
-    public void additionalRender(final OrthographicCamera cam, final float delta) {
+    public void setPlayerState(final PlayerState playerState) {
 
     }
-
-    @Override
-    public void setGameObject(final IGameObject gameObject) {
-
-    }
-
 }

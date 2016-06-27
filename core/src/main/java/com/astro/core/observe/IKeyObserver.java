@@ -7,5 +7,4 @@ public interface IKeyObserver {
 
     void keyPressEvent(int keyCode);
 
-    void keyReleaseEvent(int keyCode);
 }

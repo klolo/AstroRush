@@ -163,7 +163,7 @@ public class GameStage implements Screen {
     }
 
     @Override
-    public void resize(int width, int height) {
+    public void resize(final int width, final int height) {
         CameraManager.instance.getCamera().setToOrtho(false, width / SCALE, height / SCALE);
         if (parallaxBackground != null) {
             parallaxBackground.resize(width, height);
@@ -206,7 +206,7 @@ public class GameStage implements Screen {
     /**
      * Remove Box2D objects.
      */
-    private void destroyPhysicsBody(IGameObject gameObject) {
+    private void destroyPhysicsBody(final IGameObject gameObject) {
         if (gameObject.isPhysicObject()) {
             log.info("Destroy body: {}", gameObject.getData().getName());
             PhysicsWorld.instance.getWorld().destroyBody(gameObject.getData().getBody());

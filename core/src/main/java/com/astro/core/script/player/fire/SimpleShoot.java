@@ -3,48 +3,139 @@ package com.astro.core.script.player.fire;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.interfaces.IGameObject;
+import com.astro.core.objects.interfaces.ILogic;
+import com.astro.core.script.player.PlayerState;
+import com.astro.core.script.util.LogicTimer;
 import com.astro.core.storage.GameResources;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class SimpleShoot implements IFireBehavior {
 
-    private PhysicsObject physicsObject;
+    @Setter
+    private PlayerState playerState;
 
-    public GameObject onFire(final float positionX, final float positionY) {
-        physicsObject = new PhysicsObject(GameResources.instance.getResourceManager().getTextureRegion("keyRed"));
+    private static final int DESTROY_TIME = 3;
 
-        final BodyDef bodyDef = new BodyDef();
-        bodyDef.type = BodyDef.BodyType.DynamicBody;
-        bodyDef.position.x = positionX;
-        bodyDef.position.y = positionY;
+    private static final int BULLET_SPEED = 10;
 
-        final PolygonShape polygonShape = new PolygonShape();
-        polygonShape.setAsBox(.1f, .1f);
+    private float playerPositionX = 0.0f;
 
-        final FixtureDef myFixtureDef = new FixtureDef();
-        myFixtureDef.shape = polygonShape;
-        myFixtureDef.density = 1;
+    private float playerPositionY = 0.0f;
+
+    /**
+     * Logic of the SimpleShoot object.
+     */
+    class SimpleShootLogic implements ILogic {
+
+        /**
+         * Bullet physics.
+         */
+        private final PhysicsObject bullet;
+
+        /**
+         * Watcher for destroy object after some time.
+         */
+        private final LogicTimer watcher;
+
+        private int speed;
+
+        SimpleShootLogic(final PhysicsObject bullet) {
+            this.bullet = bullet;
+            watcher = new LogicTimer<>(bullet.getData()::setDestroyed, true, DESTROY_TIME);
+        }
+
+        @Override
+        public void update(final float diff) {
+            bullet.updatePosition();
+            watcher.update(diff);
+            bullet.getData().getBody().setLinearVelocity(speed, 0);
+        }
+
+        @Override
+        public void setGameObject(final IGameObject gameObject) {
+
+        }
+
+        @Override
+        public void additionalRender(final OrthographicCamera cam, final float delta) {
+            bullet.setRenderingInScript(false);
+            bullet.show(cam, delta);
+            bullet.setRenderingInScript(true);
+        }
+    }
+
+    public GameObject onFire() {
+        if (playerState == PlayerState.FLY_LEFT || playerState == PlayerState.RUN_LEFT) {
+            return createBullet(-1 * BULLET_SPEED);
+        }
+        else {
+            return createBullet(BULLET_SPEED);
+        }
+    }
+
+    private GameObject createBullet(final int speed) {
+        final TextureRegion region = GameResources.instance.getResourceManager().getTextureRegion("keyRed");
+        final PhysicsObject physicsObject = new PhysicsObject(region);
+
+        final BodyDef bodyDef = getBodyDef(playerPositionX, playerPositionY);
+        final PolygonShape polygonShape = getPolygonShape();
+        final FixtureDef myFixtureDef = getFixtureDef(polygonShape);
+        final Sprite sprite = getSprite(region);
 
         physicsObject.setBodyDef(bodyDef);
         physicsObject.setFixtureDef(myFixtureDef);
-
+        physicsObject.getData().setSprite(sprite);
         physicsObject.init();
-        physicsObject.getData().setLogic(this);
+
+        final SimpleShootLogic simpleShootLogic = new SimpleShootLogic(physicsObject);
+        simpleShootLogic.speed = speed;
+
+        physicsObject.getData().setLogic(simpleShootLogic);
+        physicsObject.setRenderingInScript(true);
+
         return physicsObject;
     }
 
-    @Override
-    public void update(final float diff) {
-        physicsObject.updatePosition();
+    public Sprite getSprite(final TextureRegion region) {
+        final Sprite sprite = new Sprite(region);
+        sprite.setScale(1.0f, 1.0f);
+        sprite.setOrigin(0, 0);
+        sprite.setBounds(0, 0, region.getRegionWidth(), region.getRegionHeight());
+        return sprite;
     }
 
-    @Override
-    public void setGameObject(final IGameObject gameObject) {
+    public FixtureDef getFixtureDef(final PolygonShape polygonShape) {
+        final FixtureDef myFixtureDef = new FixtureDef();
+        myFixtureDef.shape = polygonShape;
+        myFixtureDef.density = 1;
+        return myFixtureDef;
+    }
 
+    public PolygonShape getPolygonShape() {
+        final PolygonShape polygonShape = new PolygonShape();
+        polygonShape.setAsBox(.1f, .1f);
+        return polygonShape;
+    }
+
+    public BodyDef getBodyDef(final float positionX, final float positionY) {
+        final BodyDef bodyDef = new BodyDef();
+        bodyDef.type = BodyDef.BodyType.KinematicBody;
+        bodyDef.position.x = positionX;
+        bodyDef.position.y = positionY;
+        return bodyDef;
+    }
+
+    public void update(final float positionX, final float positionY) {
+        this.playerPositionX = positionX;
+        this.playerPositionY = positionY;
     }
 
 }

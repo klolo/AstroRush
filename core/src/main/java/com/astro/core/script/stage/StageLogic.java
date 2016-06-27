@@ -30,10 +30,6 @@ public abstract class StageLogic implements IStageLogic, IKeyObserver {
         return stageToLoad;
     }
 
-    @Override
-    public void keyReleaseEvent(final int keyCode) {
-
-    }
 
     @Override
     public void setGameStage(final GameStage stage) {

@@ -50,9 +50,9 @@ public class LogicTimer<T> {
     private boolean looped = true;
 
 
-    public LogicTimer(final T timeoutData, final Consumer<T> timeoutConsumer, float time) {
+    public LogicTimer(final Consumer<T> timeoutConsumer, final T timeoutConsumerParameter, float time) {
         maxTime = time;
-        this.timeoutData = timeoutData;
+        this.timeoutData = timeoutConsumerParameter;
         this.timeoutConsumer = timeoutConsumer;
 
     }

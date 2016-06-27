@@ -23,7 +23,7 @@ public class LogicTimerTest {
     @Test
     public void shouldDone() {
         //given
-        LogicTimer watcher = new LogicTimer<>(true, this::setIsDone, 1);
+        LogicTimer watcher = new LogicTimer<>(this::setIsDone, true, 1);
 
         //when
         watcher.update(1);
@@ -35,7 +35,7 @@ public class LogicTimerTest {
     @Test
     public void shouldTimeNotChange() {
         //given
-        LogicTimer watcher = new LogicTimer<>(true, this::setIsDone, 1);
+        LogicTimer watcher = new LogicTimer<>(this::setIsDone, true, 1);
 
         //when
         watcher.setStopped(true);
@@ -48,7 +48,7 @@ public class LogicTimerTest {
     @Test
     public void shouldCorrectlyIncreaseCounter() {
         //given
-        LogicTimer watcher = new LogicTimer<>(1, this::increaseCounter, 1);
+        LogicTimer watcher = new LogicTimer<>(this::increaseCounter, 1, 1);
 
         //when
         watcher.update(1);
