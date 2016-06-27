@@ -29,6 +29,7 @@ public class GameStage implements Screen {
     private float SCALE = 2.0f;
 
     @GameProperty("renderer.debug")
+    @Setter
     private boolean DEBUG_DRAW = false;
 
     @GameProperty("renderer.pixel.per.meter")
@@ -125,19 +126,26 @@ public class GameStage implements Screen {
         }
     }
 
-    private void processGameObjects(IGameObject gameObject, float diff) {
+    private void processGameObjects(final IGameObject gameObject, float diff) {
         gameObject.update(diff);
         final ObjectData gameData = gameObject.getData();
 
+        removeDestroyedElements(gameObject, gameData);
+        loadChildren(gameData);
+    }
+
+    private void loadChildren(final ObjectData gameData) {
+        if (gameData.isHasChild()) {
+            gameData.getLogic().getChildren().forEach(object -> mapElementsWithLogic.add(object));
+            gameData.setHasChild(false);
+        }
+    }
+
+    private void removeDestroyedElements(final IGameObject gameObject, final ObjectData gameData) {
         if (gameData.isDestroyed()) {
             mapElementsWithLogic.remove(gameObject);
             mapElements.remove(gameObject);
             PhysicsWorld.instance.getWorld().destroyBody(gameData.getBody());
-        }
-
-        if (gameData.isHasChild()) {
-            gameData.getLogic().getChildren().forEach(object -> mapElements.add(object));
-            gameData.setHasChild(false);
         }
     }
 
@@ -184,6 +192,7 @@ public class GameStage implements Screen {
 
     public void unregisterPhysics() {
         mapElements.forEach(this::destroyPhysicsBody);
+        mapElementsWithLogic.forEach(this::destroyPhysicsBody);
     }
 
     /**

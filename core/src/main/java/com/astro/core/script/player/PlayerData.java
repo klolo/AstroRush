@@ -17,6 +17,8 @@ public class PlayerData {
 
     protected PopupMsg playerPopupMsg = new PopupMsg();
 
+    protected final static int HORIZONTAL_FORCE_STRENGHT = 5;
+
     protected int points = 0;
 
     @Getter

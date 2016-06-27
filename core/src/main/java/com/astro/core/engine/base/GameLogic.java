@@ -101,15 +101,6 @@ public class GameLogic implements IGameLogic {
         currentScreen.register();
     }
 
-    private void destroyLevelStage() {
-        Optional.ofNullable(loadedStages.get(Stage.LEVEL1)).ifPresent(
-                stage -> {
-                    stage.unregister();
-                    stage.unregisterPhysics();
-                }
-        );
-    }
-
     private void prevStage() {
         log.info("prev stage");
         if (prevScreen == null) {
@@ -150,6 +141,10 @@ public class GameLogic implements IGameLogic {
 
     private void unregisterScreen(final GameStage stage) {
         Optional.ofNullable(stage).ifPresent(GameStage::unregister);
+    }
+
+    private void destroyLevelStage() {
+        Optional.ofNullable(loadedStages.get(Stage.LEVEL1)).ifPresent(stage -> stage.unregister());
     }
 
 }

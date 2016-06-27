@@ -120,54 +120,29 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
         }
 
         watchers.get(WatchersID.INACTIVE_PLAYER).reset();
-        body.setLinearVelocity(horizontalForce * 5, body.getLinearVelocity().y);//fixme: magic number
+        body.setLinearVelocity(horizontalForce * HORIZONTAL_FORCE_STRENGHT, body.getLinearVelocity().y);
     }
 
     private void shoot() {
         log.info("shoot");
 
-        children.add(fireBehavior.onFire());
+        children.add(fireBehavior.onFire(posX, posY));
         gameObject.getData().setHasChild(true);
     }
 
-    /**
-     * Called on Left arrow pressed.
-     * fixme: move this logic to the PlayerState class
-     */
     private void leftKeyEvent() {
         graphics.getRunAnimation().getData().setFlipX(true);
         standOnThePlatform = false;
 
-        if (state == PlayerState.FLY_RIGHT) {
-            state = PlayerState.FLY_LEFT;
-        }
-        else if (state == PlayerState.RUN_RIGHT) {
-            state = PlayerState.RUN_LEFT;
-        }
-        else if (state == PlayerState.STAND) {
-            state = PlayerState.RUN_LEFT;
-        }
-
+        state = state.getPlayerStateAfterLeftKey();
         watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
     }
 
-    /**
-     * Called on Right arrow pressed.
-     * fixme: move this logic to the PlayerState class
-     */
     private void rightKeyEvent() {
         graphics.getRunAnimation().getData().setFlipX(false);
         standOnThePlatform = false;
-        if (state == PlayerState.FLY_LEFT) {
-            state = PlayerState.FLY_RIGHT;
-        }
-        else if (state == PlayerState.RUN_LEFT) {
-            state = PlayerState.RUN_RIGHT;
-        }
-        else if (state == PlayerState.STAND) {
-            state = PlayerState.RUN_RIGHT;
-        }
 
+        state = state.getPlayerStateAfterRightKey();
         watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
     }
 

@@ -1,12 +1,13 @@
 package com.astro.core.script.player.fire;
 
 import com.astro.core.objects.GameObject;
+import com.astro.core.objects.interfaces.ILogic;
 
 /**
- * Created by kamil on 13.06.16.
+ * Represents shoot event on the player.
  */
-public interface IFireBehavior {
+public interface IFireBehavior extends ILogic {
 
-    GameObject onFire();
+    GameObject onFire(final float positionX, final float positionY);
 
 }

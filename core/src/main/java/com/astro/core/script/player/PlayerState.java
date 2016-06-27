@@ -77,4 +77,28 @@ public enum PlayerState {
         return this == PlayerState.FLY_LEFT || this == PlayerState.FLY_RIGHT;
     }
 
+    public PlayerState getPlayerStateAfterRightKey() {
+        if (this == PlayerState.FLY_LEFT) {
+            return PlayerState.FLY_RIGHT;
+        }
+        else if (this == PlayerState.RUN_LEFT) {
+            return PlayerState.RUN_RIGHT;
+        }
+        else {
+            return PlayerState.RUN_RIGHT;
+        }
+    }
+
+    public PlayerState getPlayerStateAfterLeftKey() {
+        if (this == PlayerState.FLY_RIGHT) {
+            return PlayerState.FLY_LEFT;
+        }
+        else if (this == PlayerState.RUN_RIGHT) {
+            return PlayerState.RUN_LEFT;
+        }
+        else {
+            return PlayerState.RUN_LEFT;
+        }
+    }
+
 }

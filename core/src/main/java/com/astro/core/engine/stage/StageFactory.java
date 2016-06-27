@@ -38,7 +38,8 @@ public enum StageFactory {
         initResult(result)
                 .createBackground(config, result)
                 .initPlayer(config, result)
-                .initLogic(config, result);
+                .initLogic(config, result)
+                .initDebugDraw(config, result);
 
         log.info("Stage loaded");
         return result;
@@ -70,6 +71,14 @@ public enum StageFactory {
         if (config.hasPlayer) {
             log.info("Create HUD");
             result.setHud(new StageHUD());
+        }
+        return this;
+    }
+
+    private StageFactory initDebugDraw(final StageConfig config, final GameStage result) {
+        if (!config.hasPlayer) {
+            log.info("disable physics debug draw on this stage");
+            result.setDEBUG_DRAW(false);
         }
         return this;
     }

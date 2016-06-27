@@ -3,6 +3,7 @@ package com.astro.core.objects.interfaces;
 import com.astro.core.objects.GameObject;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,6 +28,8 @@ public interface ILogic {
     List<GameObject> children = new LinkedList<>();
 
     default List<GameObject> getChildren() {
-        return children;
+        final List<GameObject> result = new ArrayList<>(children);
+        children.clear();
+        return result;
     }
 }

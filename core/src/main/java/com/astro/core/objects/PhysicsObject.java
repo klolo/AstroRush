@@ -40,10 +40,13 @@ public class PhysicsObject extends TextureObject implements IGameObject {
      */
     @Override
     protected void render(final OrthographicCamera cam, final float delta) {
-        data.sprite.setPosition(data.body.getPosition().x, data.body.getPosition().y);
-        data.sprite.setRotation((float) Math.toDegrees(data.body.getAngle()));
+        updatePosition();
         super.draw();
     }
 
+    public void updatePosition() {
+        data.sprite.setPosition(data.body.getPosition().x, data.body.getPosition().y);
+        data.sprite.setRotation((float) Math.toDegrees(data.body.getAngle()));
+    }
 
 }
