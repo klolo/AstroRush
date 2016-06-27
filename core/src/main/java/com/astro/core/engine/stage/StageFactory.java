@@ -7,7 +7,6 @@ import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
 import com.astro.core.script.stage.IStageLogic;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -17,20 +16,17 @@ import java.util.stream.Collectors;
  * Creating GameStage based on json configuration loaded to StageConfig object.
  */
 @Slf4j
-public enum StageFactory {
-    instance;
+public class StageFactory {
 
     @GameProperty("game.logic.script.package")
     private String STAGE_LOGIC_PACKAGE = "";
 
-    @Getter
-    private String currentStageName;
+    public StageFactory() {
+        PropertyInjector.instance.inject(this);
+    }
 
     public GameStage create(final StageConfig config) {
         log.info("Loading stage: {}", config.stageName);
-        PropertyInjector.instance.inject(this);
-
-        this.currentStageName = config.stageName;
 
         prepareGameForStage(config);
         GameStage result = new GameStage(getMapElements(config));
@@ -105,9 +101,8 @@ public enum StageFactory {
      */
     private ArrayList<IGameObject> getMapElements(final StageConfig config) {
         log.info("Reading json");
-        ArrayList<IGameObject> result;
-        OverlapSceneReader sceneReader = new OverlapSceneReader(config.sceneFile).loadScene();
-        result = (ArrayList<IGameObject>) sceneReader.getComponents();
+        final OverlapSceneReader sceneReader = new OverlapSceneReader(config.sceneFile).loadScene();
+        final ArrayList<IGameObject> result = (ArrayList<IGameObject>) sceneReader.getComponents();
 
         addToObjectRegister(result);
         return GameObjectUtil.instance.sortObjectsByLayer(result);

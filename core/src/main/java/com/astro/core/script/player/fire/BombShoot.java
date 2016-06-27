@@ -27,13 +27,4 @@ public class BombShoot implements IFireBehavior {
 
     }
 
-    @Override
-    public void onPause() {
-
-    }
-
-    @Override
-    public void onResume() {
-
-    }
 }

@@ -4,7 +4,6 @@ import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 import com.astro.core.script.player.IInteractWithPlayer;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 
 
 public class Switch implements ILogic, IInteractWithPlayer {
@@ -17,24 +16,9 @@ public class Switch implements ILogic, IInteractWithPlayer {
     }
 
     @Override
-    public void additionalRender(OrthographicCamera cam, float delta) {
-
-    }
-
-    @Override
     public void setGameObject(IGameObject gameObject) {
         this.gameObject = (TextureObject) gameObject;
         gameObject.getData().setCollisionConsumer(this::collisionEvent);
-    }
-
-    @Override
-    public void onPause() {
-
-    }
-
-    @Override
-    public void onResume() {
-
     }
 
     public void collisionEvent(IGameObject collidatedObject) {

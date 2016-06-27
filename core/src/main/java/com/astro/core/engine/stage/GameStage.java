@@ -8,6 +8,7 @@ import com.astro.core.engine.base.ParallaxBackground;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.ObjectData;
 import com.astro.core.objects.ObjectsRegister;
+import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.observe.KeyObserve;
 import com.astro.core.script.stage.IStageLogic;
@@ -95,7 +96,9 @@ public class GameStage implements Screen {
         }
 
         mapElements.forEach(e -> e.show(CameraManager.instance.getCamera(), delta));
-        mapElementsWithLogic.forEach(e -> e.getData().getLogic().additionalRender(CameraManager.instance.getCamera(), delta));
+        mapElementsWithLogic.stream()
+                .filter(element -> ((TextureObject) element).isRenderingInScript())
+                .forEach(e -> e.getData().getLogic().additionalRender(CameraManager.instance.getCamera(), delta));
 
         PhysicsWorld.instance.getRayHandler().updateAndRender();
 
@@ -136,7 +139,12 @@ public class GameStage implements Screen {
 
     private void loadChildren(final ObjectData gameData) {
         if (gameData.isHasChild()) {
-            gameData.getLogic().getChildren().forEach(object -> mapElementsWithLogic.add(object));
+            gameData.getLogic()
+                    .getChildren()
+                    .stream()
+                    .filter(e -> e.isPhysicObject())
+                    .forEach(object -> mapElementsWithLogic.add(object));
+            gameData.getLogic().getChildren().forEach(object -> mapElements.add(object));
             gameData.setHasChild(false);
         }
     }
@@ -208,22 +216,18 @@ public class GameStage implements Screen {
 
     @Override
     public void pause() {
-
     }
 
     @Override
     public void resume() {
-
     }
 
     @Override
     public void hide() {
-
     }
 
     @Override
     public void show() {
-
     }
 
 }

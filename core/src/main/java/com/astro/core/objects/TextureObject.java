@@ -94,7 +94,7 @@ public class TextureObject extends GameObject {
     /**
      * Called in main loop
      */
-    void draw() {
+    public void draw() {
         draw(data.sprite.getX(), data.sprite.getY());
     }
 

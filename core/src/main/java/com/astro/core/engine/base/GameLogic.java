@@ -28,6 +28,8 @@ public class GameLogic implements IGameLogic {
 
     private StageConfigReader configReader = new StageConfigReader();
 
+    private StageFactory stageFactory = new StageFactory();
+
     public void init() {
         log.info("start");
 
@@ -96,7 +98,7 @@ public class GameLogic implements IGameLogic {
 
         destroyLevelStage();
 
-        currentScreen = StageFactory.instance.create(screenConfigs.get(Stage.LEVEL1));
+        currentScreen = stageFactory.create(screenConfigs.get(Stage.LEVEL1));
         loadedStages.put(Stage.LEVEL1, currentScreen);
         currentScreen.register();
     }
@@ -134,7 +136,7 @@ public class GameLogic implements IGameLogic {
             currentScreen.register();
         }
         else {
-            currentScreen = StageFactory.instance.create(screenConfigs.get(currentStage));
+            currentScreen = stageFactory.create(screenConfigs.get(currentStage));
             loadedStages.put(stageToLoad, currentScreen);
         }
     }
@@ -144,7 +146,7 @@ public class GameLogic implements IGameLogic {
     }
 
     private void destroyLevelStage() {
-        Optional.ofNullable(loadedStages.get(Stage.LEVEL1)).ifPresent(stage -> stage.unregister());
+        Optional.ofNullable(loadedStages.get(Stage.LEVEL1)).ifPresent(GameStage::unregister);
     }
 
 }

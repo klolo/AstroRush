@@ -17,13 +17,11 @@ public interface ILogic {
     /**
      * Called after render game object with have this logic.
      */
-    void additionalRender(final OrthographicCamera cam, float delta);
+    default void additionalRender(final OrthographicCamera cam, float delta) {
+
+    }
 
     void setGameObject(final IGameObject gameObject);
-
-    void onPause();
-
-    void onResume();
 
     List<GameObject> children = new LinkedList<>();
 
@@ -32,4 +30,13 @@ public interface ILogic {
         children.clear();
         return result;
     }
+
+    default void onResume() {
+
+    }
+
+    default void onPause() {
+
+    }
+
 }
