@@ -1,7 +1,5 @@
 package com.astro.core.engine.base;
 
-import com.astro.core.adnotation.GameProperty;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.interfaces.IGameLogic;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.observe.KeyObserve;
@@ -9,6 +7,8 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.google.common.base.Preconditions;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -17,8 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GameEngine extends Game {
 
-    @GameProperty("world.time.step")
-    private float TIME_STEP = 0;
+    @Setter
+    private float timeStep = 0;
 
     /**
      * Implemented game logic.
@@ -38,9 +38,9 @@ public class GameEngine extends Game {
     /**
      * Requires game logic object, which will be updated and rendered.
      */
-    public GameEngine(IGameLogic gameLogic) {
+    public GameEngine(final IGameLogic gameLogic) {
+        Preconditions.checkNotNull(gameLogic, "GameLogic cannot be null");
         this.gameLogic = gameLogic;
-        PropertyInjector.instance.inject(this);
     }
 
     /**
@@ -51,6 +51,8 @@ public class GameEngine extends Game {
         log.info("create");
         gameLogic.init();
         screen = gameLogic.getGameScreen();
+
+        Preconditions.checkNotNull(screen, "Screen cannot b null");
         setScreen(screen);
     }
 
@@ -61,7 +63,7 @@ public class GameEngine extends Game {
      */
     @Override
     public void render() {
-        if(gameLogic.getGameScreen()!=screen) {
+        if (gameLogic.getGameScreen() != screen) {
             setScreen(gameLogic.getGameScreen());
         }
 
@@ -79,12 +81,12 @@ public class GameEngine extends Game {
     /**
      * Fixed step update game logic.
      */
-    private void update(float deltaTime) {
+    private void update(final float deltaTime) {
         gameLogic.update(deltaTime);
 
         float frameTime = Math.min(deltaTime, 0.25f);
         accumulator += frameTime;
-        float step = 1/TIME_STEP;
+        float step = 1 / timeStep;
 
         while (accumulator >= step) {
             PhysicsWorld.instance.process();

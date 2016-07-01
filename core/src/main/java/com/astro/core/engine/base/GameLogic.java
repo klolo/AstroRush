@@ -5,7 +5,10 @@ import com.astro.core.engine.stage.*;
 import com.astro.core.script.stage.IStageLogic;
 import com.badlogic.gdx.Gdx;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,6 +16,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Slf4j
+@Component
 public class GameLogic implements IGameLogic {
 
     private Stage currentStage = Stage.MAIN_MENU;
@@ -28,7 +32,9 @@ public class GameLogic implements IGameLogic {
 
     private StageConfigReader configReader = new StageConfigReader();
 
-    private StageFactory stageFactory = new StageFactory();
+    @Setter
+    @Autowired
+    private StageFactory stageFactory;
 
     public void init() {
         log.info("start");

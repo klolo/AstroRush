@@ -5,7 +5,9 @@ import com.astro.core.adnotation.processor.DisposeCaller;
 import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.base.CameraManager;
 import com.astro.core.engine.base.ParallaxBackground;
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.engine.physics.PhysicsWorld;
+import com.astro.core.objects.GameObject;
 import com.astro.core.objects.ObjectData;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.TextureObject;
@@ -58,6 +60,9 @@ public class GameStage implements Screen {
     @Getter
     private IStageLogic stageLogic;
 
+    @Setter
+    private PhysicsEngine physicsEngine;
+
     /**
      * Creating only by factory. Access package.
      */
@@ -100,7 +105,7 @@ public class GameStage implements Screen {
                 .filter(element -> ((TextureObject) element).isRenderingInScript())
                 .forEach(e -> e.getData().getLogic().additionalRender(CameraManager.instance.getCamera(), delta));
 
-        PhysicsWorld.instance.getRayHandler().updateAndRender();
+        physicsEngine.physicsWorld.getRayHandler().updateAndRender();
 
         if (hud != null) {
             hud.show(CameraManager.instance.getCamera(), delta);
@@ -142,7 +147,7 @@ public class GameStage implements Screen {
             gameData.getLogic()
                     .getChildren()
                     .stream()
-                    .filter(e -> e.isPhysicObject())
+                    .filter(GameObject::isPhysicObject)
                     .forEach(object -> mapElementsWithLogic.add(object));
             gameData.getLogic().getChildren().forEach(object -> mapElements.add(object));
             gameData.setHasChild(false);

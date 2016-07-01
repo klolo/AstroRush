@@ -7,24 +7,25 @@ buildscript {
 }
 
 plugins {
-    id 'net.saliman.cobertura' version '2.2.5'
-    id 'com.github.kt3k.coveralls' version '2.0.1'
+    id "net.saliman.cobertura" version "2.2.5"
+    id "com.github.kt3k.coveralls" version "2.0.1"
 }
 
-cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
+cobertura.coverageFormats = ["html", "xml"] // coveralls plugin depends on xml format report
 
 allprojects {
     apply plugin: "idea"
 
-    version = '1.0'
+    version = "1.0"
     ext {
         appName = "AstroRush2.0"
-        gdxVersion = '1.9.2'
-        roboVMVersion = '1.12.0'
-        box2DLightsVersion = '1.4'
-        ashleyVersion = '1.7.0'
-        aiVersion = '1.8.0'
-        slf4jVersion = '1.7.21'
+        gdxVersion = "1.9.2"
+        roboVMVersion = "1.12.0"
+        box2DLightsVersion = "1.4"
+        ashleyVersion = "1.7.0"
+        aiVersion = "1.8.0"
+        slf4jVersion = "1.7.21"
+        springVersion = "4.3.0.RELEASE"
     }
 
     repositories {
@@ -40,13 +41,11 @@ allprojects {
     }
 }
 
-
-
 // Game module
 project(":desktop") {
     apply plugin: "java"
     apply plugin: "com.github.kt3k.coveralls"
-    apply plugin: 'jacoco'
+    apply plugin: "jacoco"
 
     dependencies {
         compile project(":core")
@@ -55,8 +54,8 @@ project(":desktop") {
         compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
         compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
 
-        compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.5'
-        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.5'
+        compile group: "org.apache.logging.log4j", name: "log4j-api", version: "2.5"
+        compile group: "org.apache.logging.log4j", name: "log4j-core", version: "2.5"
         compile "org.projectlombok:lombok:1.16.8"
 
         compile "org.slf4j:slf4j-api:$slf4jVersion"
@@ -68,7 +67,7 @@ project(":desktop") {
 project(":core") {
     apply plugin: "java"
     apply plugin: "com.github.kt3k.coveralls"
-    apply plugin: 'jacoco'
+    apply plugin: "jacoco"
 
     jacocoTestReport {
         reports {
@@ -76,41 +75,38 @@ project(":core") {
             html.enabled = true
         }
     }
-
-    sourceSets {
-        test {
-            resources {
-                srcDir './src/main/resources/**'
-            }
-        }
-    }
-
     dependencies {
+        //libgdx
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-        compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-        compile "com.underwaterapps.overlap2druntime:overlap2d-runtime-libgdx:0.1.0"
-        compile "net.dermetfan.libgdx-utils:libgdx-utils:0.13.3"
-        compile "net.dermetfan.libgdx-utils:libgdx-utils-box2d:0.13.3"
-        compile "com.github.czyzby:gdx-kiwi:1.5.1.9.2"
-        compile "com.badlogicgames.gdx:gdx-ai:$aiVersion"
+        compile "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
+        compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
 
-        compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.5'
-        compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.5'
+        //overlap
+        compile "com.underwaterapps.overlap2druntime:overlap2d-runtime-libgdx:0.1.1"
 
-        compile "org.projectlombok:lombok:1.16.8"
-
+        //logger
         compile "org.slf4j:slf4j-api:$slf4jVersion"
         compile "org.slf4j:slf4j-simple:$slf4jVersion"
+
+        //apache commons
         compile "org.apache.commons:commons-lang3:3.4"
 
-        compile "com.underwaterapps.overlap2druntime:overlap2d-runtime-libgdx:0.1.1"
-        compile "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
+        //lombok
+        compile "org.projectlombok:lombok:1.16.8"
 
-        compile group: 'com.google.guava', name: 'guava', version: '19.0'
+        //guava
+        compile group: "com.google.guava", name: "guava", version: "19.0"
 
-        testCompile 'junit:junit:4.12'
+        // spring
+        compile 'org.springframework:spring-context:4.3.0.RELEASE'
+        compile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-beans', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+
+        // test dependency
+        testCompile "junit:junit:4.12"
         testCompile "org.mockito:mockito-core:1.+"
         testCompile "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
         testCompile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
@@ -118,6 +114,5 @@ project(":core") {
         testCompile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
         testCompile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
     }
-
 
 }

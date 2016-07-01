@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <context:property-placeholder location="classpath:game.properties"/>
+
+    <bean id="physicsEngine" class="com.astro.core.engine.physics.PhysicsEngine"/>
+
+    <!-- Factory of the all stages in game -->
+    <bean id="stageFactory" class="com.astro.core.engine.stage.StageFactory">
+        <property name="physicsEngine" ref="physicsEngine"/>
+        <property name="stageLogicPackage" value="${game.logic.script.package}"/>
+    </bean>
+
+    <!-- managing game screens  -->
+    <bean id="gameLogic" class="com.astro.core.engine.base.GameLogic">
+        <property name="stageFactory" ref="stageFactory"/>
+    </bean>
+
+    <!-- main loop of the game -->
+    <bean id="gameEngine" lazy-init="true" class="com.astro.core.engine.base.GameEngine">
+        <constructor-arg ref="gameLogic"/>
+        <property name="timeStep" value="${world.time.step}"/>
+    </bean>
+
+    <!-- Desktop launcher for application -->
+    <bean id="launcher" class="com.astro.game.Launcher">
+        <property name="gameLogic" ref="gameLogic"/>
+        <property name="gameEngine" ref="gameEngine"/>
+    </bean>
+
+</beans>

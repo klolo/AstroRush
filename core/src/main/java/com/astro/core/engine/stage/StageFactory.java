@@ -1,13 +1,15 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.processor.PropertyInjector;
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
 import com.astro.core.script.stage.IStageLogic;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -18,18 +20,19 @@ import java.util.stream.Collectors;
 @Slf4j
 public class StageFactory {
 
-    @GameProperty("game.logic.script.package")
-    private String STAGE_LOGIC_PACKAGE = "";
+    @Setter
+    private String stageLogicPackage;
 
-    public StageFactory() {
-        PropertyInjector.instance.inject(this);
-    }
+    @Setter
+    @Autowired
+    private PhysicsEngine physicsEngine;
 
     public GameStage create(final StageConfig config) {
         log.info("Loading stage: {}", config.stageName);
 
         prepareGameForStage(config);
         GameStage result = new GameStage(getMapElements(config));
+        result.setPhysicsEngine(physicsEngine);
 
         initResult(result)
                 .createBackground(config, result)
@@ -52,7 +55,7 @@ public class StageFactory {
      */
     private StageFactory initLogic(final StageConfig config, final GameStage result) {
         try {
-            Class clazz = Class.forName(STAGE_LOGIC_PACKAGE + "." + config.stageLogic);
+            Class clazz = Class.forName(stageLogicPackage + "." + config.stageLogic);
             IStageLogic logic = (IStageLogic) clazz.newInstance();
             result.setStageLogic(logic);
         }
