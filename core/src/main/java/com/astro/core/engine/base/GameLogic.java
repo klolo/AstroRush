@@ -30,7 +30,9 @@ public class GameLogic implements IGameLogic {
 
     private HashMap<Stage, StageConfig> screenConfigs = new HashMap<>();
 
-    private StageConfigReader configReader = new StageConfigReader();
+    @Setter
+    @Autowired
+    private StageConfigReader stageConfigReader;
 
     @Setter
     @Autowired
@@ -39,7 +41,7 @@ public class GameLogic implements IGameLogic {
     public void init() {
         log.info("start");
 
-        Arrays.asList(configReader.getConfigs())
+        Arrays.asList(stageConfigReader.getConfigs())
                 .stream()
                 .collect(Collectors.toList())
                 .forEach(s -> screenConfigs.put(Stage.valueOf(s.stageName), s));

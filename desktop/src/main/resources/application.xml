@@ -10,17 +10,23 @@
 
     <context:property-placeholder location="classpath:game.properties"/>
 
+    <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader"/>
+
     <bean id="physicsEngine" class="com.astro.core.engine.physics.PhysicsEngine"/>
+
+    <bean id="stageConfigReader" class="com.astro.core.engine.stage.StageConfigReader"/>
 
     <!-- Factory of the all stages in game -->
     <bean id="stageFactory" class="com.astro.core.engine.stage.StageFactory">
         <property name="physicsEngine" ref="physicsEngine"/>
         <property name="stageLogicPackage" value="${game.logic.script.package}"/>
+        <property name="overlapSceneReader" ref="overlapSceneReader"/>
     </bean>
 
     <!-- managing game screens  -->
     <bean id="gameLogic" class="com.astro.core.engine.base.GameLogic">
         <property name="stageFactory" ref="stageFactory"/>
+        <property name="stageConfigReader" ref="stageConfigReader"/>
     </bean>
 
     <!-- main loop of the game -->

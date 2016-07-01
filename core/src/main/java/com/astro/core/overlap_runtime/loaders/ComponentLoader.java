@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO> {
 
     /**
-     * @param imageVO
+     * Register simple image.
      */
     public IGameObject register(final SimpleImageVO imageVO) {
         log.info("[register component]. ImageName: {}, Identifier: {}, Position: {} {}, Origin: {} {}, Layer: {}",

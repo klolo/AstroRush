@@ -27,11 +27,16 @@ public class StageFactory {
     @Autowired
     private PhysicsEngine physicsEngine;
 
+    @Setter
+    @Autowired
+    private OverlapSceneReader overlapSceneReader;
+
     public GameStage create(final StageConfig config) {
         log.info("Loading stage: {}", config.stageName);
 
         prepareGameForStage(config);
-        GameStage result = new GameStage(getMapElements(config));
+
+        final GameStage result = new GameStage(getMapElements(config));
         result.setPhysicsEngine(physicsEngine);
 
         initResult(result)
@@ -77,7 +82,7 @@ public class StageFactory {
     private StageFactory initDebugDraw(final StageConfig config, final GameStage result) {
         if (!config.hasPlayer) {
             log.info("disable physics debug draw on this stage");
-            result.setDEBUG_DRAW(false);
+            result.setDebugDraw(false);
         }
         return this;
     }
@@ -104,8 +109,7 @@ public class StageFactory {
      */
     private ArrayList<IGameObject> getMapElements(final StageConfig config) {
         log.info("Reading json");
-        final OverlapSceneReader sceneReader = new OverlapSceneReader(config.sceneFile).loadScene();
-        final ArrayList<IGameObject> result = (ArrayList<IGameObject>) sceneReader.getComponents();
+        final ArrayList<IGameObject> result = (ArrayList<IGameObject>) overlapSceneReader.loadScene(config.sceneFile);
 
         addToObjectRegister(result);
         return GameObjectUtil.instance.sortObjectsByLayer(result);

@@ -29,14 +29,14 @@ import java.util.ArrayList;
 public class GameStage implements Screen {
 
     @GameProperty("renderer.scale")
-    private float SCALE = 2.0f;
+    private float scale = 2.0f;
 
     @GameProperty("renderer.debug")
     @Setter
-    private boolean DEBUG_DRAW = false;
+    private boolean debugDraw = false;
 
     @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER = 0;
+    protected int pixelPerMeter = 0;
 
     @Setter
     private IGameHud hud;
@@ -105,7 +105,7 @@ public class GameStage implements Screen {
                 .filter(element -> ((TextureObject) element).isRenderingInScript())
                 .forEach(e -> e.getData().getLogic().additionalRender(CameraManager.instance.getCamera(), delta));
 
-        physicsEngine.physicsWorld.getRayHandler().updateAndRender();
+        physicsEngine.updateLight();
 
         if (hud != null) {
             hud.show(CameraManager.instance.getCamera(), delta);
@@ -115,10 +115,10 @@ public class GameStage implements Screen {
     }
 
     private void debugDraw() {
-        if (DEBUG_DRAW) {
+        if (debugDraw) {
             renderer.render(
                     PhysicsWorld.instance.getWorld(),
-                    CameraManager.instance.getCamera().combined.scl(PIXEL_PER_METER)
+                    CameraManager.instance.getCamera().combined.scl(pixelPerMeter)
             );
         }
     }
@@ -169,7 +169,7 @@ public class GameStage implements Screen {
 
     @Override
     public void resize(final int width, final int height) {
-        CameraManager.instance.getCamera().setToOrtho(false, width / SCALE, height / SCALE);
+        CameraManager.instance.getCamera().setToOrtho(false, width / scale, height / scale);
         if (parallaxBackground != null) {
             parallaxBackground.resize(width, height);
         }

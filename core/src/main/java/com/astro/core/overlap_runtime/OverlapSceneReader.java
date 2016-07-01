@@ -24,31 +24,22 @@ import java.util.stream.Collectors;
 public class OverlapSceneReader {
 
     @Getter
-    private String scenePath = "";
-
-    @Getter
     private List<IGameObject> components = new ArrayList<>();
-
-    /**
-     * Requires pass path to the map file.
-     *
-     * @param scenePath path to file contains map
-     */
-    public OverlapSceneReader(final String scenePath) {
-        this.scenePath = scenePath;
-    }
 
     private final static String UNKNOWN_COMPONENT_MSG = "Unknown component error";
 
     /**
      * Opens and read json map file.
      */
-    public OverlapSceneReader loadScene() {
-        FileHandle file = Gdx.files.internal(scenePath);
+    public List<IGameObject> loadScene(final String scenePath) {
+        Preconditions.checkNotNull(scenePath, "ScenePath cannot be null");
 
-        CompositeVO rootComposite = new Json().fromJson(SceneVO.class, file.readString()).composite;
+        components = new ArrayList<>();
+        final FileHandle file = Gdx.files.internal(scenePath);
+        final CompositeVO rootComposite = new Json().fromJson(SceneVO.class, file.readString()).composite;
+
         loadComposite(rootComposite);
-        return this;
+        return components;
     }
 
     /**

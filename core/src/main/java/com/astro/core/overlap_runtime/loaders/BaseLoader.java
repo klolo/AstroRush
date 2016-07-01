@@ -24,7 +24,6 @@ class BaseLoader {
     @GameProperty("renderer.pixel.per.meter")
     protected int PIXEL_PER_METER = 0;
 
-
     BaseLoader() {
         PropertyInjector.instance.inject(this);
     }

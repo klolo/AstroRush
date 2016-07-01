@@ -20,7 +20,7 @@ public class StageConfigReader {
      * Reading configuration file.
      */
     private void read() {
-        FileHandle file = Gdx.files.internal(STAGES_CONFIG_FILE);
+        final FileHandle file = Gdx.files.internal(STAGES_CONFIG_FILE);
         stages = new Json().fromJson(StageConfigReader.class, file.readString()).stages;
     }
 

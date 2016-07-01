@@ -1,14 +1,14 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.storage.GameResources;
 import com.astro.core.objects.LabelObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.converters.LabelVOToIGameObjectConverter;
+import com.astro.core.storage.GameResources;
 import com.uwsoft.editor.renderer.data.LabelVO;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Created by kamil on 30.04.16.
+ * Text object on the screen.
  */
 @Slf4j
 public class LabelsLoader implements ILoader<LabelVO> {

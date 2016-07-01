@@ -11,5 +11,5 @@ public interface ILoader<T> {
     /**
      * Register method for implementation.
      */
-    IGameObject register(T t);
+    IGameObject register(final T t);
 }
