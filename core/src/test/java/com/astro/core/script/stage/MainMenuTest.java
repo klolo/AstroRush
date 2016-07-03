@@ -13,6 +13,7 @@ public class MainMenuTest {
     public void shouldSwitchGame() {
         //given
         final MainMenu menu = new MainMenu();
+        menu.init();
 
         //when
         menu.processEnter();
@@ -25,6 +26,7 @@ public class MainMenuTest {
     public void shouldGameExit() {
         //given
         final MainMenu menu = new MainMenu();
+        menu.init();
 
         //when
         for (int i = 0; i < 30; i++) {

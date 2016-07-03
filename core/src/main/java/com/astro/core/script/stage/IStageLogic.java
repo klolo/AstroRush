@@ -33,4 +33,6 @@ public interface IStageLogic extends IKeyObserver {
     void onPause();
 
     void onResume();
+
+    void init();
 }

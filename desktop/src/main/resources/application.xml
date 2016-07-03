@@ -21,7 +21,6 @@
     <!-- Factory of the all stages in game -->
     <bean id="stageFactory" class="com.astro.core.engine.stage.StageFactory">
         <property name="physicsEngine" ref="physicsEngine"/>
-        <property name="stageLogicPackage" value="${game.logic.script.package}"/>
         <property name="overlapSceneReader" ref="overlapSceneReader"/>
     </bean>
 

@@ -6,7 +6,6 @@ import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
-import com.astro.core.script.stage.IStageLogic;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +18,6 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 public class StageFactory {
-
-    @Setter
-    private String stageLogicPackage;
 
     @Setter
     @Autowired
@@ -59,15 +55,8 @@ public class StageFactory {
      * Create Stage logic class and put it to the stage.
      */
     private StageFactory initLogic(final StageConfig config, final GameStage result) {
-        try {
-            Class clazz = Class.forName(stageLogicPackage + "." + config.stageLogic);
-            IStageLogic logic = (IStageLogic) clazz.newInstance();
-            result.setStageLogic(logic);
-        }
-        catch (final ClassNotFoundException | InstantiationException | IllegalAccessException e) {
-            log.error("Error while creating logic class", e);
-        }
-
+        config.stageLogic.init();
+        result.setStageLogic(config.stageLogic);
         return this;
     }
 

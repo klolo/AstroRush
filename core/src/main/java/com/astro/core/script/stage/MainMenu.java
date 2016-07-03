@@ -34,10 +34,8 @@ public class MainMenu extends StageLogic {
             EXIT_BUTTON
     };
 
-    /**
-     * Object is creating by reflection.
-     */
-    public MainMenu() {
+    @Override
+    public void init() {
         currentActiveBtn = 0;
         setColorOnActiveButton(Color.GRAY, PREFIX + buttons[currentActiveBtn]);
         setColorOnActiveButton(Color.YELLOW, PREFIX + buttons[++currentActiveBtn]);
@@ -115,11 +113,6 @@ public class MainMenu extends StageLogic {
         else {
             log.info("Not found object");
         }
-    }
-
-    @Override
-    public void onPause() {
-
     }
 
     @Override

@@ -32,4 +32,5 @@ public class LevelLogic extends StageLogic {
     public void onResume() {
         PhysicsWorld.instance.setFroozePhysicsProcessing(false);
     }
+
 }

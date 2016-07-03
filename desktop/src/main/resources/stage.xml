@@ -5,6 +5,27 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
+    <!-- Logic of the stages -->
+    <bean id="settingsStageLogic" class="com.astro.core.script.stage.SettingsLogic"/>
+    <bean id="highscoreStageLogic" class="com.astro.core.script.stage.HighscoreLogic"/>
+    <bean id="level1StageLogic" class="com.astro.core.script.stage.LevelLogic"/>
+    <bean id="mainMenuStageLogic" class="com.astro.core.script.stage.MainMenu"/>
+    <bean id="garageLogicStageLogic" class="com.astro.core.script.stage.GarageLogic"/>
+
+    <!-- stages configuration -->
+    <bean id="mainMenuStageConfig" class="com.astro.core.engine.stage.StageConfig">
+        <property name="stageName" value="MAIN_MENU"/>
+        <property name="sceneFile" value="scenes/Menu.dt"/>
+        <property name="hasPlayer" value='false'/>
+        <property name="followByPlayer" value='false'/>
+        <property name="background" value=""/>
+        <property name="hasHUD" value='false'/>
+        <property name="ambientLightRed" value='1.0f'/>
+        <property name="ambientLightGreen" value='1.0f'/>
+        <property name="ambientLightBlue" value='1.0f'/>
+        <property name="stageLogic" ref="mainMenuStageLogic"/>
+    </bean>
+
     <bean id="settingsStageConfig" class="com.astro.core.engine.stage.StageConfig">
         <property name="stageName" value="SETTINGS"/>
         <property name="sceneFile" value="scenes/settings.dt"/>
@@ -15,7 +36,7 @@
         <property name="ambientLightRed" value='1.0f'/>
         <property name="ambientLightGreen" value='1.0f'/>
         <property name="ambientLightBlue" value='1.0f'/>
-        <property name="stageLogic" value="SettingsLogic"/>
+        <property name="stageLogic" ref="settingsStageLogic"/>
     </bean>
 
     <bean id="highscoreStageConfig" class="com.astro.core.engine.stage.StageConfig">
@@ -28,7 +49,7 @@
         <property name="ambientLightRed" value='1.0f'/>
         <property name="ambientLightGreen" value='1.0f'/>
         <property name="ambientLightBlue" value='1.0f'/>
-        <property name="stageLogic" value="HighscoreLogic"/>
+        <property name="stageLogic" ref="highscoreStageLogic"/>
     </bean>
 
     <bean id="level1StageConfig" class="com.astro.core.engine.stage.StageConfig">
@@ -41,7 +62,7 @@
         <property name="ambientLightRed" value='0.04f'/>
         <property name="ambientLightGreen" value='0.06f'/>
         <property name="ambientLightBlue" value='0.15f'/>
-        <property name="stageLogic" value="LevelLogic"/>
+        <property name="stageLogic" ref="level1StageLogic"/>
     </bean>
 
     <bean id="garageStageConfig" class="com.astro.core.engine.stage.StageConfig">
@@ -54,20 +75,7 @@
         <property name="ambientLightRed" value='0.04f'/>
         <property name="ambientLightGreen" value='0.06f'/>
         <property name="ambientLightBlue" value='0.15f'/>
-        <property name="stageLogic" value="LevelLogic"/>
-    </bean>
-
-    <bean id="mainMenuStageConfig" class="com.astro.core.engine.stage.StageConfig">
-        <property name="stageName" value="MAIN_MENU"/>
-        <property name="sceneFile" value="scenes/Menu.dt"/>
-        <property name="hasPlayer" value='false'/>
-        <property name="followByPlayer" value='false'/>
-        <property name="background" value=""/>
-        <property name="hasHUD" value='false'/>
-        <property name="ambientLightRed" value='1.0f'/>
-        <property name="ambientLightGreen" value='1.0f'/>
-        <property name="ambientLightBlue" value='1.0f'/>
-        <property name="stageLogic" value="MainMenu"/>
+        <property name="stageLogic" ref="garageLogicStageLogic"/>
     </bean>
 
 </beans>

@@ -1,5 +1,6 @@
 package com.astro.core.engine.stage;
 
+import com.astro.core.script.stage.IStageLogic;
 import lombok.Data;
 
 /**
@@ -26,5 +27,5 @@ public class StageConfig {
 
     public float ambientLightBlue;
 
-    public String stageLogic;
+    public IStageLogic stageLogic;
 }
