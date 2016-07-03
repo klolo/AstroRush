@@ -5,7 +5,7 @@ import box2dLight.Light;
 import box2dLight.PointLight;
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.processor.PropertyInjector;
-import com.astro.core.engine.physics.PhysicsWorld;
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.engine.stage.GameObjectUtil;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.Color;
@@ -19,13 +19,12 @@ import java.util.ArrayList;
  * This class convert LightVO from json to box2d light and register in game.
  */
 @Slf4j
-public class LightsLoader implements ILoader<LightVO> {
+public class LightsLoader extends BaseLoader implements ILoader<LightVO> {
 
     /**
      * Readed lights.
      */
     private ArrayList<Light> lights = new ArrayList<>();
-
 
     @GameProperty("renderer.pixel.per.meter")
     @Getter
@@ -34,7 +33,8 @@ public class LightsLoader implements ILoader<LightVO> {
     @GameProperty("renderer.light.distance")
     private int LIGHT_DISTANCE = 0;
 
-    public LightsLoader() {
+    public LightsLoader(final PhysicsEngine physicsEngine) {
+        super(physicsEngine);
         log.info("..:: LightsLoader ::..");
         PropertyInjector.instance.inject(this);
     }
@@ -48,7 +48,7 @@ public class LightsLoader implements ILoader<LightVO> {
 
         if (light.type == LightVO.LightType.POINT) {
             resultLight = new PointLight(
-                    PhysicsWorld.instance.getRayHandler(),
+                    physicsEngine.getRayHandler(),
                     light.rays,
                     new Color(
                             light.tint[0],
@@ -62,7 +62,7 @@ public class LightsLoader implements ILoader<LightVO> {
         }
         else {
             resultLight = new ConeLight(
-                    PhysicsWorld.instance.getRayHandler(),
+                    physicsEngine.getRayHandler(),
                     light.rays,
                     new Color(
                             light.tint[0],

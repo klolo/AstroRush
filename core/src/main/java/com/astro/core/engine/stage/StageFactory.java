@@ -2,7 +2,6 @@ package com.astro.core.engine.stage;
 
 import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.physics.PhysicsEngine;
-import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;
@@ -90,7 +89,7 @@ public class StageFactory {
      */
     private void prepareGameForStage(final StageConfig config) {
         log.info("Loading light");
-        PhysicsWorld.instance.setAmbientLight(config.ambientLightRed, config.ambientLightGreen, config.ambientLightBlue);
+        physicsEngine.setAmbientLight(config.ambientLightRed, config.ambientLightGreen, config.ambientLightBlue);
     }
 
     /**

@@ -6,7 +6,6 @@ import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.base.CameraManager;
 import com.astro.core.engine.base.ParallaxBackground;
 import com.astro.core.engine.physics.PhysicsEngine;
-import com.astro.core.engine.physics.PhysicsWorld;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.ObjectData;
 import com.astro.core.objects.ObjectsRegister;
@@ -105,7 +104,7 @@ public class GameStage implements Screen {
                 .filter(element -> ((TextureObject) element).isRenderingInScript())
                 .forEach(e -> e.getData().getLogic().additionalRender(CameraManager.instance.getCamera(), delta));
 
-        physicsEngine.updateLight();
+        physicsEngine.updateAndRenderLight();
 
         if (hud != null) {
             hud.show(CameraManager.instance.getCamera(), delta);
@@ -117,7 +116,7 @@ public class GameStage implements Screen {
     private void debugDraw() {
         if (debugDraw) {
             renderer.render(
-                    PhysicsWorld.instance.getWorld(),
+                    physicsEngine.getWorld(),
                     CameraManager.instance.getCamera().combined.scl(pixelPerMeter)
             );
         }
@@ -158,13 +157,13 @@ public class GameStage implements Screen {
         if (gameData.isDestroyed()) {
             mapElementsWithLogic.remove(gameObject);
             mapElements.remove(gameObject);
-            PhysicsWorld.instance.getWorld().destroyBody(gameData.getBody());
+            physicsEngine.destroyBody(gameData.getBody());
         }
     }
 
     private void updateCamera() {
         CameraManager.instance.update();
-        PhysicsWorld.instance.getRayHandler().setCombinedMatrix(CameraManager.instance.getCamera());
+        physicsEngine.setCombinedMatrix(CameraManager.instance.getCamera());
     }
 
     @Override
@@ -180,7 +179,7 @@ public class GameStage implements Screen {
         log.info("dispose");
         DisposeCaller disposer = new DisposeCaller();
         mapElements.forEach(disposer::callDispose);
-        PhysicsWorld.instance.getRayHandler().dispose();
+        physicsEngine.dispose();
     }
 
     /**
@@ -214,7 +213,7 @@ public class GameStage implements Screen {
     private void destroyPhysicsBody(final IGameObject gameObject) {
         if (gameObject.isPhysicObject()) {
             log.info("Destroy body: {}", gameObject.getData().getName());
-            PhysicsWorld.instance.getWorld().destroyBody(gameObject.getData().getBody());
+            physicsEngine.destroyBody(gameObject.getData().getBody());
             gameObject.getData().setBody(null);
         }
     }

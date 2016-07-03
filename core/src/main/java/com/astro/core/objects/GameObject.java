@@ -2,6 +2,7 @@ package com.astro.core.objects;
 
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.processor.PropertyInjector;
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -25,6 +26,9 @@ abstract public class GameObject implements IGameObject {
     @GameProperty("renderer.pixel.per.meter")
     protected int PIXEL_PER_METER = 0;
 
+    @Getter
+    @Setter
+    protected PhysicsEngine physicsEngine;
 
     /**
      * Default constructor.

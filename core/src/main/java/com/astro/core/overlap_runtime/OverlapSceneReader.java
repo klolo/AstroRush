@@ -1,5 +1,6 @@
 package com.astro.core.overlap_runtime;
 
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.engine.stage.GameObjectUtil;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.loaders.*;
@@ -11,7 +12,9 @@ import com.uwsoft.editor.renderer.data.CompositeVO;
 import com.uwsoft.editor.renderer.data.SceneVO;
 import com.uwsoft.editor.renderer.data.SimpleImageVO;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,10 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 public class OverlapSceneReader {
+
+    @Setter
+    @Autowired
+    private PhysicsEngine physicsEngine;
 
     @Getter
     private List<IGameObject> components = new ArrayList<>();
@@ -92,7 +99,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerImages(final ArrayList<SimpleImageVO> sImages) {
         Preconditions.checkArgument(sImages != null, "Object sImages for register should not be null");
-        final ComponentLoader registerComponent = new ComponentLoader();
+        final ComponentLoader registerComponent = new ComponentLoader(physicsEngine);
 
         components.addAll(sImages.stream()
                 .map(registerComponent::register)
@@ -118,7 +125,7 @@ public class OverlapSceneReader {
     private OverlapSceneReader registerLights(final CompositeVO rootComposite) {
         Preconditions.checkArgument(rootComposite != null, "Object rootComposite for register should not be null");
         rootComposite.sLights.stream()
-                .forEach(e -> register(new LightsLoader(), e));
+                .forEach(e -> register(new LightsLoader(physicsEngine), e));
         return this;
     }
 
@@ -136,7 +143,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerAnimations(final CompositeVO animations) {
         Preconditions.checkArgument(animations != null, "Object animations for register should not be null");
-        animations.sSpriteAnimations.forEach(e -> components.add(register(new SpriteAnimationsLoader(), e)));
+        animations.sSpriteAnimations.forEach(e -> components.add(register(new SpriteAnimationsLoader(physicsEngine), e)));
         return this;
     }
 

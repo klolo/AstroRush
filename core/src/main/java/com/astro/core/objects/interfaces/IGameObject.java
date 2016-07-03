@@ -1,5 +1,6 @@
 package com.astro.core.objects.interfaces;
 
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.ObjectData;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
@@ -22,4 +23,8 @@ public interface IGameObject {
     ObjectData getData();
 
     boolean isPhysicObject();
+
+    PhysicsEngine getPhysicsEngine();
+
+    void setPhysicsEngine(final PhysicsEngine physicsEngine);
 }

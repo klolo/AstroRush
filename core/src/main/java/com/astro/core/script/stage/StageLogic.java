@@ -1,6 +1,7 @@
 package com.astro.core.script.stage;
 
 import com.astro.core.engine.base.GameEvent;
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.engine.stage.GameStage;
 import com.astro.core.engine.stage.Stage;
 import com.astro.core.observe.IKeyObserver;
@@ -18,6 +19,9 @@ public abstract class StageLogic implements IStageLogic, IKeyObserver {
     protected GameStage stage;
 
     protected Stage stageToLoad;
+
+    @Setter
+    protected PhysicsEngine physicsEngine;
 
     public void init() {
         log.info("Creating stage logic");

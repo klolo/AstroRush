@@ -14,9 +14,28 @@
     <import resource="classpath:stage.xml"/>
     <context:property-placeholder location="classpath:game.properties"/>
 
-    <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader"/>
+    <bean id="physicsSettings" class="com.astro.core.engine.physics.PhysicsSettings">
+        <property name="gravity" value="${world.gravity}"/>
+        <property name="groundX" value="${world.ground.x}"/>
+        <property name="groundY" value="${world.ground.y}"/>
+        <property name="groundWidth" value="${world.ground.width}"/>
+        <property name="groundHeight" value="${world.ground.height}"/>
+        <property name="groundDensity" value="${world.ground.density}"/>
+        <property name="velocityIterations" value="${world.iteration.velocity}"/>
+        <property name="positionIterations" value="${world.iteration.position}"/>
+        <property name="timeStep" value="${world.time.step}"/>
+        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
+        <property name="debugDraw" value="${renderer.debug}"/>
+    </bean>
 
-    <bean id="physicsEngine" class="com.astro.core.engine.physics.PhysicsEngine"/>
+    <bean id="physicsEngine" class="com.astro.core.engine.physics.PhysicsEngine">
+        <constructor-arg ref="physicsSettings"/>
+    </bean>
+
+    <!-- LOader of all scenes -->
+    <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader">
+        <property name="physicsEngine" ref="physicsEngine"/>
+    </bean>
 
     <!-- Factory of the all stages in game -->
     <bean id="stageFactory" class="com.astro.core.engine.stage.StageFactory">
@@ -42,6 +61,7 @@
     <bean id="gameEngine" lazy-init="true" class="com.astro.core.engine.base.GameEngine">
         <constructor-arg ref="gameLogic"/>
         <property name="timeStep" value="${world.time.step}"/>
+        <property name="physicsEngine" ref="physicsEngine"/>
     </bean>
 
     <!-- Desktop launcher for application -->

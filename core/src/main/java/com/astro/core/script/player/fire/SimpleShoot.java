@@ -1,5 +1,6 @@
 package com.astro.core.script.player.fire;
 
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.interfaces.IGameObject;
@@ -29,6 +30,12 @@ public class SimpleShoot implements IFireBehavior {
     private float playerPositionX = 0.0f;
 
     private float playerPositionY = 0.0f;
+
+    private final PhysicsEngine physicsEngine;
+
+    public SimpleShoot(final PhysicsEngine physicsEngine) {
+        this.physicsEngine = physicsEngine;
+    }
 
     /**
      * Logic of the SimpleShoot object.
@@ -84,7 +91,7 @@ public class SimpleShoot implements IFireBehavior {
         physicsObject.setBodyDef(bodyDef);
         physicsObject.setFixtureDef(myFixtureDef);
         physicsObject.getData().setSprite(sprite);
-        physicsObject.init();
+        physicsObject.init(physicsEngine);
 
         final SimpleShootLogic simpleShootLogic = new SimpleShootLogic(physicsObject);
 

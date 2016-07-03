@@ -1,6 +1,6 @@
 package com.astro.core.objects;
 
-import com.astro.core.engine.physics.PhysicsWorld;
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -29,8 +29,8 @@ public class PhysicsObject extends TextureObject implements IGameObject {
         super(texture);
     }
 
-    public void init() {
-        data.body = PhysicsWorld.instance.createBody(bodyDef);
+    public void init(final PhysicsEngine physicsEngine) {
+        data.body = physicsEngine.createBody(bodyDef);
         fixture = data.body.createFixture(fixtureDef);
         fixtureDef.shape.dispose();
     }

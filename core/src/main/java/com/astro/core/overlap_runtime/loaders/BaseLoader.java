@@ -2,7 +2,7 @@ package com.astro.core.overlap_runtime.loaders;
 
 import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.processor.PropertyInjector;
-import com.astro.core.engine.physics.PhysicsWorld;
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -24,7 +24,10 @@ class BaseLoader {
     @GameProperty("renderer.pixel.per.meter")
     protected int PIXEL_PER_METER = 0;
 
-    BaseLoader() {
+    protected final PhysicsEngine physicsEngine;
+
+    BaseLoader(final PhysicsEngine physicsEngine) {
+        this.physicsEngine = physicsEngine;
         PropertyInjector.instance.inject(this);
     }
 
@@ -34,7 +37,7 @@ class BaseLoader {
         Arrays.stream(data.shape.polygons)
                 .forEach(vec -> polygons.add(getPolygonShape(vec, data, w, h)));
 
-        final Body body = PhysicsWorld.instance.createBody(getBodyDef(data), name);
+        final Body body = physicsEngine.createBody(getBodyDef(data), name);
         polygons.forEach(e -> body.createFixture(getFixtureDefinition(e, data)));
 
         return body;

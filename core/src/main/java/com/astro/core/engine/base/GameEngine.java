@@ -1,7 +1,7 @@
 package com.astro.core.engine.base;
 
 import com.astro.core.engine.interfaces.IGameLogic;
-import com.astro.core.engine.physics.PhysicsWorld;
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.google.common.base.Preconditions;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Main loop of the game.
@@ -35,6 +36,10 @@ public class GameEngine extends Game {
      */
     private Screen screen;
 
+    @Setter
+    @Autowired
+    private PhysicsEngine physicsEngine;
+
     /**
      * Requires game logic object, which will be updated and rendered.
      */
@@ -49,6 +54,8 @@ public class GameEngine extends Game {
     @Override
     public void create() {
         log.info("create");
+        physicsEngine.initPhysics();
+
         gameLogic.init();
         screen = gameLogic.getGameScreen();
 
@@ -89,7 +96,7 @@ public class GameEngine extends Game {
         float step = 1 / timeStep;
 
         while (accumulator >= step) {
-            PhysicsWorld.instance.process();
+            physicsEngine.process();
             accumulator -= step;
         }
     }

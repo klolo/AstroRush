@@ -1,5 +1,6 @@
 package com.astro.core.overlap_runtime.loaders;
 
+import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
@@ -15,6 +16,10 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO> {
+
+    public ComponentLoader(final PhysicsEngine physicsEngine) {
+        super(physicsEngine);
+    }
 
     /**
      * Register simple image.

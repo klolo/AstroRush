@@ -8,6 +8,7 @@ import com.astro.core.objects.interfaces.ILogic;
 import com.astro.core.observe.IKeyObserver;
 import com.astro.core.observe.KeyObserve;
 import com.astro.core.script.player.*;
+import com.astro.core.script.player.fire.SimpleShoot;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import lombok.extern.slf4j.Slf4j;
@@ -53,6 +54,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
         body.setFixedRotation(true);
 
         graphics = new PlayerGraphics((AnimationObject) gameObject);
+        fireBehavior = new SimpleShoot(gameObject.getPhysicsEngine());
     }
 
     @Override
