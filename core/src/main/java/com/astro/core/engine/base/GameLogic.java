@@ -1,7 +1,10 @@
 package com.astro.core.engine.base;
 
 import com.astro.core.engine.interfaces.IGameLogic;
-import com.astro.core.engine.stage.*;
+import com.astro.core.engine.stage.GameStage;
+import com.astro.core.engine.stage.Stage;
+import com.astro.core.engine.stage.StageConfig;
+import com.astro.core.engine.stage.StageFactory;
 import com.astro.core.script.stage.IStageLogic;
 import com.badlogic.gdx.Gdx;
 import lombok.Getter;
@@ -10,10 +13,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Component
@@ -28,11 +30,8 @@ public class GameLogic implements IGameLogic {
 
     private HashMap<Stage, GameStage> loadedStages = new HashMap<>();
 
-    private HashMap<Stage, StageConfig> screenConfigs = new HashMap<>();
-
     @Setter
-    @Autowired
-    private StageConfigReader stageConfigReader;
+    private Map<Stage, StageConfig> screenConfigs = new HashMap<>();
 
     @Setter
     @Autowired
@@ -40,12 +39,6 @@ public class GameLogic implements IGameLogic {
 
     public void init() {
         log.info("start");
-
-        Arrays.asList(stageConfigReader.getConfigs())
-                .stream()
-                .collect(Collectors.toList())
-                .forEach(s -> screenConfigs.put(Stage.valueOf(s.stageName), s));
-
         loadStage();
     }
 
@@ -58,11 +51,11 @@ public class GameLogic implements IGameLogic {
         unregisterScreen(currentScreen);
     }
 
-    public void render(float deltaTime) {
+    public void render(final float deltaTime) {
         currentScreen.render(deltaTime);
     }
 
-    public void update(float time) {
+    public void update(final float time) {
         currentScreen.update(time);
         processEvent();
     }

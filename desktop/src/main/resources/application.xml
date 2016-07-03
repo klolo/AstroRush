@@ -3,18 +3,20 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
                            http://www.springframework.org/schema/context
-                           http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+                           http://www.springframework.org/schema/context/spring-context-4.3.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
+    <import resource="classpath:stage.xml"/>
     <context:property-placeholder location="classpath:game.properties"/>
 
     <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader"/>
 
     <bean id="physicsEngine" class="com.astro.core.engine.physics.PhysicsEngine"/>
-
-    <bean id="stageConfigReader" class="com.astro.core.engine.stage.StageConfigReader"/>
 
     <!-- Factory of the all stages in game -->
     <bean id="stageFactory" class="com.astro.core.engine.stage.StageFactory">
@@ -26,7 +28,15 @@
     <!-- managing game screens  -->
     <bean id="gameLogic" class="com.astro.core.engine.base.GameLogic">
         <property name="stageFactory" ref="stageFactory"/>
-        <property name="stageConfigReader" ref="stageConfigReader"/>
+        <property name="screenConfigs">
+            <util:map id="screenConfigs">
+                <entry key="MAIN_MENU" value-ref="mainMenuStageConfig"/>
+                <entry key="SETTINGS" value-ref="settingsStageConfig"/>
+                <entry key="HIGHSCORE" value-ref="highscoreStageConfig"/>
+                <entry key="LEVEL1" value-ref="level1StageConfig"/>
+                <entry key="GARAGE" value-ref="garageStageConfig"/>
+            </util:map>
+        </property>
     </bean>
 
     <!-- main loop of the game -->
