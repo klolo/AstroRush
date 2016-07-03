@@ -1,6 +1,5 @@
 package com.astro.core.engine.base;
 
-import com.astro.core.engine.interfaces.IObservedByCamera;
 import common.GdxTestRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,27 +9,27 @@ import org.junit.runner.RunWith;
  */
 @RunWith(GdxTestRunner.class)
 public class CameraManagerTest {
-
-    private Observable observable = new Observable();
-
-    private CameraManager manager = CameraManager.instance;
-
-    class Observable implements IObservedByCamera {
-
-        float posX;
-
-        float posY;
-
-        @Override
-        public float getPositionX() {
-            return posX;
-        }
-
-        @Override
-        public float getPositionY() {
-            return posY;
-        }
-    }
+//
+//    private Observable observable = new Observable();
+//
+//    private CameraManager manager = CameraManager.instance;
+//
+//    class Observable implements IObservedByCamera {
+//
+//        float posX;
+//
+//        float posY;
+//
+//        @Override
+//        public float getPositionX() {
+//            return posX;
+//        }
+//
+//        @Override
+//        public float getPositionY() {
+//            return posY;
+//        }
+//    }
 
     @Test
     public void shouldBeCameraOnCenter() {

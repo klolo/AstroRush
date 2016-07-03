@@ -8,9 +8,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.google.common.base.Preconditions;
+import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 
 /**
  * Main loop of the game.
@@ -40,6 +42,10 @@ public class GameEngine extends Game {
     @Autowired
     private PhysicsEngine physicsEngine;
 
+    @Setter
+    @Getter
+    private static ApplicationContext applicationContext;
+
     /**
      * Requires game logic object, which will be updated and rendered.
      */
@@ -53,13 +59,18 @@ public class GameEngine extends Game {
      */
     @Override
     public void create() {
-        log.info("create");
+        Preconditions.checkNotNull(physicsEngine, "Physics engine not injected");
+        Preconditions.checkNotNull(applicationContext, "ApplicationContext not injected");
+        Preconditions.checkNotNull(gameLogic, "Game logic cannot be null");
+
+        log.info("creating game engine");
+
         physicsEngine.initPhysics();
 
         gameLogic.init();
         screen = gameLogic.getGameScreen();
 
-        Preconditions.checkNotNull(screen, "Screen cannot b null");
+        Preconditions.checkNotNull(screen, "Screen cannot be null");
         setScreen(screen);
     }
 

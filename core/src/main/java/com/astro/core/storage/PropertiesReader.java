@@ -21,14 +21,9 @@ public enum PropertiesReader {
     private MessagesManager messages = new MessagesManager();
 
     /**
-     * Name of properties file.
-     */
-    private final static String CORE_PROPERTIES_NAME = "properties/core.properties";
-
-    /**
      * Name of properties file in game implementation.
      */
-    private final static String GAME_PROPERTIES_NAME = "properties/game.properties";
+    private final static String GAME_PROPERTIES_NAME = "application.properties";
 
     /**
      * Name of properties file in game implementation.
@@ -43,7 +38,6 @@ public enum PropertiesReader {
 
     public void init() {
         gameProperties = new Properties();
-        gameProperties.putAll(readPropertiesFile(CORE_PROPERTIES_NAME));
         gameProperties.putAll(readPropertiesFile(GAME_PROPERTIES_NAME));
 
         messages.setSelectedLanguages(gameProperties.getProperty("game.lang.default"));

@@ -1,6 +1,6 @@
 package com.astro.core.script;
 
-import com.astro.core.engine.base.CameraManager;
+import com.astro.core.engine.base.GameEngine;
 import com.astro.core.engine.interfaces.IObservedByCamera;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
@@ -17,12 +17,15 @@ import lombok.extern.slf4j.Slf4j;
  * Logic of the Player.
  */
 @Slf4j
-public class Player extends PlayerData implements ILogic, IKeyObserver, IObservedByCamera {
+public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
     /**
      * ID of the player.
      */
     public static final String IDENTIFIER = "player";
+
+
+    public PlayerData playerData;
 
     /**
      * -Register player in the KeyObserver
@@ -32,10 +35,13 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      */
     public Player() {
         log.info("Creating player");
+        playerData = GameEngine.getApplicationContext().getBean(PlayerData.class);
+
         KeyObserve.instance.register(this);
-        CameraManager.instance.setObservedObject(this);
-        collisionProcessor = new CollisionProcessor(this);
-        watchers = new WatchersCreator(this).init().getWatchers();
+
+        playerData.cameraManager.setObservedObject(this);
+        playerData.collisionProcessor = new CollisionProcessor(this);
+        playerData.watchers = new WatchersCreator(this).init().getWatchers();
     }
 
     /**
@@ -43,61 +49,61 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      */
     public void setGameObject(final IGameObject gameObject) {
         log.info("Set game object player");
-        playerPopupMsg.initLabel();
-        this.gameObject = gameObject;
+        playerData.playerPopupMsg.initLabel();
+        playerData.gameObject = gameObject;
 
-        gameObject.getData().setCollisionConsumer(collisionProcessor::processCollision);
-        settings.playerHeight =
-                ((AnimationObject) gameObject).getAnimation().getKeyFrames()[0].getRegionHeight() / settings.PIXEL_PER_METER;
+        gameObject.getData().setCollisionConsumer(playerData.collisionProcessor::processCollision);
+        playerData.settings.playerHeight =
+                ((AnimationObject) gameObject).getAnimation().getKeyFrames()[0].getRegionHeight() / playerData.settings.pixelPerMeter;
 
-        body = gameObject.getData().getBody();
-        body.setFixedRotation(true);
+        playerData.body = gameObject.getData().getBody();
+        playerData.body.setFixedRotation(true);
 
-        graphics = new PlayerGraphics((AnimationObject) gameObject);
-        fireBehavior = new SimpleShoot(gameObject.getPhysicsEngine());
+        playerData.graphics = new PlayerGraphics((AnimationObject) gameObject);
+        playerData.fireBehavior = new SimpleShoot(gameObject.getPhysicsEngine());
     }
 
     @Override
     public void onPause() {
-        CameraManager.instance.setObservedObject(null);
+        playerData.cameraManager.setObservedObject(null);
         KeyObserve.instance.unregister(this);
     }
 
     @Override
     public void onResume() {
-        CameraManager.instance.setObservedObject(this);
+        playerData.cameraManager.setObservedObject(this);
         KeyObserve.instance.register(this);
     }
 
     @Override
     public void update(final float diff) {
         updatePosition();
-        playerPopupMsg.update(diff);
-        watchers.values().forEach(w -> w.update(diff));
-        fireBehavior.update(posX, posY);
+        playerData.playerPopupMsg.update(diff);
+        playerData.watchers.values().forEach(w -> w.update(diff));
+        playerData.fireBehavior.update(playerData.posX, playerData.posY);
     }
 
     /**
      * Update player position.
      */
     private void updatePosition() {
-        posX = graphics.getRunAnimation().getData().getSprite().getX();
-        posY = graphics.getRunAnimation().getData().getSprite().getY();
+        playerData.posX = playerData.graphics.getRunAnimation().getData().getSprite().getX();
+        playerData.posY = playerData.graphics.getRunAnimation().getData().getSprite().getY();
 
-        float newX = body.getPosition().x;
-        float newY = body.getPosition().y;
+        float newX = playerData.body.getPosition().x;
+        float newY = playerData.body.getPosition().y;
 
-        state = state.getState(posX, posY, newX, newY, state);
-        if (standOnThePlatform) {
-            state = PlayerState.STAND;
+        playerData.state = playerData.state.getState(playerData.posX, playerData.posY, newX, newY, playerData.state);
+        if (playerData.standOnThePlatform) {
+            playerData.state = PlayerState.STAND;
         }
-        graphics.getRunAnimation().setRenderingInScript(!state.isRun());
+        playerData.graphics.getRunAnimation().setRenderingInScript(!playerData.state.isRun());
 
-        if (body.getPosition().y > settings.MAX_Y_POSITION) {
-            body.setTransform(newX, settings.MAX_Y_POSITION, 0);
+        if (playerData.body.getPosition().y > playerData.settings.maxYPosition) {
+            playerData.body.setTransform(newX, playerData.settings.maxYPosition, 0);
         }
-        graphics.getRunAnimation().getData().getSprite().setPosition(newX, newY);
-        playerPopupMsg.setPos(newX, newY + 2 * settings.playerHeight);
+        playerData.graphics.getRunAnimation().getData().getSprite().setPosition(newX, newY);
+        playerData.playerPopupMsg.setPos(newX, newY + 2 * playerData.settings.playerHeight);
     }
 
     @Override
@@ -129,42 +135,42 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
             }
         }
 
-        watchers.get(WatchersID.INACTIVE_PLAYER).reset();
-        body.setLinearVelocity(horizontalForce * HORIZONTAL_FORCE_STRENGHT, body.getLinearVelocity().y);
+        playerData.watchers.get(WatchersID.INACTIVE_PLAYER).reset();
+        playerData.body.setLinearVelocity(horizontalForce * playerData.HORIZONTAL_FORCE_STRENGHT, playerData.body.getLinearVelocity().y);
     }
 
     private void shoot() {
         log.info("shoot");
 
-        children.add(fireBehavior.onFire());
-        gameObject.getData().setHasChild(true);
+        children.add(playerData.fireBehavior.onFire());
+        playerData.gameObject.getData().setHasChild(true);
     }
 
     private void leftKeyEvent() {
-        graphics.getRunAnimation().getData().setFlipX(true);
-        standOnThePlatform = false;
+        playerData.graphics.getRunAnimation().getData().setFlipX(true);
+        playerData.standOnThePlatform = false;
 
-        state = state.getPlayerStateAfterLeftKey();
-        watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
-        fireBehavior.setPlayerState(state);
+        playerData.state = playerData.state.getPlayerStateAfterLeftKey();
+        playerData.watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
+        playerData.fireBehavior.setPlayerState(playerData.state);
     }
 
     private void rightKeyEvent() {
-        graphics.getRunAnimation().getData().setFlipX(false);
-        standOnThePlatform = false;
+        playerData.graphics.getRunAnimation().getData().setFlipX(false);
+        playerData.standOnThePlatform = false;
 
-        state = state.getPlayerStateAfterRightKey();
-        watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
-        fireBehavior.setPlayerState(state);
+        playerData.state = playerData.state.getPlayerStateAfterRightKey();
+        playerData.watchers.get(WatchersID.STOP_PLAYER_ON_PLATFORM).setStopped(false);
+        playerData.fireBehavior.setPlayerState(playerData.state);
     }
 
     /**
      * Called on Shift pressed.
      */
     private void processInterAct() {
-        if (interactObject != null) {
-            interactObject.interact();
-            interactObject = null;
+        if (playerData.interactObject != null) {
+            playerData.interactObject.interact();
+            playerData.interactObject = null;
         }
     }
 
@@ -172,23 +178,23 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      * Process player jump.
      */
     private void jump() {
-        if (body.getLinearVelocity().y < settings.MAX_Y_VELOCITY) {
-            body.applyForceToCenter(0, settings.MAX_Y_VELOCITY, false);
+        if (playerData.body.getLinearVelocity().y < playerData.settings.maxYVelocity) {
+            playerData.body.applyForceToCenter(0, playerData.settings.maxYVelocity, false);
         }
 
-        standOnThePlatform = false;
+        playerData.standOnThePlatform = false;
     }
 
     @Override
     public void additionalRender(final OrthographicCamera cam, float delta) {
-        playerPopupMsg.show(cam, delta);
+        playerData.playerPopupMsg.show(cam, delta);
 
-        if (graphics.getRunAnimation().isRenderingInScript()) {
-            IGameObject gfxObject = graphics.getTextureBasedOnState(state);
-            gfxObject.getData().getSprite().setPosition(posX, posY);
+        if (playerData.graphics.getRunAnimation().isRenderingInScript()) {
+            IGameObject gfxObject = playerData.graphics.getTextureBasedOnState(playerData.state);
+            gfxObject.getData().getSprite().setPosition(playerData.posX, playerData.posY);
 
-            if (state.isFly()) {
-                (gfxObject).getData().setFlipX(state == PlayerState.FLY_LEFT);
+            if (playerData.state.isFly()) {
+                (gfxObject).getData().setFlipX(playerData.state == PlayerState.FLY_LEFT);
             }
 
             gfxObject.show(cam, delta);
@@ -199,14 +205,14 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      * Adding point to player
      */
     public void addPoints(int amount) {
-        points += amount;
+        playerData.points += amount;
     }
 
     /**
      * Return all player points.
      */
     public int getPoints() {
-        return points;
+        return playerData.points;
     }
 
     /**
@@ -214,7 +220,7 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      */
     @Override
     public float getPositionX() {
-        return body.getPosition().x;
+        return playerData.body.getPosition().x;
     }
 
     /**
@@ -222,19 +228,19 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      */
     @Override
     public float getPositionY() {
-        return body.getPosition().y;
+        return playerData.body.getPosition().y;
     }
 
     /**
      * Decrease player life amount.
      */
     public void decreaseLive(final int amount) {
-        log.info("Losing live amount:{}, current amount: {}", amount, liveAmount);
-        liveAmount -= amount;
+        log.info("Losing live amount:{}, current amount: {}", amount, playerData.liveAmount);
+        playerData.liveAmount -= amount;
 
-        if (liveAmount < 0) {
+        if (playerData.liveAmount < 0) {
             log.error("player is dead");
-            isDead = true;
+            playerData.isDead = true;
         }
     }
 
@@ -242,12 +248,12 @@ public class Player extends PlayerData implements ILogic, IKeyObserver, IObserve
      * Decrease player life amount.
      */
     public void addLive(final int amount) {
-        log.info("Add live amount:{}, current amount: {}", amount, liveAmount);
-        if (liveAmount + amount < startLiveAmount) {
-            liveAmount += amount;
+        log.info("Add live amount:{}, current amount: {}", amount, playerData.liveAmount);
+        if (playerData.liveAmount + amount < playerData.startLiveAmount) {
+            playerData.liveAmount += amount;
         }
         else {
-            liveAmount = startLiveAmount;
+            playerData.liveAmount = playerData.startLiveAmount;
         }
     }
 }

@@ -12,7 +12,7 @@
                            http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
     <import resource="classpath:stage.xml"/>
-    <context:property-placeholder location="classpath:game.properties"/>
+    <context:property-placeholder location="classpath:application.properties"/>
 
     <bean id="physicsSettings" class="com.astro.core.engine.physics.PhysicsSettings">
         <property name="gravity" value="${world.gravity}"/>
@@ -32,7 +32,7 @@
         <constructor-arg ref="physicsSettings"/>
     </bean>
 
-    <!-- LOader of all scenes -->
+    <!-- Loader of all scenes -->
     <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader">
         <property name="physicsEngine" ref="physicsEngine"/>
     </bean>
@@ -64,10 +64,37 @@
         <property name="physicsEngine" ref="physicsEngine"/>
     </bean>
 
-    <!-- Desktop launcher for application -->
-    <bean id="launcher" class="com.astro.game.Launcher">
-        <property name="gameLogic" ref="gameLogic"/>
-        <property name="gameEngine" ref="gameEngine"/>
+    <!-- player configuration -->
+    <bean id="playerSettings" class="com.astro.core.script.player.PlayerSettings">
+        <property name="maxYVelocity" value="${player.configuration.maxYVelocity}"/>
+        <property name="maxYPosition" value="${player.configuration.maxYPosition}"/>
+        <property name="playerHeight" value="${player.configuration.playerHeight}"/>
+        <property name="inactivePLayerMessage" value="${player.configuration.inactivePLayerMessage}"/>
+        <property name="inactiveMsgTime" value="${player.configuration.inactiveMsgTime}"/>
+        <property name="interactWithObjectTime" value="${player.configuration.interactWithObjectTime}"/>
+        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
+    </bean>
+
+    <bean id="playerData" lazy-init="true" class="com.astro.core.script.player.PlayerData">
+        <property name="settings" ref="playerSettings"/>
+        <property name="cameraManager" ref="cameraManager"/>
+    </bean>
+
+    <bean id="box2DDebugRenderer" lazy-init="true" class="com.badlogic.gdx.physics.box2d.Box2DDebugRenderer"/>
+
+    <!-- Game stage -->
+    <bean id="gameStage" scope="prototype" class="com.astro.core.engine.stage.GameStage">
+        <property name="physicsEngine" ref="physicsEngine"/>
+        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
+        <property name="debugDraw" value="${renderer.debug}"/>
+        <property name="scale" value="${renderer.scale}"/>
+        <property name="renderer" ref="box2DDebugRenderer"/>
+    </bean>
+
+    <!-- camera manager -->
+    <bean id="cameraManager" lazy-init="true" class="com.astro.core.engine.base.CameraManager">
+        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
+        <property name="physicsEngine" ref="physicsEngine"/>
     </bean>
 
 </beans>

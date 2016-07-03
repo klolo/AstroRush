@@ -15,11 +15,6 @@ public class Point implements ILogic {
 
     private IGameObject gameObject;
 
-    @Override
-    public void update(final float diff) {
-
-    }
-
     public void setGameObject(final IGameObject gameObject) {
         this.gameObject = gameObject;
         gameObject.getData().setCollisionConsumer(this::collisionEvent);

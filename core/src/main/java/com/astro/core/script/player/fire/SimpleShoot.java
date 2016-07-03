@@ -3,12 +3,8 @@ package com.astro.core.script.player.fire;
 import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.PhysicsObject;
-import com.astro.core.objects.interfaces.IGameObject;
-import com.astro.core.objects.interfaces.ILogic;
 import com.astro.core.script.player.PlayerState;
-import com.astro.core.script.util.LogicTimer;
 import com.astro.core.storage.GameResources;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -23,8 +19,6 @@ public class SimpleShoot implements IFireBehavior {
     @Setter
     private PlayerState playerState;
 
-    private static final int DESTROY_TIME = 3;
-
     private static final int BULLET_SPEED = 10;
 
     private float playerPositionX = 0.0f;
@@ -35,48 +29,6 @@ public class SimpleShoot implements IFireBehavior {
 
     public SimpleShoot(final PhysicsEngine physicsEngine) {
         this.physicsEngine = physicsEngine;
-    }
-
-    /**
-     * Logic of the SimpleShoot object.
-     */
-    class SimpleShootLogic implements ILogic {
-
-        /**
-         * Bullet physics.
-         */
-        private final PhysicsObject bullet;
-
-        /**
-         * Watcher for destroy object after some time.
-         */
-        private final LogicTimer watcher;
-
-        private int speed;
-
-        SimpleShootLogic(final PhysicsObject bullet) {
-            this.bullet = bullet;
-            watcher = new LogicTimer<>(bullet.getData()::setDestroyed, true, DESTROY_TIME);
-        }
-
-        @Override
-        public void update(final float diff) {
-            bullet.updatePosition();
-            watcher.update(diff);
-            bullet.getData().getBody().setLinearVelocity(speed, 0);
-        }
-
-        @Override
-        public void setGameObject(final IGameObject gameObject) {
-
-        }
-
-        @Override
-        public void additionalRender(final OrthographicCamera cam, final float delta) {
-            bullet.setRenderingInScript(false);
-            bullet.show(cam, delta);
-            bullet.setRenderingInScript(true);
-        }
     }
 
     public GameObject onFire() {

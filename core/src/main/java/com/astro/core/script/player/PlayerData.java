@@ -1,11 +1,13 @@
 package com.astro.core.script.player;
 
+import com.astro.core.engine.base.CameraManager;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.script.player.fire.IFireBehavior;
 import com.astro.core.script.util.LogicTimer;
 import com.badlogic.gdx.physics.box2d.Body;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 
@@ -14,57 +16,64 @@ import java.util.HashMap;
  */
 public class PlayerData {
 
-    protected PopupMsg playerPopupMsg = new PopupMsg();
+    public PopupMsg playerPopupMsg = new PopupMsg();
 
-    protected final static int HORIZONTAL_FORCE_STRENGHT = 5;
+    public final static int HORIZONTAL_FORCE_STRENGHT = 5;
 
-    protected int points = 0;
-
-    @Getter
-    protected int liveAmount = 100;
+    public int points = 0;
 
     @Getter
-    protected int startLiveAmount = 100;
+    public int liveAmount = 100;
 
     @Getter
-    protected PlayerSettings settings = new PlayerSettings();
-
-    protected PlayerState state = PlayerState.STAND;
+    public int startLiveAmount = 100;
 
     @Getter
-    protected CollisionProcessor collisionProcessor;
+    @Setter
+    @Autowired
+    public PlayerSettings settings;
 
     @Getter
-    protected HashMap<WatchersID, LogicTimer> watchers;
+    @Setter
+    @Autowired
+    public CameraManager cameraManager;
+
+    public PlayerState state = PlayerState.STAND;
+
+    @Getter
+    public CollisionProcessor collisionProcessor;
+
+    @Getter
+    public HashMap<WatchersID, LogicTimer> watchers;
 
     @Setter
-    protected IInteractWithPlayer interactObject;
+    public IInteractWithPlayer interactObject;
 
     @Setter
-    protected boolean standOnThePlatform = false;
+    public boolean standOnThePlatform = false;
 
-    protected float posX;
+    public float posX;
 
-    protected float posY;
+    public float posY;
 
     @Getter
-    protected boolean isDead;
+    public boolean isDead;
 
-    protected IFireBehavior fireBehavior;
+    public IFireBehavior fireBehavior;
 
-    protected IGameObject gameObject;
+    public IGameObject gameObject;
 
     /**
      * Physics body.
      */
     @Getter
-    protected Body body;
+    public Body body;
 
     /**
      * Hold default Player graphic (animation of run) and additional
      * graphics like fly and stand.
      */
-    protected PlayerGraphics graphics;
+    public PlayerGraphics graphics;
 
     public PopupMsg getPlayerPopupMsg() {
         return playerPopupMsg;

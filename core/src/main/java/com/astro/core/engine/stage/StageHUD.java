@@ -113,7 +113,7 @@ public class StageHUD implements IGameHud {
     private void setHelmetWidth(final OrthographicCamera cam) {
         TextureRegion region = GameResources.instance.getResourceManager().getTextureRegion("c");
 
-        final float liveBarWidth = lifeBarStartWidth * (float) player.getLiveAmount() / (float) player.getStartLiveAmount();
+        final float liveBarWidth = lifeBarStartWidth * (float) player.playerData.getLiveAmount() / (float) player.playerData.getStartLiveAmount();
         region.setRegionWidth((int) liveBarWidth);
 
         float x = getViewWith(cam) - 2.6f;

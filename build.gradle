@@ -26,6 +26,7 @@ allprojects {
         aiVersion = "1.8.0"
         slf4jVersion = "1.7.21"
         springVersion = "4.3.0.RELEASE"
+        aspectVersion = "1.5.4"
     }
 
     repositories {
@@ -104,6 +105,8 @@ project(":core") {
         compile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
         compile group: 'org.springframework', name: 'spring-beans', version: "$springVersion"
         compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-aop', version: "$springVersion"
+        compile group: 'aspectj', name: 'aspectjtools', version: "$aspectVersion"
 
         // test dependency
         testCompile "junit:junit:4.12"

@@ -1,9 +1,8 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.processor.DisposeCaller;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.base.CameraManager;
+import com.astro.core.engine.base.GameEngine;
 import com.astro.core.engine.base.ParallaxBackground;
 import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.GameObject;
@@ -18,6 +17,7 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 
@@ -27,14 +27,13 @@ import java.util.ArrayList;
 @Slf4j
 public class GameStage implements Screen {
 
-    @GameProperty("renderer.scale")
+    @Setter
     private float scale = 2.0f;
 
-    @GameProperty("renderer.debug")
     @Setter
     private boolean debugDraw = false;
 
-    @GameProperty("renderer.pixel.per.meter")
+    @Setter
     protected int pixelPerMeter = 0;
 
     @Setter
@@ -53,28 +52,35 @@ public class GameStage implements Screen {
     /**
      * Debug rendering physics.
      */
-    private Box2DDebugRenderer renderer = new Box2DDebugRenderer();
+    @Setter
+    private Box2DDebugRenderer renderer;
 
     @Setter
     @Getter
     private IStageLogic stageLogic;
 
     @Setter
+    @Autowired
     private PhysicsEngine physicsEngine;
+
+
+    private CameraManager cameraManager;
 
     /**
      * Creating only by factory. Access package.
      */
-    GameStage(final ArrayList<IGameObject> elements) {
-        PropertyInjector.instance.inject(this);
+    GameStage() {
 
+    }
+
+    void initStage(final ArrayList<IGameObject> elements) {
         this.mapElements = elements;
         mapElements = GameObjectUtil.instance.sortObjectsByLayer(mapElements);
 
         mapElementsWithLogic = GameObjectUtil.instance.getObjectsWithLogic(mapElements);
         ObjectsRegister.instance.registerPhysicsObject(mapElementsWithLogic);
 
-        log.info("end loading game");
+        cameraManager = GameEngine.getApplicationContext().getBean(CameraManager.class);
     }
 
     void initBackground() {
@@ -86,8 +92,8 @@ public class GameStage implements Screen {
      * Constructs a new OrthographicCamera, using the given viewport width and height Height is multiplied by aspect ratio.
      */
     public void init() {
-        CameraManager.instance.getCamera().setToOrtho(false, 0f, 0f);
-        CameraManager.instance.getCamera().position.set(0f, 0f, 0f);
+        cameraManager.getCamera().setToOrtho(false, 0f, 0f);
+        cameraManager.getCamera().position.set(0f, 0f, 0f);
     }
 
     /**
@@ -96,18 +102,18 @@ public class GameStage implements Screen {
     @Override
     public void render(float delta) {
         if (parallaxBackground != null) {
-            parallaxBackground.show(CameraManager.instance.getCamera(), delta);
+            parallaxBackground.show(cameraManager.getCamera(), delta);
         }
 
-        mapElements.forEach(e -> e.show(CameraManager.instance.getCamera(), delta));
+        mapElements.forEach(e -> e.show(cameraManager.getCamera(), delta));
         mapElementsWithLogic.stream()
                 .filter(element -> ((TextureObject) element).isRenderingInScript())
-                .forEach(e -> e.getData().getLogic().additionalRender(CameraManager.instance.getCamera(), delta));
+                .forEach(e -> e.getData().getLogic().additionalRender(cameraManager.getCamera(), delta));
 
         physicsEngine.updateAndRenderLight();
 
         if (hud != null) {
-            hud.show(CameraManager.instance.getCamera(), delta);
+            hud.show(cameraManager.getCamera(), delta);
         }
 
         debugDraw();
@@ -117,7 +123,7 @@ public class GameStage implements Screen {
         if (debugDraw) {
             renderer.render(
                     physicsEngine.getWorld(),
-                    CameraManager.instance.getCamera().combined.scl(pixelPerMeter)
+                    cameraManager.getCamera().combined.scl(pixelPerMeter)
             );
         }
     }
@@ -129,7 +135,7 @@ public class GameStage implements Screen {
         currentMapElementsWithLogic.forEach(e -> processGameObjects(e, diff));
 
         if (parallaxBackground != null) {
-            parallaxBackground.update(CameraManager.instance.getCamera(), diff);
+            parallaxBackground.update(cameraManager.getCamera(), diff);
         }
     }
 
@@ -162,13 +168,13 @@ public class GameStage implements Screen {
     }
 
     private void updateCamera() {
-        CameraManager.instance.update();
-        physicsEngine.setCombinedMatrix(CameraManager.instance.getCamera());
+        cameraManager.update();
+        physicsEngine.setCombinedMatrix(cameraManager.getCamera());
     }
 
     @Override
     public void resize(final int width, final int height) {
-        CameraManager.instance.getCamera().setToOrtho(false, width / scale, height / scale);
+        cameraManager.getCamera().setToOrtho(false, width / scale, height / scale);
         if (parallaxBackground != null) {
             parallaxBackground.resize(width, height);
         }

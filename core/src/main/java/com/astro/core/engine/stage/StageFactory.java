@@ -1,6 +1,7 @@
 package com.astro.core.engine.stage;
 
 import com.astro.core.adnotation.processor.PropertyInjector;
+import com.astro.core.engine.base.GameEngine;
 import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
@@ -31,8 +32,8 @@ public class StageFactory {
 
         prepareGameForStage(config);
 
-        final GameStage result = new GameStage(getMapElements(config));
-        result.setPhysicsEngine(physicsEngine);
+        final GameStage result = GameEngine.getApplicationContext().getBean(GameStage.class);
+        result.initStage(getMapElements(config));
 
         initResult(result)
                 .createBackground(config, result)

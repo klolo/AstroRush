@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/klolo/AstroRush.svg?branch=master)
 
 # Free adventure Java game by Kamil Lolo
 ![banner](https://raw.githubusercontent.com/klolo/AstroRush/master/core/src/main/resources/assets/banner.png "")

@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- *
+ * Overlap 2d map loader.
  */
 @Slf4j
 public class OverlapSceneReader {

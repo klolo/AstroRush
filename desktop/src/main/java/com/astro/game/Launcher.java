@@ -2,7 +2,6 @@ package com.astro.game;
 
 import com.astro.core.engine.base.GameEngine;
 import com.astro.core.engine.interfaces.IGameLogic;
-import com.astro.core.storage.PropertiesReader;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
@@ -17,11 +16,10 @@ import java.util.Optional;
 
 /**
  * Main class of the AstroRush 2.0 game.
+ * It creates game engine instance and run libgdx window.
  */
 @Slf4j
 public class Launcher {
-
-    private final static int ERROR_EXIT_CODE = -1;
 
     /**
      * Game logic implemented for this title.
@@ -37,15 +35,32 @@ public class Launcher {
     @Setter
     private GameEngine gameEngine;
 
+    @Setter
+    private boolean fullscreen;
+
+    @Setter
+    private int windowWidth;
+
+    @Setter
+    private int windowHeight;
+
+    @Setter
+    private String windowTitle;
+
+    @Setter
+    private String faviconPath;
+
+    private final static int ERROR_EXIT_CODE = -1;
+
     /**
      * Main method of the application.
      */
     public static void main(String... args) {
-        ApplicationContext context =
-                new ClassPathXmlApplicationContext("application.xml");
-        log.info("created spring context");
+        final ApplicationContext context =
+                new ClassPathXmlApplicationContext("desktop.xml");
+        GameEngine.setApplicationContext(context);
 
-        Launcher launcher = context.getBean(Launcher.class);
+        final Launcher launcher = context.getBean(Launcher.class);
         launcher.run();
     }
 
@@ -53,7 +68,6 @@ public class Launcher {
      * Create libgdx app context and put inside configuration.
      */
     private void run() {
-        log.info("run");
         Preconditions.checkNotNull(gameEngine, "GameEngine is not initialized");
 
         try {
@@ -78,19 +92,17 @@ public class Launcher {
     private LwjglApplicationConfiguration getConfig() {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
-        if (Boolean.parseBoolean(PropertiesReader.instance.getProperty("window.fullscreen"))) {
-            log.info("fullscreen mode");
+        if (fullscreen) {
             config.fullscreen = true;
         }
         else {
-            log.info("windowed mode");
-            config.width = Integer.valueOf(PropertiesReader.instance.getProperty("window.width"));
-            config.height = Integer.valueOf(PropertiesReader.instance.getProperty("window.height"));
+            config.width = windowWidth;
+            config.height = windowHeight;
         }
 
         config.vSyncEnabled = true;
-        config.addIcon("assets/ico.png", Files.FileType.Classpath);
-        config.title = PropertiesReader.instance.getProperty("game.title");
+        config.addIcon(faviconPath, Files.FileType.Classpath);
+        config.title = windowTitle;
         return config;
     }
 

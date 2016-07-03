@@ -29,6 +29,7 @@ public class SpriteAnimationsLoader extends BaseLoader implements ILoader<Sprite
         result.getAnimation().setPlayMode(Animation.PlayMode.NORMAL);
         result.getAnimation().setFrameDuration(0.1f);
         result.setPhysicsEngine(physicsEngine);
+
         return new MainItemVOToIGameObjectConverter().convert(spriteAnimationVO, result);
     }
 
@@ -36,7 +37,7 @@ public class SpriteAnimationsLoader extends BaseLoader implements ILoader<Sprite
         if (spriteAnimationVO.physics != null) {
             float w = atlas.getRegions().get(0).getRegionWidth();
             float h = atlas.getRegions().get(0).getRegionHeight();
-            Body physicsBody = createBody(spriteAnimationVO, w, h, spriteAnimationVO.animationName);
+            final Body physicsBody = createBody(spriteAnimationVO, w, h, spriteAnimationVO.animationName);
             physicsBody.setUserData(result);
             result.getData().setBody(physicsBody);
         }

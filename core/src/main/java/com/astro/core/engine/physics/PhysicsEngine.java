@@ -23,9 +23,6 @@ public class PhysicsEngine {
      */
     private final PhysicsSettings settings;
 
-    //fixme
-    public static PhysicsEngine instance;
-
     @Setter
     private boolean froozePhysicsProcessing;
 
@@ -61,7 +58,6 @@ public class PhysicsEngine {
      * -creates background
      */
     public void initPhysics() {
-        instance = this;
         PropertyInjector.instance.inject(this);
 
         settings.timeStep = 1f / settings.timeStep;

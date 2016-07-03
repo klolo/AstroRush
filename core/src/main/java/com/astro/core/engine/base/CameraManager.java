@@ -1,13 +1,12 @@
 package com.astro.core.engine.base;
 
-import com.astro.core.adnotation.GameProperty;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.interfaces.IObservedByCamera;
 import com.astro.core.engine.physics.PhysicsEngine;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector3;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by Marcin Białecki on 2016-05-09.
@@ -15,13 +14,10 @@ import lombok.Setter;
  * Hold the OrthographicCamera instance. Object that observe the player by implementing {@link IObservedByCamera}.
  * Currently react on player moves.
  */
-public enum CameraManager {
-    instance;
+public class CameraManager {
 
     @Getter
     private OrthographicCamera camera;
-
-    private static final float PLAYER_X_POSITION = 0.8f;
 
     @Setter
     private IObservedByCamera observedObject;
@@ -29,14 +25,17 @@ public enum CameraManager {
     /**
      * Density of the ground box.
      */
-    @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER;
+    @Setter
+    protected int pixelPerMeter;
+
+    @Setter
+    @Autowired
+    private PhysicsEngine physicsEngine;
 
     /**
      * Constructor.
      */
     CameraManager() {
-        PropertyInjector.instance.inject(this);
         this.camera = new OrthographicCamera();
         camera.setToOrtho(false, 0, 0);
         camera.position.set(0f, 0f, 0f);
@@ -49,8 +48,8 @@ public enum CameraManager {
         final Vector3 position = camera.position;
 
         if (observedObject != null) {
-            position.x = observedObject.getPositionX() * PIXEL_PER_METER;
-            position.y = observedObject.getPositionY() * PIXEL_PER_METER * PLAYER_X_POSITION;
+            position.x = observedObject.getPositionX() * pixelPerMeter;
+            position.y = observedObject.getPositionY() * pixelPerMeter;
         }
         else {
             position.x = 0.0f;
@@ -59,7 +58,7 @@ public enum CameraManager {
 
         camera.position.set(position);
         camera.update();
-        PhysicsEngine.instance.setCamera(camera);
+        physicsEngine.setCamera(camera);
     }
 
 }

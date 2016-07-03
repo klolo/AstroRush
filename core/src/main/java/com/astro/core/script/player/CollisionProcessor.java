@@ -21,7 +21,7 @@ public class CollisionProcessor {
     /**
      * Requeired player object.
      */
-    public CollisionProcessor(Player player) {
+    public CollisionProcessor(final Player player) {
         this.player = player;
     }
 
@@ -43,7 +43,7 @@ public class CollisionProcessor {
      * Collision with monet or other object with gives points.
      */
     public void collision(final Point point) {
-        player.getPlayerPopupMsg().addMessagesToQueue(point.getPlayerMsg());
+        player.playerData.getPlayerPopupMsg().addMessagesToQueue(point.getPlayerMsg());
         player.addPoints(Integer.valueOf(point.getPlayerMsg()));
         player.addLive(10);
     }
@@ -52,22 +52,22 @@ public class CollisionProcessor {
      * Test collision with enemy. Should be remove on final version.
      */
     public void collision(final Sheep sheep) {
-        player.getPlayerPopupMsg().addMessagesToQueue("ouh!");
+        player.playerData.getPlayerPopupMsg().addMessagesToQueue("ouh!");
     }
 
     /**
      * Interact with switch
      */
     public void collision(final Switch s) {
-        player.getPlayerPopupMsg().addMessagesToQueue("Press shift to interact");
-        player.setInteractObject(s);
+        player.playerData.getPlayerPopupMsg().addMessagesToQueue("Press shift to interact");
+        player.playerData.setInteractObject(s);
     }
 
     /**
      * Interact with platform
      */
     public void collision(final MovingPlatform s) {
-        player.setStandOnThePlatform(true);
+        player.playerData.setStandOnThePlatform(true);
     }
 
 

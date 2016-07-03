@@ -12,7 +12,9 @@ import java.util.List;
  */
 public interface ILogic {
 
-    void update(float diff);
+    void setGameObject(final IGameObject gameObject);
+
+    List<GameObject> children = new LinkedList<>();
 
     /**
      * Called after render game object with have this logic.
@@ -20,10 +22,6 @@ public interface ILogic {
     default void additionalRender(final OrthographicCamera cam, float delta) {
 
     }
-
-    void setGameObject(final IGameObject gameObject);
-
-    List<GameObject> children = new LinkedList<>();
 
     default List<GameObject> getChildren() {
         final List<GameObject> result = new ArrayList<>(children);
@@ -36,6 +34,10 @@ public interface ILogic {
     }
 
     default void onPause() {
+
+    }
+
+    default void update(final float diff) {
 
     }
 

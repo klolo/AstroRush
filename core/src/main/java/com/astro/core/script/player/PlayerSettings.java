@@ -1,34 +1,33 @@
 package com.astro.core.script.player;
 
-import com.astro.core.adnotation.GameProperty;
-import com.astro.core.adnotation.processor.PropertyInjector;
+import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 /**
- * Hold all costants player settings.
+ * Hold all player settings.
  */
+@Component
 public class PlayerSettings {
 
-    public float MAX_Y_VELOCITY = 10f;
+    @Setter
+    public float maxYVelocity;
 
-    public float MAX_Y_POSITION = 15f;
+    @Setter
+    public float maxYPosition;
 
-    public float playerHeight = 0.0f;
+    @Setter
+    public float playerHeight;
 
-    //TODO: move to properties
-    public String inactivePLayerMessage = "Are you there?";
+    @Setter
+    public float inactiveMsgTime;
 
-    public float inactiveMsgTime = 20.0f;
+    @Setter
+    public float interactWithObjectTime;
 
-    public float interactWithObjectTime = 3.0f;
+    @Setter
+    public int pixelPerMeter;
 
-    /**
-     * Amount of the pixel per meter.
-     */
-    @GameProperty("renderer.pixel.per.meter")
-    public int PIXEL_PER_METER = 0;
-
-    PlayerSettings() {
-        PropertyInjector.instance.inject(this);
-    }
+    @Setter
+    public String inactivePLayerMessage;
 
 }

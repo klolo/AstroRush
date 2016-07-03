@@ -21,17 +21,17 @@ public class WatchersCreator {
     public WatchersCreator init() {
         final LogicTimer inactiveMsgWatcher =
                 new LogicTimer<>(
-                        player.getPlayerPopupMsg()::addMessagesToQueue,
-                        player.getSettings().inactivePLayerMessage,
-                        player.getSettings().inactiveMsgTime
+                        player.playerData.getPlayerPopupMsg()::addMessagesToQueue,
+                        player.playerData.getSettings().inactivePLayerMessage,
+                        player.playerData.getSettings().inactiveMsgTime
                 );
         watchers.put(WatchersID.INACTIVE_PLAYER, inactiveMsgWatcher);
 
         final LogicTimer interactionWatcher =
-                new LogicTimer<>(player::setInteractObject, null, player.getSettings().interactWithObjectTime);
+                new LogicTimer<>(player.playerData::setInteractObject, null, player.playerData.getSettings().interactWithObjectTime);
         watchers.put(WatchersID.INTERACT_WITH_OTHER_OBJECT, interactionWatcher);
 
-        final LogicTimer stopPLayerWatcher = new LogicTimer<>(player::setStandOnThePlatform, true, .7f);// FIXME: magic number
+        final LogicTimer stopPLayerWatcher = new LogicTimer<>(player.playerData::setStandOnThePlatform, true, .7f);// FIXME: magic number
 
         stopPLayerWatcher.setLooped(false);
         stopPLayerWatcher.setStopped(true);

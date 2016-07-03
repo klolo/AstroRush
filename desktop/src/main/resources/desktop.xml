@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <import resource="classpath:application.xml"/>
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <!-- Desktop launcher for application -->
+    <bean id="launcher" class="com.astro.game.Launcher">
+        <property name="gameLogic" ref="gameLogic"/>
+        <property name="gameEngine" ref="gameEngine"/>
+        <property name="fullscreen" value="${window.fullscreen}"/>
+        <property name="windowWidth" value="${window.width}"/>
+        <property name="windowHeight" value="${window.height}"/>
+        <property name="windowTitle" value="${window.title}"/>
+        <property name="faviconPath" value="${window.faviconPath}"/>
+    </bean>
+
+</beans>
