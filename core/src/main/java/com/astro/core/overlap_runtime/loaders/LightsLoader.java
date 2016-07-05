@@ -11,6 +11,7 @@ import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.Color;
 import com.uwsoft.editor.renderer.data.LightVO;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -28,14 +29,15 @@ public class LightsLoader extends BaseLoader implements ILoader<LightVO> {
 
     @GameProperty("renderer.pixel.per.meter")
     @Getter
-    private int PIXEL_PER_METER = 0;
+    @Setter
+    private int pixelPerMeter = 0;
 
     @GameProperty("renderer.light.distance")
-    private int LIGHT_DISTANCE = 0;
+    @Setter
+    private int lightDistance = 0;
 
     public LightsLoader(final PhysicsEngine physicsEngine) {
         super(physicsEngine);
-        log.info("..:: LightsLoader ::..");
         PropertyInjector.instance.inject(this);
     }
 
@@ -43,35 +45,26 @@ public class LightsLoader extends BaseLoader implements ILoader<LightVO> {
      * @param light
      */
     public IGameObject register(LightVO light) {
-        log.info("[register light] name: {}", light.itemName);
         Light resultLight;
 
         if (light.type == LightVO.LightType.POINT) {
             resultLight = new PointLight(
                     physicsEngine.getRayHandler(),
                     light.rays,
-                    new Color(
-                            light.tint[0],
-                            light.tint[1],
-                            light.tint[2],
-                            .1f),
-                    light.distance * PIXEL_PER_METER * LIGHT_DISTANCE,
-                    light.x * PIXEL_PER_METER,
-                    light.y * PIXEL_PER_METER
+                    new Color(light.tint[0], light.tint[1], light.tint[2], .1f),
+                    light.distance * pixelPerMeter * lightDistance,
+                    light.x * pixelPerMeter,
+                    light.y * pixelPerMeter
             );
         }
         else {
             resultLight = new ConeLight(
                     physicsEngine.getRayHandler(),
                     light.rays,
-                    new Color(
-                            light.tint[0],
-                            light.tint[1],
-                            light.tint[2],
-                            light.tint[3]),
-                    light.distance * PIXEL_PER_METER * LIGHT_DISTANCE,
-                    light.x * PIXEL_PER_METER,
-                    light.y * PIXEL_PER_METER,
+                    new Color(light.tint[0], light.tint[1], light.tint[2], light.tint[3]),
+                    light.distance * pixelPerMeter * lightDistance,
+                    light.x * pixelPerMeter,
+                    light.y * pixelPerMeter,
                     light.directionDegree,
                     light.coneDegree
             );

@@ -3,7 +3,7 @@ package com.astro.core.engine.stage;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
 /**
- * Created by kamil on 09.05.16.
+ * Game hud displayed on the level screen..
  */
 public interface IGameHud {
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+    <!-- Aspect -->
+    <bean id="loaderLoggingAspect" class="com.astro.core.aspect.LoaderLoggingAspect"/>
+
+    <aop:config>
+        <!-- log all loaded components in over runtime loader -->
+        <aop:aspect id="logAspect" ref="loaderLoggingAspect">
+            <aop:pointcut id="pointCutBefore" expression="within(com.astro.core.overlap_runtime.loaders.*)"/>
+            <aop:before method="logBefore" pointcut-ref="pointCutBefore"/>
+        </aop:aspect>
+
+    </aop:config>
+
+</beans>

@@ -89,6 +89,10 @@ public class PopupMsg {
             return;
         }
 
+        if (msg.equals(currentMsg)) {
+            return;
+        }
+
         messagesQueue.add(msg);
     }
 

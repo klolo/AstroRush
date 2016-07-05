@@ -1,13 +1,12 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.adnotation.GameProperty;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.objects.ParticleObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.converters.ParticleEffectVOToIGameObjectConverter;
 import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.uwsoft.editor.renderer.data.ParticleEffectVO;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -16,23 +15,16 @@ public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
     /**
      * Density of the ground box.
      */
-    @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER = 0;
-
-    public ParticleEffectsLoader() {
-        log.info("..:: LightsLoader ::..");
-        PropertyInjector.instance.inject(this);
-    }
+    @Setter
+    protected int pixelPerMeter = 0;
 
     @Override
     public IGameObject register(final ParticleEffectVO particleEffectVO) {
-        log.info("[register particle] name: {}, particleName: {} ", particleEffectVO.itemName, particleEffectVO.particleName);
-        ParticleObject result = new ParticleObject();
+        final ParticleObject result = new ParticleObject();
+        final ParticleEffect effect = GameResources.instance.getResourceManager().getParticleEffect(particleEffectVO.particleName);
 
-        ParticleEffect effect = GameResources.instance.getResourceManager().getParticleEffect(particleEffectVO.particleName);
-
-        float pX = particleEffectVO.x * PIXEL_PER_METER - particleEffectVO.particleWidth * particleEffectVO.scaleX / 2;
-        float pY = particleEffectVO.y * PIXEL_PER_METER - particleEffectVO.particleHeight * particleEffectVO.scaleY / 2;
+        float pX = particleEffectVO.x * pixelPerMeter - particleEffectVO.particleWidth * particleEffectVO.scaleX / 2;
+        float pY = particleEffectVO.y * pixelPerMeter - particleEffectVO.particleHeight * particleEffectVO.scaleY / 2;
 
         effect.setPosition(pX, pY);
         result.setEffect(effect);

@@ -25,9 +25,7 @@ public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO
      * Register simple image.
      */
     public IGameObject register(final SimpleImageVO imageVO) {
-        log.info("[register component]. ImageName: {}, Identifier: {}, Position: {} {}, Origin: {} {}, Layer: {}",
-                imageVO.imageName, imageVO.itemIdentifier, imageVO.x, imageVO.y, imageVO.originX, imageVO.originY, imageVO.layerName);
-        TextureRegion textureRegion = GameResources.instance.getResourceManager().getTextureRegion(imageVO.imageName);
+        final TextureRegion textureRegion = GameResources.instance.getResourceManager().getTextureRegion(imageVO.imageName);
         final float w = textureRegion.getRegionWidth();
         final float h = textureRegion.getRegionHeight();
 

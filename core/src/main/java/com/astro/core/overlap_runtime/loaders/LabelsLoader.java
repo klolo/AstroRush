@@ -14,9 +14,9 @@ import lombok.extern.slf4j.Slf4j;
 public class LabelsLoader implements ILoader<LabelVO> {
 
     @Override
-    public IGameObject register(LabelVO labelVO) {
-        log.info("[register label] text: {}", labelVO.text);
-        LabelObject result = new LabelObject(
+    public IGameObject register(final LabelVO labelVO) {
+        log.info("[label] {}", labelVO.text);
+        final LabelObject result = new LabelObject(
                 GameResources.instance.getResourceManager().getBitmapFont(labelVO.style, labelVO.size)
         );
 

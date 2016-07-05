@@ -96,7 +96,6 @@ public class PhysicsEngine {
      * @return created body
      */
     public Body createBody(final BodyDef bd) {
-        log.info("Create body");
         return world.createBody(bd);
     }
 
@@ -108,7 +107,7 @@ public class PhysicsEngine {
      * @return created body
      */
     public Body createBody(final BodyDef bd, final String name) {
-        log.info("Create body:" + name);
+        log.info("Create body: {}", name);
         return createBody(bd);
     }
 
@@ -126,7 +125,7 @@ public class PhysicsEngine {
      * methoda catch null pointer when box2d is not initializated in mock.
      */
     @SuppressWarnings("PMD")
-    public void initLight(float r, float g, float b) {
+    public void initLight(final float r, final float g, final float b) {
         log.info("init light");
         RayHandler.setGammaCorrection(true);
         RayHandler.useDiffuseLight(true);

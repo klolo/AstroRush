@@ -17,14 +17,13 @@ import java.util.Optional;
 public class MainItemVOToIGameObjectConverter {
 
     @GameProperty("game.script.package")
-    private String SCRIPT_PACKAGE = "";
+    private String scriptPackage = "";
 
     public MainItemVOToIGameObjectConverter() {
         PropertyInjector.instance.inject(this);
     }
 
     public IGameObject convert(MainItemVO input, IGameObject result) {
-        log.info("Convert: ID: {}, itemName: {}", input.itemIdentifier, input.itemName);
         result.getData().getSprite().setOrigin(input.originX, input.originY);
         result.getData().getSprite().setScale(input.scaleX, input.scaleY);
         result.getData().getSprite().setPosition(input.x, input.y);
@@ -46,7 +45,7 @@ public class MainItemVOToIGameObjectConverter {
     }
 
     /**
-     *
+     * Settings args in object
      */
     private void setArgs(final String arg, final IGameObject result) {
         String[] data = arg.split(":");
@@ -54,7 +53,7 @@ public class MainItemVOToIGameObjectConverter {
             log.info("[Custom vars] {}={}", data[0], data[1]);
 
             if (IGameObject.LOGIC_VARS.equals(data[0])) {
-                String className = SCRIPT_PACKAGE + "." + data[1];
+                String className = scriptPackage + "." + data[1];
                 setGameLogic(className, result);
             }
             result.getData().getCustomVariables().put(data[0], data[1]);
@@ -73,7 +72,10 @@ public class MainItemVOToIGameObjectConverter {
             logic.setGameObject(result);
             result.getData().setLogic(logic);
         }
-        catch (InstantiationException | IllegalAccessException | ClassNotFoundException exception) {
+        catch (final ClassNotFoundException exception) {
+            log.error("Class not found:" + className);
+        }
+        catch (final InstantiationException | IllegalAccessException exception) {
             log.error("Error in initializing logic:" + className, exception);
         }
     }

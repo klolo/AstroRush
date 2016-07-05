@@ -1,6 +1,5 @@
 package com.astro.core.overlap_runtime;
 
-import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.engine.stage.GameObjectUtil;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.loaders.*;
@@ -28,7 +27,23 @@ public class OverlapSceneReader {
 
     @Setter
     @Autowired
-    private PhysicsEngine physicsEngine;
+    private ComponentLoader componentLoader;
+
+    @Setter
+    @Autowired
+    private ParticleEffectsLoader particleEffectsLoader;
+
+    @Setter
+    @Autowired
+    private LightsLoader lightsLoader;
+
+    @Setter
+    @Autowired
+    private LabelsLoader labelsLoader;
+
+    @Setter
+    @Autowired
+    private SpriteAnimationsLoader spriteAnimationsLoader;
 
     @Getter
     private List<IGameObject> components = new ArrayList<>();
@@ -99,12 +114,10 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerImages(final ArrayList<SimpleImageVO> sImages) {
         Preconditions.checkArgument(sImages != null, "Object sImages for register should not be null");
-        final ComponentLoader registerComponent = new ComponentLoader(physicsEngine);
 
         components.addAll(sImages.stream()
-                .map(registerComponent::register)
+                .map(componentLoader::register)
                 .collect(Collectors.toList()));
-
         return this;
     }
 
@@ -114,8 +127,7 @@ public class OverlapSceneReader {
     private OverlapSceneReader registerEffects(final CompositeVO rootComposite) {
         Preconditions.checkArgument(rootComposite != null, "Object rootComposite for register should not be null");
         rootComposite.sParticleEffects.stream()
-                .forEach(e -> components.add(register(new ParticleEffectsLoader(), e)));
-
+                .forEach(e -> components.add(register(particleEffectsLoader, e)));
         return this;
     }
 
@@ -125,7 +137,7 @@ public class OverlapSceneReader {
     private OverlapSceneReader registerLights(final CompositeVO rootComposite) {
         Preconditions.checkArgument(rootComposite != null, "Object rootComposite for register should not be null");
         rootComposite.sLights.stream()
-                .forEach(e -> register(new LightsLoader(physicsEngine), e));
+                .forEach(e -> register(lightsLoader, e));
         return this;
     }
 
@@ -134,7 +146,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerLabels(final CompositeVO labels) {
         Preconditions.checkArgument(labels != null, "Object labels for register should not be null");
-        labels.sLabels.forEach(e -> components.add(register(new LabelsLoader(), e)));
+        labels.sLabels.forEach(e -> components.add(register(labelsLoader, e)));
         return this;
     }
 
@@ -143,7 +155,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader registerAnimations(final CompositeVO animations) {
         Preconditions.checkArgument(animations != null, "Object animations for register should not be null");
-        animations.sSpriteAnimations.forEach(e -> components.add(register(new SpriteAnimationsLoader(physicsEngine), e)));
+        animations.sSpriteAnimations.forEach(e -> components.add(register(spriteAnimationsLoader, e)));
         return this;
     }
 

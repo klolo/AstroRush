@@ -8,7 +8,7 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-    <import resource="classpath:application.xml"/>
+    <import resource="classpath:configuration/core-config.xml"/>
     <context:property-placeholder location="classpath:application.properties"/>
 
     <!-- Desktop launcher for application -->

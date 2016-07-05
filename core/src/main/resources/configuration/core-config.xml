@@ -11,9 +11,18 @@
                            http://www.springframework.org/schema/util
                            http://www.springframework.org/schema/util/spring-util-3.0.xsd">
 
-    <import resource="classpath:stage.xml"/>
     <context:property-placeholder location="classpath:application.properties"/>
 
+    <!-- stages configuration -->
+    <import resource="classpath:configuration/stage-config.xml"/>
+
+    <!-- application aspects -->
+    <import resource="classpath:configuration/aspect-config.xml"/>
+
+    <!-- overlap runtime configuration -->
+    <import resource="classpath:configuration/overlap-runtime-config.xml"/>
+
+    <!-- Physics configuration -->
     <bean id="physicsSettings" class="com.astro.core.engine.physics.PhysicsSettings">
         <property name="gravity" value="${world.gravity}"/>
         <property name="groundX" value="${world.ground.x}"/>
@@ -28,13 +37,37 @@
         <property name="debugDraw" value="${renderer.debug}"/>
     </bean>
 
+    <!-- Box2d physics engine -->
     <bean id="physicsEngine" class="com.astro.core.engine.physics.PhysicsEngine">
         <constructor-arg ref="physicsSettings"/>
     </bean>
 
+    <!-- Loaders fo scene reader -->
+    <bean id="particleEffectsLoader" class="com.astro.core.overlap_runtime.loaders.ParticleEffectsLoader">
+        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
+    </bean>
+
+    <bean id="lightsLoader" class="com.astro.core.overlap_runtime.loaders.LightsLoader">
+        <constructor-arg name="physicsEngine" ref="physicsEngine"/>
+        <property name="lightDistance" value="${renderer.light.distance}"/>
+    </bean>
+
+    <bean id="spriteAnimationsLoader" class="com.astro.core.overlap_runtime.loaders.SpriteAnimationsLoader">
+        <constructor-arg name="physicsEngine" ref="physicsEngine"/>
+    </bean>
+    <bean id="labelsLoader" class="com.astro.core.overlap_runtime.loaders.LabelsLoader"/>
+
+    <bean id="componentLoader" class="com.astro.core.overlap_runtime.loaders.ComponentLoader">
+        <constructor-arg name="physicsEngine" ref="physicsEngine"/>
+    </bean>
+
     <!-- Loader of all scenes -->
     <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader">
-        <property name="physicsEngine" ref="physicsEngine"/>
+        <property name="particleEffectsLoader" ref="particleEffectsLoader"/>
+        <property name="lightsLoader" ref="lightsLoader"/>
+        <property name="spriteAnimationsLoader" ref="spriteAnimationsLoader"/>
+        <property name="labelsLoader" ref="labelsLoader"/>
+        <property name="componentLoader" ref="componentLoader"/>
     </bean>
 
     <!-- Factory of the all stages in game -->
