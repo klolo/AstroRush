@@ -18,6 +18,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.ArrayList;
 
@@ -28,12 +29,15 @@ import java.util.ArrayList;
 public class GameStage implements Screen {
 
     @Setter
+    @Value("${renderer.scale}")
     private float scale = 2.0f;
 
     @Setter
+    @Value("${renderer.debug}")
     private boolean debugDraw = false;
 
     @Setter
+    @Value("${renderer.pixel.per.meter}")
     protected int pixelPerMeter = 0;
 
     @Setter
@@ -53,6 +57,7 @@ public class GameStage implements Screen {
      * Debug rendering physics.
      */
     @Setter
+    @Autowired
     private Box2DDebugRenderer renderer;
 
     @Setter

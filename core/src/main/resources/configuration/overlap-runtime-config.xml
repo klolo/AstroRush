@@ -21,28 +21,17 @@
     </bean>
 
     <bean id="lightsLoader" class="com.astro.core.overlap_runtime.loaders.LightsLoader">
-        <constructor-arg name="physicsEngine" ref="physicsEngine"/>
         <property name="lightDistance" value="${renderer.light.distance}"/>
         <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
     </bean>
 
-    <bean id="spriteAnimationsLoader" class="com.astro.core.overlap_runtime.loaders.SpriteAnimationsLoader">
-        <constructor-arg name="physicsEngine" ref="physicsEngine"/>
-    </bean>
+    <bean id="spriteAnimationsLoader" class="com.astro.core.overlap_runtime.loaders.SpriteAnimationsLoader"/>
 
     <bean id="labelsLoader" class="com.astro.core.overlap_runtime.loaders.LabelsLoader"/>
 
-    <bean id="componentLoader" class="com.astro.core.overlap_runtime.loaders.ComponentLoader">
-        <constructor-arg name="physicsEngine" ref="physicsEngine"/>
-    </bean>
+    <bean id="componentLoader" class="com.astro.core.overlap_runtime.loaders.ComponentLoader"/>
 
     <!-- Loader of all scenes -->
-    <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader">
-        <property name="particleEffectsLoader" ref="particleEffectsLoader"/>
-        <property name="lightsLoader" ref="lightsLoader"/>
-        <property name="spriteAnimationsLoader" ref="spriteAnimationsLoader"/>
-        <property name="labelsLoader" ref="labelsLoader"/>
-        <property name="componentLoader" ref="componentLoader"/>
-    </bean>
+    <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader"/>
 
 </beans>

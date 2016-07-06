@@ -10,7 +10,7 @@
                            http://www.springframework.org/schema/context/spring-context-4.3.xsd
                            http://www.springframework.org/schema/util
                            http://www.springframework.org/schema/util/spring-util-3.0.xsd">
-
+    <context:annotation-config/>
     <context:property-placeholder location="classpath:application.properties"/>
 
     <!-- stages configuration -->
@@ -23,61 +23,35 @@
     <import resource="classpath:configuration/overlap-runtime-config.xml"/>
 
     <!-- Physics configuration -->
-    <bean id="physicsSettings" class="com.astro.core.engine.physics.PhysicsSettings">
-        <property name="gravity" value="${world.gravity}"/>
-        <property name="groundX" value="${world.ground.x}"/>
-        <property name="groundY" value="${world.ground.y}"/>
-        <property name="groundWidth" value="${world.ground.width}"/>
-        <property name="groundHeight" value="${world.ground.height}"/>
-        <property name="groundDensity" value="${world.ground.density}"/>
-        <property name="velocityIterations" value="${world.iteration.velocity}"/>
-        <property name="positionIterations" value="${world.iteration.position}"/>
-        <property name="timeStep" value="${world.time.step}"/>
-        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
-        <property name="debugDraw" value="${renderer.debug}"/>
-    </bean>
+    <bean id="physicsSettings" class="com.astro.core.engine.physics.PhysicsSettings"/>
 
     <!-- Box2d physics engine -->
-    <bean id="physicsEngine" class="com.astro.core.engine.physics.PhysicsEngine">
+    <bean id="physicsEngine" class="com.astro.core.engine.physics.PhysicsEngine"
+          factory-method="createFromPhysicsSettings">
         <constructor-arg ref="physicsSettings"/>
     </bean>
 
     <!-- Loaders fo scene reader -->
-    <bean id="particleEffectsLoader" class="com.astro.core.overlap_runtime.loaders.ParticleEffectsLoader">
-        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
-    </bean>
+    <bean id="particleEffectsLoader" class="com.astro.core.overlap_runtime.loaders.ParticleEffectsLoader"/>
 
     <bean id="lightsLoader" class="com.astro.core.overlap_runtime.loaders.LightsLoader">
-        <constructor-arg name="physicsEngine" ref="physicsEngine"/>
         <property name="lightDistance" value="${renderer.light.distance}"/>
     </bean>
 
-    <bean id="spriteAnimationsLoader" class="com.astro.core.overlap_runtime.loaders.SpriteAnimationsLoader">
-        <constructor-arg name="physicsEngine" ref="physicsEngine"/>
-    </bean>
+    <bean id="spriteAnimationsLoader" class="com.astro.core.overlap_runtime.loaders.SpriteAnimationsLoader"/>
+
     <bean id="labelsLoader" class="com.astro.core.overlap_runtime.loaders.LabelsLoader"/>
 
-    <bean id="componentLoader" class="com.astro.core.overlap_runtime.loaders.ComponentLoader">
-        <constructor-arg name="physicsEngine" ref="physicsEngine"/>
-    </bean>
+    <bean id="componentLoader" class="com.astro.core.overlap_runtime.loaders.ComponentLoader"/>
 
     <!-- Loader of all scenes -->
-    <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader">
-        <property name="particleEffectsLoader" ref="particleEffectsLoader"/>
-        <property name="lightsLoader" ref="lightsLoader"/>
-        <property name="spriteAnimationsLoader" ref="spriteAnimationsLoader"/>
-        <property name="labelsLoader" ref="labelsLoader"/>
-        <property name="componentLoader" ref="componentLoader"/>
-    </bean>
+    <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader" autowire="byName"/>
 
     <!-- Factory of the all stages in game -->
-    <bean id="stageFactory" class="com.astro.core.engine.stage.StageFactory">
-        <property name="physicsEngine" ref="physicsEngine"/>
-        <property name="overlapSceneReader" ref="overlapSceneReader"/>
-    </bean>
+    <bean id="stageFactory" class="com.astro.core.engine.stage.StageFactory"/>
 
     <!-- managing game screens  -->
-    <bean id="gameLogic" class="com.astro.core.engine.base.GameLogic">
+    <bean id="gameLogic" class="com.astro.core.engine.base.GameLogic" destroy-method="onExit">
         <property name="stageFactory" ref="stageFactory"/>
         <property name="screenConfigs">
             <util:map id="screenConfigs">
@@ -91,43 +65,16 @@
     </bean>
 
     <!-- main loop of the game -->
-    <bean id="gameEngine" lazy-init="true" class="com.astro.core.engine.base.GameEngine">
-        <constructor-arg ref="gameLogic"/>
-        <property name="timeStep" value="${world.time.step}"/>
-        <property name="physicsEngine" ref="physicsEngine"/>
-    </bean>
+    <bean id="gameEngine" lazy-init="true" class="com.astro.core.engine.base.GameEngine"/>
 
-    <!-- player configuration -->
-    <bean id="playerSettings" class="com.astro.core.script.player.PlayerSettings">
-        <property name="maxYVelocity" value="${player.configuration.maxYVelocity}"/>
-        <property name="maxYPosition" value="${player.configuration.maxYPosition}"/>
-        <property name="playerHeight" value="${player.configuration.playerHeight}"/>
-        <property name="inactivePLayerMessage" value="${player.configuration.inactivePLayerMessage}"/>
-        <property name="inactiveMsgTime" value="${player.configuration.inactiveMsgTime}"/>
-        <property name="interactWithObjectTime" value="${player.configuration.interactWithObjectTime}"/>
-        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
-    </bean>
+    <bean id="playerSettings" class="com.astro.core.script.player.PlayerSettings"/>
 
-    <bean id="playerData" lazy-init="true" class="com.astro.core.script.player.PlayerData">
-        <property name="settings" ref="playerSettings"/>
-        <property name="cameraManager" ref="cameraManager"/>
-    </bean>
+    <bean id="playerData" lazy-init="true" class="com.astro.core.script.player.PlayerData"/>
 
     <bean id="box2DDebugRenderer" lazy-init="true" class="com.badlogic.gdx.physics.box2d.Box2DDebugRenderer"/>
 
-    <!-- Game stage -->
-    <bean id="gameStage" scope="prototype" class="com.astro.core.engine.stage.GameStage">
-        <property name="physicsEngine" ref="physicsEngine"/>
-        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
-        <property name="debugDraw" value="${renderer.debug}"/>
-        <property name="scale" value="${renderer.scale}"/>
-        <property name="renderer" ref="box2DDebugRenderer"/>
-    </bean>
+    <bean id="gameStage" scope="prototype" class="com.astro.core.engine.stage.GameStage"/>
 
-    <!-- camera manager -->
-    <bean id="cameraManager" lazy-init="true" class="com.astro.core.engine.base.CameraManager">
-        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
-        <property name="physicsEngine" ref="physicsEngine"/>
-    </bean>
+    <bean id="cameraManager" lazy-init="true" class="com.astro.core.engine.base.CameraManager"/>
 
 </beans>

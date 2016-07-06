@@ -12,6 +12,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 
 /**
@@ -21,6 +22,7 @@ import org.springframework.context.ApplicationContext;
 public class GameEngine extends Game {
 
     @Setter
+    @Value("${world.time.step}")
     private float timeStep = 0;
 
     /**
@@ -33,9 +35,6 @@ public class GameEngine extends Game {
      */
     private float accumulator = 0;
 
-    /**
-     * Current GameStage.
-     */
     private Screen screen;
 
     @Setter
@@ -49,6 +48,7 @@ public class GameEngine extends Game {
     /**
      * Requires game logic object, which will be updated and rendered.
      */
+    @Autowired
     public GameEngine(final IGameLogic gameLogic) {
         Preconditions.checkNotNull(gameLogic, "GameLogic cannot be null");
         this.gameLogic = gameLogic;

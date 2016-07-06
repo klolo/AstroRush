@@ -1,7 +1,6 @@
 package com.astro.game;
 
 import com.astro.core.engine.base.GameEngine;
-import com.astro.core.engine.interfaces.IGameLogic;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
@@ -9,10 +8,9 @@ import com.google.common.base.Preconditions;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.Optional;
 
 /**
  * Main class of the AstroRush 2.0 game.
@@ -22,13 +20,6 @@ import java.util.Optional;
 public class Launcher {
 
     /**
-     * Game logic implemented for this title.
-     */
-    @Autowired
-    @Setter
-    private IGameLogic gameLogic;
-
-    /**
      * Main loop of the game.
      */
     @Autowired
@@ -36,18 +27,23 @@ public class Launcher {
     private GameEngine gameEngine;
 
     @Setter
+    @Value("${window.fullscreen}")
     private boolean fullscreen;
 
     @Setter
+    @Value("${window.width}")
     private int windowWidth;
 
     @Setter
+    @Value("${window.height}")
     private int windowHeight;
 
     @Setter
+    @Value("${window.title}")
     private String windowTitle;
 
     @Setter
+    @Value("${window.faviconPath}")
     private String faviconPath;
 
     private final static int ERROR_EXIT_CODE = -1;
@@ -77,11 +73,6 @@ public class Launcher {
             log.error("Fatal error in game", e);
             System.exit(ERROR_EXIT_CODE);
         }
-        finally {
-            Optional.ofNullable(gameLogic).ifPresent(e -> gameLogic.onExit());
-        }
-
-        log.info("Game end normally");
     }
 
     /**

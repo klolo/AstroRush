@@ -16,6 +16,7 @@ import java.util.HashMap;
  */
 public class PlayerData {
 
+    @Getter
     public PopupMsg playerPopupMsg = new PopupMsg();
 
     public final static int HORIZONTAL_FORCE_STRENGHT = 5;
@@ -75,7 +76,4 @@ public class PlayerData {
      */
     public PlayerGraphics graphics;
 
-    public PopupMsg getPlayerPopupMsg() {
-        return playerPopupMsg;
-    }
 }

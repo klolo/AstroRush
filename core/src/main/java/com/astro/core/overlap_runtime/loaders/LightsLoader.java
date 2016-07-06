@@ -13,6 +13,7 @@ import com.uwsoft.editor.renderer.data.LightVO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 
@@ -36,6 +37,7 @@ public class LightsLoader extends BaseLoader implements ILoader<LightVO> {
     @Setter
     private int lightDistance = 0;
 
+    @Autowired
     public LightsLoader(final PhysicsEngine physicsEngine) {
         super(physicsEngine);
         PropertyInjector.instance.inject(this);

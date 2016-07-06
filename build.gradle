@@ -107,6 +107,7 @@ project(":core") {
         compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
         compile group: 'org.springframework', name: 'spring-aop', version: "$springVersion"
         compile group: 'aspectj', name: 'aspectjtools', version: "$aspectVersion"
+        compile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
 
         // test dependency
         testCompile "junit:junit:4.12"
@@ -116,6 +117,13 @@ project(":core") {
         testCompile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         testCompile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
         testCompile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+        testCompile 'org.springframework:spring-context:4.3.0.RELEASE'
+        testCompile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
+        testCompile group: 'org.springframework', name: 'spring-beans', version: "$springVersion"
+        testCompile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+        testCompile group: 'org.springframework', name: 'spring-aop', version: "$springVersion"
+        testCompile group: 'aspectj', name: 'aspectjtools', version: "$aspectVersion"
+        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
     }
 
 }

@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Vector3;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * Created by Marcin Białecki on 2016-05-09.
@@ -26,6 +27,7 @@ public class CameraManager {
      * Density of the ground box.
      */
     @Setter
+    @Value("${renderer.pixel.per.meter}")
     protected int pixelPerMeter;
 
     @Setter

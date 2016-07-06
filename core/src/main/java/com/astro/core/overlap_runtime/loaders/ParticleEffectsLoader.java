@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.uwsoft.editor.renderer.data.ParticleEffectVO;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 
 @Slf4j
 public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
@@ -16,6 +17,7 @@ public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
      * Density of the ground box.
      */
     @Setter
+    @Value("${renderer.pixel.per.meter}")
     protected int pixelPerMeter = 0;
 
     @Override

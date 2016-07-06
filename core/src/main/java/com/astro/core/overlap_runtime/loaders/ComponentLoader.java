@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.uwsoft.editor.renderer.data.SimpleImageVO;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Class read and convert sImages array from json file.
@@ -17,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO> {
 
+    @Autowired
     public ComponentLoader(final PhysicsEngine physicsEngine) {
         super(physicsEngine);
     }

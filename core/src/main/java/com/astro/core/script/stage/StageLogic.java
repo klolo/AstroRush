@@ -9,6 +9,7 @@ import com.astro.core.observe.KeyObserve;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Base class for all StageLogic scripts.
@@ -16,16 +17,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public abstract class StageLogic implements IStageLogic, IKeyObserver {
 
-    protected GameStage stage;
-
-    protected Stage stageToLoad;
-
     @Setter
+    @Autowired
     protected PhysicsEngine physicsEngine;
 
-    public void init() {
-        log.info("Creating stage logic");
-    }
+    @Setter
+    protected GameStage gameStage;
+
+    @Getter
+    protected Stage stageToLoad;
 
     @Getter
     @Setter
@@ -35,15 +35,8 @@ public abstract class StageLogic implements IStageLogic, IKeyObserver {
         KeyObserve.instance.register(this);
     }
 
-    @Override
-    public Stage getStageToLoad() {
-        return stageToLoad;
-    }
-
-
-    @Override
-    public void setGameStage(final GameStage stage) {
-        this.stage = stage;
+    public void init() {
+        log.info("Creating stage logic");
     }
 
     @Override

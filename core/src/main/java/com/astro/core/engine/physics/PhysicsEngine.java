@@ -21,7 +21,7 @@ public class PhysicsEngine {
     /**
      * Settings loaded from properties file.
      */
-    private final PhysicsSettings settings;
+    PhysicsSettings settings;
 
     @Setter
     private boolean froozePhysicsProcessing;
@@ -41,10 +41,15 @@ public class PhysicsEngine {
     @Setter
     private World world;
 
+    private PhysicsEngine() {
 
-    public PhysicsEngine(final PhysicsSettings settings) {
-        this.settings = settings;
-        gravityVec = new Vector2(0, this.settings.gravity);
+    }
+
+    public static PhysicsEngine createFromPhysicsSettings(final PhysicsSettings settings) {
+        final PhysicsEngine result = new PhysicsEngine();
+        result.settings = settings;
+        result.gravityVec = new Vector2(0, result.settings.gravity);
+        return result;
     }
 
     public void updateAndRenderLight() {
