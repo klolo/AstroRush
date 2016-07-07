@@ -23,7 +23,7 @@ public class GameEngine extends Game {
 
     @Setter
     @Value("${world.time.step}")
-    private float timeStep = 0;
+    float timeStep = 0;
 
     /**
      * Implemented game logic.
@@ -39,7 +39,7 @@ public class GameEngine extends Game {
 
     @Setter
     @Autowired
-    private PhysicsEngine physicsEngine;
+    PhysicsEngine physicsEngine;
 
     @Setter
     @Getter

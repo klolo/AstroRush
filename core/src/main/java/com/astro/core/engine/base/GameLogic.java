@@ -28,18 +28,35 @@ public class GameLogic implements IGameLogic {
 
     private GameStage prevScreen;
 
-    private HashMap<Stage, GameStage> loadedStages = new HashMap<>();
+    HashMap<Stage, GameStage> loadedStages = new HashMap<>();
 
     @Setter
     private Map<Stage, StageConfig> screenConfigs = new HashMap<>();
 
     @Setter
     @Autowired
-    private StageFactory stageFactory;
+    StageFactory stageFactory;
 
     public void init() {
-        log.info("start");
-        loadStage();
+        log.info("Load stage");
+        Stage stageToLoad = Stage.MAIN_MENU;
+
+        if (currentScreen != null) {
+            prevScreen = currentScreen;
+            unregisterScreen(currentScreen);
+
+            stageToLoad = currentScreen.getStageLogic().getStageToLoad();
+            currentStage = stageToLoad;
+        }
+
+        if (stageToLoad != null && loadedStages.containsKey(stageToLoad)) {
+            currentScreen = loadedStages.get(stageToLoad);
+            currentScreen.register();
+        }
+        else {
+            currentScreen = stageFactory.create(screenConfigs.get(currentStage));
+            loadedStages.put(stageToLoad, currentScreen);
+        }
     }
 
     public GameStage getGameScreen() {
@@ -60,7 +77,7 @@ public class GameLogic implements IGameLogic {
         processEvent();
     }
 
-    private void processEvent() {
+    void processEvent() {
         Optional.of(currentScreen)
                 .map(GameStage::getStageLogic)
                 .map(IStageLogic::getEvent)
@@ -73,7 +90,7 @@ public class GameLogic implements IGameLogic {
                             break;
                         }
                         case SWITCH_STAGE: {
-                            loadStage();
+                            init();
                             break;
                         }
                         case PREV_STAGE: {
@@ -118,28 +135,6 @@ public class GameLogic implements IGameLogic {
         unregisterScreen(prevScreen);
 
         currentScreen.register();
-    }
-
-    private void loadStage() {
-        log.info("load stage");
-        Stage stageToLoad = Stage.MAIN_MENU;
-
-        if (currentScreen != null) {
-            prevScreen = currentScreen;
-            unregisterScreen(currentScreen);
-
-            stageToLoad = currentScreen.getStageLogic().getStageToLoad();
-            currentStage = stageToLoad;
-        }
-
-        if (stageToLoad != null && loadedStages.containsKey(stageToLoad)) {
-            currentScreen = loadedStages.get(stageToLoad);
-            currentScreen.register();
-        }
-        else {
-            currentScreen = stageFactory.create(screenConfigs.get(currentStage));
-            loadedStages.put(stageToLoad, currentScreen);
-        }
     }
 
     private void unregisterScreen(final GameStage stage) {
