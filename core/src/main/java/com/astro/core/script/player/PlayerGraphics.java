@@ -1,5 +1,6 @@
 package com.astro.core.script.player;
 
+import com.astro.core.engine.base.GameEngine;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
@@ -62,9 +63,10 @@ public class PlayerGraphics {
      * Loads images from resources, based on name.
      */
     private TextureObject createImageBasedOnBaseAnimation(final String name) {
-        TextureObject result = new TextureObject(GameResources.instance.getResourceManager().getTextureRegion(name));
+        final TextureObject result = GameEngine.getApplicationContext().getBean("textureObject", TextureObject.class);
+        result.setTextureRegion(GameResources.instance.getResourceManager().getTextureRegion(name));
 
-        Sprite animSprite = runAnimation.getData().getSprite();
+        final Sprite animSprite = runAnimation.getData().getSprite();
         result.getData().getSprite().setOrigin(animSprite.getOriginX(), animSprite.getOriginY());
         result.getData().getSprite().setScale(animSprite.getScaleX(), animSprite.getScaleY());
         return result;

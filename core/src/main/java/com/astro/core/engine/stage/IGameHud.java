@@ -8,4 +8,6 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 public interface IGameHud {
 
     void show(final OrthographicCamera cam, float delta);
+
+    void init();
 }

@@ -16,22 +16,17 @@
           class="com.astro.core.overlap_runtime.converters.LabelVOToIGameObjectConverter"/>
 
     <!-- Loaders fo scene reader -->
-    <bean id="particleEffectsLoader" class="com.astro.core.overlap_runtime.loaders.ParticleEffectsLoader">
-        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
-    </bean>
-
-    <bean id="lightsLoader" class="com.astro.core.overlap_runtime.loaders.LightsLoader">
-        <property name="lightDistance" value="${renderer.light.distance}"/>
-        <property name="pixelPerMeter" value="${renderer.pixel.per.meter}"/>
-    </bean>
-
+    <bean id="baseLoader" class="com.astro.core.overlap_runtime.loaders.BaseLoader"/>
+    <bean id="particleEffectsLoader" class="com.astro.core.overlap_runtime.loaders.ParticleEffectsLoader"/>
+    <bean id="lightsLoader" class="com.astro.core.overlap_runtime.loaders.LightsLoader" parent="baseLoader"/>
     <bean id="spriteAnimationsLoader" class="com.astro.core.overlap_runtime.loaders.SpriteAnimationsLoader"/>
-
     <bean id="labelsLoader" class="com.astro.core.overlap_runtime.loaders.LabelsLoader"/>
-
     <bean id="componentLoader" class="com.astro.core.overlap_runtime.loaders.ComponentLoader"/>
 
     <!-- Loader of all scenes -->
     <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader"/>
+
+    <!-- Loaders fo scene reader -->
+    <bean id="stageFactory" class="com.astro.core.engine.stage.StageFactory"/>
 
 </beans>

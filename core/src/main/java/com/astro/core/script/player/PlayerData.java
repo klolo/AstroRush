@@ -17,7 +17,8 @@ import java.util.HashMap;
 public class PlayerData {
 
     @Getter
-    public PopupMsg playerPopupMsg = new PopupMsg();
+    @Autowired
+    public PopupMsg playerPopupMsg;
 
     public final static int HORIZONTAL_FORCE_STRENGHT = 5;
 
@@ -60,6 +61,7 @@ public class PlayerData {
     @Getter
     public boolean isDead;
 
+    @Autowired
     public IFireBehavior fireBehavior;
 
     public IGameObject gameObject;

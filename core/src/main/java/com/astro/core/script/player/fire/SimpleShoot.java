@@ -12,9 +12,15 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 @Slf4j
-public class SimpleShoot implements IFireBehavior {
+public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
+
+    @Setter
+    private ApplicationContext applicationContext;
 
     @Setter
     private PlayerState playerState;
@@ -27,13 +33,15 @@ public class SimpleShoot implements IFireBehavior {
 
     private final PhysicsEngine physicsEngine;
 
+    @Autowired
     public SimpleShoot(final PhysicsEngine physicsEngine) {
         this.physicsEngine = physicsEngine;
     }
 
     public GameObject onFire() {
         final TextureRegion region = GameResources.instance.getResourceManager().getTextureRegion("keyRed");
-        final PhysicsObject physicsObject = new PhysicsObject(region);
+        final PhysicsObject physicsObject = applicationContext.getBean("physicsObject", PhysicsObject.class);
+        physicsObject.setTextureRegion(region);
 
         final BodyDef bodyDef = getBodyDef(playerPositionX, playerPositionY);
         final PolygonShape polygonShape = getPolygonShape();
@@ -69,20 +77,20 @@ public class SimpleShoot implements IFireBehavior {
         return sprite;
     }
 
-    public FixtureDef getFixtureDef(final PolygonShape polygonShape) {
+    private FixtureDef getFixtureDef(final PolygonShape polygonShape) {
         final FixtureDef myFixtureDef = new FixtureDef();
         myFixtureDef.shape = polygonShape;
         myFixtureDef.density = 1;
         return myFixtureDef;
     }
 
-    public PolygonShape getPolygonShape() {
+    private PolygonShape getPolygonShape() {
         final PolygonShape polygonShape = new PolygonShape();
         polygonShape.setAsBox(.1f, .1f);
         return polygonShape;
     }
 
-    public BodyDef getBodyDef(final float positionX, final float positionY) {
+    private BodyDef getBodyDef(final float positionX, final float positionY) {
         final BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.KinematicBody;
 

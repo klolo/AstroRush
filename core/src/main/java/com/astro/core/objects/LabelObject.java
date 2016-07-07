@@ -27,7 +27,6 @@ public class LabelObject extends TextureObject {
     @Setter
     private String text = "";
 
-    //TODO: move to properties
     /**
      * If you have null when loading font check at ResourceManager.getBitmapFont,
      * if there are this size.
@@ -35,17 +34,13 @@ public class LabelObject extends TextureObject {
     @Getter
     static String DEFAULT_FONT = "SF Atarian System";
 
-    //TODO: move to properties
     @Getter
     static int DEFAULT_SIZE = 30;
 
-    /**
-     * TODO: doc
-     */
     @Dispose
     private ShaderProgram fontShader;
 
-    public LabelObject(BitmapFont font) {
+    public void setBitmapFont(final BitmapFont font) {
         this.font = font;
 
         if (useShader) {
@@ -67,13 +62,8 @@ public class LabelObject extends TextureObject {
     }
 
     @Override
-    protected void render(OrthographicCamera cam, float delta) {
-        if (screenPositionRelative) {
-            batch.setProjectionMatrix(cam.projection);
-        }
-        else {
-            batch.setProjectionMatrix(cam.combined);
-        }
+    protected void render(final OrthographicCamera cam, final float delta) {
+        batch.setProjectionMatrix(screenPositionRelative ? cam.projection : cam.combined);
 
         if (useShader) {
             batch.setShader(fontShader);

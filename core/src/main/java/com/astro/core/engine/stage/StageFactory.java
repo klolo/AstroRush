@@ -8,6 +8,8 @@ import com.astro.core.overlap_runtime.OverlapSceneReader;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -16,7 +18,10 @@ import java.util.stream.Collectors;
  * Creating GameStage based on json configuration loaded to StageConfig object.
  */
 @Slf4j
-public class StageFactory {
+public class StageFactory implements ApplicationContextAware {
+
+    @Setter
+    private ApplicationContext applicationContext;
 
     @Setter
     @Autowired
@@ -61,7 +66,9 @@ public class StageFactory {
     private StageFactory initPlayer(final StageConfig config, final GameStage result) {
         if (config.hasPlayer) {
             log.info("Create HUD");
-            result.setHud(new StageHUD());
+            IGameHud hud = applicationContext.getBean(IGameHud.class);
+            hud.init();
+            result.setHud(hud);
         }
         return this;
     }

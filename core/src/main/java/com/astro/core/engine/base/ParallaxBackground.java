@@ -1,7 +1,5 @@
 package com.astro.core.engine.base;
 
-import com.astro.core.adnotation.GameProperty;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.objects.TextureObject;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -10,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.LinkedList;
 
@@ -25,54 +24,55 @@ public class ParallaxBackground {
     @Getter
     private LinkedList<TextureObject> textures = new LinkedList<>();
 
-    @GameProperty("background.amount")
+    @Value("${background.amount}")
     @Getter
-    int BACKGROUND_AMOUNT = 0;
+    int backgroundAmount = 0;
 
-    @GameProperty("background.speed")
+    @Value("${background.speed}")
     @Getter
-    private float BACKGROUND_SPEED = 0f;
+    private float backgroundSpeed = 0f;
 
-    @GameProperty("background.margin")
+    @Value("${background.margin}")
     @Getter
-    private float TEXTURE_MARGIN_DRAW;
+    private float textureMarginDraw;
 
-    @GameProperty("background.scale")
+    @Value("${background.scale}")
     @Getter
-    private float TEXTURE_SCALE;
+    private float textureScale;
 
-    @GameProperty("background.texture")
+    @Value("${background.texture}")
     @Getter
-    private String TEXTURE_FILE = "";
+    private String textureFile = "";
 
-    @GameProperty("background.simple")
+    @Value("${background.simple}")
     @Setter
-    boolean SIMPLE_MODE;
+    boolean simpleMode;
 
-    /**
-     * Density of the ground box.
-     */
-    @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER;
+    @Value("${renderer.pixel.per.meter}")
+    protected int pixelPerMeter;
 
     private float lastWidth;
 
     private float lastHeight;
 
-    public ParallaxBackground() {
-        PropertyInjector.instance.inject(this);
-    }
-
     public void init() {
-        Texture background = new Texture(Gdx.files.internal("assets/" + TEXTURE_FILE));
+        final Texture background = new Texture(Gdx.files.internal("assets/" + textureFile));
 
-        if (SIMPLE_MODE) {
-            textures.add(new TextureObject(new TextureRegion(background)));
+        if (simpleMode) {
+            final TextureObject textureObject =
+                    GameEngine.getApplicationContext().getBean("textureObject", TextureObject.class);
+            textureObject.setTextureRegion(new TextureRegion(background));
+
+            textures.add(textureObject);
             textures.get(0).getData().getSprite().setOrigin(0f, 0f);
         }
         else {
-            for (int i = 0; i < BACKGROUND_AMOUNT; ++i) {
-                textures.add(new TextureObject(new TextureRegion(background)));
+            for (int i = 0; i < backgroundAmount; ++i) {
+                final TextureObject textureObject =
+                        GameEngine.getApplicationContext().getBean("textureObject", TextureObject.class);
+                textureObject.setTextureRegion(new TextureRegion(background));
+
+                textures.add(textureObject);
                 textures.get(i).getData().getSprite().setOrigin(0f, 0f);
             }
         }
@@ -83,8 +83,8 @@ public class ParallaxBackground {
     /**
      * Drawing all textures for background.
      */
-    public void show(OrthographicCamera cam, float diff) {
-        if (SIMPLE_MODE) {
+    public void show(final OrthographicCamera cam, float diff) {
+        if (simpleMode) {
             textures.get(0).show(cam, diff);
         }
         else {
@@ -93,13 +93,13 @@ public class ParallaxBackground {
     }
 
 
-    public void update(OrthographicCamera cam, float diff) {
-        if (SIMPLE_MODE) {
+    public void update(final OrthographicCamera cam, float diff) {
+        if (simpleMode) {
             simpleUpdate(cam, diff);
         }
         else {
             textures.forEach(t -> t.getData().getSprite().setY(getNewPositionY(cam, diff, t)));
-            textures.forEach(t -> t.getData().getSprite().setX(t.getData().getSprite().getX() - (diff * BACKGROUND_SPEED)));
+            textures.forEach(t -> t.getData().getSprite().setX(t.getData().getSprite().getX() - (diff * backgroundSpeed)));
 
             int findFirstOnLeftIndex = findFirstOnLeft();
             float firstPosX = textures.get(findFirstOnLeftIndex).getData().getSprite().getX();
@@ -108,7 +108,7 @@ public class ParallaxBackground {
                 log.info("Switch texture {} to end", textures.get(findFirstOnLeftIndex));
                 float lastPosX = textures.get(findLastOnLeft()).getData().getSprite().getX();
                 textures.get(findFirstOnLeftIndex).getData().getSprite().setX(
-                        lastPosX + (Gdx.graphics.getWidth() * TEXTURE_SCALE / PIXEL_PER_METER)
+                        lastPosX + (Gdx.graphics.getWidth() * textureScale / pixelPerMeter)
                 );
             }
         }
@@ -117,7 +117,7 @@ public class ParallaxBackground {
     /**
      * Resaizing background.
      */
-    public void resize(int w, int h) {
+    public void resize(final int w, final int h) {
         if (w != lastWidth || h != lastHeight) {
             resizeImages();
             lastWidth = w;
@@ -130,20 +130,20 @@ public class ParallaxBackground {
      */
 
     private void resizeImages() {
-        if (SIMPLE_MODE) {
+        if (simpleMode) {
             textures.get(0).getData().getSprite().setBounds(
                     0,
                     0,
-                    Gdx.graphics.getWidth() * TEXTURE_SCALE,
-                    Gdx.graphics.getHeight() * TEXTURE_SCALE);
+                    Gdx.graphics.getWidth() * textureScale,
+                    Gdx.graphics.getHeight() * textureScale);
         }
         else {
-            for (int i = 0; i < BACKGROUND_AMOUNT; ++i) {
+            for (int i = 0; i < backgroundAmount; ++i) {
                 textures.get(i).getData().getSprite().setBounds(
-                        (i - BACKGROUND_AMOUNT / 2) * (Gdx.graphics.getWidth() * TEXTURE_SCALE / PIXEL_PER_METER),
+                        (i - backgroundAmount / 2) * (Gdx.graphics.getWidth() * textureScale / pixelPerMeter),
                         0,
-                        Gdx.graphics.getWidth() * TEXTURE_SCALE,
-                        Gdx.graphics.getHeight() * TEXTURE_SCALE);
+                        Gdx.graphics.getWidth() * textureScale,
+                        Gdx.graphics.getHeight() * textureScale);
             }
         }
     }
@@ -155,13 +155,13 @@ public class ParallaxBackground {
         textures.get(0).getData().getSprite().setBounds(
                 getNewPositionX(cam, diff),
                 getNewPositionY(cam, diff, textures.get(0)),
-                Gdx.graphics.getWidth() * TEXTURE_SCALE,
-                Gdx.graphics.getHeight() * TEXTURE_SCALE);
+                Gdx.graphics.getWidth() * textureScale,
+                Gdx.graphics.getHeight() * textureScale);
     }
 
     private boolean isOnTheLeftOfScreen(final float posX, final OrthographicCamera cam) {
-        final float posCamX = cam.position.x / PIXEL_PER_METER;
-        final float worldOnScreenWidth = (Gdx.graphics.getWidth() / PIXEL_PER_METER) * TEXTURE_SCALE;
+        final float posCamX = cam.position.x / pixelPerMeter;
+        final float worldOnScreenWidth = (Gdx.graphics.getWidth() / pixelPerMeter) * textureScale;
         return posX < posCamX - worldOnScreenWidth;
     }
 
@@ -201,18 +201,18 @@ public class ParallaxBackground {
 
     private float getNewPositionY(final OrthographicCamera cam, float diff, final TextureObject textureObject) {
         float newY;
-        final float worldCameraY = cam.position.y / PIXEL_PER_METER;
-        final float minPosY = worldCameraY - (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
-        final float maxPosY = worldCameraY + (Gdx.graphics.getHeight() * TEXTURE_MARGIN_DRAW);
+        final float worldCameraY = cam.position.y / pixelPerMeter;
+        final float minPosY = worldCameraY - (Gdx.graphics.getHeight() * textureMarginDraw);
+        final float maxPosY = worldCameraY + (Gdx.graphics.getHeight() * textureMarginDraw);
 
         if (textureObject.getData().getSprite().getY() < minPosY) {
-            newY = textureObject.getData().getSprite().getX() + (diff * BACKGROUND_SPEED);
+            newY = textureObject.getData().getSprite().getX() + (diff * backgroundSpeed);
             if (newY < minPosY) {
                 newY = minPosY;
             }
         }
         else if (textureObject.getData().getSprite().getY() > maxPosY) {
-            newY = textureObject.getData().getSprite().getY() - (diff * BACKGROUND_SPEED);
+            newY = textureObject.getData().getSprite().getY() - (diff * backgroundSpeed);
             if (newY < maxPosY) {
                 newY = maxPosY;
             }
@@ -229,18 +229,18 @@ public class ParallaxBackground {
      */
     private float getNewPositionX(final OrthographicCamera cam, float diff) {
         float newX;
-        final float worldCameraX = cam.position.x / PIXEL_PER_METER;
-        final float minPosX = worldCameraX - (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);
-        final float maxPosX = worldCameraX + (Gdx.graphics.getWidth() * TEXTURE_MARGIN_DRAW);
+        final float worldCameraX = cam.position.x / pixelPerMeter;
+        final float minPosX = worldCameraX - (Gdx.graphics.getWidth() * textureMarginDraw);
+        final float maxPosX = worldCameraX + (Gdx.graphics.getWidth() * textureMarginDraw);
 
         if (textures.get(0).getData().getSprite().getX() < minPosX) {
-            newX = textures.get(0).getData().getSprite().getX() + (diff * BACKGROUND_SPEED);
+            newX = textures.get(0).getData().getSprite().getX() + (diff * backgroundSpeed);
             if (newX < minPosX) {
                 newX = minPosX;
             }
         }
         else if (textures.get(0).getData().getSprite().getX() > maxPosX) {
-            newX = textures.get(0).getData().getSprite().getX() - (diff * BACKGROUND_SPEED);
+            newX = textures.get(0).getData().getSprite().getX() - (diff * backgroundSpeed);
             if (newX < maxPosX) {
                 newX = maxPosX;
             }

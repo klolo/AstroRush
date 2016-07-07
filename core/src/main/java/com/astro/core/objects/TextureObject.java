@@ -1,7 +1,6 @@
 package com.astro.core.objects;
 
 import com.astro.core.adnotation.Dispose;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -30,7 +29,6 @@ public class TextureObject extends GameObject {
     protected boolean renderingInScript;
 
     @Getter
-    @Setter
     protected TextureRegion textureRegion;
 
     /**
@@ -42,26 +40,16 @@ public class TextureObject extends GameObject {
     protected Batch batch;
 
     public TextureObject() {
-        init();
+        batch = new SpriteBatch();
+        batch.enableBlending();
     }
 
     /**
      * Default constructor.
      */
-    public TextureObject(final TextureRegion textureRegion) {
-        init();
+    public void setTextureRegion(final TextureRegion textureRegion) {
         this.textureRegion = textureRegion;
         data.sprite = new Sprite(textureRegion);
-    }
-
-    /**
-     * Called in all constructors.
-     */
-    private void init() {
-        PropertyInjector.instance.inject(this);
-
-        batch = new SpriteBatch();
-        batch.enableBlending();
     }
 
     /**

@@ -31,27 +31,25 @@
         <constructor-arg ref="physicsSettings"/>
     </bean>
 
-    <!-- Loaders fo scene reader -->
-    <bean id="particleEffectsLoader" class="com.astro.core.overlap_runtime.loaders.ParticleEffectsLoader"/>
+    <!-- Game objects -->
+    <bean id="gameObject" abstract="true" scope="prototype" class="com.astro.core.objects.GameObject"/>
+    <bean id="textureObject" parent="gameObject" scope="prototype"
+          class="com.astro.core.objects.TextureObject"/>
+    <bean id="labelObject" parent="textureObject" scope="prototype"
+          class="com.astro.core.objects.LabelObject"/>
+    <bean id="animationObject" parent="textureObject" scope="prototype"
+          class="com.astro.core.objects.AnimationObject"/>
+    <bean id="particleObject" parent="textureObject" scope="prototype"
+          class="com.astro.core.objects.ParticleObject"/>
+    <bean id="physicsObject" parent="textureObject" scope="prototype"
+          class="com.astro.core.objects.PhysicsObject"/>
 
-    <bean id="baseLoader" class="com.astro.core.overlap_runtime.loaders.BaseLoader"/>
-
-    <bean id="lightsLoader" class="com.astro.core.overlap_runtime.loaders.LightsLoader" parent="baseLoader"/>
-
-    <bean id="spriteAnimationsLoader" class="com.astro.core.overlap_runtime.loaders.SpriteAnimationsLoader"/>
-
-    <bean id="labelsLoader" class="com.astro.core.overlap_runtime.loaders.LabelsLoader"/>
-
-    <bean id="componentLoader" class="com.astro.core.overlap_runtime.loaders.ComponentLoader"/>
-
-    <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader" autowire="byName"/>
-
-    <bean id="stageFactory" class="com.astro.core.engine.stage.StageFactory"/>
+    <bean id="parallaxBackground" class="com.astro.core.engine.base.ParallaxBackground" scope="prototype"/>
 
     <!-- managing game screens  -->
     <bean id="gameLogic" class="com.astro.core.engine.base.GameLogic" destroy-method="onExit">
         <property name="screenConfigs">
-            <util:map id="screenConfigs">
+            <util:map>
                 <entry key="MAIN_MENU" value-ref="mainMenuStageConfig"/>
                 <entry key="SETTINGS" value-ref="settingsStageConfig"/>
                 <entry key="HIGHSCORE" value-ref="highscoreStageConfig"/>
@@ -62,15 +60,13 @@
     </bean>
 
     <bean id="gameEngine" lazy-init="true" class="com.astro.core.engine.base.GameEngine"/>
-
+    <bean id="stageHUD" class="com.astro.core.engine.stage.StageHUD"/>
     <bean id="playerSettings" class="com.astro.core.script.player.PlayerSettings"/>
-
     <bean id="playerData" lazy-init="true" class="com.astro.core.script.player.PlayerData"/>
-
     <bean id="box2DDebugRenderer" lazy-init="true" class="com.badlogic.gdx.physics.box2d.Box2DDebugRenderer"/>
-
     <bean id="gameStage" scope="prototype" class="com.astro.core.engine.stage.GameStage"/>
-
     <bean id="cameraManager" lazy-init="true" class="com.astro.core.engine.base.CameraManager"/>
+    <bean id="popupMsg" class="com.astro.core.script.player.PopupMsg"/>
+    <bean id="fireBehavior" class="com.astro.core.script.player.fire.SimpleShoot"/>
 
 </beans>

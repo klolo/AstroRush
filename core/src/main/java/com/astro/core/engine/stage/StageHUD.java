@@ -1,6 +1,5 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.LabelObject;
@@ -11,7 +10,11 @@ import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -20,13 +23,16 @@ import java.util.LinkedHashMap;
  * heads-up display fo GameStage.
  */
 @Slf4j
-public class StageHUD implements IGameHud {
+public class StageHUD implements IGameHud, ApplicationContextAware {
+
+    @Setter
+    private ApplicationContext applicationContext;
 
     /**
      * Amount of the pixel per meter.
      */
-    @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER = 0;
+    @Value("${renderer.pixel.per.meter}")
+    protected int pixelPerMeter = 0;
 
     private LabelObject labelObject;
 
@@ -47,16 +53,17 @@ public class StageHUD implements IGameHud {
         LIVE_BAR_BACKGROUND
     }
 
-    StageHUD() {
+    @Override
+    public void init() {
         PropertyInjector.instance.inject(this);
 
         log.info("Creating default font");
-        labelObject = new LabelObject(
+        labelObject = applicationContext.getBean(LabelObject.class);
+        labelObject.setBitmapFont(
                 GameResources.instance.getResourceManager().getBitmapFont(
                         LabelObject.getDEFAULT_FONT(),
                         LabelObject.getDEFAULT_SIZE()
-                )
-        );
+                ));
 
         labelObject.setScreenPositionRelative(true);
         hudElements.put(HudElements.POINTS_LABEL, labelObject);
@@ -77,10 +84,11 @@ public class StageHUD implements IGameHud {
         hudElements.put(HudElements.HELMET, helmet);
     }
 
-
     private TextureObject createTextureObject(final String name) {
-        TextureObject result = new TextureObject(GameResources.instance.getResourceManager().getTextureRegion(name));
-        TextureRegion region = result.getTextureRegion();
+        final TextureObject result = applicationContext.getBean("textureObject", TextureObject.class);
+        result.setTextureRegion(GameResources.instance.getResourceManager().getTextureRegion(name));
+
+        final TextureRegion region = result.getTextureRegion();
 
         result.getData().getSprite().setBounds(0, 0, region.getRegionWidth(), region.getRegionHeight());
         result.getData().getSprite().setScale(1.0f, 1.0f);
@@ -89,7 +97,6 @@ public class StageHUD implements IGameHud {
 
         return result;
     }
-
 
     /**
      * Getting player data for future usage.
@@ -119,7 +126,7 @@ public class StageHUD implements IGameHud {
         float x = getViewWith(cam) - 2.6f;
         float y = getViewHeight(cam) - 0.51f;
 
-        x += liveBarWidth / PIXEL_PER_METER / 2;
+        x += liveBarWidth / pixelPerMeter / 2;
 
         final Sprite s = new Sprite(region);
 
@@ -143,10 +150,10 @@ public class StageHUD implements IGameHud {
     }
 
     private float getViewWith(final OrthographicCamera cam) {
-        return cam.viewportWidth / 2 / PIXEL_PER_METER;
+        return cam.viewportWidth / 2 / pixelPerMeter;
     }
 
     private float getViewHeight(final OrthographicCamera cam) {
-        return cam.viewportHeight / 2 / PIXEL_PER_METER;
+        return cam.viewportHeight / 2 / pixelPerMeter;
     }
 }

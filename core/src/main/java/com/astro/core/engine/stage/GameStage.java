@@ -19,6 +19,8 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 import java.util.ArrayList;
 
@@ -26,7 +28,10 @@ import java.util.ArrayList;
  * Represents game stage/level.
  */
 @Slf4j
-public class GameStage implements Screen {
+public class GameStage implements Screen, ApplicationContextAware {
+
+    @Setter
+    private ApplicationContext applicationContext;
 
     @Setter
     @Value("${renderer.scale}")
@@ -89,7 +94,7 @@ public class GameStage implements Screen {
     }
 
     void initBackground() {
-        parallaxBackground = new ParallaxBackground();
+        parallaxBackground = applicationContext.getBean(ParallaxBackground.class);
         parallaxBackground.init();
     }
 

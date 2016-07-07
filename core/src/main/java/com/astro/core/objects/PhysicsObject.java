@@ -3,7 +3,6 @@ package com.astro.core.objects;
 import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
@@ -25,9 +24,6 @@ public class PhysicsObject extends TextureObject implements IGameObject {
     @Setter
     protected FixtureDef fixtureDef;
 
-    public PhysicsObject(final TextureRegion texture) {
-        super(texture);
-    }
 
     public void init(final PhysicsEngine physicsEngine) {
         data.body = physicsEngine.createBody(bodyDef);

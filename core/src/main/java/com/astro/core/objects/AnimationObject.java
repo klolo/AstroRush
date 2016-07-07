@@ -15,7 +15,7 @@ public class AnimationObject extends TextureObject {
 
     private float elapsedTime = 0;
 
-    public AnimationObject(final int fps, final TextureAtlas atlas) {
+    public void initAnimation(final int fps, final TextureAtlas atlas) {
         animation = new Animation(1 / fps, atlas.getRegions());
     }
 

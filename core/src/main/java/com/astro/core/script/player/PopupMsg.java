@@ -1,6 +1,5 @@
 package com.astro.core.script.player;
 
-import com.astro.core.adnotation.GameProperty;
 import com.astro.core.adnotation.Msg;
 import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.objects.LabelObject;
@@ -8,6 +7,10 @@ import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -15,8 +18,10 @@ import java.util.LinkedList;
 /**
  * Showing small messages above the player.
  */
-public class PopupMsg {
+public class PopupMsg implements ApplicationContextAware {
 
+    @Setter
+    private ApplicationContext applicationContext;
     /**
      * Player starting popup.
      */
@@ -26,7 +31,7 @@ public class PopupMsg {
     /**
      * Time of the showing popup.
      */
-    @GameProperty("player.popup.time")
+    @Value("${player.popup.time}")
     private float SHOW_TIME = 0.0f;
 
     /**
@@ -44,24 +49,26 @@ public class PopupMsg {
     /**
      * Amount of the pixel per meter.
      */
-    @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER = 0;
+    @Value("${renderer.pixel.per.meter}")
+    protected int pixelPerMeter = 0;
 
-    LabelObject labelObject;
+    private LabelObject labelObject;
 
     PopupMsg() {
         PropertyInjector.instance.inject(this);
     }
 
     public void initLabel() {
-        labelObject = new LabelObject(
-                GameResources.instance.getResourceManager().getBitmapFont(LabelObject.getDEFAULT_FONT(),
-                        30));
+        labelObject = applicationContext.getBean(LabelObject.class);
+
+        labelObject.setBitmapFont(
+                GameResources.instance.getResourceManager().getBitmapFont(LabelObject.getDEFAULT_FONT(), 30));
 
         labelObject.getData().getSprite().setPosition(
-                -1 * (Gdx.graphics.getWidth() / (2 * PIXEL_PER_METER)),
-                -1 * (Gdx.graphics.getHeight() / (2 * PIXEL_PER_METER))
+                -1 * (Gdx.graphics.getWidth() / (2 * pixelPerMeter)),
+                -1 * (Gdx.graphics.getHeight() / (2 * pixelPerMeter))
         );
+
         labelObject.setScreenPositionRelative(false);
     }
 

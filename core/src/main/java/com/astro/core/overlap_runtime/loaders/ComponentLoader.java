@@ -8,13 +8,19 @@ import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.uwsoft.editor.renderer.data.SimpleImageVO;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 /**
  * Class read and convert sImages array from json file.
  */
 @Slf4j
-public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO> {
+public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO>, ApplicationContextAware {
+
+    @Setter
+    private ApplicationContext applicationContext;
 
     /**
      * Register simple image.
@@ -27,15 +33,18 @@ public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO
         IGameObject result;
 
         if (imageVO.physics != null) {
-            result = new PhysicsObject(textureRegion);
-            Body physicsBody = createBody(imageVO, w, h, imageVO.imageName);
+            result = applicationContext.getBean(PhysicsObject.class);
+
+
+            final Body physicsBody = createBody(imageVO, w, h, imageVO.imageName);
             physicsBody.setUserData(result);
             result.getData().setBody(physicsBody);
         }
         else {
-            result = new TextureObject(textureRegion);
+            result = applicationContext.getBean("textureObject", TextureObject.class);
         }
 
+        ((TextureObject) result).setTextureRegion(textureRegion);
         result = new SimpleImageVOToIGameObjectConverter().convert(imageVO, result);
         result.getData().getSprite().setBounds(
                 imageVO.x,
