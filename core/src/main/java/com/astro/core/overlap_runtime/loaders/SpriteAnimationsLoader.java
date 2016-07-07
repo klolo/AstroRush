@@ -1,6 +1,5 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.converters.MainItemVOToIGameObjectConverter;
@@ -10,16 +9,10 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.uwsoft.editor.renderer.data.SpriteAnimationVO;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 @Slf4j
 public class SpriteAnimationsLoader extends BaseLoader implements ILoader<SpriteAnimationVO> {
-
-    @Autowired
-    public SpriteAnimationsLoader(final PhysicsEngine physicsEngine) {
-        super(physicsEngine);
-    }
 
     @Override
     public IGameObject register(SpriteAnimationVO spriteAnimationVO) {

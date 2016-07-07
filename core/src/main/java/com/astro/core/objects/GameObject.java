@@ -24,7 +24,7 @@ abstract public class GameObject implements IGameObject {
      * Amount of the pixel per meter.
      */
     @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER = 0;
+    protected int pixelPerMeter = 0;
 
     @Getter
     @Setter

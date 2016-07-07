@@ -3,17 +3,13 @@ package com.astro.core.overlap_runtime.loaders;
 import box2dLight.ConeLight;
 import box2dLight.Light;
 import box2dLight.PointLight;
-import com.astro.core.adnotation.GameProperty;
-import com.astro.core.adnotation.processor.PropertyInjector;
-import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.engine.stage.GameObjectUtil;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.Color;
 import com.uwsoft.editor.renderer.data.LightVO;
-import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.ArrayList;
 
@@ -28,20 +24,9 @@ public class LightsLoader extends BaseLoader implements ILoader<LightVO> {
      */
     private ArrayList<Light> lights = new ArrayList<>();
 
-    @GameProperty("renderer.pixel.per.meter")
-    @Getter
-    @Setter
-    private int pixelPerMeter = 0;
-
-    @GameProperty("renderer.light.distance")
+    @Value("${renderer.light.distance}")
     @Setter
     private int lightDistance = 0;
-
-    @Autowired
-    public LightsLoader(final PhysicsEngine physicsEngine) {
-        super(physicsEngine);
-        PropertyInjector.instance.inject(this);
-    }
 
     /**
      * @param light

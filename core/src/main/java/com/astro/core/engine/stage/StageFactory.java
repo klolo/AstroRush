@@ -1,6 +1,5 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.base.GameEngine;
 import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.ObjectsRegister;
@@ -46,7 +45,6 @@ public class StageFactory {
     }
 
     private StageFactory initResult(final GameStage result) {
-        PropertyInjector.instance.inject(result);
         result.init();
         return this;
     }

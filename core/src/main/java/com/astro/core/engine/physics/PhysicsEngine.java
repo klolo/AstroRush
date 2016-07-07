@@ -1,7 +1,6 @@
 package com.astro.core.engine.physics;
 
 import box2dLight.RayHandler;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -63,8 +62,6 @@ public class PhysicsEngine {
      * -creates background
      */
     public void initPhysics() {
-        PropertyInjector.instance.inject(this);
-
         settings.timeStep = 1f / settings.timeStep;
 
         world = new World(gravityVec, true);

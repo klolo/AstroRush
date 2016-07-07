@@ -1,7 +1,5 @@
 package com.astro.core.overlap_runtime.loaders;
 
-import com.astro.core.adnotation.GameProperty;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.physics.PhysicsEngine;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -9,6 +7,8 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.uwsoft.editor.renderer.data.MainItemVO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -18,18 +18,11 @@ import java.util.LinkedList;
  */
 class BaseLoader {
 
-    /**
-     * Density of the ground box.
-     */
-    @GameProperty("renderer.pixel.per.meter")
-    protected int PIXEL_PER_METER = 0;
+    @Value("${renderer.pixel.per.meter}")
+    protected int pixelPerMeter = 0;
 
-    protected final PhysicsEngine physicsEngine;
-
-    BaseLoader(final PhysicsEngine physicsEngine) {
-        this.physicsEngine = physicsEngine;
-        PropertyInjector.instance.inject(this);
-    }
+    @Autowired
+    protected final PhysicsEngine physicsEngine = null;
 
     Body createBody(final MainItemVO data, float w, float h, final String name) {
         final LinkedList<PolygonShape> polygons = new LinkedList<>();
@@ -78,8 +71,8 @@ class BaseLoader {
             it.x += data.originX;
             it.y += data.originY;
 
-            it.x -= (w / PIXEL_PER_METER / 2) * data.scaleX;
-            it.y -= (h / PIXEL_PER_METER / 2) * data.scaleY;
+            it.x -= (w / pixelPerMeter / 2) * data.scaleX;
+            it.y -= (h / pixelPerMeter / 2) * data.scaleY;
         }
 
         shape.set(vertices);

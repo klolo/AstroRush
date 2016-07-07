@@ -115,7 +115,7 @@ public class TextureObject extends GameObject {
      * Get X position of the bottom left corner of object.
      */
     float getPx(final float x, final float width) {
-        float result = x * PIXEL_PER_METER;
+        float result = x * pixelPerMeter;
         float halfWith = width * data.sprite.getScaleX() / 2;
         return result - halfWith;
     }
@@ -124,7 +124,7 @@ public class TextureObject extends GameObject {
      * Get Y position of the bottom left corner of object.
      */
     float getPy(float y, float height) {
-        return y * PIXEL_PER_METER - height * data.sprite.getScaleY() / 2;
+        return y * pixelPerMeter - height * data.sprite.getScaleY() / 2;
     }
 
     private void drawTextureRegion(final float pX, final float pY) {

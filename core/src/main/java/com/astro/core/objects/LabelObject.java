@@ -82,8 +82,8 @@ public class LabelObject extends TextureObject {
         font.getRegion().getTexture().setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         font.setColor(data.getSprite().getColor());
         font.draw(batch, text,
-                data.sprite.getX() * PIXEL_PER_METER,
-                data.sprite.getY() * PIXEL_PER_METER);
+                data.sprite.getX() * pixelPerMeter,
+                data.sprite.getY() * pixelPerMeter);
 
         if (useShader) {
             batch.setShader(null);

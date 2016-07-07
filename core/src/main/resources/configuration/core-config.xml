@@ -34,9 +34,9 @@
     <!-- Loaders fo scene reader -->
     <bean id="particleEffectsLoader" class="com.astro.core.overlap_runtime.loaders.ParticleEffectsLoader"/>
 
-    <bean id="lightsLoader" class="com.astro.core.overlap_runtime.loaders.LightsLoader">
-        <property name="lightDistance" value="${renderer.light.distance}"/>
-    </bean>
+    <bean id="baseLoader" class="com.astro.core.overlap_runtime.loaders.BaseLoader"/>
+
+    <bean id="lightsLoader" class="com.astro.core.overlap_runtime.loaders.LightsLoader" parent="baseLoader"/>
 
     <bean id="spriteAnimationsLoader" class="com.astro.core.overlap_runtime.loaders.SpriteAnimationsLoader"/>
 
@@ -44,15 +44,12 @@
 
     <bean id="componentLoader" class="com.astro.core.overlap_runtime.loaders.ComponentLoader"/>
 
-    <!-- Loader of all scenes -->
     <bean id="overlapSceneReader" class="com.astro.core.overlap_runtime.OverlapSceneReader" autowire="byName"/>
 
-    <!-- Factory of the all stages in game -->
     <bean id="stageFactory" class="com.astro.core.engine.stage.StageFactory"/>
 
     <!-- managing game screens  -->
     <bean id="gameLogic" class="com.astro.core.engine.base.GameLogic" destroy-method="onExit">
-        <property name="stageFactory" ref="stageFactory"/>
         <property name="screenConfigs">
             <util:map id="screenConfigs">
                 <entry key="MAIN_MENU" value-ref="mainMenuStageConfig"/>
@@ -64,7 +61,6 @@
         </property>
     </bean>
 
-    <!-- main loop of the game -->
     <bean id="gameEngine" lazy-init="true" class="com.astro.core.engine.base.GameEngine"/>
 
     <bean id="playerSettings" class="com.astro.core.script.player.PlayerSettings"/>
