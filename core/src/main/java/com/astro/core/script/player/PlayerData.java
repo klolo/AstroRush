@@ -31,12 +31,10 @@ public class PlayerData {
     public int startLiveAmount = 100;
 
     @Getter
-    @Setter
     @Autowired
     public PlayerSettings settings;
 
     @Getter
-    @Setter
     @Autowired
     public CameraManager cameraManager;
 

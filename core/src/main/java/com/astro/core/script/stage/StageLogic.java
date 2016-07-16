@@ -17,7 +17,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Slf4j
 public abstract class StageLogic implements IStageLogic, IKeyObserver {
 
-    @Setter
     @Autowired
     protected PhysicsEngine physicsEngine;
 

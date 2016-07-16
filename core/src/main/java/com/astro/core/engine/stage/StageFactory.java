@@ -23,11 +23,9 @@ public class StageFactory implements ApplicationContextAware {
     @Setter
     private ApplicationContext applicationContext;
 
-    @Setter
     @Autowired
     private PhysicsEngine physicsEngine;
 
-    @Setter
     @Autowired
     private OverlapSceneReader overlapSceneReader;
 

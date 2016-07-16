@@ -33,7 +33,6 @@ public class GameStage implements Screen, ApplicationContextAware {
     @Setter
     private ApplicationContext applicationContext;
 
-    @Setter
     @Value("${renderer.scale}")
     private float scale = 2.0f;
 
@@ -41,7 +40,6 @@ public class GameStage implements Screen, ApplicationContextAware {
     @Value("${renderer.debug}")
     private boolean debugDraw = false;
 
-    @Setter
     @Value("${renderer.pixel.per.meter}")
     protected int pixelPerMeter = 0;
 
@@ -61,7 +59,6 @@ public class GameStage implements Screen, ApplicationContextAware {
     /**
      * Debug rendering physics.
      */
-    @Setter
     @Autowired
     private Box2DDebugRenderer renderer;
 
@@ -69,7 +66,6 @@ public class GameStage implements Screen, ApplicationContextAware {
     @Getter
     private IStageLogic stageLogic;
 
-    @Setter
     @Autowired
     private PhysicsEngine physicsEngine;
 

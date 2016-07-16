@@ -10,7 +10,6 @@ import com.google.common.base.Preconditions;
 import com.uwsoft.editor.renderer.data.CompositeVO;
 import com.uwsoft.editor.renderer.data.SceneVO;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,23 +22,18 @@ import java.util.List;
 @Slf4j
 public class OverlapSceneReader {
 
-    @Setter
     @Autowired
     ComponentLoader componentLoader;
 
-    @Setter
     @Autowired
     ParticleEffectsLoader particleEffectsLoader;
 
-    @Setter
     @Autowired
     LightsLoader lightsLoader;
 
-    @Setter
     @Autowired
     LabelsLoader labelsLoader;
 
-    @Setter
     @Autowired
     SpriteAnimationsLoader spriteAnimationsLoader;
 

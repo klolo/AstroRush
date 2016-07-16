@@ -30,7 +30,6 @@ public class CameraManager {
     @Value("${renderer.pixel.per.meter}")
     protected int pixelPerMeter;
 
-    @Setter
     @Getter
     @Autowired
     private PhysicsEngine physicsEngine;
