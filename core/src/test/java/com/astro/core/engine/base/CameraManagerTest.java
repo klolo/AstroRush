@@ -2,6 +2,7 @@ package com.astro.core.engine.base;
 
 import com.astro.core.engine.interfaces.IObservedByCamera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.google.common.base.Preconditions;
 import common.GdxTestRunner;
 import org.junit.Assert;
 import org.junit.Before;
@@ -46,6 +47,17 @@ public class CameraManagerTest {
     }
 
     @Test
+    public void shouldBeCameraCorrectlyInit() {
+        //given
+        Preconditions.checkNotNull(cameraManager, "camera shoul be injected");
+
+        //then
+        Assert.assertNotNull("Physics cannot be null", cameraManager.getPhysicsEngine());
+        Assert.assertTrue("pixelPerMeter should be set", cameraManager.pixelPerMeter != 0);
+    }
+
+
+    @Test
     public void shouldBeCameraOnCenter() {
         //given
         cameraManager.setObservedObject(null);
@@ -61,7 +73,7 @@ public class CameraManagerTest {
     @Test
     public void shouldCameraFollowPlayer() {
         //given
-        OrthographicCamera cam = cameraManager.getCamera();
+        final OrthographicCamera cam = cameraManager.getCamera();
         cameraManager.setObservedObject(observable);
 
         observable.posX = 10f;

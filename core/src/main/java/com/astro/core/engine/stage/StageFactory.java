@@ -32,6 +32,7 @@ public class StageFactory implements ApplicationContextAware {
     private OverlapSceneReader overlapSceneReader;
 
     public GameStage create(final StageConfig config) {
+        final long startTime = System.currentTimeMillis();
         log.info("Loading stage: {}", config.stageName);
 
         prepareGameForStage(config);
@@ -45,7 +46,7 @@ public class StageFactory implements ApplicationContextAware {
                 .initLogic(config, result)
                 .initDebugDraw(config, result);
 
-        log.info("Stage loaded");
+        log.info("Stage loaded, time: {} ms", (System.currentTimeMillis() - startTime));
         return result;
     }
 
@@ -115,8 +116,14 @@ public class StageFactory implements ApplicationContextAware {
     private void addToObjectRegister(final ArrayList<IGameObject> objects) {
         ObjectsRegister.instance.registerObject(
                 objects.stream()
-                        .filter(e -> e.getData().getItemIdentifier() != null && !"".equals(e.getData().getItemIdentifier()))
+                        .filter(e -> shouldBeObjectRegister(e))
                         .collect(Collectors.toList())
         );
+    }
+
+    private boolean shouldBeObjectRegister(final IGameObject object) {
+        return object != null
+                && object.getData().getItemIdentifier() != null
+                && !"".equals(object.getData().getItemIdentifier());
     }
 }

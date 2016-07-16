@@ -31,6 +31,7 @@ public class CameraManager {
     protected int pixelPerMeter;
 
     @Setter
+    @Getter
     @Autowired
     private PhysicsEngine physicsEngine;
 
