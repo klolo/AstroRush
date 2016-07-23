@@ -41,7 +41,7 @@ public class PlayerData {
     public PlayerState state = PlayerState.STAND;
 
     @Getter
-    public CollisionProcessor collisionProcessor;
+    public PlayerCollisionProcessor playerCollisionProcessor;
 
     @Getter
     public HashMap<WatchersID, LogicTimer> watchers;

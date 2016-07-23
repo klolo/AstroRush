@@ -39,7 +39,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         KeyObserve.instance.register(this);
 
         playerData.cameraManager.setObservedObject(this);
-        playerData.collisionProcessor = new CollisionProcessor(this);
+        playerData.playerCollisionProcessor = new PlayerCollisionProcessor(this);
         playerData.watchers = new WatchersCreator(this).init().getWatchers();
     }
 
@@ -51,7 +51,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         playerData.playerPopupMsg.initLabel();
         playerData.gameObject = gameObject;
 
-        gameObject.getData().setCollisionConsumer(playerData.collisionProcessor::processCollision);
+        gameObject.getData().setCollisionCallbackFunction(playerData.playerCollisionProcessor::processCollision);
         playerData.settings.playerHeight =
                 ((AnimationObject) gameObject).getAnimation().getKeyFrames()[0].getRegionHeight() / playerData.settings.pixelPerMeter;
 

@@ -3,14 +3,12 @@ package com.astro.core.engine.physics;
 import box2dLight.RayHandler;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.PolygonShape;
-import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.*;
 import com.google.common.base.Preconditions;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Slf4j
@@ -25,6 +23,9 @@ public class PhysicsEngine {
     @Setter
     private boolean froozePhysicsProcessing;
 
+    @Setter
+    @Autowired
+    private ContactListener collisionListener;
     /**
      * Configuration of the world gravity.
      */
@@ -65,7 +66,7 @@ public class PhysicsEngine {
         settings.timeStep = 1f / settings.timeStep;
 
         world = new World(gravityVec, true);
-        world.setContactListener(CollisionListener.instance);
+        world.setContactListener(collisionListener);
 
         createGround();
         initLight(1.0f, 1.0f, 1.0f);

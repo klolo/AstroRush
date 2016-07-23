@@ -1,5 +1,6 @@
 package com.astro.core.script;
 
+import com.astro.core.engine.physics.CollisionProcessResult;
 import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
@@ -18,11 +19,11 @@ public class Switch implements ILogic, IInteractWithPlayer {
     @Override
     public void setGameObject(IGameObject gameObject) {
         this.gameObject = (TextureObject) gameObject;
-        gameObject.getData().setCollisionConsumer(this::collisionEvent);
+        gameObject.getData().setCollisionCallbackFunction(this::collisionEvent);
     }
 
-    public void collisionEvent(IGameObject collidatedObject) {
-
+    public CollisionProcessResult collisionEvent(IGameObject collidatedObject) {
+        return new CollisionProcessResult();
     }
 
     @Override

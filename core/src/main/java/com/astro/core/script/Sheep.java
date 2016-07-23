@@ -1,5 +1,6 @@
 package com.astro.core.script;
 
+import com.astro.core.engine.physics.CollisionProcessResult;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
@@ -18,13 +19,14 @@ public class Sheep implements ILogic {
 
     public void setGameObject(final IGameObject gameObject) {
         this.gameObject = (AnimationObject) gameObject;
-        this.gameObject.getData().setCollisionConsumer(this::collisionEvent);
+        this.gameObject.getData().setCollisionCallbackFunction(this::collisionEvent);
 
         move = new BackAndForthMove<>((AnimationObject) gameObject, -2f, 2f, 1f);
     }
 
-    void collisionEvent(final IGameObject gameObject) {
+    CollisionProcessResult collisionEvent(final IGameObject gameObject) {
         log.debug("hit sheep");
+        return new CollisionProcessResult();
     }
 
     @Override

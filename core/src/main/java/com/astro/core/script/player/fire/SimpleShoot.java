@@ -95,10 +95,10 @@ public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
         bodyDef.type = BodyDef.BodyType.KinematicBody;
 
         if (playerState == PlayerState.FLY_LEFT || playerState == PlayerState.RUN_LEFT) {
-            bodyDef.position.x = positionX;
+            bodyDef.position.x = positionX - 0.5f;
         }
         else {
-            bodyDef.position.x = positionX + 2;//fixme
+            bodyDef.position.x = positionX + 1.5f;//fixme
         }
 
         bodyDef.position.y = positionY + 1;//fixme

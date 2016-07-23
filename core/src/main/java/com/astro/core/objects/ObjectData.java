@@ -1,5 +1,6 @@
 package com.astro.core.objects;
 
+import com.astro.core.engine.physics.CollisionProcessResult;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -9,7 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.HashMap;
-import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * Hold all GameObject data.
@@ -83,6 +84,6 @@ public class ObjectData {
      * Callback method for collision. If present event will be send.
      * See: CollisionListener.
      */
-    protected Consumer<IGameObject> collisionConsumer;
+    protected Function<IGameObject, CollisionProcessResult> collisionCallbackFunction;
 
 }

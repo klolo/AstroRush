@@ -1,5 +1,6 @@
 package com.astro.core.script.player;
 
+import com.astro.core.engine.physics.CollisionProcessResult;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.script.*;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +12,7 @@ import java.lang.reflect.Method;
  * Process Player collision with other object.
  */
 @Slf4j
-public class CollisionProcessor {
+public class PlayerCollisionProcessor {
 
     /**
      * Instance of the player.
@@ -21,54 +22,62 @@ public class CollisionProcessor {
     /**
      * Requeired player object.
      */
-    public CollisionProcessor(final Player player) {
+    public PlayerCollisionProcessor(final Player player) {
         this.player = player;
     }
 
     /**
      * Calling method collision defined by script class and using refelction.
      */
-    public void processCollision(final IGameObject collidatedObject) {
+    public CollisionProcessResult processCollision(final IGameObject collidatedObject) {
         try {
             Method m = getClass().getMethod("collision", (Class) collidatedObject.getData().getLogic().getClass());
             m.setAccessible(true);
-            m.invoke(this, collidatedObject.getData().getLogic());
+            return (CollisionProcessResult) m.invoke(this, collidatedObject.getData().getLogic());
         }
         catch (final NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
             log.warn("Cannot find method");
         }
+
+        return null;
     }
 
     /**
      * Collision with monet or other object with gives points.
      */
-    public void collision(final Point point) {
+    public CollisionProcessResult collision(final Point point) {
         player.playerData.getPlayerPopupMsg().addMessagesToQueue(point.getPlayerMsg());
         player.addPoints(Integer.valueOf(point.getPlayerMsg()));
         player.addLive(10);
+
+        final CollisionProcessResult collisionProcessResult = new CollisionProcessResult();
+        collisionProcessResult.setIgnoreCollision(true);
+        return collisionProcessResult;
     }
 
     /**
      * Test collision with enemy. Should be remove on final version.
      */
-    public void collision(final Sheep sheep) {
+    public CollisionProcessResult collision(final Sheep sheep) {
         player.playerData.getPlayerPopupMsg().addMessagesToQueue("ouh!");
+        return new CollisionProcessResult();
     }
 
     /**
      * Interact with switch
      */
-    public void collision(final Switch s) {
+    public CollisionProcessResult collision(final Switch s) {
         player.playerData.getPlayerPopupMsg().addMessagesToQueue("Press shift to interact");
         player.playerData.setInteractObject(s);
+        return new CollisionProcessResult();
     }
 
     /**
      * Interact with platform
      */
-    public void collision(final MovingPlatform s) {
+    public CollisionProcessResult collision(final MovingPlatform s) {
         player.playerData.setStandOnThePlatform(true);
+        return new CollisionProcessResult();
     }
-
 
 }

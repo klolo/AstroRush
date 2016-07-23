@@ -25,6 +25,9 @@
     <!-- Physics configuration -->
     <bean id="physicsSettings" class="com.astro.core.engine.physics.PhysicsSettings"/>
 
+    <!-- Collision listener -->
+    <bean id="collisionListener" lazy-init="true" class="com.astro.core.engine.physics.CollisionListener"/>
+
     <!-- Box2d physics engine -->
     <bean id="physicsEngine" class="com.astro.core.engine.physics.PhysicsEngine"
           factory-method="createFromPhysicsSettings">
