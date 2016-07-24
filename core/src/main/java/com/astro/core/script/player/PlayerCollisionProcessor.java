@@ -58,7 +58,7 @@ public class PlayerCollisionProcessor {
     /**
      * Test collision with enemy. Should be remove on final version.
      */
-    public CollisionProcessResult collision(final Sheep sheep) {
+    public CollisionProcessResult collision(final Enemy enemy) {
         player.playerData.getPlayerPopupMsg().addMessagesToQueue("ouh!");
         return new CollisionProcessResult();
     }

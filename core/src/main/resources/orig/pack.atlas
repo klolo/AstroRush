@@ -124,6 +124,13 @@ blueJewel
   orig: 24, 22
   offset: 0, 0
   index: -1
+bullet
+  rotate: false
+  xy: 1733, 148
+  size: 58, 40
+  orig: 58, 40
+  offset: 0, 0
+  index: -1
 c
   rotate: false
   xy: 1733, 1867
@@ -266,16 +273,9 @@ item1
   index: -1
 ladderNarrowmid
   rotate: false
-  xy: 1733, 124
+  xy: 1733, 82
   size: 56, 64
   orig: 56, 64
-  offset: 0, 0
-  index: -1
-ladderNarrowtop
-  rotate: false
-  xy: 1733, 74
-  size: 56, 48
-  orig: 56, 48
   offset: 0, 0
   index: -1
 ladderWidemid
@@ -847,7 +847,7 @@ blueCrystal
   index: -1
 buttonFloor
   rotate: false
-  xy: 1605, 2
+  xy: 1501, 2
   size: 54, 12
   orig: 54, 12
   offset: 0, 0
@@ -868,7 +868,7 @@ buttonGreen
   index: -1
 buttonGreenpressed
   rotate: false
-  xy: 1501, 2
+  xy: 1597, 2
   size: 50, 17
   orig: 50, 17
   offset: 0, 0
@@ -882,21 +882,21 @@ buttonRed
   index: -1
 buttonRedpressed
   rotate: false
-  xy: 1553, 2
+  xy: 1736, 1602
   size: 50, 17
   orig: 50, 17
   offset: 0, 0
   index: -1
 discGreen
   rotate: false
-  xy: 1884, 1621
+  xy: 1842, 1488
   size: 34, 35
   orig: 34, 35
   offset: 0, 0
   index: -1
 discRed
   rotate: false
-  xy: 1880, 1546
+  xy: 1840, 1370
   size: 34, 35
   orig: 34, 35
   offset: 0, 0
@@ -938,14 +938,14 @@ enemyFloating2
   index: -1
 enemyFloating3
   rotate: false
-  xy: 1842, 1376
+  xy: 2005, 1741
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 enemyFloating4
   rotate: false
-  xy: 1840, 1334
+  xy: 1961, 1741
   size: 42, 40
   orig: 42, 40
   offset: 0, 0
@@ -1001,28 +1001,28 @@ enemyFlyingAlt3
   index: -1
 enemySpikey1
   rotate: false
-  xy: 1952, 1793
+  xy: 1840, 1446
   size: 32, 40
   orig: 32, 40
   offset: 0, 0
   index: -1
 enemySpikey4
   rotate: false
-  xy: 1849, 1124
+  xy: 1923, 1586
   size: 32, 40
   orig: 32, 40
   offset: 0, 0
   index: -1
 enemySwimming1
   rotate: false
-  xy: 1983, 1757
+  xy: 1903, 1552
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
   index: -1
 enemySwimming2
   rotate: false
-  xy: 1986, 1791
+  xy: 2001, 1664
   size: 44, 32
   orig: 44, 32
   offset: 0, 0
@@ -1036,7 +1036,7 @@ enemySwimming4
   index: -1
 enemyWalking1
   rotate: false
-  xy: 1885, 1690
+  xy: 1952, 1789
   size: 32, 44
   orig: 32, 44
   offset: 0, 0
@@ -1050,7 +1050,7 @@ enemyWalking3
   index: -1
 enemyWalking4
   rotate: false
-  xy: 1843, 1166
+  xy: 1881, 1628
   size: 35, 41
   orig: 35, 41
   offset: 0, 0
@@ -1141,30 +1141,37 @@ fluidGreen
   index: -1
 greenCrystal
   rotate: false
-  xy: 1885, 1658
+  xy: 1885, 1671
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
   index: -1
 ico
   rotate: false
-  xy: 1553, 21
+  xy: 1690, 23
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
   index: -1
 keyGreen
   rotate: false
-  xy: 1916, 1541
+  xy: 1846, 1124
   size: 29, 30
   orig: 29, 30
   offset: 0, 0
   index: -1
 keyRed
   rotate: false
-  xy: 1959, 1635
+  xy: 1888, 1703
   size: 29, 30
   orig: 29, 30
+  offset: 0, 0
+  index: -1
+ladderNarrowtop
+  rotate: false
+  xy: 1736, 1621
+  size: 56, 48
+  orig: 56, 48
   offset: 0, 0
   index: -1
 ladderWidetop
@@ -1211,21 +1218,21 @@ lockRedRight
   index: -1
 outlineCrystal
   rotate: false
-  xy: 1919, 1672
+  xy: 1961, 1665
   size: 38, 36
   orig: 38, 36
   offset: 0, 0
   index: -1
 outlineDisc
   rotate: false
-  xy: 1842, 1418
+  xy: 2005, 1698
   size: 40, 41
   orig: 40, 41
   offset: 0, 0
   index: -1
 outlineDiscalt
   rotate: false
-  xy: 1840, 1486
+  xy: 1919, 1744
   size: 40, 41
   orig: 40, 41
   offset: 0, 0
@@ -1246,14 +1253,14 @@ outlineJewel
   index: -1
 outlineKey
   rotate: false
-  xy: 1879, 1583
+  xy: 1903, 1514
   size: 36, 36
   orig: 36, 36
   offset: 0, 0
   index: -1
 outlinePuzzle
   rotate: false
-  xy: 1840, 1250
+  xy: 1881, 1586
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
@@ -1274,7 +1281,7 @@ plantBlue3
   index: -1
 plantBlue5
   rotate: false
-  xy: 580, 7
+  xy: 1800, 1087
   size: 44, 22
   orig: 44, 22
   offset: 0, 0
@@ -1302,42 +1309,42 @@ plantDark1
   index: -1
 plantDark2
   rotate: false
-  xy: 1991, 1724
+  xy: 1918, 1628
   size: 36, 31
   orig: 36, 31
   offset: 0, 0
   index: -1
 plantDark3
   rotate: false
-  xy: 1829, 1619
+  xy: 1279, 4
   size: 26, 50
   orig: 26, 50
   offset: 0, 0
   index: -1
 plantDark4
   rotate: false
-  xy: 1885, 1736
+  xy: 1842, 1525
   size: 32, 49
   orig: 32, 49
   offset: 0, 0
   index: -1
 plantDark5
   rotate: false
-  xy: 1910, 1507
+  xy: 1949, 1552
   size: 28, 32
   orig: 28, 32
   offset: 0, 0
   index: -1
 plantDark6
   rotate: false
-  xy: 1849, 1084
+  xy: 1868, 1288
   size: 27, 38
   orig: 27, 38
   offset: 0, 0
   index: -1
 plantGreen1
   rotate: false
-  xy: 1762, 1568
+  xy: 1800, 1111
   size: 44, 44
   orig: 44, 44
   offset: 0, 0
@@ -1351,28 +1358,28 @@ plantGreen2
   index: -1
 plantGreen3
   rotate: false
-  xy: 1920, 1605
+  xy: 1941, 1519
   size: 36, 31
   orig: 36, 31
   offset: 0, 0
   index: -1
 plantGreen4
   rotate: false
-  xy: 1808, 1562
+  xy: 1888, 1735
   size: 29, 50
   orig: 29, 50
   offset: 0, 0
   index: -1
 plantGreen5
   rotate: false
-  xy: 1800, 1154
+  xy: 1800, 1206
   size: 41, 47
   orig: 41, 47
   offset: 0, 0
   index: -1
 plantGreen6
   rotate: false
-  xy: 1919, 1710
+  xy: 1961, 1703
   size: 42, 36
   orig: 42, 36
   offset: 0, 0
@@ -1400,28 +1407,28 @@ plantRed2
   index: -1
 plantRed3
   rotate: false
-  xy: 1840, 1461
+  xy: 580, 6
   size: 42, 23
   orig: 42, 23
   offset: 0, 0
   index: -1
 plantRed4
   rotate: false
-  xy: 1919, 1748
+  xy: 1840, 1407
   size: 34, 37
   orig: 34, 37
   offset: 0, 0
   index: -1
 plantRed5
   rotate: false
-  xy: 1920, 1638
+  xy: 1762, 1568
   size: 37, 32
   orig: 37, 32
   offset: 0, 0
   index: -1
 plantRed6
   rotate: false
-  xy: 1800, 1406
+  xy: 1800, 1510
   size: 40, 50
   orig: 40, 50
   offset: 0, 0
@@ -1496,9 +1503,16 @@ plantTopyellow
   orig: 62, 54
   offset: 0, 0
   index: -1
+plasmaShoot
+  rotate: false
+  xy: 1986, 1783
+  size: 43, 40
+  orig: 43, 40
+  offset: 0, 0
+  index: -1
 playerGreendead
   rotate: false
-  xy: 1839, 1574
+  xy: 1841, 1576
   size: 38, 43
   orig: 38, 43
   offset: 0, 0
@@ -1512,21 +1526,21 @@ playerGreenduck
   index: -1
 playerGreenfall
   rotate: false
-  xy: 1800, 1303
+  xy: 1800, 1355
   size: 38, 49
   orig: 38, 49
   offset: 0, 0
   index: -1
 playerGreenroll
   rotate: false
-  xy: 1840, 1292
+  xy: 1919, 1702
   size: 40, 40
   orig: 40, 40
   offset: 0, 0
   index: -1
 playerGreenstand
   rotate: false
-  xy: 1800, 1354
+  xy: 1800, 1406
   size: 38, 50
   orig: 38, 50
   offset: 0, 0
@@ -1547,7 +1561,7 @@ playerGreenswitch1
   index: -1
 playerGreenswitch2
   rotate: false
-  xy: 1501, 21
+  xy: 1597, 21
   size: 50, 50
   orig: 50, 50
   offset: 0, 0
@@ -1561,35 +1575,35 @@ playerGreenup1
   index: -1
 playerGreenup2
   rotate: false
-  xy: 1840, 1529
+  xy: 1307, 12
   size: 38, 43
   orig: 38, 43
   offset: 0, 0
   index: -1
 playerGreenup3
   rotate: false
-  xy: 1840, 1209
+  xy: 1919, 1661
   size: 40, 39
   orig: 40, 39
   offset: 0, 0
   index: -1
 playerGreenwalk1
   rotate: false
-  xy: 1800, 1510
+  xy: 1801, 1562
   size: 38, 50
   orig: 38, 50
   offset: 0, 0
   index: -1
 playerGreenwalk2
   rotate: false
-  xy: 1800, 1253
+  xy: 1800, 1305
   size: 38, 48
   orig: 38, 48
   offset: 0, 0
   index: -1
 playerGreenwalk3
   rotate: false
-  xy: 1800, 1203
+  xy: 1800, 1255
   size: 38, 48
   orig: 38, 48
   offset: 0, 0
@@ -1610,7 +1624,7 @@ playerGreenwalk5
   index: -1
 redCrystal
   rotate: false
-  xy: 1917, 1573
+  xy: 1849, 1156
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
@@ -1694,28 +1708,28 @@ signArrow
   index: -1
 signArrowBL
   rotate: false
-  xy: 1800, 1727
+  xy: 1844, 1727
   size: 42, 55
   orig: 42, 55
   offset: 0, 0
   index: -1
 signArrowBR
   rotate: false
-  xy: 1786, 1614
+  xy: 1838, 1621
   size: 41, 55
   orig: 41, 55
   offset: 0, 0
   index: -1
 signArrowTL
   rotate: false
-  xy: 1651, 16
+  xy: 1800, 1727
   size: 42, 55
   orig: 42, 55
   offset: 0, 0
   index: -1
 signArrowTR
   rotate: false
-  xy: 1695, 18
+  xy: 1794, 1614
   size: 42, 55
   orig: 42, 55
   offset: 0, 0
@@ -1729,7 +1743,7 @@ signArrowdown
   index: -1
 signArrowleft
   rotate: false
-  xy: 1736, 1614
+  xy: 1501, 16
   size: 48, 55
   orig: 48, 55
   offset: 0, 0
@@ -1743,7 +1757,7 @@ signArrowright
   index: -1
 signArrowup
   rotate: false
-  xy: 1844, 1724
+  xy: 1649, 13
   size: 39, 58
   orig: 39, 58
   offset: 0, 0
@@ -1757,7 +1771,7 @@ signLarge
   index: -1
 signSmall
   rotate: false
-  xy: 1605, 16
+  xy: 1551, 16
   size: 44, 55
   orig: 44, 55
   offset: 0, 0
@@ -1785,42 +1799,42 @@ switchGreenleft
   index: -1
 switchGreenoff
   rotate: false
-  xy: 1963, 1709
+  xy: 1840, 1286
   size: 26, 40
   orig: 26, 40
   offset: 0, 0
   index: -1
 switchGreenon
   rotate: false
-  xy: 1955, 1751
+  xy: 1840, 1328
   size: 26, 40
   orig: 26, 40
   offset: 0, 0
   index: -1
 switchGreenright
   rotate: false
-  xy: 1800, 1105
+  xy: 1800, 1157
   size: 47, 47
   orig: 47, 47
   offset: 0, 0
   index: -1
 switchRedleft
   rotate: false
-  xy: 1836, 1675
+  xy: 1836, 1678
   size: 47, 47
   orig: 47, 47
   offset: 0, 0
   index: -1
 switchRedoff
   rotate: false
-  xy: 1882, 1504
+  xy: 1868, 1328
   size: 26, 40
   orig: 26, 40
   offset: 0, 0
   index: -1
 switchRedon
   rotate: false
-  xy: 1959, 1667
+  xy: 1843, 1220
   size: 26, 40
   orig: 26, 40
   offset: 0, 0
@@ -1911,21 +1925,21 @@ tileBlue27
   index: -1
 vinebottomAlt
   rotate: false
-  xy: 1857, 1628
+  xy: 1876, 1529
   size: 25, 45
   orig: 25, 45
   offset: 0, 0
   index: -1
 yellowCrystal
   rotate: false
-  xy: 1958, 1603
+  xy: 1849, 1188
   size: 32, 30
   orig: 32, 30
   offset: 0, 0
   index: -1
 yellowJewel
   rotate: false
-  xy: 1951, 1579
+  xy: 1840, 1262
   size: 24, 22
   orig: 24, 22
   offset: 0, 0

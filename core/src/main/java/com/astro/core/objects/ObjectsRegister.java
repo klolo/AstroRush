@@ -18,8 +18,12 @@ public enum ObjectsRegister {
 
     private HashMap<Body, IGameObject> gameObjectsWithPhysics = new HashMap<>();
 
-    public void registerObject(List<IGameObject> objectWithID) {
+    public void registerObjects(List<IGameObject> objectWithID) {
         objectWithID.forEach(o -> gameObjectsWithID.put(o.getData().getItemIdentifier(), o));
+    }
+
+    public void registerObject(final IGameObject objectWithID) {
+        gameObjectsWithID.put(objectWithID.getData().getItemIdentifier(), objectWithID);
     }
 
     public void registerPhysicsObjects(List<IGameObject> objectWithID) {

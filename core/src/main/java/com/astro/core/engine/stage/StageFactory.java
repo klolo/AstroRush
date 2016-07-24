@@ -112,7 +112,7 @@ public class StageFactory implements ApplicationContextAware {
      * Register all object with set ID.
      */
     private void addToObjectRegister(final ArrayList<IGameObject> objects) {
-        ObjectsRegister.instance.registerObject(
+        ObjectsRegister.instance.registerObjects(
                 objects.stream()
                         .filter(e -> shouldBeObjectRegister(e))
                         .collect(Collectors.toList())

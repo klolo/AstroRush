@@ -21,16 +21,20 @@ public class SimpleShootLogic implements IShootLogic {
     /**
      * Bullet physics.
      */
-    private final PhysicsObject bullet;
+    private PhysicsObject bullet;
 
     /**
      * Watcher for destroy object after some time.
      */
-    private final LogicTimer watcher;
+    private LogicTimer watcher;
 
     int speed;
 
-    SimpleShootLogic(final PhysicsObject bullet) {
+    public SimpleShootLogic() {
+
+    }
+
+    public SimpleShootLogic(final PhysicsObject bullet) {
         this.bullet = bullet;
         watcher = new LogicTimer<>(bullet.getData()::setDestroyed, true, DESTROY_TIME);
     }

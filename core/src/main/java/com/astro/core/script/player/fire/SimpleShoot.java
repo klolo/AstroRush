@@ -40,7 +40,7 @@ public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
     }
 
     public GameObject onFire() {
-        final TextureRegion region = GameResources.instance.getResourceManager().getTextureRegion("keyRed");
+        final TextureRegion region = GameResources.instance.getResourceManager().getTextureRegion("plasmaShoot");
         final PhysicsObject physicsObject = applicationContext.getBean("physicsObject", PhysicsObject.class);
         physicsObject.setTextureRegion(region);
 
@@ -75,7 +75,7 @@ public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
 
     public Sprite getSprite(final TextureRegion region) {
         final Sprite sprite = new Sprite(region);
-        sprite.setScale(1.0f, 1.0f);
+        sprite.setScale(.5f, .5f);
         sprite.setOrigin(0, 0);
         sprite.setBounds(0, 0, region.getRegionWidth(), region.getRegionHeight());
         return sprite;
@@ -97,6 +97,7 @@ public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
     private BodyDef getBodyDef(final float positionX, final float positionY) {
         final BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
+        bodyDef.fixedRotation = true;
 
         if (playerState == PlayerState.FLY_LEFT || playerState == PlayerState.RUN_LEFT) {
             bodyDef.position.x = positionX - 0.5f;
