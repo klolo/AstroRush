@@ -1,12 +1,11 @@
-package com.astro.core.script.player;
+package com.astro.core.script.util;
 
-import com.astro.core.adnotation.Msg;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.objects.LabelObject;
 import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
@@ -25,7 +24,8 @@ public class PopupMsg implements ApplicationContextAware {
     /**
      * Player starting popup.
      */
-    @Msg("player.dialog.start")
+    @Value("${player.dialog.start}")
+    @Setter
     private String currentMsg;
 
     /**
@@ -35,28 +35,27 @@ public class PopupMsg implements ApplicationContextAware {
     private float SHOW_TIME = 0.0f;
 
     /**
-     * Queue of the messages.
-     */
-    LinkedList<String> messagesQueue = new LinkedList<>();
-
-
-    float currentMsgTime = 0.0f;
-
-    private float opacity = 1.0f;
-
-    private final int MAX_MSG_ELEMENTS = 3;
-
-    /**
      * Amount of the pixel per meter.
      */
     @Value("${renderer.pixel.per.meter}")
     protected int pixelPerMeter = 0;
 
+    /**
+     * Queue of the messages.
+     */
+    @Getter
+    public LinkedList<String> messagesQueue = new LinkedList<>();
+
+    public float currentMsgTime = 0.0f;
+
+    private float opacity = 1.0f;
+
+    private final int MAX_MSG_ELEMENTS = 3;
+
     private LabelObject labelObject;
 
-    PopupMsg() {
-        PropertyInjector.instance.inject(this);
-    }
+    @Setter
+    private boolean instantAdd = false;
 
     public void initLabel() {
         labelObject = applicationContext.getBean(LabelObject.class);
@@ -77,11 +76,12 @@ public class PopupMsg implements ApplicationContextAware {
      *
      * @param msg - new message
      */
-    void addMessagesToQueue(final String msg) {
-        if (currentMsg == null) {
+    public void addMessagesToQueue(final String msg) {
+        if (currentMsg == null || instantAdd) {
             currentMsg = msg;
             currentMsgTime = 0.0f;
             opacity = 1.0f;
+            return;
         }
 
         if (Collections.frequency(messagesQueue, msg) > MAX_MSG_ELEMENTS) {

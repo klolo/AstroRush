@@ -17,8 +17,7 @@ class CollisionProcessor {
     private final Predicate<IGameObject> shouldBeProcessedObject =
             o -> o != null && o.getData().getCollisionCallbackFunction() != null;
 
-    private final Predicate<IGameObject> shouldReceiveEvent =
-            o -> o != null && o.getData() != null;
+    private final Predicate<IGameObject> shouldReceiveEvent = o -> o != null;
 
     @Setter
     private IGameObject firstObject;
@@ -40,10 +39,11 @@ class CollisionProcessor {
      */
     void process() {
         if (shouldBeProcessedObject.test(firstObject) && shouldReceiveEvent.test(secondObject)) {
+            log.debug("collision between {} - {}", firstObject.getData().getLogic(), secondObject.getData().getLogic());
             final Function<IGameObject, CollisionProcessResult> function = firstObject.getData().getCollisionCallbackFunction();
             final CollisionProcessResult collisionProcessResult = function.apply(secondObject);
 
-            if (collisionProcessResult.isIgnoreCollision()) {
+            if (collisionProcessResult != null && collisionProcessResult.isIgnoreCollision()) {
                 contact.setEnabled(false);
             }
         }

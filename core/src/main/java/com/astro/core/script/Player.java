@@ -8,6 +8,7 @@ import com.astro.core.objects.interfaces.ILogic;
 import com.astro.core.observe.IKeyObserver;
 import com.astro.core.observe.KeyObserve;
 import com.astro.core.script.player.*;
+import com.astro.core.script.util.LogicTimer;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import lombok.extern.slf4j.Slf4j;
@@ -77,7 +78,9 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
     public void update(final float diff) {
         updatePosition();
         playerData.playerPopupMsg.update(diff);
-        playerData.watchers.values().forEach(w -> w.update(diff));
+        playerData.watchers.values().stream()
+                .filter(o -> o != null)
+                .forEach(w -> w.update(diff));
         playerData.fireBehavior.update(playerData.posX, playerData.posY);
     }
 
@@ -138,10 +141,23 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
     }
 
     private void shoot() {
-        log.info("shoot");
+        if (playerData.canShoot) {
+            runUnBlockShootTimer();
+            children.add(playerData.fireBehavior.onFire());
+            playerData.gameObject.getData().setHasChild(true);
+        }
+    }
 
-        children.add(playerData.fireBehavior.onFire());
-        playerData.gameObject.getData().setHasChild(true);
+    private void runUnBlockShootTimer() {
+        if (playerData.watchers.get(WatchersID.SHOOT_UNBLOCKER) == null) {
+            playerData.shootTimer = new LogicTimer<>(playerData::setCanShoot, true, playerData.fireBehavior.getFiringSpeed());
+            playerData.watchers.put(WatchersID.SHOOT_UNBLOCKER, playerData.shootTimer);
+        }
+        else {
+            playerData.watchers.get(WatchersID.SHOOT_UNBLOCKER).reset();
+        }
+
+        playerData.canShoot = false;
     }
 
     private void leftKeyEvent() {
@@ -205,6 +221,15 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
     public void addPoints(int amount) {
         playerData.points += amount;
     }
+
+    /**
+     * Adding point to player
+     */
+    public void addPointsWithMessages(int amount) {
+        playerData.playerPopupMsg.addMessagesToQueue("+" + amount);
+        playerData.points += amount;
+    }
+
 
     /**
      * Return all player points.

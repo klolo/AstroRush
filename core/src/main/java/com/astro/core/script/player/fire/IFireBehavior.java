@@ -14,4 +14,5 @@ public interface IFireBehavior {
 
     void setPlayerState(final PlayerState playerState);
 
+    float getFiringSpeed();
 }

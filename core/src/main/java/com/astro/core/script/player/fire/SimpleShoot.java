@@ -2,6 +2,7 @@ package com.astro.core.script.player.fire;
 
 import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.GameObject;
+import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.script.player.PlayerState;
 import com.astro.core.storage.GameResources;
@@ -65,6 +66,9 @@ public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
         physicsObject.getData().setLogic(simpleShootLogic);
         physicsObject.setRenderingInScript(true);
 
+
+        physicsObject.getData().setCollisionCallbackFunction(simpleShootLogic::processCollision);
+        ObjectsRegister.instance.registerPhysicsObject(physicsObject);
         return physicsObject;
     }
 
@@ -92,7 +96,7 @@ public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
 
     private BodyDef getBodyDef(final float positionX, final float positionY) {
         final BodyDef bodyDef = new BodyDef();
-        bodyDef.type = BodyDef.BodyType.KinematicBody;
+        bodyDef.type = BodyDef.BodyType.DynamicBody;
 
         if (playerState == PlayerState.FLY_LEFT || playerState == PlayerState.RUN_LEFT) {
             bodyDef.position.x = positionX - 0.5f;
@@ -108,6 +112,11 @@ public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
     public void update(final float positionX, final float positionY) {
         this.playerPositionX = positionX;
         this.playerPositionY = positionY;
+    }
+
+    @Override
+    public float getFiringSpeed() {
+        return .2f; //fixme: move to constant
     }
 
 }

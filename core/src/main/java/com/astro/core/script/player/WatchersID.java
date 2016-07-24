@@ -11,6 +11,8 @@ public enum WatchersID {
 
     STOP_PLAYER_ON_PLATFORM,
 
-    DECREASE_LIVE
+    DECREASE_LIVE,
+
+    SHOOT_UNBLOCKER
 
 }

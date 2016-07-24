@@ -20,4 +20,9 @@ public class BombShoot implements IFireBehavior {
     public void setPlayerState(final PlayerState playerState) {
 
     }
+
+    @Override
+    public float getFiringSpeed() {
+        return 1;
+    }
 }

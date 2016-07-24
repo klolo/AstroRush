@@ -69,7 +69,7 @@
     <bean id="box2DDebugRenderer" lazy-init="true" class="com.badlogic.gdx.physics.box2d.Box2DDebugRenderer"/>
     <bean id="gameStage" scope="prototype" class="com.astro.core.engine.stage.GameStage"/>
     <bean id="cameraManager" lazy-init="true" class="com.astro.core.engine.base.CameraManager"/>
-    <bean id="popupMsg" class="com.astro.core.script.player.PopupMsg"/>
+    <bean id="popupMsg" scope="prototype" class="com.astro.core.script.util.PopupMsg"/>
     <bean id="fireBehavior" class="com.astro.core.script.player.fire.SimpleShoot"/>
 
 </beans>

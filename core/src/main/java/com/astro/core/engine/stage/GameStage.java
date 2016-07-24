@@ -84,7 +84,7 @@ public class GameStage implements Screen, ApplicationContextAware {
         mapElements = GameObjectUtil.instance.sortObjectsByLayer(mapElements);
 
         mapElementsWithLogic = GameObjectUtil.instance.getObjectsWithLogic(mapElements);
-        ObjectsRegister.instance.registerPhysicsObject(mapElementsWithLogic);
+        ObjectsRegister.instance.registerPhysicsObjects(mapElementsWithLogic);
 
         cameraManager = GameEngine.getApplicationContext().getBean(CameraManager.class);
     }
@@ -147,10 +147,8 @@ public class GameStage implements Screen, ApplicationContextAware {
 
     private void processGameObjects(final IGameObject gameObject, float diff) {
         gameObject.update(diff);
-        final ObjectData gameData = gameObject.getData();
-
-        removeDestroyedElements(gameObject, gameData);
-        loadChildren(gameData);
+        removeDestroyedElements(gameObject);
+        loadChildren(gameObject.getData());
     }
 
     private void loadChildren(final ObjectData gameData) {
@@ -165,11 +163,12 @@ public class GameStage implements Screen, ApplicationContextAware {
         }
     }
 
-    private void removeDestroyedElements(final IGameObject gameObject, final ObjectData gameData) {
-        if (gameData.isDestroyed()) {
+    private void removeDestroyedElements(final IGameObject gameObject) {
+        if (gameObject.getData().isDestroyed()) {
+            log.info("Remove object: {}", gameObject);
             mapElementsWithLogic.remove(gameObject);
             mapElements.remove(gameObject);
-            physicsEngine.destroyBody(gameData.getBody());
+            physicsEngine.destroyBody(gameObject.getData().getBody());
         }
     }
 

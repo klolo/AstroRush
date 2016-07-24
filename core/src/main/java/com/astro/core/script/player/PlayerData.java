@@ -4,6 +4,7 @@ import com.astro.core.engine.base.CameraManager;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.script.player.fire.IFireBehavior;
 import com.astro.core.script.util.LogicTimer;
+import com.astro.core.script.util.PopupMsg;
 import com.badlogic.gdx.physics.box2d.Body;
 import lombok.Getter;
 import lombok.Setter;
@@ -63,6 +64,11 @@ public class PlayerData {
     public IFireBehavior fireBehavior;
 
     public IGameObject gameObject;
+
+    @Setter
+    public boolean canShoot = true;
+
+    public LogicTimer shootTimer;
 
     /**
      * Physics body.

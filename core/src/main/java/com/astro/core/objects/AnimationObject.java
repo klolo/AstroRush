@@ -20,7 +20,7 @@ public class AnimationObject extends TextureObject {
     }
 
     @Override
-    protected void render(final OrthographicCamera cam, final float delta) {
+    public void render(final OrthographicCamera cam, final float delta) {
         elapsedTime += delta;
         textureRegion = animation.getKeyFrame(elapsedTime, true);
 

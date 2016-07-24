@@ -70,7 +70,7 @@ public class LogicTimer<T> {
             }
             currentTime = 0.0f;
 
-            log.debug("Timeout");
+            log.debug("Timeout, consumer: {}, data {}", timeoutConsumer, timeoutData);
             timeoutConsumer.accept(timeoutData);
         }
     }

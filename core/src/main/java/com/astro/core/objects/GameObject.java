@@ -1,19 +1,20 @@
 package com.astro.core.objects;
 
-import com.astro.core.adnotation.GameProperty;
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * Represents a single game object.
  */
 @Slf4j
+@ToString
 abstract public class GameObject implements IGameObject {
 
     @Getter
@@ -23,7 +24,7 @@ abstract public class GameObject implements IGameObject {
     /**
      * Amount of the pixel per meter.
      */
-    @GameProperty("renderer.pixel.per.meter")
+    @Value("${renderer.pixel.per.meter}")
     protected int pixelPerMeter = 0;
 
     @Getter
@@ -34,7 +35,6 @@ abstract public class GameObject implements IGameObject {
      * Default constructor.
      */
     public GameObject() {
-        PropertyInjector.instance.inject(this);
         data.setSprite(new Sprite());
     }
 

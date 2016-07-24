@@ -22,8 +22,12 @@ public enum ObjectsRegister {
         objectWithID.forEach(o -> gameObjectsWithID.put(o.getData().getItemIdentifier(), o));
     }
 
-    public void registerPhysicsObject(List<IGameObject> objectWithID) {
+    public void registerPhysicsObjects(List<IGameObject> objectWithID) {
         objectWithID.forEach(o -> gameObjectsWithPhysics.put(o.getData().getBody(), o));
+    }
+
+    public void registerPhysicsObject(final IGameObject objectWithID) {
+        gameObjectsWithPhysics.put(objectWithID.getData().getBody(), objectWithID);
     }
 
     public IGameObject getObjectByID(final String id) {

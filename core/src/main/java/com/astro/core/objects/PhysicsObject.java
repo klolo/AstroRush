@@ -37,7 +37,7 @@ public class PhysicsObject extends TextureObject implements IGameObject {
     @Override
     protected void render(final OrthographicCamera cam, final float delta) {
         updatePosition();
-        super.draw();
+        super.render(cam, delta);
     }
 
     public void updatePosition() {

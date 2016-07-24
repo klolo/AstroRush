@@ -1,6 +1,5 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.adnotation.processor.PropertyInjector;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.LabelObject;
 import com.astro.core.objects.ObjectsRegister;
@@ -55,8 +54,6 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
 
     @Override
     public void init() {
-        PropertyInjector.instance.inject(this);
-
         log.info("Creating default font");
         labelObject = applicationContext.getBean(LabelObject.class);
         labelObject.setBitmapFont(

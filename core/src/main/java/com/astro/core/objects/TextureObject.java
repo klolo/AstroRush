@@ -53,14 +53,6 @@ public class TextureObject extends GameObject {
     }
 
     /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected void render(final OrthographicCamera cam, final float delta) {
-        draw();
-    }
-
-    /**
      * Every object should be rendered by this method.
      */
     public void show(final OrthographicCamera cam, final float delta) {
@@ -68,28 +60,33 @@ public class TextureObject extends GameObject {
             return;
         }
 
+        prepareBatch(cam);
+        render(cam, delta);
+        batch.end();
+    }
+
+    public void showFromLogic(final OrthographicCamera cam, final float delta) {
+        prepareBatch(cam);
+        render(cam, delta);
+        batch.end();
+    }
+
+    public void prepareBatch(final OrthographicCamera cam) {
         batch.setProjectionMatrix(screenPositionRelative ? cam.projection : cam.combined);
         batch.begin();
         batch.setColor(data.sprite.getColor());
 
         Gdx.gl.glEnable(GL20.GL_BLEND);
         Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
-
-        render(cam, delta); // implemented in concreted class.
-        batch.end();
     }
 
     /**
-     * Called in main loop
+     * {@inheritDoc}
      */
-    public void draw() {
-        draw(data.sprite.getX(), data.sprite.getY());
-    }
-
-    /**
-     * Render method for texture and physic object.
-     */
-    private void draw(float x, float y) {
+    @Override
+    protected void render(final OrthographicCamera cam, final float delta) {
+        final float x = data.sprite.getX();
+        final float y = data.sprite.getY();
         final float px = x + data.sprite.getOriginX();
         final float py = y + data.sprite.getOriginY();
 
@@ -98,6 +95,7 @@ public class TextureObject extends GameObject {
 
         drawTextureRegion(pX, pY);
     }
+
 
     /**
      * Get X position of the bottom left corner of object.
