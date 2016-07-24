@@ -4,23 +4,19 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import common.GdxTestRunner;
-import lombok.Setter;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestContextManager;
 
 @ContextConfiguration("classpath:configuration/core-config.xml")
 @RunWith(GdxTestRunner.class)
-public class TextureObjectTest implements ApplicationContextAware {
-
-    @Setter
-    private ApplicationContext applicationContext;
-
+public class TextureObjectTest {
+//
+//    @Setter
+//    private ApplicationContext applicationContext;
 
     @Before
     public void setUp() throws Exception {
@@ -36,11 +32,7 @@ public class TextureObjectTest implements ApplicationContextAware {
         //given
         //final TextureObject textureObject = applicationContext.getBean("textureObject", TextureObject.class);
 
-        //
-
-
         //given
-
 
         //then
         //  Assert.assertNotNull("Batch cannot be null", textureObject.getBatch());
