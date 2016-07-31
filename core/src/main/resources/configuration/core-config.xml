@@ -73,8 +73,8 @@
 
     <bean id="gameEngine" lazy-init="true" class="com.astro.core.engine.base.GameEngine"/>
     <bean id="stageHUD" scope="prototype" class="com.astro.core.engine.stage.StageHUD"/>
-    <bean id="playerSettings" class="com.astro.core.script.player.PlayerSettings"/>
-    <bean id="playerData" lazy-init="true" class="com.astro.core.script.player.PlayerData"/>
+    <bean id="playerSettings" scope="prototype" class="com.astro.core.script.player.PlayerSettings"/>
+    <bean id="playerData" scope="prototype" lazy-init="true" class="com.astro.core.script.player.PlayerData"/>
     <bean id="box2DDebugRenderer" lazy-init="true" class="com.badlogic.gdx.physics.box2d.Box2DDebugRenderer"/>
     <bean id="gameStage" scope="prototype" class="com.astro.core.engine.stage.GameStage"/>
     <bean id="cameraManager" lazy-init="true" class="com.astro.core.engine.base.CameraManager"/>

@@ -1,18 +1,31 @@
 {
   "sceneName": "settings",
   "composite": {
+    "sImages": [
+      {
+        "uniqueId": 3,
+        "tags": [],
+        "x": -13.0125,
+        "y": -9.075,
+        "originX": 12.5,
+        "originY": 8.8375,
+        "layerName": "Default",
+        "imageName": "background"
+      }
+    ],
     "sLabels": [
       {
-        "uniqueId": 2,
+        "uniqueId": 4,
         "tags": [],
-        "x": -1.0875001,
-        "y": -0.012500018,
+        "x": -0.76250005,
+        "y": 1.3875,
         "originX": 0.75,
         "originY": 0.3125,
+        "zIndex": 1,
         "layerName": "Default",
-        "text": "USTAWIENIA",
-        "style": "SF Atarian System",
-        "size": 20,
+        "text": "SETTINGS",
+        "style": "Roboto Light",
+        "size": 40,
         "align": 16,
         "width": 1.5,
         "height": 0.625
@@ -21,6 +34,10 @@
     "layers": [
       {
         "layerName": "Default",
+        "isVisible": true
+      },
+      {
+        "layerName": "elements",
         "isVisible": true
       }
     ]
