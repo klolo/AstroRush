@@ -108,12 +108,7 @@ public class GameLogic implements IGameLogic {
 
     private void newStage() {
         log.info("start");
-
-        if (prevScreen != null) {
-            prevScreen.unregisterPhysics();
-            prevScreen = currentScreen;
-        }
-
+        prevScreen = currentScreen;
         destroyLevelStage();
 
         currentScreen = stageFactory.create(screenConfigs.get(Stage.LEVEL1.toString()));

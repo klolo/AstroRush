@@ -71,7 +71,6 @@ public class LightLogic implements ILogic {
         resultLight.setSoftnessLength(light.softnessLength);
         resultLight.setXray(light.isXRay);
         resultLight.setStaticLight(light.isStatic);
-
-        log.info("created light: {}", light);
+        log.info("Created light: {}", resultLight);
     }
 }

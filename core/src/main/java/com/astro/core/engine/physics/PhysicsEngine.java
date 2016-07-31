@@ -24,7 +24,6 @@ public class PhysicsEngine {
     @Setter
     private boolean froozePhysicsProcessing;
 
-    @Setter
     @Autowired
     private ContactListener collisionListener;
     /**

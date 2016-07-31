@@ -6,6 +6,7 @@ import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.script.player.fire.SimpleShootLogic;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import common.GdxTestRunner;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +17,7 @@ import org.springframework.test.context.TestContextManager;
 
 @RunWith(GdxTestRunner.class)
 @ContextConfiguration("classpath:configuration/core-config.xml")
+@Slf4j
 public class EnemyTest {
 
     private Player player = new Player();
@@ -35,8 +37,13 @@ public class EnemyTest {
     }
 
     @Before
-    public void initData() throws Exception {
-        new TestContextManager(getClass()).prepareTestInstance(this);
+    public void initData() {
+        try {
+            new TestContextManager(getClass()).prepareTestInstance(this);
+        }
+        catch (final Exception e) {
+            log.error("Error while ", e);
+        }
 
         TestGameObject testGameObject = new TestGameObject();
         testGameObject.getData().setLogic(player);
