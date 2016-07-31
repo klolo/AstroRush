@@ -11,7 +11,7 @@ public interface IGameLogic {
 
     void update(float time);
 
-    void init();
+    void switchStage();
 
     Screen getGameScreen();
 

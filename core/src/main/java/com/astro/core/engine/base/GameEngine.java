@@ -55,7 +55,7 @@ public class GameEngine extends Game {
     }
 
     /**
-     * Call implemented game init and set in super Screen field.
+     * Call implemented game switchStage and set in super Screen field.
      */
     @Override
     public void create() {
@@ -67,7 +67,7 @@ public class GameEngine extends Game {
 
         physicsEngine.initPhysics();
 
-        gameLogic.init();
+        gameLogic.switchStage();
         screen = gameLogic.getGameScreen();
 
         Preconditions.checkNotNull(screen, "Screen cannot be null");

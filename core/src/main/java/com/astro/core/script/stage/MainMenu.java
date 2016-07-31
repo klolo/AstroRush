@@ -1,5 +1,6 @@
 package com.astro.core.script.stage;
 
+import com.astro.core.engine.base.GameEngine;
 import com.astro.core.engine.base.GameEvent;
 import com.astro.core.engine.stage.Stage;
 import com.astro.core.objects.ObjectsRegister;
@@ -8,6 +9,7 @@ import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -24,7 +26,10 @@ public class MainMenu extends StageLogic {
 
     private final String RESUME_BUTTON = "RESUME";
 
+    @Getter
     private boolean isResumeActive = false;
+
+    private boolean isGameStarted = false;
 
     private final String[] buttons = {
             RESUME_BUTTON,
@@ -61,6 +66,7 @@ public class MainMenu extends StageLogic {
         else if (buttons[currentActiveBtn].equals(Stage.LEVEL1.toString())) {
             if (isResumeActive) {
                 event = GameEvent.NEW_STAGE;
+                isGameStarted = true;
             }
             else {
                 event = GameEvent.SWITCH_STAGE;
@@ -95,18 +101,11 @@ public class MainMenu extends StageLogic {
     }
 
     /**
-     * TODO:
-     */
-    private boolean isResumeActive() {
-        return isResumeActive;
-    }
-
-    /**
      * Changing color of the menu label.
      * If label do not have id will be null pointer, you should set it in editor.
      */
     private void setColorOnActiveButton(final Color color, final String objectID) {
-        final IGameObject objects = ObjectsRegister.instance.getObjectByID(objectID);
+        final IGameObject objects = GameEngine.getApplicationContext().getBean(ObjectsRegister.class).getObjectByID(objectID);
         if (objects != null) {
             objects.getData().getSprite().setColor(color);
         }
@@ -121,7 +120,10 @@ public class MainMenu extends StageLogic {
 
         selectectResumeButton();
 
-        isResumeActive = true;
+        if (isGameStarted) {
+            isResumeActive = true;
+        }
+
         setColorOnActiveButton(Color.YELLOW, PREFIX + buttons[currentActiveBtn]);
         setColorOnActiveButton(Color.WHITE, PREFIX + buttons[currentActiveBtn + 1]);
     }

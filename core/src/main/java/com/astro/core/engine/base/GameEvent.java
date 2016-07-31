@@ -9,8 +9,6 @@ public enum GameEvent {
 
     SWITCH_STAGE,
 
-    PREV_STAGE,
-
     NEW_STAGE,
 
     RESUME

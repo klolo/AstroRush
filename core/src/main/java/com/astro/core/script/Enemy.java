@@ -57,7 +57,8 @@ public class Enemy implements ILogic {
         if (liveAmount <= 0f) {
             log.debug("[Enemy] dead");
             gameObject.getData().setDestroyed(true);
-            Player player = (Player) ObjectsRegister.instance.getObjectByID(Player.IDENTIFIER).getData().getLogic();
+            Player player = (Player) GameEngine.getApplicationContext().getBean(ObjectsRegister.class)
+                    .getObjectByID(Player.IDENTIFIER).getData().getLogic();
             player.addPointsWithMessages(100);//fixme
             return;
         }

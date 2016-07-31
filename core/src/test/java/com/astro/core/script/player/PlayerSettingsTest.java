@@ -18,7 +18,7 @@ public class PlayerSettingsTest {
     @Test
     public void shouldBeInit() {
         //given
-        Preconditions.checkNotNull(playerSettings, "PlayerSettings is not init");
+        Preconditions.checkNotNull(playerSettings, "PlayerSettings is not switchStage");
 
         //then
         Assert.assertTrue("pixelPerMeter should be loaded", playerSettings.pixelPerMeter != 0);

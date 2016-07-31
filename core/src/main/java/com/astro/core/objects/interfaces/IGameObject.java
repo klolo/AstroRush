@@ -27,4 +27,6 @@ public interface IGameObject {
     PhysicsEngine getPhysicsEngine();
 
     void setPhysicsEngine(final PhysicsEngine physicsEngine);
+
+    boolean isRenderingInScript();
 }

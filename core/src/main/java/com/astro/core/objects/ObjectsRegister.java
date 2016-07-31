@@ -11,8 +11,7 @@ import java.util.List;
  * Register of the game objects.
  */
 @Slf4j
-public enum ObjectsRegister {
-    instance;
+public class ObjectsRegister {
 
     private HashMap<String, IGameObject> gameObjectsWithID = new HashMap<>();
 
@@ -42,4 +41,8 @@ public enum ObjectsRegister {
         return gameObjectsWithPhysics.get(body);
     }
 
+    public void clear() {
+        gameObjectsWithID.clear();
+        gameObjectsWithPhysics.clear();
+    }
 }

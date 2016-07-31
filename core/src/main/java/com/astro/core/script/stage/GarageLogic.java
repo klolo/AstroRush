@@ -19,5 +19,4 @@ public class GarageLogic extends StageLogic {
             stageToLoad = Stage.MAIN_MENU;
         }
     }
-
 }

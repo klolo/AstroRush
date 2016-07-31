@@ -21,6 +21,10 @@ abstract public class GameObject implements IGameObject {
     @Setter
     protected ObjectData data = new ObjectData();
 
+    @Getter
+    @Setter
+    protected boolean renderingInScript;
+
     /**
      * Amount of the pixel per meter.
      */
@@ -65,4 +69,6 @@ abstract public class GameObject implements IGameObject {
      * Called by GameEngine.
      */
     protected abstract void render(OrthographicCamera cam, float delta);
+
+
 }

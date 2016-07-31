@@ -15,8 +15,7 @@ import java.util.stream.Collectors;
  * Util class for sorting, filter object on the Map.
  */
 @Slf4j
-public enum GameObjectUtil {
-    instance;
+public class GameObjectUtil {
 
     /**
      * Registered layers.
@@ -56,7 +55,7 @@ public enum GameObjectUtil {
     public ArrayList<IGameObject> getObjectsWithLogic(final ArrayList<IGameObject> gameObjects) {
         List<IGameObject> result =
                 gameObjects
-                        .stream()
+                        .parallelStream()
                         .filter(IGameObject::hasLogic)
                         .collect(Collectors.toList());
         return new ArrayList<>(result);

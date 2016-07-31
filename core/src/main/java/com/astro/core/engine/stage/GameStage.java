@@ -8,7 +8,6 @@ import com.astro.core.engine.physics.PhysicsEngine;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.ObjectData;
 import com.astro.core.objects.ObjectsRegister;
-import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.observe.KeyObserve;
 import com.astro.core.script.stage.IStageLogic;
@@ -35,6 +34,12 @@ public class GameStage implements Screen, ApplicationContextAware {
 
     @Value("${renderer.scale}")
     private float scale = 2.0f;
+
+    @Autowired
+    private ObjectsRegister objectsRegister;
+
+    @Autowired
+    private GameObjectUtil gameObjectUtil;
 
     @Setter
     @Value("${renderer.debug}")
@@ -69,6 +74,8 @@ public class GameStage implements Screen, ApplicationContextAware {
     @Autowired
     private PhysicsEngine physicsEngine;
 
+    @Setter
+    private StageConfig config;
 
     private CameraManager cameraManager;
 
@@ -81,10 +88,10 @@ public class GameStage implements Screen, ApplicationContextAware {
 
     void initStage(final ArrayList<IGameObject> elements) {
         this.mapElements = elements;
-        mapElements = GameObjectUtil.instance.sortObjectsByLayer(mapElements);
+        mapElements = gameObjectUtil.sortObjectsByLayer(mapElements);
 
-        mapElementsWithLogic = GameObjectUtil.instance.getObjectsWithLogic(mapElements);
-        ObjectsRegister.instance.registerPhysicsObjects(mapElementsWithLogic);
+        mapElementsWithLogic = gameObjectUtil.getObjectsWithLogic(mapElements);
+        objectsRegister.registerPhysicsObjects(mapElementsWithLogic);
 
         cameraManager = GameEngine.getApplicationContext().getBean(CameraManager.class);
     }
@@ -113,7 +120,7 @@ public class GameStage implements Screen, ApplicationContextAware {
 
         mapElements.forEach(e -> e.show(cameraManager.getCamera(), delta));
         mapElementsWithLogic.stream()
-                .filter(element -> ((TextureObject) element).isRenderingInScript())
+                .filter(IGameObject::isRenderingInScript)
                 .forEach(e -> e.getData().getLogic().additionalRender(cameraManager.getCamera(), delta));
 
         physicsEngine.updateAndRenderLight();
@@ -193,12 +200,21 @@ public class GameStage implements Screen, ApplicationContextAware {
         physicsEngine.dispose();
     }
 
+
+    public void destroy() {
+        unregister();
+        unregisterPhysics();
+        mapElements.clear();
+        mapElementsWithLogic.clear();
+        //objectsRegister.clear();
+    }
+
     /**
      * Remove object when stage is changing.
      */
     public void unregister() {
         log.info("unregister stage");
-        mapElementsWithLogic.forEach(obj -> obj.getData().getLogic().onPause());
+        mapElementsWithLogic.parallelStream().forEach(obj -> obj.getData().getLogic().onPause());
         stageLogic.onPause();
         KeyObserve.instance.unregister(stageLogic);
     }
@@ -208,25 +224,14 @@ public class GameStage implements Screen, ApplicationContextAware {
      */
     public void register() {
         log.info("register stage");
-        mapElementsWithLogic.forEach(obj -> obj.getData().getLogic().onResume());
+        physicsEngine.initLight(config.ambientLightRed, config.ambientLightGreen, config.ambientLightBlue);
+        mapElementsWithLogic.parallelStream().forEach(obj -> obj.getData().getLogic().onResume());
         stageLogic.onResume();
         KeyObserve.instance.register(stageLogic);
     }
 
     public void unregisterPhysics() {
-        mapElements.forEach(this::destroyPhysicsBody);
-        mapElementsWithLogic.forEach(this::destroyPhysicsBody);
-    }
-
-    /**
-     * Remove Box2D objects.
-     */
-    private void destroyPhysicsBody(final IGameObject gameObject) {
-        if (gameObject.isPhysicObject()) {
-            log.info("Destroy body: {}", gameObject.getData().getName());
-            physicsEngine.destroyBody(gameObject.getData().getBody());
-            gameObject.getData().setBody(null);
-        }
+        physicsEngine.destroyAllBodies();
     }
 
     @Override
@@ -244,5 +249,4 @@ public class GameStage implements Screen, ApplicationContextAware {
     @Override
     public void show() {
     }
-
 }

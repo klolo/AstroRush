@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -32,6 +33,9 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
      */
     @Value("${renderer.pixel.per.meter}")
     protected int pixelPerMeter = 0;
+
+    @Autowired
+    private ObjectsRegister objectsRegister;
 
     private LabelObject labelObject;
 
@@ -99,7 +103,7 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
      * Getting player data for future usage.
      */
     private void initPlayerData() {
-        playerObject = (GameObject) ObjectsRegister.instance.getObjectByID(Player.IDENTIFIER);
+        playerObject = (GameObject) objectsRegister.getObjectByID(Player.IDENTIFIER);
         player = (Player) playerObject.getData().getLogic();
     }
 

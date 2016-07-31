@@ -31,37 +31,11 @@ public class GameLogic implements IGameLogic {
     HashMap<Stage, GameStage> loadedStages = new HashMap<>();
 
     @Setter
-    private Map<Stage, StageConfig> screenConfigs = new HashMap<>();
+    private Map<String, StageConfig> screenConfigs = new HashMap<>();
 
     @Setter
     @Autowired
     StageFactory stageFactory;
-
-    public void init() {
-        log.info("Load stage");
-        Stage stageToLoad = Stage.MAIN_MENU;
-
-        if (currentScreen != null) {
-            prevScreen = currentScreen;
-            unregisterScreen(currentScreen);
-
-            stageToLoad = currentScreen.getStageLogic().getStageToLoad();
-            currentStage = stageToLoad;
-        }
-
-        if (stageToLoad != null && loadedStages.containsKey(stageToLoad)) {
-            currentScreen = loadedStages.get(stageToLoad);
-            currentScreen.register();
-        }
-        else {
-            currentScreen = stageFactory.create(screenConfigs.get(currentStage));
-            loadedStages.put(stageToLoad, currentScreen);
-        }
-    }
-
-    public GameStage getGameScreen() {
-        return currentScreen;
-    }
 
     public void onExit() {
         log.info("cleaning resources before end");
@@ -82,19 +56,9 @@ public class GameLogic implements IGameLogic {
                 .map(GameStage::getStageLogic)
                 .map(IStageLogic::getEvent)
                 .ifPresent(event -> {
-                    currentScreen.getStageLogic().setEvent(null);
-
                     switch (event) {
-                        case GAME_EXIT: {
-                            Gdx.app.exit();
-                            break;
-                        }
                         case SWITCH_STAGE: {
-                            init();
-                            break;
-                        }
-                        case PREV_STAGE: {
-                            prevStage();
+                            switchStage();
                             break;
                         }
                         case NEW_STAGE: {
@@ -102,38 +66,65 @@ public class GameLogic implements IGameLogic {
                             break;
                         }
                         case RESUME: {
-                            prevStage();
+                            resume();
+                            break;
+                        }
+                        case GAME_EXIT: {
+                            Gdx.app.exit();
                             break;
                         }
                     }
+
+                    currentScreen.getStageLogic().setEvent(null);
                 });
     }
 
+    public void switchStage() {
+        Stage stageToLoad = Stage.MAIN_MENU;
+
+        if (currentScreen != null) {
+            stageToLoad = currentScreen.getStageLogic().getStageToLoad();
+            unregisterScreen(currentScreen);
+        }
+
+        log.info("switch stage to: {}", stageToLoad);
+
+        if (prevScreen != null) {
+            prevScreen = currentScreen;
+            prevScreen.unregisterPhysics();
+        }
+
+        currentStage = stageToLoad;
+
+        if (stageToLoad != null && loadedStages.containsKey(stageToLoad)) {
+            currentScreen = loadedStages.get(stageToLoad);
+            currentScreen.register();
+        }
+        else {
+            currentScreen = stageFactory.create(screenConfigs.get(currentStage.toString()));
+            loadedStages.put(stageToLoad, currentScreen);
+        }
+    }
+
     private void newStage() {
-        log.info("new stage");
-        prevScreen.unregisterPhysics();
-        prevScreen = currentScreen;
+        log.info("start");
+
+        if (prevScreen != null) {
+            prevScreen.unregisterPhysics();
+            prevScreen = currentScreen;
+        }
 
         destroyLevelStage();
 
-        currentScreen = stageFactory.create(screenConfigs.get(Stage.LEVEL1));
+        currentScreen = stageFactory.create(screenConfigs.get(Stage.LEVEL1.toString()));
         loadedStages.put(Stage.LEVEL1, currentScreen);
         currentScreen.register();
     }
 
-    private void prevStage() {
-        log.info("prev stage");
-        if (prevScreen == null) {
-            log.warn("Prev stage does not exist");
-            return;
-        }
-
-        GameStage currentStageTmp = currentScreen;
-        currentScreen = prevScreen;
-
-        prevScreen = currentStageTmp;
-        unregisterScreen(prevScreen);
-
+    private void resume() {
+        log.info("start");
+        unregisterScreen(currentScreen);
+        currentScreen = loadedStages.get(Stage.LEVEL1);
         currentScreen.register();
     }
 
@@ -142,7 +133,10 @@ public class GameLogic implements IGameLogic {
     }
 
     private void destroyLevelStage() {
-        Optional.ofNullable(loadedStages.get(Stage.LEVEL1)).ifPresent(GameStage::unregister);
+        Optional.ofNullable(loadedStages.get(Stage.LEVEL1)).ifPresent(GameStage::destroy);
     }
 
+    public GameStage getGameScreen() {
+        return currentScreen;
+    }
 }

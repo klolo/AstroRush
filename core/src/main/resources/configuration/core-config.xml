@@ -28,6 +28,13 @@
     <!-- Collision listener -->
     <bean id="collisionListener" lazy-init="true" class="com.astro.core.engine.physics.CollisionListener"/>
 
+    <!-- Register of stage layers -->
+    <bean id="gameObjectUtil" class="com.astro.core.engine.stage.GameObjectUtil"/>
+
+    <bean id="lightLogic" class="com.astro.core.script.LightLogic" scope="prototype"/>
+
+    <bean id="objectsRegister" class="com.astro.core.objects.ObjectsRegister"/>
+
     <!-- Box2d physics engine -->
     <bean id="physicsEngine" class="com.astro.core.engine.physics.PhysicsEngine"
           factory-method="createFromPhysicsSettings">
@@ -46,6 +53,8 @@
           class="com.astro.core.objects.ParticleObject"/>
     <bean id="physicsObject" parent="textureObject" scope="prototype"
           class="com.astro.core.objects.PhysicsObject"/>
+    <bean id="lightObject" parent="textureObject" scope="prototype"
+          class="com.astro.core.objects.LightObject"/>
 
     <bean id="parallaxBackground" class="com.astro.core.engine.base.ParallaxBackground" scope="prototype"/>
 
@@ -63,7 +72,7 @@
     </bean>
 
     <bean id="gameEngine" lazy-init="true" class="com.astro.core.engine.base.GameEngine"/>
-    <bean id="stageHUD" class="com.astro.core.engine.stage.StageHUD"/>
+    <bean id="stageHUD" scope="prototype" class="com.astro.core.engine.stage.StageHUD"/>
     <bean id="playerSettings" class="com.astro.core.script.player.PlayerSettings"/>
     <bean id="playerData" lazy-init="true" class="com.astro.core.script.player.PlayerData"/>
     <bean id="box2DDebugRenderer" lazy-init="true" class="com.badlogic.gdx.physics.box2d.Box2DDebugRenderer"/>

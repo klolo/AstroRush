@@ -23,7 +23,6 @@ public abstract class StageLogic implements IStageLogic, IKeyObserver {
     @Setter
     protected GameStage gameStage;
 
-    @Getter
     protected Stage stageToLoad;
 
     @Getter
@@ -38,14 +37,10 @@ public abstract class StageLogic implements IStageLogic, IKeyObserver {
         log.info("Creating stage logic");
     }
 
-    @Override
-    public void onPause() {
-        log.info("onPause");
-    }
-
-    @Override
-    public void onResume() {
-        log.info("onResume");
+    public Stage getStageToLoad() {
+        final Stage result = stageToLoad;
+        stageToLoad = null;
+        return result;
     }
 
 }

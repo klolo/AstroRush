@@ -24,10 +24,16 @@ public class StageFactory implements ApplicationContextAware {
     private ApplicationContext applicationContext;
 
     @Autowired
+    private GameObjectUtil gameObjectUtil;
+
+    @Autowired
     private PhysicsEngine physicsEngine;
 
     @Autowired
     private OverlapSceneReader overlapSceneReader;
+
+    @Autowired
+    private ObjectsRegister objectsRegister;
 
     public GameStage create(final StageConfig config) {
         final long startTime = System.currentTimeMillis();
@@ -37,6 +43,7 @@ public class StageFactory implements ApplicationContextAware {
 
         final GameStage result = GameEngine.getApplicationContext().getBean(GameStage.class);
         result.initStage(getMapElements(config));
+        result.setConfig(config);
 
         initResult(result)
                 .createBackground(config, result)
@@ -65,7 +72,7 @@ public class StageFactory implements ApplicationContextAware {
     private StageFactory initPlayer(final StageConfig config, final GameStage result) {
         if (config.hasPlayer) {
             log.info("Create HUD");
-            IGameHud hud = applicationContext.getBean(IGameHud.class);
+            final IGameHud hud = applicationContext.getBean(IGameHud.class);
             hud.init();
             result.setHud(hud);
         }
@@ -105,16 +112,16 @@ public class StageFactory implements ApplicationContextAware {
         final ArrayList<IGameObject> result = (ArrayList<IGameObject>) overlapSceneReader.loadScene(config.sceneFile);
 
         addToObjectRegister(result);
-        return GameObjectUtil.instance.sortObjectsByLayer(result);
+        return gameObjectUtil.sortObjectsByLayer(result);
     }
 
     /**
      * Register all object with set ID.
      */
     private void addToObjectRegister(final ArrayList<IGameObject> objects) {
-        ObjectsRegister.instance.registerObjects(
+        objectsRegister.registerObjects(
                 objects.stream()
-                        .filter(e -> shouldBeObjectRegister(e))
+                        .filter(this::shouldBeObjectRegister)
                         .collect(Collectors.toList())
         );
     }

@@ -68,7 +68,7 @@ public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
 
 
         physicsObject.getData().setCollisionCallbackFunction(simpleShootLogic::processCollision);
-        ObjectsRegister.instance.registerPhysicsObject(physicsObject);
+        applicationContext.getBean(ObjectsRegister.class).registerPhysicsObject(physicsObject);
         return physicsObject;
     }
 

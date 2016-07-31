@@ -1,16 +1,30 @@
 {
   "sceneName": "highscore",
   "composite": {
+    "sImages": [
+      {
+        "uniqueId": 3,
+        "tags": [],
+        "customVars": "displaymode:fullscreen",
+        "x": -13.075,
+        "y": -8.900001,
+        "originX": 12.5,
+        "originY": 8.8375,
+        "layerName": "Default",
+        "imageName": "background"
+      }
+    ],
     "sLabels": [
       {
-        "uniqueId": 2,
+        "uniqueId": 8,
         "tags": [],
-        "x": -0.5625,
-        "y": -0.1375,
+        "x": -0.85,
+        "y": 1.6125,
         "originX": 0.75,
         "originY": 0.3125,
+        "zIndex": 1,
         "layerName": "Default",
-        "text": "highscore",
+        "text": "BEST RESULT",
         "style": "Roboto Light",
         "size": 20,
         "align": 16,

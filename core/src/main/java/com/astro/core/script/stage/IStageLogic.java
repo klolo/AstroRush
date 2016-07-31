@@ -30,9 +30,13 @@ public interface IStageLogic extends IKeyObserver {
      */
     Stage getStageToLoad();
 
-    void onPause();
+    default void onPause() {
 
-    void onResume();
+    }
+
+    default void onResume() {
+
+    }
 
     void init();
 }

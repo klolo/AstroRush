@@ -10,11 +10,18 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestContextManager;
 
 @RunWith(GdxTestRunner.class)
+@ContextConfiguration("classpath:configuration/core-config.xml")
 public class EnemyTest {
 
     private Player player = new Player();
+
+    @Autowired
+    private ObjectsRegister objectsRegister;
 
     class TestGameObject extends GameObject {
 
@@ -28,10 +35,12 @@ public class EnemyTest {
     }
 
     @Before
-    public void initData() {
+    public void initData() throws Exception {
+        new TestContextManager(getClass()).prepareTestInstance(this);
+
         TestGameObject testGameObject = new TestGameObject();
         testGameObject.getData().setLogic(player);
-        ObjectsRegister.instance.registerObject(testGameObject);
+        objectsRegister.registerObject(testGameObject);
     }
 
     @Test

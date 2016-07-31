@@ -37,6 +37,9 @@ public class OverlapSceneReader {
     @Autowired
     SpriteAnimationsLoader spriteAnimationsLoader;
 
+    @Autowired
+    private GameObjectUtil gameObjectUtil;
+
     @Getter
     private List<IGameObject> components = new ArrayList<>();
 
@@ -61,7 +64,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader loadComposite(final CompositeVO rootComposite) {
         if (rootComposite.layers != null) {
-            rootComposite.layers.stream().forEach(layer -> GameObjectUtil.instance.addLayer(layer.layerName));
+            rootComposite.layers.stream().forEach(layer -> gameObjectUtil.addLayer(layer.layerName));
         }
 
         return processComponentList(rootComposite.sImages, componentLoader)

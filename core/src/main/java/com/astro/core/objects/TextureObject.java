@@ -25,10 +25,6 @@ public class TextureObject extends GameObject {
     protected boolean screenPositionRelative;
 
     @Getter
-    @Setter
-    protected boolean renderingInScript;
-
-    @Getter
     protected TextureRegion textureRegion;
 
     /**
@@ -85,17 +81,26 @@ public class TextureObject extends GameObject {
      */
     @Override
     protected void render(final OrthographicCamera cam, final float delta) {
-        final float x = data.sprite.getX();
-        final float y = data.sprite.getY();
-        final float px = x + data.sprite.getOriginX();
-        final float py = y + data.sprite.getOriginY();
+        final String displayMode = data.customVariables.getOrDefault("displaymode", "");
+        switch (displayMode) {
+            case "fullscreen": {
+                drawTextureRegionFullscreen(0, 0);
+                break;
+            }
+            default: {
+                final float x = data.sprite.getX();
+                final float y = data.sprite.getY();
+                final float px = x + data.sprite.getOriginX();
+                final float py = y + data.sprite.getOriginY();
 
-        final float pX = getPx(px, data.sprite.getWidth());
-        final float pY = getPy(py, data.sprite.getHeight());
+                final float pX = getPx(px, data.sprite.getWidth());
+                final float pY = getPy(py, data.sprite.getHeight());
 
-        drawTextureRegion(pX, pY);
+                drawTextureRegion(pX, pY);
+                break;
+            }
+        }
     }
-
 
     /**
      * Get X position of the bottom left corner of object.
@@ -113,6 +118,33 @@ public class TextureObject extends GameObject {
         return y * pixelPerMeter - height * data.sprite.getScaleY() / 2;
     }
 
+    /**
+     * Drawing images in fullscreen mode.
+     */
+    private void drawTextureRegionFullscreen(final float pX, final float pY) {
+        batch.draw(
+                textureRegion.getTexture(),
+                pX - Gdx.graphics.getWidth() / 2,
+                pY - Gdx.graphics.getHeight() / 2,
+                data.sprite.getOriginX(),
+                data.sprite.getOriginY(),
+                Gdx.graphics.getWidth(),
+                Gdx.graphics.getHeight(),
+                1,
+                1,
+                data.sprite.getRotation(),
+                textureRegion.getRegionX(),
+                textureRegion.getRegionY(),
+                textureRegion.getRegionWidth(),
+                textureRegion.getRegionHeight(),
+                data.flipX,
+                data.flipY
+        );
+    }
+
+    /**
+     * Draws image on the screen.
+     */
     private void drawTextureRegion(final float pX, final float pY) {
         batch.draw(
                 textureRegion.getTexture(),

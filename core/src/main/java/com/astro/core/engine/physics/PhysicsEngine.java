@@ -4,6 +4,7 @@ import box2dLight.RayHandler;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.utils.Array;
 import com.google.common.base.Preconditions;
 import lombok.Getter;
 import lombok.Setter;
@@ -59,7 +60,7 @@ public class PhysicsEngine {
     /**
      * It makes:
      * -creating Box2D world
-     * -init lights
+     * -switchStage lights
      * -creates background
      */
     public void initPhysics() {
@@ -69,18 +70,15 @@ public class PhysicsEngine {
         world.setContactListener(collisionListener);
 
         createGround();
-        initLight(1.0f, 1.0f, 1.0f);
-    }
 
-    public void destroyBody(final Body body) {
-        Preconditions.checkNotNull(body, "Body cannot be null");
-        world.destroyBody(body);
+        RayHandler.setGammaCorrection(true);
+        RayHandler.useDiffuseLight(true);
+        initLight(1.0f, 1.0f, 1.0f);
     }
 
     public void setAmbientLight(final float ambientLightRed, final float ambientLightGreen, final float ambientLightBlue) {
         rayHandler.setAmbientLight(ambientLightRed, ambientLightGreen, ambientLightBlue, 1.0f);
     }
-
 
     public void setCombinedMatrix(final OrthographicCamera camera) {
         Preconditions.checkNotNull(camera, "OrthographicCamera cannot be null");
@@ -129,9 +127,7 @@ public class PhysicsEngine {
      */
     @SuppressWarnings("PMD")
     public void initLight(final float r, final float g, final float b) {
-        log.info("init light");
-        RayHandler.setGammaCorrection(true);
-        RayHandler.useDiffuseLight(true);
+        log.info("start");
 
         try {
             rayHandler = new RayHandler(world);
@@ -143,7 +139,7 @@ public class PhysicsEngine {
         }
         catch (final NullPointerException e) {
             // in this place logger is not available yet in test
-            System.out.println("Cannot init ray handler");
+            System.out.println("Cannot switchStage ray handler");
         }
     }
 
@@ -170,8 +166,31 @@ public class PhysicsEngine {
             rayHandler.setCombinedMatrix(camera);
         }
         else {
-            log.error("Rayhandler is not init");
+            log.error("Rayhandler is not switchStage");
         }
     }
 
+    public void destroyBody(final Body body) {
+        world.destroyBody(body);
+    }
+
+    public void destroyAllBodies() {
+        final Array<Body> bodies = new Array<>();
+        world.getBodies(bodies);
+        boolean destroyAllBodies = false;
+
+        while (!destroyAllBodies) {
+            for (int i = 0; i < bodies.size; i++) {
+                if (!world.isLocked()) {
+                    world.destroyBody(bodies.get(i));
+                }
+            }
+            destroyAllBodies = true;
+        }
+
+        world = new World(gravityVec, true);
+        world.setContactListener(collisionListener);
+        initLight(1.0f, 1.0f, 1.0f);
+        createGround();
+    }
 }
