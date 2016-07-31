@@ -37,6 +37,7 @@ public class EnemyTest {
     }
 
     @Before
+    @SuppressWarnings("PMD")
     public void initData() {
         try {
             new TestContextManager(getClass()).prepareTestInstance(this);
