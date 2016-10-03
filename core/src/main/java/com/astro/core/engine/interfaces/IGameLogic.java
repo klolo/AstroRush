@@ -13,7 +13,7 @@ public interface IGameLogic {
 
     void switchStage();
 
-    Screen getGameScreen();
+    Screen getCurrentScreen();
 
     void onExit();
 }

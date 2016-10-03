@@ -11,6 +11,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Represents logic of the MainMenu.
@@ -28,6 +29,9 @@ public class MainMenu extends StageLogic {
 
     @Getter
     private boolean isResumeActive = false;
+
+    @Autowired
+    private KeyObserve keyObserve;
 
     private boolean isGameStarted = false;
 
@@ -116,7 +120,7 @@ public class MainMenu extends StageLogic {
 
     @Override
     public void onResume() {
-        KeyObserve.instance.register(this);
+        keyObserve.register(this);
 
         selectectResumeButton();
 

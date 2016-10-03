@@ -26,8 +26,6 @@ public class GameLogic implements IGameLogic {
     @Getter
     private GameStage currentScreen;
 
-    private GameStage prevScreen;
-
     HashMap<Stage, GameStage> loadedStages = new HashMap<>();
 
     @Setter
@@ -62,7 +60,7 @@ public class GameLogic implements IGameLogic {
                             break;
                         }
                         case NEW_STAGE: {
-                            newStage();
+                            newGameLevel1();
                             break;
                         }
                         case RESUME: {
@@ -80,20 +78,10 @@ public class GameLogic implements IGameLogic {
     }
 
     public void switchStage() {
-        Stage stageToLoad = Stage.MAIN_MENU;
-
-        if (currentScreen != null) {
-            stageToLoad = currentScreen.getStageLogic().getStageToLoad();
-            unregisterScreen(currentScreen);
-        }
-
+        final Stage stageToLoad = currentScreen != null ? currentScreen.getStageLogic().getStageToLoad() : Stage.MAIN_MENU;
         log.info("switch stage to: {}", stageToLoad);
 
-        if (prevScreen != null) {
-            prevScreen = currentScreen;
-            prevScreen.unregisterPhysics();
-        }
-
+        unregisterScreen(currentScreen);
         currentStage = stageToLoad;
 
         if (stageToLoad != null && loadedStages.containsKey(stageToLoad)) {
@@ -106,9 +94,8 @@ public class GameLogic implements IGameLogic {
         }
     }
 
-    private void newStage() {
+    private void newGameLevel1() {
         log.info("start");
-        prevScreen = currentScreen;
         destroyLevelStage();
 
         currentScreen = stageFactory.create(screenConfigs.get(Stage.LEVEL1.toString()));
@@ -131,7 +118,4 @@ public class GameLogic implements IGameLogic {
         Optional.ofNullable(loadedStages.get(Stage.LEVEL1)).ifPresent(GameStage::destroy);
     }
 
-    public GameStage getGameScreen() {
-        return currentScreen;
-    }
 }

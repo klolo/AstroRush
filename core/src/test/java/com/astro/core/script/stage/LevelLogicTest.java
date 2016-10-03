@@ -2,11 +2,12 @@ package com.astro.core.script.stage;
 
 import com.astro.core.engine.base.GameEvent;
 import com.astro.core.engine.stage.Stage;
+import com.badlogic.gdx.Input;
 import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Test main menu logic.
+ * Test of main level stage.
  */
 public class LevelLogicTest {
 
@@ -16,11 +17,24 @@ public class LevelLogicTest {
         final LevelLogic level = new LevelLogic();
 
         //when
-        level.processEsc();
+        level.processEscapeKey();
 
         //then
         Assert.assertTrue("By default escape should back to menu", level.getEvent() == GameEvent.SWITCH_STAGE);
         Assert.assertTrue("Should go to main menu", level.getStageToLoad() == Stage.MAIN_MENU);
+    }
+
+    @Test
+    public void shouldSwitchStageToGarage() {
+        //given
+        final LevelLogic level = new LevelLogic();
+
+        //when
+        level.keyPressEvent(Input.Keys.TAB);
+
+        //then
+        Assert.assertTrue("Should level return SWITCH_STAGE event", level.getEvent().equals(GameEvent.SWITCH_STAGE));
+        Assert.assertTrue("Should level want load GARAGE", level.getStageToLoad().equals(Stage.GARAGE));
     }
 
 }

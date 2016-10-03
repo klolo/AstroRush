@@ -41,6 +41,9 @@ public class GameEngine extends Game {
     @Autowired
     PhysicsEngine physicsEngine;
 
+    @Autowired
+    private KeyObserve keyObserve;
+
     @Setter
     @Getter
     private static ApplicationContext applicationContext;
@@ -68,7 +71,7 @@ public class GameEngine extends Game {
         physicsEngine.initPhysics();
 
         gameLogic.switchStage();
-        screen = gameLogic.getGameScreen();
+        screen = gameLogic.getCurrentScreen();
 
         Preconditions.checkNotNull(screen, "Screen cannot be null");
         setScreen(screen);
@@ -81,11 +84,11 @@ public class GameEngine extends Game {
      */
     @Override
     public void render() {
-        if (gameLogic.getGameScreen() != screen) {
-            setScreen(gameLogic.getGameScreen());
+        if (gameLogic.getCurrentScreen() != screen) {
+            setScreen(gameLogic.getCurrentScreen());
         }
 
-        KeyObserve.instance.handleInput();
+        keyObserve.handleInput();
 
         float deltaTime = Gdx.graphics.getDeltaTime();
         update(deltaTime);

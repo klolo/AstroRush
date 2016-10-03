@@ -80,5 +80,6 @@
     <bean id="cameraManager" lazy-init="true" class="com.astro.core.engine.base.CameraManager"/>
     <bean id="popupMsg" scope="prototype" class="com.astro.core.script.util.PopupMsg"/>
     <bean id="fireBehavior" class="com.astro.core.script.player.fire.SimpleShoot"/>
+    <bean id="keyObserve" class="com.astro.core.observe.KeyObserve"/>
 
 </beans>

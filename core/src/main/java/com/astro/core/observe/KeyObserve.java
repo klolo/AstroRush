@@ -11,8 +11,7 @@ import java.util.LinkedList;
 /**
  * Observer for key event, which send event to every registered listener.
  */
-public enum KeyObserve {
-    instance;
+public class KeyObserve {
 
     /**
      * Availbale in game keys (from JavaFX). Any other will be ignore.
@@ -25,7 +24,8 @@ public enum KeyObserve {
             Input.Keys.LEFT,
             Input.Keys.ESCAPE,
             Input.Keys.ENTER,
-            Input.Keys.SHIFT_LEFT
+            Input.Keys.SHIFT_LEFT,
+            Input.Keys.TAB
     };
 
     /**

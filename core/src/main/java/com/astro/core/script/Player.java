@@ -24,6 +24,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
      */
     public static final String IDENTIFIER = "player";
 
+    private KeyObserve keyObserve;
 
     public PlayerData playerData;
 
@@ -36,8 +37,9 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
     public Player() {
         log.info("Creating player");
         playerData = GameEngine.getApplicationContext().getBean(PlayerData.class);
+        keyObserve = GameEngine.getApplicationContext().getBean(KeyObserve.class);
 
-        KeyObserve.instance.register(this);
+        keyObserve.register(this);
 
         playerData.cameraManager.setObservedObject(this);
         playerData.playerCollisionProcessor = new PlayerCollisionProcessor(this);
@@ -65,13 +67,13 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
     @Override
     public void onPause() {
         playerData.cameraManager.setObservedObject(null);
-        KeyObserve.instance.unregister(this);
+        keyObserve.unregister(this);
     }
 
     @Override
     public void onResume() {
         playerData.cameraManager.setObservedObject(this);
-        KeyObserve.instance.register(this);
+        keyObserve.register(this);
     }
 
     @Override

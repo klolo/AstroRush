@@ -67,6 +67,9 @@ public class GameStage implements Screen, ApplicationContextAware {
     @Autowired
     private Box2DDebugRenderer renderer;
 
+    @Autowired
+    private KeyObserve keyObserve;
+
     @Setter
     @Getter
     private IStageLogic stageLogic;
@@ -200,13 +203,10 @@ public class GameStage implements Screen, ApplicationContextAware {
         physicsEngine.dispose();
     }
 
-
     public void destroy() {
         unregister();
-        unregisterPhysics();
-        mapElements.clear();
-        mapElementsWithLogic.clear();
-        //objectsRegister.clear();
+        //       objectsRegister.clear();
+        physicsEngine.destroyAllBodies();
     }
 
     /**
@@ -216,7 +216,7 @@ public class GameStage implements Screen, ApplicationContextAware {
         log.info("unregister stage");
         mapElementsWithLogic.parallelStream().forEach(obj -> obj.getData().getLogic().onPause());
         stageLogic.onPause();
-        KeyObserve.instance.unregister(stageLogic);
+        keyObserve.unregister(stageLogic);
     }
 
     /**
@@ -224,14 +224,11 @@ public class GameStage implements Screen, ApplicationContextAware {
      */
     public void register() {
         log.info("register stage");
+        //   initStage(mapElements);
         physicsEngine.initLight(config.ambientLightRed, config.ambientLightGreen, config.ambientLightBlue);
         mapElementsWithLogic.parallelStream().forEach(obj -> obj.getData().getLogic().onResume());
         stageLogic.onResume();
-        KeyObserve.instance.register(stageLogic);
-    }
-
-    public void unregisterPhysics() {
-        physicsEngine.destroyAllBodies();
+        keyObserve.register(stageLogic);
     }
 
     @Override
