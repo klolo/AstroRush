@@ -10,6 +10,8 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -17,6 +19,8 @@ import java.util.LinkedList;
 /**
  * Showing small messages above the player.
  */
+@Component
+@Scope("prototype")
 public class PopupMsg implements ApplicationContextAware {
 
     @Setter

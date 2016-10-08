@@ -9,12 +9,16 @@ import com.badlogic.gdx.physics.box2d.Body;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 
 /**
  * All player non final field.
  */
+@Component
+@Scope("prototype")
 public class PlayerData {
 
     @Getter

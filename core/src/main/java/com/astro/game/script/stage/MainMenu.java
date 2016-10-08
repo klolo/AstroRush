@@ -11,11 +11,13 @@ import com.badlogic.gdx.graphics.Color;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Represents logic of the MainMenu.
  */
 @Slf4j
+@Component
 public class MainMenu extends StageLogic {
 
     @Autowired

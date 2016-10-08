@@ -12,11 +12,13 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * Class read and convert sImages array from json file.
  */
 @Slf4j
+@Component
 public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO>, ApplicationContextAware {
 
     @Setter

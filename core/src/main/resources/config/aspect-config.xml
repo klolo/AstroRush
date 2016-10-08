@@ -10,9 +10,6 @@
 
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
-    <!-- Aspect -->
-    <bean id="loaderLoggingAspect" class="com.astro.game.aspect.LoaderLoggingAspect"/>
-
     <aop:config>
         <!-- log all loaded components in over runtime loader -->
         <aop:aspect id="logAspect" ref="loaderLoggingAspect">

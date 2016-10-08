@@ -9,6 +9,7 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.uwsoft.editor.renderer.data.MainItemVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -16,6 +17,7 @@ import java.util.LinkedList;
 /**
  * Base class for all loaders.
  */
+@Component
 class BaseLoader {
 
     @Value("${renderer.pixel.per.meter}")

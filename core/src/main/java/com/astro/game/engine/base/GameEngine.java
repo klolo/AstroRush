@@ -15,11 +15,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * Main loop of the game.
  */
 @Slf4j
+@Component
 public class GameEngine extends Game implements ApplicationContextAware {
 
     @Setter

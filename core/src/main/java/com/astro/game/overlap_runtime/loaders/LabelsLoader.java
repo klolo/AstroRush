@@ -10,11 +10,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * Text object on the screen.
  */
 @Slf4j
+@Component
 public class LabelsLoader implements ILoader<LabelVO>, ApplicationContextAware {
 
     @Autowired

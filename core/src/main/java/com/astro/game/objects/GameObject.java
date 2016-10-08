@@ -9,12 +9,16 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * Represents a single game object.
  */
 @Slf4j
 @ToString
+@Component
+@Scope("prototype")
 abstract public class GameObject implements IGameObject {
 
     @Getter

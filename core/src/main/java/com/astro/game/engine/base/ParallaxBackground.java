@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.LinkedList;
 
@@ -18,6 +20,8 @@ import java.util.LinkedList;
  * Movable background.
  */
 @Slf4j
+@Component
+@Scope("prototype")
 public class ParallaxBackground implements ApplicationContextAware {
 
     /**

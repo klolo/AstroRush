@@ -10,10 +10,14 @@ import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * Represent text on the screen loaded from json map.
  */
+@Component
+@Scope("prototype")
 @Slf4j
 public class LabelObject extends TextureObject {
 

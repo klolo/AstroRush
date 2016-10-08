@@ -3,6 +3,7 @@ package com.astro.game.observe;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import org.apache.commons.lang3.ArrayUtils;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import java.util.LinkedList;
 /**
  * Observer for key event, which send event to every registered listener.
  */
+@Component
 public class KeyObserve {
 
     /**

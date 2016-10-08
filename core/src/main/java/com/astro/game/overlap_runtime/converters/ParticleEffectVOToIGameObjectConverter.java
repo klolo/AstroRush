@@ -2,10 +2,12 @@ package com.astro.game.overlap_runtime.converters;
 
 import com.astro.game.objects.interfaces.IGameObject;
 import com.uwsoft.editor.renderer.data.ParticleEffectVO;
+import org.springframework.stereotype.Component;
 
 /**
  * Rewrite SimpleImageVO data to IGameObject.
  */
+@Component
 public class ParticleEffectVOToIGameObjectConverter extends MainItemVOToIGameObjectConverter implements IConverter<ParticleEffectVO> {
 
     @Override

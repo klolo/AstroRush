@@ -19,6 +19,7 @@ public class PhysicsEngine {
     /**
      * Settings loaded from properties file.
      */
+    @Autowired
     PhysicsSettings settings;
 
     @Setter

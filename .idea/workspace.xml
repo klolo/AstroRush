@@ -4,126 +4,49 @@
     <bookmark url="file://$PROJECT_DIR$/../fx/src/main/java/com/word_trainer/services/WordsService.java" description="final String[] args = line.split(&quot;\\|&quot;);" line="102" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ec722d8-dd8c-4052-95d3-6be1ae989e58" name="Default" comment="switching to garage&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/lombok.config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/java/lombok.config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/desktop/src/main/java/com/astro/game/lombok.config" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/game.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/adnotation/Dispose.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/Dispose.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/adnotation/GameProperty.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/GameProperty.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/adnotation/Msg.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/Msg.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/adnotation/processor/DisposeCaller.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/processor/DisposeCaller.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/adnotation/processor/PropertyInjector.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/processor/PropertyInjector.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/adnotation/processor/ReflectionHelper.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/processor/ReflectionHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/aspect/LoaderLoggingAspect.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/aspect/LoaderLoggingAspect.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/base/CameraManager.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/CameraManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/base/GameEngine.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/GameEngine.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/base/GameEvent.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/GameEvent.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/base/GameLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/GameLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/base/ParallaxBackground.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/ParallaxBackground.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/interfaces/IGameLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/interfaces/IGameLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/interfaces/IObservedByCamera.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/interfaces/IObservedByCamera.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/physics/CollisionListener.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/CollisionListener.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/physics/CollisionProcessResult.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/CollisionProcessResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/physics/CollisionProcessor.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/CollisionProcessor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/physics/PhysicsEngine.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsEngine.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/physics/PhysicsSettings.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsSettings.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/GameObjectUtil.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/GameObjectUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/GameStage.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/GameStage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/IGameHud.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/IGameHud.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/Stage.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/Stage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageConfig.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageFactory.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/StageHUD.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageHUD.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/AnimationObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/AnimationObject.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/GameObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/GameObject.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/LabelObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/LabelObject.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/LightObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/LightObject.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/ObjectData.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/ObjectData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/ObjectsRegister.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/ObjectsRegister.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/ParticleObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/ParticleObject.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/PhysicsObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/PhysicsObject.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/TextureObject.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/interfaces/IGameObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/interfaces/IGameObject.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/interfaces/ILogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/interfaces/ILogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/observe/IKeyObserver.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/observe/IKeyObserver.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/observe/KeyObserve.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/observe/KeyObserve.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/OverlapSceneReader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/OverlapSceneReader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/IConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/IConverter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/LabelVOToIGameObjectConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/LabelVOToIGameObjectConverter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/ParticleEffectVOToIGameObjectConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/ParticleEffectVOToIGameObjectConverter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/converters/SimpleImageVOToIGameObjectConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/SimpleImageVOToIGameObjectConverter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/BaseLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/BaseLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ComponentLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ComponentLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ILoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ILoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/LabelsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/LabelsLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/LightsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/LightsLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/ParticleEffectsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ParticleEffectsLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/SpriteAnimationsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/SpriteAnimationsLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Enemy.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/Enemy.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/LightLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/LightLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/MovingPlatform.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/MovingPlatform.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/Player.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Point.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/Point.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Switch.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/Switch.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/IInteractWithPlayer.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/IInteractWithPlayer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerCollisionProcessor.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerCollisionProcessor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerData.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerGraphics.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerGraphics.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerSettings.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerSettings.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/PlayerState.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerState.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/WatchersCreator.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/WatchersCreator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/WatchersID.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/WatchersID.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/fire/BombShoot.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/fire/BombShoot.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/fire/IFireBehavior.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/fire/IFireBehavior.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/fire/IShootLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/fire/IShootLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/fire/SimpleShoot.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/fire/SimpleShoot.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/player/fire/SimpleShootLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/fire/SimpleShootLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/GarageLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/GarageLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/HighscoreLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/HighscoreLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/IStageLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/IStageLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/LevelLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/LevelLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/MainMenu.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/MainMenu.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/SettingsLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/SettingsLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/StageLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/StageLogic.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/util/BackAndForthMove.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/util/BackAndForthMove.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/util/LogicTimer.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/util/LogicTimer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/util/PopupMsg.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/util/PopupMsg.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/storage/GameResources.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/storage/GameResources.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/storage/MessagesManager.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/storage/MessagesManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/core/storage/PropertiesReader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/storage/PropertiesReader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/resources/configuration/aspect-config.xml" afterPath="$PROJECT_DIR$/core/src/main/resources/config/aspect-config.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/resources/configuration/core-config.xml" afterPath="$PROJECT_DIR$/core/src/main/resources/config/game-context.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/resources/configuration/overlap-runtime-config.xml" afterPath="$PROJECT_DIR$/core/src/main/resources/config/overlap-runtime-config.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/resources/configuration/stage-config.xml" afterPath="$PROJECT_DIR$/core/src/main/resources/config/stage-config.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/adnotation/DisposeCallerTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/adnotation/DisposeCallerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/converters/MainItemVOToIGameObjectConverterTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/converters/MainItemVOToIGameObjectConverterTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/PropertiesReaderTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/PropertiesReaderTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/PropertyInjectorTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/PropertyInjectorTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/base/CameraManagerTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/base/CameraManagerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/base/GameEngineTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/base/GameEngineTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/base/GameLogicTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/base/GameLogicTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/base/ParallaxBackgroundTests.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/base/ParallaxBackgroundTests.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/physics/PhysicsEngineTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/physics/PhysicsEngineTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/mock/GdxMock.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/mock/GdxMock.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/objects/TextureObjectTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/objects/TextureObjectTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/observe/KeyObserveTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/observe/KeyObserveTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/overlap_runtime/OverlapSceneReaderTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/overlap_runtime/OverlapSceneReaderTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/EnemyTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/script/EnemyTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/player/PlayerSettingsTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/script/player/PlayerSettingsTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/player/PlayerStateTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/script/player/PlayerStateTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/player/PopupMsgTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/script/player/PopupMsgTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/stage/GarageLogicTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/script/stage/GarageLogicTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/stage/LevelLogicTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/script/stage/LevelLogicTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/stage/MainMenuTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/script/stage/MainMenuTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/util/LogicTimerTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/script/util/LogicTimerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/java/com/astro/core/storage/MessagesManagerTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/com/astro/game/storage/MessagesManagerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/desktop/src/main/resources/desktop.xml" afterPath="$PROJECT_DIR$/desktop/src/main/resources/desktop-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="8ec722d8-dd8c-4052-95d3-6be1ae989e58" name="Default" comment="refactoring&#10;">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/resources/config/overlap-runtime-config.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/resources/config/stage-config.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/core/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/desktop/src/main/java/com/astro/game/Launcher.java" afterPath="$PROJECT_DIR$/desktop/src/main/java/com/astro/game/Launcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/aspect/LoaderLoggingAspect.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/aspect/LoaderLoggingAspect.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/GameEngine.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/GameEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/ParallaxBackground.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/ParallaxBackground.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsEngine.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsSettings.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsSettings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/GameStage.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/GameStage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageFactory.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageHUD.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageHUD.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/AnimationObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/AnimationObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/GameObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/GameObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/LabelObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/LabelObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/LightObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/LightObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/ParticleObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/ParticleObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/PhysicsObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/PhysicsObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/TextureObject.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/TextureObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/observe/KeyObserve.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/observe/KeyObserve.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/OverlapSceneReader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/OverlapSceneReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/LabelVOToIGameObjectConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/LabelVOToIGameObjectConverter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/ParticleEffectVOToIGameObjectConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/ParticleEffectVOToIGameObjectConverter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/SimpleImageVOToIGameObjectConverter.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/SimpleImageVOToIGameObjectConverter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/BaseLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/BaseLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ComponentLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ComponentLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/LabelsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/LabelsLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/LightsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/LightsLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ParticleEffectsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ParticleEffectsLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/SpriteAnimationsLoader.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/SpriteAnimationsLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/LightLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/LightLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerData.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerSettings.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerSettings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/fire/SimpleShoot.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/fire/SimpleShoot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/GarageLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/GarageLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/HighscoreLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/HighscoreLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/LevelLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/LevelLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/MainMenu.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/MainMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/SettingsLogic.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/SettingsLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/util/PopupMsg.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/util/PopupMsg.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/config/aspect-config.xml" afterPath="$PROJECT_DIR$/core/src/main/resources/config/aspect-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/resources/config/game-context.xml" afterPath="$PROJECT_DIR$/core/src/main/resources/config/game-context.xml" />
     </list>
     <ignored path="AstroRush2.0.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -232,52 +155,102 @@
     <favorites_list name="AstroRush2.0" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="game-context.xml" pinned="false" current-in-tab="false">
+    <leaf>
+      <file leaf-file-name="game-context.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/main/resources/config/game-context.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="74" column="83" selection-start-line="74" selection-start-column="83" selection-end-line="74" selection-end-column="83" />
+            <state relative-caret-position="468">
+              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lombok.config" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/lombok.config">
+      <file leaf-file-name="PlayerSettings.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerSettings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+            <state relative-caret-position="126">
+              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnemyTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/script/EnemyTest.java">
+      <file leaf-file-name="aspect-config.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/resources/config/aspect-config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+            <state relative-caret-position="252">
+              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/Player.java">
+      <file leaf-file-name="LoaderLoggingAspect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/aspect/LoaderLoggingAspect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+            <state relative-caret-position="126">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PopupMsg.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/util/PopupMsg.java">
+      <file leaf-file-name="GarageLogic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/GarageLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LevelLogic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/LevelLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HighscoreLogic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/HighscoreLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SettingsLogic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/SettingsLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/MainMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StageLogic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/StageLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -1163,57 +1136,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/overlap_runtime/loaders/SpriteAnimationsLoader.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/physics/PhysicsEngine.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/LightLogic.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/interfaces/IGameLogic.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/base/GameLogic.java" />
-        <option value="$PROJECT_DIR$/desktop/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/stage/LevelLogicTest.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/LevelLogic.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/stage/GarageLogicTest.java" />
-        <option value="$PROJECT_DIR$/core/src/main/resources/configuration/core-config.xml" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/stage/GameStage.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/engine/base/GameEngine.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/Player.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/StageLogic.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/observe/KeyObserve.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/GarageLogic.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/core/src/main/resources/game.log" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/script/stage/MainMenu.java" />
-        <option value="$PROJECT_DIR$/core/src/main/resources/configuration/stage-config.xml" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/base/ParallaxBackgroundTests.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/EnemyTest.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/player/PopupMsgTest.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/base/GameLogicTest.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/base/GameEngineTest.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/engine/base/CameraManagerTest.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/script/stage/MainMenuTest.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/common/GdxTestRunner.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/observe/KeyObserveTest.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/mock/GdxMock.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/astro/core/objects/TextureObjectTest.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/core/objects/TextureObject.java" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/core/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/ParallaxBackground.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/GameStage.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageFactory.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/base/GameLogicTest.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/base/GameEngineTest.java" />
         <option value="$PROJECT_DIR$/desktop/src/main/java/com/astro/game/Launcher.java" />
         <option value="$PROJECT_DIR$/desktop/src/main/resources/desktop-context.xml" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsSettings.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/GameObjectUtil.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/ObjectsRegister.java" />
-        <option value="$PROJECT_DIR$/core/src/main/resources/config/game-context.xml" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/processor/DisposeCaller.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/processor/PropertyInjector.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/aspect/LoaderLoggingAspect.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/GameEngine.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageHUD.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/fire/SimpleShoot.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/observe/KeyObserve.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/util/PopupMsg.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/GameStage.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsEngine.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerData.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/ParallaxBackground.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/LightObject.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/PhysicsObject.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/ParticleObject.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/AnimationObject.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/LabelObject.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/TextureObject.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/GameObject.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/LightLogic.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageFactory.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/OverlapSceneReader.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ComponentLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/LabelsLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/SpriteAnimationsLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ParticleEffectsLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/BaseLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/LabelVOToIGameObjectConverter.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/ParticleEffectVOToIGameObjectConverter.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/SimpleImageVOToIGameObjectConverter.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/LightsLoader.java" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/config/overlap-runtime-config.xml" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/CameraManager.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsSettings.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/MainMenu.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/SettingsLogic.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/HighscoreLogic.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/LevelLogic.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/GarageLogic.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/aspect/LoaderLoggingAspect.java" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/config/aspect-config.xml" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/config/stage-config.xml" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerSettings.java" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/config/game-context.xml" />
       </list>
     </option>
   </component>
@@ -1430,7 +1403,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="desktop" />
+              <option name="myItemId" value="overlap2d_map" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroMap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AstroRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1445,48 +1436,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AstroRush2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AstroRush" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="desktop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="game" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1633,7 +1582,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="*pop*m&#9;PSI&#9;JAVA://com.astro.game.script.util.PopupMsg&#10;logger&#9;PSI&#9;JAVA://com.badlogic.gdx.utils.Logger&#10;phys&#9;FILE&#9;file:///home/kamil/Programowanie/projects/AstroRush/core/src/main/java/com/astro/core/engine/physics/PhysicsWorld.java&#10;player&#9;FILE&#9;file:///home/kamil/Programowanie/projects/AstroRush/core/src/main/java/com/astro/core/script/Player.java&#10;*fact&#9;PSI&#9;JAVA://com.astro.core.engine.stage.StageFactory&#10;debugdr&#9;PSI&#9;JAVA://com.astro.core.engine.physics.PhysicsSettings#DEBUG_DRAW&#10;playerstat&#9;FILE&#9;file:///home/kamil/Programowanie/projects/AstroRush/core/src/main/java/com/astro/core/script/player/PlayerState.java" />
+    <property name="SearchEverywhereHistoryKey" value="came&#9;FILE&#9;file:///home/kamil/Programowanie/projects/AstroRush/core/src/main/java/com/astro/game/engine/base/CameraManager.java&#10;*pop*m&#9;PSI&#9;JAVA://com.astro.game.script.util.PopupMsg&#10;logger&#9;PSI&#9;JAVA://com.badlogic.gdx.utils.Logger&#10;phys&#9;FILE&#9;file:///home/kamil/Programowanie/projects/AstroRush/core/src/main/java/com/astro/core/engine/physics/PhysicsWorld.java&#10;player&#9;FILE&#9;file:///home/kamil/Programowanie/projects/AstroRush/core/src/main/java/com/astro/core/script/Player.java&#10;*fact&#9;PSI&#9;JAVA://com.astro.core.engine.stage.StageFactory&#10;debugdr&#9;PSI&#9;JAVA://com.astro.core.engine.physics.PhysicsSettings#DEBUG_DRAW&#10;playerstat&#9;FILE&#9;file:///home/kamil/Programowanie/projects/AstroRush/core/src/main/java/com/astro/core/script/player/PlayerState.java" />
     <property name="js-jscs-nodeInterpreter" value="/bin/node" />
   </component>
   <component name="RecentsManager">
@@ -2220,9 +2169,9 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Gradle.AstroRush [run]" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TextureObjectTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TextureObjectTest.shouldRenderInWindowMode" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.AstroRush [test]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.AstroRush [test]" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TextureObjectTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TextureObjectTest.shouldRenderInWindowMode" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.TextureObjectTest.shouldNotRenderObjectWhenRenderingIsInScript" />
       </list>
     </recent_temporary>
@@ -2351,14 +2300,7 @@
       <workItem from="1475519082955" duration="7108000" />
       <workItem from="1475605295446" duration="619000" />
       <workItem from="1475937668128" duration="6482000" />
-      <workItem from="1475953483053" duration="1857000" />
-    </task>
-    <task id="LOCAL-00067" summary="readme change">
-      <created>1463942724679</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1463942724679</updated>
+      <workItem from="1475953483053" duration="2798000" />
     </task>
     <task id="LOCAL-00068" summary="travis.yml&#10;">
       <created>1463943065667</created>
@@ -2696,43 +2638,50 @@
       <option name="project" value="LOCAL" />
       <updated>1475526568186</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="refactoring&#10;">
+      <created>1475955363496</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1475955363496</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 27m 58s.xml">
+    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 42m 27s.xml">
       <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 30m 07s.xml">
+    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 42m 40s.xml">
       <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 31m 29s.xml">
+    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 42m 52s.xml">
       <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 34m 48s.xml">
+    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 43m 05s.xml">
       <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 35m 34s.xml">
+    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 43m 30s.xml">
       <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TextureObjectTest - 2016.10.08 at 18h 24m 36s.xml">
-      <configuration name="TextureObjectTest" configurationId="JUnit" />
+    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 44m 04s.xml">
+      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TextureObjectTest - 2016.10.08 at 18h 25m 06s.xml">
-      <configuration name="TextureObjectTest" configurationId="JUnit" />
+    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 45m 08s.xml">
+      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TextureObjectTest - 2016.10.08 at 18h 25m 33s.xml">
-      <configuration name="TextureObjectTest" configurationId="JUnit" />
+    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 45m 36s.xml">
+      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TextureObjectTest - 2016.10.08 at 18h 26m 09s.xml">
-      <configuration name="TextureObjectTest" configurationId="JUnit" />
+    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 46m 50s.xml">
+      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TextureObjectTest - 2016.10.08 at 18h 27m 37s.xml">
-      <configuration name="TextureObjectTest" configurationId="JUnit" />
+    <history-entry file="AstroRush_[test] - 2016.10.08 at 21h 47m 34s.xml">
+      <configuration name="AstroRush [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="603324000" />
+    <option name="totallyTimeSpent" value="604265000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2755,7 +2704,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1876209" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29134616" sideWeight="0.58732694" order="2" side_tool="false" content_ui="tabs" x="1920" y="0" width="1920" height="1080" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298077" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19401544" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2820,7 +2769,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Converter tests" />
     <MESSAGE value="Logic of the main menu" />
     <MESSAGE value="banner" />
     <MESSAGE value="readme" />
@@ -2845,25 +2793,13 @@
     <MESSAGE value="new graphics and bug fixing" />
     <MESSAGE value="fixing tests&#10;" />
     <MESSAGE value="switching to garage&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="switching to garage&#10;" />
+    <MESSAGE value="refactoring&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/processor/PropertyInjector.java</url>
-          <properties />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/ParticleEffectVOToIGameObjectConverter.java</url>
-          <line>2</line>
-          <properties />
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -2876,293 +2812,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/CameraManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/base/CameraManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-419">
-          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.2/b6c7422c6740f86a9a84fdcbc4c62a1f46db317d/gdx-1.9.2-sources.jar!/com/badlogic/gdx/Gdx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/overlap_runtime/OverlapSceneReaderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/script/player/PlayerStateTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/script/stage/GarageLogicTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/script/stage/MainMenuTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/common/GdxTestRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.2/b6c7422c6740f86a9a84fdcbc4c62a1f46db317d/gdx-1.9.2-sources.jar!/com/badlogic/gdx/Input.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="82" column="31" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/observe/KeyObserveTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.2/b6c7422c6740f86a9a84fdcbc4c62a1f46db317d/gdx-1.9.2-sources.jar!/com/badlogic/gdx/graphics/g2d/SpriteBatch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="71" column="11" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/mock/GdxMock.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#347#348#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/1.10.19/8269667b73d9616600359a9b0ba1b1c7d0cf7a97/mockito-core-1.10.19-sources.jar!/org/mockito/internal/stubbing/answers/ThrowsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-          <folding>
-            <element signature="e#726#727#0" expanded="false" />
-            <element signature="e#768#769#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/1.10.19/8269667b73d9616600359a9b0ba1b1c7d0cf7a97/mockito-core-1.10.19-sources.jar!/org/mockito/internal/creation/cglib/MethodInterceptorFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#1657#1658#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/1.10.19/8269667b73d9616600359a9b0ba1b1c7d0cf7a97/mockito-core-1.10.19-sources.jar!/org/mockito/stubbing/Stubber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/ObjectData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-core/1.10.19/8269667b73d9616600359a9b0ba1b1c7d0cf7a97/mockito-core-1.10.19-sources.jar!/org/mockito/Mockito.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31590">
-          <caret line="1784" column="26" selection-start-line="1784" selection-start-column="26" selection-end-line="1784" selection-end-column="26" />
-          <folding>
-            <element signature="e#67773#67774#0" expanded="true" />
-            <element signature="e#67825#67826#0" expanded="true" />
-            <element signature="e#79158#79159#0" expanded="true" />
-            <element signature="e#79226#79227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/objects/TextureObjectTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/TextureObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-36">
-          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="112" column="38" selection-start-line="112" selection-start-column="38" selection-end-line="112" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/ParallaxBackground.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1091">
-          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerGraphics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="65" column="44" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/GameStage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1465">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/base/GameLogicTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/base/GameEngineTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/GameLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-828">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -3175,98 +2828,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/desktop/src/main/resources/desktop-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/config/overlap-runtime-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/GameObjectUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/ObjectsRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/resources/config/game-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="74" column="83" selection-start-line="74" selection-start-column="83" selection-end-line="74" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/GameEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/java/lombok.config">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desktop/src/main/java/com/astro/game/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/aspect/LoaderLoggingAspect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/processor/PropertyInjector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/adnotation/processor/DisposeCaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -3279,26 +2844,389 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/script/EnemyTest.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.2/6e1c72c4a48cbde19f9584bfb8d2d09572067af4/gdx-box2d-1.9.2-sources.jar!/com/badlogic/gdx/physics/box2d/Box2DDebugRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+        <state relative-caret-position="108">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/Player.java">
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/fire/SimpleShoot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
+        <state relative-caret-position="72">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.3.0.RELEASE/3658ba08b3f56ec005b85f76b690c2b4ffb79299/spring-context-4.3.0.RELEASE-sources.jar!/org/springframework/context/annotation/Lazy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#2987#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/astro/game/engine/physics/PhysicsEngineTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/GameEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageHUD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/observe/KeyObserve.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/util/PopupMsg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="162">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/GameStage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/ParallaxBackground.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/LightObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/PhysicsObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/ParticleObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/AnimationObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/LabelObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/TextureObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/objects/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/LightLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/stage/StageFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/OverlapSceneReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ComponentLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/LabelsLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/SpriteAnimationsLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/ParticleEffectsLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/LabelVOToIGameObjectConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/ParticleEffectVOToIGameObjectConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/SimpleImageVOToIGameObjectConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/converters/MainItemVOToIGameObjectConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.3.0.RELEASE/3658ba08b3f56ec005b85f76b690c2b4ffb79299/spring-context-4.3.0.RELEASE-sources.jar!/org/springframework/stereotype/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="44" column="18" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/LightsLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/overlap_runtime/loaders/BaseLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/base/CameraManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/engine/physics/PhysicsSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="69" column="7" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/config/overlap-runtime-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/StageLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/MainMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/SettingsLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/HighscoreLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/LevelLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/stage/GarageLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/aspect/LoaderLoggingAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/config/stage-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/config/aspect-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/astro/game/script/player/PlayerSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/config/game-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
           <folding />
         </state>
       </provider>

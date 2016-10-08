@@ -3,11 +3,13 @@ package com.astro.game.aspect;
 import com.uwsoft.editor.renderer.data.MainItemVO;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
+import org.springframework.stereotype.Component;
 
 /**
  * Aspect for logging while loading components.
  */
 @Slf4j
+@Component
 public class LoaderLoggingAspect {
 
     public void logBefore(final JoinPoint joinPoint) {

@@ -19,6 +19,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
@@ -26,6 +28,8 @@ import java.util.ArrayList;
  * Represents game stage/level.
  */
 @Slf4j
+@Component
+@Scope("prototype")
 public class GameStage implements Screen, ApplicationContextAware {
 
     @Setter

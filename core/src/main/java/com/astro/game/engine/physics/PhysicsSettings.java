@@ -1,7 +1,6 @@
 package com.astro.game.engine.physics;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -9,8 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * Aggregate all settings for PhysicsWorld.
  */
-@Getter
-@Setter
+@Data
 @ToString
 @Component
 class PhysicsSettings {

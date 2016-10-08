@@ -7,11 +7,15 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * Contains light data and logic.
  */
 @Slf4j
+@Component
+@Scope("prototype")
 public class LightObject extends GameObject implements ApplicationContextAware {
 
     @Setter

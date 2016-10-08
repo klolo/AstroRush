@@ -11,11 +11,15 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * Represents a drawable on screen texture object.
  */
 @Slf4j
+@Component
+@Scope("prototype")
 public class TextureObject extends GameObject {
 
     final String DISPLAY_MODE_KEY = "displaymode";

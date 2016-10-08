@@ -9,11 +9,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * This class convert LightVO from json to box2d light and register in game.
  */
 @Slf4j
+@Component
 public class LightsLoader extends BaseLoader implements ILoader<LightVO>, ApplicationContextAware {
 
     @Autowired

@@ -6,6 +6,7 @@ import com.astro.game.objects.interfaces.IGameObject;
 import com.astro.game.objects.interfaces.ILogic;
 import com.uwsoft.editor.renderer.data.MainItemVO;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.Optional;
@@ -14,6 +15,7 @@ import java.util.Optional;
  * Based converter for overlap runtime loader. It sets all base attributes in GameObject.
  */
 @Slf4j
+@Component
 public class MainItemVOToIGameObjectConverter {
 
     @GameProperty("game.script.package")
