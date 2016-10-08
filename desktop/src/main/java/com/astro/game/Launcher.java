@@ -1,6 +1,6 @@
 package com.astro.game;
 
-import com.astro.core.engine.base.GameEngine;
+import com.astro.game.engine.base.GameEngine;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
@@ -48,14 +48,16 @@ public class Launcher {
 
     private final static int ERROR_EXIT_CODE = -1;
 
+    @Setter
+    @Value("${game.version}")
+    private String applicationVersion;
+
     /**
      * Main method of the application.
      */
     public static void main(String... args) {
         final ApplicationContext context =
-                new ClassPathXmlApplicationContext("desktop.xml");
-        GameEngine.setApplicationContext(context);
-
+                new ClassPathXmlApplicationContext("desktop-context.xml");
         final Launcher launcher = context.getBean(Launcher.class);
         launcher.run();
     }
@@ -64,13 +66,14 @@ public class Launcher {
      * Create libgdx app context and put inside configuration.
      */
     private void run() {
+        LOGGER.info("AstroRush 2.0 starting (version: {})", applicationVersion);
         Preconditions.checkNotNull(gameEngine, "GameEngine is not initialized");
 
         try {
             new LwjglApplication(gameEngine, getConfig());
         }
         catch (final Exception e) {
-            log.error("Fatal error in game", e);
+            LOGGER.error("Fatal error in game", e);
             System.exit(ERROR_EXIT_CODE);
         }
     }

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
+    <context:annotation-config/>
+    <context:component-scan base-package="com.astro.game"/>
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <!-- stages configuration -->
+    <import resource="classpath:config/stage-config.xml"/>
+
+    <!-- application aspects -->
+    <import resource="classpath:config/aspect-config.xml"/>
+
+    <!-- overlap runtime configuration -->
+    <import resource="classpath:config/overlap-runtime-config.xml"/>
+
+    <!-- Collision listener -->
+    <bean id="collisionListener" lazy-init="true" class="com.astro.game.engine.physics.CollisionListener"/>
+
+    <bean id="lightLogic" class="com.astro.game.script.LightLogic" scope="prototype"/>
+
+    <!-- Box2d physics engine -->
+    <bean id="physicsEngine" class="com.astro.game.engine.physics.PhysicsEngine"
+          factory-method="createFromPhysicsSettings">
+        <constructor-arg ref="physicsSettings"/>
+    </bean>
+
+    <!-- Game objects -->
+    <bean id="gameObject" abstract="true" scope="prototype" class="com.astro.game.objects.GameObject"/>
+    <bean id="textureObject" parent="gameObject" scope="prototype"
+          class="com.astro.game.objects.TextureObject"/>
+    <bean id="labelObject" parent="textureObject" scope="prototype"
+          class="com.astro.game.objects.LabelObject"/>
+    <bean id="animationObject" parent="textureObject" scope="prototype"
+          class="com.astro.game.objects.AnimationObject"/>
+    <bean id="particleObject" parent="textureObject" scope="prototype"
+          class="com.astro.game.objects.ParticleObject"/>
+    <bean id="physicsObject" parent="textureObject" scope="prototype"
+          class="com.astro.game.objects.PhysicsObject"/>
+    <bean id="lightObject" parent="textureObject" scope="prototype"
+          class="com.astro.game.objects.LightObject"/>
+
+    <bean id="parallaxBackground" class="com.astro.game.engine.base.ParallaxBackground" scope="prototype"/>
+
+    <!-- managing game screens  -->
+    <bean id="gameLogic" class="com.astro.game.engine.base.GameLogic" destroy-method="onExit">
+        <property name="screenConfigs">
+            <util:map>
+                <entry key="MAIN_MENU" value-ref="mainMenuStageConfig"/>
+                <entry key="SETTINGS" value-ref="settingsStageConfig"/>
+                <entry key="HIGHSCORE" value-ref="highscoreStageConfig"/>
+                <entry key="LEVEL1" value-ref="level1StageConfig"/>
+                <entry key="GARAGE" value-ref="garageStageConfig"/>
+            </util:map>
+        </property>
+    </bean>
+
+    <bean id="gameEngine" lazy-init="true" class="com.astro.game.engine.base.GameEngine"/>
+    <bean id="stageHUD" scope="prototype" class="com.astro.game.engine.stage.StageHUD"/>
+    <bean id="playerSettings" scope="prototype" class="com.astro.game.script.player.PlayerSettings"/>
+    <bean id="playerData" scope="prototype" lazy-init="true" class="com.astro.game.script.player.PlayerData"/>
+    <bean id="box2DDebugRenderer" lazy-init="true" class="com.badlogic.gdx.physics.box2d.Box2DDebugRenderer"/>
+    <bean id="gameStage" scope="prototype" class="com.astro.game.engine.stage.GameStage"/>
+    <bean id="cameraManager" lazy-init="true" class="com.astro.game.engine.base.CameraManager"/>
+    <bean id="popupMsg" scope="prototype" class="com.astro.game.script.util.PopupMsg"/>
+    <bean id="fireBehavior" class="com.astro.game.script.player.fire.SimpleShoot"/>
+    <bean id="keyObserve" class="com.astro.game.observe.KeyObserve"/>
+
+</beans>
