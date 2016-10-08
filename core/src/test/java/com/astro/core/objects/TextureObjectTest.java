@@ -1,7 +1,6 @@
 package com.astro.core.objects;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,9 +14,6 @@ public class TextureObjectTest {
 
     @Mock
     private TextureObject textureObjectMock;
-
-    @Mock
-    private TextureRegion textureRegionMock;
 
     @Mock
     private SpriteBatch spriteBatchMock;
