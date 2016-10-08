@@ -1,41 +1,78 @@
 package com.astro.core.objects;
 
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShaderProgram;
-import common.GdxTestRunner;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestContextManager;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
-@ContextConfiguration("classpath:configuration/core-config.xml")
-@RunWith(GdxTestRunner.class)
+import static org.mockito.Mockito.*;
+
+@RunWith(MockitoJUnitRunner.class)
 public class TextureObjectTest {
-//
-//    @Setter
-//    private ApplicationContext applicationContext;
+
+    @Mock
+    private TextureObject textureObjectMock;
+
+    @Mock
+    private TextureRegion textureRegionMock;
+
+    @Mock
+    private SpriteBatch spriteBatchMock;
 
     @Before
-    public void setUp() throws Exception {
-        new TestContextManager(getClass()).prepareTestInstance(this);
+    public void before() {
+        doCallRealMethod().when(textureObjectMock).setBatch(spriteBatchMock);
+        doCallRealMethod().when(textureObjectMock).show(null, 0);
+        doCallRealMethod().when(textureObjectMock).render(null, 0);
+        doCallRealMethod().when(textureObjectMock).setData(null);
+
+
+        textureObjectMock.setBatch(spriteBatchMock);
+        textureObjectMock.data = new ObjectData();
     }
 
     @Test
-    public void shouldCreateSpriteBatch() {
-        Mockito.mock(SpriteBatch.class);
-        Mockito.mock(ShaderProgram.class);
-        Mockito.mock(GL20.class);
+    public void shouldNotRenderObjectWhenRenderingIsInScript() {
+        doCallRealMethod().when(textureObjectMock).setRenderingInScript(true);
 
-        //given
-        //final TextureObject textureObject = applicationContext.getBean("textureObject", TextureObject.class);
+        doThrow(new IllegalArgumentException())
+                .when(textureObjectMock).prepareBatch(null);
 
-        //given
-
-        //then
-        //  Assert.assertNotNull("Batch cannot be null", textureObject.getBatch());
+        textureObjectMock.setRenderingInScript(true);
+        textureObjectMock.show(null, 0);
     }
 
+    @Test
+    public void shouldRenderInWindowMode() {
+        doNothing().when(textureObjectMock).drawTextureRegionFullscreen(0f, 0f);
+        doThrow(new IllegalArgumentException())
+                .when(textureObjectMock).drawTextureRegion(0, 0);
+
+        textureObjectMock
+                .data
+                .customVariables
+                .put(textureObjectMock.DISPLAY_MODE_KEY, textureObjectMock.FULLSCREEN_MODE);
+
+        //then
+        textureObjectMock.render(null, 0);
+    }
+
+    @Test
+    public void shouldRenderInFullscreenMode() {
+        doNothing().when(textureObjectMock).drawTextureRegion(0f, 0f);
+        doThrow(new IllegalArgumentException())
+                .when(textureObjectMock).drawTextureRegionFullscreen(0, 0);
+
+        textureObjectMock
+                .data
+                .customVariables
+                .clear();
+
+
+        //then
+        textureObjectMock.render(null, 0);
+    }
 }

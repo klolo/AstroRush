@@ -5,19 +5,16 @@ import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.script.player.fire.SimpleShootLogic;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import common.GdxTestRunner;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestContextManager;
 
-@RunWith(GdxTestRunner.class)
-@ContextConfiguration("classpath:configuration/core-config.xml")
 @Slf4j
+@ContextConfiguration("classpath:configuration/core-config.xml")
 public class EnemyTest {
 
     private Player player = new Player();

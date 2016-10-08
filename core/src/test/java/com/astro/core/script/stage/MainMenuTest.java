@@ -1,6 +1,5 @@
 package com.astro.core.script.stage;
 
-import com.astro.core.engine.base.GameEngine;
 import com.astro.core.engine.base.GameEvent;
 import lombok.Setter;
 import org.junit.Assert;
@@ -14,8 +13,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * Test main menu logic.
  */
-@ContextConfiguration("classpath:configuration/core-config.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:configuration/core-config.xml")
 public class MainMenuTest implements ApplicationContextAware {
 
     @Setter
@@ -24,8 +23,7 @@ public class MainMenuTest implements ApplicationContextAware {
     @Test
     public void shouldSwitchGame() {
         //given
-        GameEngine.setApplicationContext(applicationContext);
-        final MainMenu menu = new MainMenu();
+        final MainMenu menu = applicationContext.getBean(MainMenu.class);
         menu.init();
 
         //when
@@ -38,8 +36,7 @@ public class MainMenuTest implements ApplicationContextAware {
     @Test
     public void shouldGameExit() {
         //given
-        GameEngine.setApplicationContext(applicationContext);
-        final MainMenu menu = new MainMenu();
+        final MainMenu menu = applicationContext.getBean(MainMenu.class);
         menu.init();
 
         //when

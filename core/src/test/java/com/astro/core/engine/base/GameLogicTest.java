@@ -1,12 +1,10 @@
 package com.astro.core.engine.base;
 
 import com.google.common.base.Preconditions;
-import common.GdxTestRunner;
 import lombok.Setter;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -15,7 +13,6 @@ import org.springframework.test.context.TestContextManager;
 
 
 @ContextConfiguration("classpath:configuration/core-config.xml")
-@RunWith(GdxTestRunner.class)
 public class GameLogicTest implements ApplicationContextAware {
 
     @Setter

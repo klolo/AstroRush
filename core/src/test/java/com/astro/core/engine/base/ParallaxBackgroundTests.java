@@ -1,11 +1,9 @@
 package com.astro.core.engine.base;
 
 import com.google.common.base.Preconditions;
-import common.GdxTestRunner;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestContextManager;
@@ -14,7 +12,6 @@ import org.springframework.test.context.TestContextManager;
  * Test of the movable paralax background.
  */
 @ContextConfiguration("classpath:configuration/core-config.xml")
-@RunWith(GdxTestRunner.class)
 public class ParallaxBackgroundTests {
 
     @Autowired

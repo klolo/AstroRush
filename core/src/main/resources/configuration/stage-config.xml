@@ -7,6 +7,12 @@
 
     <bean id="stageLogic" abstract="true" class="com.astro.core.script.stage.StageLogic"/>
 
+    <bean id="mainMenuLogic" class="com.astro.core.script.stage.MainMenu" parent="stageLogic"/>
+    <bean id="settingsLogic" class="com.astro.core.script.stage.SettingsLogic" parent="stageLogic"/>
+    <bean id="highscoreLogic" class="com.astro.core.script.stage.HighscoreLogic" parent="stageLogic"/>
+    <bean id="levelLogic" class="com.astro.core.script.stage.LevelLogic" parent="stageLogic"/>
+    <bean id="garageLogic" class="com.astro.core.script.stage.GarageLogic" parent="stageLogic"/>
+
     <!-- stages configuration -->
     <bean id="mainMenuStageConfig" class="com.astro.core.engine.stage.StageConfig">
         <property name="stageName" value="MAIN_MENU"/>
@@ -18,9 +24,7 @@
         <property name="ambientLightRed" value='1.0f'/>
         <property name="ambientLightGreen" value='1.0f'/>
         <property name="ambientLightBlue" value='1.0f'/>
-        <property name="stageLogic">
-            <bean class="com.astro.core.script.stage.MainMenu" parent="stageLogic"/>
-        </property>
+        <property name="stageLogic" ref="mainMenuLogic"/>
     </bean>
 
     <bean id="settingsStageConfig" class="com.astro.core.engine.stage.StageConfig">
@@ -33,9 +37,7 @@
         <property name="ambientLightRed" value='1.0f'/>
         <property name="ambientLightGreen" value='1.0f'/>
         <property name="ambientLightBlue" value='1.0f'/>
-        <property name="stageLogic">
-            <bean class="com.astro.core.script.stage.SettingsLogic" parent="stageLogic"/>
-        </property>
+        <property name="stageLogic" ref="settingsLogic"/>
     </bean>
 
     <bean id="highscoreStageConfig" class="com.astro.core.engine.stage.StageConfig">
@@ -48,9 +50,7 @@
         <property name="ambientLightRed" value='1.0f'/>
         <property name="ambientLightGreen" value='1.0f'/>
         <property name="ambientLightBlue" value='1.0f'/>
-        <property name="stageLogic">
-            <bean class="com.astro.core.script.stage.HighscoreLogic" parent="stageLogic"/>
-        </property>
+        <property name="stageLogic" ref="highscoreLogic"/>
     </bean>
 
     <bean id="level1StageConfig" class="com.astro.core.engine.stage.StageConfig">
@@ -63,9 +63,7 @@
         <property name="ambientLightRed" value='0.04f'/>
         <property name="ambientLightGreen" value='0.06f'/>
         <property name="ambientLightBlue" value='0.15f'/>
-        <property name="stageLogic">
-            <bean class="com.astro.core.script.stage.LevelLogic" parent="stageLogic"/>
-        </property>
+        <property name="stageLogic" ref="levelLogic"/>
     </bean>
 
     <bean id="garageStageConfig" class="com.astro.core.engine.stage.StageConfig">
@@ -78,9 +76,7 @@
         <property name="ambientLightRed" value='0.04f'/>
         <property name="ambientLightGreen" value='0.06f'/>
         <property name="ambientLightBlue" value='0.15f'/>
-        <property name="stageLogic">
-            <bean class="com.astro.core.script.stage.GarageLogic" parent="stageLogic"/>
-        </property>
+        <property name="stageLogic" ref="garageLogic"/>
     </bean>
 
 </beans>

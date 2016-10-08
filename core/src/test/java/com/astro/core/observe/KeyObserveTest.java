@@ -1,18 +1,12 @@
 package com.astro.core.observe;
 
-import com.badlogic.gdx.Gdx;
+import com.astro.core.mock.GdxMock;
 import com.badlogic.gdx.Input;
-import common.GdxTestRunner;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 
-@RunWith(GdxTestRunner.class)
-public class KeyObserveTest {
+public class KeyObserveTest extends GdxMock {
 
     class Observer implements IKeyObserver {
         boolean isCalled;
@@ -34,8 +28,7 @@ public class KeyObserveTest {
         observe.register(observer);
 
         //when
-        Gdx.input = mock(Input.class);
-        when(Gdx.input.isKeyPressed(Input.Keys.APOSTROPHE)).thenReturn(true);
+        pressKey(Input.Keys.APOSTROPHE);
         observe.handleInput();
 
         //then
@@ -50,8 +43,7 @@ public class KeyObserveTest {
         observe.register(observer);
 
         //when
-        Gdx.input = mock(Input.class);
-        when(Gdx.input.isKeyPressed(Input.Keys.ESCAPE)).thenReturn(true);
+        pressKey(Input.Keys.ESCAPE);
         observe.handleInput();
 
         //then

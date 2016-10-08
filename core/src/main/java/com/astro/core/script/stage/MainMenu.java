@@ -1,6 +1,5 @@
 package com.astro.core.script.stage;
 
-import com.astro.core.engine.base.GameEngine;
 import com.astro.core.engine.base.GameEvent;
 import com.astro.core.engine.stage.Stage;
 import com.astro.core.objects.ObjectsRegister;
@@ -18,6 +17,9 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 @Slf4j
 public class MainMenu extends StageLogic {
+
+    @Autowired
+    private ObjectsRegister objectsRegister;
 
     private final String PREFIX = "mnBtn_";
 
@@ -109,7 +111,7 @@ public class MainMenu extends StageLogic {
      * If label do not have id will be null pointer, you should set it in editor.
      */
     private void setColorOnActiveButton(final Color color, final String objectID) {
-        final IGameObject objects = GameEngine.getApplicationContext().getBean(ObjectsRegister.class).getObjectByID(objectID);
+        final IGameObject objects = objectsRegister.getObjectByID(objectID);
         if (objects != null) {
             objects.getData().getSprite().setColor(color);
         }

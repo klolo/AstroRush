@@ -5,3 +5,4 @@
 /core/build
 /.idea/
 /.idea/workspace.xml
+core/src/main/resources/game.log

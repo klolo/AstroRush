@@ -5,12 +5,10 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.google.common.base.Preconditions;
 import common.GdxTestRunner;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestContextManager;
 
 /**
  * Test of the CameraManager singleton.
@@ -41,10 +39,6 @@ public class CameraManagerTest {
     @Autowired
     private CameraManager cameraManager;
 
-    @Before
-    public void setUp() throws Exception {
-        new TestContextManager(getClass()).prepareTestInstance(this);
-    }
 
     @Test
     public void shouldBeCameraCorrectlyInit() {

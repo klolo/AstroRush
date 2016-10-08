@@ -2,12 +2,9 @@ package com.astro.core.script.player;
 
 
 import com.astro.core.script.util.PopupMsg;
-import common.GdxTestRunner;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
-@RunWith(GdxTestRunner.class)
 public class PopupMsgTest {
 
     @Test

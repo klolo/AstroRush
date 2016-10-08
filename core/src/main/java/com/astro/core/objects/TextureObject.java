@@ -18,6 +18,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TextureObject extends GameObject {
 
+    final String DISPLAY_MODE_KEY = "displaymode";
+
+    final String FULLSCREEN_MODE = "fullscreen";
+
     /**
      * Text is relative to screen or world?
      */
@@ -34,6 +38,11 @@ public class TextureObject extends GameObject {
     @Getter
     @Setter
     protected Batch batch;
+
+    public TextureObject(final SpriteBatch spriteBatch) {
+        this.batch = spriteBatch;
+        batch.enableBlending();
+    }
 
     public TextureObject() {
         batch = new SpriteBatch();
@@ -81,9 +90,9 @@ public class TextureObject extends GameObject {
      */
     @Override
     protected void render(final OrthographicCamera cam, final float delta) {
-        final String displayMode = data.customVariables.getOrDefault("displaymode", "");
+        final String displayMode = data.customVariables.getOrDefault(DISPLAY_MODE_KEY, "");
         switch (displayMode) {
-            case "fullscreen": {
+            case FULLSCREEN_MODE: {
                 drawTextureRegionFullscreen(0, 0);
                 break;
             }
@@ -121,7 +130,7 @@ public class TextureObject extends GameObject {
     /**
      * Drawing images in fullscreen mode.
      */
-    private void drawTextureRegionFullscreen(final float pX, final float pY) {
+    void drawTextureRegionFullscreen(final float pX, final float pY) {
         batch.draw(
                 textureRegion.getTexture(),
                 pX - Gdx.graphics.getWidth() / 2,
@@ -145,7 +154,7 @@ public class TextureObject extends GameObject {
     /**
      * Draws image on the screen.
      */
-    private void drawTextureRegion(final float pX, final float pY) {
+    void drawTextureRegion(final float pX, final float pY) {
         batch.draw(
                 textureRegion.getTexture(),
                 pX,
