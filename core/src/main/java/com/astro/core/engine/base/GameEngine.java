@@ -31,7 +31,7 @@ public class GameEngine extends Game implements ApplicationContextAware {
     /**
      * Implemented game logic.
      */
-    private IGameLogic gameLogic;
+    private final IGameLogic gameLogic;
 
     /**
      * Used to make fixed time loop.

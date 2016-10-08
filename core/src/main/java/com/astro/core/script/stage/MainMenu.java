@@ -27,9 +27,9 @@ public class MainMenu extends StageLogic {
 
     private int currentActiveBtn;
 
-    private final String EXIT_BUTTON = "EXIT";
+    private static final String EXIT_BUTTON = "EXIT";
 
-    private final String RESUME_BUTTON = "RESUME";
+    private static final String RESUME_BUTTON = "RESUME";
 
     @Getter
     private boolean isResumeActive;

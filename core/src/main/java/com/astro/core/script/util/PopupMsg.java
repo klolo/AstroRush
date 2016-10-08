@@ -54,7 +54,7 @@ public class PopupMsg implements ApplicationContextAware {
 
     private float opacity = 1.0f;
 
-    private final int MAX_MSG_ELEMENTS = 3;
+    private static final int MAX_MSG_ELEMENTS = 3;
 
     private LabelObject labelObject;
 

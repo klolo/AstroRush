@@ -22,9 +22,9 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class TextureObject extends GameObject {
 
-    final String DISPLAY_MODE_KEY = "displaymode";
+    static final String DISPLAY_MODE_KEY = "displaymode";
 
-    final String FULLSCREEN_MODE = "fullscreen";
+    static final String FULLSCREEN_MODE = "fullscreen";
 
     /**
      * Text is relative to screen or world?

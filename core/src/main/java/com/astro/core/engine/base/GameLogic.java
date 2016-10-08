@@ -21,8 +21,6 @@ import java.util.Optional;
 @Component
 public class GameLogic implements IGameLogic {
 
-    private Stage currentStage = Stage.MAIN_MENU;
-
     @Getter
     private GameStage currentScreen;
 
@@ -71,6 +69,10 @@ public class GameLogic implements IGameLogic {
                             Gdx.app.exit();
                             break;
                         }
+                        default: {
+                            LOGGER.warn("incorrect value");
+                            break;
+                        }
                     }
 
                     currentScreen.getStageLogic().setEvent(null);
@@ -78,11 +80,12 @@ public class GameLogic implements IGameLogic {
     }
 
     public void switchStage() {
+        @SuppressWarnings("PMD")
         final Stage stageToLoad = currentScreen != null ? currentScreen.getStageLogic().getStageToLoad() : Stage.MAIN_MENU;
         LOGGER.info("switch stage to: {}", stageToLoad);
 
         unregisterScreen(currentScreen);
-        currentStage = stageToLoad;
+        final Stage currentStage = stageToLoad;
 
         if (stageToLoad != null && loadedStages.containsKey(stageToLoad)) {
             currentScreen = loadedStages.get(stageToLoad);

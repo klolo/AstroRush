@@ -41,7 +41,7 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
 
     private LabelObject labelObject;
 
-    private float MARGIN = .8f;
+    private static final float MARGIN = .8f;
 
     private GameObject playerObject;
 

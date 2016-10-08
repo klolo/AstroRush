@@ -15,8 +15,7 @@ public class LogicTimer<T> {
     /**
      * data dor scheduled method invoke.
      */
-    @Setter
-    private T timeoutData;
+    private final T timeoutData;
 
     /**
      * Increasing time of working
