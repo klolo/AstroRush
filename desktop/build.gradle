@@ -1,28 +1,20 @@
 group 'com.astro'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
-
-sourceCompatibility = 1.8
-
-project.ext.mainClassName = "com.astro.game.Launcher"
-project.ext.assetsDir = new File("../core/src/main/resources");
-
-task run(dependsOn: [':core:pmdMain', 'classes', ':core:test'], type: JavaExec) {
-    main = project.mainClassName
-    classpath = sourceSets.main.runtimeClasspath
-    standardInput = System.in
-    workingDir = project.assetsDir
-    ignoreExitValue = true
+dependencies {
+    compile project(":core")
 }
 
-task dist(type: Jar) {
-    from files(sourceSets.main.output.classesDir)
-    from files(sourceSets.main.output.resourcesDir)
-    from {configurations.compile.collect {zipTree(it)}}
-    from files(project.assetsDir);
+apply plugin: 'application'
 
-    manifest {
-        attributes 'Main-Class': project.mainClassName
+run {
+    dependsOn {
+        [
+                ':core:build',
+                ':core:test',
+                'pmdMain'
+        ]
     }
+    main = 'com.astro.desktop.Launcher'
+    ignoreExitValue = true
 }

@@ -1,4 +1,3 @@
 rootProject.name = 'AstroRush2.0'
 include 'core'
 include 'desktop'
-

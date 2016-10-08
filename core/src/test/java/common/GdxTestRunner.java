@@ -17,10 +17,9 @@ public class GdxTestRunner extends SpringJUnit4ClassRunner implements Applicatio
 
     private Map<FrameworkMethod, RunNotifier> invokeInRender = new HashMap<FrameworkMethod, RunNotifier>();
 
-    public GdxTestRunner(Class<?> klass) throws InitializationError {
+    public GdxTestRunner(final Class<?> klass) throws InitializationError {
         super(klass);
-        HeadlessApplicationConfiguration conf = new HeadlessApplicationConfiguration();
-
+        final HeadlessApplicationConfiguration conf = new HeadlessApplicationConfiguration();
         new HeadlessApplication(this, conf);
     }
 
@@ -35,7 +34,7 @@ public class GdxTestRunner extends SpringJUnit4ClassRunner implements Applicatio
     @Override
     public void render() {
         synchronized (invokeInRender) {
-            for (Map.Entry<FrameworkMethod, RunNotifier> each : invokeInRender.entrySet()) {
+            for (final Map.Entry<FrameworkMethod, RunNotifier> each : invokeInRender.entrySet()) {
                 super.runChild(each.getKey(), each.getValue());
             }
             invokeInRender.clear();
@@ -43,7 +42,7 @@ public class GdxTestRunner extends SpringJUnit4ClassRunner implements Applicatio
     }
 
     @Override
-    public void resize(int width, int height) {
+    public void resize(final int width, final int height) {
     }
 
     @Override
@@ -55,7 +54,7 @@ public class GdxTestRunner extends SpringJUnit4ClassRunner implements Applicatio
     }
 
     @Override
-    protected void runChild(FrameworkMethod method, RunNotifier notifier) {
+    protected void runChild(final FrameworkMethod method, final RunNotifier notifier) {
         synchronized (invokeInRender) {
             // add for invoking in render phase, where gl context is available
             invokeInRender.put(method, notifier);

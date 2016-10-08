@@ -12,6 +12,6 @@
     <context:property-placeholder location="classpath:application.properties"/>
 
     <!-- Desktop launcher for application -->
-    <bean id="launcher" class="com.astro.game.Launcher"/>
+    <bean id="launcher" class="com.astro.desktop.Launcher"/>
 
 </beans>

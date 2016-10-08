@@ -1,22 +1,36 @@
-buildscript {
+group 'com.astro'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'pmd'
+    apply plugin: 'idea'
+
+    sourceCompatibility = 1.8
+
     repositories {
         mavenCentral()
     }
-    dependencies {
+
+    pmd {
+        ruleSets = [
+                "java-basic",
+                "java-braces",
+                'java-unnecessary',
+                'java-unusedcode',
+                'java-empty',
+                'java-finalizers',
+                'java-imports',
+                'java-strictexception',
+                'java-strings',
+                'java-unnecessary',
+                'java-unusedcode',
+                'java-optimizations',
+//                'java-design'
+        ]
+        consoleOutput = true
     }
-}
 
-plugins {
-    id "net.saliman.cobertura" version "2.2.5"
-    id "com.github.kt3k.coveralls" version "2.0.1"
-}
-
-cobertura.coverageFormats = ["html", "xml"] // coveralls plugin depends on xml format report
-
-allprojects {
-    apply plugin: "idea"
-
-    version = "1.0"
     ext {
         appName = "AstroRush2.0"
         gdxVersion = "1.9.2"
@@ -29,10 +43,36 @@ allprojects {
         aspectVersion = "1.5.4"
     }
 
-    repositories {
-        mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    dependencies {
+        compile(
+                // Spring
+                [group: 'org.springframework', name: 'spring-core', version: "$springVersion"],
+                [group: 'org.springframework', name: 'spring-beans', version: "$springVersion"],
+                [group: 'org.springframework', name: 'spring-context', version: "$springVersion"],
+                [group: 'org.springframework', name: 'spring-context', version: "$springVersion"],
+                [group: 'org.springframework', name: 'spring-aop', version: "$springVersion"],
+                [group: 'org.springframework', name: 'spring-aop', version: "$springVersion"],
+                [group: 'aspectj', name: 'aspectjtools', version: "$aspectVersion"],
+                [group: 'org.springframework', name: 'spring-test', version: "$springVersion"],
+
+                //libgdx
+                ["com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"],
+                ["com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"],
+                ["com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"],
+                ["com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"],
+
+                //logging
+                [group: "org.apache.logging.log4j", name: "log4j-api", version: "2.5"],
+                [group: "org.apache.logging.log4j", name: "log4j-core", version: "2.5"],
+                ["org.slf4j:slf4j-api:$slf4jVersion"],
+                [group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'],
+
+                //lombok
+                ["org.projectlombok:lombok:1.16.8"],
+
+                // guava
+                [group: "com.google.guava", name: "guava", version: "19.0"]
+        )
     }
 
     gradle.projectsEvaluated {
@@ -40,90 +80,4 @@ allprojects {
             options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
         }
     }
-}
-
-// Game module
-project(":desktop") {
-    apply plugin: "java"
-    apply plugin: "com.github.kt3k.coveralls"
-    apply plugin: "jacoco"
-
-    dependencies {
-        compile project(":core")
-        compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
-        compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
-
-        compile group: "org.apache.logging.log4j", name: "log4j-api", version: "2.5"
-        compile group: "org.apache.logging.log4j", name: "log4j-core", version: "2.5"
-        compile "org.projectlombok:lombok:1.16.8"
-
-        compile "org.slf4j:slf4j-api:$slf4jVersion"
-        compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
-    }
-}
-
-// Core module
-project(":core") {
-    apply plugin: "java"
-    apply plugin: "com.github.kt3k.coveralls"
-    apply plugin: "jacoco"
-
-    jacocoTestReport {
-        reports {
-            xml.enabled = true
-            html.enabled = true
-        }
-    }
-    dependencies {
-        //libgdx
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
-        compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
-
-        //overlap
-        compile "com.underwaterapps.overlap2druntime:overlap2d-runtime-libgdx:0.1.1"
-
-        //logger
-        compile "org.slf4j:slf4j-api:$slf4jVersion"
-        compile "org.slf4j:slf4j-simple:$slf4jVersion"
-
-        //apache commons
-        compile "org.apache.commons:commons-lang3:3.4"
-
-        //lombok
-        compile "org.projectlombok:lombok:1.16.8"
-
-        //guava
-        compile group: "com.google.guava", name: "guava", version: "19.0"
-
-        // spring
-        compile 'org.springframework:spring-context:4.3.0.RELEASE'
-        compile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-beans', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
-        compile group: 'org.springframework', name: 'spring-aop', version: "$springVersion"
-        compile group: 'aspectj', name: 'aspectjtools', version: "$aspectVersion"
-        compile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
-
-        // test dependency
-        testCompile "junit:junit:4.12"
-        testCompile "org.mockito:mockito-core:1.+"
-        testCompile "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion"
-        testCompile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
-        testCompile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        testCompile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
-        testCompile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
-        testCompile 'org.springframework:spring-context:4.3.0.RELEASE'
-        testCompile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
-        testCompile group: 'org.springframework', name: 'spring-beans', version: "$springVersion"
-        testCompile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
-        testCompile group: 'org.springframework', name: 'spring-aop', version: "$springVersion"
-        testCompile group: 'aspectj', name: 'aspectjtools', version: "$aspectVersion"
-        testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
-    }
-
 }

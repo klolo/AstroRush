@@ -1,33 +1,43 @@
+plugins {
+    id "net.saliman.cobertura" version "2.2.5"
+    id "com.github.kt3k.coveralls" version "2.0.1"
+}
+
 group 'com.astro'
 version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
-apply plugin: 'pmd'
 apply plugin: "jacoco"
 apply plugin: "cobertura"
 
-pmd {
-    ruleSets = [
-            "java-basic",
-            "java-braces",
-            'java-unnecessary',
-            'java-unusedcode',
-            'java-empty',
-            'java-finalizers',
-            'java-imports',
-            'java-strictexception',
-            'java-strings',
-            'java-unnecessary',
-            'java-unusedcode',
-            //'java-optimizations'
-            // 'java-codesize',
-            // 'java-coupling'
-            // 'java-design'
-    ]
-    consoleOutput = true
-}
 
 jacoco {
     toolVersion = "0.7.6.201602180812"
     reportsDir = file("$buildDir/reports/jacoco/test/")
+}
+
+dependencies {
+    compile(
+            "com.badlogicgames.gdx:gdx:$gdxVersion",
+            "com.badlogicgames.gdx:gdx-box2d:$gdxVersion",
+            "com.badlogicgames.gdx:gdx-freetype:$gdxVersion",
+            "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion",
+            "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion",
+            "com.underwaterapps.overlap2druntime:overlap2d-runtime-libgdx:0.1.1",
+            "org.apache.commons:commons-lang3:3.4"
+    )
+    testCompile(
+            "junit:junit:4.12",
+            "org.mockito:mockito-core:1.+",
+            "com.badlogicgames.gdx:gdx-backend-headless:$gdxVersion",
+            "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion",
+            "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop",
+            "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop",
+            "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop",
+            "org.springframework:spring-core:$springVersion",
+            "org.springframework:spring-beans:$springVersion",
+            "org.springframework:spring-aop:$springVersion",
+            "aspectj:aspectjtools:$aspectVersion",
+            "org.springframework:spring-test:$springVersion",
+            "org.springframework:spring-context:$springVersion"
+    )
 }

@@ -13,7 +13,7 @@
     <aop:config>
         <!-- log all loaded components in over runtime loader -->
         <aop:aspect id="logAspect" ref="loaderLoggingAspect">
-            <aop:pointcut id="pointCutBefore" expression="within(com.astro.game.overlap_runtime.loaders.*)"/>
+            <aop:pointcut id="pointCutBefore" expression="within(com.astro.core.overlap_runtime.loaders.*)"/>
             <aop:before method="logBefore" pointcut-ref="pointCutBefore"/>
         </aop:aspect>
 

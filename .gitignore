@@ -5,4 +5,7 @@
 /core/build
 /.idea/
 /.idea/workspace.xml
+.gitignore
+gradlew
+gradlew.bat
 core/src/main/resources/game.log
