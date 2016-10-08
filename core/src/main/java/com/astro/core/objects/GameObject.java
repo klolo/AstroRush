@@ -19,14 +19,12 @@ import org.springframework.stereotype.Component;
 @ToString
 @Component
 @Scope("prototype")
+@Getter
+@Setter
 abstract public class GameObject implements IGameObject {
 
-    @Getter
-    @Setter
     protected ObjectData data = new ObjectData();
 
-    @Getter
-    @Setter
     protected boolean renderingInScript;
 
     /**
@@ -35,8 +33,7 @@ abstract public class GameObject implements IGameObject {
     @Value("${renderer.pixel.per.meter}")
     protected int pixelPerMeter;
 
-    @Getter
-    @Setter
+
     protected PhysicsEngine physicsEngine;
 
     /**

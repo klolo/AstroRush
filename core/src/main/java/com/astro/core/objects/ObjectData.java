@@ -23,8 +23,7 @@ public class ObjectData {
      * Flip image via x-coordinates.
      * Dont use sprite.setFlip!
      */
-    @Getter
-    @Setter
+
     protected boolean flipX;
 
     /**

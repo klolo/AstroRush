@@ -19,16 +19,15 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope("prototype")
 @Slf4j
+@Getter
+@Setter
 public class LabelObject extends TextureObject {
-
 
     private boolean useShader;
 
-    @Getter
     @Dispose
     private BitmapFont font;
 
-    @Setter
     private String text = "";
 
     /**

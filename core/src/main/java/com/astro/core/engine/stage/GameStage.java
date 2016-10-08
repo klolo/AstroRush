@@ -30,9 +30,10 @@ import java.util.ArrayList;
 @Slf4j
 @Component
 @Scope("prototype")
+@Getter
+@Setter
 public class GameStage implements Screen, ApplicationContextAware {
 
-    @Setter
     private ApplicationContext applicationContext;
 
     @Value("${renderer.scale}")
@@ -44,24 +45,18 @@ public class GameStage implements Screen, ApplicationContextAware {
     @Autowired
     private GameObjectUtil gameObjectUtil;
 
-    @Setter
     @Value("${renderer.debug}")
     private boolean debugDraw;
 
     @Value("${renderer.pixel.per.meter}")
     protected int pixelPerMeter;
 
-    @Setter
     private IGameHud hud;
 
     private ParallaxBackground parallaxBackground;
 
-    @Setter
-    @Getter
     private ArrayList<IGameObject> mapElements = new ArrayList<>();
 
-    @Setter
-    @Getter
     private ArrayList<IGameObject> mapElementsWithLogic = new ArrayList<>();
 
     /**
@@ -73,24 +68,15 @@ public class GameStage implements Screen, ApplicationContextAware {
     @Autowired
     private KeyObserve keyObserve;
 
-    @Setter
-    @Getter
     private IStageLogic stageLogic;
 
     @Autowired
     private PhysicsEngine physicsEngine;
 
-    @Setter
     private StageConfig config;
 
+    @Autowired
     private CameraManager cameraManager;
-
-    /**
-     * Creating only by factory. Access package.
-     */
-    GameStage() {
-
-    }
 
     void initStage(final ArrayList<IGameObject> elements) {
         this.mapElements = elements;
@@ -98,8 +84,6 @@ public class GameStage implements Screen, ApplicationContextAware {
 
         mapElementsWithLogic = gameObjectUtil.getObjectsWithLogic(mapElements);
         objectsRegister.registerPhysicsObjects(mapElementsWithLogic);
-
-        cameraManager = applicationContext.getBean(CameraManager.class);
     }
 
     void initBackground() {
