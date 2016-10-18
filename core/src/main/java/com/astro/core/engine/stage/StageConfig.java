@@ -1,6 +1,6 @@
 package com.astro.core.engine.stage;
 
-import com.astro.core.script.stage.IStageLogic;
+import com.astro.core.logic.stage.IStageLogic;
 import lombok.Data;
 
 /**

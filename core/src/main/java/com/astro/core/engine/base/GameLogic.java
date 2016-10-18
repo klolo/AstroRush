@@ -5,7 +5,7 @@ import com.astro.core.engine.stage.GameStage;
 import com.astro.core.engine.stage.Stage;
 import com.astro.core.engine.stage.StageConfig;
 import com.astro.core.engine.stage.StageFactory;
-import com.astro.core.script.stage.IStageLogic;
+import com.astro.core.logic.stage.IStageLogic;
 import com.badlogic.gdx.Gdx;
 import lombok.Getter;
 import lombok.Setter;

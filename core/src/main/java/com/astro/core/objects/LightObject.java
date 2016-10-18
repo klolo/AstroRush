@@ -1,6 +1,6 @@
 package com.astro.core.objects;
 
-import com.astro.core.script.LightLogic;
+import com.astro.core.logic.LightLogic;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.uwsoft.editor.renderer.data.LightVO;
 import lombok.Setter;

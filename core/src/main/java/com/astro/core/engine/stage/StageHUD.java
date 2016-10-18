@@ -1,10 +1,10 @@
 package com.astro.core.engine.stage;
 
+import com.astro.core.logic.Player;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.LabelObject;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.TextureObject;
-import com.astro.core.script.Player;
 import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Sprite;
