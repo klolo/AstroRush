@@ -80,7 +80,6 @@ public enum PropertyInjector {
      * @param obj       - object in which will be set value.
      * @param field     - field for setting
      * @param propValue - value of the field.
-     * @throws IllegalAccessException
      */
     private void setFieldValue(final Object obj, final Field field, final String propValue) throws IllegalAccessException {
         if (field.getType().isPrimitive()) {
@@ -89,11 +88,11 @@ public enum PropertyInjector {
             }
             else if (field.getType() == Float.TYPE) {
                 field.set(obj, Float.valueOf(propValue));
-            }
-            else if (field.getType() == Boolean.TYPE) {
+            } else if (field.getType() == Short.TYPE) {
+                field.set(obj, Short.valueOf(propValue));
+            } else if (field.getType() == Boolean.TYPE) {
                 field.set(obj, Boolean.valueOf(propValue));
-            }
-            else {
+            } else {
                 LOGGER.error("Incorrect type of field");
             }
         }

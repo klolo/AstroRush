@@ -21,7 +21,7 @@ import java.util.LinkedList;
 class BaseLoader {
 
     @Value("${renderer.pixel.per.meter}")
-    protected int pixelPerMeter;
+    protected short pixelPerMeter;
 
     @Autowired
     protected final PhysicsEngine physicsEngine = null;

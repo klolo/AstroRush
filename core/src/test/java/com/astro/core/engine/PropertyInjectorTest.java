@@ -13,7 +13,7 @@ public class PropertyInjectorTest {
 
     private class ForInjectTestClass {
         @GameProperty("renderer.pixel.per.meter")
-        int width;
+        short width;
 
         @Msg("player.diaLOGGER.start")
         String startMsg = "";

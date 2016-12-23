@@ -25,7 +25,7 @@ public class LightLogic implements ILogic {
 
     @Setter
     @Value("${renderer.pixel.per.meter}")
-    public int pixelPerMeter;
+    public short pixelPerMeter;
 
     @Value("${renderer.light.distance}")
     @Setter

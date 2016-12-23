@@ -28,7 +28,7 @@ public class CameraManager {
      */
     @Setter
     @Value("${renderer.pixel.per.meter}")
-    protected int pixelPerMeter;
+    protected short pixelPerMeter;
 
     @Getter
     @Autowired

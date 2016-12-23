@@ -49,7 +49,7 @@ public class GameStage implements Screen, ApplicationContextAware {
     private boolean debugDraw;
 
     @Value("${renderer.pixel.per.meter}")
-    protected int pixelPerMeter;
+    protected short pixelPerMeter;
 
     private IGameHud hud;
 

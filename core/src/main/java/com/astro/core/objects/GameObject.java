@@ -31,7 +31,7 @@ abstract public class GameObject implements IGameObject {
      * Amount of the pixel per meter.
      */
     @Value("${renderer.pixel.per.meter}")
-    protected int pixelPerMeter;
+    protected short pixelPerMeter;
 
 
     protected PhysicsEngine physicsEngine;

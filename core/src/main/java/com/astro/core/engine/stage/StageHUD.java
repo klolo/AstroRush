@@ -34,7 +34,7 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
      * Amount of the pixel per meter.
      */
     @Value("${renderer.pixel.per.meter}")
-    protected int pixelPerMeter;
+    protected short pixelPerMeter;
 
     @Autowired
     private ObjectsRegister objectsRegister;

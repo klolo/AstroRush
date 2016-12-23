@@ -42,7 +42,7 @@ public class PopupMsg implements ApplicationContextAware {
      * Amount of the pixel per meter.
      */
     @Value("${renderer.pixel.per.meter}")
-    protected int pixelPerMeter;
+    protected short pixelPerMeter;
 
     /**
      * Queue of the messages.
@@ -54,7 +54,7 @@ public class PopupMsg implements ApplicationContextAware {
 
     private float opacity = 1.0f;
 
-    private static final int MAX_MSG_ELEMENTS = 3;
+    private static final byte MAX_MSG_ELEMENTS = 3;
 
     private LabelObject labelObject;
 

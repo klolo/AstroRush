@@ -20,7 +20,7 @@ public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
      */
     @Setter
     @Value("${renderer.pixel.per.meter}")
-    protected int pixelPerMeter;
+    protected short pixelPerMeter;
 
     @Override
     public IGameObject register(final ParticleEffectVO particleEffectVO) {

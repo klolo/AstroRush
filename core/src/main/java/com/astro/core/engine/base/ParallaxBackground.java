@@ -32,7 +32,7 @@ public class ParallaxBackground implements ApplicationContextAware {
 
     @Value("${background.amount}")
     @Getter
-    int backgroundAmount;
+    short backgroundAmount;
 
     @Value("${background.speed}")
     @Getter
@@ -55,7 +55,7 @@ public class ParallaxBackground implements ApplicationContextAware {
     boolean simpleMode;
 
     @Value("${renderer.pixel.per.meter}")
-    protected int pixelPerMeter;
+    protected short pixelPerMeter;
 
     private float lastWidth;
 
@@ -182,10 +182,10 @@ public class ParallaxBackground implements ApplicationContextAware {
      *
      * @return index in textures list.
      */
-    private int findFirstOnLeft() {
-        int index = 0;
+    private byte findFirstOnLeft() {
+        byte index = 0;
         final float minX = textures.get(0).getData().getSprite().getX();
-        for (int i = 0; i < textures.size(); ++i) {
+        for (byte i = 0; i < textures.size(); ++i) {
             if (textures.get(i).getData().getSprite().getX() < minX) {
                 index = i;
             }
@@ -199,10 +199,10 @@ public class ParallaxBackground implements ApplicationContextAware {
      *
      * @return index in textures list.
      */
-    private int findLastOnLeft() {
-        int index = 0;
+    private byte findLastOnLeft() {
+        byte index = 0;
         final float maxX = textures.get(0).getData().getSprite().getX();
-        for (int i = 0; i < textures.size(); ++i) {
+        for (byte i = 0; i < textures.size(); ++i) {
             if (textures.get(i).getData().getSprite().getX() > maxX) {
                 index = i;
             }

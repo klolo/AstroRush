@@ -34,7 +34,7 @@ public class PlayerSettings {
 
     @Setter
     @Value("${renderer.pixel.per.meter}")
-    public int pixelPerMeter;
+    public short pixelPerMeter;
 
     @Setter
     @Value("${player.configuration.inactivePLayerMessage}")

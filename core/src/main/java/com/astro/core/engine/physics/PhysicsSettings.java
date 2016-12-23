@@ -71,7 +71,7 @@ class PhysicsSettings {
      * Density of the ground box.
      */
     @Value("${renderer.pixel.per.meter}")
-    protected int pixelPerMeter;
+    protected short pixelPerMeter;
 
     /**
      * Debug render for Box2D

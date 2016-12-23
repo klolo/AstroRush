@@ -111,7 +111,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
     @Override
     public void keyPressEvent(final int keyCode) {
-        int horizontalForce = 0;
+        byte horizontalForce = 0;
 
         switch (keyCode) {
             case Input.Keys.LEFT: {

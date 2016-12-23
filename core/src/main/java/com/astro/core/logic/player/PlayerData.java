@@ -30,10 +30,10 @@ public class PlayerData {
     public int points;
 
     @Getter
-    public int liveAmount = 100;
+    public byte liveAmount = 100;
 
     @Getter
-    public int startLiveAmount = 100;
+    public byte startLiveAmount = 100;
 
     @Getter
     @Autowired
