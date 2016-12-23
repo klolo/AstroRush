@@ -16,7 +16,7 @@ public class LoaderLoggingAspect {
         try {
             final MainItemVO mainItemVO = (MainItemVO) joinPoint.getArgs()[0];
 
-            LOGGER.info("*** loading object: itemName={}, itemIdentifier={}, x={}, y={}, layer={} ***",
+            LOGGER.info("** loading: itemName={}, itemIdentifier={}, x={}, y={}, layer={} **",
                     mainItemVO.itemName,
                     mainItemVO.itemIdentifier,
                     mainItemVO.x,

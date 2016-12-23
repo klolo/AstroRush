@@ -43,7 +43,7 @@ public class KeyObserveTest extends GdxMock {
         observe.register(observer);
 
         //when
-        pressKey(Input.Keys.ESCAPE);
+        pressKeyAndRelease(Input.Keys.ESCAPE);
         observe.handleInput();
 
         //then
@@ -51,5 +51,33 @@ public class KeyObserveTest extends GdxMock {
         Assert.assertTrue("Should call observer with correct key", observer.calledKey == Input.Keys.ESCAPE);
     }
 
+    @Test
+    public void shouldNotCallObserverWhenPressKeyAndNonArrow() {
+        //given
+        final Observer observer = new Observer();
+        final KeyObserve observe = new KeyObserve();
+        observe.register(observer);
 
+        //when
+        pressKey(Input.Keys.ESCAPE);
+        observe.handleInput();
+
+        //then
+        Assert.assertFalse("Should call observer", observer.isCalled);
+    }
+
+    @Test
+    public void shouldCallObserverWhenJustPressArrow() {
+        //given
+        final Observer observer = new Observer();
+        final KeyObserve observe = new KeyObserve();
+        observe.register(observer);
+
+        //when
+        pressKeyAndRelease(Input.Keys.LEFT);
+        observe.handleInput();
+
+        //then
+        Assert.assertFalse("Should call observer", observer.isCalled);
+    }
 }

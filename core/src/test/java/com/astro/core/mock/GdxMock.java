@@ -26,4 +26,9 @@ public class GdxMock {
         when(Gdx.input.isKeyPressed(keyCode)).thenReturn(true);
     }
 
+    protected void pressKeyAndRelease(final int keyCode) {
+        mockInput();
+        when(Gdx.input.isKeyJustPressed(keyCode)).thenReturn(true);
+    }
+
 }

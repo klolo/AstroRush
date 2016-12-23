@@ -1,7 +1,6 @@
 package com.astro.core.logic.stage;
 
 import com.astro.core.engine.base.GameEvent;
-import com.astro.core.engine.stage.Stage;
 import com.badlogic.gdx.Input;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -24,8 +23,7 @@ public class GarageLogic extends StageLogic {
     }
 
     private void processEscapeKey() {
-        event = GameEvent.SWITCH_STAGE;
-        stageToLoad = Stage.LEVEL1;
+        event = GameEvent.RESUME;
     }
 
 }

@@ -80,15 +80,15 @@
     </bean>
 
     <bean id="garageStageConfig" class="com.astro.core.engine.stage.StageConfig">
-        <property name="stageName" value="Garage"/>
-        <property name="sceneFile" value="scenes/Lvl1.dt"/>
+        <property name="stageName" value="GARAGE"/>
+        <property name="sceneFile" value="scenes/Garage.dt"/>
         <property name="hasPlayer" value='false'/>
         <property name="followByPlayer" value='false'/>
         <property name="background" value='true'/>
         <property name="hasHUD" value='false'/>
-        <property name="ambientLightRed" value='0.04f'/>
-        <property name="ambientLightGreen" value='0.06f'/>
-        <property name="ambientLightBlue" value='0.15f'/>
+        <property name="ambientLightRed" value='1.0f'/>
+        <property name="ambientLightGreen" value='1.0f'/>
+        <property name="ambientLightBlue" value='1.0f'/>
         <property name="stageLogic" ref="garageLogic"/>
     </bean>
 

@@ -2,18 +2,22 @@ package com.astro.core.observe;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.function.Predicate;
 
 /**
  * Observer for key event, which send event to every registered listener.
  */
 @Component
 public class KeyObserve {
+
+    private final Predicate<Integer> shouldBeArrowProceed = keyCode -> Gdx.input.isKeyPressed(keyCode);
+
+    private final Predicate<Integer> shouldBeNonArrowProceed = keyCode -> Gdx.input.isKeyJustPressed(keyCode);
 
     /**
      * Availbale in game keys (from JavaFX). Any other will be ignore.
@@ -84,11 +88,32 @@ public class KeyObserve {
         @SuppressWarnings("unchecked")
         final LinkedList<IKeyObserver> registerObserveCopy = (LinkedList<IKeyObserver>) registerObserve.clone();
         Arrays.stream(availKeys)
-                .filter(keyCode -> Gdx.input.isKeyPressed(keyCode))
-                .filter(keyCode -> ArrayUtils.contains(availKeys, keyCode))
+                .filter(this::shouldBeKeyProcessed)
                 .forEach(keyCode ->
                         registerObserveCopy.iterator().forEachRemaining(o -> o.keyPressEvent(mapKey(keyCode)))
                 );
+    }
+
+    private boolean shouldBeKeyProcessed(final int keyCode) {
+        if (isArrowKey(keyCode)) {
+            return shouldBeArrowProceed.test(keyCode);
+        } else {
+            return shouldBeNonArrowProceed.test(keyCode);
+        }
+    }
+
+    private boolean isArrowKey(final int keyCode) {
+        switch (keyCode) {
+            case Input.Keys.RIGHT:
+            case Input.Keys.LEFT:
+            case Input.Keys.UP:
+            case Input.Keys.DOWN: {
+                return true;
+            }
+            default: {
+                return false;
+            }
+        }
     }
 }
 

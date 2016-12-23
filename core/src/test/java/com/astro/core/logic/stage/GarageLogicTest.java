@@ -1,7 +1,6 @@
 package com.astro.core.logic.stage;
 
 import com.astro.core.engine.base.GameEvent;
-import com.astro.core.engine.stage.Stage;
 import com.badlogic.gdx.Input;
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,8 +19,6 @@ public class GarageLogicTest {
         garageLogic.keyPressEvent(Input.Keys.ESCAPE);
 
         //then
-        Assert.assertTrue("Should garage return SWITCH_STAGE event", garageLogic.getEvent().equals(GameEvent.SWITCH_STAGE));
-        Assert.assertTrue("Should garage want load LEVEL1", garageLogic.getStageToLoad().equals(Stage.LEVEL1));
+        Assert.assertTrue("Should garage return SWITCH_STAGE event", garageLogic.getEvent().equals(GameEvent.RESUME));
     }
-
 }
