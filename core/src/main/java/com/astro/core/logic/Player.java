@@ -11,6 +11,7 @@ import com.astro.core.observe.IKeyObserver;
 import com.astro.core.observe.KeyObserve;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -55,8 +56,8 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         playerData.gameObject = gameObject;
 
         gameObject.getData().setCollisionCallbackFunction(playerData.playerCollisionProcessor::processCollision);
-        playerData.settings.playerHeight =
-                ((AnimationObject) gameObject).getAnimation().getKeyFrames()[0].getRegionHeight() / playerData.settings.pixelPerMeter;
+        final Object[] animation = ((AnimationObject) gameObject).getAnimation().getKeyFrames();
+        playerData.settings.playerHeight = ((TextureRegion) animation[0]).getRegionHeight() / playerData.settings.pixelPerMeter;
 
         playerData.body = gameObject.getData().getBody();
         playerData.body.setFixedRotation(true);
@@ -154,8 +155,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         if (playerData.watchers.get(WatchersID.SHOOT_UNBLOCKER) == null) {
             playerData.shootTimer = new LogicTimer<>(playerData::setCanShoot, true, playerData.fireBehavior.getFiringSpeed());
             playerData.watchers.put(WatchersID.SHOOT_UNBLOCKER, playerData.shootTimer);
-        }
-        else {
+        } else {
             playerData.watchers.get(WatchersID.SHOOT_UNBLOCKER).reset();
         }
 
@@ -276,8 +276,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         LOGGER.info("Add live amount:{}, current amount: {}", amount, playerData.liveAmount);
         if (playerData.liveAmount + amount < playerData.startLiveAmount) {
             playerData.liveAmount += amount;
-        }
-        else {
+        } else {
             playerData.liveAmount = playerData.startLiveAmount;
         }
     }

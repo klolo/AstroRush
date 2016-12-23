@@ -14,12 +14,12 @@ public class AnimationObject extends TextureObject {
 
     @Getter
     @Setter
-    private Animation animation;
+    private Animation<TextureAtlas.AtlasRegion> animation;
 
     private float elapsedTime;
 
     public void initAnimation(final int fps, final TextureAtlas atlas) {
-        animation = new Animation(1 / fps, atlas.getRegions());
+        animation = new Animation<>(1 / fps, atlas.getRegions());
     }
 
     @Override
