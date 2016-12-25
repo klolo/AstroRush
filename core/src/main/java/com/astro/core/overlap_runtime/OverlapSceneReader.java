@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Overlap 2d map loader.
@@ -66,7 +67,7 @@ public class OverlapSceneReader {
      */
     private OverlapSceneReader loadComposite(final CompositeVO rootComposite) {
         if (rootComposite.layers != null) {
-            rootComposite.layers.stream().forEach(layer -> gameObjectUtil.addLayer(layer.layerName));
+            rootComposite.layers.forEach(layer -> gameObjectUtil.addLayer(layer.layerName));
         }
 
         return processComponentList(rootComposite.sImages, componentLoader)
@@ -90,7 +91,7 @@ public class OverlapSceneReader {
         componentsToLoad
                 .stream()
                 .map(e -> register(loader, e))
-                .filter(e -> e != null)
+                .filter(Objects::nonNull)
                 .forEach(e -> components.add(e));
         return this;
     }

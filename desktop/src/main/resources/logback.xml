@@ -1,18 +1,16 @@
 <configuration>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>[%d{HH:mm:ss.SSS}] %-5level %logger{36}::%M - %msg%n</pattern>
+            <pattern>[%d{HH:mm:ss.SSS}][%thread] %-5level %logger{36}::%M - %msg%n</pattern>
         </encoder>
     </appender>
-
 
     <appender name="FILEOUT" class="ch.qos.logback.core.FileAppender">
         <file>game.log</file>
         <encoder>
-            <pattern>[%d{HH:mm:ss.SSS}] %-5level %logger{36}::%M - %msg%n</pattern>
+            <pattern>[%d{HH:mm:ss.SSS}][%thread] %-5level %logger{36}::%M - %msg%n</pattern>
         </encoder>
     </appender>
-
 
     <logger name="deng" level="DEBUG"/>
 

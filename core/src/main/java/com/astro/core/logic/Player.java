@@ -87,9 +87,6 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         playerData.fireBehavior.update(playerData.posX, playerData.posY);
     }
 
-    /**
-     * Update player position.
-     */
     private void updatePosition() {
         playerData.posX = playerData.graphics.getRunAnimation().getData().getSprite().getX();
         playerData.posY = playerData.graphics.getRunAnimation().getData().getSprite().getY();
@@ -190,9 +187,6 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         }
     }
 
-    /**
-     * Process player jump.
-     */
     private void jump() {
         if (playerData.body.getLinearVelocity().y < playerData.settings.maxYVelocity) {
             playerData.body.applyForceToCenter(0, playerData.settings.maxYVelocity, false);
