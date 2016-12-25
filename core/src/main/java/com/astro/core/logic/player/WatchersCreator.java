@@ -1,7 +1,7 @@
 package com.astro.core.logic.player;
 
 import com.astro.core.logic.Player;
-import com.astro.core.logic.util.LogicTimer;
+import com.astro.core.logic.common.LogicTimer;
 import lombok.Getter;
 
 import java.util.HashMap;

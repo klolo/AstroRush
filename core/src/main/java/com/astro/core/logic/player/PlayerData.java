@@ -1,9 +1,9 @@
 package com.astro.core.logic.player;
 
 import com.astro.core.engine.base.CameraManager;
+import com.astro.core.logic.common.LogicTimer;
+import com.astro.core.logic.common.PopupMsg;
 import com.astro.core.logic.player.fire.IFireBehavior;
-import com.astro.core.logic.util.LogicTimer;
-import com.astro.core.logic.util.PopupMsg;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.physics.box2d.Body;
 import lombok.Getter;

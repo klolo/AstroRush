@@ -1,6 +1,6 @@
 package com.astro.core.logic;
 
-import com.astro.core.logic.util.BackAndForthMove;
+import com.astro.core.logic.common.BackAndForthMove;
 import com.astro.core.objects.TextureObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;

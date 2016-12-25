@@ -81,7 +81,7 @@ public class KeyObserve {
 
     /**
      * Called in main loop. In this method we check for key event.
-     * For avoid: Exception in thread "LWJGL Application" java.util.ConcurrentModificationException
+     * For avoid: Exception in thread "LWJGL Application" java.common.ConcurrentModificationException
      * when switching game, firstly i create copy of the array for protection in loop.
      */
     public void handleInput() {

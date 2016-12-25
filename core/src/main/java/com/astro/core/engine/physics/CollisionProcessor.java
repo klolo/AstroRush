@@ -5,6 +5,7 @@ import com.badlogic.gdx.physics.box2d.Contact;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -17,7 +18,7 @@ class CollisionProcessor {
     private final Predicate<IGameObject> shouldBeProcessedObject =
             o -> o != null && o.getData().getCollisionCallbackFunction() != null;
 
-    private final Predicate<IGameObject> shouldReceiveEvent = o -> o != null;
+    private final Predicate<IGameObject> shouldReceiveEvent = Objects::nonNull;
 
     @Setter
     private IGameObject firstObject;
@@ -39,7 +40,6 @@ class CollisionProcessor {
      */
     void process() {
         if (shouldBeProcessedObject.test(firstObject) && shouldReceiveEvent.test(secondObject)) {
-            LOGGER.debug("collision between {} - {}", firstObject.getData().getLogic(), secondObject.getData().getLogic());
             final Function<IGameObject, CollisionProcessResult> function = firstObject.getData().getCollisionCallbackFunction();
             final CollisionProcessResult collisionProcessResult = function.apply(secondObject);
 
@@ -48,5 +48,4 @@ class CollisionProcessor {
             }
         }
     }
-
 }

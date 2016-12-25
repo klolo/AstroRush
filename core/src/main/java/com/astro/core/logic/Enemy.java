@@ -2,9 +2,9 @@ package com.astro.core.logic;
 
 import com.astro.core.engine.base.GameEngine;
 import com.astro.core.engine.physics.CollisionProcessResult;
+import com.astro.core.logic.common.BackAndForthMove;
+import com.astro.core.logic.common.PopupMsg;
 import com.astro.core.logic.player.fire.IShootLogic;
-import com.astro.core.logic.util.BackAndForthMove;
-import com.astro.core.logic.util.PopupMsg;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
@@ -64,7 +64,7 @@ public class Enemy implements ILogic {
         }
 
         move.update(diff);
-        popupMsg.setPos(gameObject.getData().getSprite().getX(), gameObject.getData().getSprite().getY() + 2);
+        popupMsg.setPosWithCenter(gameObject.getData().getSprite().getX(), gameObject.getData().getSprite().getY() + 2);
         popupMsg.update(diff);
     }
 

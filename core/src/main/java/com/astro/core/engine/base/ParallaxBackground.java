@@ -104,7 +104,6 @@ public class ParallaxBackground implements ApplicationContextAware {
         }
     }
 
-
     public void update(final OrthographicCamera cam, final float diff) {
         if (simpleMode) {
             simpleUpdate(cam, diff);

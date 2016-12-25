@@ -2,7 +2,7 @@ package com.astro.core.logic.player.fire;
 
 import com.astro.core.engine.physics.CollisionProcessResult;
 import com.astro.core.logic.Point;
-import com.astro.core.logic.util.LogicTimer;
+import com.astro.core.logic.common.LogicTimer;
 import com.astro.core.objects.PhysicsObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.graphics.OrthographicCamera;

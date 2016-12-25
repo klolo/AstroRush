@@ -1,4 +1,4 @@
-package com.astro.core.logic.util;
+package com.astro.core.logic.common;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -68,8 +68,6 @@ public class LogicTimer<T> {
                 isStopped = true;
             }
             currentTime = 0.0f;
-
-            LOGGER.debug("Timeout, consumer: {}, data {}", timeoutConsumer, timeoutData);
             timeoutConsumer.accept(timeoutData);
         }
     }

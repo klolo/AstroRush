@@ -34,46 +34,53 @@ public class LightLogic implements ILogic {
     @Setter
     private LightVO light;
 
-    @Override
-    public void setGameObject(final IGameObject gameObject) {
-
-    }
-
-    @Override
-    public void onResume() {
-        registerLight();
-    }
-
     public void registerLight() {
-        Light resultLight;
-
-        if (light.type == LightVO.LightType.POINT) {
-            resultLight = new PointLight(
-                    physicsEngine.getRayHandler(),
-                    light.rays,
-                    new Color(light.tint[0], light.tint[1], light.tint[2], .1f),
-                    light.distance * pixelPerMeter * lightDistance,
-                    light.x * pixelPerMeter,
-                    light.y * pixelPerMeter
-            );
-        }
-        else {
-            resultLight = new ConeLight(
-                    physicsEngine.getRayHandler(),
-                    light.rays,
-                    new Color(light.tint[0], light.tint[1], light.tint[2], light.tint[3]),
-                    light.distance * pixelPerMeter * lightDistance,
-                    light.x * pixelPerMeter,
-                    light.y * pixelPerMeter,
-                    light.directionDegree,
-                    light.coneDegree
-            );
-        }
-
+        final Light resultLight = isPointLight() ? createPointLight() : createConeLight();
         resultLight.setSoft(true);
         resultLight.setSoftnessLength(light.softnessLength);
         resultLight.setXray(light.isXRay);
         resultLight.setStaticLight(light.isStatic);
         LOGGER.info("Created light: {}", resultLight);
+    }
+
+    private boolean isPointLight() {
+        return light.type == LightVO.LightType.POINT;
+    }
+
+    private Light createConeLight() {
+        Light resultLight;
+        resultLight = new ConeLight(
+                physicsEngine.getRayHandler(),
+                light.rays,
+                new Color(light.tint[0], light.tint[1], light.tint[2], light.tint[3]),
+                light.distance * pixelPerMeter * lightDistance,
+                light.x * pixelPerMeter,
+                light.y * pixelPerMeter,
+                light.directionDegree,
+                light.coneDegree
+        );
+        return resultLight;
+    }
+
+    private Light createPointLight() {
+        Light resultLight;
+        resultLight = new PointLight(
+                physicsEngine.getRayHandler(),
+                light.rays,
+                new Color(light.tint[0], light.tint[1], light.tint[2], .1f),
+                light.distance * pixelPerMeter * lightDistance,
+                light.x * pixelPerMeter,
+                light.y * pixelPerMeter
+        );
+        return resultLight;
+    }
+
+    @Override
+    public void setGameObject(final IGameObject gameObject) {
+    }
+
+    @Override
+    public void onResume() {
+        registerLight();
     }
 }

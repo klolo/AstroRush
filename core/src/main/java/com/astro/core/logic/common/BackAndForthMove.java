@@ -1,4 +1,4 @@
-package com.astro.core.logic.util;
+package com.astro.core.logic.common;
 
 import com.astro.core.objects.interfaces.IGameObject;
 import com.badlogic.gdx.physics.box2d.BodyDef;

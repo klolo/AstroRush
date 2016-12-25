@@ -2,8 +2,8 @@ package com.astro.core.logic;
 
 import com.astro.core.engine.base.GameEngine;
 import com.astro.core.engine.interfaces.IObservedByCamera;
+import com.astro.core.logic.common.LogicTimer;
 import com.astro.core.logic.player.*;
-import com.astro.core.logic.util.LogicTimer;
 import com.astro.core.objects.AnimationObject;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.objects.interfaces.ILogic;
@@ -20,9 +20,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Player implements ILogic, IKeyObserver, IObservedByCamera {
 
-    /**
-     * ID of the player.
-     */
     public static final String IDENTIFIER = "player";
 
     private KeyObserve keyObserve;
@@ -104,7 +101,7 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
             playerData.body.setTransform(newX, playerData.settings.maxYPosition, 0);
         }
         playerData.graphics.getRunAnimation().getData().getSprite().setPosition(newX, newY);
-        playerData.playerPopupMsg.setPos(newX, newY + 2 * playerData.settings.playerHeight);
+        playerData.playerPopupMsg.setPosWithCenter(newX, newY + 2 * playerData.settings.playerHeight);
     }
 
     @Override
@@ -211,48 +208,29 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         }
     }
 
-    /**
-     * Adding point to player
-     */
     public void addPoints(final int amount) {
         playerData.points += amount;
     }
 
-    /**
-     * Adding point to player
-     */
     public void addPointsWithMessages(final int amount) {
         playerData.playerPopupMsg.addMessagesToQueue("+" + amount);
         playerData.points += amount;
     }
 
-
-    /**
-     * Return all player points.
-     */
     public int getPoints() {
         return playerData.points;
     }
 
-    /**
-     * Return player X position.
-     */
     @Override
     public float getPositionX() {
         return playerData.body.getPosition().x;
     }
 
-    /**
-     * Return player Y position.
-     */
     @Override
     public float getPositionY() {
         return playerData.body.getPosition().y;
     }
 
-    /**
-     * Decrease player life amount.
-     */
     public void decreaseLive(final int amount) {
         LOGGER.info("Losing live amount:{}, current amount: {}", amount, playerData.liveAmount);
         playerData.liveAmount -= amount;
@@ -263,9 +241,6 @@ public class Player implements ILogic, IKeyObserver, IObservedByCamera {
         }
     }
 
-    /**
-     * Decrease player life amount.
-     */
     public void addLive(final int amount) {
         LOGGER.info("Add live amount:{}, current amount: {}", amount, playerData.liveAmount);
         if (playerData.liveAmount + amount < playerData.startLiveAmount) {

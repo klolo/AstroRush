@@ -1,4 +1,4 @@
-package com.astro.core.logic.util;
+package com.astro.core.logic.common;
 
 import org.junit.Assert;
 import org.junit.Test;
