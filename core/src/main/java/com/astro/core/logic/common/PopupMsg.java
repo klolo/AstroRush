@@ -63,22 +63,29 @@ public class PopupMsg implements ApplicationContextAware {
     }
 
     public void addMessagesToQueue(final String msg) {
-        for (final String currentMessage : messagesQueue) {
-            if (currentMessage.equals(msg)) {
-                return;
-            }
+        if (currentMsg == null || instantAdd) {
+            addMessage(msg);
+            return;
         }
 
         if (messagesQueue.size() > MAX_MSG_ELEMENTS) {
             return;
         }
 
-        if (currentMsg == null || instantAdd) {
-            messagesQueue.add(msg);
-            currentMsg = msg;
-            currentMsgTime = 0.0f;
-            opacity = 1.0f;
+        for (final String currentMessage : messagesQueue) {
+            if (currentMessage.equals(msg) || currentMsg.equals(msg)) {
+                return;
+            }
         }
+
+        addMessage(msg);
+    }
+
+    private void addMessage(final String msg) {
+        messagesQueue.add(msg);
+        currentMsg = msg;
+        currentMsgTime = 0.0f;
+        opacity = 1.0f;
     }
 
     public void setPosWithCenter(final float x, final float y) {
@@ -106,8 +113,6 @@ public class PopupMsg implements ApplicationContextAware {
         }
         currentMsgTime += diff;
         opacity -= 1f / 60f;
-
-        LOGGER.info("O::: {}", opacity);
 
         if (opacity < 0.1) {
             showNextMessage();
