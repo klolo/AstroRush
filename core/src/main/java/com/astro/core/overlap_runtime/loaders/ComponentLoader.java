@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.uwsoft.editor.renderer.data.SimpleImageVO;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
@@ -20,7 +21,9 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO>, ApplicationContextAware {
-
+    @Autowired
+    private GameResources gameResources;
+    
     @Setter
     private ApplicationContext applicationContext;
 
@@ -28,7 +31,7 @@ public class ComponentLoader extends BaseLoader implements ILoader<SimpleImageVO
      * Register simple image.
      */
     public IGameObject register(final SimpleImageVO imageVO) {
-        final TextureRegion textureRegion = GameResources.instance.getResourceManager().getTextureRegion(imageVO.imageName);
+        final TextureRegion textureRegion = gameResources.getResourceManager().getTextureRegion(imageVO.imageName);
         final float w = textureRegion.getRegionWidth();
         final float h = textureRegion.getRegionHeight();
 

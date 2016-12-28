@@ -13,6 +13,8 @@ import lombok.Getter;
  */
 public class PlayerGraphics {
 
+    private GameResources gameResources;
+
     /**
      * Image of the standing player.
      */
@@ -32,7 +34,8 @@ public class PlayerGraphics {
     /**
      * Animation is the base graphics of the runing Astro.
      */
-    public PlayerGraphics(final AnimationObject animation) {
+    public PlayerGraphics(final AnimationObject animation, final GameResources gameResources) {
+        this.gameResources = gameResources;
         runAnimation = animation;
 
         standImage = createImageBasedOnBaseAnimation("stand");
@@ -64,7 +67,7 @@ public class PlayerGraphics {
      */
     private TextureObject createImageBasedOnBaseAnimation(final String name) {
         final TextureObject result = GameEngine.getApplicationContext().getBean("textureObject", TextureObject.class);
-        result.setTextureRegion(GameResources.instance.getResourceManager().getTextureRegion(name));
+        result.setTextureRegion(gameResources.getResourceManager().getTextureRegion(name));
 
         final Sprite animSprite = runAnimation.getData().getSprite();
         result.getData().getSprite().setOrigin(animSprite.getOriginX(), animSprite.getOriginY());

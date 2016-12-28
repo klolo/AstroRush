@@ -1,12 +1,13 @@
 package com.astro.core.storage;
 
 import com.uwsoft.editor.renderer.resources.ResourceManager;
+import org.springframework.stereotype.Component;
 
 /**
  * Singleton which protects from multiple time loading resources.
  */
-public enum GameResources {
-    instance;
+@Component
+public class GameResources {
 
     private static ResourceManager resourceManager;
 

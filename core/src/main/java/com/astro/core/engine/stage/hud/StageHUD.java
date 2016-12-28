@@ -1,4 +1,4 @@
-package com.astro.core.engine.stage;
+package com.astro.core.engine.stage.hud;
 
 import com.astro.core.logic.Player;
 import com.astro.core.objects.GameObject;
@@ -30,14 +30,14 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
     @Setter
     private ApplicationContext applicationContext;
 
-    /**
-     * Amount of the pixel per meter.
-     */
     @Value("${renderer.pixel.per.meter}")
     protected short pixelPerMeter;
 
     @Autowired
     private ObjectsRegister objectsRegister;
+
+    @Autowired
+    private GameResources gameResources;
 
     private LabelObject labelObject;
 
@@ -51,19 +51,12 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
 
     private static float lifeBarStartWidth;
 
-    enum HudElements {
-        POINTS_LABEL,
-        HELMET,
-        LIVE_BAR,
-        LIVE_BAR_BACKGROUND
-    }
-
     @Override
     public void init() {
         LOGGER.info("Creating default font");
         labelObject = applicationContext.getBean(LabelObject.class);
         labelObject.setBitmapFont(
-                GameResources.instance.getResourceManager().getBitmapFont(
+                gameResources.getResourceManager().getBitmapFont(
                         LabelObject.getDEFAULT_FONT(),
                         LabelObject.getDEFAULT_SIZE()
                 ));
@@ -73,23 +66,26 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
 
         initPlayerData();
 
-        final TextureObject liveBarBackground = createTextureObject("b");
+        final TextureObject liveBarBackground = createTextureObject(HudElements.LIVE_BAR_BACKGROUND.textureName);
         hudElements.put(HudElements.LIVE_BAR_BACKGROUND, liveBarBackground);
 
-        final TextureObject liveBar = createTextureObject("c");
+        final TextureObject liveBar = createTextureObject(HudElements.LIVE_BAR.textureName);
         hudElements.put(HudElements.LIVE_BAR, liveBar);
 
         if (lifeBarStartWidth == 0.0f) {
-            lifeBarStartWidth = GameResources.instance.getResourceManager().getTextureRegion("c").getRegionWidth();
+            lifeBarStartWidth = gameResources
+                    .getResourceManager()
+                    .getTextureRegion(HudElements.LIVE_BAR.textureName)
+                    .getRegionWidth();
         }
 
-        final TextureObject helmet = createTextureObject("a");
+        final TextureObject helmet = createTextureObject(HudElements.HELMET.textureName);
         hudElements.put(HudElements.HELMET, helmet);
     }
 
     private TextureObject createTextureObject(final String name) {
         final TextureObject result = applicationContext.getBean("textureObject", TextureObject.class);
-        result.setTextureRegion(GameResources.instance.getResourceManager().getTextureRegion(name));
+        result.setTextureRegion(gameResources.getResourceManager().getTextureRegion(name));
 
         final TextureRegion region = result.getTextureRegion();
 
@@ -121,7 +117,9 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
     }
 
     private void setHelmetWidth(final OrthographicCamera cam) {
-        final TextureRegion region = GameResources.instance.getResourceManager().getTextureRegion("c");
+        final TextureRegion region = gameResources
+                .getResourceManager()
+                .getTextureRegion(HudElements.LIVE_BAR.textureName);
 
         final float liveBarWidth = lifeBarStartWidth * (float) player.playerData.getLiveAmount()
                 / (float) player.playerData.getStartLiveAmount();

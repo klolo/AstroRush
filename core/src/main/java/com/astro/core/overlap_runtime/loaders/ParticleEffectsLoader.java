@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.uwsoft.editor.renderer.data.ParticleEffectVO;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
 
+    @Autowired
+    private GameResources gameResources;
+    
     /**
      * Density of the ground box.
      */
@@ -25,7 +29,7 @@ public class ParticleEffectsLoader implements ILoader<ParticleEffectVO> {
     @Override
     public IGameObject register(final ParticleEffectVO particleEffectVO) {
         final ParticleObject result = new ParticleObject();
-        final ParticleEffect effect = GameResources.instance.getResourceManager().getParticleEffect(particleEffectVO.particleName);
+        final ParticleEffect effect = gameResources.getResourceManager().getParticleEffect(particleEffectVO.particleName);
 
         final float pX = particleEffectVO.x * pixelPerMeter - particleEffectVO.particleWidth * particleEffectVO.scaleX / 2;
         final float pY = particleEffectVO.y * pixelPerMeter - particleEffectVO.particleHeight * particleEffectVO.scaleY / 2;

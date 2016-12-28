@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.uwsoft.editor.renderer.data.SpriteAnimationVO;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
@@ -19,12 +20,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class SpriteAnimationsLoader extends BaseLoader implements ILoader<SpriteAnimationVO>, ApplicationContextAware {
 
+    @Autowired
+    private GameResources gameResources;
+
     @Setter
     private ApplicationContext applicationContext;
 
     @Override
     public IGameObject register(final SpriteAnimationVO spriteAnimationVO) {
-        final TextureAtlas atlas = GameResources.instance.getResourceManager().getSpriteAnimation(spriteAnimationVO.animationName);
+        final TextureAtlas atlas = gameResources.getResourceManager().getSpriteAnimation(spriteAnimationVO.animationName);
         final AnimationObject result = applicationContext.getBean(AnimationObject.class);
         result.initAnimation(spriteAnimationVO.fps, atlas);
 

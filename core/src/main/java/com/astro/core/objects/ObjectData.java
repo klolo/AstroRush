@@ -35,7 +35,7 @@ public class ObjectData {
     protected boolean flipY;
 
     /**
-     * Physics body of the Player.
+     * Physics physicBody of the Player.
      */
     protected Body body;
 

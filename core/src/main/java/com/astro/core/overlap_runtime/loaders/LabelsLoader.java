@@ -18,6 +18,8 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class LabelsLoader implements ILoader<LabelVO>, ApplicationContextAware {
+    @Autowired
+    private GameResources gameResources;
 
     @Autowired
     @Setter
@@ -28,7 +30,7 @@ public class LabelsLoader implements ILoader<LabelVO>, ApplicationContextAware {
         LOGGER.info("[label] {}", labelVO.text);
 
         final LabelObject result = applicationContext.getBean(LabelObject.class);
-        result.setBitmapFont(GameResources.instance.getResourceManager().getBitmapFont(labelVO.style, labelVO.size));
+        result.setBitmapFont(gameResources.getResourceManager().getBitmapFont(labelVO.style, labelVO.size));
         result.getFont().setColor(labelVO.tint[0], labelVO.tint[1], labelVO.tint[2], labelVO.tint[3]);
         result.setText(labelVO.text);
 

@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -16,13 +17,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.LinkedList;
 
-/**
- * Showing small messages above the player.
- */
 @Component
 @Scope("prototype")
 @Slf4j
 public class PopupMsg implements ApplicationContextAware {
+    @Autowired
+    private GameResources gameResources;
 
     @Setter
     private ApplicationContext applicationContext;
@@ -52,7 +52,7 @@ public class PopupMsg implements ApplicationContextAware {
         labelObject = applicationContext.getBean(LabelObject.class);
 
         labelObject.setBitmapFont(
-                GameResources.instance.getResourceManager().getBitmapFont(LabelObject.getDEFAULT_FONT(), 30));
+                gameResources.getResourceManager().getBitmapFont(LabelObject.getDEFAULT_FONT(), 30));
 
         labelObject.getData().getSprite().setPosition(
                 -1 * (Gdx.graphics.getWidth() / (2 * pixelPerMeter)),

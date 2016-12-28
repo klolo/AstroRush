@@ -1,6 +1,7 @@
 package com.astro.core.engine.stage;
 
 import com.astro.core.engine.physics.PhysicsEngine;
+import com.astro.core.engine.stage.hud.IGameHud;
 import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.interfaces.IGameObject;
 import com.astro.core.overlap_runtime.OverlapSceneReader;

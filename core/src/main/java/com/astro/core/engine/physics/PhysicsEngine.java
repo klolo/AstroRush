@@ -91,24 +91,24 @@ public class PhysicsEngine {
     }
 
     /**
-     * Create Box2D body in world.
+     * Create Box2D physicBody in world.
      *
-     * @param bd definition of body.
-     * @return created body
+     * @param bd definition of physicBody.
+     * @return created physicBody
      */
     public Body createBody(final BodyDef bd) {
         return world.createBody(bd);
     }
 
     /**
-     * Create Box2D body in world.
+     * Create Box2D physicBody in world.
      *
-     * @param bd   definition of body.
+     * @param bd   definition of physicBody.
      * @param name for logging target only.
-     * @return created body
+     * @return created physicBody
      */
     public Body createBody(final BodyDef bd, final String name) {
-        LOGGER.info("Create body: {}", name);
+        LOGGER.info("Create physicBody: {}", name);
         return createBody(bd);
     }
 
@@ -144,7 +144,7 @@ public class PhysicsEngine {
     }
 
     /**
-     * Creating ground body definition.BodyDef
+     * Creating ground physicBody definition.BodyDef
      */
     private Body createGround() {
         final BodyDef bodyDef = new BodyDef();

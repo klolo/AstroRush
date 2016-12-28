@@ -82,7 +82,7 @@ class BaseLoader {
     }
 
     /**
-     * Create a fixture definition to apply our shape to body.
+     * Create a fixture definition to apply our shape to physicBody.
      */
     private FixtureDef getFixtureDefinition(final PolygonShape shape, final MainItemVO data) {
         final FixtureDef fixtureDef = new FixtureDef();

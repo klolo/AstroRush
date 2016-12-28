@@ -14,76 +14,58 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 
-/**
- * All player non final field.
- */
 @Component
 @Scope("prototype")
+@Getter
+@Setter
 public class PlayerData {
 
-    @Getter
     @Autowired
     public PopupMsg playerPopupMsg;
+
+    @Autowired
+    public PlayerSettings settings;
+
+    @Autowired
+    public CameraManager cameraManager;
+
+    @Autowired
+    public IFireBehavior fireBehavior;
+
+    public IInteractWithPlayer interactObject;
+
+    public boolean standOnThePlatform;
+
+    public boolean canShoot = true;
 
     public final static int HORIZONTAL_FORCE_STRENGHT = 5;
 
     public int points;
 
-    @Getter
     public byte liveAmount = 100;
 
-    @Getter
     public byte startLiveAmount = 100;
-
-    @Getter
-    @Autowired
-    public PlayerSettings settings;
-
-    @Getter
-    @Autowired
-    public CameraManager cameraManager;
-
-    public PlayerState state = PlayerState.STAND;
-
-    @Getter
-    public PlayerCollisionProcessor playerCollisionProcessor;
-
-    @Getter
-    public HashMap<WatchersID, LogicTimer> watchers;
-
-    @Setter
-    public IInteractWithPlayer interactObject;
-
-    @Setter
-    public boolean standOnThePlatform;
 
     public float posX;
 
     public float posY;
 
-    @Getter
     public boolean isDead;
 
-    @Autowired
-    public IFireBehavior fireBehavior;
+    public PlayerState state = PlayerState.STAND;
+
+    public PlayerCollisionProcessor playerCollisionProcessor;
+
+    public HashMap<WatchersID, LogicTimer> watchers;
 
     public IGameObject gameObject;
 
-    @Setter
-    public boolean canShoot = true;
-
     public LogicTimer shootTimer;
 
-    /**
-     * Physics body.
-     */
-    @Getter
-    public Body body;
+    public Body physicBody;
 
     /**
-     * Hold default Player graphic (animation of run) and additional
-     * graphics like fly and stand.
+     * Hold default Player graphic (animation of run) and additional graphics like fly and stand.
      */
     public PlayerGraphics graphics;
-
 }

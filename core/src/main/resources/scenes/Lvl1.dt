@@ -1726,7 +1726,7 @@
         "tags": [],
         "customVars": "logic:Point",
         "x": 14.8625,
-        "y": 1.7750001,
+        "y": 1.7875001,
         "originX": 0.2,
         "originY": 0.1875,
         "zIndex": 55,
@@ -1802,7 +1802,7 @@
         "tags": [],
         "customVars": "logic:Point",
         "x": 18.025002,
-        "y": 1.825,
+        "y": 1.8375001,
         "originX": 0.2,
         "originY": 0.1875,
         "zIndex": 57,
@@ -2222,6 +2222,46 @@
           "restitution": 1
         },
         "imageName": "enemyFloating3",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 50,
+        "tags": [],
+        "customVars": "logic:Point",
+        "x": 4.1625,
+        "y": 2.55,
+        "scaleX": 0.52717626,
+        "scaleY": 0.4793467,
+        "originX": 0.45,
+        "originY": 0.44375,
+        "zIndex": 84,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8875
+              },
+              {
+                "x": 0.9,
+                "y": 0.8875
+              },
+              {
+                "x": 0.9
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "diamond",
         "isRepeat": true
       }
     ],

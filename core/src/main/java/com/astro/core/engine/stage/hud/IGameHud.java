@@ -1,4 +1,4 @@
-package com.astro.core.engine.stage;
+package com.astro.core.engine.stage.hud;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 

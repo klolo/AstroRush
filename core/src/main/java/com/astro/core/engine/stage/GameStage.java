@@ -4,6 +4,7 @@ import com.astro.core.adnotation.processor.DisposeCaller;
 import com.astro.core.engine.base.CameraManager;
 import com.astro.core.engine.base.ParallaxBackground;
 import com.astro.core.engine.physics.PhysicsEngine;
+import com.astro.core.engine.stage.hud.IGameHud;
 import com.astro.core.logic.stage.IStageLogic;
 import com.astro.core.objects.GameObject;
 import com.astro.core.objects.ObjectData;

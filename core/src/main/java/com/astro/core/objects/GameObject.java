@@ -60,7 +60,7 @@ abstract public class GameObject implements IGameObject {
     }
 
     /**
-     * Does have object physics body?
+     * Does have object physics physicBody?
      */
     public boolean isPhysicObject() {
         return data.getBody() != null;

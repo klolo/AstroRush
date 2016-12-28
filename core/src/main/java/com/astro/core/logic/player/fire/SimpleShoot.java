@@ -22,6 +22,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
 
+    @Autowired
+    private GameResources gameResources;
+
     @Setter
     private ApplicationContext applicationContext;
 
@@ -42,7 +45,7 @@ public class SimpleShoot implements IFireBehavior, ApplicationContextAware {
     }
 
     public GameObject onFire() {
-        final TextureRegion region = GameResources.instance.getResourceManager().getTextureRegion("plasmaShoot");
+        final TextureRegion region = gameResources.getResourceManager().getTextureRegion("plasmaShoot");
         final PhysicsObject physicsObject = applicationContext.getBean("physicsObject", PhysicsObject.class);
         physicsObject.setTextureRegion(region);
 
