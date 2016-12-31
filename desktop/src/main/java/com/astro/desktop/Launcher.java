@@ -86,18 +86,12 @@ public class Launcher {
      */
     private LwjglApplicationConfiguration getConfig() {
         final LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-
-        if (fullscreen) {
-            config.fullscreen = true;
-        }
-        else {
-            config.width = windowWidth;
-            config.height = windowHeight;
-        }
-
+        config.width = windowWidth;
+        config.height = windowHeight;
+        config.fullscreen = fullscreen;
         config.vSyncEnabled = true;
-        config.addIcon(faviconPath, Files.FileType.Classpath);
         config.title = windowTitle;
+        config.addIcon(faviconPath, Files.FileType.Classpath);
         return config;
     }
 

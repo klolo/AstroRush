@@ -66,8 +66,8 @@
         "uniqueId": 97,
         "tags": [],
         "customVars": "logic:MovingPlatform",
-        "x": 0.9693713,
-        "y": 2.2125,
+        "x": 2.0750003,
+        "y": 2.4625,
         "scaleX": 9.508647,
         "scaleY": 0.07321514,
         "originX": 0.4,
@@ -106,7 +106,7 @@
         "uniqueId": 3,
         "tags": [],
         "x": -4.1125,
-        "y": -1.6625001,
+        "y": -1.6500001,
         "originX": 0.4,
         "originY": 0.4,
         "zIndex": 5,
@@ -142,8 +142,8 @@
       {
         "uniqueId": 4,
         "tags": [],
-        "x": -4.9125004,
-        "y": -1.6375,
+        "x": -4.9,
+        "y": -1.6625,
         "originX": 0.4,
         "originY": 0.4,
         "zIndex": 7,
@@ -438,8 +438,8 @@
       {
         "uniqueId": 13,
         "tags": [],
-        "x": 2.1374998,
-        "y": -1.6375,
+        "x": 2.1375,
+        "y": -1.65,
         "originX": 0.4,
         "originY": 0.4,
         "zIndex": 15,
@@ -1996,54 +1996,16 @@
         "imageName": "plantBlue2"
       },
       {
-        "uniqueId": 95,
-        "tags": [],
-        "x": -8.5625,
-        "y": 5.2125,
-        "originX": 0.25,
-        "originY": 0.25,
-        "zIndex": 78,
-        "layerName": "Default",
-        "shape": {
-          "polygons": [
-            [
-              {},
-              {
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.5
-              }
-            ]
-          ]
-        },
-        "physics": {
-          "bodyType": 2,
-          "damping": 0.2,
-          "allowSleep": true,
-          "awake": true,
-          "density": 0.5,
-          "friction": 0.6,
-          "restitution": 1
-        },
-        "imageName": "enemyFloating3",
-        "isRepeat": true
-      },
-      {
         "uniqueId": 50,
         "tags": [],
         "customVars": "logic:Point",
-        "x": 4.0625,
-        "y": 2.6375,
+        "x": 4.025,
+        "y": 2.9,
         "scaleX": 0.52717626,
         "scaleY": 0.4793467,
         "originX": 0.45,
         "originY": 0.44375,
-        "zIndex": 79,
+        "zIndex": 78,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -2083,7 +2045,7 @@
         "scaleY": 0.4793467,
         "originX": 0.45,
         "originY": 0.44375,
-        "zIndex": 80,
+        "zIndex": 79,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -2123,7 +2085,7 @@
         "scaleY": 0.4793467,
         "originX": 0.45,
         "originY": 0.44375,
-        "zIndex": 81,
+        "zIndex": 80,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -2163,7 +2125,7 @@
         "scaleY": 0.4793467,
         "originX": 0.45,
         "originY": 0.44375,
-        "zIndex": 82,
+        "zIndex": 81,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -2203,7 +2165,7 @@
         "scaleY": 0.4793467,
         "originX": 0.45,
         "originY": 0.44375,
-        "zIndex": 83,
+        "zIndex": 82,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -2243,7 +2205,7 @@
         "scaleY": 0.4793467,
         "originX": 0.45,
         "originY": 0.44375,
-        "zIndex": 84,
+        "zIndex": 83,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -2283,7 +2245,7 @@
         "scaleY": 0.4793467,
         "originX": 0.45,
         "originY": 0.44375,
-        "zIndex": 85,
+        "zIndex": 84,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -2320,7 +2282,7 @@
         "y": 1.0625,
         "originX": 0.3,
         "originY": 0.34375,
-        "zIndex": 86,
+        "zIndex": 85,
         "layerName": "Default",
         "imageName": "signArrowright"
       },
@@ -2331,7 +2293,7 @@
         "y": 1.4375,
         "originX": 0.4,
         "originY": 0.34375,
-        "zIndex": 87,
+        "zIndex": 86,
         "layerName": "Default",
         "imageName": "signLarge"
       }

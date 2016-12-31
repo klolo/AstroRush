@@ -1,0 +1,31 @@
+{
+  "sceneName": "GameOver",
+  "composite": {
+    "sLabels": [
+      {
+        "uniqueId": 2,
+        "itemIdentifier": "mnBtn_RESUME",
+        "tags": [],
+        "customVars": "msg:menu.resume",
+        "x": -0.675,
+        "y": -0.35000002,
+        "originX": 0.75,
+        "originY": 0.3125,
+        "layerName": "Default",
+        "text": "Game Over",
+        "style": "SF Atarian System",
+        "size": 30,
+        "align": 8,
+        "width": 1.5,
+        "height": 0.63
+      }
+    ],
+    "layers": [
+      {
+        "layerName": "Default",
+        "isVisible": true
+      }
+    ]
+  },
+  "physicsPropertiesVO": {}
+}
