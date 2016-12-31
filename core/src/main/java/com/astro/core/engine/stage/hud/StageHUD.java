@@ -17,8 +17,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+
+import static com.astro.core.engine.stage.hud.HudElements.*;
 
 /**
  * heads-up display fo GameStage.
@@ -41,8 +44,6 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
 
     private LabelObject labelObject;
 
-    private static final float MARGIN = .8f;
-
     private GameObject playerObject;
 
     private Player player;
@@ -54,6 +55,28 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
     @Override
     public void init() {
         LOGGER.info("Creating default font");
+        initPointsLabel();
+        initPlayerData();
+        setLifeBarStartWidth();
+        createHudElements();
+    }
+
+    private void setLifeBarStartWidth() {
+        if (lifeBarStartWidth == 0.0f) {
+            lifeBarStartWidth = gameResources
+                    .getResourceManager()
+                    .getTextureRegion(HudElements.LIVE_BAR.textureName)
+                    .getRegionWidth();
+        }
+    }
+
+    private void createHudElements() {
+        Arrays.stream(HudElements.values())
+                .forEach(this::createHudElement);
+        hudElements.put(POINTS_LABEL, labelObject);
+    }
+
+    private void initPointsLabel() {
         labelObject = applicationContext.getBean(LabelObject.class);
         labelObject.setBitmapFont(
                 gameResources.getResourceManager().getBitmapFont(
@@ -62,25 +85,13 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
                 ));
 
         labelObject.setScreenPositionRelative(true);
-        hudElements.put(HudElements.POINTS_LABEL, labelObject);
+    }
 
-        initPlayerData();
-
-        final TextureObject liveBarBackground = createTextureObject(HudElements.LIVE_BAR_BACKGROUND.textureName);
-        hudElements.put(HudElements.LIVE_BAR_BACKGROUND, liveBarBackground);
-
-        final TextureObject liveBar = createTextureObject(HudElements.LIVE_BAR.textureName);
-        hudElements.put(HudElements.LIVE_BAR, liveBar);
-
-        if (lifeBarStartWidth == 0.0f) {
-            lifeBarStartWidth = gameResources
-                    .getResourceManager()
-                    .getTextureRegion(HudElements.LIVE_BAR.textureName)
-                    .getRegionWidth();
+    private void createHudElement(final HudElements hudElement) {
+        if (!hudElement.textureName.equals("")) {
+            final TextureObject elementTexture = createTextureObject(hudElement.textureName);
+            hudElements.put(hudElement, elementTexture);
         }
-
-        final TextureObject helmet = createTextureObject(HudElements.HELMET.textureName);
-        hudElements.put(HudElements.HELMET, helmet);
     }
 
     private TextureObject createTextureObject(final String name) {
@@ -97,9 +108,6 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
         return result;
     }
 
-    /**
-     * Getting player data for future usage.
-     */
     private void initPlayerData() {
         playerObject = (GameObject) objectsRegister.getObjectByID(Player.IDENTIFIER);
         player = (Player) playerObject.getData().getLogic();
@@ -108,18 +116,30 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
     public void show(final OrthographicCamera cam, final float delta) {
         setHelmetWidth(cam);
 
-        setObjectPositionOnScreen(hudElements.get(HudElements.HELMET), cam, -2.5f, .5f);
-        setObjectPositionOnScreen(hudElements.get(HudElements.POINTS_LABEL), cam, -1 * MARGIN, MARGIN);
-        setObjectPositionOnScreen(hudElements.get(HudElements.LIVE_BAR_BACKGROUND), cam, -1.35f, .5f);
+        setObjectPositionOnScreen(HELMET, cam);
+        setObjectPositionOnScreen(POINTS_LABEL, cam);
+        setObjectPositionOnScreen(LIVE_BAR_BACKGROUND, cam);
+
+        setObjectPositionOnScreen(hudElements.get(FLY_BAR_BACKGROUND), cam, FLY_BAR_BACKGROUND.offsetX,
+                getViewHeight(cam) * 2 + FLY_BAR_BACKGROUND.offsetY);
+
+        setObjectPositionOnScreen(hudElements.get(FLY_BAR), cam, FLY_BAR.offsetX,
+                getViewHeight(cam) * 2 + FLY_BAR.offsetY);
+
+        hudElements.get(LIVE_BAR_BACKGROUND).show(cam, delta);
+        hudElements.get(HudElements.LIVE_BAR).show(cam, delta);
+        hudElements.get(POINTS_LABEL).show(cam, delta);
+        hudElements.get(HELMET).show(cam, delta);
+        hudElements.get(FLY_BAR_BACKGROUND).show(cam, delta);
+        hudElements.get(FLY_BAR).show(cam, delta);
 
         labelObject.setText(String.valueOf(player.getPoints()));
-        hudElements.values().forEach(e -> e.show(cam, delta));
     }
 
     private void setHelmetWidth(final OrthographicCamera cam) {
         final TextureRegion region = gameResources
                 .getResourceManager()
-                .getTextureRegion(HudElements.LIVE_BAR.textureName);
+                .getTextureRegion(LIVE_BAR.textureName);
 
         final float liveBarWidth = lifeBarStartWidth * (float) player.playerData.getLiveAmount()
                 / (float) player.playerData.getStartLiveAmount();
@@ -137,6 +157,10 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
         s.setBounds(x, y, liveBarWidth, region.getRegionHeight());
 
         hudElements.get(HudElements.LIVE_BAR).getData().setSprite(s);
+    }
+
+    private void setObjectPositionOnScreen(final HudElements elements, final OrthographicCamera cam) {
+        setObjectPositionOnScreen(hudElements.get(elements), cam, elements.offsetX, elements.offsetY);
     }
 
     private void setObjectPositionOnScreen(final GameObject object, final OrthographicCamera cam,

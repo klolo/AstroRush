@@ -1721,197 +1721,6 @@
         "isRepeat": true
       },
       {
-        "uniqueId": 45,
-        "itemIdentifier": "point",
-        "tags": [],
-        "customVars": "logic:Point",
-        "x": 14.8625,
-        "y": 1.7875001,
-        "originX": 0.2,
-        "originY": 0.1875,
-        "zIndex": 55,
-        "layerName": "Default",
-        "shape": {
-          "polygons": [
-            [
-              {},
-              {
-                "y": 0.375
-              },
-              {
-                "x": 0.4,
-                "y": 0.375
-              },
-              {
-                "x": 0.4
-              }
-            ]
-          ]
-        },
-        "physics": {
-          "bodyType": 1,
-          "allowSleep": true,
-          "awake": true,
-          "friction": 1,
-          "restitution": 1
-        },
-        "imageName": "yellowCrystal",
-        "isRepeat": true
-      },
-      {
-        "uniqueId": 46,
-        "itemIdentifier": "point",
-        "tags": [],
-        "customVars": "logic:Point",
-        "x": 16.525,
-        "y": 1.8625,
-        "originX": 0.2,
-        "originY": 0.1875,
-        "zIndex": 56,
-        "layerName": "Default",
-        "shape": {
-          "polygons": [
-            [
-              {},
-              {
-                "y": 0.375
-              },
-              {
-                "x": 0.4,
-                "y": 0.375
-              },
-              {
-                "x": 0.4
-              }
-            ]
-          ]
-        },
-        "physics": {
-          "bodyType": 1,
-          "allowSleep": true,
-          "awake": true,
-          "friction": 1,
-          "restitution": 1
-        },
-        "imageName": "yellowCrystal",
-        "isRepeat": true
-      },
-      {
-        "uniqueId": 47,
-        "itemIdentifier": "point",
-        "tags": [],
-        "customVars": "logic:Point",
-        "x": 18.025002,
-        "y": 1.8375001,
-        "originX": 0.2,
-        "originY": 0.1875,
-        "zIndex": 57,
-        "layerName": "Default",
-        "shape": {
-          "polygons": [
-            [
-              {},
-              {
-                "y": 0.375
-              },
-              {
-                "x": 0.4,
-                "y": 0.375
-              },
-              {
-                "x": 0.4
-              }
-            ]
-          ]
-        },
-        "physics": {
-          "bodyType": 1,
-          "mass": 1,
-          "allowSleep": true,
-          "awake": true,
-          "friction": 1,
-          "restitution": 1
-        },
-        "imageName": "yellowCrystal",
-        "isRepeat": true
-      },
-      {
-        "uniqueId": 48,
-        "itemIdentifier": "point",
-        "tags": [],
-        "customVars": "logic:Point",
-        "x": 19.4875,
-        "y": 1.8375001,
-        "originX": 0.2,
-        "originY": 0.1875,
-        "zIndex": 58,
-        "layerName": "Default",
-        "shape": {
-          "polygons": [
-            [
-              {},
-              {
-                "y": 0.375
-              },
-              {
-                "x": 0.4,
-                "y": 0.375
-              },
-              {
-                "x": 0.4
-              }
-            ]
-          ]
-        },
-        "physics": {
-          "bodyType": 1,
-          "allowSleep": true,
-          "awake": true,
-          "friction": 1,
-          "restitution": 1
-        },
-        "imageName": "yellowCrystal",
-        "isRepeat": true
-      },
-      {
-        "uniqueId": 49,
-        "itemIdentifier": "point",
-        "tags": [],
-        "customVars": "logic:Point",
-        "x": 20.775002,
-        "y": 1.8500001,
-        "originX": 0.2,
-        "originY": 0.1875,
-        "zIndex": 59,
-        "layerName": "Default",
-        "shape": {
-          "polygons": [
-            [
-              {},
-              {
-                "y": 0.375
-              },
-              {
-                "x": 0.4,
-                "y": 0.375
-              },
-              {
-                "x": 0.4
-              }
-            ]
-          ]
-        },
-        "physics": {
-          "bodyType": 1,
-          "allowSleep": true,
-          "awake": true,
-          "friction": 1,
-          "restitution": 1
-        },
-        "imageName": "yellowCrystal",
-        "isRepeat": true
-      },
-      {
         "uniqueId": 64,
         "tags": [],
         "customVars": "logic:Key",
@@ -1919,7 +1728,7 @@
         "y": 8.725,
         "originX": 0.18125,
         "originY": 0.1875,
-        "zIndex": 66,
+        "zIndex": 61,
         "layerName": "Default",
         "imageName": "keyGreen"
       },
@@ -1934,7 +1743,7 @@
         "scaleY": 3.6364949,
         "originX": 0.4,
         "originY": 0.4,
-        "zIndex": 67,
+        "zIndex": 62,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -1968,13 +1777,13 @@
       {
         "uniqueId": 67,
         "tags": [],
-        "x": 24.1125,
-        "y": 6.5375,
+        "x": 24.425001,
+        "y": 5.475,
         "scaleX": 0.3653237,
         "scaleY": 6.272905,
         "originX": 0.4,
         "originY": 0.4,
-        "zIndex": 68,
+        "zIndex": 63,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -2013,7 +1822,7 @@
         "scaleY": 0.91932577,
         "originX": 0.4,
         "originY": 0.4,
-        "zIndex": 69,
+        "zIndex": 64,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -2050,7 +1859,7 @@
         "y": 0.9,
         "originX": 0.225,
         "originY": 0.225,
-        "zIndex": 70,
+        "zIndex": 65,
         "layerName": "Default",
         "imageName": "outlineKey"
       },
@@ -2061,7 +1870,7 @@
         "y": 11.175,
         "originX": 0.4,
         "originY": 0.3125,
-        "zIndex": 71,
+        "zIndex": 66,
         "layerName": "Default",
         "imageName": "tileBlue02"
       },
@@ -2072,7 +1881,7 @@
         "y": 1.4375,
         "originX": 0.2,
         "originY": 0.30625,
-        "zIndex": 72,
+        "zIndex": 67,
         "layerName": "Default",
         "imageName": "plantDark4"
       },
@@ -2083,7 +1892,7 @@
         "y": 1.4125,
         "originX": 0.2125,
         "originY": 0.24375,
-        "zIndex": 73,
+        "zIndex": 68,
         "layerName": "Default",
         "imageName": "plantBlue6"
       },
@@ -2094,7 +1903,7 @@
         "y": 1.4,
         "originX": 0.1625,
         "originY": 0.3,
-        "zIndex": 74,
+        "zIndex": 69,
         "layerName": "Default",
         "imageName": "plantBlue1"
       },
@@ -2105,7 +1914,7 @@
         "y": 1.3875,
         "originX": 0.275,
         "originY": 0.2125,
-        "zIndex": 75,
+        "zIndex": 70,
         "layerName": "Default",
         "imageName": "plantBlue2"
       },
@@ -2116,7 +1925,7 @@
         "y": 1.3875,
         "originX": 0.1625,
         "originY": 0.3,
-        "zIndex": 76,
+        "zIndex": 71,
         "layerName": "Default",
         "imageName": "plantBlue1"
       },
@@ -2127,7 +1936,7 @@
         "y": 1.3875,
         "originX": 0.2125,
         "originY": 0.24375,
-        "zIndex": 77,
+        "zIndex": 72,
         "layerName": "Default",
         "imageName": "plantBlue6"
       },
@@ -2138,7 +1947,7 @@
         "y": 1.4,
         "originX": 0.2,
         "originY": 0.30625,
-        "zIndex": 78,
+        "zIndex": 73,
         "layerName": "Default",
         "imageName": "plantDark4"
       },
@@ -2149,7 +1958,7 @@
         "y": 1.4250001,
         "originX": 0.16875,
         "originY": 0.2375,
-        "zIndex": 79,
+        "zIndex": 74,
         "layerName": "Default",
         "imageName": "plantDark6"
       },
@@ -2160,7 +1969,7 @@
         "y": 1.4125,
         "originX": 0.25625,
         "originY": 0.29375,
-        "zIndex": 80,
+        "zIndex": 75,
         "layerName": "Default",
         "imageName": "plantGreen5"
       },
@@ -2171,7 +1980,7 @@
         "y": 1.3625001,
         "originX": 0.1625,
         "originY": 0.3,
-        "zIndex": 81,
+        "zIndex": 76,
         "layerName": "Default",
         "imageName": "plantBlue1"
       },
@@ -2182,7 +1991,7 @@
         "y": 1.35,
         "originX": 0.275,
         "originY": 0.2125,
-        "zIndex": 82,
+        "zIndex": 77,
         "layerName": "Default",
         "imageName": "plantBlue2"
       },
@@ -2193,7 +2002,7 @@
         "y": 5.2125,
         "originX": 0.25,
         "originY": 0.25,
-        "zIndex": 83,
+        "zIndex": 78,
         "layerName": "Default",
         "shape": {
           "polygons": [
@@ -2228,8 +2037,208 @@
         "uniqueId": 50,
         "tags": [],
         "customVars": "logic:Point",
-        "x": 4.1625,
-        "y": 2.55,
+        "x": 4.0625,
+        "y": 2.6375,
+        "scaleX": 0.52717626,
+        "scaleY": 0.4793467,
+        "originX": 0.45,
+        "originY": 0.44375,
+        "zIndex": 79,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8875
+              },
+              {
+                "x": 0.9,
+                "y": 0.8875
+              },
+              {
+                "x": 0.9
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "diamond",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 88,
+        "tags": [],
+        "customVars": "logic:Point",
+        "x": 13.400001,
+        "y": 1.2875,
+        "scaleX": 0.52717626,
+        "scaleY": 0.4793467,
+        "originX": 0.45,
+        "originY": 0.44375,
+        "zIndex": 80,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8875
+              },
+              {
+                "x": 0.9,
+                "y": 0.8875
+              },
+              {
+                "x": 0.9
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "diamond",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 96,
+        "tags": [],
+        "customVars": "logic:Point",
+        "x": 18.425001,
+        "y": 8.525,
+        "scaleX": 0.52717626,
+        "scaleY": 0.4793467,
+        "originX": 0.45,
+        "originY": 0.44375,
+        "zIndex": 81,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8875
+              },
+              {
+                "x": 0.9,
+                "y": 0.8875
+              },
+              {
+                "x": 0.9
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "diamond",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 92,
+        "tags": [],
+        "customVars": "logic:Point",
+        "x": 15.799999,
+        "y": 8.4625,
+        "scaleX": 0.52717626,
+        "scaleY": 0.4793467,
+        "originX": 0.45,
+        "originY": 0.44375,
+        "zIndex": 82,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8875
+              },
+              {
+                "x": 0.9,
+                "y": 0.8875
+              },
+              {
+                "x": 0.9
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "diamond",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 91,
+        "tags": [],
+        "customVars": "logic:Point",
+        "x": 16.275002,
+        "y": 1.2874999,
+        "scaleX": 0.52717626,
+        "scaleY": 0.4793467,
+        "originX": 0.45,
+        "originY": 0.44375,
+        "zIndex": 83,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8875
+              },
+              {
+                "x": 0.9,
+                "y": 0.8875
+              },
+              {
+                "x": 0.9
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "diamond",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 90,
+        "tags": [],
+        "customVars": "logic:Point",
+        "x": 15.3,
+        "y": 1.3,
         "scaleX": 0.52717626,
         "scaleY": 0.4793467,
         "originX": 0.45,
@@ -2263,6 +2272,68 @@
         },
         "imageName": "diamond",
         "isRepeat": true
+      },
+      {
+        "uniqueId": 89,
+        "tags": [],
+        "customVars": "logic:Point",
+        "x": 14.35,
+        "y": 1.3,
+        "scaleX": 0.52717626,
+        "scaleY": 0.4793467,
+        "originX": 0.45,
+        "originY": 0.44375,
+        "zIndex": 85,
+        "layerName": "Default",
+        "shape": {
+          "polygons": [
+            [
+              {},
+              {
+                "y": 0.8875
+              },
+              {
+                "x": 0.9,
+                "y": 0.8875
+              },
+              {
+                "x": 0.9
+              }
+            ]
+          ]
+        },
+        "physics": {
+          "mass": 1,
+          "allowSleep": true,
+          "awake": true,
+          "density": 1,
+          "friction": 1,
+          "restitution": 1
+        },
+        "imageName": "diamond",
+        "isRepeat": true
+      },
+      {
+        "uniqueId": 47,
+        "tags": [],
+        "x": 8.0125,
+        "y": 1.0625,
+        "originX": 0.3,
+        "originY": 0.34375,
+        "zIndex": 86,
+        "layerName": "Default",
+        "imageName": "signArrowright"
+      },
+      {
+        "uniqueId": 48,
+        "tags": [],
+        "x": 26.025,
+        "y": 1.4375,
+        "originX": 0.4,
+        "originY": 0.34375,
+        "zIndex": 87,
+        "layerName": "Default",
+        "imageName": "signLarge"
       }
     ],
     "sLabels": [
@@ -2273,7 +2344,7 @@
         "y": -0.13749999,
         "originX": 0.75,
         "originY": 0.3125,
-        "zIndex": 60,
+        "zIndex": 55,
         "layerName": "Default",
         "text": "Test zbierania monet",
         "style": "SF Atarian System",
@@ -2289,7 +2360,7 @@
         "y": -0.024999976,
         "originX": 0.75,
         "originY": 0.3125,
-        "zIndex": 62,
+        "zIndex": 57,
         "layerName": "Default",
         "text": "ruchome obiekty",
         "style": "SF Atarian System",
@@ -2305,7 +2376,7 @@
         "y": -0.5375,
         "originX": 0.75,
         "originY": 0.3125,
-        "zIndex": 63,
+        "zIndex": 58,
         "layerName": "Default",
         "text": "rendering pod katem",
         "style": "SF Atarian System",
@@ -2321,7 +2392,7 @@
         "y": -2.3125002,
         "originX": 0.75,
         "originY": 0.3125,
-        "zIndex": 64,
+        "zIndex": 59,
         "layerName": "Default",
         "text": "To powinna byc owca",
         "style": "SF Atarian System",
@@ -2548,7 +2619,7 @@
         "y": -0.77500004,
         "originX": 0,
         "originY": 0,
-        "zIndex": 61,
+        "zIndex": 56,
         "layerName": "Default",
         "tint": [
           0,
@@ -2570,7 +2641,7 @@
         "y": 10.81,
         "originX": 0,
         "originY": 0,
-        "zIndex": 65,
+        "zIndex": 60,
         "layerName": "Default",
         "tint": [
           0.6509804,

@@ -29,6 +29,10 @@
     {
       "sceneName": "Garage",
       "physicsPropertiesVO": {}
+    },
+    {
+      "sceneName": "GameOver",
+      "physicsPropertiesVO": {}
     }
   ]
 }
