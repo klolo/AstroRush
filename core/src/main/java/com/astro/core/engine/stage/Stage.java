@@ -27,6 +27,11 @@ public enum Stage {
     /**
      * Garage where player can buy a gun or check progress.
      */
-    GARAGE
+    GARAGE,
+
+    /**
+     * Player is dead
+     */
+    GAME_OVER
 
 }

@@ -27,6 +27,11 @@ public class LevelLogic extends StageLogic {
         }
     }
 
+    public void playerDead() {
+        event = GameEvent.SWITCH_STAGE;
+        stageToLoad = Stage.GAME_OVER;
+    }
+
     private void processTabKey() {
         event = GameEvent.SWITCH_STAGE;
         stageToLoad = Stage.GARAGE;

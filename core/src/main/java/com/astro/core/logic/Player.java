@@ -4,6 +4,7 @@ import com.astro.core.engine.base.GameEngine;
 import com.astro.core.logic.player.MovablePlayer;
 import com.astro.core.logic.player.PlayerCollisionProcessor;
 import com.astro.core.logic.player.WatchersCreator;
+import com.astro.core.logic.stage.LevelLogic;
 import com.astro.core.observe.KeyObserve;
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 public class Player extends MovablePlayer {
 
     public static final String IDENTIFIER = "player";
+
+    private LevelLogic levelLogic;
 
     private KeyObserve keyObserve;
 
@@ -26,9 +29,10 @@ public class Player extends MovablePlayer {
         playerData.watchers = new WatchersCreator(this).init().getWatchers();
     }
 
-    public void registerInKeyObserver() {
+    private void registerInKeyObserver() {
         keyObserve = GameEngine.getApplicationContext().getBean(KeyObserve.class);
         keyObserve.register(this);
+        levelLogic = GameEngine.getApplicationContext().getBean(LevelLogic.class);
     }
 
     @Override
@@ -47,7 +51,7 @@ public class Player extends MovablePlayer {
         playerData.points += amount;
     }
 
-    public void addPointsWithMessages(final int amount) {
+    void addPointsWithMessages(final int amount) {
         playerData.playerPopupMsg.addMessagesToQueue("+" + amount);
         playerData.points += amount;
     }
@@ -63,6 +67,7 @@ public class Player extends MovablePlayer {
         if (playerData.liveAmount < 0) {
             LOGGER.error("player is dead");
             playerData.isDead = true;
+            levelLogic.playerDead();
         }
     }
 
@@ -74,4 +79,5 @@ public class Player extends MovablePlayer {
             playerData.liveAmount = playerData.startLiveAmount;
         }
     }
+
 }

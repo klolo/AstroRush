@@ -43,8 +43,10 @@ public class PlayerData {
     public int points;
 
     public byte liveAmount = 100;
+    public final byte startLiveAmount = 100;
 
-    public byte startLiveAmount = 100;
+    public float flyPowerAmount = 100;
+    public final float startFlyPowerAmount = 100;
 
     public float posX;
 

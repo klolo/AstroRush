@@ -7,6 +7,7 @@ import com.astro.core.objects.ObjectsRegister;
 import com.astro.core.objects.TextureObject;
 import com.astro.core.storage.GameResources;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -22,12 +23,13 @@ import java.util.LinkedHashMap;
 
 import static com.astro.core.engine.stage.hud.HudElement.*;
 
-/**
- * heads-up display fo GameStage.
- */
+
 @Slf4j
 @Component
 public class StageHUD implements IGameHud, ApplicationContextAware {
+
+    @Autowired
+    private HudProgressBarFactory hudProgressBarFactory;
 
     @Setter
     private ApplicationContext applicationContext;
@@ -51,7 +53,11 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
 
     private HudProgressBar liveProgressBar;
 
+    private HudProgressBar flyProgressBar;
+
     private static float lifeBarStartWidth;
+
+    private HudElement[] elementInOrders = {LIVE_BAR_BACKGROUND, LIVE_BAR, POINTS_LABEL, HELMET, FLY_BAR_BACKGROUND, FLY_BAR};
 
     @Override
     public void init() {
@@ -72,13 +78,10 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
     }
 
     private void createHudElements() {
-        Arrays.stream(HudElement.values())
-                .forEach(this::createHudElement);
+        Arrays.stream(HudElement.values()).forEach(this::createHudElement);
         hudElements.put(POINTS_LABEL, labelObject);
-
-        liveProgressBar = new HudProgressBar(gameResources
-                .getResourceManager()
-                .getTextureRegion(LIVE_BAR.textureName), pixelPerMeter);
+        liveProgressBar = hudProgressBarFactory.createFromHudElement(LIVE_BAR, Location.TOP_RIGHT);
+        flyProgressBar = hudProgressBarFactory.createFromHudElement(LIVE_BAR, Location.BOTTOM_RIGHT);
     }
 
     private void initPointsLabel() {
@@ -119,32 +122,36 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
     }
 
     public void show(final OrthographicCamera cam, final float delta) {
-        //setElementDynamicWidth(cam, LIVE_BAR, player.playerData.getLiveAmount(), player.playerData.getStartLiveAmount(), lifeBarStartWidth);
-        //setElementDynamicWidth(cam, FLY_BAR, player.playerData.getLiveAmount(), player.playerData.getStartLiveAmount(), lifeBarStartWidth);
-
-        hudElements.get(LIVE_BAR).getData().setSprite(
-                liveProgressBar.getScaledSprite(cam,
-                        player.playerData.getLiveAmount(), player.playerData.getStartLiveAmount(), lifeBarStartWidth));
-
+        scaleProgressBars(cam);
 
         setObjectPositionOnScreen(HELMET, cam);
         setObjectPositionOnScreen(POINTS_LABEL, cam);
         setObjectPositionOnScreen(LIVE_BAR_BACKGROUND, cam);
+        setObjectPositionOnScreen(FLY_BAR_BACKGROUND, cam, FLY_BAR_BACKGROUND.offsetX, getViewHeight(cam) * 2 + FLY_BAR_BACKGROUND.offsetY);
+        // setObjectPositionOnScreen(LIVE_BAR, cam, LIVE_BAR.offsetX, getViewHeight(cam) * 2 + LIVE_BAR.offsetY);
+        //   setObjectPositionOnScreen(FLY_BAR, cam, FLY_BAR.offsetX, getViewHeight(cam) * 2 + FLY_BAR.offsetY);
 
-        setObjectPositionOnScreen(hudElements.get(FLY_BAR_BACKGROUND), cam, FLY_BAR_BACKGROUND.offsetX,
-                getViewHeight(cam) * 2 + FLY_BAR_BACKGROUND.offsetY);
-
-        setObjectPositionOnScreen(hudElements.get(FLY_BAR), cam, FLY_BAR.offsetX,
-                getViewHeight(cam) * 2 + FLY_BAR.offsetY);
-
-        hudElements.get(LIVE_BAR_BACKGROUND).show(cam, delta);
-        hudElements.get(HudElement.LIVE_BAR).show(cam, delta);
-        hudElements.get(POINTS_LABEL).show(cam, delta);
-        hudElements.get(HELMET).show(cam, delta);
-        hudElements.get(FLY_BAR_BACKGROUND).show(cam, delta);
-        hudElements.get(FLY_BAR).show(cam, delta);
-
+        Arrays.stream(elementInOrders).forEach(element -> hudElements.get(element).show(cam, delta));
         labelObject.setText(String.valueOf(player.getPoints()));
+    }
+
+    private void scaleProgressBars(final OrthographicCamera cam) {
+        final Sprite scaledSpriteLiveProgressBarSprite = liveProgressBar.getScaledSprite(cam,
+                player.playerData.getLiveAmount(),
+                player.playerData.getStartLiveAmount()
+        );
+        hudElements.get(LIVE_BAR).getData().setSprite(scaledSpriteLiveProgressBarSprite);
+
+        final Sprite scaledFlyProgressBarSprite = flyProgressBar.getScaledSprite(
+                cam,
+                player.playerData.getFlyPowerAmount(),
+                player.playerData.getStartFlyPowerAmount()
+        );
+        hudElements.get(FLY_BAR).getData().setSprite(scaledFlyProgressBarSprite);
+    }
+
+    private void setObjectPositionOnScreen(final HudElement elements, final OrthographicCamera cam, final float offsetX, final float offsetY) {
+        setObjectPositionOnScreen(hudElements.get(elements), cam, offsetX, offsetY);
     }
 
     private void setObjectPositionOnScreen(final HudElement elements, final OrthographicCamera cam) {

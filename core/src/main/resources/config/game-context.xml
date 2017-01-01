@@ -92,6 +92,19 @@
         <property name="stageLogic" ref="garageLogic"/>
     </bean>
 
+    <bean id="gameOverStageConfig" class="com.astro.core.engine.stage.StageConfig">
+        <property name="stageName" value="GAME_OVER"/>
+        <property name="sceneFile" value="scenes/GameOver.dt"/>
+        <property name="hasPlayer" value='false'/>
+        <property name="followByPlayer" value='false'/>
+        <property name="background" value='true'/>
+        <property name="hasHUD" value='false'/>
+        <property name="ambientLightRed" value='1.0f'/>
+        <property name="ambientLightGreen" value='1.0f'/>
+        <property name="ambientLightBlue" value='1.0f'/>
+        <property name="stageLogic" ref="gameOverLogic"/>
+    </bean>
+
     <!-- managing game screens  -->
     <bean id="gameLogic" class="com.astro.core.engine.base.GameLogic" destroy-method="onExit">
         <property name="screenConfigs">
@@ -101,6 +114,7 @@
                 <entry key="HIGHSCORE" value-ref="highscoreStageConfig"/>
                 <entry key="LEVEL1" value-ref="level1StageConfig"/>
                 <entry key="GARAGE" value-ref="garageStageConfig"/>
+                <entry key="GAME_OVER" value-ref="gameOverStageConfig"/>
             </util:map>
         </property>
     </bean>

@@ -7,8 +7,17 @@ import com.badlogic.gdx.Input;
 
 public class MovablePlayer extends PlayerLogic implements IKeyObserver, IObservedByCamera {
 
-    public MovablePlayer() {
+    protected MovablePlayer() {
         playerData.cameraManager.setObservedObject(this);
+    }
+
+    @Override
+    public void update(final float diff) {
+        super.update(diff);
+
+        if (playerData.flyPowerAmount < playerData.startFlyPowerAmount) {
+            playerData.flyPowerAmount += 0.1;
+        }
     }
 
     @Override
@@ -41,7 +50,7 @@ public class MovablePlayer extends PlayerLogic implements IKeyObserver, IObserve
         }
 
         playerData.watchers.get(WatchersID.INACTIVE_PLAYER).reset();
-        playerData.physicBody.setLinearVelocity(horizontalForce * playerData.HORIZONTAL_FORCE_STRENGHT,
+        playerData.physicBody.setLinearVelocity(horizontalForce * PlayerData.HORIZONTAL_FORCE_STRENGHT,
                 playerData.physicBody.getLinearVelocity().y);
     }
 
@@ -74,6 +83,11 @@ public class MovablePlayer extends PlayerLogic implements IKeyObserver, IObserve
     }
 
     private void jump() {
+        decreaseFlyPowerAmount();
+        if (playerData.flyPowerAmount <= 0) {
+            return;
+        }
+
         if (playerData.physicBody.getLinearVelocity().y < playerData.settings.maxYVelocity) {
             playerData.physicBody.applyForceToCenter(0, playerData.settings.maxYVelocity, false);
         }
@@ -81,6 +95,14 @@ public class MovablePlayer extends PlayerLogic implements IKeyObserver, IObserve
         playerData.standOnThePlatform = false;
     }
 
+    private void decreaseFlyPowerAmount() {
+        if (playerData.flyPowerAmount > 0) {
+            playerData.flyPowerAmount -= 1;
+        }
+        else {
+            playerData.flyPowerAmount = 0;
+        }
+    }
 
     private void shoot() {
         if (playerData.canShoot) {

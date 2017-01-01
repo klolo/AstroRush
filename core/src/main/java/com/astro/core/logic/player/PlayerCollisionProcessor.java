@@ -60,6 +60,7 @@ public class PlayerCollisionProcessor {
      */
     public CollisionProcessResult collision(final Enemy enemy) {
         player.playerData.getPlayerPopupMsg().addMessagesToQueue("ouh!");
+        player.decreaseLive(1);
         return new CollisionProcessResult();
     }
 
