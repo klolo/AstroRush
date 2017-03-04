@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -26,6 +27,7 @@ import static com.astro.core.engine.stage.hud.HudElement.*;
 
 @Slf4j
 @Component
+@Scope("prototype")
 public class StageHUD implements IGameHud, ApplicationContextAware {
 
     @Autowired
@@ -55,17 +57,28 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
 
     private HudProgressBar flyProgressBar;
 
-    private static float lifeBarStartWidth;
+    private float lifeBarStartWidth;
 
     private HudElement[] elementInOrders = {LIVE_BAR_BACKGROUND, LIVE_BAR, POINTS_LABEL, HELMET, FLY_BAR_BACKGROUND, FLY_BAR};
 
     @Override
     public void init() {
-        LOGGER.info("Creating default font");
+        LOGGER.info("Creating HUD");
         initPointsLabel();
         initPlayerData();
         setLifeBarStartWidth();
         createHudElements();
+    }
+
+    private void initPointsLabel() {
+        labelObject = applicationContext.getBean(LabelObject.class);
+        labelObject.setBitmapFont(
+                gameResources.getResourceManager().getBitmapFont(
+                        LabelObject.getDEFAULT_FONT(),
+                        LabelObject.getDEFAULT_SIZE()
+                ));
+
+        labelObject.setScreenPositionRelative(true);
     }
 
     private void setLifeBarStartWidth() {
@@ -80,34 +93,24 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
     private void createHudElements() {
         Arrays.stream(HudElement.values()).forEach(this::createHudElement);
         hudElements.put(POINTS_LABEL, labelObject);
-        liveProgressBar = hudProgressBarFactory.createFromHudElement(LIVE_BAR, Location.TOP_RIGHT);
         flyProgressBar = hudProgressBarFactory.createFromHudElement(LIVE_BAR, Location.BOTTOM_RIGHT);
-    }
-
-    private void initPointsLabel() {
-        labelObject = applicationContext.getBean(LabelObject.class);
-        labelObject.setBitmapFont(
-                gameResources.getResourceManager().getBitmapFont(
-                        LabelObject.getDEFAULT_FONT(),
-                        LabelObject.getDEFAULT_SIZE()
-                ));
-
-        labelObject.setScreenPositionRelative(true);
+        liveProgressBar = hudProgressBarFactory.createFromHudElement(LIVE_BAR, Location.TOP_RIGHT);
     }
 
     private void createHudElement(final HudElement hudElement) {
-        if (!hudElement.textureName.equals("")) {
-            final TextureObject elementTexture = createTextureObject(hudElement.textureName);
-            hudElements.put(hudElement, elementTexture);
+        if (hudElement.textureName.equals("")) {
+            return;
         }
+
+        final TextureObject elementTexture = createTextureObject(hudElement.textureName);
+        hudElements.put(hudElement, elementTexture);
     }
 
     private TextureObject createTextureObject(final String name) {
         final TextureObject result = applicationContext.getBean("textureObject", TextureObject.class);
-        result.setTextureRegion(gameResources.getResourceManager().getTextureRegion(name));
+        final TextureRegion region = gameResources.getResourceManager().getTextureRegion(name);
 
-        final TextureRegion region = result.getTextureRegion();
-
+        result.setTextureRegion(region);
         result.getData().getSprite().setBounds(0, 0, region.getRegionWidth(), region.getRegionHeight());
         result.getData().getSprite().setScale(1.0f, 1.0f);
         result.getData().getSprite().setOrigin(0f, 0f);
@@ -128,10 +131,10 @@ public class StageHUD implements IGameHud, ApplicationContextAware {
         setObjectPositionOnScreen(POINTS_LABEL, cam);
         setObjectPositionOnScreen(LIVE_BAR_BACKGROUND, cam);
         setObjectPositionOnScreen(FLY_BAR_BACKGROUND, cam, FLY_BAR_BACKGROUND.offsetX, getViewHeight(cam) * 2 + FLY_BAR_BACKGROUND.offsetY);
-        // setObjectPositionOnScreen(LIVE_BAR, cam, LIVE_BAR.offsetX, getViewHeight(cam) * 2 + LIVE_BAR.offsetY);
-        //   setObjectPositionOnScreen(FLY_BAR, cam, FLY_BAR.offsetX, getViewHeight(cam) * 2 + FLY_BAR.offsetY);
 
-        Arrays.stream(elementInOrders).forEach(element -> hudElements.get(element).show(cam, delta));
+        Arrays.stream(elementInOrders)
+                .forEach(element -> hudElements.get(element).show(cam, delta));
+
         labelObject.setText(String.valueOf(player.getPoints()));
     }
 

@@ -4,7 +4,7 @@ enum HudElement {
     POINTS_LABEL("", -0.8f, 0.8f),
     HELMET("a", -2.5f, 0.5f),
 
-    LIVE_BAR("c", -0.1f, 0.5f),
+    LIVE_BAR("c", 1.05f, 0.47f),
     LIVE_BAR_BACKGROUND("b", -1.25f, 0.5f),
 
     FLY_BAR_BACKGROUND("fly-power", -1.4f, -0.5f),

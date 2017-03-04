@@ -64,7 +64,10 @@ public class PopupMsg implements ApplicationContextAware {
 
     public void addMessagesToQueue(final String msg) {
         if (currentMsg == null || instantAdd) {
-            addMessage(msg);
+            messagesQueue.add(msg);
+            currentMsg = msg;
+            currentMsgTime = 0.0f;
+            opacity = 1.0f;
             return;
         }
 
@@ -72,20 +75,11 @@ public class PopupMsg implements ApplicationContextAware {
             return;
         }
 
-        for (final String currentMessage : messagesQueue) {
-            if (currentMessage.equals(msg) || currentMsg.equals(msg)) {
-                return;
-            }
+        if (messagesQueue.stream().filter(currentMessage -> currentMessage.equals(msg) || currentMsg.equals(msg)).count() > 0) {
+            return;
         }
 
-        addMessage(msg);
-    }
-
-    private void addMessage(final String msg) {
         messagesQueue.add(msg);
-        currentMsg = msg;
-        currentMsgTime = 0.0f;
-        opacity = 1.0f;
     }
 
     public void setPosWithCenter(final float x, final float y) {
@@ -114,7 +108,7 @@ public class PopupMsg implements ApplicationContextAware {
         currentMsgTime += diff;
         opacity -= 1f / 60f;
 
-        if (opacity < 0.1) {
+        if (opacity < 0.01) {
             showNextMessage();
         }
     }
@@ -124,9 +118,18 @@ public class PopupMsg implements ApplicationContextAware {
         currentMsgTime = 0.0f;
         opacity = 1.0f;
 
-        if (messagesQueue.size() > 0) {
-            currentMsg = messagesQueue.get(0);
-            messagesQueue.remove(0);
+        if (messagesQueue.size() == 0) {
+            return;
         }
+
+        final String nextMessage = messagesQueue.get(0);
+        messagesQueue.remove(0);
+
+        if (currentMsg != null && currentMsg.equals(nextMessage)) {
+            showNextMessage();
+            return;
+        }
+
+        currentMsg = nextMessage;
     }
 }

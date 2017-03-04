@@ -70,4 +70,13 @@ public class PlayerData {
      * Hold default Player graphic (animation of run) and additional graphics like fly and stand.
      */
     public PlayerGraphics graphics;
+
+    public PlayerData() {
+        initializeDefaultValue();
+    }
+
+    void initializeDefaultValue() {
+        flyPowerAmount = 100;
+        liveAmount = 100;
+    }
 }

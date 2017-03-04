@@ -38,7 +38,7 @@ allprojects {
         ashleyVersion = "1.7.0"
         aiVersion = "1.8.0"
         slf4jVersion = "1.7.21"
-        springVersion = "4.3.5.RELEASE"
+        springVersion = "4.3.7.RELEASE"
         aspectVersion = "1.5.4"
     }
 

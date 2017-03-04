@@ -7,6 +7,8 @@ import com.badlogic.gdx.Input;
 
 public class MovablePlayer extends PlayerLogic implements IKeyObserver, IObservedByCamera {
 
+    private final int MINIMAL_FLY_POWER_AMOUNT = 1;
+
     protected MovablePlayer() {
         playerData.cameraManager.setObservedObject(this);
     }
@@ -84,7 +86,7 @@ public class MovablePlayer extends PlayerLogic implements IKeyObserver, IObserve
 
     private void jump() {
         decreaseFlyPowerAmount();
-        if (playerData.flyPowerAmount <= 0) {
+        if (playerData.flyPowerAmount <= MINIMAL_FLY_POWER_AMOUNT) {
             return;
         }
 
@@ -96,11 +98,11 @@ public class MovablePlayer extends PlayerLogic implements IKeyObserver, IObserve
     }
 
     private void decreaseFlyPowerAmount() {
-        if (playerData.flyPowerAmount > 0) {
+        if (playerData.flyPowerAmount > MINIMAL_FLY_POWER_AMOUNT) {
             playerData.flyPowerAmount -= 1;
         }
         else {
-            playerData.flyPowerAmount = 0;
+            playerData.flyPowerAmount = MINIMAL_FLY_POWER_AMOUNT;
         }
     }
 

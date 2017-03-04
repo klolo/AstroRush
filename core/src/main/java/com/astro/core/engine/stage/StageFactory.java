@@ -47,9 +47,9 @@ public class StageFactory implements ApplicationContextAware {
         result.initStage(getMapElements(config));
         result.setConfig(config);
 
-        initResult(result)
+        initStage(result)
                 .createBackground(config, result)
-                .initPlayer(config, result)
+                .initHud(config, result)
                 .initLogic(config, result)
                 .initDebugDraw(config, result);
 
@@ -57,8 +57,8 @@ public class StageFactory implements ApplicationContextAware {
         return result;
     }
 
-    private StageFactory initResult(final GameStage result) {
-        result.init();
+    private StageFactory initStage(final GameStage stage) {
+        stage.init();
         return this;
     }
 
@@ -71,7 +71,7 @@ public class StageFactory implements ApplicationContextAware {
         return this;
     }
 
-    private StageFactory initPlayer(final StageConfig config, final GameStage result) {
+    private StageFactory initHud(final StageConfig config, final GameStage result) {
         if (config.hasPlayer) {
             LOGGER.info("Create HUD");
             final IGameHud hud = applicationContext.getBean(IGameHud.class);

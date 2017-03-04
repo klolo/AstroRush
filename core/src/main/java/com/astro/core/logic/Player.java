@@ -24,6 +24,7 @@ public class Player extends MovablePlayer {
      * -create all watcher
      */
     public Player() {
+        LOGGER.debug("Creating player");
         registerInKeyObserver();
         playerData.playerCollisionProcessor = new PlayerCollisionProcessor(this);
         playerData.watchers = new WatchersCreator(this).init().getWatchers();

@@ -22,15 +22,15 @@ class HudProgressBar {
     private Location location;
 
     Sprite getScaledSprite(final OrthographicCamera cam, final float currentLevel, final float startLevel) {
-        final float liveBarWidth = startWidth * currentLevel / startLevel;
+        final float liveBarWidth = startWidth * (currentLevel / startLevel);
         final float x = getViewWith(cam) - (element.offsetX * 2);
         final Sprite s = new Sprite(region);
 
-        region.setRegionWidth((int) startWidth);
+        region.setRegionWidth((int) liveBarWidth);
 
         s.setScale(1.0f, 1.0f);
         s.setOrigin(0, 0);
-        s.setBounds(x, getYPosition(cam), startWidth, region.getRegionHeight() + 4);
+        s.setBounds(x + (region.getRegionWidth() / pixelPerMeter / 2), getYPosition(cam), liveBarWidth, region.getRegionHeight());
 
         return s;
     }

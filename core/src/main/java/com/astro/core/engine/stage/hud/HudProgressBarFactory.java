@@ -1,6 +1,7 @@
 package com.astro.core.engine.stage.hud;
 
 import com.astro.core.storage.GameResources;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -15,7 +16,7 @@ public class HudProgressBarFactory {
     protected short pixelPerMeter;
 
     HudProgressBar createFromHudElement(final HudElement element, final Location location) {
-        final float startWidth = gameResources
+        final float startWidth = 0.7f * gameResources
                 .getResourceManager()
                 .getTextureRegion(element.textureName)
                 .getRegionWidth();
@@ -24,9 +25,12 @@ public class HudProgressBarFactory {
         hudProgressBar.setElement(element);
         hudProgressBar.setLocation(location);
         hudProgressBar.setPixelPerMeter(pixelPerMeter);
-        hudProgressBar.setRegion(gameResources
+
+        final TextureRegion textureRegionCopy = new TextureRegion(gameResources
                 .getResourceManager()
                 .getTextureRegion(element.textureName));
+
+        hudProgressBar.setRegion(textureRegionCopy);
         hudProgressBar.setStartWidth(startWidth);
         return hudProgressBar;
     }

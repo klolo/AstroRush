@@ -17,6 +17,7 @@ public abstract class PlayerLogic implements ILogic {
     PlayerLogic() {
         LOGGER.info("Creating player");
         playerData = GameEngine.getApplicationContext().getBean(PlayerData.class);
+        playerData.initializeDefaultValue();
     }
 
     /**
@@ -50,15 +51,19 @@ public abstract class PlayerLogic implements ILogic {
         playerData.playerPopupMsg.show(cam, delta);
 
         if (playerData.graphics.getRunAnimation().isRenderingInScript()) {
-            final IGameObject gfxObject = playerData.graphics.getTextureBasedOnState(playerData.state);
-            gfxObject.getData().getSprite().setPosition(playerData.posX, playerData.posY);
-
-            if (playerData.state.isFly()) {
-                (gfxObject).getData().setFlipX(playerData.state == PlayerState.FLY_LEFT);
-            }
-
-            gfxObject.show(cam, delta);
+            renderPlayer(cam, delta);
         }
+    }
+
+    private void renderPlayer(final OrthographicCamera cam, final float delta) {
+        final IGameObject gfxObject = playerData.graphics.getTextureBasedOnState(playerData.state);
+        gfxObject.getData().getSprite().setPosition(playerData.posX, playerData.posY);
+
+        if (playerData.state.isFly()) {
+            (gfxObject).getData().setFlipX(playerData.state == PlayerState.FLY_LEFT);
+        }
+
+        gfxObject.show(cam, delta);
     }
 
     @Override

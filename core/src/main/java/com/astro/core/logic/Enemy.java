@@ -59,7 +59,7 @@ public class Enemy implements ILogic {
             gameObject.getData().setDestroyed(true);
             final Player player = (Player) GameEngine.getApplicationContext().getBean(ObjectsRegister.class)
                     .getObjectByID(Player.IDENTIFIER).getData().getLogic();
-            player.addPointsWithMessages(100);//fixme
+            player.addPointsWithMessages(200);//fixme
             return;
         }
 
